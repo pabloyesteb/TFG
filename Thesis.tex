@@ -1,8 +1,8 @@
 \documentclass[a4paper,11pt,twoside,makeidx]{ThesisStyle}
-\usepackage[spanish,es-nosectiondot]{babel}   % quita el punto de la section
+\usepackage[english]{babel}   % quita el punto de la section
 \usepackage[latin1]{inputenc}
 %\usepackage[T1]{fontenc}
-   \decimalpoint
+%   \decimalpoint
 \usepackage{color}
 \usepackage{colortbl}
 \usepackage{graphicx}
@@ -23,6 +23,8 @@
 \usepackage{setspace}
 \usepackage{makeidx}
 \usepackage{textpos}
+\usepackage{pgfplotstable,booktabs,siunitx,array}
+\usepackage{import}
 \usepackage{rotating}    % Sideways of figures & tables
 \usepackage{multirow}
 %\usepackage[FIGTOPCAP]{subfigure}
@@ -31,7 +33,7 @@
 
 \usepackage{subcaption}
 \usepackage{titlesec}
-\usepackage[intoc, spanish]{nomencl}
+\usepackage[intoc, english]{nomencl}
 \makenomenclature
 \newcommand{\nomunit}[1]{%
 \renewcommand{\nomentryend}{\hspace*{\fill}#1}}
@@ -41,12 +43,12 @@
 \usepackage{ifthen}
   \renewcommand{\nomgroup}[1]{%
   \item[\bfseries
-  \ifthenelse{\equal{#1}{C}}{Constantes físicas}{%
-  \ifthenelse{\equal{#1}{N}}{Números característicos}{%
+  \ifthenelse{\equal{#1}{C}}{Physical constants}{%
+  \ifthenelse{\equal{#1}{N}}{Characteristic numbers}{%
   \ifthenelse{\equal{#1}{T}}{Variables termofluidodinámicas}{%
   \ifthenelse{\equal{#1}{G}}{Nomenclatura de cálculo numérico}{%
   \ifthenelse{\equal{#1}{D}}{Nomenclatura de cálculo diferencial y álgebra}{%
-  \ifthenelse{\equal{#1}{S}}{Sufijos}{}}}}}}%
+  \ifthenelse{\equal{#1}{S}}{Suffixes}{}}}}}}%
   ]}
 
 % -----------------------------------------
@@ -128,8 +130,8 @@
 \definecolor{Skyblue}{cmyk}{0.4,0.1,0.0,0.0}
 \newcommand{\BRnem}[1]{\normalsize\color{BrickRed}\em #1}
 \newcommand{\BRlbf}[1]{\Large\color{BrickRed}\rmfamily\bfseries #1}
-\newtheorem{prop}{Propiedad}
-\newtheorem{definition}{Definición}
+\newtheorem{prop}{Property}
+\newtheorem{definition}{Definition}
 \newenvironment{Figure}
   {\par\medskip\noindent\minipage{\linewidth}}
   {\endminipage\par\medskip}
@@ -306,7 +308,7 @@
 \hypersetup
 {
 bookmarksopen=true,
-pdftitle=Ice accretion simulation,
+pdftitle=Advanced STM computation methods,
 pdfauthor="Rodrigo_Fdez",
 pdfsubject="a subject", 		% subject of the document
 %pdftoolbar=false, 				% toolbar hidden
@@ -361,9 +363,9 @@ urlcolor=linkcol 				% couleur des liens pour les url
 \appendix
 
 \include{Appendix/Appendix_01/Appendix_01}
-\include{Appendix/Appendix_02/Appendix_02}
-\include{Appendix/Appendix_03/Appendix_03}
+%\include{Appendix/Appendix_02/Appendix_02}
+%\include{Appendix/Appendix_03/Appendix_03}
 %\bibliographystyle{ThesisStyle}
-%\include{Bibliography/bibliography}
+\include{Bibliography/bibliography}
 
 \end{document}

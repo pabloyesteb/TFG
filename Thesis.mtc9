@@ -1,34 +1,34 @@
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {A.1}Introducci\'on.}{\reset@font\mtcSfont 51}{section.Alph1.1}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {A.2}Conceptos b\'asicos.}{\reset@font\mtcSfont 52}{section.Alph1.2}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode \indent A. Consistencia. \vspace \medskipamount \\}{\reset@font\mtcPfont 52}{section.Alph1.2}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode \indent B. Estabilidad. \vspace \medskipamount \\}{\reset@font\mtcPfont 52}{section.Alph1.2}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode \indent C. Convergencia. \vspace \medskipamount \\}{\reset@font\mtcPfont 53}{section.Alph1.2}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {A.2.1}Teorema de equivalencia de Lax.}{\reset@font\mtcSSfont 53}{subsection.Alph1.2.1}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {A.3}Consistencia de esquemas num\'ericos.}{\reset@font\mtcSfont 54}{section.Alph1.3}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {A.3.1}Metodolog\IeC {\'\i }a b\'asica.}{\reset@font\mtcSSfont 54}{subsection.Alph1.3.1}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {A.3.2}Interpretaci\'on de la condici\'on de consistencia.}{\reset@font\mtcSSfont 56}{subsection.Alph1.3.2}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {A.4}Estabilidad de esquemas num\'ericos. M\'etodo de Von Neumann.}{\reset@font\mtcSfont 57}{section.Alph1.4}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {A.4.1}Bases del m\'etodo.}{\reset@font\mtcSSfont 58}{subsection.Alph1.4.1}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {A.4.2}Condici\'on de estabilidad de Von Neumann.}{\reset@font\mtcSSfont 60}{subsection.Alph1.4.2}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {A.4.3}Metodolog\IeC {\'\i }a de Von Neumann. Aplicaci\'on a la ecuaci\'on de la advecci\'on.}{\reset@font\mtcSSfont 60}{subsection.Alph1.4.3}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode \indent A. Diferencias finitas centradas de segundo orden en el espacio y esquema expl\IeC {\'\i }cito de primer orden en el tiempo. \vspace \medskipamount \\}{\reset@font\mtcPfont 61}{subsection.Alph1.4.3}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {A.1}Introducci\'on.}{\reset@font\mtcSfont 51}{section.A.1}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {A.2}Conceptos b\'asicos.}{\reset@font\mtcSfont 52}{section.A.2}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode \indent A. Consistencia. \vspace \medskipamount \\}{\reset@font\mtcPfont 52}{section.A.2}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode \indent B. Estabilidad. \vspace \medskipamount \\}{\reset@font\mtcPfont 52}{section.A.2}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode \indent C. Convergencia. \vspace \medskipamount \\}{\reset@font\mtcPfont 53}{section.A.2}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {A.2.1}Teorema de equivalencia de Lax.}{\reset@font\mtcSSfont 53}{subsection.A.2.1}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {A.3}Consistencia de esquemas num\'ericos.}{\reset@font\mtcSfont 54}{section.A.3}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {A.3.1}Metodolog\IeC {\'\i }a b\'asica.}{\reset@font\mtcSSfont 54}{subsection.A.3.1}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {A.3.2}Interpretaci\'on de la condici\'on de consistencia.}{\reset@font\mtcSSfont 56}{subsection.A.3.2}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {A.4}Estabilidad de esquemas num\'ericos. M\'etodo de Von Neumann.}{\reset@font\mtcSfont 57}{section.A.4}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {A.4.1}Bases del m\'etodo.}{\reset@font\mtcSSfont 58}{subsection.A.4.1}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {A.4.2}Condici\'on de estabilidad de Von Neumann.}{\reset@font\mtcSSfont 60}{subsection.A.4.2}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {A.4.3}Metodolog\IeC {\'\i }a de Von Neumann. Aplicaci\'on a la ecuaci\'on de la advecci\'on.}{\reset@font\mtcSSfont 60}{subsection.A.4.3}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode \indent A. Diferencias finitas centradas de segundo orden en el espacio y esquema expl\IeC {\'\i }cito de primer orden en el tiempo. \vspace \medskipamount \\}{\reset@font\mtcPfont 61}{subsection.A.4.3}}
 {\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode \indent B. Diferencias finitas centradas de segundo orden en el espacio y esquema impl\IeC {\'\i }cito de primer orden en el tiempo. \vspace \medskipamount \\}{\reset@font\mtcPfont 63}{figure.caption.42}}
 {\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode \indent C. Esquema \textit {FOU} expl\IeC {\'\i }cito (\textit {first order upwind}) \vspace \medskipamount \\}{\reset@font\mtcPfont 63}{figure.caption.43}}
 {\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode \indent D. Esquema \textit {FOU} impl\IeC {\'\i }cito \vspace \medskipamount \\}{\reset@font\mtcPfont 64}{figure.caption.44}}
 {\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode \indent E. Esquema Runge-Kutta de 2 etapas. \vspace \medskipamount \\}{\reset@font\mtcPfont 65}{figure.caption.45}}
-{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {A.4.3.1}Comentarios sobre la condici\'on del CFL.}{\reset@font\mtcSSSfont 67}{subsubsection.Alph1.4.3.1}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {A.5}An\'alisis espectral de errores num\'ericos.}{\reset@font\mtcSfont 69}{section.Alph1.5}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {A.5.1}Manipulaci\'on de las soluciones exacta y num\'erica.}{\reset@font\mtcSSfont 69}{subsection.Alph1.5.1}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode \indent Soluci\'on anal\IeC {\'\i }tica. \vspace \medskipamount \\}{\reset@font\mtcPfont 69}{subsection.Alph1.5.1}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode \indent Soluci\'on num\'erica. \vspace \medskipamount \\}{\reset@font\mtcPfont 70}{subsection.Alph1.5.1}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode \indent Modificaciones finales. \\}{\reset@font\mtcPfont 71}{equation.Alph1.5.13}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {A.5.2}Errores de difusi\'on y de dispersi\'on.}{\reset@font\mtcSSfont 71}{subsection.Alph1.5.2}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {A.5.3}Metodolog\IeC {\'\i }a de an\'alisis.}{\reset@font\mtcSSfont 72}{subsection.Alph1.5.3}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {A.5.4}An\'alisis de errores en la ecuaci\'on de la advecci\'on.}{\reset@font\mtcSSfont 72}{subsection.Alph1.5.4}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode \indent Comentarios.\\}{\reset@font\mtcPfont 73}{subsection.Alph1.5.4}}
-{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {A.5.4.1}Errores de dispersi\'on y difusi\'on de distintos esquemas.}{\reset@font\mtcSSSfont 73}{subsubsection.Alph1.5.4.1}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode \indent A. Esquema \textit {FOU}. \vspace \medskipamount \\}{\reset@font\mtcPfont 73}{subsubsection.Alph1.5.4.1}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode \indent B. Esquema Runge-Kutta de 2 pasos. \vspace \medskipamount \\}{\reset@font\mtcPfont 75}{figure.caption.48}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {A.5.5}Resultados y discusi\'on.}{\reset@font\mtcSSfont 76}{subsection.Alph1.5.5}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {A.5.6}Esquema \textit {FOU} (M\'etodo de Euler).}{\reset@font\mtcSSfont 77}{subsection.Alph1.5.6}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {A.5.7}Esquema Runge-Kutta de 2 pasos.}{\reset@font\mtcSSfont 77}{subsection.Alph1.5.7}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {A.4.3.1}Comentarios sobre la condici\'on del CFL.}{\reset@font\mtcSSSfont 67}{subsubsection.A.4.3.1}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {A.5}An\'alisis espectral de errores num\'ericos.}{\reset@font\mtcSfont 69}{section.A.5}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {A.5.1}Manipulaci\'on de las soluciones exacta y num\'erica.}{\reset@font\mtcSSfont 69}{subsection.A.5.1}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode \indent Soluci\'on anal\IeC {\'\i }tica. \vspace \medskipamount \\}{\reset@font\mtcPfont 69}{subsection.A.5.1}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode \indent Soluci\'on num\'erica. \vspace \medskipamount \\}{\reset@font\mtcPfont 70}{subsection.A.5.1}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode \indent Modificaciones finales. \\}{\reset@font\mtcPfont 71}{equation.A.5.13}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {A.5.2}Errores de difusi\'on y de dispersi\'on.}{\reset@font\mtcSSfont 71}{subsection.A.5.2}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {A.5.3}Metodolog\IeC {\'\i }a de an\'alisis.}{\reset@font\mtcSSfont 72}{subsection.A.5.3}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {A.5.4}An\'alisis de errores en la ecuaci\'on de la advecci\'on.}{\reset@font\mtcSSfont 72}{subsection.A.5.4}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode \indent Comentarios.\\}{\reset@font\mtcPfont 73}{subsection.A.5.4}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {A.5.4.1}Errores de dispersi\'on y difusi\'on de distintos esquemas.}{\reset@font\mtcSSSfont 73}{subsubsection.A.5.4.1}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode \indent A. Esquema \textit {FOU}. \vspace \medskipamount \\}{\reset@font\mtcPfont 73}{subsubsection.A.5.4.1}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode \indent B. Esquema Runge-Kutta de 2 pasos. \vspace \medskipamount \\}{\reset@font\mtcPfont 74}{figure.caption.48}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {A.5.5}Resultados y discusi\'on.}{\reset@font\mtcSSfont 75}{subsection.A.5.5}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {A.5.6}Esquema \textit {FOU} (M\'etodo de Euler).}{\reset@font\mtcSSfont 77}{subsection.A.5.6}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {A.5.7}Esquema Runge-Kutta de 2 pasos.}{\reset@font\mtcSSfont 77}{subsection.A.5.7}}

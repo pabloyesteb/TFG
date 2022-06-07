@@ -1,12 +1,12 @@
-\babel@toc {spanish}{}\relax 
+\babel@toc {english}{}\relax 
 \addvspace {10\p@ }
-\contentsline {xchapter}{Agradecimientos.}{\es@scroman {iii}}{chapter*.1}%
+\contentsline {xchapter}{Agradecimientos.}{iii}{chapter*.1}%
 \addvspace {10\p@ }
-\contentsline {xchapter}{Resumen.}{\es@scroman {v}}{chapter*.2}%
+\contentsline {xchapter}{Resumen.}{v}{chapter*.2}%
 \addvspace {10\p@ }
-\contentsline {xchapter}{Abstract.}{\es@scroman {vii}}{chapter*.3}%
+\contentsline {xchapter}{Abstract.}{vii}{chapter*.3}%
 \addvspace {10\p@ }
-\contentsline {xchapter}{Introducci\'on.}{\es@scroman {xxv}}{chapter*.8}%
+\contentsline {xchapter}{Introducci\'on.}{xxiii}{chapter*.8}%
 \addvspace {10\p@ }
 \contentsline {xchapter}{Engelamiento en aeronaves.}{1}{chapter.1}%
 \contentsline {figure}{\numberline {1.1}{\ignorespaces Engelamiento por precipitaci\'on.\relax }}{3}{figure.caption.9}%
@@ -43,7 +43,7 @@
 \addvspace {10\p@ }
 \contentsline {xchapter}{Conclusiones y futuros estudios.}{47}{chapter.3}%
 \addvspace {10\p@ }
-\contentsline {xchapter}{Consistencia, estabilidad y error en esquemas num\'ericos.}{51}{appendix.Alph1}%
+\contentsline {xchapter}{Consistencia, estabilidad y error en esquemas num\'ericos.}{51}{appendix.A}%
 \contentsline {figure}{\numberline {A.1}{\ignorespaces Relaciones entre consistencia, estabilidad y convergencia.\relax }}{54}{figure.caption.40}%
 \contentsline {figure}{\numberline {A.2}{\ignorespaces Representaci\'on de una onda como superposici\'on de arm\'onicos: longitud de onda m\'axima y m\IeC {\'\i }nima.\relax }}{59}{figure.caption.41}%
 \contentsline {figure}{\numberline {A.3}{\ignorespaces Factor de amplificaci\'on del esquema de segundo orden expl\IeC {\'\i }cito para la ecuaci\'on de la advecci\'on.\relax }}{62}{figure.caption.42}%
@@ -56,19 +56,3 @@
 \contentsline {figure}{\numberline {A.10}{\ignorespaces Errores de dispersi\'on y difusi\'on del m\'etodo Runge-Kutta de 2 pasos aplicado a la ecuaci\'on de la advecci\'on.\relax }}{75}{figure.caption.49}%
 \contentsline {figure}{\numberline {A.11}{\ignorespaces Soluciones num\'erica (esquema \textit {FOU}) y anal\IeC {\'\i }tica de la ecuaci\'on de la advecci\'on.\relax }}{79}{figure.caption.52}%
 \contentsline {figure}{\numberline {A.12}{\ignorespaces Soluciones num\'erica (esquema Runge-Kutta-2) y anal\IeC {\'\i }tica de la ecuaci\'on de la advecci\'on.\relax }}{81}{figure.caption.54}%
-\addvspace {10\p@ }
-\contentsline {xchapter}{Soluci\'on anal\IeC {\'\i }tica de las ecuaciones de Euler.}{83}{appendix.Alph2}%
-\contentsline {figure}{\numberline {B.1}{\ignorespaces Estructura gen\'erica de la soluci\'on.\relax }}{86}{figure.caption.55}%
-\contentsline {figure}{\numberline {B.2}{\ignorespaces Estructuras posibles de la soluci\'on a efectos de la soluci\'on anal\IeC {\'\i }tica.\relax }}{87}{figure.caption.56}%
-\contentsline {figure}{\numberline {B.3}{\ignorespaces Esquema de las caracter\IeC {\'\i }sticas de cada una de las posibles discontinuidades.\relax }}{88}{figure.caption.57}%
-\contentsline {figure}{\numberline {B.4}{\ignorespaces Diagramas de flujo para el muestreo de la soluci\'on.\relax }}{92}{figure.caption.58}%
-\contentsline {figure}{\numberline {B.5}{\ignorespaces Soluci\'on anal\IeC {\'\i }tica del test de Sod (sin modificar), con $t_f = 0.25$.\relax }}{94}{figure.caption.60}%
-\contentsline {figure}{\numberline {B.6}{\ignorespaces Soluci\'on anal\IeC {\'\i }tica del test de Sod modificado, con $t_f = 0.25$.\relax }}{94}{figure.caption.61}%
-\contentsline {figure}{\numberline {B.7}{\ignorespaces Soluci\'on anal\IeC {\'\i }tica del test 2, con $t_f = 0.25$.\relax }}{95}{figure.caption.62}%
-\contentsline {figure}{\numberline {B.8}{\ignorespaces Soluci\'on anal\IeC {\'\i }tica del test 3, con $t_f = 0.012$.\relax }}{96}{figure.caption.63}%
-\contentsline {figure}{\numberline {B.9}{\ignorespaces Soluci\'on anal\IeC {\'\i }tica del test 4, con $t_f = 0.05$.\relax }}{96}{figure.caption.64}%
-\contentsline {figure}{\numberline {B.10}{\ignorespaces Soluci\'on anal\IeC {\'\i }tica del test 5, con $t_f = 0.012$.\relax }}{97}{figure.caption.65}%
-\addvspace {10\p@ }
-\contentsline {xchapter}{Desarrollo de software.}{99}{appendix.Alph3}%
-\contentsline {figure}{\numberline {C.1}{\ignorespaces Diagrama de flujo del funcionamiento global del programa.\relax }}{102}{figure.caption.66}%
-\contentsline {figure}{\numberline {C.2}{\ignorespaces Diagrama de flujo del proceso de actualizaci\'on de la soluci\'on.\relax }}{103}{figure.caption.67}%
