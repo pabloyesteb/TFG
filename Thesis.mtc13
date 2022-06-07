@@ -1,0 +1,27 @@
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {B.1}Introducci\'on.}{\reset@font\mtcSfont 207}{section.Alph2.1}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {B.2}Ecuaciones de Euler y problema de Riemann.}{\reset@font\mtcSfont 208}{section.Alph2.2}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {B.3}Soluci\'on anal\IeC {\'\i }tica.}{\reset@font\mtcSfont 209}{section.Alph2.3}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {B.3.1}Estructura de la soluci\'on.}{\reset@font\mtcSSfont 209}{subsection.Alph2.3.1}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {B.3.2}Soluci\'on en la regi\'on estrella.}{\reset@font\mtcSSfont 210}{subsection.Alph2.3.2}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {B.3.2.1}Obtenci\'on de la presi\'on y velocidad.}{\reset@font\mtcSSSfont 210}{subsubsection.Alph2.3.2.1}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {B.3.2.2}Obtenci\'on de las densidades.}{\reset@font\mtcSSSfont 211}{subsubsection.Alph2.3.2.2}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode \indent Onda de choque:}{\reset@font\mtcPfont 212}{subsubsection.Alph2.3.2.2}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode \indent Rarefacci\'on:}{\reset@font\mtcPfont 212}{equation.Alph2.3.6}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {B.3.2.3}Obtenci\'on de las caracter\IeC {\'\i }sticas y soluci\'on dentro de una rarefacci\'on.}{\reset@font\mtcSSSfont 212}{subsubsection.Alph2.3.2.3}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode \indent Onda de choque izquierda. \vspace \medskipamount \\}{\reset@font\mtcPfont 212}{figure.caption.120}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode \indent Rarefacci\'on izquierda. \vspace \medskipamount \\}{\reset@font\mtcPfont 213}{equation.Alph2.3.8}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode \indent Onda de choque derecha \vspace \medskipamount \\}{\reset@font\mtcPfont 213}{equation.Alph2.3.10}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode \indent Rarefacci\'on derecha \vspace \medskipamount \\}{\reset@font\mtcPfont 213}{equation.Alph2.3.11}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {B.3.3}Soluci\'on completa. Muestreo de la soluci\'on.}{\reset@font\mtcSSfont 214}{subsection.Alph2.3.3}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {B.3.3.1}Parte izquierda de la discontinuidad de contacto: $x/t < u_{\star }$}{\reset@font\mtcSSSfont 214}{subsubsection.Alph2.3.3.1}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode \indent A: Onda de choque izquierda. \vspace \medskipamount \\}{\reset@font\mtcPfont 214}{subsubsection.Alph2.3.3.1}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode \indent B: Rarefacci\'on izquierda. \vspace \medskipamount \\}{\reset@font\mtcPfont 215}{equation.Alph2.3.14}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {B.3.3.2}Parte derecha de la discontinuidad de contacto: $x/t > u_{\star }$}{\reset@font\mtcSSSfont 215}{subsubsection.Alph2.3.3.2}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode \indent A: Onda de choque derecha. \vspace \medskipamount \\}{\reset@font\mtcPfont 215}{subsubsection.Alph2.3.3.2}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode \indent B: Rarefacci\'on derecha. \vspace \medskipamount \\}{\reset@font\mtcPfont 215}{equation.Alph2.3.16}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {B.3.4}Resultados obtenidos.}{\reset@font\mtcSSfont 217}{subsection.Alph2.3.4}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {B.3.4.1}Test 1.}{\reset@font\mtcSSSfont 217}{subsubsection.Alph2.3.4.1}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {B.3.4.2}Test 2.}{\reset@font\mtcSSSfont 219}{subsubsection.Alph2.3.4.2}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {B.3.4.3}Test 3.}{\reset@font\mtcSSSfont 219}{subsubsection.Alph2.3.4.3}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {B.3.4.4}Test 4.}{\reset@font\mtcSSSfont 220}{subsubsection.Alph2.3.4.4}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {B.3.4.5}Test 5.}{\reset@font\mtcSSSfont 221}{subsubsection.Alph2.3.4.5}}

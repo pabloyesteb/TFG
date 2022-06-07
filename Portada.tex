@@ -1,0 +1,41 @@
+%------------------------------------------
+% portada
+%------------------------------------------
+
+% Genera portada
+\renewcommand{\title}{Nombre del trabajo}
+\renewcommand{\author}{Autor}
+
+\renewcommand\maketitle{
+  \begin{titlepage}  
+
+   \vspace*{-16mm}
+   \hspace{-18mm}
+   \begin{tabular}{lcr}
+   \includegraphics[width=0.25\textwidth]{Figures/logos/logo_upm}  & \hspace{8cm} &
+   \includegraphics[width=0.3\textwidth]{Figures/logos/logo_etsiae} \\
+	\end{tabular}
+  
+%	\vspace{5 mm}
+    \begin{center}
+      { UNIVERSIDAD POLITÉCNICA DE MADRID \\[7mm]
+        ESCUELA TÉCNICA SUPERIOR DE INGENIERÍA \\[3mm]
+        AERONÁUTICA Y DEL ESPACIO\\[7mm]
+        GRADO EN INGENIERÍA AEROESPACIAL} \\[7mm]
+        { TRABAJO FIN DE GRADO} \\[3mm]
+       { Modelización y simulación del crecimiento de hielo en superficies.} \\[5mm]
+%        \includegraphics[width = 0.7 \linewidth]{Figures/Portada} 
+	\end{center}
+	\begin{flushright}      
+      { AUTOR: Rodrigo Fernández Matilla} \\[3mm]
+      { ESPECIALIDAD: Ciencias y Tecnologías Aeroespaciales} \\[3mm]
+      { TUTOR PROFESIONAL: Mariola Gómez López} \\[3mm]
+      { TUTOR ACADÉMICO: Marta Cordero Gracia}\\[3mm]
+	\end{flushright}      
+
+    \begin{center}
+      Junio 2020
+    \end{center}
+    
+  \end{titlepage} 
+}

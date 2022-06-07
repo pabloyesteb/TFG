@@ -1,0 +1,17 @@
+\chapter{Hermite interpolation}
+\label{chap:appA}
+
+
+The Hermite interpolation matches an unknown function both in the
+observed value and the observed value of its first $m$ derivates. In
+the present work $m$ is prescribed to 1 (see section \ref{sec:101}).
+The Hermite interpolations functions fitting the first derivatives at
+two end nodes are cubic polynomials of the form
+
+$$\begin{array}{l}
+H^0_1(\xi) = 1 - 3\xi^2 + 2\xi^3 \\[2mm]
+H^0_2(\xi) = 3\xi^2 - 2\xi^3 \\[2mm]
+H^1_1(\xi) = \xi - 2\xi^2 + \xi^3 \\[2mm]
+H^1_2(\xi) = \xi^3 - \xi^2
+\end{array}$$
+

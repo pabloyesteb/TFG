@@ -1,0 +1,776 @@
+\chapter{Consistencia, estabilidad y error en esquemas numéricos.}
+%
+\label{chap: App_difusion}
+%
+\section{Introducción.}
+%
+\indent Una lectura de los resultados numéricos obtenidos a lo largo del trabajo y su comparación con soluciones analíticas conocidas induce ciertas preguntas acerca de con qué grado de bonanza una solución numérica aproxima la realidad, además de la procedencia de errores y discrepancias entre ambas. Estas cuestiones pueden resumirse en tres:
+%
+\begin{itemize}
+\item ¿Qué condiciones han de ser impuestas a un esquema numérico para obtener una representación aceptable del problema diferencial?
+\item ¿Por qué distintos esquemas numéricos tienen comportamientos notablemente diferentes, y cómo es posible predecir su \textbf{estabilidad}?
+\item Para un cálculo estable, ¿de qué manera se puede obtener información cuantitativa sobre la \textbf{precisión} del esquema numérico?
+\end{itemize}
+%
+\indent Para responder a estas preguntas, resulta imprescindible definir un conjunto de requisitos a cumplir por un esquema numérico, que en orden respectivo a las preguntas formuladas, serán la consistencia, la estabilidad y la convergencia del mismo. Tales características cubren distintos aspectos de las relaciones existentes entre las ecuaciones diferenciales analíticas y sus homólogas discretizadas. En este anexo, en primer lugar se establecerán unas definiciones básicas pero estrictas de los conceptos mencionados. A continuación, se pormenorizará el concepto de consistencia de un esquema numérico, para seguidamente, mostrar unas nociones básicas sobre el método más ampliamente usado para evaluar un esquema numérico en términos de estabilidad, el denominado método de Von Neumann. Finalmente, se tratarán los conceptos de error de dispersión y de difusión en esquemas numéricos. El objeto de esta sección no es otro que establecer unos marcos en los que evaluar, a nivel numérico, los resultados que se muestren a lo largo del trabajo.
+%
+\section{Conceptos básicos.}
+%
+\indent Tal y como se ha enunciado, existen tres criterios principales para la evaluación de esquemas numéricos, representando cada uno un aspecto de la relación entre este y el modelo matemático analítico. Estos criterios adicionalmente se encuentran íntimamente relacionados, tal y como se mostrará a través del teorema de equivalencia de Lax.
+%
+	\paragraph{\indent A. Consistencia. \medskip \\}
+	%
+	\indent La condición de \textbf{consistencia} de un esquema numérico implica que el esquema numérico ha de tender a la ecuación diferencial al tender los pasos espacial y/o temporal a cero. Se trata de una condición sobre el esquema numérico y no sobre la solución numérica, donde intervienen otros actores.
+	%
+	\paragraph{\indent B. Estabilidad. \medskip \\}
+	%
+	\indent La condición de \textbf{estabilidad} quiere decir que todo error en la obtención de la solución numérica (a través de la discretización pero también de los errores de redondeo del ordenador) debe permanecer acotado al avanzar el proceso iterativo de resolución del esquema numérico. Para valores dados del paso espacial y temporal, el error (definido como la diferencia entre la solución numérica y la solución exacta del esquema numérico) ha de permanecer acotada, cuando el número de pasos temporales tiende a infinito. \\
+	%
+	\indent Matemáticamente, considerando el error $\bar{\varepsilon}_i^n$ como la diferencia entre la solución calculada de hecho $u_i^n$ y la solución exacta de la ecuación discretizada $\bar{u}_i^n$, a saber:
+	%
+	\[\bar{\varepsilon}_i^n = u_i^n - \bar{u}_i^n\]
+	%
+	\noindent la condición de estabilidad se puede establecer como:
+	%
+	\[\lim_{n\to \infty}\left\lvert \bar{\varepsilon}_i^n \right\rvert \leq K \qquad \text{para} \: \Delta t \: \text{fijo}\]
+	%
+	\indent Conviene remarcar que esta condición no depende en ningún caso de la ecuación diferencial, a diferencia de la condición de consistencia.
+	%
+	\paragraph{\indent C. Convergencia. \medskip \\}
+	%
+	\indent La condición de \textbf{convergencia} se encuentra establecida sobre la solución numérica, e implica que el resultado de la simulación numérica es una representación correcta del modelo matemático a resolver, esto es, que la solución numérica ha de tender a la solución exacta del modelo matemático cuando el paso temporal y espacial tienden a cero. La formulación matemática de esta condición se puede plasmar como que la solución numérica calculada $u_i^n$ debe aproximarse a la solución analítica $\tilde{u}(x, t)$ particularizada en el punto $(x_i, t_n)$ cuando los pasos temporal y espacial tienden a cero, es decir, al refinar el mallado. En este caso, se define el error $\tilde{\varepsilon}_i^n$ como la diferencia entre la solución numérica calculada $u_i^n$ y la solución exacta del modelo analítico $\tilde{u}_i^n = \tilde{u}(x_i, t_n)$:
+	%
+	\[\tilde{\varepsilon}_i^n = u_i^n - \tilde{u}_i^n\]
+	%
+	\indent Un error que debe satisfacer la siguiente condición de convergencia:
+	%
+	\[\lim_{\substack{ 
+	\Delta t \to 0\\
+	\Delta x \to 0 
+	}}
+	\left\lvert \tilde{\varepsilon}_i^n \right\rvert = 0 \qquad \text{para} \: x_i = i \Delta x \: \text{y}\: t_n = n\Delta t \: \text{fijos}
+	\]
+	%
+	\indent Nótese que las condiciones de convergencia y de estabilidad no se refieren al mismo error.
+	%
+	\subsection{Teorema de equivalencia de Lax.}
+	%
+	\indent Resulta claro que las tres condiciones mostradas anteriormente están interrelacionadas entre sí, y la forma precisa se encuentra recogida en el \textbf{Teorema de equivalencia de Lax}, que dicta lo siguiente:\\
+	%
+	
+	\textit{Para un problema de condiciones iniciales bien determinado y con una discretización consistente, la estabilidad del esquema es condición necesaria y suficiente para la convergencia del esquema.} \\
+	%
+	
+	\indent Algo que se deriva inmediatamente de este teorema es que, para analizar un problema de condiciones iniciales, dos tareas han de ser realizadas:
+	%
+	\begin{itemize}
+	\item[1.] Análisis de la condición de consistencia, que lleva a la determinación del orden de precisión del esquema y su error de truncamiento.
+	\item[2.] Análisis de la estabilidad del esquema.
+	\end{itemize}
+	%
+	\indent Una conclusión vital de este teorema es que no es necesario conocer la solución analítica explícita del modelo matemático, la cual en gran cantidad de casos es desconocida. Únicamente es necesario conocer la ecuación diferencial. Una representación gráfica de esta condición puede verse en la figura \ref{fig: TMA_LAX}. 
+	%
+	\begin{figure}[ht]
+	\centering\includegraphics[width = 0.7\linewidth]{Appendix/Appendix_01/TMALAX}
+	\caption{Relaciones entre consistencia, estabilidad y convergencia.}
+	\label{fig: TMA_LAX}
+	\end{figure}
+%
+\section{Consistencia de esquemas numéricos.}
+%
+\indent Un esquema numérico consistente presenta la característica de tender a la ecuación diferencial que discretiza al tender a cero los pasos espacial y temporal. Este concepto, que de base resulta bastante simple, lleva a la definición de dos propiedades fundamentales de discretizaciones numéricas: el error de truncamiento y la ecuación diferencial equivalente (\textit{equivalent differential equation, EDE}). Un aspecto que hay que considerar desde un principio es que las soluciones obtenidas, debido a los errores inherentes a la discretización, no pueden satisfacer el modelo matemático, sino que en su lugar satisfacen la ecuación diferencial equivalente. El error de truncamiento surge como la diferencia formal entre ambas ecuaciones, la diferencial original (el modelo matemático) y la ecuación discretizada (EDE). La condición de consistencia se basará en este error, como se verá más adelante.\\
+%
+	\subsection{Metodología básica.}
+	%
+	\indent Para analizar la consistencia de un esquema numérico, se considera la solución de la ecuación discretizada en un cierto punto, caracterizado por $u_i^n$. El esquema numérico que permite su obtención requerirá del conocimiento de la solución en una serie de puntos adicionales, tanto en distintos niveles espaciales ($i+j$) como temporales ($n+k$). Con la forma explícita del esquema numérico ya conseguida (en forma de ecuación en diferencias finitas), se calcula el error de truncamiento mediante la sustitución de los desarrollos en serie de Taylor de los valores descentrados con respecto a $u_i^n$ en el tiempo y en el espacio, para posteriormente restar la ecuación diferencial original. Hecho esto, se obtendrá un cierto polinomio en $\Delta x$ y $\Delta t$, que será de un cierto orden $p$ y $q$ en ellos (respectivamente), y se dirá que el esquema es de orden $p$ en el espacio y $q$ en el tiempo. Para plasmar todo esto de una manera más nítida, a continuación se realizará el análisis de la consistencia para una ecuación y un esquema en particular. \\
+	%
+	\indent Considérese la ecuación de la advección unidimensional, escrita matemáticamente como:
+	%
+	\begin{equation}
+	u_t + a u_x = 0
+	\label{eq: APP_ADV}
+	\end{equation}
+	
+	%
+	\indent Se selecciona un esquema de discretización temporal de tipo Euler (explícito, primer orden y adelantado) y una discretización espacial de diferencias finitas de segundo orden y centradas (ver \ref{chap: Discretizacion}). El esquema resultante es el siguiente:
+	%
+	\begin{equation}
+	\dfrac{u_i^{n+1}- u_i^n}{\Delta t} + \dfrac{a}{2\Delta x} \left( u_{i+1}^n - u_{i-1}^n \right) = 0
+	\label{eq: APP_DFC}
+	\end{equation}
+	%
+	\indent \textbf{Primer paso:} Se desarrolla en serie de Taylor cada uno de las soluciones $u_{(\bullet)}^{(\bullet)}$ que aparezcan en el esquema discretizado:
+	%
+	\[\left\{\begin{array}{ccc}
+	u_i^{n+1} & = & u_i^n + \Delta t (u_t)_i^n + \dfrac{\Delta t^2}{2} (u_{tt})_i^n \dfrac{\Delta t^3}{6} (u_{ttt})_i^n + \ldots \\[1.5em]
+	u_{i+1}^{n} & = & u_i^n + \Delta x (u_x)_i^n + \dfrac{\Delta x^2}{2} (u_{xx})_i^n + \dfrac{\Delta x^3}{6} (u_{xxx})_i^n + \ldots \\[1.5em]
+	u_{i-1}^{n} & = & u_i^n - \Delta x (u_x)_i^n + \dfrac{\Delta x^2}{2} (u_{xx})_i^n - \dfrac{\Delta x^3}{6} (u_{xxx})_i^n + \ldots 
+	\end{array}\right.
+	\]
+	%
+	\indent \textbf{Segundo paso:} Se introducen estas expresiones en el esquema numérico \eqref{eq: APP_DFC}, y se resta la ecuación analítica \eqref{eq: APP_ADV}, de modo que resulta lo siguiente:
+	%
+	\begin{equation}
+	\dfrac{u_i^{n+1}- u_i^n}{\Delta t} + \dfrac{a}{2\Delta x} \left( u_{i+1}^n - u_{i-1}^n \right) - \left(u_t + a u_x \right)_i^n = \dfrac{\Delta t}{2} \left(u_{tt}\right)_i^n + \dfrac{\Delta x^2}{6} a\left(u_{xxx}\right)_i^n + O\left(\Delta t^2, \Delta x^4\right)
+	\label{eq: CONSISTENCY}
+	\end{equation}
+	%
+	\indent El miembro derecho de esta relación de consistencia representa y define el \textbf{error de truncamiento} $\varepsilon_T$, que en este caso resulta:
+	%
+	\[\varepsilon_T \equiv  \dfrac{\Delta t}{2} \left(u_{tt}\right)_i^n + \dfrac{\Delta x^2}{6} a\left(u_{xxx}\right)_i^n + O\left(\Delta t^2, \Delta x^4\right)\]
+	%
+	\noindent y que se define, como se puede observar, como la diferencia entre el esquema numérico y la ecuación diferencial. Se observa a simple vista que el error desaparece al tender a cero los pasos temporal y espacial, por lo que se puede afirmar sin ninguna duda que el esquema \eqref{eq: APP_DFC} es un esquema consistente con la ecuación \eqref{eq: APP_ADV}.
+	%
+	\subsection{Interpretación de la condición de consistencia.}
+	%
+	\indent La condición de consistencia \eqref{eq: CONSISTENCY} puede ser interpretada de varias formas. Sin embargo, la más interesante consiste en realizar los desarrollos en serie alrededor de la solución exacta del esquema numérico $\bar{u}_i^n$. De este modo, la condición de consistencia puede reescribirse en términos de dicha solución, tomando la forma siguiente:
+	%
+	\[\left( \bar{u}_t + a \bar{u}_x \right)_i^n = -\dfrac{\Delta t}{2} \left(\bar{u}_{tt}\right)_i^n - a\dfrac{\Delta x^2}{6} \left(\bar{u}_{xxx}\right)_i^n -  O\left(\Delta t^2, \Delta x^4\right) \equiv - \bar{\varepsilon}_T\]
+	%
+	\indent Esta relación muestra que la solución exacta de la ecuación discretizada no satisface la ecuación diferencial original para valores finitos de los pasos espacial y temporal (como sucede en todos los cálculos computacionales). Sin embargo, sí que satisface la ecuación diferencial equivalente, que difiere de la ecuación original únicamente en el error de truncamiento del miembro derecho. La \textit{EDE}, sin embargo, se construye con ciertas consideraciones, como lo es la eliminación de las derivadas temporales y su sustitución por derivadas espaciales a través de la propia ecuación diferencial original. En este caso, de la aplicación repetida de \eqref{eq: APP_ADV} al error de truncamiento, se sigue:
+	%
+	\[\bar{\varepsilon}_T = a^2 \dfrac{\Delta t}{2} \left( \bar{u}_{xx}\right)_i^n + a \dfrac{\Delta x^2}{2} \left( \bar{u}_{xxx}\right)_i^n + O\left(\Delta t^2, \Delta x^4\right)\]
+	%
+	\indent Hecho esto, se considera únicamente la derivada espacial de menor orden, despreciándose el resto. Así, la ecuación diferencial equivalente resulta:
+	%
+	\[\bar{u}_t + a \bar{u}_x = - \dfrac{\Delta t}{2} a^2 \bar{u}_{xx} +  O\left(\Delta t^2, \Delta x^2\right)\]
+	%
+	\indent Que difiere de la ecuación original, siendo de hecho una representación de la ecuación de la advección-difusión, con una difusión numérica negativa. Esto implica que el esquema es inestable, como se razonará más adelante, pero resulta una conclusión fácilmente deducible: la discretización introduce un factor que amplifica de forma indefinida la solución, lo cual resulta en una solución completamente divergente. \\
+	%
+	\indent Considérese la misma ecuación de la advección, pero aplicando un esquema espcaical de primer orden atrasado (\textit{first order upwind, FOU}), es decir:
+	%
+	\[\dfrac{u_i^{n+1}- u_i^n}{\Delta t} + \dfrac{a}{\Delta x} \left( u_{i}^n - u_{i-1}^n \right) = 0\]
+	%
+	\indent Ejecutando el mismo procedimiento que con el otro esquema:
+	%
+	\[\bar{u}_t + a \bar{u}_x =  \dfrac{a \Delta x}{2} \left(1 - \dfrac{a\Delta t}{\Delta x} \right) \bar{u}_{xx} +  O\left(\Delta t^2, \Delta x^2\right)\]
+	%
+	\indent En este caso, la estabilidad resulta condicional, puesto que si el producto es positivo, se produce un amortiguamiento de la solución asociado a un comportamiento estable. Ello requiere que el valor de $a$ sea positivo, así como que el paréntesis lo sea también, es decir:
+	%
+	\[0\leq \dfrac{a\Delta t}{\Delta x} < 1\]
+	%
+	\noindent donde se ha definido el número de \textit{Courant} o de \textit{Courant-Friedrichs-Lewy} (CFL). Esto tiene un gran significado físico, que será analizado más adelante.
+	%
+\section{Estabilidad de esquemas numéricos. Método de Von Neumann.}
+%
+\indent Una vez ha sido verificada la consistencia del esquema, el siguiente y último paso es evaluar la estabilidad del esquema. Un gran número de métodos han sido desarrollados para este fin, la mayoría de ellos restringidos a problemas lineales. Sin embargo, se trata de una empresa muy compleja, dificultada aún más por la modelización de las condiciones de contorno. Para aliviar este problema del análisis de la estabilidad, se puede considerar un problema ligeramente diferente en el que las condiciones de contorno son periódicas. Ésta es la base del método de Von Neumann para el análisis de la estabilidad, que se ha establecido como el método más ampliamente utilizado de todos los existentes. Aunque un segundo análisis sobre condiciones de contorno no periódicas resulta viable, no suele ser necesario. Un análisis del efecto de las condiciones de contorno sobre la estabilidad del sistema se puede encontrar en la referencia de Hirsch \cite{hirsch}, en el punto 9.1.\\
+%
+\indent El método de Von Neumann, desarrollado en Los Alamos durante la Segunda Guerra Mundial, tiene como clave el desarrollo en serie de Fourier del error y de la solución, a lo largo de un dominio espacial finito, que se extiende por conveniencia desde $-L$ hasta $L$. Este desarrollo en serie además permitirá estimar los errores de dispersión y difusión, tal y como se verá en una sección posterior.
+%
+	\subsection{Bases del método.}
+	%
+	\indent Considérense la solución exacta de la ecuación discretizada y la solución calculada mediante dicho esquema, denotándose por $\bar{u}_i^n$ y $u_i^n$ respectivamente. La diferencia entre ambos valores, debida en general a errores de redondeo y truncamiento, se denota por $\bar{\varepsilon}_i^n$, y se define implícitamente a través de la siguiente expresión:
+	%
+	\[u_i^n = \bar{u}_i^n + \bar{\varepsilon}_i^n \]
+	%
+	\indent Por definición, tanto la solución exacta del esquema como la solución calculada satisfacen el esquema numérico, lo cual, dado que se trata de un operador lineal, implica que el error también satisface el esquema. Esto resulta fácilmente demostrable. Si se denota $N(\bullet)$ al esquema, se tiene que:
+	%
+	\[N(u_i^n) = N(\bar{u}_i^n+\bar{\varepsilon}_i^n) = N(\bar{u}_i^n) + N(\bar{\varepsilon}_i^n) = N(\bar{\varepsilon}_i^n) = 0\]
+	%
+	\indent De aquí se puede derivar que si, como es habitual, la solución exacta se encuentra uniformemente acotada, el comportamiento del error se verá reflejado en el comportamiento de la solución numérica. Por tanto, se puede analizar indistintamente el comportamiento del error o el de la solución numérica. \\
+	%
+	\indent Considerando unas condiciones de contorno periódicas con período $2L$, se puede desarrollar la solución $u_i^n$ en una serie finita de Fourier, que pueda ser representada en un mallado predispuesto. En un desarrollo normal, se trabaja con números de onda, que abarcan un rango de $2 \pi$, pero en este caso no está del todo claro cuáles son los límites superiores e inferiores de los números de onda. La mayor longitud de onda que se puede representar es el dominio completo, es decir, $\lambda_{max} = 2L$. Sin embargo, la duda surge con la mínima longitud de onda que se puede representar con un mallado dado. Suponiéndolo equiespaciado, la mínima longitud de onda que permite efectuar cálculos es $\lambda_{min} = 2\Delta x$, puesto que si se toma un valor inferior, podría darse el caso de no encontrar puntos sobre los que evaluar la solución. Esta morfología puede verse reflejada en la figura \ref{fig: Lambda_min_max}.\\
+	\clearpage
+	%
+	\begin{figure}[ht]
+	\centering\includegraphics[width = 0.7\linewidth]{Appendix/Appendix_01/Lambda_min_max}
+	\captionsetup{justification=centering, margin = 0.5cm}
+	\caption{Representación de una onda como superposición de armónicos: longitud de onda máxima y mínima.}
+	\label{fig: Lambda_min_max}
+	\end{figure}
+	%
+	\indent Cada longitud de onda lleva asociado un número de onda $k = \frac{2\pi}{\lambda}$, que toma su valor mínimo con la máxima longitud de onda, es decir, $k_{min} = \frac{\pi}{L}$; y su valor máximo, como no puede ser de otra manera, para el mínimo valor de longitud de onda: $k_{max} = \frac{\pi}{\Delta x}$. Todos los demás armónicos (con su número de onda asociado) serán proporcionales al valor $k_{min}$ a través de:
+	%
+	\[k_j = j \, k_{min} = j \dfrac{\pi}{L} = j\dfrac{\pi}{N \Delta x} \qquad j = 0, \ldots, N\]
+	%
+	\indent Adicionalmente, se define el ángulo de fase como el producto $\phi_j = k_j \, \Delta x = j\frac{\pi}{N}$, que cubre el dominio $]-\pi, \pi]$ en pasos equiespaciados de valor $\frac{\pi}{N}$. Así, las frecuencias bajas estarán asociadas a ángulos de fase bajos y viceversa. Dependiendo del esquema, el error puede concentrarse en unas frecuencias u otras.\\
+	%
+	\indent En conclusión, es posible desarrollar la solución numérica $u_i^n$ en serie de Fourier como:
+	%
+	\begin{equation}
+	u_i^n \equiv \dsum_{j = -N}^{j = N} V_j^n \exp\left( \mathbb{I} k_j x_i \right) = \dsum_{j = -N}^{j = N} V_j^n \exp\left( \mathbb{I} k_j i \Delta x \right) = \dsum_{j = -N}^{j = N} V_j^n \exp\left( \mathbb{I} ij\frac{\pi}{N} \right)
+	\end{equation}
+	%
+	\noindent siendo $\mathbb{I} = \sqrt{-1}$ y $V_{j}^n$ representa la amplitud del armónico j-ésimo. Conviene notar que esta descomposición separa la dependencia espacial de la temporal, recogiendo la amplitud del armónico la evolución con el tiempo y el término exponencial la distribución espacial. Al igual que sucedía con el error y la solución numérica exacta, la linealidad de la ecuación discretizada asegura que cada uno de los armónicos por separado satisface el esquema numérico. A partir de este desarrollo inicial, puede ya imponerse la condición de estabilidad de Von Neumann.
+	%
+	\subsection{Condición de estabilidad de Von Neumann.}
+	%
+	\indent Considérese el factor de amplificación o ganancia de la amplitud del armónico j-ésimo, del cual no se indica el subíndice por simplicidad, y definido como:
+	%
+	\[G = \dfrac{V^{n+1}}{V^n}\]
+	%
+	\indent La condición de estabilidad de Von Neumann establece que ninguna de las amplitudes de los 2N armónicos puede crecer de manera indefinida. Esto, plasmado sobre la definición de ganancia, se conoce como la Condición de Von Neumann para la estabilidad:
+	%
+	\[\left\rvert G\right\rvert \leq 1 \quad \forall \: \phi_j = j \dfrac{\pi}{N}, \quad j = -N, \ldots, N\]
+	%
+	\indent Nótese que el factor de amplificación depende únicamente de parámetros del esquema y del ángulo de fase $\phi$, pero en ningún caso depende de $n$. Seguidamente se pormenoriza la metodología para evaluar de forma pragmática la condición de estabilidad.
+	%
+	\subsection{Metodología de Von Neumann. Aplicación a la ecuación de la advección.} \label{chap: Factor_amplificacion}
+	%
+	\indent El primer paso para evaluar la estabilidad según este método consiste en sustituir en todos los términos de la forma $u_{i+m}^{n+k}$ del esquema numérico el desarrollo en serie de Fourier de dicha solución, es decir:
+	%
+	\[u_{i + m}^{n+k} \longrightarrow V^{n+k}\exp\left(\mathbb{I}(i + m) \phi \right)\]
+	%
+	\indent Hecho esto, se elimina el término exponencial común $exp(\mathbb{I} i \phi)$ de todos los términos. A continuación, se deriva la forma explícita del factor de amplificación G, mediante la aplicación de su definición. Dado que se ha eliminado el índice j de las expresiones, ahora se toma un valor de $\phi$ que simplemente se supone contenido en $]-\pi, \pi]$, de manera que la condición de estabilidad de Von Neumann se reformula como:
+	%
+	\[\left\rvert G\right\rvert \leq 1 \quad \forall\: \phi = ]-\pi, \pi]\]
+	%
+	\indent A continuación se realiza este análisis para la ecuación de la advección, utilizando diversos esquemas para estudiar sus propiedades.
+	%
+	\clearpage
+	\paragraph{\indent A. Diferencias finitas centradas de segundo orden en el espacio y esquema explícito de primer orden en el tiempo. \medskip\\}
+	%
+	\indent Se trata del mismo esquema ya mostrado anteriormente, que escrito de manera explícita resulta:
+	%
+	\begin{equation}
+	u_{i}^{n+1} = u_i^n - \dfrac{\sigma}{2} \left( u_{i+1}^n - u_{i-1}^n\right)
+	\label{eq: DFC_EXP}
+	\end{equation}	 
+	%
+	\indent Donde se ha introducido la definición del ya mencionado número CFL:
+	%
+	\[\sigma \equiv \dfrac{a \Delta t}{\Delta x}\]
+	%
+	\indent Nótese que se trata del único parámetro del esquema, y por tanto el comportamiento de la solución no depende de $\Delta x$ o $\Delta t$ por separado, sino de esta magnitud. Si sobre este esquema se introduce el desarrollo en serie de Fourier de la solución, se obtiene:
+	%
+	\[V^{n+1} \exp(\mathbb{I}i \phi) = V^n \exp(\mathbb{I}i \phi) - \dfrac{\sigma}{2} \left[ V^n\exp(\mathbb{I}(i+1) \phi) - V^n\exp(\mathbb{I}(i-1) \phi)\right]\]
+	%
+	\indent Simplificando el término en $\exp(\mathbb{I}i \phi)$:
+	%
+	\[V^{n+1} = V^n - V^n \dfrac{\sigma}{2} \left[\exp(\mathbb{I}\phi) - \exp(-\mathbb{I} \phi)\right]\]
+	%
+	\indent Determinándose con gran sencillez la ganancia:
+	%
+	\[G \equiv \dfrac{V^{n+1}}{V^n} = 1 - \mathbb{I} \sigma \sin(\phi)\]
+	%
+	\noindent y expresándose la condición de estabilidad acaba como:
+	%
+	\[\left\rvert G \right\rvert ^{2} = G \cdot G^{*} = 1 + \sigma^2 \sin^2 \phi \geq 1 \: \forall \phi\]
+	%
+	\indent Como se puede observar, su valor es mayor o igual que uno, sea cual sea el CFL y el ángulo de fase. Por tanto, se puede enunciar que el esquema \eqref{eq: DFC_EXP} es \textbf{incondicionalmente inestable}. Una representación gráfica de la condición de estabilidad se puede apreciar en la figura \ref{fig: DFC_EXP_REST}.
+	%
+	\begin{figure}[ht]
+	\centering\includegraphics[width = 0.5\linewidth]{Appendix/Appendix_01/DFC_EXP_REST}
+	\captionsetup{justification=centering, margin = 0.5cm}
+	\caption{Factor de amplificación del esquema de segundo orden explícito para la ecuación de la advección.}
+	\label{fig: DFC_EXP_REST}
+	\end{figure}
+	%
+	\clearpage
+	\paragraph{\indent B. Diferencias finitas centradas de segundo orden en el espacio y esquema implícito de primer orden en el tiempo. \medskip\\}
+	%
+	\indent El esquema resultante es muy similar al anterior, salvo que el término de la derivada espacial está expresada ahora en el instante $n+1$:
+	%
+	\begin{equation}
+	u_{i}^{n+1} = u_i^n - \dfrac{\sigma}{2} \left( u_{i+1}^{n+1}- u_{i-1}^{n+1}\right)
+	\label{eq: DFC_IMP}
+	\end{equation}	 
+	%
+	\indent Una vez sustituido el desarrollo y simplificados los términos pertinentes:
+	%
+	\[V^{n+1} = V^n - V^{n+1}\dfrac{\sigma}{2} \left[\exp(\mathbb{I}\phi) - \exp(-\mathbb{I} \phi)\right]\]
+	%
+	\noindent culminando con la determinación del factor de amplificación, que resulta:
+	%
+	\[G = \dfrac{1}{1 + \mathbb{I} \sigma \sin\phi}\]
+	%
+	\noindent y por último, su módulo, que refleja la estabilidad como esquema, vale:
+	%
+	\[\left\rvert G\right\rvert^{2} = \dfrac{1}{1 + \sigma^2 \sin^2\phi} \leq \forall \phi\]
+	%
+	\indent Lo que permite afirmar que el esquema \eqref{eq: DFC_IMP} es \textbf{incondicionalmente estable}. Una representación gráfica de la condición de estabilidad de este esquema se muestra en la figura \ref{fig: DFC_IMP_REST}.
+	%
+	\begin{figure}[ht]
+	\centering\includegraphics[width = 0.5\linewidth]{Appendix/Appendix_01/DFC_IMP_REST}
+	\captionsetup{justification=centering, margin = 0.5cm}
+	\caption{Factor de amplificación del esquema de segundo orden implícito para la ecuación de la advección.}
+	\label{fig: DFC_IMP_REST}
+	\end{figure}
+	%
+	\paragraph{\indent C. Esquema \textit{FOU} explícito (\textit{first order upwind}) \medskip\\}
+	%
+	\indent Este esquema, también conocido como \textit{upwind} o esquema CIR atrasadas, puede escribirse de manera explícita como:
+	%
+	\begin{equation}
+	u_i^{n+1} = u_i^n - \sigma \left( u_{i}^n - u_{i-1}^n\right)
+	\label{eq: FOU}
+	\end{equation}
+	%
+	\indent Repitiendo los mismos pasos que en los anteriores esquemas, se alcanza:
+	%
+	\[G = 1 - \sigma\left[1 - \exp(-\mathbb{I} \phi )\right] = 1 - \sigma + \sigma \cos\phi - \mathbb{I} \sigma \sin\phi = 1 - 2 \sigma\sin^{2}(\phi/2) - \mathbb{I} \sigma \sin\phi\]
+	%
+	\indent Para evaluar la estabilidad de este esquema, se realiza un análisis de tipo geométrico, plasmando en el plano complejo cada uno de las partes del número complejo que es el factor de amplificación:
+	%
+	\[\left\{\begin{array}{ccc} 
+	\xi \equiv Re(G) = (1 - \sigma) + \sigma \cos \phi \\
+	\eta \equiv Im(G) = - \sigma \sin \phi
+	
+	\end{array} \right.
+	\]
+	%
+	\noindent que pueden considerarse como unas ecuaciones paramétricas de una curva con $\phi$ como parámetro. La estructura de la curva es, como se deduce con sencillez, una circunferencia con centro en el eje real, en el punto $1 - \sigma$. Para que el sistema sea estable, debe suceder que toda la curva esté contenida en la región de establidad. Como se puede observar en la figura \ref{fig: FOU_EXP_REST}, esta condición es análoga a afirmar que el valor de $\sigma$ (el número CFL) sea menor que la unidad y positivo. Por tanto, el esquema \textit{FOU} \eqref{eq: FOU} es \textbf{condicionalmente estable}.
+	%
+	\begin{figure}[ht]
+	\centering\includegraphics[width = 0.5\linewidth]{Appendix/Appendix_01/FOU_EXP_REST}
+	\captionsetup{justification=centering, margin = 0.5cm}
+	\caption{Factor de amplificación del esquema \textit{FOU} explícito para la ecuación de la advección.}
+	\label{fig: FOU_EXP_REST}
+	\end{figure}
+	%
+	\paragraph{\indent D. Esquema \textit{FOU} implícito \medskip\\}
+	%
+	\indent Se trata de un esquema casi idéntico al anteriormente mostrado, salvo por el índice temporal del término de la derivada espacial:
+	%
+	\begin{equation}
+	u_i^{n+1} = u_i^n - \sigma \left( u_{i}^{n+1} - u_{i-1}^{n+1}\right)
+	\label{eq: FOU_IMP}
+	\end{equation}
+	%
+	\indent Aplicando los pasos ya familiares ahora:
+	%
+	\[G = \dfrac{1}{1 + \sigma \left[ 1 - \exp(-\mathbb{I} \phi)\right]}\]
+	%
+	\indent Llevando la condición de estabilidad a:
+	%
+	\[\left\rvert G\right\rvert^{2} = \dfrac{1}{(1 - \sigma + \sigma \cos\phi)^2 + \sigma^2 \sin^2\phi} \leq 1 \:\forall \phi\]
+	%
+	\indent Comprobándose que el esquema \eqref{eq: FOU_IMP} es incondicionalmente estable. 
+	%
+	\begin{figure}[ht]
+	\centering\includegraphics[width = 0.5\linewidth]{Appendix/Appendix_01/FOU_IMP_REST}
+	\captionsetup{justification=centering, margin = 0.5cm}
+	\caption{Factor de amplificación del esquema \textit{FOU} implícito para la ecuación de la advección.}
+	\label{fig: FOU_IMP_REST}
+	\end{figure}
+	%
+	\paragraph{\indent E. Esquema Runge-Kutta de 2 etapas. \medskip \\}
+	%
+	\indent Un esquema de tipo Runge-Kutta, como se observó en el capítulo 4, se basa en la utilización de varios pasos intermedios entre la solución entre el instante $n$ y el $n+1$. Recuérdese que la estructura básica del esquema es:
+	%
+	\[
+	u^{n+1} = u^n + \dfrac{\Delta t_n}{2} \left( k_1 + k_2\right)
+	\]
+	%
+	\indent Donde $k_1$ y $k_2$ son:
+	%
+	\[ \left\{ \begin{array}{l}
+	k_1 = F\left(u^n, t_n\right)\\
+	k_2 = F\left(u^n + \Delta t_n \, k_1, t_n + \Delta t_n\right)
+	\end{array} \right.
+	\]
+	%
+	\indent Siendo $F(u^n, t_n)$ la parte derecha del la ecuación diferencial del problema de condiciones iniciales, que en el caso de un esquema de diferencias finitas atrasadas o \textit{upwind} resulta:
+	%
+	\[\dfrac{du_i}{dt} = \dfrac{a}{\Delta x} \left( u_{i-1}(t) - u_{i}(t)\right)\]
+	%
+	\indent Para obtener la expresión explícita del esquema, es necesario calcular las constantes anteriormente definidas:
+	%
+	\[
+	k_{1, i} = F(u^n, t_n)_i = \dfrac{a}{\Delta x} \left(u_{i-1}^n - u_i^n\right)	\, \qquad i = 1, \ldots N
+	\]
+	%
+	\indent Siendo el cálculo de la constante $k_2$ más delicado, al tener que manipular ciertos índices:
+	%
+	\[\begin{array}{cc}
+	k_{2, i} = F(u^n + \Delta t k_1, t_n + \Delta t)_i = \dfrac{a}{\Delta x} \left[ u_{i-1}^n + \Delta t k_{1, i-1} - \left(u_i^n + \Delta t k_{1, i}\right)\right] = \\[1.5em]
+	\dfrac{\sigma}{\Delta t} \left\{\left[u_{i-1} + \dfrac{a\Delta t}{\Delta x} \left(u_{i-2}^n - u_{i-1}^n\right)\right] - \left[u_i^n + \dfrac{a\Delta t}{\Delta x} \left(u_{i-1}^n - u_{i}^n\right)\right]\right\} 
+	\end{array}	
+	\]
+	%
+	\indent Resultando el esquema final:
+	%
+	\begin{equation}
+	u_{i}^{n+1} = u_i^n + \dfrac{\sigma}{2} \left[ (2 - \sigma) \left(u_{i-1}^n - u_i^n\right) + \sigma \left(u_{i-2}^n - u_{i-1}^n\right)\right]
+	\label{eq: RK2_scheme}
+	\end{equation}
+	%
+	\indent A partir de aquí, el proceso es idéntico al seguido anteriormente, por lo que se pasa directamente a la expresión del factor de amplificación:
+	%
+	\[
+	G = 1 + \dfrac{\sigma}{2} \left\{(2 - \sigma) \left( \cos\phi - 1 - \mathbb{I} \sin\phi\right) + \sigma \left[\cos 2\phi - \cos\phi + \mathbb{I} \left(\sin\phi - \sin 2\phi\right)\right]\right\}
+	\]
+	%
+	\indent A fin de representarlo en el plano complejo, se ha de separar las partes real e imaginaria:
+	%
+	\begin{equation}
+	\left\{\begin{array}{ccc} 
+	\xi \equiv Re(G) = 1 + \dfrac{\sigma}{2} \left[(2 - \sigma)\left(\cos\phi - 1\right) + \sigma\left(\cos 2\phi - \cos\phi\right)\right] \\
+	\eta \equiv Im(G) = \dfrac{\sigma}{2} \left[ \sigma\left(\sin\phi - \sin 2\phi\right)) - (2 - \sigma) \sin\phi\right]
+	
+	\end{array} \right.
+	\label{eq: xi_eta}
+	\end{equation}
+	
+	%
+	\indent La representación gráfica de las ecuaciones paramétricas anteriores en el plano complejo puede encontrarse en la figura \ref{fig: RK2_REST}. Como se puede observar, la restricción en el número de Courant para la condición de estabilidad es idéntica a la del esquema \textit{FOU}. En conclusión, el esquema \eqref{eq: RK2_scheme} es un esquema \textbf{condicionalmente estable}.
+	%
+	\begin{figure}[ht]
+	\centering\includegraphics[width = 0.5\linewidth]{Appendix/Appendix_01/RK2_REST}
+	\captionsetup{justification=centering, margin = 0.5cm}
+	\caption{Factor de amplificación del esquema Runge-Kutta de 2 pasos para la ecuación de la advección.}
+	\label{fig: RK2_REST}
+	\end{figure}
+	%
+		\subsubsection{Comentarios sobre la condición del CFL.}
+		%
+		\indent La condición principal impuesta sobre la gran mayoría de los esquemas numéricos estudiados (si la hubiere) establece que el número CFL no puede ser superior a la unidad. Esto contiene un trascendental significado físico, que a fin de cuantas expresa que el tamaño de la malla (en particular el parámetro $\Delta t/\Delta x$ ) debe ser escogido de tal forma que el dominio de dependencia de la ecuación diferencial ha de estar contenido de forma completa y en todo momento en el dominio numérico de dependencia de las ecuaciones discretizadas. Dicho de otra manera, la distancia cubierta por una onda de velocidad de propagación $a$ en un lapso de tiempo $\Delta t$ no debe superar la mínima distancia entre dos puntos del mallado $\Delta x$ (ver figura \ref{fig: CFL_comm_1}). De otra forma, un cambio en las condiciones físicas podría no verse plasmado en el esquema numérico, y por tanto el error entre la solución analítica y la numérica puede tornarse arbitrariamente grande.\\
+		%
+		\begin{figure}[ht]
+\centering
+\medskip
+\begin{subfigure}[t]{.45\linewidth}
+\centering\includegraphics[width=\linewidth]{Appendix/Appendix_01/CFL_comm_1}
+\captionsetup{justification=centering, margin = 0.5cm}
+\caption{Relación entre el paso espacial y temporal y la condición del CFL.}
+\label{fig: CFL_comm_1}
+\end{subfigure}
+\begin{subfigure}[t]{.45\linewidth}
+\centering\includegraphics[width=\linewidth]{Appendix/Appendix_01/CFL_comm_2}
+\captionsetup{justification=centering, margin = 0.5cm}
+\caption{Dominios de dependencia físico y computacional para el esquema \textit{FOU} y $a<0$.}
+\label{fig: CFL_comm_2}
+\end{subfigure}
+\caption{Interpretación geométrica de la condición del CFL.}
+\end{figure}
+		\indent Adicionalmente, una condición que el esquema \textit{FOU} impone es que la velocidad de propagación tiene que ser positiva. De nuevo, esto cobra sentido, puesto que el dominio de dependencia para este esquema está a la izquierda del punto en cuestión (nodo $i-1$). Por tanto, si la velocidad de propagación fuera negativa, la información avanzaría hacia la izquierda, mientras que el esquema estaría en cierto modo trabajando con una propagación hacia la derecha (ver figura \ref{fig: CFL_comm_2}). El esquema se volvería razonablemente inestable en tal caso, como parece lógico. 
+		%
+		\clearpage
+\section{Análisis espectral de errores numéricos.}
+%
+\indent Hasta ahora, el único error sobre el que se ha discutido es el de truncamiento, pero su definición no permite una discusión sobre el error de las soluciones. En particular, el error con que se va a tratar es el definido como la diferencia entre la solución analítica del modelo matemático y la solución numérica de las ecuaciones discretizadas, es decir;:
+%
+\[
+\tilde{\varepsilon} = u_i^{n} - \tilde{u}_i^n
+\]
+%
+\indent Mediante el método de Von Neumann, es posible aislar la dependencia temporal de la solución numérica en las amplitudes $V^n$ para cada armónico que constituye la solución. Para poder analizar con un cierto rigor la solución, se va a proceder de una forma similar con la solución analítica, obteniéndose así las amplitudes de sus armónicos. Hecho esto, se podrán definir los errores de dispersión y difusión, tal y como se verá más adelante.\\
+%
+	\subsection{Manipulación de las soluciones exacta y numérica.}
+	%
+	\indent El primer paso para describir y caracterizar los errores de dispersión y difusión es expresar ambas soluciones (analítica y numérica) en términos de un desarrollo en serie de Fourier. \\
+	%
+	\paragraph{\indent Solución analítica. \medskip \\}
+	%
+	\indent La solución analítica puede ser desarrollada en el espacio en una serie de Fourier, de manera similar al método de Von Neumann con la solución numérica. En relación a la física de la propagación de ondas planas que para un armónico dado $k$, es posible definir una función de pulsación $\tilde{\omega} = \tilde{\omega}(k)$, denominada relación de dispersión. La forma explícita de tal relación depende de cada ecuación, y en el caso de la advección, resulta ser $\tilde{\omega} = a(k)$. En general, un armónico $k$ de la solución analítica, en un punto $x_i = i\Delta x$ y un instante $t_n = n \Delta t$, tiene la forma siguiente:
+	%
+	\[\left(\tilde{u}_i^n\right)_k = \hat{V}(k) \exp\left(\mathbb{I}\tilde{\omega} n\Delta t\right) \, \exp\left(\mathbb{I}k i \Delta x \right)\]
+	%
+	\indent La estructura del armónico anterior se puede interpretar como una amplitud $\hat{V}(k)$, con una morfología espacial independiente del tiempo y determinada por el término exponencial $\exp\left(\mathbb{I}k i \Delta x \right)$, y cuya evolución con el tiempo queda completamente definida por la exponencial $\exp\left(\mathbb{I}\tilde{\omega} n\Delta t\right)$, cuya interpretación es una amplificación o amortiguamiento de la onda. Por tanto, la amplitud $\hat{V}(k)$ no depende en ningún caso del tiempo, y se calcula a través de la condición inicial del problema de condiciones iniciales ($u(x, 0) = u^{(0)}(x) = f(x)$) mediante el cálculo del coeficiente de la serie de Fourier asociado como:
+	%
+	\[\hat{V}(k) = \dfrac{1}{2L}\dint_{-L}^{L} f(x) \exp\left(-\mathbb{I} k x\right) dx\]
+	%
+	\noindent de modo que la caracterización de la solución analítica en un punto dado ($\tilde{u}_{i}^{n}$) queda completamente determinada.
+	%
+	\paragraph{\indent Solución numérica. \medskip\\}
+	%
+	\indent Tal y como se procedía en el método de Von Neumann, la forma en serie de Fourier del armónico $k$ de la solución numérica se puede escribir como:
+	%
+	\[\left(u_i^n\right)_k = V^n \exp\left(\mathbb{I}k i\Delta x\right)\]
+	%
+	\indent Asumiendo que la condición inicial se representa de manera exacta a través del esquema numérico (salvo errores de redondeo), se puede afirmar que la amplitud del armónico de la solución analítica $\hat{V}(k)$ se representa también de manera exacta en el mallado espacial. Por tanto, es posible relacionar la amplitud numérica $V^n$ con la amplitud analítica $\hat{V}(k)$ con ayuda de un término exponencial, como:
+	%
+	\begin{equation}
+	V^n = \hat{V}(k) \exp\left(-\mathbb{I} \omega \, n\Delta t\right)=\hat{V}(k) \left(\exp\left(-\mathbb{I} \omega \, \Delta t\right)\right)^n 
+	\label{eq: VN_1}
+	\end{equation}
+	
+	%
+	\noindent donde aparece la relación de dispersión numérica $\omega = \omega(k)$, que se derivará del factor de amplificación del esquema $G(k)$. Mediante la misma definición del factor de amplificación (o matriz de amplificación en términos precisos), al ser independiente del instante de tiempo (de $n$), se puede escribir:
+	%
+	\begin{equation}
+	V^n = G V^{n-1} = (G)^2 V^{n-2} = \ldots = (G)^n V^0 = (G)^n \hat{V}(k)
+	\label{eq: VN_2}
+	\end{equation}
+	%
+	\indent Se ha utilizado $(G)^n$ para indicar la potencia n-ésima de $G$, en contraposición al valor de $G$ en el instante n-ésimo (absurdo). Si esta última relación \eqref{eq: VN_2} se compara con la ecuación \eqref{eq: VN_1}, resulta muy sencillo deducir la relación entre $\omega(k)$ y $G$:
+	%
+	\begin{equation}
+	G = \exp\left(- \mathbb{I}\omega \Delta t\right)
+	\label{eq: G_NUM}
+	\end{equation}
+	%
+	\paragraph{\indent Modificaciones finales. \\}
+	%
+	\indent Resulta interesante reescribir la solución analítica en una forma similar a como se ha expresado la solución numérica, es decir:
+	%
+	\[
+	\hat{V}^n = \hat{V}(k) \left(\exp\left(\mathbb{I}\tilde{\omega}\Delta t\right) \right)^n \equiv \left(\tilde{G}\right)^n \hat{V}(k)
+	\]
+	%
+	\noindent definiéndose implícitamente el factor de amplificación exacto como:
+	%
+	\begin{equation}
+	\tilde{G} = \exp\left(- \mathbb{I}\tilde{\omega} \Delta t\right)
+	\label{eq: G_EXACT}
+	\end{equation}
+	%
+	\subsection{Errores de difusión y de dispersión.}
+	%
+	\indent Con las definiciones de los factores de amplificación numérico \eqref{eq: G_NUM} y exacto \eqref{eq: G_EXACT}, es posible analizar la naturaleza y el espectro de frecuencias de los errores numéricos. Dado que las relaciones de dispersión numérica y analítica son funciones definidas en el campo complejo, es posible expresar los factores de amplificación en forma polar como:
+	%
+	\[G = \left\rvert G \right\rvert \exp\left(-\mathbb{I}\Phi\right)\: , \qquad \tilde{G} = \left\rvert \tilde{G} \right\rvert \exp\left(-\mathbb{I}\tilde{\Phi}\right)\]
+	%
+	\indent Expresados de esta forma, se puede ver que el módulo de $G$ afectará a la amplitud de la solución, mientras que la fase de $G$ afectará a la fase de la solución. \\
+	%
+	\indent El error de amplitud o \textbf{error de difusión} se define como el cociente entre las amplitudes numérica y exacta:
+	%
+	\begin{equation}
+	\varepsilon_D = \dfrac{\left\rvert G \right\rvert}{\left\rvert \tilde{G} \right\rvert}
+	\end{equation}
+	%
+	\indent Y el error en la fase de la solución, denominado \textbf{error de dispersión}, se puede definir como el cociente entre las fases de ambas soluciones:
+	%
+	\begin{equation}
+	\varepsilon_{\phi} = \dfrac{ \Phi }{\tilde{\Phi}}
+	\end{equation}
+	%
+	\indent En el caso particular de los problemas de tipo hiperbólico (como lo son todos los tratados en este trabajo), la solución exacta de la fase es una onda propagándose a una cierta velocidad.
+	%
+	\subsection{Metodología de análisis.}
+	%
+	\indent Para analizar los errores de dispersión y difusión, se ha de proceder como sigue:\\
+	%
+	\indent \textbf{Primer paso:} Obtención del factor de amplificación, tal y como se indica en el apartado \ref{chap: Factor_amplificacion}.\\
+	\indent \textbf{Segundo paso:} Expresión del factor de amplificación en forma polar, es decir:
+	%
+	\[\left\rvert G \right\rvert = \sqrt{\left(Re\,G\right)^2 + \left(Im\,G\right)^2}, \quad \tan(\Phi) = \dfrac{-Im\,G}{Re\, G}\]
+	\indent \textbf{Tercer paso:} Atender a las definiciones de los errores e introducir la expresión del factor de amplificación. Se analizan tales magnitudes en función del ángulo de fase $\phi$.
+	%
+	\subsection{Análisis de errores en la ecuación de la advección.}
+	%
+	\indent Es necesario primeramente establecer y calcular el valor del factor de amplificación exacto asociado a la ecuación de la advección. Es de sobra conocido que la solución analítica es la propagación de la onda a una velocidad $a$ constante, sin ningún tipo de amortiguamiento. La relación de dispersión exacta es, por tanto:
+	%
+	\[\tilde{\omega} = ak\]
+	%
+	\indent De modo que el factor de amplificación exacto se reduce a:
+	%
+	\[\left\rvert \tilde{G} \right\rvert = 1 \: , \tilde{\Phi} = a k \Delta t = \dfrac{a\Delta t}{\Delta x} k\Delta x = \sigma \phi\]
+	%
+	\indent En conclusión:
+	%
+	\[
+	\tilde{G} = \exp\left(-\mathbb{I} \sigma \phi\right)	
+	\]
+	%
+	\indent En base a la definición del error de difusión, este resulta sencillamente:
+	%
+	\[
+	\varepsilon_D = \left\rvert G \right\rvert	
+	\]
+	%
+	\indent Definiendo una velocidad de advección numérica $a_{num}$ como:
+	%
+	\[
+	a_{num} = \dfrac{\Phi}{k \Delta t} = \dfrac{a\Phi}{\sigma\phi}	
+	\]
+	%
+	\indent Resulta un error de dispersión de la siguiente forma:
+	%
+	\[
+	\varepsilon_{\phi} = \dfrac{\Phi}{a k\Delta t} = \dfrac{\Phi}{\sigma\phi} = \dfrac{a_{num}}{a}	
+	\]
+	%
+	\paragraph{\indent Comentarios.\\}
+	%
+	\indent Con respecto al error de difusión de un esquema, se produce un conflicto con la condición de estabilidad. La precisión del esquema requiere un módulo de $G$ lo más cercano posible a la unidad, mientras que la estabilidad por su parte requiere un valor dicho módulo inferior a uno. Por tanto, una mayor estabilidad implica un mayor error de difusión.\\
+	%
+	\indent En cuanto al error de dispersión, si este es superior a la unidad, sucede que la solución calculada se propaga con una velocidad superior a la física. En caso opuesto, la solución numérica se propaga de manera más lenta que la real.
+	%
+		\subsubsection{Errores de dispersión y difusión de distintos esquemas.}
+		%
+		\indent Por ser los esquemas más ampliamente utilizados en este trabajo, se analizarán los errores de dispersión y difusión del método de Euler (esquema \textit{FOU} explícito) y el método de Runge-Kutta de 2 pasos:
+		%
+		\paragraph{\indent A. Esquema \textit{FOU}. \medskip \\}
+		%
+		\indent Tomando el factor de amplificación del esquema \textit{FOU} y deduciendo el módulo y fase del mismo, se alcanza:
+		%
+		\[
+		\left\{\begin{array}{ccc}
+		\left\rvert G \right\rvert =\left[1 - 4\sigma\left(1 - \sigma\right)\sin^2\phi/2\right]^{1/2} \\[1.5em]
+		\Phi = \tan^{-1} \left(\dfrac{\sigma \sin\phi}{1 - \sigma + \sigma \cos\phi} \right)
+		
+		\end{array}	\right.			
+		\]
+		%
+		\indent En consideración de la forma del factor de amplificación exacto para la ecuación de la advección, se deducen los errores de difusión y dispersión asociados al esquema:
+		%
+		\begin{equation}
+		\left\{\begin{array}{ccc}
+		\varepsilon_D =\left[1 - 4\sigma\left(1 - \sigma\right)\sin^2\phi/2\right]^{1/2} \\[1.5em]
+		\varepsilon_{\phi} = \dfrac{\tan^{-1} \left(\dfrac{\sigma \sin\phi}{1 - \sigma + \sigma \cos\phi} \right)}{\sigma \phi}
+		\end{array}	\right.	
+		\label{eq: ERROR_FOU} 
+		\end{equation}
+		%
+		\indent Seguidamente se puede observar la representación en el espectro de frecuencias del error de difusión \eqref{fig: RK2_DIFF} y el de dispersión \eqref{fig: RK2_DISP}. La tendencia básica observada en el error de difusión es una disminución del amortiguamiento al aumentar el número de Courant $\sigma$. Se observa en todo caso un rápido descenso en el valor del módulo de $G$, lo cual es una característica común en esquemas de primer orden. Por su parte, el error de dispersión presenta un comportamiento un tanto curioso. Para valores del número CFL inferiores a $0.5$, se tiene un error de dispersión inferior a la unidad, lo que representa un retraso en la solución numérica respecto a la analítica. En el caso de que supere dicho valor, se observa el comportamiento contrario: un adelanto en fase con respecto a la solución analítica. En el caso puntual en que $\sigma = 0.5$, el error de dispersión es nulo, y si bien existe un amortiguamiento de la amplitud, la solución numérica está perfectamente en fase con la analítica. \\
+		%
+		\indent Conviene realizar unos ciertos comentarios acerca del significado físico de la fase, en función de la cual se representan ambos errores. Si se observa, como en este caso, que el error para frecuencias altas (fases altas) es grande, significa que a la hora de representar un modelo en el cual existen variaciones significativas en distancias cortas (dominando longitudes de onda $\lambda$ pequeñas), el error al representarlo será grande. En otras palabras, suponiendo que se representa una onda senoidal, al incrementarse la frecuencia de la misma, aumenta la predominancia de armónicos de más alta frecuencia en la solución numérica, y al ser donde es más alto el error de dispersión, la representación numérica será menos precisa.
+		%
+		%
+		\begin{figure}[ht]
+		\centering
+		\medskip
+		\begin{subfigure}[t]{.45\linewidth}	
+		\centering\includegraphics[width=\linewidth]{Appendix/Appendix_01/FOU_DIFF}
+		\caption{Error de difusión.}
+		\label{fig: FOU_DIFF}
+		\end{subfigure}
+		\begin{subfigure}[t]{.45\linewidth}
+		\centering\includegraphics[width=\linewidth]{Appendix/Appendix_01/FOU_DISP}
+		\caption{Error de dispersión.}
+		\label{fig: FOU_DISP}	
+		\end{subfigure}
+		\caption{Errores de dispersión y difusión del método \textit{FOU} aplicado a la ecuación de la advección.}
+		\end{figure}
+		%
+		\paragraph{\indent B. Esquema Runge-Kutta de 2 pasos. \medskip \\}
+		%
+		\indent Operando con el factor de amplificación obtenido anteriormente, se deducen su módulo y fase. No se indican los resultados finales por lo farragoso de su expresión, bastando aplicar el cálculo del módulo y fase a las expresiones \eqref{eq: xi_eta}. Los resultados obtenidos pueden observarse en las figuras \ref{fig: RK2_DIFF} y \ref{fig: RK2_DISP}. En el error de difusión los resultados son un tanto particulares. El amortiguamiento del sistema, a diferencia de lo que sucedía con el esquema \textit{FOU}, decrece en principio al hacerlo el número CFL. Sin embargo, a diferencia de lo que sucedía con el esquema \textit{FOU}, el máximo error (mínimo $\varepsilon_D$) se encuentra en una frecuencia intermedia, tanto más baja como alto sea el CFL. En el caso de $\sigma = 0.8$, se alcanza un error de 0.2, lo cual supone un error inaceptable. \\
+		%
+		\indent En cuanto al error de dispersión, se produce en todo caso un retraso en la señal numérica respecto de la analítica. Además, este error desaparece para frecuencias muy bajas (longitudes de onda altas, relacionadas con funciones de carácter constante) y se hace nulo (máximo en cierto sentido) para frecuencias altas.
+		%
+		\begin{figure}[ht]
+		\centering
+		\medskip
+		\begin{subfigure}[t]{.49\linewidth}	
+		\centering\includegraphics[width=\linewidth]{Appendix/Appendix_01/RK2_DIFF}
+		\caption{Error de difusión.}
+		\label{fig: RK2_DIFF}
+		\end{subfigure}
+		\begin{subfigure}[t]{.49\linewidth}
+		\centering\includegraphics[width=\linewidth]{Appendix/Appendix_01/RK2_DISP}
+		\caption{Error de dispersión.}
+		\label{fig: RK2_DISP}	
+		\end{subfigure}
+		\captionsetup{justification=centering, margin = 0.5cm}
+		\caption{Errores de dispersión y difusión del método Runge-Kutta de 2 pasos aplicado a la ecuación de la advección.}
+		\end{figure}
+		%
+		\subsection{Resultados y discusión.}
+		%
+		\indent Para validar las conclusiones deducidas en el apartado anterior, se va a resolver numéricamente la ecuación de la advección para los dos esquemas estudiados. La onda a representar será una de tipo seno ($u^{(0)}(x) = \sin(kx)$), y se modificará su frecuencia $k$ a través de la fase $\phi$ (al ser $\phi = k \Delta x$), además del parámetro principal la discretización, el CFL. Se tienen los siguientes parámetros del problema comunes a todos los ensayos:\\
+		%
+		\begin{itemize}
+		\item \underline{Velocidad de propagación (advección)}: $a = 1$
+		\item \underline{Dominio computacional}: $x\in[0, 2 \pi[$
+		\item \underline{Número de celdas}: $N = 100$
+		\item \underline{Número de pasos temporales}: $N_t = 100$
+		\end{itemize}
+		%
+		\indent El efecto de tamaño de celda $\Delta x$, si bien reviste interés, no será analizado, por ser en cierto modo equivalente a modificar la fase. Bien es cierto que si se tratara de un problema físico dado, y no un análisis del desempeño del método, la frecuencia reducida de la condición inicial vendría dada, y un cambio del tamaño de celda tendría como consecuencia una modificación de la fase $\phi$ y, por tanto, de la respuesta del esquema. El enfoque planteado en estos ensayos no es otro que corroborar las tendencias obtenidas de los errores de difusión y dispersión, razón por la cual se variará sólo el valor de $\phi$ y de $\sigma$.\\
+		%
+		\indent En virtud de las figuras \ref{fig: FOU_DIFF} y \ref{fig: RK2_DIFF}, es posible determinar el valor del error de difusión para distintos valores de la fase y del número CFL, valor que se mantiene constante en el tiempo. Para validar los resultados, se van a plantear 4 tests para cada método:
+		%
+		\begin{table}[ht]
+		\begin{center}
+		\begin{tabular}{|c|c|c|}
+		\hline 
+		\textbf{Test} & $\phi$(º) & $\sigma$ \\ 
+		\hline 
+		1 & 20 & 0.25 \\ 
+		\hline 
+		2 & 20 & 0.8 \\ 
+		\hline 
+		3 & 40 & 0.25 \\ 
+		\hline 
+		4 & 40 & 0.8 \\ 
+		\hline 
+		\end{tabular} 
+		\caption{Tests para el método FOU y Runge-Kutta 2.}
+		\end{center}
+		
+		\end{table}\\
+		%
+		\indent En caso de tener interés en esquemas de segundo orden, su análisis se realiza de forma muy detallada en la referencia \cite{hirsch}, abordando el estudio de los esquemas de Lax-Friedrichs, Lax-Wendroff o Leap-Frog, por ejemplo, de gran interés, pero que escapan del enfoque del trabajo en su conjunto.
+		%
+		\subsection{Esquema \textit{FOU} (Método de Euler).}
+		%
+		\indent Dado que el valor de $\varepsilon_D$ se mantiene constante, es posible calcular de forma sencilla el error acumulado tras un cierto número de pasos de tiempo. Tomando por ejemplo el test 1, si se entra en la figura \ref{fig: FOU_DIFF} con los valores pertinentes, se obtiene $\left(\varepsilon_D\right)_{FOU, 1} =0.9851$. Mediante una simple potenciación, se obtiene que el error acumulado en cien pasos de tiempo es $\left(\varepsilon_D\right)_{FOU, 1, total} =0.222$. Este valor se aproxima razonablemente bien al valor obtenido computacionalmente, que se puede observar en la figura \ref{fig: FOU_PHI_20_CFL_025}, siendo aproximadamente $0.245$. En el caso del test 2 (figura \ref{fig: FOU_PHI_20_CFL_08}), en consonancia con el valor más bajo de error obtenido en la figura \ref{fig: FOU_DIFF}, se observa una amplitud mayor, aunque igualmente bastante alejada de la original. Nótese que un pequeño incremento en el valor absoluto del error (del orden de centésimas) tiene un impacto enorme en el error final, alcanzando casi el doble de amplitud. \\
+		%
+		
+		%
+		\begin{figure}[ht]
+		\centering
+		\medskip
+		\begin{subfigure}[t]{.9\linewidth}
+		\centering\includegraphics[width=\linewidth]{Appendix/Appendix_01/FOU_PHI_20_CFL_025}
+		\caption{$\phi = 20º$, $\sigma = 0.25$ .}
+		\label{fig: FOU_PHI_20_CFL_025}
+		\end{subfigure}
+		\begin{subfigure}[t]{.9\linewidth}
+		\centering\includegraphics[width=\linewidth]{Appendix/Appendix_01/FOU_PHI_20_CFL_08}
+		\caption{$\phi = 20º$, $\sigma = 0.8$ .}
+		\label{fig: FOU_PHI_20_CFL_08}
+		\end{subfigure}
+		\end{figure}
+		\begin{figure}\ContinuedFloat
+		\centering
+		\medskip
+		\begin{subfigure}[t]{.9\linewidth}
+		\centering\includegraphics[width=\linewidth]{Appendix/Appendix_01/FOU_PHI_40_CFL_025}
+		\caption{$\phi = 40º$, $\sigma = 0.25$ .}
+		\label{fig: FOU_PHI_40_CFL_025}
+		\end{subfigure}
+		\begin{subfigure}[t]{.9\linewidth}
+		\centering\includegraphics[width=\linewidth]{Appendix/Appendix_01/FOU_PHI_40_CFL_08}
+		\caption{$\phi = 40º$, $\sigma = 0.8$ .}
+		\label{fig: FOU_PHI_40_CFL_08}
+		\end{subfigure}
+		\caption{Soluciones numérica (esquema \textit{FOU}) y analítica de la ecuación de la advección.}
+		\end{figure}
+		\indent En los test 3 y 4 (figuras \ref{fig: FOU_PHI_40_CFL_025} y \ref{fig: FOU_PHI_40_CFL_08}), el error crece de manera muy fuerte, como hacía presagiar la curva del error de difusión. De hecho, la solución llega a ser plana, pasando a considerarse completamente inaceptable. Se mantiene la tendencia favorable al aumentar el CFL. Remarcar que no se muestran resultados con $\sigma>1$ al volcar soluciones inestables y espúreas, que no merece la pena representar.
+		%
+		\subsection{Esquema Runge-Kutta de 2 pasos.}
+		%
+		\indent En el caso del método de Runge-Kutta de 2 pasos, los comentarios son muy similares a los anteriores, manteniéndose la tendencia errática al aumentar la fase. Sin embargo, en cuanto al CFL, las tendencias se invierten, obteniéndose soluciones más benevolentes al disminuir dicho coeficiente. Esto está en consonancia con las curvas del error de difusión de la figura \ref{fig: RK2_DIFF}.
+		%
+		\begin{figure}[ht]
+		\centering
+		\medskip
+		\begin{subfigure}[t]{.9\linewidth}
+		\centering\includegraphics[width=\linewidth]{Appendix/Appendix_01/RK2_PHI_20_CFL_025}
+		\caption{$\phi = 20º$, $\sigma = 0.25$ .}
+		\label{fig: RK2_PHI_20_CFL_025}
+		\end{subfigure}
+		\begin{subfigure}[t]{.9\linewidth}
+		\centering\includegraphics[width=\linewidth]{Appendix/Appendix_01/RK2_PHI_20_CFL_08}
+		\caption{$\phi = 20º$, $\sigma = 0.8$ .}
+		\label{fig: RK2_PHI_20_CFL_08}
+		\end{subfigure}
+		\end{figure}
+		\begin{figure}\ContinuedFloat
+		\centering
+		\medskip
+		\begin{subfigure}[t]{.9\linewidth}
+		\centering\includegraphics[width=\linewidth]{Appendix/Appendix_01/RK2_PHI_40_CFL_025}
+		\caption{$\phi = 40º$, $\sigma = 0.25$ .}
+		\label{fig: RK2_PHI_40_CFL_025}
+		\end{subfigure}
+		\begin{subfigure}[t]{.9\linewidth}
+		\centering\includegraphics[width=\linewidth]{Appendix/Appendix_01/RK2_PHI_40_CFL_08}
+		\caption{$\phi = 40º$, $\sigma = 0.8$ .}
+		\label{fig: RK2_PHI_40_CFL_08}
+		\end{subfigure}
+		\caption{Soluciones numérica (esquema Runge-Kutta-2) y analítica de la ecuación de la advección.}
+		\end{figure}
+		%
+%\section{Conclusiones.}
+%%
+%\indent Tras haber presentado los conceptos básicos sobre la consistencia, estabilidad y precisión de esquemas numéricos, así como de haber realizado pequeños ensayos sobre la materia, se pueden estab
+
+%		
+		
+		
+
+
+
+
+
+
+
+
+
+
+
+

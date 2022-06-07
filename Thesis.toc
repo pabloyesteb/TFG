@@ -1,0 +1,136 @@
+\babel@toc {spanish}{}\relax 
+\contentsline {chapter}{Agradecimientos.}{\es@scroman {iii}}{chapter*.1}%
+\contentsline {chapter}{Resumen.}{\es@scroman {v}}{chapter*.2}%
+\contentsline {chapter}{Abstract.}{\es@scroman {vii}}{chapter*.3}%
+\contentsline {chapter}{\nonumberline Nomenclatura}{\es@scroman {xiii}}{chapter*.5}%
+\contentsline {chapter}{Introducci\'on.}{\es@scroman {xxv}}{chapter*.8}%
+\contentsline {chapter}{\numberline {1}Engelamiento en aeronaves.}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Introducci\'on.}{1}{section.1.1}%
+\contentsline {section}{\numberline {1.2}El engelamiento atmosf\'erico.}{2}{section.1.2}%
+\contentsline {section}{\numberline {1.3}Efectos del engelamiento.}{4}{section.1.3}%
+\contentsline {subsection}{\numberline {1.3.1}Efectos del engelamiento en aeronaves.}{4}{subsection.1.3.1}%
+\contentsline {subsubsection}{\numberline {1.3.1.1}Clasificaci\'on de los efectos.}{5}{subsubsection.1.3.1.1}%
+\contentsline {paragraph}{Efectos estructurales. \\}{5}{subsubsection.1.3.1.1}%
+\contentsline {paragraph}{Efectos internos. \\}{7}{figure.caption.10}%
+\contentsline {section}{\numberline {1.4}Gravedad del engelamiento y factores determinantes.}{9}{section.1.4}%
+\contentsline {subsection}{\numberline {1.4.1}Caracter\IeC {\'\i }sticas microf\IeC {\'\i }sicas.}{10}{subsection.1.4.1}%
+\contentsline {paragraph}{A. Contenido de agua l\IeC {\'\i }quida. \\}{10}{subsection.1.4.1}%
+\contentsline {paragraph}{B. Temperatura ambiente. \\}{10}{subsection.1.4.1}%
+\contentsline {paragraph}{C. Tama\~no de las gotas. \\}{11}{subsection.1.4.1}%
+\contentsline {section}{\numberline {1.5}Tipos de engelamiento en aeronaves.}{11}{section.1.5}%
+\contentsline {subsection}{\numberline {1.5.1}Hielo glaseado (\textit {glaze}).}{12}{subsection.1.5.1}%
+\contentsline {subsection}{\numberline {1.5.2}Hielo escarcha (\textit {rime})}{13}{subsection.1.5.2}%
+\contentsline {subsection}{\numberline {1.5.3}Hielo mezcla.}{13}{subsection.1.5.3}%
+\contentsline {subsection}{\numberline {1.5.4}\textit {Supercooled large droplet icing} (SLD).}{14}{subsection.1.5.4}%
+\contentsline {section}{\numberline {1.6}El entorno engelante.}{15}{section.1.6}%
+\contentsline {subsection}{\numberline {1.6.1}Condiciones meteorol\'ogicas y engelamiento.}{15}{subsection.1.6.1}%
+\contentsline {subsection}{\numberline {1.6.2}Tipolog\IeC {\'\i }a de nubes y relaci\'on con el engelamiento.}{16}{subsection.1.6.2}%
+\contentsline {paragraph}{A. Nubes cumuliformes. \\}{16}{subsection.1.6.2}%
+\contentsline {paragraph}{B. Nubes estratiformes. \\}{18}{figure.caption.22}%
+\contentsline {section}{\numberline {1.7}Detecci\'on de condiciones de engelamiento.}{20}{section.1.7}%
+\contentsline {subsection}{\numberline {1.7.1}Sensores \textit {in situ}.}{20}{subsection.1.7.1}%
+\contentsline {subsection}{\numberline {1.7.2}Sensores remotos.}{21}{subsection.1.7.2}%
+\contentsline {section}{\numberline {1.8}Predicci\'on de condiciones de engelamiento.}{21}{section.1.8}%
+\contentsline {subsection}{\numberline {1.8.1}M\'etodos actuales.}{22}{subsection.1.8.1}%
+\contentsline {subsection}{\numberline {1.8.2}M\'etodos en desarrollo.}{22}{subsection.1.8.2}%
+\contentsline {section}{\numberline {1.9}Defensas antihielo.}{22}{section.1.9}%
+\contentsline {subsection}{\numberline {1.9.1}Medidas meteorol\'ogicas.}{23}{subsection.1.9.1}%
+\contentsline {subsection}{\numberline {1.9.2}Medidas t\'ecnicas.}{24}{subsection.1.9.2}%
+\contentsline {subsubsection}{\numberline {1.9.2.1}Medidas t\'ecnicas en desarrollo.}{25}{subsubsection.1.9.2.1}%
+\contentsline {paragraph}{I. Capa de nanotubos de carbono. \\}{25}{subsubsection.1.9.2.1}%
+\contentsline {paragraph}{II. Recubrimiento de part\IeC {\'\i }culas hidr\'ofugas. \\}{26}{subsubsection.1.9.2.1}%
+\contentsline {paragraph}{III. Recubrimiento con plasma. \\}{26}{subsubsection.1.9.2.1}%
+\contentsline {chapter}{\numberline {2}Simulaci\'on del engelamiento en aeronaves.}{27}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Introducci\'on.}{27}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Flujo aerodin\'amico. M\'odulo CFD.}{28}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}Generalidades.}{28}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.2.2}Solver CFD TAU.}{31}{subsection.2.2.2}%
+\contentsline {paragraph}{I. Fraccionamiento de mallado. \\ }{32}{subsection.2.2.2}%
+\contentsline {paragraph}{II. Pre-proceso. \\}{32}{subsection.2.2.2}%
+\contentsline {paragraph}{III. Solver. \\}{32}{subsection.2.2.2}%
+\contentsline {paragraph}{IV. Adaptaci\'on del mallado. \\}{33}{subsection.2.2.2}%
+\contentsline {paragraph}{V. Deformaci\'on del mallado. \\}{33}{subsection.2.2.2}%
+\contentsline {paragraph}{VI. Implementaci\'on de CHIMERA. \\}{33}{subsection.2.2.2}%
+\contentsline {paragraph}{VII. Modelizaci\'on de la turbulencia y la transici\'on. \\}{33}{subsection.2.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.2.1}Aplicaciones y validaci\'on del solver TAU.}{33}{subsubsection.2.2.2.1}%
+\contentsline {section}{\numberline {2.3}Impacto de gotas.}{34}{section.2.3}%
+\contentsline {subsection}{\numberline {2.3.1}Generalidades.}{34}{subsection.2.3.1}%
+\contentsline {subsubsection}{\numberline {2.3.1.1}Enfoque lagrangiano.}{36}{subsubsection.2.3.1.1}%
+\contentsline {subsubsection}{\numberline {2.3.1.2}Enfoque euleriano.}{38}{subsubsection.2.3.1.2}%
+\contentsline {section}{\numberline {2.4}Formaci\'on y crecimiento de hielo.}{40}{section.2.4}%
+\contentsline {paragraph}{M\'etodos \textit {one-shot} y m\'etodos \textit {multi-step}.\\}{40}{section.2.4}%
+\contentsline {subsection}{\numberline {2.4.1}Generalidades del problema.}{41}{subsection.2.4.1}%
+\contentsline {subsubsection}{\numberline {2.4.1.1}Modelizaci\'on de Messinger.}{43}{subsubsection.2.4.1.1}%
+\contentsline {subsubsection}{\numberline {2.4.1.2}Planteamientos basados en ecuaciones en derivadas parciales.}{43}{subsubsection.2.4.1.2}%
+\contentsline {section}{\numberline {2.5}Consideraciones finales.}{45}{section.2.5}%
+\contentsline {chapter}{\numberline {3}Conclusiones y futuros estudios.}{47}{chapter.3}%
+\contentsline {paragraph}{\indent Futuros estudios. \\}{48}{chapter.3}%
+\contentsline {chapter}{\numberline {A}Consistencia, estabilidad y error en esquemas num\'ericos.}{51}{appendix.Alph1}%
+\contentsline {section}{\numberline {A.1}Introducci\'on.}{51}{section.Alph1.1}%
+\contentsline {section}{\numberline {A.2}Conceptos b\'asicos.}{52}{section.Alph1.2}%
+\contentsline {paragraph}{\indent A. Consistencia. \vspace \medskipamount \\}{52}{section.Alph1.2}%
+\contentsline {paragraph}{\indent B. Estabilidad. \vspace \medskipamount \\}{52}{section.Alph1.2}%
+\contentsline {paragraph}{\indent C. Convergencia. \vspace \medskipamount \\}{53}{section.Alph1.2}%
+\contentsline {subsection}{\numberline {A.2.1}Teorema de equivalencia de Lax.}{53}{subsection.Alph1.2.1}%
+\contentsline {section}{\numberline {A.3}Consistencia de esquemas num\'ericos.}{54}{section.Alph1.3}%
+\contentsline {subsection}{\numberline {A.3.1}Metodolog\IeC {\'\i }a b\'asica.}{54}{subsection.Alph1.3.1}%
+\contentsline {subsection}{\numberline {A.3.2}Interpretaci\'on de la condici\'on de consistencia.}{56}{subsection.Alph1.3.2}%
+\contentsline {section}{\numberline {A.4}Estabilidad de esquemas num\'ericos. M\'etodo de Von Neumann.}{57}{section.Alph1.4}%
+\contentsline {subsection}{\numberline {A.4.1}Bases del m\'etodo.}{58}{subsection.Alph1.4.1}%
+\contentsline {subsection}{\numberline {A.4.2}Condici\'on de estabilidad de Von Neumann.}{60}{subsection.Alph1.4.2}%
+\contentsline {subsection}{\numberline {A.4.3}Metodolog\IeC {\'\i }a de Von Neumann. Aplicaci\'on a la ecuaci\'on de la advecci\'on.}{60}{subsection.Alph1.4.3}%
+\contentsline {paragraph}{\indent A. Diferencias finitas centradas de segundo orden en el espacio y esquema expl\IeC {\'\i }cito de primer orden en el tiempo. \vspace \medskipamount \\}{61}{subsection.Alph1.4.3}%
+\contentsline {paragraph}{\indent B. Diferencias finitas centradas de segundo orden en el espacio y esquema impl\IeC {\'\i }cito de primer orden en el tiempo. \vspace \medskipamount \\}{63}{figure.caption.42}%
+\contentsline {paragraph}{\indent C. Esquema \textit {FOU} expl\IeC {\'\i }cito (\textit {first order upwind}) \vspace \medskipamount \\}{63}{figure.caption.43}%
+\contentsline {paragraph}{\indent D. Esquema \textit {FOU} impl\IeC {\'\i }cito \vspace \medskipamount \\}{64}{figure.caption.44}%
+\contentsline {paragraph}{\indent E. Esquema Runge-Kutta de 2 etapas. \vspace \medskipamount \\}{65}{figure.caption.45}%
+\contentsline {subsubsection}{\numberline {A.4.3.1}Comentarios sobre la condici\'on del CFL.}{67}{subsubsection.Alph1.4.3.1}%
+\contentsline {section}{\numberline {A.5}An\'alisis espectral de errores num\'ericos.}{69}{section.Alph1.5}%
+\contentsline {subsection}{\numberline {A.5.1}Manipulaci\'on de las soluciones exacta y num\'erica.}{69}{subsection.Alph1.5.1}%
+\contentsline {paragraph}{\indent Soluci\'on anal\IeC {\'\i }tica. \vspace \medskipamount \\}{69}{subsection.Alph1.5.1}%
+\contentsline {paragraph}{\indent Soluci\'on num\'erica. \vspace \medskipamount \\}{70}{subsection.Alph1.5.1}%
+\contentsline {paragraph}{\indent Modificaciones finales. \\}{71}{equation.Alph1.5.13}%
+\contentsline {subsection}{\numberline {A.5.2}Errores de difusi\'on y de dispersi\'on.}{71}{subsection.Alph1.5.2}%
+\contentsline {subsection}{\numberline {A.5.3}Metodolog\IeC {\'\i }a de an\'alisis.}{72}{subsection.Alph1.5.3}%
+\contentsline {subsection}{\numberline {A.5.4}An\'alisis de errores en la ecuaci\'on de la advecci\'on.}{72}{subsection.Alph1.5.4}%
+\contentsline {paragraph}{\indent Comentarios.\\}{73}{subsection.Alph1.5.4}%
+\contentsline {subsubsection}{\numberline {A.5.4.1}Errores de dispersi\'on y difusi\'on de distintos esquemas.}{73}{subsubsection.Alph1.5.4.1}%
+\contentsline {paragraph}{\indent A. Esquema \textit {FOU}. \vspace \medskipamount \\}{73}{subsubsection.Alph1.5.4.1}%
+\contentsline {paragraph}{\indent B. Esquema Runge-Kutta de 2 pasos. \vspace \medskipamount \\}{75}{figure.caption.48}%
+\contentsline {subsection}{\numberline {A.5.5}Resultados y discusi\'on.}{76}{subsection.Alph1.5.5}%
+\contentsline {subsection}{\numberline {A.5.6}Esquema \textit {FOU} (M\'etodo de Euler).}{77}{subsection.Alph1.5.6}%
+\contentsline {subsection}{\numberline {A.5.7}Esquema Runge-Kutta de 2 pasos.}{77}{subsection.Alph1.5.7}%
+\contentsline {chapter}{\numberline {B}Soluci\'on anal\IeC {\'\i }tica de las ecuaciones de Euler.}{83}{appendix.Alph2}%
+\contentsline {section}{\numberline {B.1}Introducci\'on.}{83}{section.Alph2.1}%
+\contentsline {section}{\numberline {B.2}Ecuaciones de Euler y problema de Riemann.}{84}{section.Alph2.2}%
+\contentsline {section}{\numberline {B.3}Soluci\'on anal\IeC {\'\i }tica.}{85}{section.Alph2.3}%
+\contentsline {subsection}{\numberline {B.3.1}Estructura de la soluci\'on.}{85}{subsection.Alph2.3.1}%
+\contentsline {subsection}{\numberline {B.3.2}Soluci\'on en la regi\'on estrella.}{86}{subsection.Alph2.3.2}%
+\contentsline {subsubsection}{\numberline {B.3.2.1}Obtenci\'on de la presi\'on y velocidad.}{86}{subsubsection.Alph2.3.2.1}%
+\contentsline {subsubsection}{\numberline {B.3.2.2}Obtenci\'on de las densidades.}{87}{subsubsection.Alph2.3.2.2}%
+\contentsline {paragraph}{\indent Onda de choque:}{88}{subsubsection.Alph2.3.2.2}%
+\contentsline {paragraph}{\indent Rarefacci\'on:}{88}{equation.Alph2.3.6}%
+\contentsline {subsubsection}{\numberline {B.3.2.3}Obtenci\'on de las caracter\IeC {\'\i }sticas y soluci\'on dentro de una rarefacci\'on.}{88}{subsubsection.Alph2.3.2.3}%
+\contentsline {paragraph}{\indent Onda de choque izquierda. \vspace \medskipamount \\}{88}{figure.caption.57}%
+\contentsline {paragraph}{\indent Rarefacci\'on izquierda. \vspace \medskipamount \\}{89}{equation.Alph2.3.8}%
+\contentsline {paragraph}{\indent Onda de choque derecha \vspace \medskipamount \\}{89}{equation.Alph2.3.10}%
+\contentsline {paragraph}{\indent Rarefacci\'on derecha \vspace \medskipamount \\}{89}{equation.Alph2.3.11}%
+\contentsline {subsection}{\numberline {B.3.3}Soluci\'on completa. Muestreo de la soluci\'on.}{90}{subsection.Alph2.3.3}%
+\contentsline {subsubsection}{\numberline {B.3.3.1}Parte izquierda de la discontinuidad de contacto: $x/t < u_{\star }$}{90}{subsubsection.Alph2.3.3.1}%
+\contentsline {paragraph}{\indent A: Onda de choque izquierda. \vspace \medskipamount \\}{90}{subsubsection.Alph2.3.3.1}%
+\contentsline {paragraph}{\indent B: Rarefacci\'on izquierda. \vspace \medskipamount \\}{91}{equation.Alph2.3.14}%
+\contentsline {subsubsection}{\numberline {B.3.3.2}Parte derecha de la discontinuidad de contacto: $x/t > u_{\star }$}{91}{subsubsection.Alph2.3.3.2}%
+\contentsline {paragraph}{\indent A: Onda de choque derecha. \vspace \medskipamount \\}{91}{subsubsection.Alph2.3.3.2}%
+\contentsline {paragraph}{\indent B: Rarefacci\'on derecha. \vspace \medskipamount \\}{91}{equation.Alph2.3.16}%
+\contentsline {subsection}{\numberline {B.3.4}Resultados obtenidos.}{93}{subsection.Alph2.3.4}%
+\contentsline {subsubsection}{\numberline {B.3.4.1}Test 1.}{93}{subsubsection.Alph2.3.4.1}%
+\contentsline {subsubsection}{\numberline {B.3.4.2}Test 2.}{95}{subsubsection.Alph2.3.4.2}%
+\contentsline {subsubsection}{\numberline {B.3.4.3}Test 3.}{95}{subsubsection.Alph2.3.4.3}%
+\contentsline {subsubsection}{\numberline {B.3.4.4}Test 4.}{96}{subsubsection.Alph2.3.4.4}%
+\contentsline {subsubsection}{\numberline {B.3.4.5}Test 5.}{97}{subsubsection.Alph2.3.4.5}%
+\contentsline {chapter}{\numberline {C}Desarrollo de software.}{99}{appendix.Alph3}%
+\contentsline {section}{\numberline {C.1}Introducci\'on.}{99}{section.Alph3.1}%
+\contentsline {section}{\numberline {C.2}Programa $\text {prICE\_K}$.}{99}{section.Alph3.2}%
+\contentsline {subsection}{\numberline {C.2.1}Diagrama de flujo general.}{100}{subsection.Alph3.2.1}%
+\contentsline {subsection}{\numberline {C.2.2}Diagrama de flujo de la actualizaci\'on de la soluci\'on.}{100}{subsection.Alph3.2.2}%
+\contentsline {subsection}{\numberline {C.2.3}Descripci\'on de los m\'odulos del programa.}{100}{subsection.Alph3.2.3}%

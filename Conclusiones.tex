@@ -1,0 +1,32 @@
+\chapter{Conclusiones y futuros estudios.}
+%
+\indent Una vez desarrollado por completo el proyecto, es de obligado cumplimiento realizar un análisis de las conclusiones que se puedan extraer al respecto. Resulta de especial valor hacerlo en referencia a los objetivos planteados al principio del documento, y evaluando en qué grado han sido satisfechos cada uno de ellos:\\
+\begin{itemize}
+\item En primer lugar, el fenómeno del engelamiento ha sido estudiado e investigado de manera apropiada, a un nivel más que adecuado para los efectos del trabajo en su conjunto. Se han cubierto aspectos relativos a la fenomenología meteorológica, sus efectos y la prevención de los mismos, desde un enfoque predictivo, de detección y de actuación al respecto. 
+%
+\item Por otra parte, se han introducido con un cierto rigor los conceptos básicos de la simulación del crecimiento de hielo en su conjunto, con una descripción preliminar de cada módulo que toma cartas en el proceso global y el modo en que interactúan. Asimismo, se han mostrado las características básicas de cada uno de los módulos auxiliares (no propiamente desarrollados) del problema: el solver TAU-Code y el módulo GOTA. Se han presentado también los distintos enfoques posibles en el modelo físico de cada uno de los bloques.
+%
+\item Con respecto al establecimiento de las bases del método de los volúmenes finitos, se puede afirmar que ha sido un éxito, implementando y validando métodos para problemas cada vez más complejos, pasando de la sencilla ecuación de la advección a las ecuaciones de Euler, con una física y una discretización más compleja.
+%
+\item El desarrollo de un módulo termodinámico para la formación de hielo basado en ecuaciones diferenciales ha resultado realmente complicado, como es normal con un problema del que se desconoce la solución y para el que no hay unas ecuaciones generales completamente establecidas, conocidas y asumidas por la comunidad científica. Ello ha dado lugar a múltiples enfoques, consideraciones e hipótesis, que han acabado en el desarrollo de un código que vierte unos resultados razonablemente coherentes. Bien es cierto que carece de una cierta generalidad o de un modo automatizado de compenetrarse con los otros módulos, pero establece la base de un modelo sólido que desarrollar más adelante.
+%
+\item Un aspecto negativo acerca de los resultados obtenidos es la ausencia de aplicaciones prácticas, en tanto en cuanto no se han realizado simulaciones con campos fluidos y datos de captación reales. Es sin duda un aspecto que queda pendiente, pero una vez más, conviene remarcar que el modelo termodinámico es ciertamente sólido, o por lo menos prometedor.
+\end{itemize}
+%
+\indent En todo caso, no hay que olvidar el incalculable valor del proyecto más allá del documento o de los resultados finales: el valor didáctico. El aprendizaje obtenido alcanza no solo al nivel físico, numérico o informático, sino al proceso de investigación, de problemas y soluciones, y de, al fin y al cabo, resolución de algo nuevo. En opinión del autor, este es el mayor resultado de todos.
+%
+\paragraph{\indent Futuros estudios. \\}
+%
+\indent Seguidamente se enumeran posibles puntos de mejora y futuros desarrollos que extiendan y prolonguen el camino avanzado por este proyecto:
+%
+\begin{itemize}
+\item Como se indicó en las conclusiones, un primer paso sería observar los resultados que muestra el modelo al introducir datos reales, obtenidos del solver TAU-Code y el módulo GOTA. Ahí es donde se verá el potencial del modelo.
+%
+\item Al igual que cualquier otro código, será útil un replanteamiento y mantenimiento del mismo, tanto limpiando pequeñas erratas o acciones innecesarias, como generalizando ciertos subprogramas. Resultaría también muy interesante la automatización (en la medida de lo posible) de la interacción de este módulo los demás, así como un posible enfoque \textit{multi-step} del proceso completo en sustitución del \textit{one-shot} utilizado en este caso.
+%
+\item Con respecto a cuestiones termodinámicas, existen varios puntos de gran margen de mejora. Las condiciones termodinámicas de compatibilidad pueden requerir un segundo estudio y un replanteamiento, y la modelización de los flujos másicos por evaporación y sublimación han resultado realmente complejas, con grandes variaciones entre unos códigos usados de referencia y otros (LEWICE \cite{ruff} y ONERA \cite{hedde}).
+%
+\item En cuanto al aspecto numérico del problema, una vez se hayan dominado y validado las ecuaciones, puede ser interesante la implementación de métodos de segundo orden en el tiempo, dado el gran hincapié que Hirsch \cite{hirsch} realiza así como los resultados obtenidos para los métodos de primer orden de Euler y Runge-Kutta. Un análisis de la estabilidad y precisión de los hipotéticos métodos implementados resultaría básico, pudiendo tomar como referencia el procedimiento realizado en el anexo A.
+%
+\item Como última fase del desarrollo del código puede establecerse la resolución de problemas 3D, cuya complejidad crece a nivel físico (trayectorias de la película) y computacional (mallado, flujos numéricos ...). Esto se plantea más a largo plazo, dada la complejidad añadida sobre los otros módulos.
+\end{itemize}

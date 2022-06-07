@@ -1,0 +1,351 @@
+\chapter{Solución analítica de las ecuaciones de Euler.}
+%
+\label{chap: App_euler}
+%
+\section{Introducción.}
+%
+\indent Las ecuaciones de Euler describen el movimiento de los denominados fluidos ideales, es decir, suponiendo negligibles la viscosidad y la conducción de calor del fluido. Ello estará justificado siempre y cuando se cumplan una serie de condiciones respecto a los números de Reynolds y de Prandtl, y suponen una simplificación radical respecto a las ecuaciones de Navier-Stokes, al desaparecer las derivadas de orden superior y con ello, el carácter parabólico o irreversible de las mismas. Dicha simplificación, pese a ser notoria a nivel matemático, sigue permitiendo obtener unos resultados (bajo ciertas premisas) bastante cercanos a la realidad.\\
+%
+\indent Sin embargo, la solución analítica para estas ecuaciones se reduce a unos pocos casos, como puede ser el flujo unidimensional o en secciones lentamente variables. En el presente informe, se tratará de resolver las ecuaciones de Euler reducidas a una dimensión (eje x), teniendo en cuenta por tanto solamente derivadas en dicha dimensión, pero resolviendo para todas las direcciones del espacio. En particular, se resolverá el problema de Riemann, caracterizado por la estructura de la condición inicial, compuesta por dos estados constantes separados por una discontinuidad. La solución analítica de dicho problema es conocida, y se utilizará para validar soluciones obtenidas por vías distintas. \\
+%
+\indent El objetivo principal de este informe será validar el denominado método de Roe, un método aproximado para resolver problemas de Riemann de forma numérica. Se establecerán las bases y los precedentes de dicho método para finalmente comparar las soluciones obtenidas con la solución analítica, a fin de validar la implementación del método en el código desarrollado y poder aplicarlo con confianza en futuros problemas.
+\section{Ecuaciones de Euler y problema de Riemann.}
+%
+En general, un problema de Cauchy para un sistema de leyes de conservación hiperbólico en derivadas parciales  toma la siguiente forma:
+%
+\begin{equation} 
+ [P]\left\{\begin{array}{l}
+PDEs:{\bm U_t} + \bm F(\bm U)_x=\bm 0\\[1em]
+ICs: {\bm U}(x,0) = \bm U^{0}(x)\\
+BCs: \bm U(0, t) = \bm U_l (t), \quad \bm U(L, t) = \bm U_r(t) \\
+\mathbb{D}: (x, t) \in [0, L] \times [0, \infty[
+\end{array} \right.
+\label{eqn: RP_general}
+\end{equation}
+%
+\indent La ecuación en sí se denomina ley de conservación del sistema, tomando el significado físico que se verá más adelante. En el caso de un problema de Riemann, la condición inicial pasa a ser una combinación de dos estados constantes. Además, suponiendo un dominio espacial infinito, las condiciones de contorno `` desaparecen", de modo que:
+%
+\begin{equation} 
+ [P]\left\{\begin{array}{l}
+PDEs:{\bm U_t} + \bm F(\bm U)_x=\bm 0\\[1em]
+ICs: {\bm U}(x,0) = \left\{\begin{array}{l}
+\bm U_L \quad si \quad x<0\\
+\bm U_R \quad si \quad x>0
+\end{array}\right.
+ 
+\end{array} \right.
+\end{equation}
+%
+\indent El objetivo es resolver la anterior ecuación restringiéndola a un cierto dominio abarcable (por ejemplo, desde -1 a 1) y para una ley de conservación particular: las ecuaciones de Euler. Ellas quedan caracterizadas definiendo el vector de variables conservadas \bm U y la función de flujo \bm F(\bm U). Es interesante recordar que estas ecuaciones están formuladas en variables conservadas(\bm U), que no deben ser confundidas con las variables primitivas o termodinámicas (\bm W). Esto cobrará importancia más adelante, ya que los problemas numéricos se resuelven en variables conservadas, mientras que la solución analítica de esta ecuación se conoce en variables primitivas. En este caso:\\
+%
+\[
+{\bm U} = \left[\begin{array}{c}
+\rho \\
+\rho u\\
+\rho v\\
+\rho w\\
+E
+\end{array}\right] \qquad {\bm F} = \left[\begin{array}{c}
+\rho u \\
+\rho u^2+p\\
+\rho uv\\
+\rho uw\\
+u(E+p)
+\end{array}\right] \qquad
+{\bm W} = \left[\begin{array}{c}
+\rho \\
+u\\
+v\\
+w\\
+p
+\end{array}\right]
+\]
+%
+\indent A la hora de relacionar las variables conservadas y primitivas, son de aplicación una serie de definiciones termodinámicas acompañadas de las ecuaciones de estado (EOS). En este caso, suponiendo gases ideales y caloríficamente perfectos, las relaciones son las siguientes:\\
+%
+\[E = \rho e + \dfrac{1}{2} \rho  \bm V  ^{2}, \quad  \bm V  ^{2} = u^2 + v^2 + w^2, \quad e =\dfrac{p}{(\gamma - 1) \rho}, \quad a^{2} = \gamma \dfrac{p}{\rho}, \quad H = \dfrac{E + p}{\rho}\]
+\section{Solución analítica.}\label{section: solucion analitica}
+%
+\subsection{Estructura de la solución.}
+\indent La solución analítica de este problema es ampliamente conocida. Se trata de una generalización del denominado ``tubo de choque" (\textit{shock tube}), que modeliza el comportamiento de dos gases estáticos separados por una membrana. La estructura de la solución es un sistema de ondas, formado por tres discontinuidades. La solución más general del problema se compone de una combinación de dos ondas (ondas de choque, rarefacciones o ambas), separadas en todo caso por una discontinuidad de contacto. En la figura \ref{fig: Estructura_analitica} se observa dicha estructura, que divide el dominio (x, t) en, a priori, cuatro subdominios:
+%
+\begin{itemize}
+\item La región izquierda, donde la solución coincide con la solución inicial en $x<0$ ($\bm W_L$),
+\item La región derecha, donde la solución coincide con la solución inicial en $x>0$ ($\bm W_R$),
+\item La región estrella (\textit{star region}), encapsulada entre ambas ondas, y subdividida en:
+\begin{itemize}
+\item[\labelitemii] Región estrella izquierda, comprendida entre la onda izquierda y la discontinuidad de contacto,
+\item[\labelitemii] Región estrella derecha, comprendida entre la discontinuidad de contacto y la onda derecha. 
+\end{itemize}
+\end{itemize}
+%
+\begin{figure}[ht]
+\centering\includegraphics[width = 0.5\linewidth]{Appendix/Appendix_02/Estructura_analitica}
+\caption{Estructura genérica de la solución.}
+\label{fig: Estructura_analitica}
+\end{figure}
+%
+\indent Las posibles variantes de la solución en función de las ondas presentadas en cada lado se muestran a continuación (\ref{fig: Estructura_multiples}), donde las líneas arqueadas representan una rarefacción, la línea gruesa una onda de choque, y la discontinua una discontinuidad de contacto. Conviene remarcar que, en caso de implementar ciertos esquemas numéricos, es necesario un análisis adicional, generándose otras cuatro estructuras en el caso de una rarefacción sónica. Ello tendrá implicaciones discutidas más adelante.
+%
+\begin{figure}[ht]
+\centering\includegraphics[width = 0.7\linewidth]{Appendix/Appendix_02/Estructura_multiple}
+\caption{Estructuras posibles de la solución a efectos de la solución analítica.}
+\label{fig: Estructura_multiples}
+\end{figure}
+%
+\subsection{Solución en la región estrella.}
+%
+\indent Un análisis basado en la estructura de las ecuaciones revela que tanto la presión como la velocidad en la región estrella ($p_{\star}, u_{\star}$) entre ambas ondas son constantes, mientras que la densidad sí varía a ambos lados de la discontinuidad de contacto ($\rho_{\star L}, \rho_{\star R}$), de modo que se buscan cuatro magnitudes físicas. El proceso comienza por obtener la presión y la velocidad, tras lo cual y en función de la estructura de la solución, se calculan las densidades.
+%
+\subsubsection{Obtención de la presión y velocidad.}
+%
+\indent Tras analizar las evoluciones de las magnitudes fluidas en ambos tipos de discontinuidades, se concluye que la presión en la región estrella satisface la siguiente ecuación:
+%
+\begin{equation}
+f(p, \bm W_L, \bm W_R) \equiv f_{L}(p, \bm W_L) + f_{R}(p, \bm W_R) + \Delta u = 0, \quad\Delta u = u_R - u_L 
+\label{eq: Pressure}
+\end{equation}
+%
+\indent Donde las funciones $f_L$ y $f_R$ responden a las siguientes expresiones:
+%
+\begin{equation}
+f_{k}(p, \bm W_{k}) \left\{ \begin{array}{cccc}
+(p - p_k) \left[ \dfrac{A_k}{p + B_k}\right] ^{1/2}  & $si$ & \enskip p > p_k & $(onda de choque)$\\ [1.5em]
+\dfrac{2a_k}{\gamma - 1} \left[ \left(\dfrac{p}{p_k}\right)^{\dfrac{\gamma - 1}{2\gamma}} - 1\right] & $si$ &\enskip p \leq p_k & $(rarefacción$)
+\end{array}\right.
+\end{equation}
+%
+\indent Donde el subíndice k hace las veces de L y R. Los coeficientes $A_k$ y $B_k$ se calculan como:
+\[A_{k} = \dfrac{2}{(\gamma + 1) \rho_{k}}, \quad B_{k} = \dfrac{(\gamma - 1)}{(\gamma + 1)} p_{k} \]
+%
+\indent Para una deducción detallada de ambas funciones así como de los coeficientes, se recomienda acudir a \cite{toro}, apartado 4.2. La presión, por tanto, se calcula resolviendo de forma numérica la ecuación \ref{eq: Pressure}, en particular con el método de Newton-Raphson, previo análisis de la monotonía y concavidad de la misma. Conocida la presión, la velocidad del fluido se calcula como:
+%
+\begin{equation}
+u_{\star} = \dfrac{1}{2}\left(u_L + u_R\right) + \dfrac{1}{2} \left[f_R(p_{\star}) - f_L(p_{\star}\right)]
+\end{equation}
+%
+\subsubsection{Obtención de las densidades.}
+%
+\indent Las densidades en ambas regiones se calculan de distinta manera dependiendo del fenómeno que suceda en la discontinuidad adyacente. De todos modos, las expresiones sólo dependen del tipo de discontinuidad y del estado adyacente, de modo que se pueden plantear las expresiones generales (k = R, L):
+%
+\paragraph{\indent Onda de choque:} Aplicando la relación de Rankine-Hugoniot, se obtiene:
+%
+\begin{equation}
+\rho_{\star k} = \rho_{k} \left[ \dfrac{\left(\dfrac{\gamma - 1}{\gamma + 1}\right) + \left(\dfrac{p_{\star}}{p_L}\right)}{\left(\dfrac{\gamma - 1}{\gamma + 1}\right) \left(\dfrac{p_{\star}}{p_L}\right)+1}\right]
+\end{equation}
+%
+\paragraph{\indent Rarefacción:} Dado el carácter isentrópico de la evolución:
+%
+\begin{equation}
+\rho_{\star k} = \rho_{k} \left(\dfrac{p_{\star}}{p_{k}}\right)^{\dfrac{1}{\gamma}}
+\end{equation}
+%
+\subsubsection{Obtención de las características y solución dentro de una rarefacción.}
+\indent Las últimas magnitudes a obtener para poder muestrear la solución completa del problema son las características de cada discontinuidad, que responden a las siguientes expresiones:
+%
+\begin{figure}
+\centering\includegraphics[width = 0.8\linewidth]{Appendix/Appendix_02/Caracteristicas}
+\caption{Esquema de las características de cada una de las posibles discontinuidades.}
+\label{fig: Caracteristicas}
+\end{figure}
+%
+\paragraph{\indent Onda de choque izquierda. \medskip \\} 
+%
+\indent Se corresponde con la figura \ref{fig: Caracteristicas} (a). Queda completamente caracterizada con el cálculo de la velocidad de la onda, resultando ser: 
+%
+\begin{equation}
+S_L = u_L - a_L \left[\dfrac{\gamma + 1}{2\gamma} \dfrac{p_{\star}}{p_L} + \dfrac{\gamma - 1}{2\gamma} \right]^{\dfrac{1}{2}}
+\end{equation}
+%
+\paragraph{\indent Rarefacción izquierda. \medskip \\} 
+%
+\indent Representado en la figura \ref{fig: Caracteristicas} (b), queda definida con el cálculo de las velocidades de las características de cabeza (\textit{head}) y de cola (\textit{tail}):
+%
+\begin{equation}
+S_{HL} = u_L - a_L, \quad S_{TL} = u_{\star} - a_{\star L}, \quad a_{\star L} = a_L \left(\dfrac{p_{\star}}{p_L}\right)^{\dfrac{\gamma - 1}{2\gamma}}
+\end{equation}
+%
+\indent En este caso, la solución entre la cabeza y la cola de la rarefacción difiere de ambas regiones lindantes. La solución en un punto $(x,t)$ responde a:
+%
+\begin{equation}
+\bm W_{Lfan} = \left\{\begin{array}{cll}
+\rho & = & \rho_L \left[\dfrac{2}{\gamma + 1}+ \dfrac{\gamma-1}{(\gamma + 1)a_L} \left(u_L - \dfrac{x}{t}\right)\right]^{\dfrac{2}{\gamma - 1}}\\[1.5em]
+u & = & \dfrac{2}{\gamma + 1}\left[ a_L + \dfrac{\gamma - 1}{2}u_L + \dfrac{x}{t}\right]\\[1.5em]
+p & = & p_L \left[\dfrac{2}{\gamma + 1}+ \dfrac{\gamma-1}{(\gamma + 1)a_L} \left(u_L - \dfrac{x}{t}\right)\right]^{\dfrac{2\gamma}{\gamma - 1}}
+\end{array}\right.
+\end{equation}
+%
+\paragraph{\indent Onda de choque derecha \medskip \\}
+%
+\begin{equation}
+S_R = u_R + a_R \left[\dfrac{\gamma + 1}{2\gamma} \dfrac{p_{\star}}{p_R} + \dfrac{\gamma - 1}{2\gamma} \right]^{\dfrac{1}{2}}
+\end{equation}
+\paragraph{\indent Rarefacción derecha \medskip \\}
+\indent Se calculan la cabeza y la cola de la rarefacción (ver figura \ref{fig: Caracteristicas} (d)): 
+%
+\begin{equation}
+S_{HL} = u_L - a_L, \quad S_{TL} = u_{\star} - a_{\star L}, \quad a_{\star L} = a_L \left(\dfrac{p_{\star}}{p_L}\right)^{\dfrac{\gamma - 1}{2\gamma}}
+\end{equation}
+%
+\indent Análogamente al caso izquierdo:
+%
+\begin{equation}
+\bm W_{Rfan} = \left\{\begin{array}{cll}
+\bigbreak
+\rho & = & \rho_R \left[\dfrac{2}{\gamma + 1} - \dfrac{\gamma-1}{(\gamma + 1)a_R} \left(u_R - \dfrac{x}{t}\right)\right]^{\dfrac{2}{\gamma - 1}}\\[1.5em]
+u & = & \dfrac{2}{\gamma + 1}\left[ - a_R + \dfrac{\gamma - 1}{2}u_R + \dfrac{x}{t}\right]\\[1.5em]
+p & = & p_R \left[\dfrac{2}{\gamma + 1}- \dfrac{\gamma-1}{(\gamma + 1)a_R} \left(u_R - \dfrac{x}{t}\right)\right]^{\dfrac{2\gamma}{\gamma - 1}}
+\end{array}\right.
+\end{equation}
+%
+	\subsection{Solución completa. Muestreo de la solución.}
+	%
+\indent Supónganse conocidas las variables termodinámicas en la totalidad del espacio de muestreo, es decir, densidades, velocidades y presiones en cada una de las regiones descritas anteriormente; así como las curvas características del problema. El objetivo de este apartado es, dado un punto determinado por (x,t), calcular la solución en él, es decir, el vector de variables primitivas $\bm W = (\rho, u, p)^{T}$. En este momento es importante remarcar que la solución es de tipo auto-semejante, lo que quiere decir que el sistema carece de una longitud característica o escala de tiempo, de modo que la solución es semejante consigo misma se represente en la escala que se represente. Ello permite muestrear la solución en un punto caracterizándolo únicamente con el valor $S  = x/t$, comúnmente denominada velocidad del punto.\\
+%
+\indent Se irá localizando el punto con relación a las referencias del espacio solución de manera sucesiva, tomando diversas referencias.
+%
+		\subsubsection{Parte izquierda de la discontinuidad de contacto: $x/t < u_{\star}$}
+		%
+		\indent Tal y como se muestra en la figura \ref{fig: Caracteristicas} (a) y (b), existen dos posibles soluciones en función del tipo de discontinuidad:
+		%
+		\paragraph{\indent A: Onda de choque izquierda. \medskip \\} 
+		%
+		\indent La condición es $p_{\star} > p_L$. Es necesario determinar si está a la derecha o a la izquierda de la discontinuidad:
+		%
+		\begin{equation}
+		\bm W(x,t) \left\{\begin{array}{lcc} 
+		\bm W_{\star L}^{OCH} & $si$ &\quad S_L \leq \dfrac{x}{t} \leq u_{\star}\\
+		\bm W_L & $si$ &\dfrac{x}{t}\leq S_L
+		\end{array}\right.
+		\end{equation}
+		%
+		\paragraph{\indent B: Rarefacción izquierda. \medskip \\} 
+		%
+		\indent La condición es $p_{\star} \leq p_L$. En este caso, como se observa en \ref{fig: Caracteristicas}(b), surgen 3 regiones:
+		%
+		\begin{equation}
+		\bm W(x,t) \left\{\begin{array}{lcc} 
+		\bm W_{L} & $si$ &\quad \dfrac{x}{t} \leq S_{HL}\\
+		\bm W_{Lfan} & $si$ &\quad S_{HL} \leq \dfrac{x}{t}\leq S_{TL}\\
+		\bm W_{L}^{RF} & $si$ & \quad S_{TL} \leq \dfrac{x}{t}\leq u_{\star}
+		\end{array}\right.
+		\end{equation}
+		%
+		\subsubsection{Parte derecha de la discontinuidad de contacto: $x/t > u_{\star}$}
+		%
+		\indent Análogamente al apartado anterior:
+		%
+		\paragraph{\indent A: Onda de choque derecha. \medskip \\} La condición es $p_{star} > p_R$. Es necesario determinar si está a la derecha o a la izquierda de la discontinuidad:
+		\begin{equation}
+		\bm W(x,t) \left\{\begin{array}{lcc} 
+		\bm W_{\star R}^{OCH} & $si$ &\quad u_{\star} \leq \dfrac{x}{t} \leq S_R\\
+		\bm W_R & $si$ &\dfrac{x}{t}\geq S_R
+		\end{array}\right.
+		\end{equation}
+		\paragraph{\indent B: Rarefacción derecha. \medskip \\} La condición es $p_{star} \leq p_R$:
+		\begin{equation}
+		\bm W(x,t) \left\{\begin{array}{ccc} 
+		\bm W_{\star R}^{RF} & $si$ &\quad u_{\star} \leq \dfrac{x}{t} \leq S_{TR}\\
+		\bm W_{Rfan} & $si$ &\quad S_{TR} \leq \dfrac{x}{t}\leq S_{HR}\\
+		\bm W_{\star L}^{RF} & $si$ & \quad \dfrac{x}{t}\geq S_{HR}
+		\end{array}\right.
+		\end{equation}
+		%
+		\indent A modo de resumen visual y pseudo-código, se adjuntan sendos diagramas de flujo para ambos lados de la discontinuidad de contacto en la figura \ref{fig: FLOW_CHARTS}.
+		%
+		\begin{figure}[ht]
+		\centering
+		\medskip
+		\begin{subfigure}[t]{.7\linewidth}
+		\centering\includegraphics[width=\linewidth]{Appendix/Appendix_02/Flow_chart_left}
+		\caption{Caso $S<u_{\star}$ (izquierda).}
+		\label{fig: Flow_chart_left}
+		\end{subfigure}
+		\begin{subfigure}[t]{.7\linewidth}
+		\centering\includegraphics[width=\linewidth]{Appendix/Appendix_02/Flow_chart_Right}
+		\caption{Caso $S>u_{\star}$ (derecha).}
+		\label{fig Flow_chart_right}
+		\end{subfigure}
+		\caption{Diagramas de flujo para el muestreo de la solución.}
+		\label{fig: FLOW_CHARTS}
+		\end{figure}
+%
+\clearpage
+\subsection{Resultados obtenidos.}
+%
+\indent Para probar el correcto funcionamiento del método de Roe, se utilizarán una serie de tests extraídos de Toro \cite{toro}, siendo en particular:
+%
+\begin{table}[ht]
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\hline Test & \(\rho_{\mathrm{L}}\) & \(u_{\mathrm{L}}\) & \(p_{\mathrm{L}}\) & \(\rho_{\mathrm{R}}\) & \(u_{\mathrm{R}}\) & \(p_{\mathrm{R}}\) \\
+\hline 1 & 1.0 & -0.75 & 1.0 & 0.125 & 0.0 & 0.1 \\
+\hline 2 & 1.0 & -2.0 & 0.4 & 1.0 & 2.0 & 0.4 \\
+\hline 3 & 1.0 & 0.0 & 1000.0 & 1.0 & 0.0 & 0.01 \\
+\hline 4 & 5.99924 & 19.5975 & 460.894 & 5.99242 & -6.19633 & 46.0950 \\
+\hline 5 & 1.0 & -19.5975 & 1000.0 & 1.0 & -19.5975 & 0.01 \\
+\hline
+\end{tabular}
+\caption{Datos para los ensayos.}
+\label{table: Tests_EULER}
+\end{center}
+\end{table}\\
+%
+\indent Es interesante remarcar que la elección del tiempo final en cada caso se realiza de acuerdo a los órdenes de magnitud de las variables fluidas. Dado que en los métodos numéricos el paso temporal es inversamente proporcional al valor máximo de las variables fluidas, con condiciones iniciales de valores superiores al orden unidad (véanse tests 3, 4 o 5), el número de pasos temporales crece de forma exorbitada, proporcionalmente a su orden de magnitud (millares). Es por eso por lo que se opta por tiempos finales cortos en dichos casos.
+%
+\subsubsection{Test 1.}
+%
+\indent Comúnmente denominado test de \textit{Sod}, supone una prueba bastante permisiva para los métodos numéricos, consistiendo en una rarefacción izquierda acompañada de una onda de choque. Existen dos variantes: El test de Sod original, el cual supone velocidad nula en ambos lados ($u_{L} = 0$) y el modificado, que es el mostrado en la tabla \ref{table: Tests_EULER} como (1).\\
+\begin{figure}[ht]
+\centering\includegraphics[width = 0.8\linewidth]{Appendix/Appendix_02/Subplot_1_SOD}
+\caption{Solución analítica del test de Sod (sin modificar), con $t_f = 0.25$.}
+\label{fig: SOD_analytical}
+\end{figure}
+\begin{figure}[ht]
+\centering\includegraphics[width = 0.8\linewidth]{Appendix/Appendix_02/Subplot_1_SOD_mod}
+\caption{Solución analítica del test de Sod modificado, con $t_f = 0.25$.}
+\label{fig: SODmod_analytical}
+\end{figure}
+%
+\indent En la figura \ref{fig: SOD_analytical} se puede observar en todas las variables un comportamiento coherente, donde se manifiesta la rarefacción a la izquierda mediante un salto progresivo en las variables fluidas, así como un salto brusco en la derecha, correspondiéndose con una onda de choque. Por otra parte, en la figura \ref{fig: SODmod_analytical}, los resultados son prácticamente iguales, salvo que la velocidad es mayor en la parte izquierda (lo cual es lógico a la vista de las condiciones iniciales). 
+%
+\clearpage
+\subsubsection{Test 2.}
+%
+\indent Se trata del llamado test 123, exigente dadas las bajas densidades y presiones presentes, existiendo dos rarefacciones realmente fuertes:
+\begin{figure}[ht]
+\centering\includegraphics[width = 0.8\linewidth]{Appendix/Appendix_02/Subplot_test2}
+\caption{Solución analítica del test 2, con $t_f = 0.25$.}
+\label{fig: Test_2_analytical}
+\end{figure}\\
+%
+\indent Los resultados (\ref{fig: Test_2_analytical}) muestran de forma clara dicho comportamiento, con evoluciones progresivas en las variables fluidas, como corresponde a rarefacciones. Podría interpretarse como una expansión de una zona central de bajas presiones hacia ambos costados, lo cual es corroborado por la asimetría en la velocidad del fluido.
+%
+
+\subsubsection{Test 3.}
+\indent Se trata de un test bastante severo con métodos poco adecuados. Tal y como se ve, se compone de una onda de choque derecha muy fuerte (M = 198) y una rarefacción izquierda. La solución es en cierto modo similar al test de Sod, pero con gradientes en las variables mucho más notorios, abocando a discontinuidades mucho más salvajes.
+\clearpage
+\begin{figure}[ht]
+\centering\includegraphics[width = 0.75\linewidth]{Appendix/Appendix_02/Subplot_test3_analytical}
+\caption{Solución analítica del test 3, con $t_f = 0.012$.}
+\label{fig: Test_3_analytical}
+\end{figure}
+%
+\subsubsection{Test 4.}
+%
+\indent Se observa la existencia de dos ondas de choque, correspondiéndose con sendos saltos bruscos en las variables, que además se desplazan en todo caso hacia la derecha del campo fluido (siendo la velocidad consistentemente positiva).\\
+\begin{figure}[ht]
+\centering\includegraphics[width = 0.75\linewidth]{Appendix/Appendix_02/Subplot_test4_analytical}
+\caption{Solución analítica del test 4, con $t_f = 0.05$.}
+\label{fig: Test_4_analytical}
+\end{figure}
+%
+\clearpage
+\subsubsection{Test 5.}
+%
+\indent En la figura \ref{fig: Test_5_analytical} se aprecian una rarefacción en la izquierda del campo fluido, acompañada de una onda de choque centrada en el origen. Se trata de un test exigente una vez más dados los gradientes existentes en el problema.\\
+\begin{figure}[ht]
+\centering\includegraphics[width = 0.8\linewidth]{Appendix/Appendix_02/Subplot_test5_analytical}
+\caption{Solución analítica del test 5, con $t_f = 0.012$.}
+\label{fig: Test_5_analytical}
+\end{figure}

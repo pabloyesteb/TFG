@@ -1,0 +1,96 @@
+
+\begin{thenomenclature} 
+\nomgroup{C}
+  \item [{$\gamma$}]\begingroup Coeficiente de dilatación adiabática de un gas \nomunit{[---]}\nomeqref {3.0}\nompageref{50}
+  \item [{$T_C$}]\begingroup Temperatura del punto triple \nomunit{$[K]$}\nomeqref {3.0}\nompageref{50}
+\nomgroup{D}
+  \item [{$\bm \Lambda$}]\begingroup Matriz de autovalores de un sistema de ecuaciones diferenciales\nomeqref {3.0}\nompageref{50}
+  \item [{$\bm \lambda_i$}]\begingroup Autovalor \textit{i}-ésimo de la matriz del sistema\nomeqref {3.0}\nompageref{50}
+  \item [{$\bm A$}]\begingroup Matriz del sistema de una ecuación diferencial\nomeqref {3.0}\nompageref{50}
+  \item [{$\bm F(\bm U)$}]\begingroup Vector de flujos de una ecuación diferencial\nomeqref {3.0}\nompageref{50}
+  \item [{$\bm I$}]\begingroup Matriz identidad\nomeqref {3.0}\nompageref{50}
+  \item [{$\bm K^{(i)}$}]\begingroup Autovector \textit{i}-ésimo de la matriz del sistema\nomeqref {3.0}\nompageref{50}
+  \item [{$\bm n$}]\begingroup Vector normal exterior a una superficie\nomeqref {3.0}\nompageref{50}
+  \item [{$\bm R$}]\begingroup Vector de términos fuente de una ecuación diferencial\nomeqref {3.0}\nompageref{50}
+  \item [{$\bm U$}]\begingroup Vector de variables dependientes de un sistema de ecuaciones diferenciales\nomeqref {3.0}\nompageref{50}
+  \item [{$\bm U$}]\begingroup Vector de variables dependientes de una ecuación diferencial\nomeqref {3.0}\nompageref{50}
+  \item [{$\bm W$}]\begingroup Vector de variables dependientes canónicas de un sistema de ecuaciones diferenciales\nomeqref {3.0}\nompageref{50}
+  \item [{$\mathbb{I}$}]\begingroup Unidad imaginaria\nomeqref {3.0}\nompageref{50}
+  \item [{$\mathcal{L}(\bm U)$}]\begingroup Operador diferencial espacial de una ecuación diferencial en derivadas parciales\nomeqref {3.0}\nompageref{50}
+  \item [{$\Omega$}]\begingroup Volumen geométrico\nomeqref {3.0}\nompageref{50}
+  \item [{$\partial \Omega$}]\begingroup Frontera del volumen $\Omega$\nomeqref {3.0}\nompageref{50}
+  \item [{$\phi$}]\begingroup Superficie característica de una ecuación diferencial en derivadas parciales\nomeqref {3.0}\nompageref{50}
+  \item [{$\Sigma$}]\begingroup Superficie geométrica\nomeqref {3.0}\nompageref{50}
+  \item [{$d\gamma, \: d\sigma, \: d\omega$}]\begingroup Diferenciales de arco, superficie y volumen\nomeqref {3.0}\nompageref{50}
+  \item [{$s$}]\begingroup Parámetro de longitud de arco\nomeqref {3.0}\nompageref{50}
+\nomgroup{G}
+  \item [{$\bar{u}_i^n$}]\begingroup Solución exacta de un esquema numérico\nomeqref {3.0}\nompageref{50}
+  \item [{$\bm F_{i + 1/2}$}]\begingroup Flujos numéricos en el extremo superior del volumen finito \textit{i}-ésimo\nomeqref {3.0}\nompageref{50}
+  \item [{$\bm Q$}]\begingroup Vector de parámetros del método de Roe\nomeqref {3.0}\nompageref{50}
+  \item [{$\bm U_{i+1/2}$}]\begingroup Solución computada en el extremo superior del volumen finito \textit{i}-ésimo\nomeqref {3.0}\nompageref{50}
+  \item [{$\Delta x, \: \Delta t$}]\begingroup Pasos espacial y temporal\nomeqref {3.0}\nompageref{50}
+  \item [{$\epsilon_T$}]\begingroup Error de truncamiento de un esquema numérico\nomeqref {3.0}\nompageref{50}
+  \item [{$\lambda_j$}]\begingroup Longitud de onda del armónico \textit{j}-ésimo\nomeqref {3.0}\nompageref{50}
+  \item [{$\omega $}]\begingroup Relación de dispersión numérica\nomeqref {3.0}\nompageref{50}
+  \item [{$\Omega_i$}]\begingroup Volumen de control \textit{i}-ésimo\nomeqref {3.0}\nompageref{50}
+  \item [{$\phi_j$}]\begingroup Fase del armónico \textit{j}-ésimo\nomeqref {3.0}\nompageref{50}
+  \item [{$\sigma$}]\begingroup Número CFL\nomeqref {3.0}\nompageref{50}
+  \item [{$\tilde{\bm A}$}]\begingroup Matriz promediada del sistema\nomeqref {3.0}\nompageref{50}
+  \item [{$\tilde{\lambda}_i$}]\begingroup Autovalor \textit{i}-ésimo de la matriz promediada del sistema\nomeqref {3.0}\nompageref{50}
+  \item [{$\tilde{\omega} $}]\begingroup Relación de dispersión\nomeqref {3.0}\nompageref{50}
+  \item [{$\tilde{K}^{(i)}$}]\begingroup Autovector \textit{i}-ésimo de la matriz promediada del sistema\nomeqref {3.0}\nompageref{50}
+  \item [{$\tilde{u}_i^n$}]\begingroup Solución exacta de un modelo matemático\nomeqref {3.0}\nompageref{50}
+  \item [{$G_j$}]\begingroup Factor de amplificación o ganancia del armónico \textit{j}-ésimo \nomeqref {3.0}\nompageref{50}
+  \item [{$I_{i}$}]\begingroup Centroide del volumen finito \textit{i}-ésimo\nomeqref {3.0}\nompageref{50}
+  \item [{$k_j$}]\begingroup Número de onda del armónico \textit{j}-ésimo\nomeqref {3.0}\nompageref{50}
+  \item [{$N(\bullet)$}]\begingroup Esquema numérico\nomeqref {3.0}\nompageref{50}
+  \item [{$S$}]\begingroup Velocidad de propagación de una discontinuidad\nomeqref {3.0}\nompageref{50}
+  \item [{$S_{max}^n$}]\begingroup Velocidad máxima de propagación de información en un problema de evolución discretizado\nomeqref {3.0}\nompageref{50}
+  \item [{$u_i^n$}]\begingroup Solución computada de un esquema numérico\nomeqref {3.0}\nompageref{50}
+  \item [{$V_j^n$}]\begingroup Amplitud del armónico \textit{j}-ésimo en el instante \textit{n}-ésimo\nomeqref {3.0}\nompageref{50}
+  \item [{$x_{i + 1/2}$}]\begingroup Extremo superior del volumen finito \textit{i}-ésimo\nomeqref {3.0}\nompageref{50}
+\nomgroup{N}
+  \item [{$Fr$}]\begingroup Número de Froude \nomunit{$Fr = \dfrac{U_c}{\sqrt{g_0 L_c}}$}\nomeqref {3.0}\nompageref{50}
+  \item [{$Nu$}]\begingroup Número de Nusselt \nomunit{$Nu = \dfrac{h_c L_c}{k}$}\nomeqref {3.0}\nompageref{50}
+  \item [{$Pr$}]\begingroup Número de Prandtl \nomunit{$Pr = \dfrac{\nu}{\alpha}$}\nomeqref {3.0}\nompageref{50}
+  \item [{$Re$}]\begingroup Número de Reynolds \nomunit{$Re = \dfrac{\rho_c U_c L_c}{\mu_c}$}\nomeqref {3.0}\nompageref{50}
+\nomgroup{S}
+  \item [{$\infty$}]\begingroup Variable en el infinito sin perturbar\nomeqref {3.0}\nompageref{50}
+  \item [{$c$}]\begingroup Característica\nomeqref {3.0}\nompageref{50}
+  \item [{$d$}]\begingroup Gota (\textit{droplet})\nomeqref {3.0}\nompageref{50}
+  \item [{$e$}]\begingroup Borde de la capa límite (\textit{edge})\nomeqref {3.0}\nompageref{50}
+  \item [{$f$}]\begingroup Película de agua (\textit{water film})\nomeqref {3.0}\nompageref{50}
+  \item [{$w$}]\begingroup Agua (\textit{water})\nomeqref {3.0}\nompageref{50}
+\nomgroup{T}
+  \item [{$\alpha$}]\begingroup Difusividad térmica \nomunit{$\left[ \dfrac{m^2}{s}\right]$}\nomeqref {3.0}\nompageref{50}
+  \item [{$\alpha_w$}]\begingroup Fracción volumétrica de agua en aire \nomunit{[$---$]}\nomeqref {3.0}\nompageref{50}
+  \item [{$\bar{U}$}]\begingroup Vector velocidad de un cuerpo o fluido \nomunit{$\left[\dfrac{m}{s}\right]$]}\nomeqref {3.0}\nompageref{50}
+  \item [{$\bar{u}$}]\begingroup Vector velocidad adimensional de un cuerpo o fluido \nomunit{[$---$]}\nomeqref {3.0}\nompageref{50}
+  \item [{$\beta$}]\begingroup Coeficiente de captación  \nomunit{[$---$]}\nomeqref {3.0}\nompageref{50}
+  \item [{$\dot{m}$}]\begingroup Flujo másico \nomunit{$\left[\dfrac{kg}{s}\right]$}\nomeqref {3.0}\nompageref{50}
+  \item [{$\dot{m}'$}]\begingroup Flujo másico por unidad de área \nomunit{$\left[\dfrac{kg}{s} \dfrac{1}{m^2}\right]$}\nomeqref {3.0}\nompageref{50}
+  \item [{$\dot{Q}$}]\begingroup Flujo de calor [$W$]\nomeqref {3.0}\nompageref{50}
+  \item [{$\dot{q}$}]\begingroup Flujo de calor por unidad de área \nomunit{$\left[\dfrac{W}{m^2}\right]$}\nomeqref {3.0}\nompageref{50}
+  \item [{$\mu$}]\begingroup Viscosidad dinámica de un fluido \nomunit{[$Pa \cdot s$]}\nomeqref {3.0}\nompageref{50}
+  \item [{$\nu$}]\begingroup Viscosidad cinemática de un fluido \nomunit{$\left[\dfrac{m^2}{s}\right]$}\nomeqref {3.0}\nompageref{50}
+  \item [{$\overline{\tau}_{wall}$}]\begingroup Esfuerzo viscoso de un fluido sobre una pared \nomunit{[$Pa$]}\nomeqref {3.0}\nompageref{50}
+  \item [{$\overline{c}_f$}]\begingroup Coeficiente de fricción viscosa sobre una pared \nomunit{[$---$]}\nomeqref {3.0}\nompageref{50}
+  \item [{$\rho$}]\begingroup Densidad de un fluido \nomunit{$\left[\dfrac{kg}{m^3}\right]$}\nomeqref {3.0}\nompageref{50}
+  \item [{$\theta$}]\begingroup Temperatura absoluta adimensionalizada con la del punto triple \nomunit{[$---$]}\nomeqref {3.0}\nompageref{50}
+  \item [{$\tilde{T}$}]\begingroup Temperatura \nomunit{[$ºC$]}\nomeqref {3.0}\nompageref{50}
+  \item [{$C_D$}]\begingroup Coeficiente de resistencia de un cuerpo \nomunit{[$---$]}\nomeqref {3.0}\nompageref{50}
+  \item [{$C_p$}]\begingroup Calor específico a presión constante  \nomunit{$\left[\dfrac{J}{kg\, K}\right]$}\nomeqref {3.0}\nompageref{50}
+  \item [{$d$}]\begingroup Diámetro de las gotas  \nomunit{[$\mu m$]}\nomeqref {3.0}\nompageref{50}
+  \item [{$f$}]\begingroup Fracción de agua congelada \nomunit{[$---$]}\nomeqref {3.0}\nompageref{50}
+  \item [{$h$}]\begingroup Espesor de una película de agua  \nomunit{[$m$]}\nomeqref {3.0}\nompageref{50}
+  \item [{$h_c$}]\begingroup Coeficiente de transferencia de calor por convección  \nomunit{$\left[\dfrac{W}{m^2 \, K}\right]$}\nomeqref {3.0}\nompageref{50}
+  \item [{$k$}]\begingroup Conductividad térmica de un fluido  \nomunit{$\left[\dfrac{W}{m\,K}\right]$}\nomeqref {3.0}\nompageref{50}
+  \item [{$L$}]\begingroup Calor latente de un fluido \nomunit{$\left[ \dfrac{J}{kg} \right]$}\nomeqref {3.0}\nompageref{50}
+  \item [{$LWC$}]\begingroup Contenido en agua líquida, \textit{liquid water content} \nomunit{$\left[\dfrac{kg}{m^3}\right]$}\nomeqref {3.0}\nompageref{50}
+  \item [{$MVD$}]\begingroup Tamaño volumétrico medio de las gotas, \textit{median volumetric diameter}\nomunit{[$\mu m$]}\nomeqref {3.0}\nompageref{50}
+  \item [{$p$}]\begingroup Presión de un fluido \nomunit{[$Pa$]}\nomeqref {3.0}\nompageref{50}
+  \item [{$p_{v, sat}$}]\begingroup Presión de vapor de saturación \nomunit{[$Pa$]}\nomeqref {3.0}\nompageref{50}
+  \item [{$r$}]\begingroup Factor de recuperación adiabática  \nomunit{[$---$]}\nomeqref {3.0}\nompageref{50}
+  \item [{$T$}]\begingroup Temperatura absoluta \nomunit{[$K$]}\nomeqref {3.0}\nompageref{50}
+
+\end{thenomenclature}

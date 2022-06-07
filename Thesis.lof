@@ -1,0 +1,74 @@
+\babel@toc {spanish}{}\relax 
+\addvspace {10\p@ }
+\contentsline {xchapter}{Agradecimientos.}{\es@scroman {iii}}{chapter*.1}%
+\addvspace {10\p@ }
+\contentsline {xchapter}{Resumen.}{\es@scroman {v}}{chapter*.2}%
+\addvspace {10\p@ }
+\contentsline {xchapter}{Abstract.}{\es@scroman {vii}}{chapter*.3}%
+\addvspace {10\p@ }
+\contentsline {xchapter}{Introducci\'on.}{\es@scroman {xxv}}{chapter*.8}%
+\addvspace {10\p@ }
+\contentsline {xchapter}{Engelamiento en aeronaves.}{1}{chapter.1}%
+\contentsline {figure}{\numberline {1.1}{\ignorespaces Engelamiento por precipitaci\'on.\relax }}{3}{figure.caption.9}%
+\contentsline {figure}{\numberline {1.2}{\ignorespaces Caracter\IeC {\'\i }sticas aerodin\'amicas de un mismo perfil limpio y engelado.\relax }}{6}{figure.caption.10}%
+\contentsline {figure}{\numberline {1.3}{\ignorespaces Formaci\'on de hielo en la entrada de aire. \cite {inlet}\relax }}{7}{figure.caption.11}%
+\contentsline {figure}{\numberline {1.4}{\ignorespaces Formaci\'on de hielo en el carburador. \cite {carburetor}\relax }}{7}{figure.caption.11}%
+\contentsline {figure}{\numberline {1.5}{\ignorespaces Formaci\'on de hielo en el compresor. NASA Glenn Research Center \cite {compressor_icing}.\relax }}{8}{figure.caption.12}%
+\contentsline {figure}{\numberline {1.6}{\ignorespaces Fotograf\IeC {\'\i }as tras vuelo de una aeronave. NASA Glenn Research Center \cite {icing_glenn}.\relax }}{12}{figure.caption.15}%
+\contentsline {figure}{\numberline {1.7}{\ignorespaces Formaci\'on de hielo \textit {glaze}.\relax }}{12}{figure.caption.16}%
+\contentsline {figure}{\numberline {1.8}{\ignorespaces Fen\'omeno de la lluvia engelante \cite {Freezing_rain}.\relax }}{13}{figure.caption.17}%
+\contentsline {figure}{\numberline {1.9}{\ignorespaces Formaci\'on de hielo \textit {rime}.\relax }}{14}{figure.caption.18}%
+\contentsline {figure}{\numberline {1.10}{\ignorespaces Formaci\'on por capas de hielo \textit {glaze} (arriba) y \textit {rime} (abajo).\relax }}{14}{figure.caption.19}%
+\contentsline {figure}{\numberline {1.11}{\ignorespaces Frecuencia de incidentes de engelamiento en Estados Unidos, expresada en porcentaje de tiempo de vuelo. \cite {politovich}.\relax }}{16}{figure.caption.20}%
+\contentsline {figure}{\numberline {1.12}{\ignorespaces Envolvente de certificaci\'on en condiciones de engelamiento continuo (nubes cumuliformes) \cite {FAR_icing}.\relax }}{17}{figure.caption.21}%
+\contentsline {figure}{\numberline {1.13}{\ignorespaces Extensi\'on de nubes cumuliformes para un \textit {LWC} dado \cite {FAR_icing}.\relax }}{18}{figure.caption.22}%
+\contentsline {figure}{\numberline {1.14}{\ignorespaces Envolvente de certificaci\'on en condiciones de engelamiento continuo (nubes estratiformes) \cite {FAR_icing}.\relax }}{19}{figure.caption.23}%
+\contentsline {figure}{\numberline {1.15}{\ignorespaces Extensi\'on de nubes estratiformes para un \textit {LWC} dado \cite {FAR_icing}.\relax }}{19}{figure.caption.24}%
+\contentsline {figure}{\numberline {1.16}{\ignorespaces Sensores \textit {in situ} de detecci\'on de hielo.\relax }}{20}{figure.caption.25}%
+\contentsline {figure}{\numberline {1.17}{\ignorespaces Traves\IeC {\'\i }a correcta para atravesar un frente fr\IeC {\'\i }o evitando condiciones de engelamiento \cite {avion_y_piloto}.\relax }}{23}{figure.caption.26}%
+\contentsline {figure}{\numberline {1.18}{\ignorespaces Tratamiento qu\IeC {\'\i }mico antihielo en un Airbus A330 \cite {De_icing_airport}. \relax }}{24}{figure.caption.27}%
+\contentsline {figure}{\numberline {1.19}{\ignorespaces Sistemas de deshielo actuales.\relax }}{26}{figure.caption.28}%
+\addvspace {10\p@ }
+\contentsline {xchapter}{Simulaci\'on del engelamiento en aeronaves.}{27}{chapter.2}%
+\contentsline {figure}{\numberline {2.1}{\ignorespaces M\'odulos implicados e interacciones entre ellos.\relax }}{28}{figure.caption.29}%
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Jerarqu\IeC {\'\i }a de los distintos m\'etodos CFD en relaci\'on a su complejidad. \cite {hirsch}\relax }}{29}{figure.caption.30}%
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Evoluci\'on de las herramientas CFD utilizadas por Airbus. \cite {hirsch}\relax }}{30}{figure.caption.31}%
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Papel del CFD en el dise\~no del Boeing 777. \cite {hirsch}\relax }}{31}{figure.caption.32}%
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Simulaci\'on del flujo alrededor del X-31 mediante el solver TAU. \cite {TAU_figura}\relax }}{34}{figure.caption.33}%
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Esquema de la regi\'on de lanzamiento.\relax }}{37}{figure.caption.35}%
+\contentsline {figure}{\numberline {2.7}{\ignorespaces Esquema de los coeficientes de captaci\'on local y global\relax }}{38}{figure.caption.36}%
+\contentsline {figure}{\numberline {2.8}{\ignorespaces Representaci\'on esquem\'atica del funcionamiento de los distintos m\'etodos de simulaci\'on de crecimiento de hielo.\relax }}{41}{figure.caption.37}%
+\contentsline {figure}{\numberline {2.9}{\ignorespaces Diagramas de flujo de cada uno de los m\'etodos de simulaci\'on de crecimiento de hielo.\relax }}{42}{figure.caption.38}%
+\contentsline {figure}{\numberline {2.10}{\ignorespaces Volumen de control utilizado en la modelizaci\'on de la formaci\'on de hielo.\relax }}{44}{figure.caption.39}%
+\addvspace {10\p@ }
+\contentsline {xchapter}{Conclusiones y futuros estudios.}{47}{chapter.3}%
+\addvspace {10\p@ }
+\contentsline {xchapter}{Consistencia, estabilidad y error en esquemas num\'ericos.}{51}{appendix.Alph1}%
+\contentsline {figure}{\numberline {A.1}{\ignorespaces Relaciones entre consistencia, estabilidad y convergencia.\relax }}{54}{figure.caption.40}%
+\contentsline {figure}{\numberline {A.2}{\ignorespaces Representaci\'on de una onda como superposici\'on de arm\'onicos: longitud de onda m\'axima y m\IeC {\'\i }nima.\relax }}{59}{figure.caption.41}%
+\contentsline {figure}{\numberline {A.3}{\ignorespaces Factor de amplificaci\'on del esquema de segundo orden expl\IeC {\'\i }cito para la ecuaci\'on de la advecci\'on.\relax }}{62}{figure.caption.42}%
+\contentsline {figure}{\numberline {A.4}{\ignorespaces Factor de amplificaci\'on del esquema de segundo orden impl\IeC {\'\i }cito para la ecuaci\'on de la advecci\'on.\relax }}{64}{figure.caption.43}%
+\contentsline {figure}{\numberline {A.5}{\ignorespaces Factor de amplificaci\'on del esquema \textit {FOU} expl\IeC {\'\i }cito para la ecuaci\'on de la advecci\'on.\relax }}{65}{figure.caption.44}%
+\contentsline {figure}{\numberline {A.6}{\ignorespaces Factor de amplificaci\'on del esquema \textit {FOU} impl\IeC {\'\i }cito para la ecuaci\'on de la advecci\'on.\relax }}{66}{figure.caption.45}%
+\contentsline {figure}{\numberline {A.7}{\ignorespaces Factor de amplificaci\'on del esquema Runge-Kutta de 2 pasos para la ecuaci\'on de la advecci\'on.\relax }}{67}{figure.caption.46}%
+\contentsline {figure}{\numberline {A.8}{\ignorespaces Interpretaci\'on geom\'etrica de la condici\'on del CFL.\relax }}{68}{figure.caption.47}%
+\contentsline {figure}{\numberline {A.9}{\ignorespaces Errores de dispersi\'on y difusi\'on del m\'etodo \textit {FOU} aplicado a la ecuaci\'on de la advecci\'on.\relax }}{74}{figure.caption.48}%
+\contentsline {figure}{\numberline {A.10}{\ignorespaces Errores de dispersi\'on y difusi\'on del m\'etodo Runge-Kutta de 2 pasos aplicado a la ecuaci\'on de la advecci\'on.\relax }}{75}{figure.caption.49}%
+\contentsline {figure}{\numberline {A.11}{\ignorespaces Soluciones num\'erica (esquema \textit {FOU}) y anal\IeC {\'\i }tica de la ecuaci\'on de la advecci\'on.\relax }}{79}{figure.caption.52}%
+\contentsline {figure}{\numberline {A.12}{\ignorespaces Soluciones num\'erica (esquema Runge-Kutta-2) y anal\IeC {\'\i }tica de la ecuaci\'on de la advecci\'on.\relax }}{81}{figure.caption.54}%
+\addvspace {10\p@ }
+\contentsline {xchapter}{Soluci\'on anal\IeC {\'\i }tica de las ecuaciones de Euler.}{83}{appendix.Alph2}%
+\contentsline {figure}{\numberline {B.1}{\ignorespaces Estructura gen\'erica de la soluci\'on.\relax }}{86}{figure.caption.55}%
+\contentsline {figure}{\numberline {B.2}{\ignorespaces Estructuras posibles de la soluci\'on a efectos de la soluci\'on anal\IeC {\'\i }tica.\relax }}{87}{figure.caption.56}%
+\contentsline {figure}{\numberline {B.3}{\ignorespaces Esquema de las caracter\IeC {\'\i }sticas de cada una de las posibles discontinuidades.\relax }}{88}{figure.caption.57}%
+\contentsline {figure}{\numberline {B.4}{\ignorespaces Diagramas de flujo para el muestreo de la soluci\'on.\relax }}{92}{figure.caption.58}%
+\contentsline {figure}{\numberline {B.5}{\ignorespaces Soluci\'on anal\IeC {\'\i }tica del test de Sod (sin modificar), con $t_f = 0.25$.\relax }}{94}{figure.caption.60}%
+\contentsline {figure}{\numberline {B.6}{\ignorespaces Soluci\'on anal\IeC {\'\i }tica del test de Sod modificado, con $t_f = 0.25$.\relax }}{94}{figure.caption.61}%
+\contentsline {figure}{\numberline {B.7}{\ignorespaces Soluci\'on anal\IeC {\'\i }tica del test 2, con $t_f = 0.25$.\relax }}{95}{figure.caption.62}%
+\contentsline {figure}{\numberline {B.8}{\ignorespaces Soluci\'on anal\IeC {\'\i }tica del test 3, con $t_f = 0.012$.\relax }}{96}{figure.caption.63}%
+\contentsline {figure}{\numberline {B.9}{\ignorespaces Soluci\'on anal\IeC {\'\i }tica del test 4, con $t_f = 0.05$.\relax }}{96}{figure.caption.64}%
+\contentsline {figure}{\numberline {B.10}{\ignorespaces Soluci\'on anal\IeC {\'\i }tica del test 5, con $t_f = 0.012$.\relax }}{97}{figure.caption.65}%
+\addvspace {10\p@ }
+\contentsline {xchapter}{Desarrollo de software.}{99}{appendix.Alph3}%
+\contentsline {figure}{\numberline {C.1}{\ignorespaces Diagrama de flujo del funcionamiento global del programa.\relax }}{102}{figure.caption.66}%
+\contentsline {figure}{\numberline {C.2}{\ignorespaces Diagrama de flujo del proceso de actualizaci\'on de la soluci\'on.\relax }}{103}{figure.caption.67}%

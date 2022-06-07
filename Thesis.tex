@@ -1,0 +1,369 @@
+\documentclass[a4paper,11pt,twoside,makeidx]{ThesisStyle}
+\usepackage[spanish,es-nosectiondot]{babel}   % quita el punto de la section
+\usepackage[latin1]{inputenc}
+%\usepackage[T1]{fontenc}
+   \decimalpoint
+\usepackage{color}
+\usepackage{colortbl}
+\usepackage{graphicx}
+\usepackage{epic}
+\usepackage{curves}
+\usepackage{multicol}
+%\usepackage{array}
+\usepackage{longtable}
+\usepackage{amstext}
+\usepackage{amsbsy}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{latexsym}  %\mathbb{R}
+\usepackage{wrapfig}
+%\usepackage{multind}
+\usepackage{eurosym}
+\usepackage{setspace}
+\usepackage{makeidx}
+\usepackage{textpos}
+\usepackage{rotating}    % Sideways of figures & tables
+\usepackage{multirow}
+%\usepackage[FIGTOPCAP]{subfigure}
+\usepackage[pagebackref,hyperindex=true]{hyperref}
+\usepackage[section]{placeins}
+
+\usepackage{subcaption}
+\usepackage{titlesec}
+\usepackage[intoc, spanish]{nomencl}
+\makenomenclature
+\newcommand{\nomunit}[1]{%
+\renewcommand{\nomentryend}{\hspace*{\fill}#1}}
+
+%% This code creates the groups
+% -----------------------------------------
+\usepackage{ifthen}
+  \renewcommand{\nomgroup}[1]{%
+  \item[\bfseries
+  \ifthenelse{\equal{#1}{C}}{Constantes físicas}{%
+  \ifthenelse{\equal{#1}{N}}{Números característicos}{%
+  \ifthenelse{\equal{#1}{T}}{Variables termofluidodinámicas}{%
+  \ifthenelse{\equal{#1}{G}}{Nomenclatura de cálculo numérico}{%
+  \ifthenelse{\equal{#1}{D}}{Nomenclatura de cálculo diferencial y álgebra}{%
+  \ifthenelse{\equal{#1}{S}}{Sufijos}{}}}}}}%
+  ]}
+
+% -----------------------------------------
+
+\setcounter{secnumdepth}{3}
+\captionsetup[subfigure]{subrefformat=simple,labelformat=simple}
+\renewcommand\thesubfigure{(\alph{subfigure})}
+
+\captionsetup[table]{name=Tabla}
+
+% float para las figuras
+\def\floatpagefraction{.8}
+
+\DeclareGraphicsExtensions{.pdf,.png,.jpg} %solo para PDFLaTeX
+
+%\setlength{\unitlength}{0.18mm}
+
+%------------------------------------------------------------------------------------------------
+%-------------- tamaño folio -------------------------------------------------------------------
+
+\def\psnormal{\textwidth=19.5cm\textheight=23cm
+          \oddsidemargin=-1.5cm\evensidemargin=0.2cm
+          \parindent=1cm\topmargin=-2cm}
+\psnormal
+
+%------------------------------------------------------------------------------
+% new commands
+%------------------------------------------------------------------------------
+\newcommand{\bm}[1]{\mbox{\boldmath{${#1}$}}} % negrita en modo matematico
+%\newcommand{\dfrac}{\displaystyle\frac}
+\newcommand{\dint}{\displaystyle\int}
+\newcommand{\dsum}{\displaystyle\sum}
+\newcommand{\tsum}{\textstyle\sum}
+\newcommand{\dprod}{\displaystyle\prod}
+\newcommand{\dlim}{\displaystyle\lim}
+\newcommand{\eg}{{\it e.g.}\ }
+\newcommand{\ie}{{\it i.e.}\ }
+\newcommand{\ea}{\mbox{\it et al.}\ }
+\renewcommand{\labelitemi}{$\bullet$}
+\renewcommand{\labelitemii}{--}
+\renewcommand{\labelitemiii}{$\spadesuit$}
+
+% negrita en modo matematico
+
+\newcommand{\be}{\begin{equation}}
+% $$ 
+\newcommand{\ee}{\end{equation}}
+
+\newcommand{\caja}[2]{
+\begin{center}
+\begin{tabular}{|p{#1}|}
+\hline
+\vspace{#2}\\
+\hline
+\end{tabular}
+\end{center}
+}
+
+%-----------------------------------------------------------------------------------------------
+\definecolor{Blue}          {cmyk}{1,1,0,0}            % palabras clave
+\definecolor{BrickRed}      {cmyk}{0,1.0,0.91,0.60}    % texto resaltado
+\definecolor{PineGreen}     {cmyk}{0.92,0,0.59,0.25}   % comentarios programa
+\definecolor{CornflowerBlue}{cmyk}{0.65,0.13,0,0}
+\definecolor{SkyBlue}       {cmyk}{0.62,0,0.12,0}
+\definecolor{Melon}         {cmyk}{0,0.46,0.50,0}
+\definecolor{Apricot}       {cmyk}{0,0.32,0.52,0}
+\definecolor{GreenYellow}   {cmyk}{0.15,0,0.69,0}
+
+\definecolor{CadetBlue}     {cmyk}{0.62,0.57,0.23,0}
+\definecolor{CornflowerBlue}{cmyk}{0.65,0.13,0,0}
+\definecolor{MidnightBlue}  {cmyk}{0.98,0.13,0,0.43}
+\definecolor{NavyBlue}      {cmyk}{0.94,0.54,0,0}
+\definecolor{RoyalBlue}     {cmyk}{1,0.50,0,0}
+
+\definecolor{verde}{cmyk}{0.40,0.0,0.32,0.70}
+\definecolor{azul}{cmyk}{1.0,0.78,0.0,0.18}
+\definecolor{linkcol}{rgb}{0,0,0.4}
+\definecolor{citecol}{rgb}{0.5,0,0}
+\definecolor{Skyblue}{cmyk}{0.4,0.1,0.0,0.0}
+\newcommand{\BRnem}[1]{\normalsize\color{BrickRed}\em #1}
+\newcommand{\BRlbf}[1]{\Large\color{BrickRed}\rmfamily\bfseries #1}
+\newtheorem{prop}{Propiedad}
+\newtheorem{definition}{Definición}
+\newenvironment{Figure}
+  {\par\medskip\noindent\minipage{\linewidth}}
+  {\endminipage\par\medskip}
+%------------------------------------------------------------------------------
+\def\floatpagefraction{.8}
+\DeclareGraphicsExtensions{.pdf,.png,.jpg} % solo para PDFLaTeX
+\def\baselinestretch{1.5}
+%------------------------------------------------------------------------------
+
+%------------------------------------------------------------------------------------------------
+%-------------- tamaño folio -------------------------------------------------------------------
+
+\def\psnormal{\textwidth=17cm\textheight=23cm
+          \oddsidemargin=0cm\evensidemargin=0.2cm
+          \parindent=1cm\topmargin=-1cm}
+\psnormal
+%------------------------------------------------------------------------------------------------
+
+%------------------------------------------------------------------------------
+%------------------------ Fancy page ------------------------------------------
+\usepackage{fancyhdr}                    % Fancy Header and Footer
+
+\pagestyle{fancy}                       % Sets fancy header and footer
+\fancyfoot{}                            % Delete current footer settings
+
+\fancyhead[LE,RO]{\bfseries\thepage}    % Page number (boldface) in left on even
+% pages and right on odd pages
+\fancyhead[RE]{\bfseries\nouppercase{\leftmark}}      % Chapter in the right on even pages
+\fancyhead[LO]{\bfseries\nouppercase{\rightmark}}     % Section in the left on odd pages
+
+\let\headruleORIG\headrule
+\renewcommand{\headrule}{\color{black} \headruleORIG}
+\renewcommand{\headrulewidth}{1.0pt}
+\usepackage{colortbl}
+\arrayrulecolor{black}
+
+\fancypagestyle{plain}{
+  \fancyhead{}
+  \fancyfoot{}
+  \renewcommand{\headrulewidth}{0pt}
+}
+%------------------------------------------------------------------------------
+
+
+%------------------------------------------------------------------------------
+%------------------------ Minitoc ---------------------------------------------
+\usepackage{minitoc}
+%\usepackage[tight,spanish]{minitoc}
+%\usepackage[tight]{minitoc}
+
+\setcounter{minitocdepth}{2}         %default
+\setlength{\mtcindent}{24pt}         %default
+\renewcommand{\mtcfont}{\small\rm}   %default
+\renewcommand{\mtcSfont}{\small\bf}  %default
+\mtcsetoffset{minitoc}{-2.0em}		% indent del mimnitoc
+%------------------------------------------------------------------------------
+%----------------------- Estilo de subrutina y funciÃ³n ------------------------
+\usepackage{listings}
+%---------------LO fundamental-------------------------
+\lstset{basicstyle=\ttfamily\small,
+        identifierstyle=\ttfamily,
+        morekeywords={save}
+        }
+
+\lstdefinestyle{interface}
+               {language=[95]Fortran,
+                %frame=bottomlines,
+                basicstyle=\ttfamily,
+                identifierstyle=\ttfamily,
+                %commentstyle=\ttfamily,
+                %commentstyle=\color{PineGreen},
+                %keywordstyle=\color{azul},
+                commentstyle=\color{ao(english)},
+                keywordstyle=\color{blue},
+                emph={status,size,position,len},
+                emphstyle=\em,
+				morecomment=[l][\em]{Dec},
+				morecomment=[l][\em]{sent},
+				morecomment=[l][\em]{nombre},
+				morecomment=[l][\em]{operando},
+				morecomment=[l][\em]{operador},
+                emph={nombre_variable}
+               }
+%--------------------------------------------------------------------------
+
+\lstdefinestyle{interfaceNF}
+               {basicstyle=\ttfamily\small,
+                identifierstyle=\ttfamily,
+                emphstyle=\ttfamily
+               }
+
+\lstdefinestyle{ejemplos}
+               {basicstyle=\ttfamily,
+                keywordstyle=\em,
+                commentstyle=\ttfamily,
+				morecomment=[l][\em]{Dec},
+				morecomment=[l][\em]{sent},
+                keywords={numero,estructura,componente}
+               }
+
+\lstdefinestyle{otros}
+               {basicstyle=\ttfamily,
+                keywordstyle=\em,
+                commentstyle=\ttfamily,
+%				morecomment=[l][\em]{Dec},
+%				morecomment=[l][\em]{sent},
+%                keywords={numero,estructura,componente}
+               }
+
+\lstdefinestyle{ejemplosNF}
+               {basicstyle=\ttfamily,
+                keywordstyle=\em,
+                commentstyle=\ttfamily,
+				morecomment=[l][\em]{Dec},
+				morecomment=[l][\em]{sent},
+                keywords={numero,estructura,componente,sentencia,expr,lÃ³gica,%
+				          lista_de_variables,nombre,cuerpo_de_interface, %
+						  nombre_variable, nombre_funcion, arg}
+               }
+
+\lstdefinestyle{numbered}
+               {numbers=left,
+                numberstyle=\tiny,
+                escapeinside={(*@}{@*)},
+%                language=[95]Fortran,
+                basicstyle=\ttfamily,
+%                identifierstyle=\ttfamily,
+%                commentstyle=\ttfamily,
+%                emph={status,size,position,len},
+%                emphstyle=\ttfamily,
+%				morecomment=[l][\em]{Dec},
+%				morecomment=[l][\em]{sent},
+               }
+
+\lstdefinestyle{ejemplosubp}
+               {basicstyle=\ttfamily,
+                keywordstyle=\em,
+                commentstyle=\ttfamily,
+				morecomment=[l][\em]{Dec},
+				morecomment=[l][\em]{sent},
+                keywords={nombre_subrutina, lista_argumentos, %
+				  nombre_del_module, cuerpo_de_interface, lista_de_subprgramas}
+               }
+
+\lstdefinestyle{ficheros}
+               {basicstyle=\ttfamily,
+                keywordstyle=\em,
+                commentstyle=\ttfamily,
+                keywords={nombre,estado,accion,lista_vbles, nombre_del_namelist}
+               }
+
+\lstdefinestyle{formatos}
+               {basicstyle=\ttfamily,
+                keywordstyle=\em,
+                commentstyle=\ttfamily,
+                keywords={nombre}
+               }
+
+\lstdefinestyle{parada}
+               {basicstyle=\ttfamily,
+                keywordstyle=\em,
+                commentstyle=\ttfamily,
+                keywords={frase_a_imprimir_por_pantalla}
+               }
+
+%------------------------------------------------------------------------------
+
+%-------------------------------------------------------------------------------
+
+
+\usepackage{hyperref}
+%------------------------------------------------------------------------------
+%---------------- para el Indice ----------------------------------------------
+\hypersetup
+{
+bookmarksopen=true,
+pdftitle=Ice accretion simulation,
+pdfauthor="Rodrigo_Fdez",
+pdfsubject="a subject", 		% subject of the document
+%pdftoolbar=false, 				% toolbar hidden
+pdfmenubar=true, 				% menubar shown
+pdfhighlight=/O,           		% effect of clicking on a link
+colorlinks=true, 				% couleurs sur les liens hypertextes
+pdfpagemode=None, 				% aucun mode de page
+pdfpagelayout=SinglePage, 		% ouverture en simple page
+pdffitwindow=true,              % pages ouvertes entierement dans toute la fenetre
+linkcolor=linkcol, 				% couleur des liens hypertextes internes
+citecolor=citecol, 				% couleur des liens pour les citations
+urlcolor=linkcol 				% couleur des liens pour les url
+}
+%------------------------------------------------------------------------------
+
+\makeindex
+
+
+
+\begin{document}
+
+
+\frontmatter
+
+											% Compila parametros de la portada
+\include{Portada}
+
+\maketitle												% Compila parametros de la portada
+
+
+\include{Abstract_bien}
+
+
+\dominitoc
+
+\cleardoublepage
+
+\tableofcontents
+\printnomenclature
+\listoffigures
+\listoftables
+\include{Intro}
+\mainmatter
+\include{Chapter_01/Chapter_01}
+
+\include{Chapter_02/Chapter_02}
+
+\include{Conclusiones}
+
+\include{Symbols}
+
+\appendix
+
+\include{Appendix/Appendix_01/Appendix_01}
+\include{Appendix/Appendix_02/Appendix_02}
+\include{Appendix/Appendix_03/Appendix_03}
+%\bibliographystyle{ThesisStyle}
+%\include{Bibliography/bibliography}
+
+\end{document}

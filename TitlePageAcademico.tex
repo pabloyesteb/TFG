@@ -1,0 +1,43 @@
+%------------------------------------------
+% portada
+%------------------------------------------
+
+% Genera portada
+\renewcommand{\title}{Nombre del trabajo}
+\renewcommand{\author}{Autor}
+
+\renewcommand\maketitle{
+  \begin{titlepage}  
+
+   \vspace*{-16mm}
+   \hspace{-18mm}\begin{tabular}{lcr}
+   \includegraphics[width=0.21\textwidth]{Figures/logos/upm.jpg}  & \hspace{8cm} &
+   \includegraphics[width=0.25\textwidth]{Figures/logos/etsiae.jpg} \\
+	\end{tabular}
+  
+	\vspace{15 mm}
+    \begin{center}
+      {\sssbT UNIVERSIDAD POLIT\sss{E}CNICA DE MADRID \\[7mm]
+        ESCUELA T\sss{E}CNICA SUPERIOR DE INGENIER\sssI{I}A \\[3mm]
+        AERON\sss{A}UTICA Y DEL ESPACIO\\[7mm]
+        GRADO EN INGENIER\sssI{I}A AEROESPACIAL} \\[15mm]
+        {\sssbT TRABAJO FIN DE GRADO} \\[4mm]
+       {\ssbT T\aaai{\symbol{016}}tulo del Trabajo Fin de Grado \\[1mm]
+       T\aaai{\symbol{016}}tulo del Trabajo Fin de Grado}
+	\end{center}
+	
+	
+	\vspace{3.5cm}
+	\begin{flushright}      
+      {\sssbT AUTOR: Nombre APELLIDOS} \\[4mm]
+      {\sssbT ESPECIALIDAD: \sssbT Denominaci\aaa{o}n de la especialidad} \\[4mm]
+      {\sssbT TUTOR ACAD\sss{E}MICO: Nombre APELLIDOS}
+	\end{flushright}      
+
+	\vspace{10mm}
+    \begin{center}
+      \vspace{10 mm}{\sssbT Junio de 2018}
+    \end{center}
+    
+  \end{titlepage} 
+}
