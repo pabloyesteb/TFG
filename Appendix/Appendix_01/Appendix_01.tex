@@ -27,14 +27,41 @@
 	a & \equiv & \text{Semimajor axis}\\
 	e & \equiv & \text{Eccentricity}\\
 	i & \equiv & \text{Inclination}\\
-	\Omega \text{or} RAAN & \equiv & \text{Right ascension of the ascending node}\\
-	\omega & \equiv & \text{Argument of perigee}\\
+	\Omega \; \text{or} \; RAAN & \equiv & \text{Right ascension of the ascending node}\\
+	\omega & \equiv & \text{Argument of periapsis}\\
 	M & \equiv & \text{Mean anomaly}\\
 	\end{array}
-	\right\}
+	\right.
 	\end{equation}
 	%
+	\indent The last element commonly varies across literature, being substituted by the true anomaly $\theta$, or when tackling the variation of orbital parameters, the mean anomaly at $t = 0 \; $ ($M_0$) or the perigee time $T_0$ \cite{Wiesel}. Mean anomaly is used due to the simplicity of its unperturbed variational equation, as it has a constant rate (denoted by $n$). The geometrical meaning and definition of these elements is out from the scope of this thesis. Figure PUT FIGURE shows a simple geometrical drawing of the involved angles.\\
+	%
+	\indent As it is seen in the figure before, the Keplerian elements become singular in two cases:\\
+	%
+	\begin{itemize}
+	\item[A.] If the inclination is null, the orbital plane is coincident with the inertial reference (ECI x-y) plane. The ascending node is hence undefined in this case. 
+	%
+	\item[B.] If the eccentricity is null, the periapsis is not defined, as it is the nearest point of the orbit around the central body. Thus, there is no angle defining its position, making the argument of periapsis nonsingular. 
+	\end{itemize}
+	%
+	\indent These singularities are unfortunately quite common in orbit design. They correspond respectively with equatorial and circular orbits. In order to avoid this behaviour, many different elements sets have been defined. Wiesel \cite{Wiesel} shows an intuitive approach in chapter 2.10, solving either problem with a graphic approach.\\
+	%
 	\subsection{Quasi-nonsingular orbital elements (QNSOE).}
+	%
+	\indent The quasi-nonsingular orbital element set tackles the singularity existing in circular orbits \cite{Gim_Alfriend}, \cite{dAmicoDLR}. Instead of defining the argument of periapsis and eccentricity separately, it uses the components eccentricity vector (eccentricity-sized vector pointing towards the periapsis), as seen in figure PUT FIGURE. The set is then defined as: \\
+	%
+	\begin{equation}
+	\left\{ 
+	\begin{array}{lll}
+	a & \equiv & \text{Semimajor axis}\\
+	q_1 = e\, \cos \omega & \equiv & \text{x-projection of} \vec{e}\\
+	q_2 = e\, \sin \omega & \equiv & \text{y-projection of} \overline{e}\\
+	i \; \text{or} \; RAAN & \equiv & \text{Inclinarion}\\
+	\Omega & \equiv & \text{Right ascension of the ascending node}\\
+	u = \omega + \theta & \equiv & \text{True latitude}\\
+	\end{array}
+	\right.
+	\end{equation}
 	%
 	%
 	\subsection{Equinoctial orbital elements (EOE).}
