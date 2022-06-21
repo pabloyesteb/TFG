@@ -19,6 +19,15 @@
 \usepackage{latexsym}  %\mathbb{R}
 \usepackage{wrapfig}
 %\usepackage{multind}
+\usepackage{scalerel}
+\usepackage{stackengine,wasysym}
+
+\newcommand\reallywidetilde[1]{\ThisStyle{%
+  \setbox0=\hbox{$\SavedStyle#1$}%
+  \stackengine{-.1\LMpt}{$\SavedStyle#1$}{%
+    \stretchto{\scaleto{\SavedStyle\mkern.2mu\AC}{.5150\wd0}}{.6\ht0}%
+  }{O}{c}{F}{T}{S}%
+}}
 \usepackage{eurosym}
 \usepackage{setspace}
 \usepackage{makeidx}
@@ -28,9 +37,11 @@
 \usepackage{rotating}    % Sideways of figures & tables
 \usepackage{multirow}
 %\usepackage[FIGTOPCAP]{subfigure}
-\usepackage[pagebackref,hyperindex=true]{hyperref}
+\usepackage[backend=biber,
+    style=numeric-comp, hyperref, giveninits=true, backref = true]{biblatex}
+\usepackage[hyperindex=true]{hyperref}
+%\usepackage[pagebackref,hyperindex=true]{hyperref}
 \usepackage[section]{placeins}
-%\usepackage{bibtex}
 \usepackage{subcaption}
 \usepackage{titlesec}
 \usepackage[intoc, english]{nomencl}
@@ -326,7 +337,7 @@ urlcolor=linkcol 				% couleur des liens pour les url
 
 \makeindex
 
-
+\addbibresource{refs.bib}
 
 \begin{document}
 
@@ -366,6 +377,12 @@ urlcolor=linkcol 				% couleur des liens pour les url
 %\include{Appendix/Appendix_02/Appendix_02}
 %\include{Appendix/Appendix_03/Appendix_03}
 %\bibliographystyle{ThesisStyle}
-\bibliographystyle{siam} % We choose the "plain" reference style
-\bibliography{Bibliography/refs}
+%\bibliographystyle{siam} % We choose the "plain" reference style
+
+%\bibliography{Bibliography/refs}
+\printbibheading
+\printbibliography
+%\printbibliography[type=book,heading=subbibliography,title={Book Sources}]
+%\printbibliography[type=paper,heading=papers,title={Paper Sources}]
+%\printbibliography[type=paper,heading=papers,title={Paper Sources}]
 \end{document}

@@ -6,12 +6,22 @@
 \contentsline {chapter}{Introducci\'on.}{xxi}{chapter*.8}%
 \contentsline {chapter}{\numberline {A}Absolute and relative orbital element sets.}{1}{appendix.A}%
 \contentsline {section}{\numberline {A.1}Introduction.}{1}{section.A.1}%
-\contentsline {section}{\numberline {A.2}Absolute sets.}{2}{section.A.2}%
-\contentsline {subsection}{\numberline {A.2.1}Keplerian orbital elements (KOE).}{2}{subsection.A.2.1}%
-\contentsline {subsection}{\numberline {A.2.2}Quasi-nonsingular orbital elements (QNSOE).}{3}{subsection.A.2.2}%
-\contentsline {subsection}{\numberline {A.2.3}Equinoctial orbital elements (EOE).}{3}{subsection.A.2.3}%
-\contentsline {subsection}{\numberline {A.2.4}Delaunay orbital elements (DOE).}{3}{subsection.A.2.4}%
-\contentsline {section}{\numberline {A.3}Relative sets.}{3}{section.A.3}%
-\contentsline {subsection}{\numberline {A.3.1}Eccentricity/inclination vectors relative orbital elements (EIROE).}{3}{subsection.A.3.1}%
-\contentsline {subsection}{\numberline {A.3.2}Peters-Noomen C set of relative orbital elements (CROE).}{3}{subsection.A.3.2}%
-\contentsline {subsection}{\numberline {A.3.3}General workflow for arbitrary ROEs.}{3}{subsection.A.3.3}%
+\contentsline {section}{\numberline {A.2}Absolute element sets.}{2}{section.A.2}%
+\contentsline {subsection}{\numberline {A.2.1}Workflow for transformations between absolute element sets.}{2}{subsection.A.2.1}%
+\contentsline {subsection}{\numberline {A.2.2}Element sets.}{2}{subsection.A.2.2}%
+\contentsline {subsubsection}{\numberline {A.2.2.1}Keplerian orbital elements (KOE).}{2}{subsubsection.A.2.2.1}%
+\contentsline {subsubsection}{\numberline {A.2.2.2}Eccentricity/inclination vectors orbital elements (EIOE).}{3}{subsubsection.A.2.2.2}%
+\contentsline {paragraph}{Eccentricity vector \\}{3}{subsubsection.A.2.2.2}%
+\contentsline {paragraph}{Inclination vector \\}{4}{equation.A.2.3}%
+\contentsline {paragraph}{Element set \\}{4}{equation.A.2.3}%
+\contentsline {subsubsection}{\numberline {A.2.2.3}Quasi-nonsingular orbital elements (QNSOE).}{4}{subsubsection.A.2.2.3}%
+\contentsline {subsubsection}{\numberline {A.2.2.4}Equinoctial orbital elements (EOE).}{5}{subsubsection.A.2.2.4}%
+\contentsline {subsubsection}{\numberline {A.2.2.5}Delaunay orbital elements (DOE).}{5}{subsubsection.A.2.2.5}%
+\contentsline {section}{\numberline {A.3}Relative sets.}{6}{section.A.3}%
+\contentsline {subsection}{\numberline {A.3.1}Workflow for transformations between ROEs. }{6}{subsection.A.3.1}%
+\contentsline {paragraph}{A) From any ROE set to RKOE\\}{7}{subsection.A.3.1}%
+\contentsline {paragraph}{B) From RKOE to any ROE set\\}{8}{Item.4}%
+\contentsline {subsection}{\numberline {A.3.2}Element sets.}{9}{subsection.A.3.2}%
+\contentsline {subsubsection}{\numberline {A.3.2.1}Eccentricity/inclination vectors relative orbital elements (REIOE).}{9}{subsubsection.A.3.2.1}%
+\contentsline {paragraph}{Concept \& meaning\\}{9}{equation.A.3.13}%
+\contentsline {subsubsection}{\numberline {A.3.2.2}Peters-Noomen C set of relative orbital elements (CROE).}{10}{subsubsection.A.3.2.2}%
