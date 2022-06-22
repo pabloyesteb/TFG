@@ -2360,17 +2360,19 @@
     <bcf:citekey order="11">Gaias_mean2osc</bcf:citekey>
     <bcf:citekey order="12">DAmico_montenbruck</bcf:citekey>
     <bcf:citekey order="12">Schaub2004</bcf:citekey>
-    <bcf:citekey order="12">DAmicoDLR</bcf:citekey>
+    <bcf:citekey order="12">dAmicoDLR</bcf:citekey>
     <bcf:citekey order="13">DAmico_montenbruck</bcf:citekey>
-    <bcf:citekey order="14">TAU_code</bcf:citekey>
-    <bcf:citekey order="15">Wiesel</bcf:citekey>
-    <bcf:citekey order="16">Eckstein</bcf:citekey>
-    <bcf:citekey order="17">DAmico_montenbruck</bcf:citekey>
-    <bcf:citekey order="18">Gim_Alfriend</bcf:citekey>
-    <bcf:citekey order="19">dAmicoDLR</bcf:citekey>
-    <bcf:citekey order="20">Schaub2004</bcf:citekey>
-    <bcf:citekey order="21">Gaias_mean2osc</bcf:citekey>
-    <bcf:citekey order="22">DAmicoDLR</bcf:citekey>
+    <bcf:citekey order="14">Peters_Noomen</bcf:citekey>
+    <bcf:citekey order="15">Peters_Noomen</bcf:citekey>
+    <bcf:citekey order="16">TAU_code</bcf:citekey>
+    <bcf:citekey order="17">Wiesel</bcf:citekey>
+    <bcf:citekey order="18">Eckstein</bcf:citekey>
+    <bcf:citekey order="19">DAmico_montenbruck</bcf:citekey>
+    <bcf:citekey order="20">Gim_Alfriend</bcf:citekey>
+    <bcf:citekey order="21">dAmicoDLR</bcf:citekey>
+    <bcf:citekey order="22">Schaub2004</bcf:citekey>
+    <bcf:citekey order="23">Gaias_mean2osc</bcf:citekey>
+    <bcf:citekey order="24">Peters_Noomen</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nty">

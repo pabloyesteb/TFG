@@ -20,8 +20,8 @@
 \contentsline {section}{\numberline {A.3}Relative sets.}{6}{section.A.3}%
 \contentsline {subsection}{\numberline {A.3.1}Workflow for transformations between ROEs. }{6}{subsection.A.3.1}%
 \contentsline {paragraph}{A) From any ROE set to RKOE\\}{7}{subsection.A.3.1}%
-\contentsline {paragraph}{B) From RKOE to any ROE set\\}{8}{Item.4}%
+\contentsline {paragraph}{B) From RKOE to any ROE set\\}{8}{figure.caption.10}%
 \contentsline {subsection}{\numberline {A.3.2}Element sets.}{9}{subsection.A.3.2}%
 \contentsline {subsubsection}{\numberline {A.3.2.1}Eccentricity/inclination vectors relative orbital elements (REIOE).}{9}{subsubsection.A.3.2.1}%
-\contentsline {paragraph}{Concept \& meaning\\}{9}{equation.A.3.13}%
-\contentsline {subsubsection}{\numberline {A.3.2.2}Peters-Noomen C set of relative orbital elements (CROE).}{10}{subsubsection.A.3.2.2}%
+\contentsline {paragraph}{Concept \& meaning\\}{10}{equation.A.3.13}%
+\contentsline {subsubsection}{\numberline {A.3.2.2}Peters-Noomen C set of relative orbital elements (CROE).}{11}{subsubsection.A.3.2.2}%

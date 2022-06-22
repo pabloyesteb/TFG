@@ -1,25 +1,25 @@
 [0] Config.pm:307> INFO - This is Biber 2.17
 [0] Config.pm:310> INFO - Logfile is 'Thesis.blg'
-[169] biber-MSWIN64:340> INFO - === 
-[235] Biber.pm:418> INFO - Reading 'Thesis.bcf'
-[396] Biber.pm:972> INFO - Found 9 citekeys in bib section 0
-[414] Biber.pm:4383> INFO - Processing section 0
-[430] Biber.pm:4574> INFO - Looking for bibtex file 'refs.bib' for section 0
-[529] bibtex.pm:1713> INFO - LaTeX decoding ...
-[564] bibtex.pm:1518> INFO - Found BibTeX data source 'refs.bib'
-[633] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[633] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[634] Biber.pm:4203> INFO - Sorting list 'nty/global//global/global' of type 'entry' with template 'nty' and locale 'en-US'
-[635] Biber.pm:4209> INFO - No sort tailoring available for locale 'en-US'
-[643] bbl.pm:654> INFO - Writing 'Thesis.bbl' with encoding 'latin1'
-[648] bbl.pm:757> INFO - Output to Thesis.bbl
-[649] Biber.pm:130> WARN - legacy month field 'Nov.' in entry 'Eckstein' is not an integer - this will probably not sort properly.
-[649] Biber.pm:130> WARN - Possible typo (case mismatch) between citation and datasource keys: 'DAmicoDLR' and 'dAmicoDLR' in file 'refs.bib'
-[649] Biber.pm:130> WARN - BibTeX subsystem: C:\Users\TRRFEM\AppData\Local\Temp\biber_tmp_S1pL\8fe4c9854184545302f21ebf0d47516c_19356.utf8, line 3, warning: 32 characters of junk seen at toplevel
-[650] Biber.pm:130> WARN - BibTeX subsystem: C:\Users\TRRFEM\AppData\Local\Temp\biber_tmp_S1pL\8fe4c9854184545302f21ebf0d47516c_19356.utf8, line 43, warning: 17 characters of junk seen at toplevel
-[650] Biber.pm:130> WARN - BibTeX subsystem: C:\Users\TRRFEM\AppData\Local\Temp\biber_tmp_S1pL\8fe4c9854184545302f21ebf0d47516c_19356.utf8, line 59, warning: 22 characters of junk seen at toplevel
-[651] Biber.pm:130> WARN - BibTeX subsystem: C:\Users\TRRFEM\AppData\Local\Temp\biber_tmp_S1pL\8fe4c9854184545302f21ebf0d47516c_19356.utf8, line 80, warning: 13 characters of junk seen at toplevel
-[651] Biber.pm:130> WARN - BibTeX subsystem: C:\Users\TRRFEM\AppData\Local\Temp\biber_tmp_S1pL\8fe4c9854184545302f21ebf0d47516c_19356.utf8, line 131, warning: 17 characters of junk seen at toplevel
-[651] Biber.pm:130> WARN - I didn't find a database entry for 'TAU_code' (section 0)
-[652] Biber.pm:130> WARN - I didn't find a database entry for 'DAmicoDLR' (section 0)
-[652] Biber.pm:132> INFO - WARNINGS: 9
+[289] biber-MSWIN64:340> INFO - === 
+[416] Biber.pm:418> INFO - Reading 'Thesis.bcf'
+[672] Biber.pm:972> INFO - Found 10 citekeys in bib section 0
+[707] Biber.pm:4383> INFO - Processing section 0
+[748] Biber.pm:4574> INFO - Looking for bibtex file 'refs.bib' for section 0
+[878] bibtex.pm:1713> INFO - LaTeX decoding ...
+[930] bibtex.pm:1518> INFO - Found BibTeX data source 'refs.bib'
+[1084] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[1084] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[1085] Biber.pm:4203> INFO - Sorting list 'nty/global//global/global' of type 'entry' with template 'nty' and locale 'en-US'
+[1085] Biber.pm:4209> INFO - No sort tailoring available for locale 'en-US'
+[1098] bbl.pm:654> INFO - Writing 'Thesis.bbl' with encoding 'latin1'
+[1105] bbl.pm:757> INFO - Output to Thesis.bbl
+[1106] Biber.pm:130> WARN - legacy month field 'Nov.' in entry 'Eckstein' is not an integer - this will probably not sort properly.
+[1106] Biber.pm:130> WARN - Possible typo (case mismatch) between citation and datasource keys: 'DAmicoDLR' and 'dAmicoDLR' in file 'refs.bib'
+[1106] Biber.pm:130> WARN - BibTeX subsystem: C:\Users\TRRFEM\AppData\Local\Temp\biber_tmp_ZAOf\8fe4c9854184545302f21ebf0d47516c_17396.utf8, line 3, warning: 32 characters of junk seen at toplevel
+[1107] Biber.pm:130> WARN - BibTeX subsystem: C:\Users\TRRFEM\AppData\Local\Temp\biber_tmp_ZAOf\8fe4c9854184545302f21ebf0d47516c_17396.utf8, line 43, warning: 17 characters of junk seen at toplevel
+[1107] Biber.pm:130> WARN - BibTeX subsystem: C:\Users\TRRFEM\AppData\Local\Temp\biber_tmp_ZAOf\8fe4c9854184545302f21ebf0d47516c_17396.utf8, line 59, warning: 22 characters of junk seen at toplevel
+[1107] Biber.pm:130> WARN - BibTeX subsystem: C:\Users\TRRFEM\AppData\Local\Temp\biber_tmp_ZAOf\8fe4c9854184545302f21ebf0d47516c_17396.utf8, line 80, warning: 13 characters of junk seen at toplevel
+[1107] Biber.pm:130> WARN - BibTeX subsystem: C:\Users\TRRFEM\AppData\Local\Temp\biber_tmp_ZAOf\8fe4c9854184545302f21ebf0d47516c_17396.utf8, line 131, warning: 17 characters of junk seen at toplevel
+[1108] Biber.pm:130> WARN - I didn't find a database entry for 'TAU_code' (section 0)
+[1108] Biber.pm:130> WARN - I didn't find a database entry for 'DAmicoDLR' (section 0)
+[1108] Biber.pm:132> INFO - WARNINGS: 9

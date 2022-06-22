@@ -247,6 +247,41 @@
       \field{pages}{839\bibrangedash 848}
       \range{pages}{10}
     \endentry
+    \entry{Peters_Noomen}{article}{}
+      \name{author}{2}{}{%
+        {{hash=24c47c2be2fd6dd4a3f862e571578442}{%
+           family={Vincent\bibnamedelima Peters},
+           familyi={V\bibinitperiod\bibinitdelim P\bibinitperiod},
+           given={Thomas},
+           giveni={T\bibinitperiod}}}%
+        {{hash=7da3be880fbe1816b424c01a110982e6}{%
+           family={Noomen},
+           familyi={N\bibinitperiod},
+           given={Ron},
+           giveni={R\bibinitperiod}}}%
+      }
+      \list{publisher}{2}{%
+        {American Institute of Aeronautics}%
+        {Astronautics}%
+      }
+      \strng{namehash}{3c958361e46617021179d780e75bc2c9}
+      \strng{fullhash}{3c958361e46617021179d780e75bc2c9}
+      \strng{bibnamehash}{3c958361e46617021179d780e75bc2c9}
+      \strng{authorbibnamehash}{3c958361e46617021179d780e75bc2c9}
+      \strng{authornamehash}{3c958361e46617021179d780e75bc2c9}
+      \strng{authorfullhash}{3c958361e46617021179d780e75bc2c9}
+      \field{sortinit}{V}
+      \field{sortinithash}{afb52128e5b4dc4b843768c0113d673b}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{{Journal of Guidance, Control \& Dynamics}}
+      \field{number}{4}
+      \field{title}{Linear Cotangential Transfers and Safe Orbits for Elliptic Orbit Rendezvous}
+      \field{volume}{44}
+      \field{year}{2021}
+      \field{pages}{732\bibrangedash 748}
+      \range{pages}{17}
+    \endentry
   \enddatalist
   \missing{DAmicoDLR}
   \missing{TAU_code}

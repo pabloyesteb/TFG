@@ -189,7 +189,7 @@
 \indent Relative elements are at the deepest roots of spacecraft relative motion, offering several advantages over cartesian relative states. First and foremost, they are more intuitive, but they also lead to a reduction of linearisation errors when expanding the deputy's movement around the chief's orbit \cite{Gaias_mean2osc}. In general, relative elements are defined as:
 %
 \begin{equation}
-\delta \overline{OE} = \overline{f} \left( \overline{OE_C}, \overline{OE_D} \right)
+\delta \underline{OE} = \underline{f} \left( \underline{OE_C}, \underline{OE_D} \right)
 \label{eq:	ROE_def}
 \end{equation}
 
@@ -197,7 +197,7 @@
 \noindent which is usually simplified by just taking the arithmetic difference between them, namely
 %
 \begin{equation}
-\delta \overline{OE} = \overline{OE_D} - \overline{OE_C}
+\delta \underline{OE} = \underline{OE_D} - \underline{OE_C}
 \label{eq: OED}
 \end{equation}
 
@@ -210,6 +210,8 @@
 %
 \paragraph{A) From any ROE set to RKOE\\}
 %
+\phantomsection
+\label{par: 	ROE2RKOE}
 \indent While authors provide with scenarios expressed in their own ROE set, the element choice for our simulator is the Keplerian set. That leads us to the need of implementing a transformation from the former set to the latter. Let us assume then the following inputs and outputs:
 %
 \begin{itemize}
@@ -267,7 +269,34 @@
 \]
 \end{enumerate}
 %
-\indent See graphic PUT TIKZ GRAPHIC for a more visual explanation.
+\indent See graphic \ref{tikz: 	Workflow_ROE2RKOE} for a more visual explanation.
+%
+\begin{figure}[!htb]
+\begin{tikzpicture}[,>=stealth,thick,black!50,text=black,
+every new ->/.style={shorten >=1pt},
+graphs/every graph/.style={edges=rounded corners}]
+% ---------- NODES ----------
+\matrix[column sep=4mm] { 
+% First row:
+\node (delta_OE) [terminal] {$\delta \underline{\widetilde{OE}}$}; &  &  &  &
+\lbsum{sum1}; & \node (OE_d) [terminal]{$\underline{\widetilde{OE}}$}; & \node (OE2KOE) [nonterminal] {$ \underline{\widetilde{OE}} \Rightarrow \underline{KOE} $}; &
+\node (KOE_d)[terminal]{$\underline{KOE_d}$}; &  &  \\
+% Second row:
+  &  & \node (KOE2OE)[nonterminal]{$\underline{KOE} \Rightarrow  \underline{\widetilde{OE}}$}; & \node (OE_c) [terminal] {$\underline{\widetilde{OE}_c}$};   &  &  &  &  &
+\pmtbsum{plusminus}; & \node (delta_KOE)[terminal]{$\delta \underline{KOE}$};\\
+% Third row:
+\node (KOE_c) [terminal] {$\underline{KOE_c}$}; & \node (p1) [point] {};&  &  &  &  &  &  &  &  & ;\\
+ };
+% ----------- GRAPH ----------
+\graph [use existing nodes] {
+delta_OE -> sum1 -> OE_d -> OE2KOE -> KOE_d -> [hv path] plusminus -> delta_KOE;
+p1 ->[vh path] KOE2OE -> OE_c -> [hv path] sum1;
+KOE_c -> [hv path] plusminus; 
+};
+\end{tikzpicture}
+\caption{Workflow for transforming any relative set into KOE.}
+\label{tikz: 	Workflow_ROE2RKOE}
+\end{figure}
 %
 \paragraph{B) From RKOE to any ROE set\\}
 % 
@@ -302,7 +331,36 @@
 %
 
 \begin{itemize}
-\item[A.] Using the pertinent transformations, compute the absolute elements for both spacecrafts $\underline{\widetilde{OE_d}}$, $\underline{\widetilde{OE_c}}$, and then calculate the arithmetic difference (in a CITE SUBPARAGRAPH 1). See graphic PUT TIKZ GRAPHICS.
+\item[A.] Using the pertinent transformations, compute the absolute elements for both spacecrafts $\underline{\widetilde{OE_d}}$, $\underline{\widetilde{OE_c}}$, and then calculate the arithmetic difference (in a \ref{par: 	ROE2RKOE}). See graphic \ref{tikz: 	Workflow_RKOE2ROE}.
+%
+\begin{figure}[!htb]
+\centering
+\begin{tikzpicture}[,>=stealth,thick,black!50,text=black,
+every new ->/.style={shorten >=1pt},
+graphs/every graph/.style={edges=rounded corners}]
+% ---------- NODES ----------
+\matrix[column sep=4mm] { 
+% First row:
+\node (delta_KOE) 	[terminal] {$\delta \underline{KOE}$}; 		& \lbsum{sum1}; & 
+\node (KOE_d) 		[terminal]{$\underline{KOE_d}$}; 			& \node (KOE2OE) [nonterminal] {$  \underline{KOE} \Rightarrow \underline{\widetilde{OE}}$}; &
+\node (OE_d)		[terminal]{$\underline{\widetilde{OE}}$}; 	&  		&  		\\
+% Second row:
+  &  &  &  &  &  & \pmtbsum{plusminus}; & \node (delta_OE)[terminal]{$\delta \underline{\widetilde{OE}}$};\\
+% Third row:
+\node (KOE_c) 		[terminal] {$\underline{KOE_c}$}; 			& \node (p1) [point] {}; & 
+      															& \node (KOE2OE_2) 		[nonterminal] {$  \underline{KOE} \Rightarrow \underline{\widetilde{OE}}$};  &
+\node (OE_c) [terminal] {$\underline{\widetilde{OE}_c}$}; 		&  		& 		\\      															
+	 					};
+% ----------- GRAPH ----------
+\graph [use existing nodes] {
+delta_KOE -> sum1 -> KOE_d -> KOE2OE -> OE_d -> [hv path] plusminus -> delta_OE;
+p1 -> sum1;
+KOE_c ->  KOE2OE_2 -> OE_c ->[hv path] plusminus -> delta_OE; 
+};
+\end{tikzpicture}
+\caption{Workflow for transforming RKOE into any other set.}
+\label{tikz: 	Workflow_RKOE2ROE}
+\end{figure}
 %
 \item[B.] Expand the deputy absolute OEs (\ie $\underline{\widetilde{OE_d}}$) around the chief via a Taylor series expansion with respect to the Keplerian set of elements, retaining terms up to first order, achieving a linearised expression for the transformation. Mathematically:
 %
@@ -313,7 +371,7 @@
 \noindent hence,
 %
 \begin{equation}
-\delta \overline{\widetilde{OE}}  \approx \underline{\widetilde{OE_C}} + \dfrac{\partial \underline{\widetilde{OE}}}{\partial \underline{KOE}} \delta \underline{KOE} - \underline{\widetilde{OE_C}} = \dfrac{\partial \underline{\widetilde{OE}}}{\partial \underline{KOE}} \delta \underline{KOE}
+\delta \underline{\widetilde{OE}}  \approx \underline{\widetilde{OE_C}} + \dfrac{\partial \underline{\widetilde{OE}}}{\partial \underline{KOE}} \delta \underline{KOE} - \underline{\widetilde{OE_C}} = \dfrac{\partial \underline{\widetilde{OE}}}{\partial \underline{KOE}} \delta \underline{KOE}
 \label{eq: 	Lin_ROE_tx}
 \end{equation}
 %
@@ -326,7 +384,7 @@
 %
 	\subsubsection{Eccentricity/inclination vectors relative orbital elements (REIOE).}
 	%
-	\indent This ROE set is the counterpart of the EI set (see \ref{sec: EIOE}). It is nonetheless interesting to see the meaning and shape of it, as it is quite widely used in literature \cite{DAmico_montenbruck, Schaub2004, DAmicoDLR}. Let us first define its elements, to later analyze the meaning behind them:
+	\indent This ROE set is the counterpart of the EI set (see \ref{sec: EIOE}). It is nonetheless interesting to see the meaning and shape of it, as it is quite widely used in literature \cite{DAmico_montenbruck, Schaub2004, dAmicoDLR}. Let us first define its elements, to later analyze the meaning behind them:
 	%
 	\begin{equation}
 	\left\{ 
@@ -418,10 +476,7 @@
 	%
 	\noindent where $i$ is the inclination of the chief's orbit. Combining the results of \eqref{eq: 	e_vec_mat} and \eqref{eq: 	i_vec_mat} with the definitions of the remaining elements, we can easily arrive to an expression analog to \eqref{eq: 	Lin_ROE_tx}:
 	%
-	
-%	\left[ \begin{array}{c@{\hskip 1in}c@{\hskip 1in}c@{\hskip 1in}c@{\hskip 1in}c@{\hskip 1in}c}
-%\def\arraystretch{1.3}
-%	\setlength{\tabcolsep}{1in}
+
 	\begin{equation}
 	\arraycolsep=10pt
 	\def\arraystretch{1.3}
@@ -458,14 +513,18 @@
 	\indent Defined by Peters \& Noomen in \cite{Peters_Noomen}, this set is also closely related with the orbit safety notion. It arises from the analysis of the Gauss Variational Equations (GVEs) applied to the relative dynamics between a deputy and a chief spacecraft, when the former performs a cotangential transfer. Without further ado, let us define them as:
 	%
 	\begin{equation}
-	\left\{\begin{array}{c}
-	C_1 &   &   &   \\
-	C_2 &   &   &   \\
-	C_3 &   &   &   \\
-	C_4 &   &   &   \\
-	C_5 &   &   &   \\
-	C_6 &   &   &   \\
+	\arraycolsep=10pt
+	\def\arraystretch{1.3}
+	\left\{\begin{array}{llll}
+	C_1 = \delta p = \eta^2 \delta a - 2\, a \, e \delta e  & \equiv & \text{Relative parameter of the orbit} &  [L] \\
+	C_2 = e\delta p - p \delta e &   &   &  [L] \\
+	C_3 = -e\, p \left(\delta \omega + \cos i \delta \Omega\right)&   &   &   \\
+	C_4 = a \left( \delta\omega + \cos i \delta \Omega + \eta^{-1} \delta M\right)&   &   &   \\
+	C_5 = -p\left( \cos\omega \delta i + \sin i \sin\omega \delta \Omega \right)&   &   &   \\
+	C_6 = p\left( \sin\omega \delta i - \sin i \cos \omega \delta \Omega \right)&   &   &   \\
 	\end{array}\right.
 	\end{equation}
+	%
+	\indent For a proper geometrical and conceptual description of the elements, please see \cite{Peters_Noomen}. As an introduction, the first four elements essentially determine the in-plane relative motion. $C_1$, $C_2$ \& $C_3$ arise from a very intelligent interpretation of the GVEs, with $C_4$ completing the element set. On the other hand, elements $C_5$ and $C_6$ describe the out-of-plane motion.
 	
 %

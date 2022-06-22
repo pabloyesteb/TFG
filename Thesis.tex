@@ -1,10 +1,10 @@
-\documentclass[a4paper,11pt,twoside,makeidx]{ThesisStyle}
+\documentclass[a4paper,11pt,twoside,makeidx, svgnames]{ThesisStyle}
 \usepackage[english]{babel}   % quita el punto de la section
 \usepackage[latin1]{inputenc}
 %\usepackage[T1]{fontenc}
 %   \decimalpoint
-\usepackage{color}
-\usepackage{colortbl}
+%\usepackage{color}
+%\usepackage{colortbl}
 \usepackage{graphicx}
 \usepackage{epic}
 \usepackage{curves}
@@ -48,6 +48,50 @@
 \makenomenclature
 \newcommand{\nomunit}[1]{%
 \renewcommand{\nomentryend}{\hspace*{\fill}#1}}
+
+% TIKZ 
+\usepackage{xcolor}
+\definecolor{GMVred}{rgb}{0.8745, 0, 0.1412}
+\usepackage{tikz}
+\usetikzlibrary{shapes.misc}
+\usetikzlibrary{graphs}
+\usetikzlibrary{arrows}
+\tikzset{hv path/.style={to path={-| (\tikztotarget)}}}
+\tikzset{vh path/.style={to path={|- (\tikztotarget)}}}
+\tikzset{nonterminal/.style = {
+rectangle, minimum size=10mm, very thick, draw=GMVred, top color=GMVred!20 ,
+bottom color=GMVred!20, font=\itshape, text height=1.5ex,text depth=.25ex}}
+\tikzset{terminal/.style={
+rounded rectangle, minimum size=10mm, very thick, draw=black!50, top color=white,
+bottom color=black!20, font=\ttfamily, text height=1.5ex, text depth=.25ex}}
+
+
+\tikzset{sum/.style={
+circle, thick, draw=GMVred, fill=GMVred!20, minimum size=8mm, font=\ttfamily, text height=1.5ex, text depth=.25ex}}
+\newcommand{\lbsum}[1]{
+	\node(#1)[sum]{};
+ 	\draw [draw=GMVred]	(#1.north east) -- (#1.south west)
+    		(#1.north west) -- (#1.south east);
+	\draw [draw=GMVred]	(#1.north east) -- (#1.south west)
+			(#1.north west) -- (#1.south east);
+ 
+	\node[left=-1pt] at (#1.center){\textcolor{GMVred}{\scriptsize $\bm +$}};
+	\node[below]	 at (#1.center){\textcolor{GMVred}{\scriptsize $\bm + $}};
+	}
+
+\newcommand{\pmtbsum}[1]{
+	\node(#1)[sum]{};
+ 	\draw 	[draw=GMVred](#1.north east) -- (#1.south west)
+    		(#1.north west) -- (#1.south east);
+	\draw 	[draw=GMVred](#1.north east) -- (#1.south west)
+			(#1.north west) -- (#1.south east);
+ 
+	\node[above] at (#1.center){\textcolor{GMVred}{\scriptsize $\bm + $}};
+	\node[below] at (#1.center){\textcolor{GMVred}{\scriptsize $\bm -$}};}
+
+%\tikzset{point/.style={circle,inner sep=0pt,minimum size=2pt,fill=red}}
+\tikzset{point/.style={circle,inner sep=0pt,minimum size=0pt, fill=black!50}}
+\tikzset{skip loop/.style={to path={-- ++(0,#1) -| (\tikztotarget)}}}
 
 %% This code creates the groups
 % -----------------------------------------
