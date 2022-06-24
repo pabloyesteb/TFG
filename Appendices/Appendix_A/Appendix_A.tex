@@ -1,0 +1,576 @@
+\chapter{Absolute and relative orbital element sets.}
+%
+\label{chap: App_OEs}
+%
+\section{Introduction.}
+%
+\indent The description of a spacecraft's state is done via a \textbf{state vector}. While it can include several variables with other purposes (\eg filtering), its only information throughout this thesis is the position and velocity. There are two main ways to describe them:
+%
+\begin{itemize}
+\item[A.] Through cartesian coordinates
+\itemsep0.1em 
+\item[B.] Through orbital elements
+\end{itemize}
+%
+\indent While the first option yields a very explicit and graphic-ready description, the second one usually has two advantages over it. Firstly, orbital elements are generally more intuitive about both the orbit and the position on it. Secondly, as orbital elements are generally slow-varying, they allow for a bigger integration timestep without losing accuracy. This is quite clear when studying keplerian motion, as most of the elements remain constant. Variational formulation and Hamilton-Jacobi theory (with the notion of changing variables as the full solution of a problem) relate to this fact. \\
+%
+\indent Throughout this thesis, several sets of orbital elements have been used. The goal of this appendix is to clarify on the definition and differences between them. Absolute orbital elements (OEs) will be described first, followed by relative OEs (ROEs).
+%
+\section{Absolute element sets.}
+%
+	\subsection{Workflow for transformations between absolute element sets.}
+	%
+	\indent Consider two different sets of OEs, denoted by $\underline{OE}$ and $\underline{\widetilde{OE}}$. The transformation function $\bm G_{OE\rightarrow\widetilde{OE}}$ between them is defined by:
+	%
+	\begin{equation}
+	\underline{\widetilde{OE}} = \bm G_{OE\rightarrow \widetilde{OE}} ( \underline{OE})
+	\end{equation}
+	%
+	\indent A numerous amount of element sets have been historically defined. Nevertheless, some of them are much more commonly used than others. Although we will restrain ourselves to a short number of sets (say $n$), the number of transformations becomes arduously large as $n$ increases ($n (n-1)$). \\
+	%
+	\indent In order to reduce the number of transformation functions $\bm G$, let us use the later defined Keplerian OEs (KOEs) as a pivot, that is, building only transformations to and from KOEs. This will in turn reduce the number of required functions to $2n$. The Keplerian set also has a further advantage: as it is the classical element set, almost every other set is defined explicitly in terms of it, so that transformations to and from them can easily be derived. A simple, graphical explanation of this is shown in figure \ref{tikz: 	Workflow_OE}.
+	%
+	\begin{figure}[!htb]
+	\centering
+\begin{tikzpicture}[,>=stealth,thick,black!50,text=black,
+every new ->/.style={shorten >=1pt},
+graphs/every graph/.style={edges=rounded corners}]
+% ---------- NODES ----------
+\matrix[column sep=4mm] { 
+% First row:
+\node (OE_tilde) [terminal] {$\underline{\widetilde{OE}}$}; & \node (OE_tilde2KOE) [nonterminal] {$\underline{\widetilde{OE}} \Rightarrow \underline{KOE}$}; &
+\node (KOE) [terminal]{$\underline{KOE}$}; 				& \node (KOE2OE_star) [bluerect] {$ \underline{KOE} \Rightarrow \underline{\overset{\star}{OE}} $}; & 
+\node (OE_star) [terminal]{$\underline{\overset{\star}{OE}}$};\\};
+%% ----------- GRAPH ----------
+\graph [use existing nodes] {
+OE_tilde -> OE_tilde2KOE -> KOE -> KOE2OE_star -> OE_star;};
+\end{tikzpicture}
+\caption{Workflow for transforming between two arbitary absolute element sets.}
+\label{tikz: 	Workflow_OE}
+\end{figure}	
+	%
+	\subsection{Element sets.}
+	%
+	%
+	\subsubsection{Keplerian orbital elements (KOE).}
+	%
+	\indent The Keplerian set of OEs (KOE) is one of the most widely used and classic options. While the last element may change from author to author, an usual definition is the following:
+	%
+	\begin{equation}
+	\left\{ 
+	\begin{array}{llll}
+	a & \equiv & \text{Semimajor axis} & [L]\\
+	e & \equiv & \text{Eccentricity} & [--]\\
+	i & \equiv & \text{Inclination} & [rad]\\
+	\Omega \; \text{or} \; RAAN & \equiv & \text{Right ascension of the ascending node} & [rad]\\
+	\omega & \equiv & \text{Argument of periapsis} & [rad]\\
+	M & \equiv & \text{Mean anomaly} & [rad]\\
+	\end{array}
+	\right.
+	\end{equation}
+	%
+	\indent The last element commonly varies across literature, being substituted by the true anomaly $\theta$; or, when tackling the variation of orbital parameters, by the mean anomaly at $t = 0 \; $ ($M_0$) or the perigee time $T_0$ \cite{Wiesel}. Mean anomaly is used due to the simplicity of its unperturbed variational equation, as it has a constant rate (denoted by $n$). The geometrical meaning and definition of these elements is out from the scope of this thesis. Nonetheless, figure \ref{fig: 	orbit_angles} shows a simple geometrical drawing of the involved angles.\\
+	%
+    \begin{figure}[!htb]
+    \centering\includegraphics[width = 0.7\linewidth]{Appendices/Appendix_A/orbit_angles}
+    \caption{Frame rotation from inertial to perifocal frame.}
+    \label{fig: 	orbit_angles}
+	\end{figure}
+	%
+	\FloatBarrier
+	%
+	\indent As it is seen in the figure before, the Keplerian elements become singular in two cases:
+	%
+	\begin{itemize}
+	\item[A.] If the \textbf{inclination} is null, the orbital plane is coincident with the inertial reference (ECI x-y) plane. The ascending node is hence undefined in this case. 
+	%
+	\item[B.] If the \textbf{eccentricity} is null, the periapsis is not defined, as it is the nearest point of the orbit around the central body. Thus, there is no angle defining its position, making the argument of periapsis nonsingular. 
+	\end{itemize}
+	%
+	\indent These singularities are unfortunately quite common in orbit design. They correspond respectively with equatorial and circular orbits. In order to avoid this behaviour, many different elements sets have been defined. Wiesel \cite{Wiesel} shows an intuitive approach in chapter 2.10, solving either problem with a graphic approach.
+	%
+	\subsubsection{Eccentricity/inclination vectors orbital elements (EIOE).}\label{sec: EIOE}
+	%
+	\indent This set, originally defined for geostationary orbits in absolute terms \cite{Eckstein}, is used mainly as a relative OE set. Though it is actually not used along this thesis, its definition is helpful for introducing the common relative counterpart.  In any case, let us proceed with the eccentricity and inclination vectors concept.
+	%
+	\paragraph{Eccentricity vector \\}
+	%
+	\indent The notion of the eccentricity vector is quite basic, as it is, when in unperturbed motion, a constant of the dynamic system. It is defined as the eccentricity-sized vector pointing towards the perigee. Nonetheless, for this purpose, the eccentricity vector is defined as \cite{DAmico_montenbruck}:
+	%
+	\begin{equation}
+	\underline{e} = 
+	\left\{ 
+	\begin{array}{c}
+	e_x \\[1.5em]
+	e_y
+	\end{array}
+	\right\} = e
+	\left\{ 
+	\begin{array}{c}
+	\cos\varpi \\[1.5em]
+	\sin\varpi
+	\end{array}
+	\right\}
+	\label{eq: 	ecc_vector}
+	\end{equation}
+	%
+	\noindent where the argument of perigee $\omega$ might be substituted with the sum $\omega + \Omega$ \cite[as in][]{Eckstein}. A graphical representation can be seen later in the relative definition \ref{fig: 	ECC_vector}. As it arises from \eqref{eq: 	ecc_vector}, it substitutes the eccentricity and argument of perigee from the Keplerian OE set.
+	%
+	\paragraph{Inclination vector \\}
+	%
+	\indent The inclination vector is perpendicular to the orbital plane, similarly to the angular momentum, but inclination-sized. It is defined by its components as \cite{Eckstein}:
+	%
+	\[
+	\underline{i} =
+	\left\{ 
+	\begin{array}{c}
+	i_x \\[1.5em]
+	i_y
+	\end{array}
+	\right\} = i
+	\left\{ 
+	\begin{array}{c}
+	\cos\Omega \\[1.5em]
+	\sin\Omega
+	\end{array}
+	\right\} 	
+	\]
+	%
+	\indent The graphical interpretation is not as straightforward as for the eccentricity vector. Nonetheless, we are only interested in the definition itself. It is clear that this components substitute the out-of-plane related elements $i$ and $\Omega$.
+	%
+	\paragraph{Element set \\}
+	%
+	\indent The EI orbital element set is then composed of:
+	%
+	\begin{equation}
+	\left\{ 
+	\begin{array}{llll}
+	a & \equiv & \text{Semimajor axis} & [L]\\
+	e_x = e\, \cos \omega & \equiv & \text{x-projection of } \underline{e} & [--]\\
+	e_y = e\, \sin \omega & \equiv & \text{y-projection of } \underline{e} & [--]\\
+	i_x & \equiv & \text{x-component of } \underline{i} & [--]\\
+	i_y & \equiv & \text{y-component of } \underline{i} & [--]\\
+	\lambda = \omega + M & \equiv & \text{Mean argument of latitude} & [rad]\\
+	\end{array}
+	\right.
+	\end{equation}
+	%
+	\subsubsection{Quasi-nonsingular orbital elements (QNSOE).}
+	%
+	\indent The quasi-nonsingular (QNS) orbital element set tackles the singularity existing in circular orbits \cite{Gim_Alfriend_equinoctial}, \cite{dAmicoDLR} \cite{Schaub2004}. It is quite similar to the formerly defined EI set, as it uses again the components of the eccentricity vector to substitute $e$ and $\omega$. The set is then defined as: \\
+	%
+	\begin{equation}
+	\left\{ 
+	\begin{array}{llll}
+	a & \equiv & \text{Semimajor axis} & [L]\\
+	q_1 = e\, \cos \omega & \equiv & \text{x-projection of } \underline{e} & [--]\\
+	q_2 = e\, \sin \omega & \equiv & \text{y-projection of } \underline{e} & [--]\\
+	i & \equiv & \text{Inclination} & [rad]\\
+	\Omega & \equiv & \text{Right ascension of the ascending node} & [rad]\\
+	u = \omega + \theta & \equiv & \text{True argument of latitude} & [rad]\\
+	\end{array}
+	\right.
+	\end{equation}
+	%
+	\indent Though some authors use a different order, this is the one used in this thesis, so as to keep the time-varying element on the last place.
+	%
+	\subsubsection{Equinoctial orbital elements (EOE).}
+	%
+	\indent The QNS set of elements only solved half of the singularity problem. To solve both, thus enabling the description of equatorial and polar orbits, the equinoctial set of elements is defined as:
+	%
+	\begin{equation}
+	\left\{ 
+	\begin{array}{llll}
+	a & \equiv & \text{Semimajor axis} & [L]\\
+	P_1 = e\, \cos \varpi   & \equiv & \text{\textit{unclear physical meaning, similar to }}e_x & [--]\\
+	P_2 = e\, \sin \varpi   & \equiv & \text{\textit{unclear physical meaning, similar to }}e_y & [--]\\
+	Q_1 = \tan \frac{i}{2} \cos \Omega  & \equiv & \text{\textit{unclear physical meaning, similar to }} i_x & [--]\\
+	Q_2 = \tan \frac{i}{2} \sin \Omega  & \equiv & \text{\textit{unclear physical meaning, similar to }} i_y & [--]\\
+	L = \Omega + \omega + \theta & \equiv & \text{True longitude} & [rad]\\
+	\end{array}
+	\right.
+	\end{equation}
+	%
+	\indent Not only does the order does change depending on the author, but also the symbols to refer to them. An example of its use is \cite{Gim_Alfriend_equinoctial}.
+	%
+	\subsubsection{Delaunay orbital elements (DOE).}
+	%
+	\indent Delaunay elements arise when formulating the two-body problem through analytical mechanics. All of the previous element sets are clearly non-canonical (\ie they do not satisfy Hamilton's equations). Starting from the canonical set of elements (see appendix \textbf{PUT APPENDIX}), Delaunay elements are reached after performing a canonical transformation, leading to the following definition:
+	%
+	\begin{equation}
+	\left\{ 
+	\begin{array}{llll}
+	L = \sqrt{\mu \, a} & \equiv & \text{\textit{unclear physical meaning}} & [L^{1/2}]\\
+	G = L \sqrt{1 - e^2}  & \equiv & \text{Angular momentum} & [L^{1/2}]\\
+	H = G \cos i  &  \equiv & \text{Polar component of angular momentum} & [L^{1/2}]\\
+	l = M & \equiv & \text{Mean anomaly} & [rad]\\
+	g = \omega & \equiv & \text{Argument of perigee} & [rad]\\
+	h = \Omega & \equiv & \text{Right ascension of ascending node}& [rad]\\
+	\end{array}
+	\right.
+	\end{equation}
+	%
+	\indent This set is mainly used in the context of perturbations, as it yields a very convenient expression for the perturbed Hamiltonian (see section \textbf{PUT SECTION HERE}). 
+%
+\section{Relative sets.}
+%
+\indent Relative elements are at the deepest roots of spacecraft relative motion, offering several advantages over cartesian relative states. First and foremost, they are more intuitive, but they also lead to a reduction of linearisation errors when expanding the deputy's movement around the chief's orbit \cite{Gaias_mean2osc}. In general, relative elements are defined as:
+%
+\begin{equation}
+\delta \underline{OE} = \bm{f} \left( \underline{OE_C}, \underline{OE_D} \right)
+\label{eq:	ROE_def}
+\end{equation}
+
+%
+\noindent which is usually simplified by just taking the arithmetic difference between them, namely
+%
+\begin{equation}
+\delta \underline{OE} = \underline{OE_D} - \underline{OE_C}
+\label{eq: OED}
+\end{equation}
+
+\noindent where the subscripts denote respectively the deputy and chief spacecraft. The question now is, how do transformations between ROEs work.\\
+%
+\subsection{Workflow for transformations between ROEs. }\label{sec: Workflow_ROE}
+%
+\indent As for the absolute elements, Keplerian elements will be used as a pivot point. That means that only the transformations from and to RKOEs must be implemented. There are then two types of transformations:
+%
+\paragraph{A) From any ROE set to RKOE\\}
+%
+\phantomsection
+\label{par: 	ROE2RKOE}
+\indent While authors provide with scenarios expressed in their own ROE set, the element choice for our simulator is the Keplerian set. That leads us to the need of implementing a transformation from the former set to the latter. Let us assume then the following inputs and outputs:
+%
+\begin{itemize}
+\item \textbf{Inputs}: 
+%
+	\begin{itemize}
+	%
+	\item $\underline{\widetilde{ROE}}= \delta \underline{\widetilde{OE}}$: Different type of ROEs, whose absolute equivalents are known as a function of the KOEs ($\underline{\widetilde{OE}} = \bm{f} \left( \underline{KOE}\right)$)
+	%
+	\item $\underline{KOE_{C}}$: Chief spacecraft/reference orbit KOEs
+	%
+	\end{itemize}
+%
+\item \textbf{Output}: 
+%
+	\begin{itemize}
+	%
+	\item $\underline{RKOE} = \delta \underline{KOE}$: Keplerian ROEs
+	%
+	\end{itemize}
+	%
+\end{itemize}
+%
+\indent Taking equation \eqref{eq: OED} and particularizing it for KOEs:
+%
+\begin{equation}
+\delta \underline{KOE} = \underline{KOE}_D - \underline{KOE}_C
+\end{equation}
+%
+\noindent while the second term is known (input), the second one must be calculated through a certain process:
+%
+\begin{enumerate}
+%
+\item Calculate chief's OEs in the source phase space (\ie $\underline{\widetilde{OE}}_C$)
+ \[ 
+ \underline{\widetilde{OE}}_C = \bm G_{KOE \rightarrow \widetilde{OE}} \left(\underline{KOE}_C\right) 
+ \]
+%
+\item Compute deputy's OEs by direct addition
+%
+\[
+\underline{\widetilde{OE}}_D 	= \underline{\widetilde{OE}}_C + \delta \underline{\widetilde{OE}}
+\]
+%
+\item Compute deputy's KOEs by back-transformation
+%
+\[
+\underline{KOE}_D = \bm G_{\widetilde{OE} \rightarrow KOE} \left(\underline{OE}_D\right) 
+\]
+%
+\item Subtract chief's KOEs from deputy's
+%
+\[
+\delta \underline{KOE} = \underline{KOE}_D - \underline{KOE}_C
+\]
+\end{enumerate}
+%
+\indent See graphic \ref{tikz: 	Workflow_ROE2RKOE} for a more visual explanation.
+%
+\begin{figure}[!htb]
+\begin{tikzpicture}[,>=stealth,thick,black!50,text=black,
+every new ->/.style={shorten >=1pt},
+graphs/every graph/.style={edges=rounded corners}]
+% ---------- NODES ----------
+\matrix[column sep=4mm] { 
+% First row:
+\node (delta_OE) [terminal] {$\delta \underline{\widetilde{OE}}$}; &  &  &  &
+\lbsum{sum1}; & \node (OE_d) [terminal]{$\underline{\widetilde{OE}_D}$}; & \node (OE2KOE) [nonterminal] {$ \underline{\widetilde{OE}} \Rightarrow \underline{KOE} $}; &
+\node (KOE_d)[terminal]{$\underline{KOE_D}$}; &  &  \\
+% Second row:
+  &  & \node (KOE2OE)[nonterminal]{$\underline{KOE} \Rightarrow  \underline{\widetilde{OE}}$}; & \node (OE_c) [terminal] {$\underline{\widetilde{OE}_C}$};   &  &  &  &  &
+\pmtbsum{plusminus}; & \node (delta_KOE)[terminal]{$\delta \underline{KOE}$};\\
+% Third row:
+\node (KOE_c) [terminal] {$\underline{KOE_C}$}; & \node (p1) [point] {};&  &  &  &  &  &  &  &  & ;\\
+ };
+% ----------- GRAPH ----------
+\graph [use existing nodes] {
+delta_OE -> sum1 -> OE_d -> OE2KOE -> KOE_d -> [hv path] plusminus -> delta_KOE;
+p1 ->[vh path] KOE2OE -> OE_c -> [hv path] sum1;
+KOE_c -> [hv path] plusminus; 
+};
+\end{tikzpicture}
+\caption{Workflow for transforming any relative set into KOE.}
+\label{tikz: 	Workflow_ROE2RKOE}
+\end{figure}
+%
+\paragraph{B) From RKOE to any ROE set\\}
+% 
+\indent In this case, let us assume the next inputs and outputs:
+%
+\begin{itemize}
+\item \textbf{Inputs:}
+	%
+	\begin{itemize}
+	\item $\underline{RKOE} = \delta \underline{KOE}$: Keplerian ROEs
+	%
+	\item $\underline{KOE_{C}}$: Chief KOEs
+	\end{itemize}
+%
+\item \textbf{Output}: 
+	%
+	\begin{itemize}
+	%
+	\item $\underline{\widetilde{ROE}}= \delta \underline{\widetilde{OE}}$: Different type of ROEs, whose absolute equivalents are known as a function of the KOEs ($\underline{\widetilde{OE}} = \underline{f} \left( \underline{KOE}\right)$) 
+	%	
+	\end{itemize}
+
+\end{itemize}
+%
+\indent For this transformation, the equation \ref{eq:	ROE_def} particularized for this case acquires the following shape:
+%
+\begin{equation}
+\delta\underline{\widetilde{OE}} = \underline{\widetilde{OE_D}} - \underline{\widetilde{OE_C}}
+\label{eq: 	ROE_tx}
+\end{equation}
+%
+\indent Equation \ref{eq: 	ROE_tx} can be tackled in two main ways:
+%
+\begin{itemize}
+\item[A.] Using the pertinent transformations, compute the absolute elements for both spacecrafts $\underline{\widetilde{OE_D}}$, $\underline{\widetilde{OE_C}}$, and then calculate the arithmetic difference (in a \ref{par: 	ROE2RKOE}). See graphic \ref{tikz: 	Workflow_RKOE2ROE}.
+%
+\begin{figure}[!htb]
+\centering
+\begin{tikzpicture}[,>=stealth,thick,black!50,text=black,
+every new ->/.style={shorten >=1pt},
+graphs/every graph/.style={edges=rounded corners}]
+% ---------- NODES ----------
+\matrix[column sep=4mm] { 
+% First row:
+\node (delta_KOE) 	[terminal] {$\delta \underline{KOE}$}; 		& \lbsum{sum1}; & 
+\node (KOE_d) 		[terminal]{$\underline{KOE_D}$}; 			& \node (KOE2OE) [nonterminal] {$  \underline{KOE} \Rightarrow \underline{\widetilde{OE}}$}; &
+\node (OE_d)		[terminal]{$\underline{\widetilde{OE}_D}$}; 	&  		&  		\\
+% Second row:
+  &  &  &  &  &  & \pmtbsum{plusminus}; & \node (delta_OE)[terminal]{$\delta \underline{\widetilde{OE}}$};\\
+% Third row:
+\node (KOE_c) 		[terminal] {$\underline{KOE_C}$}; 			& \node (p1) [point] {}; & 
+      															& \node (KOE2OE_2) 		[nonterminal] {$  \underline{KOE} \Rightarrow \underline{\widetilde{OE}}$};  &
+\node (OE_c) [terminal] {$\underline{\widetilde{OE}_C}$}; 		&  		& 		\\      															
+	 					};
+% ----------- GRAPH ----------
+\graph [use existing nodes] {
+delta_KOE -> sum1 -> KOE_d -> KOE2OE -> OE_d -> [hv path] plusminus -> delta_OE;
+p1 -> sum1;
+KOE_c ->  KOE2OE_2 -> OE_c ->[hv path] plusminus -> delta_OE; 
+};
+\end{tikzpicture}
+\caption{Workflow for transforming RKOE into any other set.}
+\label{tikz: 	Workflow_RKOE2ROE}
+\end{figure}
+%
+\item[B.] Expand the deputy absolute OEs (\ie $\underline{\widetilde{OE_D}}$) around the chief via a Taylor series expansion with respect to the Keplerian set of elements, retaining terms up to first order, achieving a linearised expression for the transformation. Mathematically:
+%
+\[
+\underline{\widetilde{OE_D}} = \underline{\widetilde{OE}}(\underline{KOE_D}) = \underline{\widetilde{OE}}(\underline{KOE_C} + \delta \underline{KOE})) = \underline{\widetilde{OE_C}} + \dfrac{\partial \underline{\widetilde{OE}}}{\partial \underline{KOE}} \delta \underline{KOE} + \mathcal{O} \left( \delta \underline{KOE}^2 \right) 
+\]
+%
+\noindent hence,
+%
+\begin{equation}
+\delta \underline{\widetilde{OE}}  \approx \underline{\widetilde{OE_C}} + \dfrac{\partial \underline{\widetilde{OE}}}{\partial \underline{KOE}} \delta \underline{KOE} - \underline{\widetilde{OE_C}} = \dfrac{\partial \underline{\widetilde{OE}}}{\partial \underline{KOE}} \delta \underline{KOE}
+\label{eq: 	Lin_ROE_tx}
+\end{equation}
+%
+\noindent where the Jacobian matrix is generally simple, as it usually only implies polynomic or trigonometric functions. Equation \eqref{eq: 	Lin_ROE_tx} is then a first order approximation of \eqref{eq: 	ROE_tx}. Its validity is then reduced to a close proximity between both spacecrafts, which should be assessed.
+\end{itemize}
+	% 
+\subsection{Element sets.}
+% 
+\indent Besides the ones derived directly from its absolute counterparts, a couple of additional ROE sets will be herewith defined and explained. This is due to one of two reasons. The first one is that some ROE sets are only defined in relative terms, lacking any absolute equivalent. The second one is that it might be interesting to dive in the meaning of the relative sets, deriving interesting relations that would otherwise be overlooked.
+%
+	\subsubsection{Eccentricity/inclination vectors relative orbital elements (REIOE).}
+	%
+	\indent This ROE set is the counterpart of the EI set (see \ref{sec: EIOE}). It is nonetheless interesting to see the meaning and shape of it, as it is quite widely used in literature \cite{DAmico_montenbruck, Schaub2004, dAmicoDLR}. Let us first define its elements, to later analyze the meaning behind them:
+	%
+	\begin{equation}
+	\left\{ 
+	\begin{array}{llll}
+	\delta a 	& \equiv & \text{Relative semimajor axis} & [L]\\
+	\delta e_x 	& \equiv & \text{Relative x-component of }\underline{e} & [--]\\
+	\delta e_y 	& \equiv & \text{Relative y-component of }\underline{e} & [--]\\
+	\delta i_x 	& \equiv & \text{Relative x-component of }\underline{i} & [--]\\
+	\delta i_y 	& \equiv & \text{Relative y-component of }\underline{i} & [--]\\
+	\delta \lambda & \equiv 	& \text{Relative mean argument of latitude} & [rad]\\
+	\end{array}
+	\right.
+	\label{eq: 	def_REIOE}
+	\end{equation}
+	%
+	\begin{figure}[ht]
+	\centering
+	\medskip
+	\begin{subfigure}[t]{.55\linewidth}
+	\centering\includegraphics[width=\linewidth]{Appendices/Appendix_A/ECC_vector}
+	\caption{Relative eccentricity vector.}
+	\label{fig: 	ECC_vector}
+	\end{subfigure}
+	\begin{subfigure}[t]{.44\linewidth}
+	\centering\includegraphics[width=\linewidth]{Appendices/Appendix_A/inc_vector}
+	\caption{Relative inclination vector \cite{Schaub2004} .}
+	\label{fig: 	inc_vector}
+	\end{subfigure}
+	\caption{Relative ccentricity \& inclination vectors. }
+	\end{figure}
+	%
+	\FloatBarrier
+	%
+	%
+	\paragraph{Concept \& meaning\\}
+	\indent The relative eccentricity vector components substitute the relative eccentricity and the relative argument of perigee. It is based on the eccentricity vector definition \eqref{eq: 	ecc_vector}, and a graphical representation can be seen in figure \ref{fig: 	ECC_vector}. Mathematically:
+	%
+	\[
+	\delta \underline{e} = 
+	\left\{ 
+	\begin{array}{c}
+	\delta e_x \\[1.5em]
+	\delta e_y
+	\end{array}
+	\right\} = \delta e
+	\left\{ 
+	\begin{array}{c}
+	\cos\varphi \\[1.5em]
+	\sin\varphi
+	\end{array}
+	\right\}
+	\]
+	%
+	\noindent which rules the in-plane relative motion (hand in hand with $\delta a$ and $\delta \lambda$). As we know, there are two ways of tackling the transformation from RKOE to this set (see \ref{sec: Workflow_ROE}). Though the nonlinear form is exact, let us analyze the linear version. If we assume that the difference in the eccentricity vector is due to that of the eccentricity and argument of perigee ($\delta e$, $\delta \omega$), we arrive to:
+	%
+	\begin{equation}
+	\delta \underline{e} \approx 
+	\left[ 
+	\begin{array}{cc}
+	\cos\omega  & -e\, \sin\omega\\[1.5em]
+	\sin\omega  & e\, \cos\omega
+	\end{array}
+	\right]
+	\left\{ 
+	\begin{array}{c}
+	\delta e \\[1.5em]
+	\delta \omega
+	\end{array}
+	\right\}
+	\label{eq: 	e_vec_mat}
+	\end{equation}
+	%
+	\noindent where we have neglected terms of second order and higher. The relative inclination vector is defined in an alternative way \cite{DAmico_montenbruck} (comparing with the absolute counterpart). Mathematically:
+	%
+	\[
+	\delta \underline{i} = \sin \delta i
+	\left\{ 
+	\begin{array}{c}
+	\cos\theta \\[1.5em]
+	\sin\theta
+	\end{array}
+	\right\}
+	\]
+	\noindent where $\theta$ is the analog angle to $\varphi$ in the eccentricity vector. Once again, let us analyze the linearized transformation from RKOE to this set, considering the differences $\delta i$ and $\delta \Omega$. Applying the law of sines and the law of cosines for spherical trigonometry and assuming small values of $\delta i$ and $\delta \Omega$, we arrive to:
+	\begin{equation}
+	\delta \underline{i} =
+	\left\{ 
+	\begin{array}{c}
+	\delta i \\[1.5em]
+	\sin i \delta \Omega
+	\end{array}
+	\right\} \approx
+	\left[ 
+	\begin{array}{cc}
+	1  & 0\\[1.5em]
+	0  & \sin i
+	\end{array}
+	\right]
+	\left\{ 
+	\begin{array}{c}
+	\delta i \\[1.5em]
+	\delta \Omega
+	\end{array}
+	\right\}
+	\label{eq: 	i_vec_mat}
+	\end{equation}
+	%
+	\noindent where $i$ is the inclination of the chief's orbit. Combining the results of \eqref{eq: 	e_vec_mat} and \eqref{eq: 	i_vec_mat} with the definitions of the remaining elements, we can easily arrive to an expression analog to \eqref{eq: 	Lin_ROE_tx}:
+	%
+
+	\begin{equation}
+	\arraycolsep=10pt
+	\def\arraystretch{1.3}
+	\left\{ \begin{array}{c}
+	\delta a \\
+	\delta e_x \\
+	\delta e_y \\
+	\delta i_x \\
+	\delta i_y \\
+	\delta \lambda
+	\end{array}
+	\right\} \approx
+	\left[ \begin{array}{cccccc}
+	1 & 0 & 0 & 0 & 0 & 0 \\
+	0 & \cos\omega & 0 & 0 & -e \sin\omega & 0\\
+	0 & \sin\omega & 0 & 0 &  e \cos\omega & 0\\
+	0 & 0 & 1 & 0 & 0 & 0\\
+	0 & 0 & 0 & \sin i & 0 & 0\\
+	0 & 0 & 0 & 0 & 1 & 1\\
+	\end{array}
+	\right]
+	\left\{\begin{array}{c}
+	\delta a \\
+	\delta e \\
+	\delta i \\
+	\delta \Omega \\
+	\delta \omega \\
+	\delta M \\
+	\end{array}\right\}
+	\end{equation} 
+	%
+	\indent A graphical representation of this concept can be seen in figure \ref{fig: 	inc_vector}.
+	\subsubsection{Peters-Noomen C set of relative orbital elements (CROE).}
+	%
+	\indent Defined by Peters \& Noomen in \cite{Peters_Noomen}, this set is also closely related with the orbit safety notion. It arises from the analysis of the Gauss Variational Equations (GVEs) applied to the relative dynamics between a deputy and a chief spacecraft, when the former performs a cotangential transfer. Without further ado, let us define them as:
+	%
+	\begin{equation}
+	\arraycolsep=10pt
+	\def\arraystretch{1.3}
+	\left\{\begin{array}{llll}
+	C_1 = \delta p = \eta^2 \delta a - 2\, a \, e \delta e  & \equiv & \text{Relative parameter of the orbit} &  [L] \\
+	C_2 = e\delta p - p \delta e & \equiv  & \text{\textit{unclear physical meaning}}  &  [L] \\
+	C_3 = -e\, p \left(\delta \omega + \cos i \delta \Omega\right)& \equiv  & \text{\textit{unclear physical meaning}} &  [L] \\
+	C_4 = a \left( \delta\omega + \cos i \delta \Omega + \eta^{-1} \delta M\right)& \equiv  & \text{Modified relative mean longitude}  & [L]  \\
+	C_5 = -p\left( \cos\omega \delta i + \sin i \sin\omega \delta \Omega \right)&  \equiv  & \text{\textit{unclear physical meaning}} &  [L] \\
+	C_6 = p\left( \sin\omega \delta i - \sin i \cos \omega \delta \Omega \right)&  \equiv  & \text{\textit{unclear physical meaning}} &  [L] \\
+	\end{array}\right.
+	\end{equation}
+	%
+	\indent For a proper geometrical and conceptual description of the elements, please see \cite{Peters_Noomen}. As an introduction, the first four elements essentially determine the in-plane relative motion. $C_1$, $C_2$ \& $C_3$ arise from a very intelligent interpretation of the GVEs, with $C_4$ completing the element set. On the other hand, elements $C_5$ and $C_6$ describe the out-of-plane motion.
+	
+%

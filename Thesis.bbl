@@ -144,7 +144,7 @@
       \field{labeltitlesource}{title}
       \field{booktitle}{CNES International Symposium on Space Dynamics}
       \field{month}{11}
-      \field{title}{Colocation Strategy and Collision Avoidance for the Geostationary Satellites at 19 Degrees West}
+      \field{title}{{Colocation Strategy and Collision Avoidance for the Geostationary Satellites at 19 Degrees West}}
       \field{volume}{25}
       \field{year}{1989}
       \field{pages}{60\bibrangedash 66}
@@ -182,7 +182,7 @@
       \field{title}{Accurate Osculating/Mean Orbital Elements Conversions for Spaceborne Formation Flying}
       \field{year}{2018}
     \endentry
-    \entry{Gim_Alfriend}{article}{}
+    \entry{Gim_Alfriend_equinoctial}{article}{}
       \name{author}{2}{}{%
         {{hash=2f8ebbbe02bdff3a984e40ca7c65a693}{%
            family={Gim},
@@ -283,8 +283,6 @@
       \range{pages}{17}
     \endentry
   \enddatalist
-  \missing{DAmicoDLR}
-  \missing{TAU_code}
 \endrefsection
 \endinput
 

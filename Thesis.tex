@@ -61,6 +61,9 @@
 \tikzset{nonterminal/.style = {
 rectangle, minimum size=10mm, very thick, draw=GMVred, top color=GMVred!20 ,
 bottom color=GMVred!20, font=\itshape, text height=1.5ex,text depth=.25ex}}
+\tikzset{bluerect/.style = {
+rectangle, minimum size=10mm, very thick, draw=CadetBlue, top color=CadetBlue!20 ,
+bottom color=CadetBlue!20, font=\itshape, text height=1.5ex,text depth=.25ex}}
 \tikzset{terminal/.style={
 rounded rectangle, minimum size=10mm, very thick, draw=black!50, top color=white,
 bottom color=black!20, font=\ttfamily, text height=1.5ex, text depth=.25ex}}
@@ -381,50 +384,49 @@ urlcolor=linkcol 				% couleur des liens pour les url
 
 \makeindex
 
-\addbibresource{refs.bib}
+\addbibresource{Bibliography/refs.bib}
 
 \begin{document}
 
-
+%% === === === === === === COVER  === === === === === ===
 \frontmatter
 
-											% Compila parametros de la portada
 \include{Portada}
 
-\maketitle												% Compila parametros de la portada
+\maketitle												
 
+%% === === === === === === ABSTRACT  === === === === === ===
 
-\include{Abstract_bien}
+%\include{Abstract_bien}
 
-
+%% === === === === === === ORGANIZATIONAL MATTERS  === === === === === ===
 \dominitoc
 
 \cleardoublepage
 
 \tableofcontents
+%\include{Symbols}
 \printnomenclature
 \listoffigures
 \listoftables
-\include{Intro}
+%% === === === === === === INTRODUCTION  === === === === === ===
+%\include{Intro}
+
+%% === === === === === === CHAPTERS === === === === === ===
 \mainmatter
 %\include{Chapter_01/Chapter_01}
 
-%\include{Chapter_02/Chapter_02}
-
 %\include{Conclusiones}
 
-\include{Symbols}
+%% === === === === === === SYMBOLS  === === === === === ===
 
+%% === === === === === === APPENDICES  === === === === === ===
 \appendix
 
-\include{Appendix/Appendix_01/Appendix_01}
-%\include{Appendix/Appendix_02/Appendix_02}
-%\include{Appendix/Appendix_03/Appendix_03}
-%\bibliographystyle{ThesisStyle}
-%\bibliographystyle{siam} % We choose the "plain" reference style
+\include{Appendices/Appendix_A/Appendix_A}
 
-%\bibliography{Bibliography/refs}
-\printbibheading
+%% === === === === === === BIBLIOGRAPHY  === === === === === ===
+%\printbibheading
 \printbibliography
 %\printbibliography[type=book,heading=subbibliography,title={Book Sources}]
 %\printbibliography[type=paper,heading=papers,title={Paper Sources}]
