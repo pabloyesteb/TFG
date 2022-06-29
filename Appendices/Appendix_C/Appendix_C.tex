@@ -1,51 +1,37 @@
-\chapter{Desarrollo de software.}
+\chapter{Basics of analytical mechanics.}
 %
-\section{Introducción.}
-\indent Una parte vital a la hora de realizar análisis y simulaciones numéricas, sean del tipo que sean, es la elección del lenguaje de código para su implementación. El abanico es amplísimo, pero dada su robustez y el conocimiento previo, se decide utilizar FORTRAN 95 para la totalidad de los problemas simulados en el trabajo. Adicionalmente, por su gran adaptabilidad y variedad de opciones con respecto a las representaciones gráficas, se ha trabajado con Matlab, que si bien cuenta con innumerables aplicaciones y herramientas, solamente se ha utilizado a estos efectos.\\
+\label{app: 	Analytical_mechanics}
 %
-\indent Por tanto, para la resolución de cualquiera de los problemas desarrollados a lo largo del proyecto, la simulación ha sido realizada con el lenguaje FORTRAN, de la mano con el editor de código Visual Studio. Mediante un conjunto de subrutinas, los datos numéricos obtenidos se exportan a un fichero \textit{.m}, de tipo Matlab. En dicho fichero, además de los propios datos numéricos, se incluyen todas las órdenes necesarias para la representación gráfica de dichos datos (ejes, títulos, leyendas, formato...). Una alternativa, también abordada, es la utilización de ficheros de tipo \textit{tecplot}, aunque no se desarrolló en profundidad en vista de la bondad del programa Matlab.\\
+\section{Introduction.}
 %
-\indent A continuación se va a dar una visión general sobre el código desarrollado asociado al módulo termodinámico de la formación de hielo, a fin de evaluar su funcionamiento básico.
 %
-\section{Programa $\text{prICE\_K}$.}
+\section{Lagrangian formulation.}
 %
-\indent El programa $\text{prICE\_K}$ constituye el código del módulo termodinámico de la simulación de la formación de hielo. Su objetivo es, por tanto, dados unos datos del campo fluido y otros del impacto de gotas, así como unos ciertos parámetros, la obtención de la masa de hielo formada y su distribución sobre la geometría estudiada (bidimensional en todo caso). A continuación se adjuntan diversos diagramas de flujo que describen su funcionamiento básico.
 %
-	\subsection{Diagrama de flujo general.}
+	\subsection{Generalized coordinates \& energy of a dynamical system.}
 	%
-	\indent En la figura \ref{fig: DFLUJO_A} se observa un diagrama de flujo que representa el funcionamiento del programa completo, desde la carga del \textit{setup} hasta la representación de los resultados, distinguiéndose las fase de pre-proceso, computación y post-proceso.
 	%
-	\begin{figure}[ht]
-	\centering\includegraphics[width = \linewidth]{Appendix/Appendix_03/DFLUJO_A}
-	\caption{Diagrama de flujo del funcionamiento global del programa.}
-	\label{fig: DFLUJO_A}
-	\end{figure}
+	\subsection{Lagrangian function.}
 	%
-	\subsection{Diagrama de flujo de la actualización de la solución.}
 	%
-	\indent Dada la complejidad de la obtención de la solución en este problema, se incluye en la figura \ref{fig: DFLUJO_B} un diagrama de flujo de detalle sobre el proceso de actualización de la solución:
+	\subsection{Lagrange equations.}
 	%
-	\begin{figure}[ht]
-	\centering\includegraphics[width =0.9 \linewidth]{Appendix/Appendix_03/DFLUJO_B}
-	\caption{Diagrama de flujo del proceso de actualización de la solución.}
-	\label{fig: DFLUJO_B}
-	\end{figure}
 	%
-	\subsection{Descripción de los módulos del programa.}
+\section{Hamiltonian formulation.}
+%
+%
+	\subsection{Hamiltonian function.}
 	%
-	\indent Por el mayor orden que confiere al código en su conjunto, se ha optado por una programación de carácter modular. En particular, los módulos de que está compuesto el programa y sus funciones básicas son:
 	%
-	\begin{itemize}
-	\item[I.] $\textbf{prICE\_K}$: Se trata del programa principal (\textit{main}), y sus funciones son, a grandes rasgos, orquestar el funcionamiento global del programa. Corre el \textit{setup}, inicializa las variables del mallado y de la solución, asimila los datos de entrada del GOTA y del TAU, y llama al \textit{solver}, y por último, exporta los datos a un fichero Matlab mediante la llamada a una cierta subrutina.
+	\subsection{Hamilton equations.}
 	%
-	\item[II.] $\textbf{Solver\_K}$: Es el módulo que, dado un mallado, parámetros de la simulación, y unos datos de captación y del campo fluido, obtiene la solución final del problema. Incluye una serie de subrutinas, como la principal $\textbf{prICE\_Solver}$, que avanza la simulación en el tiempo, el subprograma \textbf{Sampling}, que para cada punto, realiza el proceso de estimación de la solución y su validación, la subrutina $\textbf{System\_Solve}$, que calcula la solución del sistema de EDPs en función de la región, y por último la subrutina \textbf{Compatibility}, que evalúa el cumplimiento de las condiciones termodinámicas de compatibilidad.
 	%
-	\item[III.] \textbf{Models}: Incluye toda la modelización termodinámica del problema: modelos de los términos fuente, de presión de vapor, del coeficiente de película...
+	\subsection{Canonical transformations.}
 	%
-	\item[IV.] $\textbf{Graphics\_utilities}$: Contiene las subrutinas cuya función es exportar un archivo de Matlab listo para ejecutar, que represente gráficamente la solución del problema.
 	%
-	\item[V.] \textbf{Setup}: Su función es correr el archivo $\textit{Settings \_IA.ini}$, cargando todos los parámetros de la simulación así como ciertas constantes termodinámicas.
+	\subsection{Hamilton-Jacobi theory.}
 	%
-	\item[VI.] \textbf{Constants}: Incluye constantes de diversas naturalezas, a nivel de programación básica (número $\pi$, longitud de \textit{strings}...)
 	%
-	\end{itemize}
+	\subsection{Application to the two-body problem.}
+	%
+	%

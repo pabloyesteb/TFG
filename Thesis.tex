@@ -1,15 +1,11 @@
 \documentclass[a4paper,11pt,twoside,makeidx, svgnames]{ThesisStyle}
-\usepackage[english]{babel}   % quita el punto de la section
+%% === === === === === === INITIAL PACKAGE LOAD  === === === === === ===
+\usepackage[english]{babel}   
 \usepackage[latin1]{inputenc}
-%\usepackage[T1]{fontenc}
-%   \decimalpoint
-%\usepackage{color}
-%\usepackage{colortbl}
 \usepackage{graphicx}
 \usepackage{epic}
 \usepackage{curves}
 \usepackage{multicol}
-%\usepackage{array}
 \usepackage{longtable}
 \usepackage{amstext}
 \usepackage{amsbsy}
@@ -18,7 +14,6 @@
 \usepackage{amssymb}
 \usepackage{latexsym}  %\mathbb{R}
 \usepackage{wrapfig}
-%\usepackage{multind}
 \usepackage{scalerel}
 \usepackage{stackengine,wasysym}
 
@@ -36,20 +31,30 @@
 \usepackage{import}
 \usepackage{rotating}    % Sideways of figures & tables
 \usepackage{multirow}
-%\usepackage[FIGTOPCAP]{subfigure}
+
+%% === === === === === === BIBLATEX  === === === === === ===
 \usepackage[backend=biber,
-    style=numeric-comp, hyperref, giveninits=true, backref = true]{biblatex}
+    style=numeric-comp, hyperref, giveninits=true, backref = true, sorting=none]{biblatex}
 \usepackage[hyperindex=true]{hyperref}
 %\usepackage[pagebackref,hyperindex=true]{hyperref}
+\defbibheading{subsubbibintoc}[\refname]{%
+  \subsection*{#1}%
+  \phantomsection
+  \addcontentsline{toc}{subsection}{#1}}
+\defbibheading{subsubbibliography}[\refname]{%
+  \subsection*{#1}}
+  
+\defbibfilter{papers}{
+  type=article or
+  type=inproceedings or
+  type=report
+}
+%% === === === === === === FLOAT BARRIER  === === === === === ===
 \usepackage[section]{placeins}
-\usepackage{subcaption}
-\usepackage{titlesec}
-\usepackage[intoc, english]{nomencl}
-\makenomenclature
-\newcommand{\nomunit}[1]{%
-\renewcommand{\nomentryend}{\hspace*{\fill}#1}}
 
-% TIKZ 
+\usepackage{titlesec}
+
+%% === === === === === === TIKZ SETUP  === === === === === ===
 \usepackage{xcolor}
 \definecolor{GMVred}{rgb}{0.8745, 0, 0.1412}
 \usepackage{tikz}
@@ -96,26 +101,31 @@ circle, thick, draw=GMVred, fill=GMVred!20, minimum size=8mm, font=\ttfamily, te
 \tikzset{point/.style={circle,inner sep=0pt,minimum size=0pt, fill=black!50}}
 \tikzset{skip loop/.style={to path={-- ++(0,#1) -| (\tikztotarget)}}}
 
-%% This code creates the groups
-% -----------------------------------------
+%% === === === === === === NOMENCLATURE SETUP  === === === === === ===
+\usepackage[intoc, english]{nomencl}
+\newcommand{\nomunit}[1]{%
+\renewcommand{\nomentryend}{\hspace*{\fill}#1}}
+\makenomenclature
 \usepackage{ifthen}
-  \renewcommand{\nomgroup}[1]{%
-  \item[\bfseries
-  \ifthenelse{\equal{#1}{C}}{Physical constants}{%
-  \ifthenelse{\equal{#1}{N}}{Characteristic numbers}{%
-  \ifthenelse{\equal{#1}{T}}{Orbital elements}{%
-  \ifthenelse{\equal{#1}{G}}{Cartesian coordinates}{%
-  \ifthenelse{\equal{#1}{D}}{ }{%
-  \ifthenelse{\equal{#1}{S}}{Suffixes}{}}}}}}%
-  ]}
+\renewcommand{\nomgroup}[1]{%
+\item[\bfseries
+\ifthenelse{\equal{#1}{C}}{Physical constants}{%
+\ifthenelse{\equal{#1}{N}}{Characteristic numbers}{%
+\ifthenelse{\equal{#1}{T}}{Orbital elements}{%
+\ifthenelse{\equal{#1}{G}}{Cartesian coordinates}{%
+\ifthenelse{\equal{#1}{D}}{ }{%
+\ifthenelse{\equal{#1}{S}}{Suffixes}{}}}}}}%
+]}
 
-% -----------------------------------------
 
 \setcounter{secnumdepth}{3}
+
+%% === === === === === === SUBCAPTION  === === === === === ===
+\usepackage{subcaption}
 \captionsetup[subfigure]{subrefformat=simple,labelformat=simple}
 \renewcommand\thesubfigure{(\alph{subfigure})}
 
-\captionsetup[table]{name=Tabla}
+\captionsetup[table]{name=Table}
 
 % float para las figuras
 \def\floatpagefraction{.8}
@@ -124,18 +134,10 @@ circle, thick, draw=GMVred, fill=GMVred!20, minimum size=8mm, font=\ttfamily, te
 
 %\setlength{\unitlength}{0.18mm}
 
-%------------------------------------------------------------------------------------------------
-%-------------- tamaño folio -------------------------------------------------------------------
+\usepackage[super]{nth}
+%% === === === === === === NEW MATH COMMANDS  === === === === === ===
 
-\def\psnormal{\textwidth=19.5cm\textheight=23cm
-          \oddsidemargin=-1.5cm\evensidemargin=0.2cm
-          \parindent=1cm\topmargin=-2cm}
-\psnormal
-
-%------------------------------------------------------------------------------
-% new commands
-%------------------------------------------------------------------------------
-\newcommand{\bm}[1]{\mbox{\boldmath{${#1}$}}} % negrita en modo matematico
+\newcommand{\bm}[1]{\mbox{\boldmath{${#1}$}}}
 %\newcommand{\dfrac}{\displaystyle\frac}
 \newcommand{\dint}{\displaystyle\int}
 \newcommand{\dsum}{\displaystyle\sum}
@@ -148,8 +150,6 @@ circle, thick, draw=GMVred, fill=GMVred!20, minimum size=8mm, font=\ttfamily, te
 \renewcommand{\labelitemi}{$\bullet$}
 \renewcommand{\labelitemii}{--}
 \renewcommand{\labelitemiii}{$\spadesuit$}
-
-% negrita en modo matematico
 
 \newcommand{\be}{\begin{equation}}
 % $$ 
@@ -165,7 +165,7 @@ circle, thick, draw=GMVred, fill=GMVred!20, minimum size=8mm, font=\ttfamily, te
 \end{center}
 }
 
-%-----------------------------------------------------------------------------------------------
+%% === === === === === === COLOR DEFINITION  === === === === === ===
 \definecolor{Blue}          {cmyk}{1,1,0,0}            % palabras clave
 \definecolor{BrickRed}      {cmyk}{0,1.0,0.91,0.60}    % texto resaltado
 \definecolor{PineGreen}     {cmyk}{0.92,0,0.59,0.25}   % comentarios programa
@@ -199,17 +199,15 @@ circle, thick, draw=GMVred, fill=GMVred!20, minimum size=8mm, font=\ttfamily, te
 \def\baselinestretch{1.5}
 %------------------------------------------------------------------------------
 
-%------------------------------------------------------------------------------------------------
-%-------------- tamaño folio -------------------------------------------------------------------
+%% === === === === === === A4 SIZE  === === === === === ===
 
 \def\psnormal{\textwidth=17cm\textheight=23cm
           \oddsidemargin=0cm\evensidemargin=0.2cm
           \parindent=1cm\topmargin=-1cm}
 \psnormal
-%------------------------------------------------------------------------------------------------
 
-%------------------------------------------------------------------------------
-%------------------------ Fancy page ------------------------------------------
+%% === === === === === === FANCY PAGE === === === === === ===
+
 \usepackage{fancyhdr}                    % Fancy Header and Footer
 
 \pagestyle{fancy}                       % Sets fancy header and footer
@@ -231,48 +229,19 @@ circle, thick, draw=GMVred, fill=GMVred!20, minimum size=8mm, font=\ttfamily, te
   \fancyfoot{}
   \renewcommand{\headrulewidth}{0pt}
 }
-%------------------------------------------------------------------------------
 
-
-%------------------------------------------------------------------------------
-%------------------------ Minitoc ---------------------------------------------
+%% === === === === === === MINITOC  === === === === === ===
 \usepackage{minitoc}
 %\usepackage[tight,spanish]{minitoc}
 %\usepackage[tight]{minitoc}
 
-\setcounter{minitocdepth}{2}         %default
-\setlength{\mtcindent}{24pt}         %default
-\renewcommand{\mtcfont}{\small\rm}   %default
-\renewcommand{\mtcSfont}{\small\bf}  %default
-\mtcsetoffset{minitoc}{-2.0em}		% indent del mimnitoc
-%------------------------------------------------------------------------------
-%----------------------- Estilo de subrutina y funciÃ³n ------------------------
+\setcounter{minitocdepth}{2}         	%default
+\setlength{\mtcindent}{24pt}        	%default
+\renewcommand{\mtcfont}{\small\rm}   	%default
+\renewcommand{\mtcSfont}{\small\bf}  	%default
+\mtcsetoffset{minitoc}{-2.0em}			% indent del minitoc
 \usepackage{listings}
-%---------------LO fundamental-------------------------
-\lstset{basicstyle=\ttfamily\small,
-        identifierstyle=\ttfamily,
-        morekeywords={save}
-        }
 
-\lstdefinestyle{interface}
-               {language=[95]Fortran,
-                %frame=bottomlines,
-                basicstyle=\ttfamily,
-                identifierstyle=\ttfamily,
-                %commentstyle=\ttfamily,
-                %commentstyle=\color{PineGreen},
-                %keywordstyle=\color{azul},
-                commentstyle=\color{ao(english)},
-                keywordstyle=\color{blue},
-                emph={status,size,position,len},
-                emphstyle=\em,
-				morecomment=[l][\em]{Dec},
-				morecomment=[l][\em]{sent},
-				morecomment=[l][\em]{nombre},
-				morecomment=[l][\em]{operando},
-				morecomment=[l][\em]{operador},
-                emph={nombre_variable}
-               }
 %--------------------------------------------------------------------------
 
 \lstdefinestyle{interfaceNF}
@@ -290,79 +259,10 @@ circle, thick, draw=GMVred, fill=GMVred!20, minimum size=8mm, font=\ttfamily, te
                 keywords={numero,estructura,componente}
                }
 
-\lstdefinestyle{otros}
-               {basicstyle=\ttfamily,
-                keywordstyle=\em,
-                commentstyle=\ttfamily,
-%				morecomment=[l][\em]{Dec},
-%				morecomment=[l][\em]{sent},
-%                keywords={numero,estructura,componente}
-               }
-
-\lstdefinestyle{ejemplosNF}
-               {basicstyle=\ttfamily,
-                keywordstyle=\em,
-                commentstyle=\ttfamily,
-				morecomment=[l][\em]{Dec},
-				morecomment=[l][\em]{sent},
-                keywords={numero,estructura,componente,sentencia,expr,lÃ³gica,%
-				          lista_de_variables,nombre,cuerpo_de_interface, %
-						  nombre_variable, nombre_funcion, arg}
-               }
-
-\lstdefinestyle{numbered}
-               {numbers=left,
-                numberstyle=\tiny,
-                escapeinside={(*@}{@*)},
-%                language=[95]Fortran,
-                basicstyle=\ttfamily,
-%                identifierstyle=\ttfamily,
-%                commentstyle=\ttfamily,
-%                emph={status,size,position,len},
-%                emphstyle=\ttfamily,
-%				morecomment=[l][\em]{Dec},
-%				morecomment=[l][\em]{sent},
-               }
-
-\lstdefinestyle{ejemplosubp}
-               {basicstyle=\ttfamily,
-                keywordstyle=\em,
-                commentstyle=\ttfamily,
-				morecomment=[l][\em]{Dec},
-				morecomment=[l][\em]{sent},
-                keywords={nombre_subrutina, lista_argumentos, %
-				  nombre_del_module, cuerpo_de_interface, lista_de_subprgramas}
-               }
-
-\lstdefinestyle{ficheros}
-               {basicstyle=\ttfamily,
-                keywordstyle=\em,
-                commentstyle=\ttfamily,
-                keywords={nombre,estado,accion,lista_vbles, nombre_del_namelist}
-               }
-
-\lstdefinestyle{formatos}
-               {basicstyle=\ttfamily,
-                keywordstyle=\em,
-                commentstyle=\ttfamily,
-                keywords={nombre}
-               }
-
-\lstdefinestyle{parada}
-               {basicstyle=\ttfamily,
-                keywordstyle=\em,
-                commentstyle=\ttfamily,
-                keywords={frase_a_imprimir_por_pantalla}
-               }
-
-%------------------------------------------------------------------------------
-
-%-------------------------------------------------------------------------------
-
+%% === === === === === === HYPERREF SETUP  === === === === === ===
 
 \usepackage{hyperref}
-%------------------------------------------------------------------------------
-%---------------- para el Indice ----------------------------------------------
+
 \hypersetup
 {
 bookmarksopen=true,
@@ -380,18 +280,17 @@ linkcolor=linkcol, 				% couleur des liens hypertextes internes
 citecolor=citecol, 				% couleur des liens pour les citations
 urlcolor=linkcol 				% couleur des liens pour les url
 }
-%------------------------------------------------------------------------------
 
 \makeindex
 
-\addbibresource{Bibliography/refs.bib}
+\addbibresource{Afterword/Bibliography/refs.bib}
 
 \begin{document}
 
 %% === === === === === === COVER  === === === === === ===
 \frontmatter
 
-\include{Portada}
+\include{Foreword/Portada}
 
 \maketitle												
 
@@ -424,11 +323,19 @@ urlcolor=linkcol 				% couleur des liens pour les url
 \appendix
 
 \include{Appendices/Appendix_A/Appendix_A}
-
+\include{Appendices/Appendix_B/Appendix_B}
 %% === === === === === === BIBLIOGRAPHY  === === === === === ===
-%\printbibheading
-\printbibliography
-%\printbibliography[type=book,heading=subbibliography,title={Book Sources}]
-%\printbibliography[type=paper,heading=papers,title={Paper Sources}]
-%\printbibliography[type=paper,heading=papers,title={Paper Sources}]
+\nocite{*}
+\printbibheading[heading = bibintoc]
+\printbibheading[heading = subbibintoc, title = General]
+\printbibliography[heading = subsubbibliography, type = book, keyword = general, title=Books]
+\printbibliography[heading = subsubbibliography, type = article, keyword = general, title=Articles]
+\printbibheading[heading = subbibintoc, title = Eccentric Dynamics]
+\printbibliography[heading = subsubbibliography, type = book, keyword = eccentric, title=Books]
+\printbibliography[heading = subsubbibliography, filter = papers, keyword = eccentric, title=Articles]
+\printbibheading[heading = subbibintoc, title = Perturbations]
+\printbibliography[heading = subsubbibliography, type = book, keyword = perturbations, title=Books]
+\printbibliography[heading = subsubbibliography, filter = papers, keyword = perturbations, title=Articles]
+%\printbibliography[type = report, keyword = perturbations]
+\printbibliography[heading=subbibintoc, keyword = MATLAB, title={\textsc{Matlab} Exchange libraries}]
 \end{document}

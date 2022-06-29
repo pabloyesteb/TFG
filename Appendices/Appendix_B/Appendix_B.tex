@@ -1,27 +1,153 @@
 \chapter{Cartesian reference systems.}
 %
-\label{chap: Cartesian}
+\label{chap: App_cartesian}
 %
 \section{Introduction.}
 %
+\indent Cartesian states are, as mentioned in appendix \ref{chap: App_OEs}, one of the two main alternatives to describe the state of a certain spacecraft (or celestial body). Though orbital elements (OEs) are generally more intuitive and meaningful, these states are quite critical for the description of both absolute and relative motion. Ultimately, and specially considering the latter, we wish to know the relative orientation and linear distance between the involved bodies. During this appendix, a set of absolute and relative reference frames will be described and related via transformations, which have been used time and again along this thesis.
+%
 	\subsection{Inertial and rotating reference frames.}
 	%
+	\indent Technically, an inertial reference frame is one where Newton's law holds. Effectively, it is a frame which is not object of any acceleration whatsoever. It is then, when interpreted to the letter, an idealization, as there will always be any perturbation which disavows this assumption. Nonetheless, it is usual to neglect said perturbations up to a certain point, thus considering pseudo-inertial reference frames. From now on then, when inertial reference frames are mentioned they will be considered so, even though they are actually not. Along this thesis, both inertial and rotating frames will be considered, each bearing its different advantages and disadvantages.
 	%
-	\subsection{State vector transformation: Motion composition.}
+	\subsection{Absolute and relative frames.}
 	%
+	\indent Another distinction that will be made is between absolute and relative frames. In this thesis, absolute frames are those who are centered in the Earth's center of mass, while relative frames are defined with respect to a reference orbit (the chief's generally). Again, they have different scopes, though relations between them need to be developed.
 	%
+	\subsection{Time measurement.}
+	%
+	\indent Later it will be described how Earth's rotational state influences the dynamics of the spacecrafts, due to its non-homogeneous mass distribution. That leads to the need of precisely computing it, which in turn requires the time elapsed since a given epoch. This section intends to briefly describe the most usual conventions for time definition, without diving in technical considerations. For further description, see \cite{Time_handbook}. These conventions are:%
+	%	
+	\begin{itemize}
+	% 
+	\item[I.] International Atomic Time (TAI): Physical timescale which is calculated through the measurement of cesium radiation. Lacks intuitive meaning, but acts as a ultra-high precision time system and reference for other timescales.
+	%
+	\item[II.] Universal Time (UT1/UT2): Civil time system, which is defined by the right ascension of the mean Sun. It is not a continuous time system, varying as time passes. There are some smoothed versions of UT1, which filters some seasonal variations, thus accounting only for long-term changes. 
+	%
+	\item[III.] Coordinated Universal Time (UTC): Civil time system, which is measured with TAI and synchronized with UT1 via leap seconds. This means that the time rate is the one from the atomic counterpart, whereas the `reference' is set to follow UT1 within 0.9 seconds. If the difference between UTC and UT1 exceeds this value, 1 second is added/substracted to get within range. It is then a non-continuous time system.
+	%
+	\item[IV.] Terrestrial Time (TT): Civil time system, which is measured with TAI but has a delay with respect to it (32.184 seconds).
+	\end{itemize}
+	%
+	\indent Figure \textbf{PUT FIGURE} shows more clearly the differences between them.
 % 
 \section{Absolute reference systems.}
 %
 	\subsection{Earth-Centered-Inertial reference system (ECI).}
 	%
+	\indent As previously stated, any Earth-centered reference system will in turn be non-inertial. That leads to the need of defining a common baseline, \ie an epoch at which the reference system is known. The chosen epoch is denoted as J2000.0\footnote{J2000 denotes a reference frame, being analog to ECI. J2000.0 refers to the mentioned epoch.}, which translates to January \nth{1}, at 12:00:00.000 (midday) in Julian years \cite[see][, glossary]{Time_handbook}. Effectively, the ECI reference system, is geometrically defined as follows \cite{Tapley}:
+	%
+	\[
+	\arraycolsep=10pt
+	\def\arraystretch{1.3}
+	ECI \equiv\left\{
+	\begin{array}{lll}
+	\text{Origin} 	& \equiv 	& \text{Earth's COM} \\[0.5 em]
+	\text{X-axis} 	& \equiv 	& \text{Earth's COM} \longrightarrow \text{Mean vernal equinox at epoch J2000.0} \\
+	\text{Z-axis} 	& \equiv 	& \text{Normal to the mean equatorial plane at epoch J2000.0, } \\
+	  				& 			& \text{pointing towards the Northern Hemisphere} \\
+	\text{Y-axis} 	& \equiv 	& \text{Perpendicular to the X and Z axes forming a right-handed system} \\
+	\end{array}
+	\right.
+	\]
+	%
+	\indent The main reason behind using this system is that it considerably simplifies the dynamics equation of any spacecraft. It is then the most adequate frame on which dynamics can be solved. Furthermore, when considering relative motion, the reference axis are not a critical axis, as we are rather focused on the motion between spacecrafts. On the other hand, this frame is not able to describe the position relative to Earth's surface, thus being useless in communications or visibility analysis.
 	%
 	\subsection{Earth-Centered, Earth-Fixed reference system (ECEF).}
 	%
+	\indent Due to the formerly mentioned concerns, another Earth-centered reference frame must be defined. In this case, that will be ECEF. Geometrically, it is defined as \cite{Tapley}
 	%
-\section{Relative reference systems.}
-%
-	\subsection{PQW reference frame.}
+	\[
+	\arraycolsep=10pt
+	\def\arraystretch{1.3}
+	ECEF \equiv\left\{
+	\begin{array}{lll}
+	\text{Origin} 	& \equiv 	& \text{Earth's COM} \\[0.5 em]
+	\text{X-axis} 	& \equiv 	& \text{Earth's COM} \longrightarrow \text{Intersection of prime meridian and true equatorial plane} \\
+	\text{Z-axis} 	& \equiv 	& \text{Earth's true angular velocity vector (rotation axis)} \\
+	\text{Y-axis} 	& \equiv 	& \text{Perpendicular to the X and Z axes forming a right-handed system} \\
+	\end{array}
+	\right.
+	\]
+	%
+	\indent Once defined, it is turn to evaluate how ECI and ECEF frames differ.
+	%
+		\subsubsection{Conversion from ECI to ECEF.}
+		%
+		%
+		\paragraph{Decomposition of the conversion. \\}
+		%
+		\indent There are four essential differences between ECI and ECEF frame, due to four motions that ECEF include due to it being fixed to Earth:
+		%
+		\begin{itemize}
+		\item[1.] Precession of the equinoxes.
+		%
+		\item[2.] Nutations (small oscillations) of the equinoxes.
+		%
+		\item[3.] Earth's rotation around its axis.
+		%
+		\item[4.] Spin axis motion.
+		\end{itemize}
+		%
+		\indent Each of this motions can be characterized by a rotation to an associated frame. That is, we can decompose the conversion between ECI and ECEF in four rotations, which will now be analyzed.
+		%
+		\paragraph{Involved intermediate frames \& rotations. \\}
+		%
+		\subparagraph{ECI(J200) to Mean of Date. \\}
+		%
+		\indent The equinoxes rotate at a slow, but relevant rate. That means that the vernal equinox today differs considerably from the one at J2000.0. The Mean of Date (MOD) frame arises from this notion, being defined as \cite{Tapley}: \\
+		%
+		\[
+		\arraycolsep=10pt
+		\def\arraystretch{1.3}
+		MOD\equiv\left\{
+		\begin{array}{lll}
+		\text{X-axis} 	& \equiv 	& \text{Earth's COM} \longrightarrow \text{Mean vernal equinox at current epoch} \\
+		\text{Z-axis} 	& \equiv 	& \text{Perpendicular to the mean equatorial plane at current epoch} \\
+		\text{Y-axis} 	& \equiv 	& \text{Perpendicular to the X and Z axes forming a right-handed system} \\
+		\end{array}
+		\right.
+		\]
+		%
+		\indent The rotation matrix from J200 to MOD results:
+		%
+		\begin{equation}
+		R_{ECI\rightarrowMOD} = 
+		\left[ 
+		\begin{array}{lll}
+		C \zeta_A C \theta_A C z_A - S \zeta_A S z_A 	& - S \zeta_A C \theta_A C z_A - C \zeta_A S z_A 	& -S \theta_A C z_A \\
+		C \zeta_A C \theta_A S z_A + S \zeta_A C z_A 	& - S \zeta_A C \theta_A S z_A + C \zeta_A C z_A 	& -S \theta_A S z_A \\
+ 		C \zeta_A S \theta_A 							& - S \zeta_A S \theta_A 							& C \theta_A
+		\end{array}
+		\right]
+		\label{eq: R_ECI_MOD}
+		\end{equation}
+		%
+		\noindent where the precession angles $\zeta_A$, $\theta_A$ and $z_A$ are evaluated by:
+		%
+		\[
+		\left\{ 
+		\begin{array}{lll}
+		\zeta_A 	& = & 2306.2181'' t + 0.30188'' t^2 + 0.017998'' t^3 \\
+		\theta_A 	& =	& 2004.3109'' t - 0.42665'' t^2 - 0.041833'' t^3 \\
+		z_A 		& =	& 2306.2181'' t + 1.09468'' t^2 + 0.018203'' t^3 \\ 
+		\end{array}
+		\right.
+		\]
+		\nonindent and the time $t$ is defined as:
+		%
+		\[
+		t 	= \dfrac{\left(TT - J2000.0\right)}{36525}		
+		\]
+		%
+		\nonindent where TT is the Terrestrial Time (dd/mm/yyyy, hh:mm). The transformation matrix is then perfectly defined for a certain epoch
+		%
+		
+		\paragraph{Intermediate conversions. \\}
+		%
+		%
+	%
+	\subsection{Perifocal (PQW) reference frame.}
 	%
 		\subsubsection{Definition.}
 		%
@@ -38,6 +164,9 @@
 			%
 			%
 		
+\section{Relative reference systems.}
+%
+	
 	\subsection{LVLH reference frame.}
 	%
 		\subsubsection{Definition.}
