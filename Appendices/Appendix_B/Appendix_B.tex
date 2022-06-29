@@ -112,7 +112,7 @@
 		\indent The rotation matrix from J200 to MOD results:
 		%
 		\begin{equation}
-		R_{ECI\rightarrowMOD} = 
+		R_{ECI\rightarrow MOD} = 
 		\left[ 
 		\begin{array}{lll}
 		C \zeta_A C \theta_A C z_A - S \zeta_A S z_A 	& - S \zeta_A C \theta_A C z_A - C \zeta_A S z_A 	& -S \theta_A C z_A \\
@@ -142,20 +142,181 @@
 		%
 		\nonindent where TT is the Terrestrial Time (dd/mm/yyyy, hh:mm). The transformation matrix is then perfectly defined for a certain epoch
 		%
-		
-		\paragraph{Intermediate conversions. \\}
+		\subparagraph{Mean of Date to True of Date \\}
 		%
+		\indent Besides the ``long-term'' precession motion, equinoxes suffer also short-period, small oscillations, which are denoted as nutations. For more clarity, see figure \textbf{PUT FIGURE NUTATION PRECESSION}. The True of Date (TOD) frame is thus defined as: \\
+		%
+		\[
+		\arraycolsep=10pt
+		\def\arraystretch{1.3}
+		TOD\equiv\left\{
+		\begin{array}{lll}
+		\text{X-axis} 	& \equiv 	& \text{Earth's COM} \longrightarrow \text{True vernal equinox at current epoch} \\
+		\text{Z-axis} 	& \equiv 	& \text{Perpendicular to the true equatorial plane at current epoch} \\
+		\text{Y-axis} 	& \equiv 	& \text{Perpendicular to the X and Z axes forming a right-handed system} \\
+		\end{array}
+		\right.
+		\]
+		%
+		\indent The rotation matrix now has the following shape:
+		%
+		\begin{equation}
+		R_{MOD\rightarrow TOD} = 
+		\left[ 
+		\begin{array}{lll}
+		C \Delta \psi 				& - C \epsilon_m S \Delta \psi 	& - S \epsilon_m S \Delta \psi \\
+		C \epsilon_t S \Delta \psi 	& C \epsilon_m C \epsilon_t C \Delta \psi + S \epsilon_m S \epsilon_t & S \epsilon_m C \epsilon_t C \Delta \psi - C \epsilon_m S \epsilon_t \\
+		S \epsilon_t S \Delta \psi 	& C \epsilon_m S \epsilon_t C \Delta \psi - S \epsilon_m C \epsilon_t & S \epsilon_m S \epsilon_t C \Delta \psi + C \epsilon_m C \epsilon_t \\
+		\end{array}
+		\right]
+		\label{eq: R_MOD_TOD}
+		\end{equation}
+		%
+		\noindent where four angles appear. Firstly, the mean obliquity, which is the angle between the mean ecliptic and the mean equatorial plane ($\approx 23.5^{\circ}$), whose value is computed by:
+		%
+		\[
+		\epsilon_m = 84381.448'' - 46.8150''t - 0.00059'' t^2 + 0.001813'' t^3		
+		\]
+		%
+		\indent Moreover, two nutations appear: the one in longitude and the one in obliquity ($\Delta \psi$ and $\Delta \epsilon$, respectively). This angles are computed by a summation of a large number of sinusoidal functions, whose construction and coefficients are shown in \cite{IERS_conventions}. Lastly, the true obliquity is simply the addition of its mean counterpart and the nutation ($\epsilon_t = \epsilon_m + \Delta \epsilon$).
+		%
+		\subparagraph{True of Date to Pseudo-Body-Fixed\\}
+		%
+		\indent Perhaps the biggest and most intuitive difference between ECI and ECEF is Earth's rotation around its axis. The pseudo-body-fixed is simply a clockwise rotation (seen from north pole towards the Earth's COM) around said axis from the True of Date frame:  \\
+		%
+		\[
+		\arraycolsep=10pt
+		\def\arraystretch{1.3}
+		PBF\equiv\left\{
+		\begin{array}{lll}
+		\text{X-axis} 	& \equiv 	& \text{Earth's COM} \longrightarrow \text{Intersection between prime meridian and true equatorial plane.} \\
+		 				&  	 		& \text{(without accounting for the axis' displacement).} \\
+		\text{Z-axis} 	& \equiv 	& \text{Perpendicular to the true equatorial plane at current epoch} \\
+		\text{Y-axis} 	& \equiv 	& \text{Perpendicular to the X and Z axes forming a right-handed system} \\
+		\end{array}
+		\right.
+		\]
+		%
+		\indent The rotation matrix is now as simple as:
+		%
+		\begin{equation}
+		R_{TOD\rightarrow PBF} = 
+		\left[ 
+		\begin{array}{lll}
+		C \alpha_G 		& S\alpha_G 	& 0 \\
+		-S\alpha_G 		& C\alpha_G 	& 0 \\
+		0 				& 0 			& 1 \\
+		\end{array}
+		\right]
+		\label{eq: R_TOD_PBF}
+		\end{equation}
+		%
+		\noindent where $\alpha_G$ is referred to as the Greenwich Mean Sidereal Time (GMST). $\dot{alpha_G}$ is then the rotation rate of the Earth. An analytical expression for this angle is provided in \cite{Tapley}, which is:
+		\[
+		\begin{aligned}
+		\mathrm{GMST}(\mathrm{UT} 1)=& 4.894961212823058751375704430 \\
+				+& \Delta T\{6.300388098984893552276513720\\
+				+& \Delta T\left(5.075209994113591478053805523 \times 10^{-15}\right.\\
+				&\left.\left.-9.253097568194335640067190688 \times 10^{-24} \Delta T\right)\right\}
+				\end{aligned}
+		\]
+		%
+		\noindent where $\Delta T = UT1 - J2000.0$ is expressed in days (including the fractional part of a day).
+		%
+		\subparagraph{Pseudo-Body-Fixed to Body-Fixed (ECEF)\\}
+		%
+		\indent The last, and surely most subtle transformation, is the one that accounts for the displacement in Earth's axis of rotation. This displacement is parametrized with the polar angles $x_p$ and $y_p$, which can again be found at \cite{IERS_conventions}. As these angles are sufficiently small, the rotation matrix from PBF to ECEF is:\\
+		%
+		%
+		\begin{equation}
+		R_{PBF\rightarrow BF} = 
+		\left[ 
+		\begin{array}{lll}
+		1		& 0 	& x_p \\
+		0 		& 1 	& -y_p \\
+		-x_p 	& y_p 	& 1 \\
+		\end{array}
+		\right]
+		\label{eq: R_PBF_ECEF}
+		\end{equation}
+		\paragraph{Full rotation matrix $R_{ECI\rightarrow ECEF$. \\}
+		%
+		\indent By simply successively composing rotations, the full rotation matrix from ECI to ECEF is computed as:
+		%
+		\[
+		R_{ECI\rightarrow ECEF} = R_{PBF \rightarrow ECEF} R_{TOD \rightarrow PBF} R_{MOD\rightarrow TOD} R_{ECI\rightarrow MOD}		
+		\]
 		%
 	%
 	\subsection{Perifocal (PQW) reference frame.}
 	%
 		\subsubsection{Definition.}
 		%
+		\indent The perifocal reference frame is defined as:
+		%
+		\[
+		\arraycolsep=10pt
+		\def\arraystretch{1.3}
+		PQW\equiv\left\{
+		\begin{array}{lll}
+		\text{Origin} 	& \equiv 	& \text{Central body's COM} \\
+		\text{X-axis} 	& \equiv 	& \text{Origin} \longrightarrow \text{Periapsis.} \\
+		\text{Z-axis} 	& \equiv 	& \text{Perpendicular to the osculating orbital plane (out-of-plane)} \\
+		\text{Y-axis} 	& \equiv 	& \text{Perpendicular to the X and Z axes forming a right-handed system} \\
+		\end{array}
+		\right.
+		\]
+		%	
+		\indent This frame takes advantage of the motion being contained in the orbital plane (when using osculating elements, see \textbf{CITE MEAN2OSC}). That means that usually, the problem reduces to evaluating two components of the position and velocity. It also allows for a quite straightforward description of the motion in terms of the Keplerian OEs, assuming elliptical motion. In this case, and using $\underline{q}$ and $\underline{\dot{q}}$ to denote perifocal position and velocity, the perifocal state vector is expressed as:
+		%
+		\[\begin{array}{cc}
+		\underline{q} = \left\{ 
+		\begin{array}{c}
+		r \cos \theta \\
+		r \sin \theta \\
+		0
+		\end{array}				
+		\right\} = 
+		\left\{ 
+		\begin{array}{c}
+		a \left( \cos E - e \right) \\
+		a \sin E\\
+		0
+		\end{array}				
+		\right\} 		&
+		\underline{\dot{q}} = \dfrac{na}{\sqrt{1-e^2}}
+		\left\{ 
+		\begin{array}{c}
+		-\sin\theta\\
+		e + \cos \theta\\
+		0
+		\end{array}				
+		\right\}		
+		\end{array}
+		\]
+		%
+		\noindent where $E$ is the eccentric anomaly, $r$ is the orbital radius, $n$ is the mean orbital rate and the remaining parameters are the regular Keplerian OEs. $r$ and $n$ can be expressed as a function of them as:
+		%
+		\[
+		r = \dfrac{a (1 - e^2)}{1 + e \cos\theta} = a (1 - e\cos\E ) \; ; \qquad n = \sqrt{\dfrac{\mu }{a^3}		
+		\]
+		%
+		\noindent with $\mu = GM$ being the gravitational parameter of the central body.
 		%
 		\subsubsection{State vector transformation.}
 		%
 			\paragraph{Rotation matrix from \& to ECI. \\}
 			%
+			\indent As done with the ECI to ECEF transformation, this one can also be decomposed in three rotations, each associated with one Keplerian angle.\\
+			%
+			\indent The first rotation is associated to $\Omega$, being done around the Z ECI axis. The resulting frame will be named I1 (intermediate 1), and the rotation matrix from ECI is:
+			%
+			\[
+			R_{ECI\rightarrow I1} = \left[
+			\begin{array}{lll}
+			
+			\end{array}						
+			\]
 			%
 			\paragraph{Angular velocity. \\}
 			%
