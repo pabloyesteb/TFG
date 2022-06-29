@@ -134,13 +134,13 @@
 		\end{array}
 		\right.
 		\]
-		\nonindent and the time $t$ is defined as:
+		\noindent and the time $t$ is defined as:
 		%
 		\[
 		t 	= \dfrac{\left(TT - J2000.0\right)}{36525}		
 		\]
 		%
-		\nonindent where TT is the Terrestrial Time (dd/mm/yyyy, hh:mm). The transformation matrix is then perfectly defined for a certain epoch
+		\noindent where TT is the Terrestrial Time (dd/mm/yyyy, hh:mm). The transformation matrix is then perfectly defined for a certain epoch
 		%
 		\subparagraph{Mean of Date to True of Date \\}
 		%
@@ -239,7 +239,7 @@
 		\right]
 		\label{eq: R_PBF_ECEF}
 		\end{equation}
-		\paragraph{Full rotation matrix $R_{ECI\rightarrow ECEF$. \\}
+		\paragraph{Full rotation matrix $R_{ECI\rightarrow ECEF}$. \\}
 		%
 		\indent By simply successively composing rotations, the full rotation matrix from ECI to ECEF is computed as:
 		%
@@ -298,7 +298,7 @@
 		\noindent where $E$ is the eccentric anomaly, $r$ is the orbital radius, $n$ is the mean orbital rate and the remaining parameters are the regular Keplerian OEs. $r$ and $n$ can be expressed as a function of them as:
 		%
 		\[
-		r = \dfrac{a (1 - e^2)}{1 + e \cos\theta} = a (1 - e\cos\E ) \; ; \qquad n = \sqrt{\dfrac{\mu }{a^3}		
+		r = \dfrac{a (1 - e^2)}{1 + e \cos\theta} = a (1 - e\cos E) \; ; \qquad n = \sqrt{\dfrac{\mu }{a^3}}		
 		\]
 		%
 		\noindent with $\mu = GM$ being the gravitational parameter of the central body.
@@ -312,18 +312,100 @@
 			\indent The first rotation is associated to $\Omega$, being done around the Z ECI axis. The resulting frame will be named I1 (intermediate 1), and the rotation matrix from ECI is:
 			%
 			\[
-			R_{ECI\rightarrow I1} = \left[
+			R_{ECI\rightarrow I1}(\Omega) = \left[
 			\begin{array}{lll}
-			
+			\cos \Omega 	& \sin \Omega 	& 0 \\
+			- \sin \Omega 	& \cos \Omega 	& 0 \\
+			0 				& 0 			& 1 
 			\end{array}						
+			\right]	
+			\]
+			%
+			\indent Afterwards, a rotation around X axis of I1 (nodal line) of value $i$ is performed, leading to frame I2. The rotation matrix is simply:
+			%
+			\[
+			R_{I1\rightarrow I2}(\Omega) = \left[
+			\begin{array}{lll}
+			1 	& 0			 	& 0 \\
+			0 	& \cos i 		& \sin i \\
+			0 	& -\sin i		& \cos i 
+			\end{array}						
+			\right]	
+			\]
+			%
+			\indent Finally, a rotation around Z axis of I2 (out-of-plane direction) of value $\omega$ is done, yielding the desired perifocal frame (which we will denote as PQW):
+			%
+			\[
+			R_{I2\rightarrow PQW}(\Omega) = \left[
+			\begin{array}{lll}
+			\cos \omega 	& \sin \omega 	& 0 \\
+			- \sin \omega 	& \cos \omega 	& 0 \\
+			0 				& 0 			& 1 
+			\end{array}						
+			\right]	
+			\]
+			%
+			\indent By composition, the matrix $R_{ECI\rightarrow PQW}$ can easily be calculated:
+			%
+			\[
+			R_{ECI \rightarrow PQW} = R_{I2 \rightarrow PQW}R_{I1 \rightarrow I2} R_{ECI \rightarrow I1} = 
+			\left[\begin{array}{lll}
+			C \Omega C \omega - S \Omega Ci S\omega 	& S\Omega C\omega + C\Omega Ci S\omega 	& Si S\omega \\
+			-C \Omega S \omega - S \Omega Ci c\omega 	& C\Omega Ci C\omega + S\Omega S\omega 	& Si C\omega \\
+			S \Omega Si									& - C\Omega Si  						& Ci \\
+			\end{array}\right]
 			\]
 			%
 			\paragraph{Angular velocity. \\}
 			%
+			\indent In order to fully transform the system, it is necessary to calculate the relative angular velocity between both frames. Again, that can be done by composing the angular movements:
+			%
+			\[
+			\underline{\omega}_{PQW \wrt ECI} = \dot{\Omega} \underline{\hat{k}_{I1}} + \dot{i} \underline{\hat{i}_{I2}} + \dot{\omega} \underline{\hat{k}_{PQW}}
+			\]
 			%			
+			\indent Expressing everything in PQW frame:
+			%
+			\[
+			\underline{\omega}_{PQW \wrt ECI}\rvert_{PQW} = \left\{\begin{array}{c} \omega_x \\ omega_y \\ \omega_z \end{array}\right\}\dot{\Omega} R_{ECI\rightarrow PQW} \left\{\begin{array}{c} 0 \\ 0 \\ 1 \end{array}\right\} + \dot{i} R_{I2 \rightarrow PQW}R_{I1 \rightarrow I2} \left\{\begin{array}{c} 1 \\ 0 \\ 0 \end{array}\right\} + \dot{\omega} R_{I2 \rightarrow PQW} \left\{\begin{array}{c} 0 \\ 0 \\ 1 \end{array}\right\}
+			\]
+			% 
+			\indent In virtue of the axial dual form principle, there exists one matrix that, when applied to a certain vector, yields the same result as doing the cross product between $\underline{\omega}$ and that vector. This matrix has the following shape:
+			%
+			\[
+			\Omega_{PQW \wrt ECI}\rvert_{PQW} = \left[ \begin{array}{lll}
+			0 			& -\omega_z & \omega_y \\
+			\omega_z 	& 0 		& -\omega_x \\
+			-\omega_y 	& \omega_x 	& 0
+			\end{array}\right]
+			\]
+			%
+			\indent As the relative rotation of the opposite motion is just the opposite of the original, and applying a rotation:
+			%
+			\[
+			\Omega_{ECI \wrt PQW}\rvert_{ECI} = - \Omega_{PQW \wrt ECI}\rvert_{ECI} = - R_{PQW\rightarrow ECI} \Omega_{PQW \wrt ECI}\rvert_{PQW}
+			\]
+			%
+			\indent This will useful later on. 
 			\paragraph{Transformation matrices $T_{PQW\rightarrow ECI}$, $T_{ECI\rightarrow PQW}$. \\}
 			%
+			\indent Let us consider the following coordinate transformation:
 			%
+			\[
+			\underline{x}_{PQW} = R_{ECI\rightarrow PQW} \underline{x}_{ECI}
+			\]
+			%
+			\indent If we want then to also transform its time derivative, one option is to directly differentiate by parts with respect to time:
+			%
+			\[
+			\underline{\dot{x}}_{PQW} = \dot{R}_{ECI\rightarrow PQW} \underline{x}_{ECI} + R_{ECI\rightarrow PQW} \underline{\dot{x}}_{ECI}
+			\]
+			%
+			\noindent where the matrix $\dot{R}_{ECI\rightarrow PQW}$ can be either directly calculated term by term, or otherwise computed as:
+			%
+			\[
+			\dot{R}_{ECI\rightarrow PQW} = \dot{R}_{ECI\rightarrow PQW} \Omega_{ECI \wrt PQW}\rvert_{ECI}
+			\]
 		
 \section{Relative reference systems.}
 %

@@ -330,6 +330,75 @@
       \field{year}{2009}
       \keyw{general}
     \endentry
+    \entry{Tapley}{book}{}
+      \name{author}{3}{}{%
+        {{hash=d2322cd60717b84a9b357c3478d16037}{%
+           family={Tapley},
+           familyi={T\bibinitperiod},
+           given={Byron\bibnamedelima D.},
+           giveni={B\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+        {{hash=66f153b6859c96a5715fb868fb51715d}{%
+           family={Schutz},
+           familyi={S\bibinitperiod},
+           given={Bob\bibnamedelima E.},
+           giveni={B\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+        {{hash=99d9e4d7ca7ae4170062a8d41d006bdb}{%
+           family={Born},
+           familyi={B\bibinitperiod},
+           given={George\bibnamedelima H.},
+           giveni={G\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Amsterdam, Netherlands}%
+      }
+      \list{publisher}{1}{%
+        {Elsevier}%
+      }
+      \strng{namehash}{415a0bba2e2e7f3ff2d6d29311617685}
+      \strng{fullhash}{415a0bba2e2e7f3ff2d6d29311617685}
+      \strng{bibnamehash}{415a0bba2e2e7f3ff2d6d29311617685}
+      \strng{authorbibnamehash}{415a0bba2e2e7f3ff2d6d29311617685}
+      \strng{authornamehash}{415a0bba2e2e7f3ff2d6d29311617685}
+      \strng{authorfullhash}{415a0bba2e2e7f3ff2d6d29311617685}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{1}
+      \field{title}{{Statistical Orbit Determination}}
+      \field{year}{2004}
+      \keyw{general}
+    \endentry
+    \entry{IERS_conventions}{report}{}
+      \name{author}{1}{}{%
+        {{hash=44b11b044d204e0404ccad8f7a324667}{%
+           family={McCarthy},
+           familyi={M\bibinitperiod},
+           given={Dennis\bibnamedelima D.},
+           giveni={D\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {Central Bureau of IERS - Observatoire de Paris}%
+      }
+      \list{location}{1}{%
+        {Paris, France}%
+      }
+      \strng{namehash}{44b11b044d204e0404ccad8f7a324667}
+      \strng{fullhash}{44b11b044d204e0404ccad8f7a324667}
+      \strng{bibnamehash}{44b11b044d204e0404ccad8f7a324667}
+      \strng{authorbibnamehash}{44b11b044d204e0404ccad8f7a324667}
+      \strng{authornamehash}{44b11b044d204e0404ccad8f7a324667}
+      \strng{authorfullhash}{44b11b044d204e0404ccad8f7a324667}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{number}{21}
+      \field{title}{IERS Conventions (1992)}
+      \field{type}{techreport}
+      \field{year}{1996}
+      \keyw{general}
+    \endentry
     \entry{Montenbruck}{book}{}
       \name{author}{2}{}{%
         {{hash=80a8be6ff5184fbb0119b6701e40cfb1}{%
@@ -355,8 +424,8 @@
       \strng{authorbibnamehash}{a5288bde8e80165675c3d89505c99a96}
       \strng{authornamehash}{a5288bde8e80165675c3d89505c99a96}
       \strng{authorfullhash}{a5288bde8e80165675c3d89505c99a96}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{edition}{1}
@@ -488,8 +557,8 @@
       \strng{authorbibnamehash}{1d7a171a58363aa8bf04eece48bbe6dd}
       \strng{authornamehash}{1d7a171a58363aa8bf04eece48bbe6dd}
       \strng{authorfullhash}{1d7a171a58363aa8bf04eece48bbe6dd}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{month}{10}
@@ -521,8 +590,8 @@
       \strng{authorbibnamehash}{aded628cfb77b62db19cb3243f425b8b}
       \strng{authornamehash}{aded628cfb77b62db19cb3243f425b8b}
       \strng{authorfullhash}{aded628cfb77b62db19cb3243f425b8b}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{{Perturbation Methods}}
@@ -550,8 +619,8 @@
       \strng{authorbibnamehash}{a5d8ee096fc8780081f9d4403188d626}
       \strng{authornamehash}{a5d8ee096fc8780081f9d4403188d626}
       \strng{authorfullhash}{a5d8ee096fc8780081f9d4403188d626}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{{Theory of Satellite Geodesy}}
@@ -587,8 +656,8 @@
       \strng{authorbibnamehash}{0aef3d40e01252a4fc361ae338296c02}
       \strng{authornamehash}{0aef3d40e01252a4fc361ae338296c02}
       \strng{authorfullhash}{0aef3d40e01252a4fc361ae338296c02}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{{Journal of Guidance, Control \& Dynamics}}
@@ -635,37 +704,6 @@
       \true{nocite}
       \field{pages}{127\bibrangedash 143}
       \range{pages}{17}
-      \keyw{general}
-    \endentry
-    \entry{IERS_conventions}{report}{}
-      \name{author}{1}{}{%
-        {{hash=44b11b044d204e0404ccad8f7a324667}{%
-           family={McCarthy},
-           familyi={M\bibinitperiod},
-           given={Dennis\bibnamedelima D.},
-           giveni={D\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
-      }
-      \list{institution}{1}{%
-        {Central Bureau of IERS - Observatoire de Paris}%
-      }
-      \list{location}{1}{%
-        {Paris, France}%
-      }
-      \strng{namehash}{44b11b044d204e0404ccad8f7a324667}
-      \strng{fullhash}{44b11b044d204e0404ccad8f7a324667}
-      \strng{bibnamehash}{44b11b044d204e0404ccad8f7a324667}
-      \strng{authorbibnamehash}{44b11b044d204e0404ccad8f7a324667}
-      \strng{authornamehash}{44b11b044d204e0404ccad8f7a324667}
-      \strng{authorfullhash}{44b11b044d204e0404ccad8f7a324667}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{number}{21}
-      \field{title}{IERS Conventions (1992)}
-      \field{type}{techreport}
-      \field{year}{1996}
-      \true{nocite}
       \keyw{general}
     \endentry
     \entry{Yamanaka_ankersen}{article}{}
@@ -722,8 +760,8 @@
       \strng{authorbibnamehash}{4008167c97bc7dde725c7244dd27db0d}
       \strng{authornamehash}{4008167c97bc7dde725c7244dd27db0d}
       \strng{authorfullhash}{4008167c97bc7dde725c7244dd27db0d}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Astronomy and Astrophysics}
@@ -756,8 +794,8 @@
       \strng{authornamehash}{b7a6b44ea9ddd80bc79f16cd6eeb9e11}
       \strng{authorfullhash}{b7a6b44ea9ddd80bc79f16cd6eeb9e11}
       \field{extraname}{2}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Journal of Guidance Control and Dynamics}
@@ -903,8 +941,8 @@
       \strng{authorbibnamehash}{178bf8558061a59c8080dcb73e950720}
       \strng{authornamehash}{178bf8558061a59c8080dcb73e950720}
       \strng{authorfullhash}{178bf8558061a59c8080dcb73e950720}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Astronomical Journal}
@@ -937,8 +975,8 @@
       \strng{authorbibnamehash}{70cc65d3064b366149435080373e0ddb}
       \strng{authornamehash}{70cc65d3064b366149435080373e0ddb}
       \strng{authorfullhash}{70cc65d3064b366149435080373e0ddb}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{note}{\url{https://www.mathworks.com/matlabcentral/fileexchange/39664-subtightplot}}
@@ -964,8 +1002,8 @@
       \strng{authorbibnamehash}{2612de45c34b5823877a4a2a009f2576}
       \strng{authornamehash}{2612de45c34b5823877a4a2a009f2576}
       \strng{authorfullhash}{2612de45c34b5823877a4a2a009f2576}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{note}{\url{https://www.mathworks.com/matlabcentral/fileexchange/42673-beautiful-and-distinguishable-line-colors-colormap}}
@@ -989,8 +1027,8 @@
       \strng{authorbibnamehash}{e68564f23e0e939acea76dc3d2bc01bf}
       \strng{authornamehash}{e68564f23e0e939acea76dc3d2bc01bf}
       \strng{authorfullhash}{e68564f23e0e939acea76dc3d2bc01bf}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{note}{\url{https://www.mathworks.com/matlabcentral/fileexchange/31437-windowapi}}
@@ -1016,8 +1054,8 @@
       \strng{authorbibnamehash}{8219e6a78841f04aefdca7b9e1e3bef8}
       \strng{authornamehash}{8219e6a78841f04aefdca7b9e1e3bef8}
       \strng{authorfullhash}{8219e6a78841f04aefdca7b9e1e3bef8}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{note}{\url{https://www.mathworks.com/matlabcentral/fileexchange/14056-arrow3}}

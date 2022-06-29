@@ -31,43 +31,47 @@
 \contentsline {subsection}{\numberline {B.2.2}Earth-Centered, Earth-Fixed reference system (ECEF).}{15}{subsection.B.2.2}%
 \contentsline {subsubsection}{\numberline {B.2.2.1}Conversion from ECI to ECEF.}{15}{subsubsection.B.2.2.1}%
 \contentsline {paragraph}{Decomposition of the conversion. \\}{15}{subsubsection.B.2.2.1}%
-\contentsline {paragraph}{Involved intermediate frames. \\}{15}{subsubsection.B.2.2.1}%
-\contentsline {paragraph}{Intermediate conversions. \\}{15}{subsubsection.B.2.2.1}%
-\contentsline {subsection}{\numberline {B.2.3}Perifocal (PQW) reference frame.}{15}{subsection.B.2.3}%
-\contentsline {subsubsection}{\numberline {B.2.3.1}Definition.}{15}{subsubsection.B.2.3.1}%
-\contentsline {subsubsection}{\numberline {B.2.3.2}State vector transformation.}{15}{subsubsection.B.2.3.2}%
-\contentsline {paragraph}{Rotation matrix from \& to ECI. \\}{15}{subsubsection.B.2.3.2}%
-\contentsline {paragraph}{Angular velocity. \\}{15}{subsubsection.B.2.3.2}%
-\contentsline {paragraph}{Transformation matrices $T_{PQW\rightarrow ECI}$, $T_{ECI\rightarrow PQW}$. \\}{16}{subsubsection.B.2.3.2}%
-\contentsline {section}{\numberline {B.3}Relative reference systems.}{16}{section.B.3}%
-\contentsline {subsection}{\numberline {B.3.1}LVLH reference frame.}{16}{subsection.B.3.1}%
-\contentsline {subsubsection}{\numberline {B.3.1.1}Definition.}{16}{subsubsection.B.3.1.1}%
-\contentsline {subsubsection}{\numberline {B.3.1.2}State vector transformation.}{16}{subsubsection.B.3.1.2}%
-\contentsline {paragraph}{A) Using reference orbit's Keplerian OEs. \\}{16}{subsubsection.B.3.1.2}%
-\contentsline {subparagraph}{Rotation matrix from \& to ECI. \\}{16}{subsubsection.B.3.1.2}%
-\contentsline {subparagraph}{Angular velocity. \\}{16}{subsubsection.B.3.1.2}%
-\contentsline {subparagraph}{Transformation matrices $T_{LVLH\rightarrow ECI}$, $T_{ECI\rightarrow LVLH}$. \\}{16}{subsubsection.B.3.1.2}%
-\contentsline {paragraph}{B) Using reference ECI state vector. \\}{16}{subsubsection.B.3.1.2}%
-\contentsline {subparagraph}{Rotation matrix from \& to ECI. \\}{16}{subsubsection.B.3.1.2}%
-\contentsline {subparagraph}{Angular velocity. \\}{16}{subsubsection.B.3.1.2}%
-\contentsline {subparagraph}{Transformation matrices $T_{PQW\rightarrow ECI}$, $T_{ECI\rightarrow PQW}$. \\}{16}{subsubsection.B.3.1.2}%
-\contentsline {subsection}{\numberline {B.3.2}RTN reference frame.}{17}{subsection.B.3.2}%
-\contentsline {subsubsection}{\numberline {B.3.2.1}Definition.}{17}{subsubsection.B.3.2.1}%
-\contentsline {subsubsection}{\numberline {B.3.2.2}State vector transformation.}{17}{subsubsection.B.3.2.2}%
-\contentsline {paragraph}{Rotation matrix from \& to ECI. \\}{17}{subsubsection.B.3.2.2}%
-\contentsline {paragraph}{Angular velocity. \\}{17}{subsubsection.B.3.2.2}%
-\contentsline {paragraph}{Transformation matrices $T_{RTN\rightarrow ECI}$, $T_{ECI\rightarrow RTN}$. \\}{17}{subsubsection.B.3.2.2}%
-\contentsline {subsection}{\numberline {B.3.3}TAN reference frame.}{17}{subsection.B.3.3}%
-\contentsline {subsubsection}{\numberline {B.3.3.1}Definition.}{17}{subsubsection.B.3.3.1}%
-\contentsline {subsubsection}{\numberline {B.3.3.2}State vector transformation.}{17}{subsubsection.B.3.3.2}%
-\contentsline {paragraph}{Rotation matrix from \& to LVLH. \\}{17}{subsubsection.B.3.3.2}%
-\contentsline {paragraph}{Angular velocity. \\}{17}{subsubsection.B.3.3.2}%
-\contentsline {paragraph}{Transformation matrices $T_{TAN\rightarrow LVLH}$, $T_{LVLH\rightarrow TAN}$. \\}{17}{subsubsection.B.3.3.2}%
-\contentsline {section}{\numberline {B.4}Conversions from OEs to cartesian coordinates.}{17}{section.B.4}%
-\contentsline {subsection}{\numberline {B.4.1}ECI to Keplerian OEs and vice versa.}{17}{subsection.B.4.1}%
-\contentsline {subsection}{\numberline {B.4.2}Relative Keplerian OEs to LVLH.}{17}{subsection.B.4.2}%
-\contentsline {chapter}{Bibliography}{19}{appendix*.11}%
-\contentsline {section}{General}{19}{section*.12}%
-\contentsline {section}{Eccentric Dynamics}{20}{section*.12}%
-\contentsline {section}{Perturbations}{20}{section*.12}%
-\contentsline {section}{\textsc {Matlab} Exchange libraries}{21}{section*.12}%
+\contentsline {paragraph}{Involved intermediate frames \& rotations. \\}{16}{subsubsection.B.2.2.1}%
+\contentsline {subparagraph}{ECI(J200) to Mean of Date. \\}{16}{subsubsection.B.2.2.1}%
+\contentsline {subparagraph}{Mean of Date to True of Date \\}{17}{equation.B.2.1}%
+\contentsline {subparagraph}{True of Date to Pseudo-Body-Fixed\\}{17}{equation.B.2.2}%
+\contentsline {subparagraph}{Pseudo-Body-Fixed to Body-Fixed (ECEF)\\}{18}{equation.B.2.3}%
+\contentsline {paragraph}{Full rotation matrix $R_{ECI\rightarrow ECEF}$. \\}{18}{equation.B.2.4}%
+\contentsline {subsection}{\numberline {B.2.3}Perifocal (PQW) reference frame.}{19}{subsection.B.2.3}%
+\contentsline {subsubsection}{\numberline {B.2.3.1}Definition.}{19}{subsubsection.B.2.3.1}%
+\contentsline {subsubsection}{\numberline {B.2.3.2}State vector transformation.}{19}{subsubsection.B.2.3.2}%
+\contentsline {paragraph}{Rotation matrix from \& to ECI. \\}{19}{subsubsection.B.2.3.2}%
+\contentsline {paragraph}{Angular velocity. \\}{20}{subsubsection.B.2.3.2}%
+\contentsline {paragraph}{Transformation matrices $T_{PQW\rightarrow ECI}$, $T_{ECI\rightarrow PQW}$. \\}{21}{subsubsection.B.2.3.2}%
+\contentsline {section}{\numberline {B.3}Relative reference systems.}{22}{section.B.3}%
+\contentsline {subsection}{\numberline {B.3.1}LVLH reference frame.}{22}{subsection.B.3.1}%
+\contentsline {subsubsection}{\numberline {B.3.1.1}Definition.}{22}{subsubsection.B.3.1.1}%
+\contentsline {subsubsection}{\numberline {B.3.1.2}State vector transformation.}{22}{subsubsection.B.3.1.2}%
+\contentsline {paragraph}{A) Using reference orbit's Keplerian OEs. \\}{22}{subsubsection.B.3.1.2}%
+\contentsline {subparagraph}{Rotation matrix from \& to ECI. \\}{22}{subsubsection.B.3.1.2}%
+\contentsline {subparagraph}{Angular velocity. \\}{22}{subsubsection.B.3.1.2}%
+\contentsline {subparagraph}{Transformation matrices $T_{LVLH\rightarrow ECI}$, $T_{ECI\rightarrow LVLH}$. \\}{22}{subsubsection.B.3.1.2}%
+\contentsline {paragraph}{B) Using reference ECI state vector. \\}{22}{subsubsection.B.3.1.2}%
+\contentsline {subparagraph}{Rotation matrix from \& to ECI. \\}{22}{subsubsection.B.3.1.2}%
+\contentsline {subparagraph}{Angular velocity. \\}{22}{subsubsection.B.3.1.2}%
+\contentsline {subparagraph}{Transformation matrices $T_{PQW\rightarrow ECI}$, $T_{ECI\rightarrow PQW}$. \\}{22}{subsubsection.B.3.1.2}%
+\contentsline {subsection}{\numberline {B.3.2}RTN reference frame.}{23}{subsection.B.3.2}%
+\contentsline {subsubsection}{\numberline {B.3.2.1}Definition.}{23}{subsubsection.B.3.2.1}%
+\contentsline {subsubsection}{\numberline {B.3.2.2}State vector transformation.}{23}{subsubsection.B.3.2.2}%
+\contentsline {paragraph}{Rotation matrix from \& to ECI. \\}{23}{subsubsection.B.3.2.2}%
+\contentsline {paragraph}{Angular velocity. \\}{23}{subsubsection.B.3.2.2}%
+\contentsline {paragraph}{Transformation matrices $T_{RTN\rightarrow ECI}$, $T_{ECI\rightarrow RTN}$. \\}{23}{subsubsection.B.3.2.2}%
+\contentsline {subsection}{\numberline {B.3.3}TAN reference frame.}{23}{subsection.B.3.3}%
+\contentsline {subsubsection}{\numberline {B.3.3.1}Definition.}{23}{subsubsection.B.3.3.1}%
+\contentsline {subsubsection}{\numberline {B.3.3.2}State vector transformation.}{23}{subsubsection.B.3.3.2}%
+\contentsline {paragraph}{Rotation matrix from \& to LVLH. \\}{23}{subsubsection.B.3.3.2}%
+\contentsline {paragraph}{Angular velocity. \\}{23}{subsubsection.B.3.3.2}%
+\contentsline {paragraph}{Transformation matrices $T_{TAN\rightarrow LVLH}$, $T_{LVLH\rightarrow TAN}$. \\}{23}{subsubsection.B.3.3.2}%
+\contentsline {section}{\numberline {B.4}Conversions from OEs to cartesian coordinates.}{23}{section.B.4}%
+\contentsline {subsection}{\numberline {B.4.1}ECI to Keplerian OEs and vice versa.}{23}{subsection.B.4.1}%
+\contentsline {subsection}{\numberline {B.4.2}Relative Keplerian OEs to LVLH.}{23}{subsection.B.4.2}%
+\contentsline {chapter}{Bibliography}{25}{appendix*.11}%
+\contentsline {section}{General}{25}{section*.12}%
+\contentsline {section}{Eccentric Dynamics}{26}{section*.12}%
+\contentsline {section}{Perturbations}{26}{section*.12}%
+\contentsline {section}{\textsc {Matlab} Exchange libraries}{27}{section*.12}%
