@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.5.11)  29 JUN 2022 20:21
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.5.11)  30 JUN 2022 11:03
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2090,7 +2090,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [20]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 8075) has occurred while \output is active []
 
 
 
@@ -2334,24 +2334,17 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-
-LaTeX Warning: There were undefined references.
-
 Package rerunfilecheck Info: File `Thesis.out' has not changed.
 (rerunfilecheck)             Checksum: F6038950505FAD6200B6E605D0E9C915;5882.
-
-Package biblatex Warning: Please rerun LaTeX.
-(biblatex)                Page breaks have changed.
-
 Package logreq Info: Writing requests to 'Thesis.run.xml'.
 \openout1 = `Thesis.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 53204 strings out of 478582
- 1208168 string characters out of 2854156
- 2043863 words of memory out of 3000000
- 70197 multiletter control sequences out of 15000+600000
+ 53205 strings out of 478582
+ 1208185 string characters out of 2854156
+ 2043934 words of memory out of 3000000
+ 70198 multiletter control sequences out of 15000+600000
  485708 words of font info for 92 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  114i,18n,131p,757b,2544s stack positions out of 10000i,1000n,20000p,200000b,80000s
@@ -2376,9 +2369,9 @@ KTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files/MiKTeX/fonts/ty
 pe1/public/amsfonts/cm/cmti10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/a
 msfonts/cm/cmtt10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/symb
 ols/msbm10.pfb>
-Output written on Thesis.pdf (42 pages, 623322 bytes).
+Output written on Thesis.pdf (42 pages, 623899 bytes).
 PDF statistics:
- 656 PDF objects out of 1000 (max. 8388607)
+ 659 PDF objects out of 1000 (max. 8388607)
  152 named destinations out of 1000 (max. 500000)
  296 words of extra memory for PDF output out of 10000 (max. 10000000)
 
