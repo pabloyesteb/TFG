@@ -31,6 +31,136 @@
 	%
 	\indent Figure \textbf{PUT FIGURE} shows more clearly the differences between them.
 % 
+\section{Transformations between reference systems.}
+%
+\indent In this section, two approaches for reference system transformations will be presented. These will prove quite useful later on, helping to clarify how different systems relate to each other. \\
+%
+\indent For the sake of generality, let us consider an inertial and absolute reference frame, and a rotating, relative reference frame (see figure \textbf{PUT FIGURE}). In case we need to consider two absolute systems, it is enough to just nullify the displacement between both frames' origins. The notation used is described below:
+%
+\begin{itemize}
+%
+\item Vectors: $\underline{X}$ refers to a vector with respect an absolute frame, while $\underline{x}$ is used for relative reference frames. Please, note that we are not making use of any reference system (\ie vector base): we are just considering the vector entity as an object.
+%
+\item Subscripts: Unless specified otherwise, denote the body: $\bullet_{C}$ for the chief, $\bullet_D$ for the deputy.
+%
+\item Time derivatives and superscripts: As Coriolis' Theorem states, when non-inertial reference frames are involved, it is necessary to specify the frame with respect to which the derivative is calculated. $\dfrac{^{\mathcal{F} d \bullet}{dt}$ denotes the time derivative in the frame $\mathcal{F}$. An equally valid yet more compact notation is $\dot{\bullet}^{\mathcal{F}}$. 
+%
+\item Right vertical bar subscript: Denotes the coordinate system in which one vector or matrix is described. For example, $\underline{u}\right\rvert_{1} = \sum_{i=1}^3 u_{xi} \underline{\hat{e}_{i1}} $.
+%
+\end{itemize}
+%
+\indent Consider the frames from figure \textbf{PUT FIGURE}: $A$ and $B$. Let us address firstly the transformation from $A \rightarrow B$, that is, converting an absolute \& inertial state vector expressed in coordinate system $A$ to the relative, rotating frame $B$ in its coordinates. What we would like to achieve is a relationship of the form:
+%
+\[
+\left\{ \begin{array}{cccc}
+\underline{x}\right\rvert_{B} 			& 	= 	& \bm f_1 \left( \underline{X}\right\rvert_{A}, ---, \underline{X_C}\right\rvert_{A}, ---\right) \\ 
+\underline{\dot{x}}^{B}\right\rvert_{B} 	&  	= 	& \bm f_2 \left( \underline{X}\right\rvert_{A}, \underline{\dot{X}}^{A}\right\rvert_{A}, \underline{X_C}\right\rvert_{A}, \underline{\dot{X_C}}^{A}\right\rvert_{A}\right) \\
+\end{array}
+\right.
+\]
+%
+\indent As it turns out, this relation is actually linear on the inputs $\underline{\dot{X}}^{A}\right\rvert_{A}$ and  $\underline{X}\right\rvert_{A}$. From this point on, two approaches are derived:
+%
+
+	\subsection{Direct analytical differentiation.}
+	%
+	\indent The first approach starts from the decomposition of the deputy's absolute position vector \cite{LVLH}:
+	%
+	\[
+	\underline{X} = \underline{X_C} + \underline{x} \rightarrow \underline{x} = \underline{X} - \underline{X_C}
+	\]
+	%
+	\indent This vector can be expressed in both coordinate systems, namely $\underline{x}\right\rvert_A$ and $\underline{x}\right\rvert_B$. The transformation between them can be written as the following rotation:
+	%
+	\begin{equation}
+	\underline{x}\right\rvert_{B} = R_{A \to B} \underline{x}\right\rvert_{A}
+	\label{eqAppB: 	LVLH_x}
+	\end{equation}
+	%
+	\indent The rotation matrix $R_{A \to B}$ takes the following form:
+	%
+	\[
+	R_{A \to B} = 
+	\left[ \begin{array}{ccc}
+	\left(\underline{\hat{e}_{xA}} \cdot \underline{\hat{e}_{xB}}\right) & \left(\underline{\hat{e}_{yA}} \cdot \underline{\hat{e}_{xB}}\right) & \left(\underline{\hat{e}_{zA}} \cdot \underline{\hat{e}_{xB}}\right) \\
+	\left(\underline{\hat{e}_{xA}} \cdot \underline{\hat{e}_{yB}}\right) & \left(\underline{\hat{e}_{yA}} \cdot \underline{\hat{e}_{yB}}\right) & \left(\underline{\hat{e}_{zA}} \cdot \underline{\hat{e}_{yB}}\right) \\
+	\left(\underline{\hat{e}_{xA}} \cdot \underline{\hat{e}_{zB}}\right) & \left(\underline{\hat{e}_{yA}} \cdot \underline{\hat{e}_{zB}}\right) & \left(\underline{\hat{e}_{zA}} \cdot \underline{\hat{e}_{zB}}\right)
+	\end{array}\right]
+	\]
+	%
+	\noindent where each column is the coordinates of each base vector of the ``origin'' coordinate system expressed in the ``final'' one. This fact is specially useful when such vectors are characteristic of the problem at hand, as it is the case for the two body problem. In order to transform the velocity vector, let us just take the time derivative of \ref{eqAppB: 	LVLH_x}, yielding:
+	%
+	\begin{equation}
+	\underline{\dot{x}}\right\rvert_{B} = \dot{R}_{A \to B} \underline{x}\right\rvert_{A} + R_{A \to B} \underline{\dot{x}}\right\rvert_{A}
+	\label{eqAppB: 	LVLH_xdot}
+	\end{equation}
+	%
+	\noindent whose first derivative $\dot{R}_{A \to B}$ can be calculated by columns, simplifying the task at hand if we have been able to obtain the origin base $\left( \underline{\hat{e}_{xA}}, \underline{\hat{e}_{yA}}, \underline{\hat{e}_{zA}}\right)$ in terms of the final one. For the sake of completeness, let us remind that \cite{LVLH}:
+	%
+	\[
+	\dfrac{d}{dt}\underline{\hat{u}} = \dfrac{1}{u} \left[ \underline{\dot{u}} - \left( \underline{\hat{u}} \cdot \underline{\dot{u}}\right) \underline{\hat{u}}\right]
+	\]
+	% 
+	\indent A final, more compact form of both \ref{eqAppB: 	LVLH_x} and \ref{eqAppB: 	LVLH_xdot} can be reached by rearranging terms:
+	%
+	\begin{equation}
+	\left\{ \begin{array}{c}
+	\underline{x}\right\rvert_{B} \\
+	\underline{\dot{x}}^{B}\right\rvert_{B}
+	\end{array} \right\}
+	= 
+	\left[\begin{array}{cc}
+	R_{A\to B} & 0_{3x3} \\
+	\dot{R}_{A\to B} & R_{A\to B} 
+	\end{array}\right]
+	\left\{ \begin{array}{c}
+	\underline{X}\right\rvert_{A} - \underline{X_C}\right\rvert_{A}\\
+	\underline{\dot{X}}^{A}\right\rvert_{A} - \underline{\dot{X}_C}^{A}\right\rvert_{A}
+	\end{array}\right\}
+	\label{eqAppB: 	LVLH}
+	\end{equation}
+	%
+	\noindent and the inverse transformation can be expressed as: 
+	%
+	\begin{equation}
+	\left\{ \begin{array}{c}
+	\underline{X}\right\rvert_{A} \\
+	\underline{\dot{X}}^{A}\right\rvert_{A}
+	\end{array} \right\}
+	= 
+	\left[\begin{array}{cc}
+	R_{B\to A} & 0_{3x3} \\
+	\dot{R}_{B\to A} & R_{B\to A} 
+	\end{array}\right]
+	\left\{ \begin{array}{c}
+	\underline{x}\right\rvert_{B} \\
+	\underline{\dot{x}}^{B}\right\rvert_{B}
+	\end{array}\right\} + 
+	\left\{ \begin{array}{c}
+	\underline{X_C}\right\rvert_{A} \\
+	\underline{\dot{X}_C}^{A}\right\rvert_{A}
+	\end{array} \right\}
+	\label{eqAppB: 	LVLH_inverse}
+	\end{equation}
+	%
+	\indent An example of this approach will be developed later on in \textbf{PUT SECTION LVLH}.
+	%
+	\subsection{Classical motion composition.}
+	%
+	\indent This approach, rather on pure derivation, is based on the grounds of motion composition and Coriolis' Theorem. This theorem states that the derivative of a vector in an inertial frame is equivalent to the derivative in a rotating frame plus another contribution due to the rotation of this reference frame:
+	%
+	\[
+	\dfrac{^{A}d \underline{u}}{dt} = \dfrac{^{B}d \underline{u}}{dt} + \underline{\omega}_{B\wrt A} \times \underline{u}
+	\]
+	%
+	\indent The first term is associated to the temporal variation of the coordinates of $\underline{u}$ in the rotating frame, whereas the second one is purely related to the relative rotation between both frames. If we apply this to \ref{eqAppB: 	LVLH_x}:
+	%
+	\[
+	\dfrac{^{A}d \underline{X}}{dt} = \dfrac{^{A}d \underline{X_C}}{dt} + \dfrac{^{A}d \underline{x}}{dt} = \dfrac{^{A}d \underline{X_C}}{dt} + \dfrac{^{B}d \underline{x}}{dt} + \underline{\omega}_{B\wrt A} \times \underline{x}
+	\]
+	%
+	\indent We must bear in mind what we know a priori and what we want to achieve. The former are $\dfrac{^{A}d \underline{X}}{dt}\right\rvert_{A} \equiv \underline{\dot{X}}^{A}\right\rvert_{A}$, $\dfrac{^{A} d \underline{X_C}}{dt}\right\rvert_{A} \equiv \underline{\dot{X}_C}^{A}\right\rvert_{A}$ and $\underline{x}\right\rvert_{B}$, and the latter is just $\dfrac{^{B}d \underline{x}}{dt}\right\rvert_{B} \equiv  \underline{\dot{x}}^{B}\right\rvert_{B} $. Having this in our mind, let us express equation \textbf{PUT REFERENCE} in 
+	
 \section{Absolute reference systems.}
 %
 	\subsection{Earth-Centered-Inertial reference system (ECI).}
@@ -386,7 +516,8 @@
 			\Omega_{ECI \wrt PQW}\rvert_{ECI} = - \Omega_{PQW \wrt ECI}\rvert_{ECI} = - R_{PQW\rightarrow ECI} \Omega_{PQW \wrt ECI}\rvert_{PQW}
 			\]
 			%
-			\indent This will useful later on. 
+			\indent This will be useful later on. 
+			%
 			\paragraph{Transformation matrices $T_{PQW\rightarrow ECI}$, $T_{ECI\rightarrow PQW}$. \\}
 			%
 			\indent Let us consider the following coordinate transformation:
