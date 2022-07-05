@@ -43,9 +43,9 @@
 %
 \item Subscripts: Unless specified otherwise, denote the body: $\bullet_{C}$ for the chief, $\bullet_D$ for the deputy.
 %
-\item Time derivatives and superscripts: As Coriolis' Theorem states, when non-inertial reference frames are involved, it is necessary to specify the frame with respect to which the derivative is calculated. $\dfrac{^{\mathcal{F} d \bullet}{dt}$ denotes the time derivative in the frame $\mathcal{F}$. An equally valid yet more compact notation is $\dot{\bullet}^{\mathcal{F}}$. 
+\item Time derivatives and superscripts: As Coriolis' Theorem states, when non-inertial reference frames are involved, it is necessary to specify the frame with respect to which the derivative is calculated. $\dfrac{^{\mathcal{F}} d \bullet}{dt}$ denotes the time derivative in the frame $\mathcal{F}$. An equally valid yet more compact notation is $\dot{\bullet}^{\mathcal{F}}$. 
 %
-\item Right vertical bar subscript: Denotes the coordinate system in which one vector or matrix is described. For example, $\underline{u}\right\rvert_{1} = \sum_{i=1}^3 u_{xi} \underline{\hat{e}_{i1}} $.
+\item Right vertical bar subscript: Denotes the coordinate system in which one vector or matrix is described. For example, $\underline{u}\rvert_{1} = \sum_{i=1}^3 u_{xi} \underline{\hat{e}_{i1}} $.
 %
 \end{itemize}
 %
@@ -53,13 +53,13 @@
 %
 \[
 \left\{ \begin{array}{cccc}
-\underline{x}\right\rvert_{B} 			& 	= 	& \bm f_1 \left( \underline{X}\right\rvert_{A}, ---, \underline{X_C}\right\rvert_{A}, ---\right) \\ 
-\underline{\dot{x}}^{B}\right\rvert_{B} 	&  	= 	& \bm f_2 \left( \underline{X}\right\rvert_{A}, \underline{\dot{X}}^{A}\right\rvert_{A}, \underline{X_C}\right\rvert_{A}, \underline{\dot{X_C}}^{A}\right\rvert_{A}\right) \\
+\underline{x}\rvert_{B} 			& 	= 	& \bm f_1 \left( \underline{X}\rvert_{A}, ---, \underline{X_C}\rvert_{A}, ---\right) \\ 
+\underline{\dot{x}}^{B}\rvert_{B} 	&  	= 	& \bm f_2 \left( \underline{X}\rvert_{A}, \underline{\dot{X}}^{A}\rvert_{A}, \underline{X_C}\rvert_{A}, \underline{\dot{X_C}}^{A}\rvert_{A}\right) \\
 \end{array}
 \right.
 \]
 %
-\indent As it turns out, this relation is actually linear on the inputs $\underline{\dot{X}}^{A}\right\rvert_{A}$ and  $\underline{X}\right\rvert_{A}$. From this point on, two approaches are derived:
+\indent As it turns out, this relation is actually linear on the inputs $\underline{\dot{X}}^{A}\rvert_{A}$ and  $\underline{X}\rvert_{A}$. From this point on, two approaches are derived:
 %
 
 	\subsection{Direct analytical differentiation.}
@@ -70,10 +70,10 @@
 	\underline{X} = \underline{X_C} + \underline{x} \rightarrow \underline{x} = \underline{X} - \underline{X_C}
 	\]
 	%
-	\indent This vector can be expressed in both coordinate systems, namely $\underline{x}\right\rvert_A$ and $\underline{x}\right\rvert_B$. The transformation between them can be written as the following rotation:
+	\indent This vector can be expressed in both coordinate systems, namely $\underline{x}\rvert_A$ and $\underline{x}\rvert_B$. The transformation between them can be written as the following rotation:
 	%
 	\begin{equation}
-	\underline{x}\right\rvert_{B} = R_{A \to B} \underline{x}\right\rvert_{A}
+	\underline{x}\rvert_{B} = R_{A \to B} \underline{x}\rvert_{A}
 	\label{eqAppB: 	LVLH_x}
 	\end{equation}
 	%
@@ -91,7 +91,7 @@
 	\noindent where each column is the coordinates of each base vector of the ``origin'' coordinate system expressed in the ``final'' one. This fact is specially useful when such vectors are characteristic of the problem at hand, as it is the case for the two body problem. In order to transform the velocity vector, let us just take the time derivative of \ref{eqAppB: 	LVLH_x}, yielding:
 	%
 	\begin{equation}
-	\underline{\dot{x}}\right\rvert_{B} = \dot{R}_{A \to B} \underline{x}\right\rvert_{A} + R_{A \to B} \underline{\dot{x}}\right\rvert_{A}
+	\underline{\dot{x}}\rvert_{B} = \dot{R}_{A \to B} \underline{x}\rvert_{A} + R_{A \to B} \underline{\dot{x}}\rvert_{A}
 	\label{eqAppB: 	LVLH_xdot}
 	\end{equation}
 	%
@@ -105,8 +105,8 @@
 	%
 	\begin{equation}
 	\left\{ \begin{array}{c}
-	\underline{x}\right\rvert_{B} \\
-	\underline{\dot{x}}^{B}\right\rvert_{B}
+	\underline{x}\rvert_{B} \\
+	\underline{\dot{x}}^{B}\rvert_{B}
 	\end{array} \right\}
 	= 
 	\left[\begin{array}{cc}
@@ -114,8 +114,8 @@
 	\dot{R}_{A\to B} & R_{A\to B} 
 	\end{array}\right]
 	\left\{ \begin{array}{c}
-	\underline{X}\right\rvert_{A} - \underline{X_C}\right\rvert_{A}\\
-	\underline{\dot{X}}^{A}\right\rvert_{A} - \underline{\dot{X}_C}^{A}\right\rvert_{A}
+	\underline{X}\rvert_{A} - \underline{X_C}\rvert_{A}\\
+	\underline{\dot{X}}^{A}\rvert_{A} - \underline{\dot{X}_C}^{A}\rvert_{A}
 	\end{array}\right\}
 	\label{eqAppB: 	LVLH}
 	\end{equation}
@@ -124,8 +124,8 @@
 	%
 	\begin{equation}
 	\left\{ \begin{array}{c}
-	\underline{X}\right\rvert_{A} \\
-	\underline{\dot{X}}^{A}\right\rvert_{A}
+	\underline{X}\rvert_{A} \\
+	\underline{\dot{X}}^{A}\rvert_{A}
 	\end{array} \right\}
 	= 
 	\left[\begin{array}{cc}
@@ -133,12 +133,12 @@
 	\dot{R}_{B\to A} & R_{B\to A} 
 	\end{array}\right]
 	\left\{ \begin{array}{c}
-	\underline{x}\right\rvert_{B} \\
-	\underline{\dot{x}}^{B}\right\rvert_{B}
+	\underline{x}\rvert_{B} \\
+	\underline{\dot{x}}^{B}\rvert_{B}
 	\end{array}\right\} + 
 	\left\{ \begin{array}{c}
-	\underline{X_C}\right\rvert_{A} \\
-	\underline{\dot{X}_C}^{A}\right\rvert_{A}
+	\underline{X_C}\rvert_{A} \\
+	\underline{\dot{X}_C}^{A}\rvert_{A}
 	\end{array} \right\}
 	\label{eqAppB: 	LVLH_inverse}
 	\end{equation}
@@ -153,14 +153,96 @@
 	\dfrac{^{A}d \underline{u}}{dt} = \dfrac{^{B}d \underline{u}}{dt} + \underline{\omega}_{B\wrt A} \times \underline{u}
 	\]
 	%
-	\indent The first term is associated to the temporal variation of the coordinates of $\underline{u}$ in the rotating frame, whereas the second one is purely related to the relative rotation between both frames. If we apply this to \ref{eqAppB: 	LVLH_x}:
+	\indent The first term of the right-hand side is associated to the temporal variation of the coordinates of $\underline{u}$ in the rotating frame, whereas the second one is purely related to the relative rotation between both frames. If we apply this to \ref{eqAppB: 	LVLH_x}:
 	%
 	\[
 	\dfrac{^{A}d \underline{X}}{dt} = \dfrac{^{A}d \underline{X_C}}{dt} + \dfrac{^{A}d \underline{x}}{dt} = \dfrac{^{A}d \underline{X_C}}{dt} + \dfrac{^{B}d \underline{x}}{dt} + \underline{\omega}_{B\wrt A} \times \underline{x}
 	\]
 	%
-	\indent We must bear in mind what we know a priori and what we want to achieve. The former are $\dfrac{^{A}d \underline{X}}{dt}\right\rvert_{A} \equiv \underline{\dot{X}}^{A}\right\rvert_{A}$, $\dfrac{^{A} d \underline{X_C}}{dt}\right\rvert_{A} \equiv \underline{\dot{X}_C}^{A}\right\rvert_{A}$ and $\underline{x}\right\rvert_{B}$, and the latter is just $\dfrac{^{B}d \underline{x}}{dt}\right\rvert_{B} \equiv  \underline{\dot{x}}^{B}\right\rvert_{B} $. Having this in our mind, let us express equation \textbf{PUT REFERENCE} in 
+	\begin{equation}
+	\Rightarrow \underline{\dot{X}}^{A} = \underline{\dot{X}_C}^{A} + \underline{\dot{x}}^{B} + \underline{\omega}_{B\wrt A} \times \underline{x}
+	\label{eqAppB: 	MC1}
+	\end{equation}
+	%
+	\indent As before, let us first go from the inertial frame towards the rotating. For that purpose, let us substitute \eqref{eqAppB: 	LVLH_x} into \eqref{eqAppB: 	MC1}, solving for $\underline{\dot{x}}^{B}$:
+	%
+	\begin{equation}
+	\underline{\dot{x}}^{B} = \underline{\dot{X}}^{A} - \underline{\dot{X}_C}^{A} - \underline{\omega}_{B\wrt A} \times \left(\underline{X} - \underline{X_C} \right)
+	\end{equation}
+	%
 	
+	\indent Now, expressing every vector in its proper frame:
+	%
+	\begin{equation}
+	\underline{\dot{x}}^{B}\rvert_{B} = R_{A\to B} \left[\underline{\dot{X}}^{A}\rvert_{A} - \underline{\dot{X}_C}^{A}\rvert_{A} + \underline{\omega}_{A\wrt B}\rvert_{A} \times \left(\underline{X}\rvert_{A} - \underline{X_C}\rvert_{A} \right)\right]
+	\end{equation}
+	%
+	\indent Let's make use now of the axial-dual vector form, leading to:
+	%
+	\begin{equation}
+	\underline{\dot{x}}^{B}\rvert_{B} = R_{A\to B} \left[\underline{\dot{X}}^{A}\rvert_{A} - \underline{\dot{X}_C}^{A}\rvert_{A} + \Omega_{A\wrt B}\rvert_{A} \left(\underline{X}\rvert_{A} - \underline{X_C}\rvert_{A} \right)\right]
+	\end{equation}
+	%
+	\noindent where $\Omega_{A\wrt B}$ is the matrix dual form of $\underline{\omega}_{A \to B}$, that is:
+	%
+	\[
+	\Omega_{A\wrt B} = \left[ \begin{array}{lll}
+			0 			& -\omega_z & \omega_y \\
+			\omega_z 	& 0 		& -\omega_x \\
+			-\omega_y 	& \omega_x 	& 0
+			\end{array}\right]
+	\]
+	%
+	\indent We can now express the conversion in a far more compact form as:
+	%
+	\begin{equation}
+	\left\{ \begin{array}{c}
+	\underline{x}\rvert_{B} \\
+	\underline{\dot{x}}^{B}\rvert_{B}
+	\end{array} \right\}
+	= 
+	\left[\begin{array}{cc}
+	R_{A\to B} 								& 0_{3x3} \\
+	R_{A\to B} \Omega_{A \wrt B} \rvert_{A} & R_{A\to B} 
+	\end{array}\right]
+	\left\{ \begin{array}{c}
+	\underline{X}\rvert_{A} - \underline{X_C}\rvert_{A}\\
+	\underline{\dot{X}}^{A}\rvert_{A} - \underline{\dot{X}_C}^{A}\rvert_{A}
+	\end{array}\right\}
+	\label{eqAppB: 	MC_direct}
+	\end{equation}
+	% 
+	\noindent and its inverse can be easily derived, leading to:
+	%
+	\begin{equation}
+	\left\{ \begin{array}{c}
+	\underline{X}\rvert_{A} \\
+	\underline{\dot{X}}^{A}\rvert_{A}
+	\end{array} \right\}
+	= 
+	\left[\begin{array}{cc}
+	R_{B\to A} & 0_{3x3} \\
+	R_{B\to A} \Omega_{B\wrt A} \rvert_{B} & R_{B\to A} 
+	\end{array}\right]
+	\left\{ \begin{array}{c}
+	\underline{x}\rvert_{B} \\
+	\underline{\dot{x}}^{B}\rvert_{B}
+	\end{array}\right\} + 
+	\left\{ \begin{array}{c}
+	\underline{X_C}\rvert_{A} \\
+	\underline{\dot{X}_C}^{A}\rvert_{A}
+	\end{array} \right\}
+	\label{eqAppB: 	MC_inverse}
+	\end{equation}
+	%
+	\indent Comparing \eqref{eqAppB: 	LVLH} and \eqref{eqAppB: 	MC_direct}, we extract an interesting property of $\dot{R}$, namely:
+	%
+	\[
+	\dot{R}_{A \to B} = R_{A\to B} \Omega_{A \wrt B} \rvert_{A}
+	\]
+	%
+	\noindent which is in turn quite useful, as time derivation of the rotation matrix itself might be quite costly and symbolically dense. This requires though to know the angular velocity vector, whose calculation might not be easy.
+	%
 \section{Absolute reference systems.}
 %
 	\subsection{Earth-Centered-Inertial reference system (ECI).}
@@ -435,6 +517,8 @@
 		%
 		\subsubsection{State vector transformation.}
 		%
+		\indent Our target is to get an expression analogous to \eqref{eqAppB: 	MC_direct}. As both frames are Earth-centered, $\underline{X}_C = 0$, so that only the rotation and angular velocity matrices are to be found.
+		% 
 			\paragraph{Rotation matrix from \& to ECI. \\}
 			%
 			\indent As done with the ECI to ECEF transformation, this one can also be decomposed in three rotations, each associated with one Keplerian angle.\\
@@ -510,39 +594,76 @@
 			\end{array}\right]
 			\]
 			%
-			\indent As the relative rotation of the opposite motion is just the opposite of the original, and applying a rotation:
-			%
-			\[
-			\Omega_{ECI \wrt PQW}\rvert_{ECI} = - \Omega_{PQW \wrt ECI}\rvert_{ECI} = - R_{PQW\rightarrow ECI} \Omega_{PQW \wrt ECI}\rvert_{PQW}
-			\]
-			%
-			\indent This will be useful later on. 
 			%
 			\paragraph{Transformation matrices $T_{PQW\rightarrow ECI}$, $T_{ECI\rightarrow PQW}$. \\}
 			%
-			\indent Let us consider the following coordinate transformation:
+			\indent The transformation matrices can easily be built as in \eqref{eqAppB: 	MC_direct}:
 			%
 			\[
-			\underline{x}_{PQW} = R_{ECI\rightarrow PQW} \underline{x}_{ECI}
+			 T_{PQW\to ECI} = \left[\begin{array}{cc}
+	R_{PQW\to ECI} & 0_{3x3} \\
+	R_{PQW\to ECI} \Omega_{PQW \wrt ECI}\rvert_{PQW} & R_{PQW\to ECI}
+	\end{array}\right]
 			\]
 			%
-			\indent If we want then to also transform its time derivative, one option is to directly differentiate by parts with respect to time:
+			\noindent whose inverse counterpart can be obtained in terms of the same components, as:
 			%
 			\[
-			\underline{\dot{x}}_{PQW} = \dot{R}_{ECI\rightarrow PQW} \underline{x}_{ECI} + R_{ECI\rightarrow PQW} \underline{\dot{x}}_{ECI}
+			 T_{ECI\to PQW} = \left[\begin{array}{cc}
+	R_{PQW\to ECI}' & 0_{3x3} \\
+	-\Omega_{PQW \wrt ECI}\rvert_{PQW} R_{PQW\to ECI}' & R_{PQW\to ECI}'
+	\end{array}\right]
 			\]
 			%
-			\noindent where the matrix $\dot{R}_{ECI\rightarrow PQW}$ can be either directly calculated term by term, or otherwise computed as:
-			%
-			\[
-			\dot{R}_{ECI\rightarrow PQW} = \dot{R}_{ECI\rightarrow PQW} \Omega_{ECI \wrt PQW}\rvert_{ECI}
-			\]
-			%
-			\indent AAAaa
 		
 \section{Relative reference systems.}
 %
-	
+\indent It is time now to address relative reference frames. For each of them, a description is provided, followed by a conversion to and from the ECI reference frame. 
+%
+	\subsection{RTN reference frame.}
+	%
+		\subsubsection{Definition.}
+		%
+		\indent The Radial-Tangential-Normal (RTN) reference frame is defined as \cite{dAmicoDLR}:
+		%
+		\[
+		\arraycolsep=10pt
+		\def\arraystretch{1.3}
+		PQW\equiv\left\{
+		\begin{array}{lll}
+		\text{Origin} 	& \equiv 	& \text{Chief SC COM} \\
+		\text{X-axis}(\underline{e}_R) 	& \equiv 	& \text{Radial direction (positive outwards)}s \\
+		\text{Z-axis}(\underline{e}_N) 	& \equiv 	& \text{Normal to the orbit plane (positive with orbit momentum)} \\
+		\text{Y-axis}(\underline{e}_T) 	& \equiv 	& \text{Perpendicular to the X and Z axes forming a right-handed system} \\
+									 	& 			& \text{(} \approx \text{ tangent to the trajectory)}
+		\end{array}
+		\right.
+		\]
+		%
+		\indent A graphical representation of this frame is shown in figure \ref{fig:	RTN_frame}.
+		%
+		%
+		\begin{figure}[!htb]
+		\centering\includegraphics[width = 0.4\linewidth]{Appendix_B/RTN_frame}
+		\caption{RTN frame \cite{dAmicoDLR}.}
+		\label{fig:	RTN_frame}
+		\end{figure}
+		%
+		\FloatBarrier
+		%
+		\subsubsection{State vector transformation.}
+		%
+		\indent According to equation \ref{eqAppB: 	MC_direct}
+			\paragraph{Rotation matrix from \& to ECI. \\}
+			%
+			%
+			\paragraph{Angular velocity. \\}
+			%
+			%			
+			\paragraph{Transformation matrices $T_{RTN\rightarrow ECI}$, $T_{ECI\rightarrow RTN}$. \\}
+			%
+			%
+			
 	\subsection{LVLH reference frame.}
 	%
 		\subsubsection{Definition.}
@@ -573,23 +694,7 @@
 			%
 			%
 		
-	\subsection{RTN reference frame.}
-	%
-		\subsubsection{Definition.}
-		%
-		%
-		\subsubsection{State vector transformation.}
-		%
-			\paragraph{Rotation matrix from \& to ECI. \\}
-			%
-			%
-			\paragraph{Angular velocity. \\}
-			%
-			%			
-			\paragraph{Transformation matrices $T_{RTN\rightarrow ECI}$, $T_{ECI\rightarrow RTN}$. \\}
-			%
-			%
-		
+
 		
 	\subsection{TAN reference frame.}
 	%

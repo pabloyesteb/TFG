@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.5.11)  30 JUN 2022 11:05
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.5.11)  4 JUL 2022 19:52
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1638,12 +1638,12 @@ LaTeX Font Info:    Trying to load font information for U+wasy on input line 29
 (C:\Users\TRRFEM\AppData\Roaming\MiKTeX\tex/latex/wasysym\uwasy.fd
 File: uwasy.fd 2020/01/19 v2.4 Wasy-2 symbol font definitions
 )
-<Figures/logos/logo_upm.png, id=123, 331.2375pt x 153.57375pt>
+<Figures/logos/logo_upm.png, id=135, 331.2375pt x 153.57375pt>
 File: Figures/logos/logo_upm.png Graphic file (type png)
 <use Figures/logos/logo_upm.png>
 Package pdftex.def Info: Figures/logos/logo_upm.png  used on input line 295.
 (pdftex.def)             Requested size: 120.92421pt x 56.06448pt.
-<Figures/logos/logo_etsiae.png, id=124, 249.3315pt x 112.2594pt>
+<Figures/logos/logo_etsiae.png, id=136, 249.3315pt x 112.2594pt>
 File: Figures/logos/logo_etsiae.png Graphic file (type png)
 <use Figures/logos/logo_etsiae.png>
 Package pdftex.def Info: Figures/logos/logo_etsiae.png  used on input line 295.
@@ -1818,7 +1818,7 @@ Appendix A.
 
 
 ]
-<Appendices/Appendix_A/orbit_angles.png, id=258, 796.47563pt x 581.17125pt>
+<Appendices/Appendix_A/orbit_angles.png, id=273, 796.47563pt x 581.17125pt>
 File: Appendices/Appendix_A/orbit_angles.png Graphic file (type png)
 <use Appendices/Appendix_A/orbit_angles.png>
 Package pdftex.def Info: Appendices/Appendix_A/orbit_angles.png  used on input 
@@ -1917,13 +1917,13 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [8]
-<Appendices/Appendix_A/ECC_vector.png, id=342, 700.86844pt x 420.06938pt>
+<Appendices/Appendix_A/ECC_vector.png, id=357, 700.86844pt x 420.06938pt>
 File: Appendices/Appendix_A/ECC_vector.png Graphic file (type png)
 <use Appendices/Appendix_A/ECC_vector.png>
 Package pdftex.def Info: Appendices/Appendix_A/ECC_vector.png  used on input li
 ne 434.
 (pdftex.def)             Requested size: 266.03473pt x 159.44855pt.
-<Appendices/Appendix_A/inc_vector.png, id=343, 529.98pt x 398.23781pt>
+<Appendices/Appendix_A/inc_vector.png, id=358, 529.98pt x 398.23781pt>
 File: Appendices/Appendix_A/inc_vector.png Graphic file (type png)
 <use Appendices/Appendix_A/inc_vector.png>
 Package pdftex.def Info: Appendices/Appendix_A/inc_vector.png  used on input li
@@ -1992,9 +1992,12 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [14]
-Overfull \hbox (34.5002pt too wide) detected at line 71
-\OML/cmm/m/it/10.95 ECEF \OMS/cmsy/m/n/10.95 ^^Q []
- []
+
+LaTeX Warning: Citation 'LVLH' on page 15 undefined on input line 67.
+
+
+Underfull \vbox (badness 1708) has occurred while \output is active []
+
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2005,9 +2008,12 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [15]
-Underfull \hbox (badness 10000) in paragraph at lines 98--100
 
- []
+LaTeX Warning: Citation 'LVLH' on page 16 undefined on input line 98.
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2018,24 +2024,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [16]
-Underfull \hbox (badness 10000) in paragraph at lines 147--149
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 185--187
-
- []
-
-
-Overfull \hbox (58.71799pt too wide) detected at line 198
-\OML/cmm/m/it/10.95 PBF \OMS/cmsy/m/n/10.95 ^^Q []
- []
-
-
-Underfull \vbox (badness 7631) has occurred while \output is active []
-
-
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -2045,12 +2033,12 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [17]
-Underfull \hbox (badness 10000) in paragraph at lines 228--231
-
+Overfull \hbox (34.5002pt too wide) detected at line 224
+\OML/cmm/m/it/10.95 ECEF \OMS/cmsy/m/n/10.95 ^^Q []
  []
 
 
-Underfull \vbox (badness 1571) has occurred while \output is active []
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
@@ -2062,6 +2050,10 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [18]
+Underfull \hbox (badness 10000) in paragraph at lines 251--253
+
+ []
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -2071,7 +2063,65 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [19]
-Overfull \hbox (27.1434pt too wide) detected at line 371
+Underfull \hbox (badness 10000) in paragraph at lines 300--302
+
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[20]
+Underfull \hbox (badness 10000) in paragraph at lines 338--340
+
+ []
+
+
+Overfull \hbox (58.71799pt too wide) detected at line 351
+\OML/cmm/m/it/10.95 PBF \OMS/cmsy/m/n/10.95 ^^Q []
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 381--384
+
+ []
+
+
+Underfull \vbox (badness 3746) has occurred while \output is active []
+
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[21]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[22]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[23]
+Overfull \hbox (27.1434pt too wide) detected at line 524
 [][]\OMS/cmsy/m/n/10.95 j[] \OT1/cmr/m/n/10.95 = [] []\OML/cmm/m/it/10.95 R[] [
 ] \OT1/cmr/m/n/10.95 + []\OML/cmm/m/it/10.95 R[]R[] [] \OT1/cmr/m/n/10.95 + []\
 OML/cmm/m/it/10.95 R[] []
@@ -2089,10 +2139,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[20]
-Underfull \vbox (badness 8075) has occurred while \output is active []
-
-
+[24]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -2101,10 +2148,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[21]
-Underfull \vbox (badness 1028) has occurred while \output is active []
-
-
+[25])
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -2113,29 +2157,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[22])
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 13.59999pt, for example:
-(fancyhdr)                \setlength{\headheight}{13.59999pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
-
-[23]
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 13.59999pt, for example:
-(fancyhdr)                \setlength{\headheight}{13.59999pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
-
-[24
-
-
-
-]
+[26]
 
 Package hyperref Warning: The anchor of a bookmark and its parent's must not
 (hyperref)                be the same. Added a new anchor on input line 330.
@@ -2176,7 +2198,11 @@ Package biblatex Warning: Split bibliography detected.
 (biblatex)                This warning can be suppressed with
 (biblatex)                '\BiblatexSplitbibDefernumbersWarningOff'.
 
-[25]
+[27
+
+
+
+]
 
 Package biblatex Warning: Split bibliography detected.
 (biblatex)                Many simple split bibliography setups with
@@ -2266,7 +2292,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[26]
+[28]
 Overfull \hbox (25.848pt too wide) in paragraph at lines 338--338
 \OT1/cmr/m/sc/10.95 Con-ver-sions for Space-borne For-ma-tion Fly-ing\OT1/cmr/m
 /n/10.95 . In: (Feb. 2018). [][]$\OT1/cmtt/m/n/10.95 https : / / www . research
@@ -2301,7 +2327,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[27]
+[29]
 
 Package caption Warning: Unused \captionsetup[table] on input line 128.
 See the caption package documentation for explanation.
@@ -2329,25 +2355,36 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[28] (Thesis.aux (Foreword/Portada.aux) (Appendices/Appendix_A/Appendix_A.aux)
+[30] (Thesis.aux (Foreword/Portada.aux) (Appendices/Appendix_A/Appendix_A.aux)
 (Appendices/Appendix_B/Appendix_B.aux))
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
 Package rerunfilecheck Info: File `Thesis.out' has not changed.
-(rerunfilecheck)             Checksum: F6038950505FAD6200B6E605D0E9C915;5882.
+(rerunfilecheck)             Checksum: CF6D63C03D306C4C99B672E1ADB00419;6605.
+
+Package biblatex Warning: Please (re)run Biber on the file:
+(biblatex)                Thesis
+(biblatex)                and rerun LaTeX afterwards.
+
 Package logreq Info: Writing requests to 'Thesis.run.xml'.
 \openout1 = `Thesis.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 53205 strings out of 478582
- 1208185 string characters out of 2854156
- 2043934 words of memory out of 3000000
- 70198 multiletter control sequences out of 15000+600000
+ 53226 strings out of 478582
+ 1208490 string characters out of 2854156
+ 2043264 words of memory out of 3000000
+ 70206 multiletter control sequences out of 15000+600000
  485708 words of font info for 92 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 114i,18n,131p,757b,2544s stack positions out of 10000i,1000n,20000p,200000b,80000s
+ 114i,18n,131p,757b,2569s stack positions out of 10000i,1000n,20000p,200000b,80000s
 
 pdfTeX warning (dest): name{cite.0@IERS_conventions} has been referenced but do
 es not exist, replaced by a fixed one
@@ -2369,9 +2406,9 @@ KTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files/MiKTeX/fonts/ty
 pe1/public/amsfonts/cm/cmti10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/a
 msfonts/cm/cmtt10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/symb
 ols/msbm10.pfb>
-Output written on Thesis.pdf (42 pages, 623901 bytes).
+Output written on Thesis.pdf (44 pages, 641943 bytes).
 PDF statistics:
- 659 PDF objects out of 1000 (max. 8388607)
- 152 named destinations out of 1000 (max. 500000)
- 296 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 699 PDF objects out of 1000 (max. 8388607)
+ 165 named destinations out of 1000 (max. 500000)
+ 320 words of extra memory for PDF output out of 10000 (max. 10000000)
 

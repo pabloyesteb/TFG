@@ -2367,25 +2367,28 @@
     <bcf:citekey order="16">Peters_Noomen</bcf:citekey>
     <bcf:citekey order="17">Peters_Noomen</bcf:citekey>
     <bcf:citekey order="18">Time_handbook</bcf:citekey>
-    <bcf:citekey order="19">Time_handbook</bcf:citekey>
-    <bcf:citekey order="20">Tapley</bcf:citekey>
-    <bcf:citekey order="21">Tapley</bcf:citekey>
+    <bcf:citekey order="19">LVLH</bcf:citekey>
+    <bcf:citekey order="20">LVLH</bcf:citekey>
+    <bcf:citekey order="21">Time_handbook</bcf:citekey>
     <bcf:citekey order="22">Tapley</bcf:citekey>
-    <bcf:citekey order="23">IERS_conventions</bcf:citekey>
+    <bcf:citekey order="23">Tapley</bcf:citekey>
     <bcf:citekey order="24">Tapley</bcf:citekey>
     <bcf:citekey order="25">IERS_conventions</bcf:citekey>
+    <bcf:citekey order="26">Tapley</bcf:citekey>
+    <bcf:citekey order="27">IERS_conventions</bcf:citekey>
     <bcf:citekey order="0" nocite="1">*</bcf:citekey>
-    <bcf:citekey order="26">Wiesel</bcf:citekey>
-    <bcf:citekey order="27">Eckstein</bcf:citekey>
-    <bcf:citekey order="28">DAmico_montenbruck</bcf:citekey>
-    <bcf:citekey order="29">Gim_Alfriend_equinoctial</bcf:citekey>
-    <bcf:citekey order="30">dAmicoDLR</bcf:citekey>
-    <bcf:citekey order="31">Schaub2004</bcf:citekey>
-    <bcf:citekey order="32">Gaias_mean2osc</bcf:citekey>
-    <bcf:citekey order="33">Peters_Noomen</bcf:citekey>
-    <bcf:citekey order="34">Time_handbook</bcf:citekey>
-    <bcf:citekey order="35">Tapley</bcf:citekey>
-    <bcf:citekey order="36">IERS_conventions</bcf:citekey>
+    <bcf:citekey order="28">Wiesel</bcf:citekey>
+    <bcf:citekey order="29">Eckstein</bcf:citekey>
+    <bcf:citekey order="30">DAmico_montenbruck</bcf:citekey>
+    <bcf:citekey order="31">Gim_Alfriend_equinoctial</bcf:citekey>
+    <bcf:citekey order="32">dAmicoDLR</bcf:citekey>
+    <bcf:citekey order="33">Schaub2004</bcf:citekey>
+    <bcf:citekey order="34">Gaias_mean2osc</bcf:citekey>
+    <bcf:citekey order="35">Peters_Noomen</bcf:citekey>
+    <bcf:citekey order="36">Time_handbook</bcf:citekey>
+    <bcf:citekey order="37">LVLH</bcf:citekey>
+    <bcf:citekey order="38">Tapley</bcf:citekey>
+    <bcf:citekey order="39">IERS_conventions</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="none">
