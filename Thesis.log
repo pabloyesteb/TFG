@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.5.11)  4 JUL 2022 19:52
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.5.11)  6 JUL 2022 11:40
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1423,7 +1423,7 @@ File: english.mld 2006/01/13
 ))
 Package minitoc Info: I0052
 (minitoc)             \mtcsetoffset redefines 
-(minitoc)             "mtcoffset" as "-2.0em" on input line 242.
+(minitoc)             "mtcoffset" as "-2.0em" on input line 246.
 
 (C:\Program Files\MiKTeX\tex/latex/listings\listings.sty
 \lst@mode=\count519
@@ -1449,14 +1449,14 @@ File: lstmisc.sty 2020/03/24 1.8d (Carsten Heinz)
 File: listings.cfg 2020/03/24 1.8d listings configuration
 ))
 Package: listings 2020/03/24 1.8d (Carsten Heinz)
-Package hyperref Info: Option `bookmarksopen' set `true' on input line 282.
+Package hyperref Info: Option `bookmarksopen' set `true' on input line 286.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 282.
+(hyperref)                removing `subscript' on input line 286.
 
-Package hyperref Info: Option `pdfmenubar' set `true' on input line 282.
-Package hyperref Info: Option `colorlinks' set `true' on input line 282.
+Package hyperref Info: Option `pdfmenubar' set `true' on input line 286.
+Package hyperref Info: Option `colorlinks' set `true' on input line 286.
 
 Package hyperref Warning: Values of option `pdfpagemode':
 (hyperref)                * `UseNone'
@@ -1466,9 +1466,9 @@ Package hyperref Warning: Values of option `pdfpagemode':
 (hyperref)                * `UseOC' (PDF 1.5)
 (hyperref)                * `UseAttachments' (PDF 1.6)
 (hyperref)                * An empty value disables the option.
-(hyperref)                Unknown value `None' on input line 282.
+(hyperref)                Unknown value `None' on input line 286.
 
-Package hyperref Info: Option `pdffitwindow' set `true' on input line 282.
+Package hyperref Info: Option `pdffitwindow' set `true' on input line 286.
 \@indexfile=\write7
 \openout7 = `Thesis.idx'.
 
@@ -1487,24 +1487,24 @@ LaTeX Warning: Unused global option(s):
 (Appendices/Appendix_B/Appendix_B.aux))
 \openout1 = `Thesis.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 288.
-LaTeX Font Info:    ... okay on input line 288.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 288.
-LaTeX Font Info:    ... okay on input line 288.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 288.
-LaTeX Font Info:    ... okay on input line 288.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 288.
-LaTeX Font Info:    ... okay on input line 288.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 288.
-LaTeX Font Info:    ... okay on input line 288.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 288.
-LaTeX Font Info:    ... okay on input line 288.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 288.
-LaTeX Font Info:    ... okay on input line 288.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 288.
-LaTeX Font Info:    ... okay on input line 288.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 288.
-LaTeX Font Info:    ... okay on input line 288.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 292.
+LaTeX Font Info:    ... okay on input line 292.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 292.
+LaTeX Font Info:    ... okay on input line 292.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 292.
+LaTeX Font Info:    ... okay on input line 292.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 292.
+LaTeX Font Info:    ... okay on input line 292.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 292.
+LaTeX Font Info:    ... okay on input line 292.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 292.
+LaTeX Font Info:    ... okay on input line 292.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 292.
+LaTeX Font Info:    ... okay on input line 292.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 292.
+LaTeX Font Info:    ... okay on input line 292.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 292.
+LaTeX Font Info:    ... okay on input line 292.
 
 (C:\Program Files\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -1531,7 +1531,7 @@ File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 Package pgfplots Warning: running in backwards compatibility mode (unsuitable t
 ick labels; missing features). Consider writing \pgfplotsset{compat=1.18} into 
 your preamble.
- on input line 288.
+ on input line 292.
 
 
 (C:\Users\TRRFEM\AppData\Roaming\MiKTeX\tex/latex/translations/dicts\translatio
@@ -1540,7 +1540,7 @@ File: translations-basic-dictionary-english.trsl (english translation file `tra
 nslations-basic-dictionary')
 )
 Package translations Info: loading dictionary `translations-basic-dictionary' f
-or `english'. on input line 288.
+or `english'. on input line 292.
 Package biblatex Info: Trying to load language 'english'...
 Package biblatex Info: ... file 'english.lbx' found.
 
@@ -1555,9 +1555,9 @@ Package biblatex Info: Automatic encoding selection.
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'Thesis.bbl' found.
  (Thesis.bbl)
-Package biblatex Info: Reference section=0 on input line 288.
-Package biblatex Info: Reference segment=0 on input line 288.
-Package hyperref Info: Link coloring ON on input line 288.
+Package biblatex Info: Reference section=0 on input line 292.
+Package biblatex Info: Reference segment=0 on input line 292.
+Package hyperref Info: Link coloring ON on input line 292.
 
 (C:\Program Files\MiKTeX\tex/latex/hyperref\nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
@@ -1571,9 +1571,9 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count535
 )
-LaTeX Info: Redefining \ref on input line 288.
-LaTeX Info: Redefining \pageref on input line 288.
-LaTeX Info: Redefining \nameref on input line 288.
+LaTeX Info: Redefining \ref on input line 292.
+LaTeX Info: Redefining \pageref on input line 292.
+LaTeX Info: Redefining \nameref on input line 292.
  (Thesis.out) (Thesis.out)
 \@outlinefile=\write8
 \openout8 = `Thesis.out'.
@@ -1615,25 +1615,25 @@ Package minitoc(hints) Warning: W0023
 \openout2 = `Foreword/Portada.aux'.
 
 (Foreword/Portada.tex)
-LaTeX Font Info:    Trying to load font information for U+msa on input line 295
+LaTeX Font Info:    Trying to load font information for U+msa on input line 299
 .
  (C:\Program Files\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 295
+LaTeX Font Info:    Trying to load font information for U+msb on input line 299
 .
 
 (C:\Program Files\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Trying to load font information for U+lasy on input line 29
-5.
+9.
 
 (C:\Program Files\MiKTeX\tex/latex/base\ulasy.fd
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 )
 LaTeX Font Info:    Trying to load font information for U+wasy on input line 29
-5.
+9.
 
 (C:\Users\TRRFEM\AppData\Roaming\MiKTeX\tex/latex/wasysym\uwasy.fd
 File: uwasy.fd 2020/01/19 v2.4 Wasy-2 symbol font definitions
@@ -1641,16 +1641,16 @@ File: uwasy.fd 2020/01/19 v2.4 Wasy-2 symbol font definitions
 <Figures/logos/logo_upm.png, id=135, 331.2375pt x 153.57375pt>
 File: Figures/logos/logo_upm.png Graphic file (type png)
 <use Figures/logos/logo_upm.png>
-Package pdftex.def Info: Figures/logos/logo_upm.png  used on input line 295.
+Package pdftex.def Info: Figures/logos/logo_upm.png  used on input line 299.
 (pdftex.def)             Requested size: 120.92421pt x 56.06448pt.
 <Figures/logos/logo_etsiae.png, id=136, 249.3315pt x 112.2594pt>
 File: Figures/logos/logo_etsiae.png Graphic file (type png)
 <use Figures/logos/logo_etsiae.png>
-Package pdftex.def Info: Figures/logos/logo_etsiae.png  used on input line 295.
+Package pdftex.def Info: Figures/logos/logo_etsiae.png  used on input line 299.
 
 (pdftex.def)             Requested size: 145.11052pt x 65.33487pt.
 
-Overfull \hbox (25.63106pt too wide) in paragraph at lines 295--295
+Overfull \hbox (25.63106pt too wide) in paragraph at lines 299--299
 []  [] 
  []
 
@@ -1664,7 +1664,7 @@ Overfull \hbox (25.63106pt too wide) in paragraph at lines 295--295
 {C:/Users/TRRFEM/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map} <./Figures/l
 ogos/logo_upm.png> <./Figures/logos/logo_etsiae.png>]
 Package minitoc Info: I0024
-(minitoc)             PREPARING MINITOCS FROM Thesis.toc on input line 303.
+(minitoc)             PREPARING MINITOCS FROM Thesis.toc on input line 307.
 Package minitoc Info: I0033
 (minitoc)             Writing Thesis.mtc1.
 \openout6 = `Thesis.mtc1'.
@@ -1818,7 +1818,7 @@ Appendix A.
 
 
 ]
-<Appendices/Appendix_A/orbit_angles.png, id=273, 796.47563pt x 581.17125pt>
+<Appendices/Appendix_A/orbit_angles.png, id=287, 796.47563pt x 581.17125pt>
 File: Appendices/Appendix_A/orbit_angles.png Graphic file (type png)
 <use Appendices/Appendix_A/orbit_angles.png>
 Package pdftex.def Info: Appendices/Appendix_A/orbit_angles.png  used on input 
@@ -1917,13 +1917,13 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [8]
-<Appendices/Appendix_A/ECC_vector.png, id=357, 700.86844pt x 420.06938pt>
+<Appendices/Appendix_A/ECC_vector.png, id=370, 700.86844pt x 420.06938pt>
 File: Appendices/Appendix_A/ECC_vector.png Graphic file (type png)
 <use Appendices/Appendix_A/ECC_vector.png>
 Package pdftex.def Info: Appendices/Appendix_A/ECC_vector.png  used on input li
 ne 434.
 (pdftex.def)             Requested size: 266.03473pt x 159.44855pt.
-<Appendices/Appendix_A/inc_vector.png, id=358, 529.98pt x 398.23781pt>
+<Appendices/Appendix_A/inc_vector.png, id=371, 529.98pt x 398.23781pt>
 File: Appendices/Appendix_A/inc_vector.png Graphic file (type png)
 <use Appendices/Appendix_A/inc_vector.png>
 Package pdftex.def Info: Appendices/Appendix_A/inc_vector.png  used on input li
@@ -1977,12 +1977,25 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
  (Appendices/Appendix_B/Appendix_B.tex
 Appendix B.
+
+LaTeX Warning: Reference `chap: App_OEs' on page 13 undefined on input line 7.
+
 [13
 
 
 
 
 ]
+<Appendices/Appendix_B/Time_graph.png, id=418, 706.64pt x 370.88562pt>
+File: Appendices/Appendix_B/Time_graph.png Graphic file (type png)
+<use Appendices/Appendix_B/Time_graph.png>
+Package pdftex.def Info: Appendices/Appendix_B/Time_graph.png  used on input li
+ne 36.
+(pdftex.def)             Requested size: 290.22105pt x 152.32442pt.
+
+Underfull \vbox (badness 1184) has occurred while \output is active []
+
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -1991,13 +2004,13 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[14]
-
-LaTeX Warning: Citation 'LVLH' on page 15 undefined on input line 67.
-
-
-Underfull \vbox (badness 1708) has occurred while \output is active []
-
+[14 <./Appendices/Appendix_B/Time_graph.png>]
+<Appendices/Appendix_B/Abs_rel.png, id=426, 372.39125pt x 316.18124pt>
+File: Appendices/Appendix_B/Abs_rel.png Graphic file (type png)
+<use Appendices/Appendix_B/Abs_rel.png>
+Package pdftex.def Info: Appendices/Appendix_B/Abs_rel.png  used on input line 
+64.
+(pdftex.def)             Requested size: 290.22105pt x 246.42256pt.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2009,9 +2022,14 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [15]
 
-LaTeX Warning: Citation 'LVLH' on page 16 undefined on input line 98.
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
 
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
+[16 <./Appendices/Appendix_B/Abs_rel.png>]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
@@ -2023,21 +2041,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[16]
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 13.59999pt, for example:
-(fancyhdr)                \setlength{\headheight}{13.59999pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
-
 [17]
-Overfull \hbox (34.5002pt too wide) detected at line 224
-\OML/cmm/m/it/10.95 ECEF \OMS/cmsy/m/n/10.95 ^^Q []
- []
-
-
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
@@ -2050,10 +2054,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [18]
-Underfull \hbox (badness 10000) in paragraph at lines 251--253
-
- []
-
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -2063,10 +2063,16 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [19]
-Underfull \hbox (badness 10000) in paragraph at lines 300--302
-
+Overfull \hbox (34.5002pt too wide) detected at line 301
+\OML/cmm/m/it/10.95 ECEF \OMS/cmsy/m/n/10.95 ^^Q []
  []
 
+<Appendices/Appendix_B/ECI_ECEF.png, id=482, 740.7675pt x 537.50812pt>
+File: Appendices/Appendix_B/ECI_ECEF.png Graphic file (type png)
+<use Appendices/Appendix_B/ECI_ECEF.png>
+Package pdftex.def Info: Appendices/Appendix_B/ECI_ECEF.png  used on input line
+ 309.
+(pdftex.def)             Requested size: 290.22105pt x 210.58691pt.
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -2075,25 +2081,17 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[20]
-Underfull \hbox (badness 10000) in paragraph at lines 338--340
+[20 <./Appendices/Appendix_B/ECI_ECEF.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 337--339
 
  []
 
-
-Overfull \hbox (58.71799pt too wide) detected at line 351
-\OML/cmm/m/it/10.95 PBF \OMS/cmsy/m/n/10.95 ^^Q []
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 381--384
-
- []
-
-
-Underfull \vbox (badness 3746) has occurred while \output is active []
-
-
+<Appendices/Appendix_B/Nut_prec.png, id=491, 416.05438pt x 419.06563pt>
+File: Appendices/Appendix_B/Nut_prec.png Graphic file (type png)
+<use Appendices/Appendix_B/Nut_prec.png>
+Package pdftex.def Info: Appendices/Appendix_B/Nut_prec.png  used on input line
+ 369.
+(pdftex.def)             Requested size: 193.47577pt x 194.87628pt.
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -2103,6 +2101,19 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [21]
+Underfull \hbox (badness 10000) in paragraph at lines 378--380
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 410--412
+
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -2111,7 +2122,20 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[22]
+[22 <./Appendices/Appendix_B/Nut_prec.png>]
+Overfull \hbox (58.71799pt too wide) detected at line 423
+\OML/cmm/m/it/10.95 PBF \OMS/cmsy/m/n/10.95 ^^Q []
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 453--456
+
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -2121,16 +2145,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [23]
-Overfull \hbox (27.1434pt too wide) detected at line 524
-[][]\OMS/cmsy/m/n/10.95 j[] \OT1/cmr/m/n/10.95 = [] []\OML/cmm/m/it/10.95 R[] [
-] \OT1/cmr/m/n/10.95 + []\OML/cmm/m/it/10.95 R[]R[] [] \OT1/cmr/m/n/10.95 + []\
-OML/cmm/m/it/10.95 R[] []
- []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -2148,7 +2162,17 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[25])
+[25]
+Overfull \hbox (0.26114pt too wide) detected at line 598
+[][]\OMS/cmsy/m/n/10.95 j[] \OT1/cmr/m/n/10.95 = [] = []\OML/cmm/m/it/10.95 R[]
+ [] \OT1/cmr/m/n/10.95 + []\OML/cmm/m/it/10.95 R[]R[] [] \OT1/cmr/m/n/10.95 + [
+]\OML/cmm/m/it/10.95 R[] []
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -2158,9 +2182,140 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [26]
+Overfull \hbox (7.56146pt too wide) detected at line 655
+\OML/cmm/m/it/10.95 PQW \OMS/cmsy/m/n/10.95 ^^Q []
+ []
+
+<Appendices/Appendix_B/RTN_frame.png, id=534, 374.90062pt x 385.94188pt>
+File: Appendices/Appendix_B/RTN_frame.png Graphic file (type png)
+<use Appendices/Appendix_B/RTN_frame.png>
+Package pdftex.def Info: Appendices/Appendix_B/RTN_frame.png  used on input lin
+e 661.
+(pdftex.def)             Requested size: 193.47577pt x 199.17746pt.
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[27 <./Appendices/Appendix_B/RTN_frame.png>]
+Overfull \hbox (17.22539pt too wide) detected at line 745
+\OML/cmm/m/it/10.95 PQW \OMS/cmsy/m/n/10.95 ^^Q []
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[28]
+Underfull \vbox (badness 1043) has occurred while \output is active []
+
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[29]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[30]
+<Appendices/Appendix_B/RTN_LVLH_TAN.png, id=565, 348.30125pt x 296.60812pt>
+File: Appendices/Appendix_B/RTN_LVLH_TAN.png Graphic file (type png)
+<use Appendices/Appendix_B/RTN_LVLH_TAN.png>
+Package pdftex.def Info: Appendices/Appendix_B/RTN_LVLH_TAN.png  used on input 
+line 858.
+(pdftex.def)             Requested size: 290.22105pt x 247.15773pt.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[31]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[32 <./Appendices/Appendix_B/RTN_LVLH_TAN.png>]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[33]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[34]
+Underfull \hbox (badness 10000) in paragraph at lines 983--985
+
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[35])
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[36]
 
 Package hyperref Warning: The anchor of a bookmark and its parent's must not
-(hyperref)                be the same. Added a new anchor on input line 330.
+(hyperref)                be the same. Added a new anchor on input line 334.
 
 
 Package biblatex Warning: Split bibliography detected.
@@ -2198,7 +2353,7 @@ Package biblatex Warning: Split bibliography detected.
 (biblatex)                This warning can be suppressed with
 (biblatex)                '\BiblatexSplitbibDefernumbersWarningOff'.
 
-[27
+[37
 
 
 
@@ -2222,7 +2377,7 @@ Package biblatex Warning: Split bibliography detected.
 (biblatex)                '\BiblatexSplitbibDefernumbersWarningOff'.
 
 
-LaTeX Warning: Empty bibliography on input line 334.
+LaTeX Warning: Empty bibliography on input line 338.
 
 
 Package biblatex Warning: Split bibliography detected.
@@ -2279,7 +2434,7 @@ Package biblatex Warning: Split bibliography detected.
 (biblatex)                '\BiblatexSplitbibDefernumbersWarningOff'.
 
 
-Overfull \hbox (0.29988pt too wide) in paragraph at lines 338--338
+Overfull \hbox (0.29988pt too wide) in paragraph at lines 342--342
 []\OT1/cmr/m/n/10.95 D.[]W. Gim and K. T. Al-friend. \OT1/cmr/m/sc/10.95 Satel-
 lite Rel-a-tive Mo-tion Us-ing Dif-fer-en-tial Equinoc-
  []
@@ -2292,8 +2447,8 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[28]
-Overfull \hbox (25.848pt too wide) in paragraph at lines 338--338
+[38]
+Overfull \hbox (25.848pt too wide) in paragraph at lines 342--342
 \OT1/cmr/m/sc/10.95 Con-ver-sions for Space-borne For-ma-tion Fly-ing\OT1/cmr/m
 /n/10.95 . In: (Feb. 2018). [][]$\OT1/cmtt/m/n/10.95 https : / / www . research
 gate .
@@ -2310,10 +2465,10 @@ Package biblatex Warning: Split bibliography detected.
 
 
 LaTeX Font Warning: Font shape `OT1/cmr/bx/sc' undefined
-(Font)              using `OT1/cmr/bx/n' instead on input line 340.
+(Font)              using `OT1/cmr/bx/n' instead on input line 344.
 
 
-Overfull \hbox (4.02295pt too wide) in paragraph at lines 340--340
+Overfull \hbox (4.02295pt too wide) in paragraph at lines 344--344
 []\OT1/cmr/m/n/10.95 F. G. Nievin-ski. \OT1/cmr/m/sc/10.95 sub-tight-plot\OT1/c
 mr/m/n/10.95 . [][]$\OT1/cmtt/m/n/10.95 https : / / www . mathworks . com / mat
 labcentral / fileexchange /
@@ -2327,7 +2482,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[29]
+[39]
 
 Package caption Warning: Unused \captionsetup[table] on input line 128.
 See the caption package documentation for explanation.
@@ -2355,7 +2510,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[30] (Thesis.aux (Foreword/Portada.aux) (Appendices/Appendix_A/Appendix_A.aux)
+[40] (Thesis.aux (Foreword/Portada.aux) (Appendices/Appendix_A/Appendix_A.aux)
 (Appendices/Appendix_B/Appendix_B.aux))
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
@@ -2363,31 +2518,27 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 LaTeX Warning: There were undefined references.
 
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
 Package rerunfilecheck Info: File `Thesis.out' has not changed.
-(rerunfilecheck)             Checksum: CF6D63C03D306C4C99B672E1ADB00419;6605.
-
-Package biblatex Warning: Please (re)run Biber on the file:
-(biblatex)                Thesis
-(biblatex)                and rerun LaTeX afterwards.
-
+(rerunfilecheck)             Checksum: 539AFB6005A96735C905646DA40D096D;6600.
 Package logreq Info: Writing requests to 'Thesis.run.xml'.
 \openout1 = `Thesis.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 53226 strings out of 478582
- 1208490 string characters out of 2854156
- 2043264 words of memory out of 3000000
- 70206 multiletter control sequences out of 15000+600000
+ 53342 strings out of 478582
+ 1211793 string characters out of 2854156
+ 2045290 words of memory out of 3000000
+ 70289 multiletter control sequences out of 15000+600000
  485708 words of font info for 92 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 114i,18n,131p,757b,2569s stack positions out of 10000i,1000n,20000p,200000b,80000s
+ 114i,18n,131p,757b,2963s stack positions out of 10000i,1000n,20000p,200000b,80000s
 
 pdfTeX warning (dest): name{cite.0@IERS_conventions} has been referenced but do
 es not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{cite.0@LVLH} has been referenced but does not exist
+, replaced by a fixed one
 
 <C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cmextra/cmbsy8.pfb><C:/Pro
 gram Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Program Files/M
@@ -2396,19 +2547,20 @@ type1/public/amsfonts/cm/cmbx8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/
 amsfonts/cm/cmcsc10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm
 /cmex10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cmextra/cmex8.
 pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Prog
-ram Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files/MiK
-TeX/fonts/type1/public/amsfonts/cm/cmmib10.pfb><C:/Program Files/MiKTeX/fonts/t
-ype1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/a
-msfonts/cm/cmr6.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr
-8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Prog
-ram Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/Mi
-KTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files/MiKTeX/fonts/ty
-pe1/public/amsfonts/cm/cmti10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/a
-msfonts/cm/cmtt10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/symb
-ols/msbm10.pfb>
-Output written on Thesis.pdf (44 pages, 641943 bytes).
+ram Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Program Files/MiK
+TeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files/MiKTeX/fonts/typ
+e1/public/amsfonts/cm/cmmib10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/a
+msfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cm
+r6.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Pro
+gram Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Program Files/MiK
+TeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX/fonts/ty
+pe1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/am
+sfonts/cm/cmti10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cm
+tt10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pf
+b>
+Output written on Thesis.pdf (54 pages, 1175395 bytes).
 PDF statistics:
- 699 PDF objects out of 1000 (max. 8388607)
- 165 named destinations out of 1000 (max. 500000)
- 320 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 819 PDF objects out of 1000 (max. 8388607)
+ 192 named destinations out of 1000 (max. 500000)
+ 350 words of extra memory for PDF output out of 10000 (max. 10000000)
 

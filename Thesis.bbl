@@ -39,8 +39,8 @@
       \strng{authorbibnamehash}{3a9027659e19be37a91bbe17808f8077}
       \strng{authornamehash}{3a9027659e19be37a91bbe17808f8077}
       \strng{authorfullhash}{3a9027659e19be37a91bbe17808f8077}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{edition}{2}
@@ -78,8 +78,8 @@
       \strng{authorbibnamehash}{258eaa64bb7c65774ba6b4486f00f719}
       \strng{authornamehash}{258eaa64bb7c65774ba6b4486f00f719}
       \strng{authorfullhash}{258eaa64bb7c65774ba6b4486f00f719}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{booktitle}{CNES International Symposium on Space Dynamics}
@@ -114,8 +114,8 @@
       \strng{authorbibnamehash}{99cc30d684c858bf3c9d85f06f523323}
       \strng{authornamehash}{99cc30d684c858bf3c9d85f06f523323}
       \strng{authorfullhash}{99cc30d684c858bf3c9d85f06f523323}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{{Journal of Guidance, Control \& Dynamics}}
@@ -154,8 +154,8 @@
       \strng{authornamehash}{816dec555b2f8907b7602caf61908a57}
       \strng{authorfullhash}{816dec555b2f8907b7602caf61908a57}
       \field{extraname}{1}
-      \field{sortinit}{7}
-      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{{Celestial Mechanics and Dynamical Astronomy}}
@@ -187,8 +187,8 @@
       \strng{authorbibnamehash}{b7057a298bccb39982474a51a2ccd39c}
       \strng{authornamehash}{b7057a298bccb39982474a51a2ccd39c}
       \strng{authorfullhash}{b7057a298bccb39982474a51a2ccd39c}
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{number}{TN 05-08}
@@ -214,8 +214,8 @@
       \strng{authorbibnamehash}{5d9753c98d823c83966f248dbe18f6fd}
       \strng{authornamehash}{5d9753c98d823c83966f248dbe18f6fd}
       \strng{authorfullhash}{5d9753c98d823c83966f248dbe18f6fd}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{{Journal of Guidance, Control \& Dynamics}}
@@ -330,6 +330,29 @@
       \field{year}{2009}
       \keyw{general}
     \endentry
+    \entry{LVLH}{report}{}
+      \name{author}{1}{}{%
+        {{hash=2f9ea127a38aa7b9bb961325b1251dd3}{%
+           family={Williams},
+           familyi={W\bibinitperiod},
+           given={Jacob},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{2f9ea127a38aa7b9bb961325b1251dd3}
+      \strng{fullhash}{2f9ea127a38aa7b9bb961325b1251dd3}
+      \strng{bibnamehash}{2f9ea127a38aa7b9bb961325b1251dd3}
+      \strng{authorbibnamehash}{2f9ea127a38aa7b9bb961325b1251dd3}
+      \strng{authornamehash}{2f9ea127a38aa7b9bb961325b1251dd3}
+      \strng{authorfullhash}{2f9ea127a38aa7b9bb961325b1251dd3}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{\url{https://degenerateconic.com/uploads/2015/03/lvlh.pdf}}
+      \field{title}{LVLH Transformations}
+      \field{year}{2014}
+      \keyw{general}
+    \endentry
     \entry{Tapley}{book}{}
       \name{author}{3}{}{%
         {{hash=d2322cd60717b84a9b357c3478d16037}{%
@@ -395,8 +418,46 @@
       \field{labeltitlesource}{title}
       \field{number}{21}
       \field{title}{IERS Conventions (1992)}
-      \field{type}{techreport}
       \field{year}{1996}
+      \keyw{general}
+    \endentry
+    \entry{Schaub_Alfriend}{article}{}
+      \name{author}{2}{}{%
+        {{hash=5d9753c98d823c83966f248dbe18f6fd}{%
+           family={Schaub},
+           familyi={S\bibinitperiod},
+           given={Hanspeter},
+           giveni={H\bibinitperiod}}}%
+        {{hash=3d71831655d74b518c7254ef27af5671}{%
+           family={Alfriedn},
+           familyi={A\bibinitperiod},
+           given={Kyle\bibnamedelima T.},
+           giveni={K\bibinitperiod\bibinitdelim T\bibinitperiod}}}%
+      }
+      \list{publisher}{2}{%
+        {American Institute of Aeronautics}%
+        {Astronautics}%
+      }
+      \strng{namehash}{e23d7330a9965df903edb002671404f9}
+      \strng{fullhash}{e23d7330a9965df903edb002671404f9}
+      \strng{bibnamehash}{e23d7330a9965df903edb002671404f9}
+      \strng{authorbibnamehash}{e23d7330a9965df903edb002671404f9}
+      \strng{authornamehash}{e23d7330a9965df903edb002671404f9}
+      \strng{authorfullhash}{e23d7330a9965df903edb002671404f9}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{{Journal of Guidance, Control \& Dynamics}}
+      \field{number}{2}
+      \field{title}{Hybrid Cartesian and Orbit Element Feedback Law for Formation Flying Spacecraft}
+      \field{volume}{25}
+      \field{year}{2002}
+      \field{pages}{387\bibrangedash 393}
+      \range{pages}{7}
+      \verb{doi}
+      \verb 10.2514/2.4893
+      \endverb
       \keyw{general}
     \endentry
     \entry{Montenbruck}{book}{}
@@ -424,8 +485,8 @@
       \strng{authorbibnamehash}{a5288bde8e80165675c3d89505c99a96}
       \strng{authornamehash}{a5288bde8e80165675c3d89505c99a96}
       \strng{authorfullhash}{a5288bde8e80165675c3d89505c99a96}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{edition}{1}
@@ -457,8 +518,8 @@
       \strng{authorbibnamehash}{9586fc2f84f6bb67f3a559b1a9a8d898}
       \strng{authornamehash}{9586fc2f84f6bb67f3a559b1a9a8d898}
       \strng{authorfullhash}{9586fc2f84f6bb67f3a559b1a9a8d898}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{edition}{1}
@@ -488,8 +549,8 @@
       \strng{authorbibnamehash}{e8fb45d024eae4bc9b2bf3a208797691}
       \strng{authornamehash}{e8fb45d024eae4bc9b2bf3a208797691}
       \strng{authorfullhash}{e8fb45d024eae4bc9b2bf3a208797691}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{edition}{1}
@@ -523,8 +584,8 @@
       \strng{authorbibnamehash}{99c26c827c520050e600d7c2c0ee26eb}
       \strng{authornamehash}{99c26c827c520050e600d7c2c0ee26eb}
       \strng{authorfullhash}{99c26c827c520050e600d7c2c0ee26eb}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{{Methods of Celestial Mechanics}}
@@ -557,8 +618,8 @@
       \strng{authorbibnamehash}{1d7a171a58363aa8bf04eece48bbe6dd}
       \strng{authornamehash}{1d7a171a58363aa8bf04eece48bbe6dd}
       \strng{authorfullhash}{1d7a171a58363aa8bf04eece48bbe6dd}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{month}{10}
@@ -590,8 +651,8 @@
       \strng{authorbibnamehash}{aded628cfb77b62db19cb3243f425b8b}
       \strng{authornamehash}{aded628cfb77b62db19cb3243f425b8b}
       \strng{authorfullhash}{aded628cfb77b62db19cb3243f425b8b}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{{Perturbation Methods}}
@@ -619,8 +680,8 @@
       \strng{authorbibnamehash}{a5d8ee096fc8780081f9d4403188d626}
       \strng{authornamehash}{a5d8ee096fc8780081f9d4403188d626}
       \strng{authorfullhash}{a5d8ee096fc8780081f9d4403188d626}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{{Theory of Satellite Geodesy}}
@@ -656,8 +717,8 @@
       \strng{authorbibnamehash}{0aef3d40e01252a4fc361ae338296c02}
       \strng{authornamehash}{0aef3d40e01252a4fc361ae338296c02}
       \strng{authorfullhash}{0aef3d40e01252a4fc361ae338296c02}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{{Journal of Guidance, Control \& Dynamics}}
@@ -693,8 +754,8 @@
       \strng{authorbibnamehash}{45fe7bb07bbd30a3d42415b140a16574}
       \strng{authornamehash}{45fe7bb07bbd30a3d42415b140a16574}
       \strng{authorfullhash}{45fe7bb07bbd30a3d42415b140a16574}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{{Celestial Mechanics and Dynamical Astronomy}}
@@ -729,8 +790,8 @@
       \strng{authorbibnamehash}{0d76214d0bd5bead32ede905b151fc58}
       \strng{authornamehash}{0d76214d0bd5bead32ede905b151fc58}
       \strng{authorfullhash}{0d76214d0bd5bead32ede905b151fc58}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{{Journal of Guidance, Control \& Dynamics}}
@@ -760,8 +821,8 @@
       \strng{authorbibnamehash}{4008167c97bc7dde725c7244dd27db0d}
       \strng{authornamehash}{4008167c97bc7dde725c7244dd27db0d}
       \strng{authorfullhash}{4008167c97bc7dde725c7244dd27db0d}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Astronomy and Astrophysics}
@@ -794,8 +855,8 @@
       \strng{authornamehash}{b7a6b44ea9ddd80bc79f16cd6eeb9e11}
       \strng{authorfullhash}{b7a6b44ea9ddd80bc79f16cd6eeb9e11}
       \field{extraname}{2}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Journal of Guidance Control and Dynamics}
@@ -835,8 +896,8 @@
       \strng{authorbibnamehash}{9797c6c3c80e811360b2cab209116610}
       \strng{authornamehash}{9797c6c3c80e811360b2cab209116610}
       \strng{authorfullhash}{9797c6c3c80e811360b2cab209116610}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Advances in Space Research}
@@ -878,8 +939,8 @@
       \strng{authornamehash}{36f88b66e2a1d70933657395bca8d775}
       \strng{authorfullhash}{36f88b66e2a1d70933657395bca8d775}
       \field{extraname}{2}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Journal of Guidance, Control, and Dynamics}
@@ -909,8 +970,8 @@
       \strng{authorbibnamehash}{0a6bbc521dde2c5fbba62c2b627ffcf6}
       \strng{authornamehash}{0a6bbc521dde2c5fbba62c2b627ffcf6}
       \strng{authorfullhash}{0a6bbc521dde2c5fbba62c2b627ffcf6}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Astronomical Journal}
@@ -941,8 +1002,8 @@
       \strng{authorbibnamehash}{178bf8558061a59c8080dcb73e950720}
       \strng{authornamehash}{178bf8558061a59c8080dcb73e950720}
       \strng{authorfullhash}{178bf8558061a59c8080dcb73e950720}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Astronomical Journal}
@@ -975,8 +1036,8 @@
       \strng{authorbibnamehash}{70cc65d3064b366149435080373e0ddb}
       \strng{authornamehash}{70cc65d3064b366149435080373e0ddb}
       \strng{authorfullhash}{70cc65d3064b366149435080373e0ddb}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{note}{\url{https://www.mathworks.com/matlabcentral/fileexchange/39664-subtightplot}}
@@ -1002,8 +1063,8 @@
       \strng{authorbibnamehash}{2612de45c34b5823877a4a2a009f2576}
       \strng{authornamehash}{2612de45c34b5823877a4a2a009f2576}
       \strng{authorfullhash}{2612de45c34b5823877a4a2a009f2576}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{note}{\url{https://www.mathworks.com/matlabcentral/fileexchange/42673-beautiful-and-distinguishable-line-colors-colormap}}
@@ -1027,8 +1088,8 @@
       \strng{authorbibnamehash}{e68564f23e0e939acea76dc3d2bc01bf}
       \strng{authornamehash}{e68564f23e0e939acea76dc3d2bc01bf}
       \strng{authorfullhash}{e68564f23e0e939acea76dc3d2bc01bf}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{note}{\url{https://www.mathworks.com/matlabcentral/fileexchange/31437-windowapi}}
@@ -1054,8 +1115,8 @@
       \strng{authorbibnamehash}{8219e6a78841f04aefdca7b9e1e3bef8}
       \strng{authornamehash}{8219e6a78841f04aefdca7b9e1e3bef8}
       \strng{authorfullhash}{8219e6a78841f04aefdca7b9e1e3bef8}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{note}{\url{https://www.mathworks.com/matlabcentral/fileexchange/14056-arrow3}}

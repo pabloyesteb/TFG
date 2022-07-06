@@ -22,34 +22,53 @@
 	% 
 	\item[I.] International Atomic Time (TAI): Physical timescale which is calculated through the measurement of cesium radiation. Lacks intuitive meaning, but acts as a ultra-high precision time system and reference for other timescales.
 	%
-	\item[II.] Universal Time (UT1/UT2): Civil time system, which is defined by the right ascension of the mean Sun. It is not a continuous time system, varying as time passes. There are some smoothed versions of UT1, which filters some seasonal variations, thus accounting only for long-term changes. 
+	\item[II.] Universal Time (UT1/UT2): Civil time system, which is defined by the right ascension of the mean Sun. It is not a continuous time system, varying as time passes.  
 	%
-	\item[III.] Coordinated Universal Time (UTC): Civil time system, which is measured with TAI and synchronized with UT1 via leap seconds. This means that the time rate is the one from the atomic counterpart, whereas the `reference' is set to follow UT1 within 0.9 seconds. If the difference between UTC and UT1 exceeds this value, 1 second is added/substracted to get within range. It is then a non-continuous time system.
+	\item[III.] Coordinated Universal Time (UTC): Civil time system, which is measured with TAI and synchronized with UT1 via leap seconds to get within 1-second range. It is then a non-continuous time system.
 	%
 	\item[IV.] Terrestrial Time (TT): Civil time system, which is measured with TAI but has a delay with respect to it (32.184 seconds).
 	\end{itemize}
 	%
-	\indent Figure \textbf{PUT FIGURE} shows more clearly the differences between them.
+	\indent Figure \ref{fig:	Time_graph} shows more clearly the differences between them.
+	%
+	%
+	\begin{figure}[!htb]
+	\centering\includegraphics[width = 0.6\linewidth]{Appendices/Appendix_B/Time_graph}
+	\caption{Sketch of the different time systems.}
+	\label{fig:	Time_graph}
+	\end{figure}
+	%
+	\FloatBarrier
+	%
 % 
 \section{Transformations between reference systems.}
 %
 \indent In this section, two approaches for reference system transformations will be presented. These will prove quite useful later on, helping to clarify how different systems relate to each other. \\
 %
-\indent For the sake of generality, let us consider an inertial and absolute reference frame, and a rotating, relative reference frame (see figure \textbf{PUT FIGURE}). In case we need to consider two absolute systems, it is enough to just nullify the displacement between both frames' origins. The notation used is described below:
+\indent For the sake of generality, let us consider an inertial and absolute reference frame, and a rotating, relative reference frame (see figure \ref{fig:	Abs_rel}). In case we need to consider two absolute systems, it is enough to just nullify the displacement between both frames' origins. The notation used is described below:
 %
 \begin{itemize}
 %
-\item Vectors: $\underline{X}$ refers to a vector with respect an absolute frame, while $\underline{x}$ is used for relative reference frames. Please, note that we are not making use of any reference system (\ie vector base): we are just considering the vector entity as an object.
+\item \underline{Vectors}: $\underline{X}$ refers to a vector with respect an absolute frame, while $\underline{x}$ is used for relative reference frames. Please, note that we are not making use of any reference system (\ie vector base): we are just considering the vector entity as an object.
 %
-\item Subscripts: Unless specified otherwise, denote the body: $\bullet_{C}$ for the chief, $\bullet_D$ for the deputy.
+\item \underline{Subscripts}: Unless specified otherwise, denote the body: $\bullet_{C}$ for the chief, $\bullet_D$ for the deputy.
 %
-\item Time derivatives and superscripts: As Coriolis' Theorem states, when non-inertial reference frames are involved, it is necessary to specify the frame with respect to which the derivative is calculated. $\dfrac{^{\mathcal{F}} d \bullet}{dt}$ denotes the time derivative in the frame $\mathcal{F}$. An equally valid yet more compact notation is $\dot{\bullet}^{\mathcal{F}}$. 
+\item \underline{Time derivatives and superscripts}: As Coriolis' Theorem states, when non-inertial reference frames are involved, it is necessary to specify the frame with respect to which the derivative is calculated. $\dfrac{^{\mathcal{F}} d \bullet}{dt}$ denotes the time derivative in the frame $\mathcal{F}$. An equally valid yet more compact notation is $\dot{\bullet}^{\mathcal{F}}$. 
 %
-\item Right vertical bar subscript: Denotes the coordinate system in which one vector or matrix is described. For example, $\underline{u}\rvert_{1} = \sum_{i=1}^3 u_{xi} \underline{\hat{e}_{i1}} $.
+\item \underline{Right vertical bar subscript}: Denotes the coordinate system in which one vector or matrix is described. For example, $\underline{u}\rvert_{1} = \sum_{i=1}^3 u_{xi} \underline{\hat{e}_{i1}} $.
 %
 \end{itemize}
 %
-\indent Consider the frames from figure \textbf{PUT FIGURE}: $A$ and $B$. Let us address firstly the transformation from $A \rightarrow B$, that is, converting an absolute \& inertial state vector expressed in coordinate system $A$ to the relative, rotating frame $B$ in its coordinates. What we would like to achieve is a relationship of the form:
+%
+\begin{figure}[!htb]
+\centering\includegraphics[width = 0.6\linewidth]{Appendices/Appendix_B/Abs_rel}
+\caption{Absolute and relative frames.}
+\label{fig:	Abs_rel}
+\end{figure}
+%
+\FloatBarrier
+%
+\indent Consider the frames $A$ and $B$ from figure \ref{fig:	Abs_rel}. Let us address firstly the transformation from $A \rightarrow B$, that is, converting an absolute \& inertial state vector expressed in coordinate system $A$ to the relative, rotating frame $B$ in its coordinates. What we would like to achieve is a relationship of the form:
 %
 \[
 \left\{ \begin{array}{cccc}
@@ -61,8 +80,7 @@
 %
 \indent As it turns out, this relation is actually linear on the inputs $\underline{\dot{X}}^{A}\rvert_{A}$ and  $\underline{X}\rvert_{A}$. From this point on, two approaches are derived:
 %
-
-	\subsection{Direct analytical differentiation.}
+	\subsection{Direct analytical differentiation.} \label{sec:	LVLH_theory}
 	%
 	\indent The first approach starts from the decomposition of the deputy's absolute position vector \cite{LVLH}:
 	%
@@ -97,9 +115,10 @@
 	%
 	\noindent whose first derivative $\dot{R}_{A \to B}$ can be calculated by columns, simplifying the task at hand if we have been able to obtain the origin base $\left( \underline{\hat{e}_{xA}}, \underline{\hat{e}_{yA}}, \underline{\hat{e}_{zA}}\right)$ in terms of the final one. For the sake of completeness, let us remind that \cite{LVLH}:
 	%
-	\[
+	\begin{equation}
 	\dfrac{d}{dt}\underline{\hat{u}} = \dfrac{1}{u} \left[ \underline{\dot{u}} - \left( \underline{\hat{u}} \cdot \underline{\dot{u}}\right) \underline{\hat{u}}\right]
-	\]
+	\label{eqAppB:	Unit_der}
+	\end{equation}
 	% 
 	\indent A final, more compact form of both \ref{eqAppB: 	LVLH_x} and \ref{eqAppB: 	LVLH_xdot} can be reached by rearranging terms:
 	%
@@ -143,7 +162,7 @@
 	\label{eqAppB: 	LVLH_inverse}
 	\end{equation}
 	%
-	\indent An example of this approach will be developed later on in \textbf{PUT SECTION LVLH}.
+	\indent An example of this approach will be developed later on in \ref{sec:	LVLH_example}.
 	%
 	\subsection{Classical motion composition.}
 	%
@@ -170,7 +189,6 @@
 	\underline{\dot{x}}^{B} = \underline{\dot{X}}^{A} - \underline{\dot{X}_C}^{A} - \underline{\omega}_{B\wrt A} \times \left(\underline{X} - \underline{X_C} \right)
 	\end{equation}
 	%
-	
 	\indent Now, expressing every vector in its proper frame:
 	%
 	\begin{equation}
@@ -287,6 +305,15 @@
 		\subsubsection{Conversion from ECI to ECEF.}
 		%
 		%
+		\begin{figure}[!htb]
+		\centering\includegraphics[width = 0.6\linewidth]{Appendices/Appendix_B/ECI_ECEF}
+		\caption{ECI and ECEF reference frames.}
+		\label{fig: ECI_ECEF}
+		\end{figure}
+		%
+		\FloatBarrier
+		%
+		%
 		\paragraph{Decomposition of the conversion. \\}
 		%
 		\indent There are four essential differences between ECI and ECEF frame, due to four motions that ECEF include due to it being fixed to Earth:
@@ -303,7 +330,7 @@
 		%
 		\indent Each of this motions can be characterized by a rotation to an associated frame. That is, we can decompose the conversion between ECI and ECEF in four rotations, which will now be analyzed.
 		%
-		\paragraph{Involved intermediate frames \& rotations. \\}
+		\paragraph{Involved intermediate frames \& rotations.}
 		%
 		\subparagraph{ECI(J200) to Mean of Date. \\}
 		%
@@ -335,28 +362,20 @@
 		\label{eq: R_ECI_MOD}
 		\end{equation}
 		%
-		\noindent where the precession angles $\zeta_A$, $\theta_A$ and $z_A$ are evaluated by:
+		\noindent where the precession angles $\zeta_A$, $\theta_A$ and $z_A$, which are functions of the epoch, are shown in \cite{Tapley}, page 519.
 		%
-		\[
-		\left\{ 
-		\begin{array}{lll}
-		\zeta_A 	& = & 2306.2181'' t + 0.30188'' t^2 + 0.017998'' t^3 \\
-		\theta_A 	& =	& 2004.3109'' t - 0.42665'' t^2 - 0.041833'' t^3 \\
-		z_A 		& =	& 2306.2181'' t + 1.09468'' t^2 + 0.018203'' t^3 \\ 
-		\end{array}
-		\right.
-		\]
-		\noindent and the time $t$ is defined as:
 		%
-		\[
-		t 	= \dfrac{\left(TT - J2000.0\right)}{36525}		
-		\]
+		\begin{figure}[!htb]
+		\centering\includegraphics[width = 0.4\linewidth]{Appendices/Appendix_B/Nut_prec}
+		\caption{Nutation and precession motion.}
+		\label{fig:	Nut_prec}
+		\end{figure}
 		%
-		\noindent where TT is the Terrestrial Time (dd/mm/yyyy, hh:mm). The transformation matrix is then perfectly defined for a certain epoch
+		\FloatBarrier
 		%
 		\subparagraph{Mean of Date to True of Date \\}
 		%
-		\indent Besides the ``long-term'' precession motion, equinoxes suffer also short-period, small oscillations, which are denoted as nutations. For more clarity, see figure \textbf{PUT FIGURE NUTATION PRECESSION}. The True of Date (TOD) frame is thus defined as: \\
+		\indent Besides the ``long-term'' precession motion, equinoxes suffer also short-period, small oscillations, which are denoted as nutations. For more clarity, see figure \ref{fig:	Nut_prec}. The True of Date (TOD) frame is thus defined as: \\
 		%
 		\[
 		\arraycolsep=10pt
@@ -384,13 +403,7 @@
 		\label{eq: R_MOD_TOD}
 		\end{equation}
 		%
-		\noindent where four angles appear. Firstly, the mean obliquity, which is the angle between the mean ecliptic and the mean equatorial plane ($\approx 23.5^{\circ}$), whose value is computed by:
-		%
-		\[
-		\epsilon_m = 84381.448'' - 46.8150''t - 0.00059'' t^2 + 0.001813'' t^3		
-		\]
-		%
-		\indent Moreover, two nutations appear: the one in longitude and the one in obliquity ($\Delta \psi$ and $\Delta \epsilon$, respectively). This angles are computed by a summation of a large number of sinusoidal functions, whose construction and coefficients are shown in \cite{IERS_conventions}. Lastly, the true obliquity is simply the addition of its mean counterpart and the nutation ($\epsilon_t = \epsilon_m + \Delta \epsilon$).
+		\noindent where four angles appear. Firstly, the mean obliquity, which is the angle between the mean ecliptic and the mean equatorial plane ($\approx 23.5^{\circ}$). For an analytic expression, see \cite{Tapley}, page 519. Moreover, two nutations arise: one in longitude and one in obliquity ($\Delta \psi$ and $\Delta \epsilon$, respectively). This angles are computed by a summation of a large number of sinusoidal functions, whose construction and coefficients are shown in \cite{IERS_conventions}. Lastly, the true obliquity is simply the addition of its mean counterpart and the nutation ($\epsilon_t = \epsilon_m + \Delta \epsilon$).
 		%
 		\subparagraph{True of Date to Pseudo-Body-Fixed\\}
 		%
@@ -460,7 +473,7 @@
 		\]
 		%
 	%
-	\subsection{Perifocal (PQW) reference frame.}
+	\subsection{Perifocal (PQW) reference frame.} \label{sec: PQW}
 	%
 		\subsubsection{Definition.}
 		%
@@ -581,7 +594,7 @@
 			\indent Expressing everything in PQW frame:
 			%
 			\[
-			\underline{\omega}_{PQW \wrt ECI}\rvert_{PQW} = \left\{\begin{array}{c} \omega_x \\ omega_y \\ \omega_z \end{array}\right\}\dot{\Omega} R_{ECI\rightarrow PQW} \left\{\begin{array}{c} 0 \\ 0 \\ 1 \end{array}\right\} + \dot{i} R_{I2 \rightarrow PQW}R_{I1 \rightarrow I2} \left\{\begin{array}{c} 1 \\ 0 \\ 0 \end{array}\right\} + \dot{\omega} R_{I2 \rightarrow PQW} \left\{\begin{array}{c} 0 \\ 0 \\ 1 \end{array}\right\}
+			\underline{\omega}_{PQW \wrt ECI}\rvert_{PQW} = \left\{\begin{array}{c} \omega_x \\ \omega_y \\ \omega_z \end{array}\right\} = \dot{\Omega} R_{ECI\rightarrow PQW} \left\{\begin{array}{c} 0 \\ 0 \\ 1 \end{array}\right\} + \dot{i} R_{I2 \rightarrow PQW}R_{I1 \rightarrow I2} \left\{\begin{array}{c} 1 \\ 0 \\ 0 \end{array}\right\} + \dot{\omega} R_{I2 \rightarrow PQW} \left\{\begin{array}{c} 0 \\ 0 \\ 1 \end{array}\right\}
 			\]
 			% 
 			\indent In virtue of the axial dual form principle, there exists one matrix that, when applied to a certain vector, yields the same result as doing the cross product between $\underline{\omega}$ and that vector. This matrix has the following shape:
@@ -593,7 +606,6 @@
 			-\omega_y 	& \omega_x 	& 0
 			\end{array}\right]
 			\]
-			%
 			%
 			\paragraph{Transformation matrices $T_{PQW\rightarrow ECI}$, $T_{ECI\rightarrow PQW}$. \\}
 			%
@@ -610,10 +622,12 @@
 			%
 			\[
 			 T_{ECI\to PQW} = \left[\begin{array}{cc}
-	R_{PQW\to ECI}' & 0_{3x3} \\
-	-\Omega_{PQW \wrt ECI}\rvert_{PQW} R_{PQW\to ECI}' & R_{PQW\to ECI}'
+	R_{PQW\to ECI}^T & 0_{3x3} \\
+	-\Omega_{PQW \wrt ECI}\rvert_{PQW} R_{PQW\to ECI}^T & R_{PQW\to ECI}^T
 	\end{array}\right]
 			\]
+			%
+			\indent It is important to note that, as the rotation angles are Keplerian OEs, the unperturbed assumption leads to a null angular velocity (as the orbital plane remains unchanged along time). That greatly simplifies the transformation, turning into a trivial rotation of the position and velocity vectors.
 			%
 		
 \section{Relative reference systems.}
@@ -644,7 +658,7 @@
 		%
 		%
 		\begin{figure}[!htb]
-		\centering\includegraphics[width = 0.4\linewidth]{Appendix_B/RTN_frame}
+		\centering\includegraphics[width = 0.4\linewidth]{Appendices/Appendix_B/RTN_frame}
 		\caption{RTN frame \cite{dAmicoDLR}.}
 		\label{fig:	RTN_frame}
 		\end{figure}
@@ -653,72 +667,404 @@
 		%
 		\subsubsection{State vector transformation.}
 		%
-		\indent According to equation \ref{eqAppB: 	MC_direct}
-			\paragraph{Rotation matrix from \& to ECI. \\}
+		\indent As before, we need to build two matrices: The rotation matrix and the angular velocity matrix. 
+		%
+			\paragraph{Rotation matrix from ECI. \\}
 			%
+			\indent If we pay close attention to both PQW and RTN frames, it arises that the rotation matrix is virtually the same, only changing the value of the last rotation from $\omega$ to $u = \theta + \omega$. That is:
 			%
+			\[
+			R_{I2 \to RTN} = R_{I2\to RTN} \rvert_{\omega \to u} \Rightarrow R_{ECI\to RTN} = R_{ECI\to PQW}\rvert_{\omega \to u}
+			\]
+			%
+			\noindent which leads to the following expression:
+			%
+			\[
+			R_{ECI\to RTN} = \left[ \begin{array}{lll}
+			C\Omega C u - S\Omega C i S u 			& S\Omega C u + C\Omega C i S u & S i S u \\
+			-C\Omega S u - S\Omega C i C u 			& -S\Omega S u + C\Omega C i C u & S i C u \\
+			S\Omega S i 							& - C\Omega S i 			& C i
+			\end{array}\right]
+			\]
 			\paragraph{Angular velocity. \\}
 			%
+			\indent Assuming unperturbed motion, the only time-varying angle is $u$ through the true anomaly. Its rate is in fact:
+			%
+			\[
+			\dot{\theta} = \dot{M} \dfrac{\rho^2}{\eta^{3}} = \dfrac{n \rho^2}{\eta^3}
+			\]
 			%			
+			\noindent where $\rho = 1 + e \cos\theta$ and $\eta = \sqrt{1 - e^2}$. With this in mind, the angular velocity matrix takes the following form:
+			%
+			\[
+			\Omega_{RTN\wrt ECI}\rvert_{RTN} = \left[ \begin{array}{lll}
+			0 			& -\dot{\theta} 	& 0 \\
+			\dot{\theta} & 0 			& 0 \\
+			0 			& 0 			& 0
+			\end{array}\right]
+			\]
+			%
 			\paragraph{Transformation matrices $T_{RTN\rightarrow ECI}$, $T_{ECI\rightarrow RTN}$. \\}
 			%
+			\indent The transformation matrices are composed as follows:
+			\[
+			 T_{ECI\to RTN} = \left[\begin{array}{cc}
+	R_{ECI\to RTN} & 0_{3x3} \\
+	-\Omega_{RTN \wrt ECI}\rvert_{RTN} R_{ECI\to RTN}   & R_{ECI\to RTN} 
+	\end{array}\right]
+			\]
+			%
+			\noindent whose inverse counterpart can be obtained in terms of the same components, as:
+			%
+			\[
+			 T_{RTN\to ECI} = \left[\begin{array}{cc}
+	R_{ECI\to RTN}^T & 0_{3x3} \\
+	R_{ECI\to RTN}^T\Omega_{RTN \wrt ECI}\rvert_{RTN} & R_{ECI\to RTN}^T
+	\end{array}\right]
+			\]
 			%
 			
 	\subsection{LVLH reference frame.}
 	%
 		\subsubsection{Definition.}
 		%
+		\indent The Local Vertical-Local Horizontal frame (LVLH) may be understood as a different interpretation of the RTN frame. It basically differs from it in the naming and direction of the axis, namely:
+		%
+		\[
+		\arraycolsep=10pt
+		\def\arraystretch{1.3}
+		PQW\equiv\left\{
+		\begin{array}{lll}
+		\text{Origin} 	& \equiv 	& \text{Chief SC COM} \\
+		\text{Z-axis}(-\underline{e}_R) 	& \equiv 	& \text{Radial direction (positive inwards)}\\
+		\text{Y-axis}(-\underline{e}_N) 	& \equiv 	& \text{Normal to the orbit plane (negative with orbit momentum)} \\
+		\text{X-axis}(\underline{e}_T) 	& \equiv 	& \text{Perpendicular to the Y and Z axes forming a right-handed system} \\
+									 	& 			& \text{(} \approx \text{ tangent to the trajectory)}
+		\end{array}
+		\right.
+		\]
 		%
 		\subsubsection{State vector transformation.}
+		%
+		\indent There are two main ways to obtain the ECI to LVLH frame transformation:
 		%
 		\paragraph{A) Using reference orbit's Keplerian OEs. \\}
 		%
-			\subparagraph{Rotation matrix from \& to ECI. \\}
+		\indent This method is the one we have used for the PQW and the RTN frame. It is as easy as performing yet another rotation from the RTN frame, being consistent with the angular velocity.
+		%
+			\subparagraph{Rotation matrix from ECI. \\}
 			%
+			\indent The additional rotation from RTN to LVLH is:
+			%
+			\[
+			R_{RTN\to LVLH} = \left[ \begin{array}{lll}
+			0 			& 1 	& 0 \\
+			0		    & 0 			& -1 \\
+			-1 			& 0 			& 0
+			\end{array}\right]
+			\]
+			%
+			\noindent leading to the full rotation matrix:
+			%
+			\[
+			R_{ECI\to LVLH} = R_{ECI\to RTN} R_{RTN\to LVLH} = \left[ \begin{array}{lll}
+			-C\Omega S u - S\Omega C i C u 			& C\Omega C i C u - S\Omega S u		& C u S i\\
+			-S\Omega S i		    				& C\Omega S i 						& -C i \\
+			-C\Omega C u + S\Omega C i S u 			& -C\Omega C i S u - S\Omega C u	& -S u S i\\
+			\end{array}\right]
+			\]
 			%
 			\subparagraph{Angular velocity. \\}
 			%
-			%			
-			\subparagraph{Transformation matrices $T_{LVLH\rightarrow ECI}$, $T_{ECI\rightarrow LVLH}$. \\}
+			\indent Although one could rotate either the vector or the matrix itself, it is actually easier to graphically derive the angular velocity (assuming of course unperturbed motion). Doing this, we can easily see that the only angular velocity component is the one in Y-axis, of value $-\dot{\theta}$. The angular velocity matrix then becomes:
 			%
+			\[
+			\Omega_{LVLH\wrt ECI}\rvert_{LVLH} = \left[ \begin{array}{lll}
+			0 			& 0 			& -\dot{\theta}\\
+			0 			& 0 			& 0 \\
+			\dot{\theta}	& 0 			& 0
+			\end{array}\right]
+			\]
 			%
 		\paragraph{B) Using reference ECI state vector. \\}
+		\phantomsection \label{sec:	LVLH_example}
 		%
-			\subparagraph{Rotation matrix from \& to ECI. \\}
+		\indent This approach is based on \cite{LVLH}, and was introduced in \ref{sec:	LVLH_theory}. For this transformation to be performed, we need to calculate the rotation matrix and its derivative. With this approach, that is analogous to get the unitary vectors expressed in ECI frame. As our inputs are actually the ECI coordinates and velocity of the chief spacecraft, this is almost already done. The unitary vectors of the rotating frame in this case are:
+		%
+		\begin{equation}
+		\arraycolsep=10pt
+		\def\arraystretch{1.3}
+		\left\{ \begin{array}{ccc}
+		\underline{\hat{e}_z} = - \underline{\hat{r}} \\
+		\underline{\hat{e}_y} = - \underline{\hat{h}} \\		
+		\underline{\hat{e}_x} = \underline{\hat{e_y}} \times \underline{\hat{e_z}} 		
+		\end{array}\right.
+		\end{equation}
+		%
+		\noindent where $\underline{\hat{h}} = \frac{\underline{r} \times\underline{v}}{\lvert \underline{r} \times\underline{v} \rvert}$. $\underline{r}$ and $\underline{v}$ are respectively the position and velocity of the chief spacecraft.
+		%
+			\subparagraph{Rotation matrix from ECI. \\}
 			%
+			\indent The rotation matrix $R_{ECI\to LVLH}$ is then:
 			%
-			\subparagraph{Angular velocity. \\}
+			\[
+			R_{ECI\to LVLH}= \left[ \begin{array}{c}
+			\underline{\hat{e}_x}^T \\
+			\underline{\hat{e}_y}^T \\
+			\underline{\hat{e}_z}^T
+			\end{array}\right]
+			\]
 			%
-			%			
-			\subparagraph{Transformation matrices $T_{PQW\rightarrow ECI}$, $T_{ECI\rightarrow PQW}$. \\}
+			\noindent that is, each unitary vector is transposed into one row of the matrix.
 			%
+			\subparagraph{Rotation matrix derivative. \\}
 			%
-		
-
-		
+			\indent By using equation \eqref{eqAppB:	Unit_der} we can easily get the vectors' time derivatives:
+			%
+			\[
+			\arraycolsep=10pt
+			\def\arraystretch{1.3}
+			\left\{ \begin{array}{lllll}
+			\dfrac{d}{dt} \left(\underline{\hat{e}_z}\right) & = & \dfrac{d}{dt} \left(-\underline{\hat{r}}\right) & = & - \dfrac{1}{r} \left[ \underline{v} - \left(\underline{\hat{r}} \cdot \underline{v}\right)\underline{\hat{r}}\right] \\
+			\dfrac{d}{dt} \left(\underline{\hat{e}_y}\right) & = & \dfrac{d}{dt} \left(-\underline{\hat{h}}\right) & = & - \dfrac{1}{h} \left[ \underline{\dot{h}} - \left(\underline{\hat{h}} \cdot \underline{\dot{h}}\right)\underline{\hat{h}}\right] \\
+			\dfrac{d}{dt} \left(\underline{\hat{e}_x}\right)  & = & \dfrac{d}{dt} \left(\underline{\hat{e_y}}\times \underline{\hat{e_z}}\right) & = & \dfrac{d}{dt} \left(\underline{\hat{e_y}}\right)\times\underline{\hat{e_z}} +  \underline{\hat{e_y}}\times \dfrac{d}{dt} \left(\underline{\hat{e_z}}\right)
+			\end{array} \right.
+			\]
+			\noindent where all entities are known except for $\underline{\dot{h}}$, which is in turn:
+			%
+			\[
+			\underline{\dot{h}} = \dfrac{d}{dt} \left(\underline{r}\times \underline{v}\right) = \underline{r} \times \underline{a}
+			\]
+			%
+			\indent Hence, the acceleration of the chief spacecraft needs to be provided when it is not radial. As that is the case with the unperturbed two-body problem, the rotation matrix is significantly simplified:
+			%
+			\[
+			\arraycolsep=10pt
+			\def\arraystretch{1.3}
+			\left\{ \begin{array}{lllll}
+			\dfrac{d}{dt} \left(\underline{\hat{e}_z}\right) 	& = & - \dfrac{1}{r} \left[ \underline{v} - \left(\underline{\hat{r}} \cdot \underline{v}\right)\underline{\hat{r}}\right] \\
+			\dfrac{d}{dt} \left(\underline{\hat{e}_y}\right) 	& = & 	\underline{0} \\
+			\dfrac{d}{dt} \left(\underline{\hat{e}_x}\right) 	& = & - \underline{\hat{h}} \times \dfrac{d}{dt} \left(\underline{\hat{e_z}}\right) 
+			\end{array} \right.
+			\]
+			%
+			\indent The construction of $\dot{R}_{ECI\to LVLH}$	is identical to its primitive. The transformation matrices can now be built, following equations \ref{eqAppB: 	LVLH} and \ref{eqAppB: 	LVLH_inverse}.
+			%
+			
 	\subsection{TAN reference frame.}
+	%
+	%
+	\begin{figure}[!htb]
+	\centering\includegraphics[width = 0.6\linewidth]{Appendices/Appendix_B/RTN_LVLH_TAN}
+	\caption{Relative reference frames.}
+	\label{fig:	RTN_LVLH_TAN}
+	\end{figure}
+	%
+	\FloatBarrier
 	%
 		\subsubsection{Definition.}
 		%
+		\indent The Tangent reference frame (TAN) is quite similar to the LVLH frame, but instead of featuring an axis pointing towards \textit{nadir} (Earth), this frame includes an axis pointing always in the velocity direction. This involves a simple rotation from the LVLH frame, of an angle $\gamma$ called flight path angle (see figure \ref{fig:	RTN_LVLH_TAN}). It is then unsurprisingly defined as the angle between the horizon (local horizontal) and the velocity vector. Let us then analyze the transformation from the LVLH frame.
 		%
 		\subsubsection{State vector transformation.}
 		%
-			\paragraph{Rotation matrix from \& to LVLH. \\}
+			\paragraph{Rotation matrix from LVLH. \\}
 			%
+			\indent In this case, it is a simple clockwise rotation around LVLH Y-axis, that is:
+			%
+			\[
+			R_{LVLH\to TAN} = \left[ \begin{array}{lll}
+			\cos\gamma 	& 0	& -\sin\gamma\\
+			0 			& 1	& 0 \\
+			\sin\gamma	& 0 & \cos\gamma
+			\end{array}\right]
+			\]
 			%
 			\paragraph{Angular velocity. \\}
 			%
+			\indent As it has been explained before, let us just write the angular velocity matrix as:
+			%
+			\[
+			\Omega_{LVLH\to TAN}\rvert_{LVLH} = \left[ \begin{array}{lll}
+			0 			& 0	& -\dot{\gamma}\\
+			0 			&   & 0 \\
+			\dot{\gamma}& 0 & 0
+			\end{array}\right]
+			\] 
 			%			
-			\paragraph{Transformation matrices $T_{TAN\rightarrow LVLH}$, $T_{LVLH\rightarrow TAN}$. \\}
+			\indent There is something remaining: $\gamma$ and its derivative must be calculated. Starting with the angle itself, its sine and cosine satisfy:
 			%
+			\[
+			\left\{
+			\begin{array}{lll}
+			\sin\gamma & = & \dfrac{e \sin \theta}{\Theta} \\
+			\cos\gamma & = & \dfrac{\rho}{\Theta}
+			\end{array}
+			\right.
+			\]
 			%
-		
+			\noindent where $\Theta = \sqrt{2 \rho - \eta^2}$. $\gamma$ is simply calculated as:
+			%
+			\[\gamma = \atantwo\left(\sin\gamma , \cos\gamma\right)\]
+			%
+			\indent On the other hand, $\dot{\gamma}$ can be calculated as:
+			%
+			\[
+			\dot{\gamma} = n \dfrac{\rho^2 \left( \rho - \eta^2\right)}{\eta^3 \Theta^2}
+			\]
+			%
+			\indent Therefore, the transformation is complete.
+			%
 \section{Conversions from OEs to cartesian coordinates.}
 %
 %
-	\subsection{ECI to Keplerian OEs and vice versa.}
+	\subsection{Keplerian OEs to ECI and vice versa.}
 	%
+		\subsubsection{KOE to ECI transformation.}
+		%
+		\indent Let us start with the simpler, unambiguous transformation. By considering the perifocal coordinates $\left(\underline{q}, \dot{\underline{q}}\right) $ (see \ref{sec: PQW}), we can easily derive an explicit relation from Keplerian OEs to the ECI state vector:
+		%
+		\[\left\{ \begin{array}{lll}
+		x 		& = &\left(\cos\Omega \cos u - \sin \Omega \cos i \sin u\right) r \\
+		y 		& = & \left(\sin\Omega \cos u + \cos \Omega \cos i \sin u\right) r \\
+		z 		& = & \left(\sin i \sin u\right) r \\
+		\dot{x} & = & \left(\cos\Omega \cos u - \sin \Omega \cos i \sin u\right) v_R  - \left(\cos\Omega \sin u + \sin \Omega \cos i \cos u\right) v_T \\
+		\dot{y} & = & \left(\sin\Omega \cos u + \cos \Omega \cos i \sin u\right) v_R  - \left(\sin\Omega \sin u - \cos \Omega \cos i \cos u\right) v_T \\
+		\dot{z} & = & \left(\sin i \sin u \right) v_R + \left(\cos u \sin i \right) v_T
+		\end{array}\right.
+		\]
+		%
+		\noindent where $v_R$ and $v_T$ are the radial and tangential velocities, namely:
+		%
+		\[
+		\arraycolsep=10pt
+		\def\arraystretch{1.3}
+		\left\{ \begin{array}{lllll}
+		v_R & = & \dot{r} & = & \dfrac{h}{p} e \sin \theta \\
+		v_T & = &  r \dot{\theta} & = & \dfrac{h}{p} \rho
+		\end{array}\right.
+		\]
+		\subsubsection{ECI to KOE transformation.}
+		%
+		\indent This transformation is considerably more complex. For that reason, the relations will not be entirely justified. These are the following:
+		%
+		\begin{itemize}
+		\item \underline{Semimajor axis}: Directly from energy equation:
+		%
+		\[
+		a = \dfrac{r}{2 - \frac{r v^2}{\mu}}
+		\]
+		%
+		\item \underline{Eccentricity}: Prior relations arise from (a) the dot product of velocity and position and (b) the polar equation of the ellipse:
+		%
+		\[
+		\begin{array}{ccc}
+		\left\{ \begin{array}{lll}
+		e\sin\theta & = & \dfrac{h}{\mu r} \underline{r} \cdot \underline{v}\\
+		e\cos\theta & = & \dfrac{p}{r} - 1
+		\end{array}\right. 
+		&
+		\Rightarrow
+		& 
+		e = \dsqrt{(e\sin\theta)^2 + (e\cos\theta)^2}
+		\end{array}
+		\]
+		\noindent where $p$ is the orbit parameter.
+		%
+		%
+		\item \underline{Inclination} From the orientation of the angular momentum vector:
+		%
+		\[
+		i = \atantwo\left( h_{xy}, h_z \right)
+		\]
+		\noindent where $h_{xy} = \sqrt{h_x^2 + h_y^2}$
+		\end{itemize}
+		%
+		\indent The remaining elements ($\Omega$, $\omega$ and $M$) depend on the type of the orbit. As we know, if the orbit is equatorial ($i=0$), $\Omega$ and $\omega$ are not defined by themselves. Furthermore, if the orbit is circular, not even $\omega$ is defined, and therefore we have to make some adjustments. In the first case, we will assume $\varpi = \omega + \Omega $ as our fifth element, and the fourth will be null. In the second case, we will merge all values into the mean anomaly, assuming both $\omega$ and $\Omega$ to be null.\\
+		%
+		\subparagraph{Case A) Non-singular eccentricity or inclination.\\}
+		%
+		\[
+		\left\{
+		\begin{array}{lll}
+		\Omega 	& = & \atantwo\left( h_x, -h_y\right)\\
+		u 		& = & \atantwo\left( h \cdot z, y\cdot h_x - x \cdot h_y\right)\\
+		\theta 	& = & \atantwo\left(e\sin\theta, e\cos\theta\right)\\
+		\omega 	& = & u - \theta
+		\end{array}\right.
+		\]
+		%
+		\subparagraph{Case B) Null inclination, non-singular eccentricity. \\}
+		%
+		\[
+		\left\{
+		\begin{array}{lll}
+		\Omega 	& = & 0 \\
+		u 		& = & \atantwo\left( y, x \right) \cdot \sign (h_z) \\
+		\theta 	& = & \atantwo\left(e\sin\theta, e\cos\theta\right)\\
+		\omega 	& = & u - \theta
+		\end{array}\right.
+		\]
+		%
+		\subparagraph{Case C) Null eccentricity, non-singular inclination. \\}
+		%
+		\indent Auxiliary definitions:
+		%
+		\[\begin{array}{lll}
+		\underline{N} 	& = & \underline{\hat{e}_z} \times \underline{h} \\
+		N_{xy} 			& = & \sqrt{N_x^2 + N_y^2} \\
+		S 				& = & \sign\left( (\underline{e} \times\underline{r}) \cdot \underline{h} \right)
+		\end{array}
+		\]
+		%
+		\indent Element computation:
+		\[
+		\left\{
+		\begin{array}{lll}
+		\Omega 	& = & \atantwo\left( h_x, -h_y\right)\\
+		\omega 	& = & 0 \\
+		\theta 	& = & S \cdot \arccos\left( \frac{\underline{r}}{r}, \frac{\underline{N}}{N_{xy}} \right)\\
+		\end{array}\right.
+		\]
+		%
+		\subparagraph{Case D) Null eccentricity and inclination. \\}
+		%
+		\[
+		\left\{
+		\begin{array}{lll}
+		\Omega 	& = & 0 \\
+		\omega 	& = & 0 \\
+		\theta 	& = & \atantwo(y, x) \cdot \sign(h_z)\\
+		\end{array}\right.
+		\]
+		%
 	%
-	\subsection{Relative Keplerian OEs to LVLH.}
+	\subsection{Relative Keplerian OEs to RTN.}
 	%
+	\indent Although one can technically go from RKOEs to RTN coordinates in several steps already described, there is a direct mapping between them, developed by H. Schaub \cite{Schaub2004}. Without further ado, the position mapping is expressed as follows:
 	%
+	\begin{equation}
+	\left\{ \begin{array}{lll}
+	x  	& \approx & \frac{r}{a} \delta a + \dfrac{ae\sin\theta}{\eta} \delta M - a\; \cos\theta \delta e\\
+	y	& \approx & \dfrac{r\rho^2}{\eta^3} \delta M + r\delta\omega + \dfrac{r\sin\theta }{\eta^2} (\rho + 1) \delta e + r\cos i \delta\Omega \\
+	z	& \approx & r\left(\sin u \delta i - \cos u \sin i \delta \Omega\right)
+	\end{array}\right.
+	\label{eqAppB: 	RKOE_RTN_pos}
+	\end{equation}
+	%
+	\indent Nonetheless, the mapping for the velocity is expressed in terms of relative quasi-non-singular OEs \cite{Schaub_Alfriend}. For the conversion from RKOEs to these, please see \ref{chap: App_A}:
+	%
+	\begin{equation}
+	\left\{ \begin{array}{lll}
+	\dot{x}	& \approx & -\frac{V_{r}}{2 a} \delta a+\left(\frac{1}{r}-\frac{1}{p}\right) h \delta u \\
+	 & & +\left(V_{r} a q_{1}+h \sin u\right) \frac{\delta q_{1}}{p}+\left(V_{r} a q_{2}-h \cos u\right) \frac{\delta q_{2}}{p} \\
+	\dot{y}	& \approx & -\frac{3 V_{t}}{2 a} \delta a-V_{r} \delta u+\left(3 V_{t} a q_{1}+2 h \cos u\right) \frac{\delta q_{1}}{p} \\
+	 & &+\left(3 V_{t} a q_{2}+2 h \sin u\right) \frac{\delta q_{2}}{p}+V_{r} \cos i \delta \Omega \\
+	\dot{z} & \approx & \left(V_{t} \cos u+V_{r} \sin u\right) \delta i \\
+	 & &+\left(V_{t} \sin u-V_{r} \cos u\right) \sin i \delta \Omega
+	\end{array}\right.
+	\label{eqAppB: 	RKOE_RTN_vel}
+	\end{equation}
+	
+	%
+	\indent The mapping represented by equations \eqref{eqAppB: 	RKOE_RTN_pos} and \eqref{eqAppB: 	RKOE_RTN_vel} is a linear approximation, in which it is assumed that the relative distance between spacecrafts is much smaller than the chief's orbital radius. For more in-depth content about this transformation, please see \cite{Schaub2004, Schaub_Alfriend}.
