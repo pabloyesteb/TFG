@@ -10,21 +10,24 @@
 %
 	\subsection{Differential equations of proximity relative motion.} \label{sec: Diff_eqs_prox}
 	%
-	\indent Let us consider the motion of two spacecrafts, namely, chief and deputy. The general equations of motion for each of them can be written as:
+	\indent As the proximity assumption ($\norm{r} <<\norm{R}$) is quite widely common and valid for a fair range of operations, it is interesting to describe them here briefly, following \cite{Yamanaka_Ankersen}. Let us then consider the motion of two spacecrafts, namely, chief and deputy. The general equations of motion for each of them can be written as:
 	%
-	\begin{equation}
+%	\begin{equation}
 	\begin{align}
-	\left\{ \begin{array}{ccccc}
-	\text{Chief} 		& \Rightarrow & \underline{\ddot{R}} & = & - \mu \dfrac{\underline{R}}{\norm{\underline{R}}} + \underline{a}_{C, d} \label{eqCh2:	chief_eq}\\[1.2em]
-	\text{Deputy} 	& \Rightarrow & \underline{\ddot{R}} + \underline{\ddot{r}} & = & - \mu \dfrac{\underline{R} + \underline{r}}{\norm{\underline{R} + \underline{r}}} + \underline{a}_{D, d} + \underline{a_f} \label{eqCh2:	deputy_eq}
-	\end{array}\right.
-	\begin{align}
-	\end{equation}
+	\label{eqCh2:	chief_eq}
+	\begin{array}{ccccc}
+	\text{Chief} 		& \Rightarrow & \underline{\ddot{R}} & = & - \mu \dfrac{\underline{R}}{\norm{\underline{R}}} + \underline{a}_{C, d} 
+	\end{array}  \\[1.2em]
+	\label{eqCh2:	deputy_eq}
+	\begin{array}{ccccc}
+	\text{Deputy} 	& \Rightarrow & \underline{\ddot{R}} + \underline{\ddot{r}} & = & - \mu \dfrac{\underline{R} + \underline{r}}{\norm{\underline{R} + \underline{r}}} + \underline{a}_{D, d} + \underline{a_f}\end{array}  
+	\end{align}
+%	\end{equation}
 	%
 	\noindent where $\underline{R}$ and $\underline{r}$ are the chief's absolute position vector and the deputy's relative position vector, respectively. $\underline{a}_{\bullet, d}$ is the disturbing acceleration on each spacecraft, while $\underline{a}_f$ denotes the thrust vector of the deputy. In order to facilitate the linearization, let us rewrite the orbital radius of the deputy as:
 	%
 	\[
-	\norm{\underline{R} + \underline{r}} = \left[ (\underline{R} + \underline{r})^T (\underline{R} + \underline{r}) \right]^{1/2} = \norm{\underline{R}} \right( 1 + 2 \dfrac{\underline{R}^T \underline{r}}{\norm{\underline{R}}^2} + \dfrac{\norm{\underline{r}}^2}{\norm{\underline{R}}^2} \right)^{1/2}
+	\norm{\underline{R} + \underline{r}} = \left[ (\underline{R} + \underline{r})^T (\underline{R} + \underline{r}) \right]^{1/2} = \norm{\underline{R}} \left( 1 + 2 \dfrac{\underline{R}^T \underline{r}}{\norm{\underline{R}}^2} + \dfrac{\norm{\underline{r}}^2}{\norm{\underline{R}}^2} \right)^{1/2}
 	\]
 	%
 	\noindent then, the effect of the gravity field on the deputy can be expressed as:
@@ -35,7 +38,7 @@
 	\indent Assuming that the relative distance is much smaller than the chief's orbital radius:
 	%
 	\begin{equation}
-	\dfrac{\underline{R} + \underline{r}}{\norm{\underline{R} + \underline{r}}^{3}} \approx \dfrac{\underline{R} + \underline{r}}{\norm{\underline{R}}^{3}} \left[1 - \frac{3}{2} \left( 2 \dfrac{\underline{R}^T \underline{r}}{\norm{\underline{R}}^2} + \dfrac{\norm{\underline{r}}^2}{\norm{\underline{R}}^2} \right) \right] \approx  \dfrac{1}{\norm{\underline{R}}^{3}} \left(\underline{R} + \underline{r} - 3 \dfrac{\underline{R}^T \underline{r}}{\norm{\underline{R}}^2} \underline{R}
+	\dfrac{\underline{R} + \underline{r}}{\norm{\underline{R} + \underline{r}}^{3}} \approx \dfrac{\underline{R} + \underline{r}}{\norm{\underline{R}}^{3}} \left[1 - \frac{3}{2} \left( 2 \dfrac{\underline{R}^T \underline{r}}{\norm{\underline{R}}^2} + \dfrac{\norm{\underline{r}}^2}{\norm{\underline{R}}^2} \right) \right] \approx  \dfrac{1}{\norm{\underline{R}}^{3}} \left(\underline{R} + \underline{r} - 3 \dfrac{\underline{R}^T \underline{r}}{\norm{\underline{R}}^2} \underline{R} \right)
 	\label{eqCh2: 	Rplusr}
 	\end{equation}
 	%
@@ -55,16 +58,63 @@
 	%
 	\noindent where $\underline{\omega}$ is the target orbital rate. Let us now express each vector in the RTN frame:
 	%
-	\[\begin{array}{ccc}
-	\underline{\omega} = \left\{ \begin{array}{c}
-	
+	\[\begin{array}{ccccc}
+	\underline{\omega} = 
+	\left\{ \begin{array}{c}
+	0 \\
+	-\omega \\
+	0
+	\end{array}\right\} 
+	& \qquad &
+	\underline{R} = 
+	\left\{ \begin{array}{c}
+	0 \\
+	0 \\
+	-R
+	\end{array}\right\} 
+	& \qquad &
+	\underline{r} = 
+	\left\{ \begin{array}{c}
+	x \\
+	y \\
+	z
+	\end{array}\right\} 
 	\end{array}
-	\end{array}
-	
 	\]
-	
+	\noindent leading to the next expressions for the terms in equation \eqref{eqCh2: 	Rel_motion_2}:
 	%
-	\noindent and introducing this result into \eqref{eqCh2: 	Rel_motion_2}, we arrive to \cite{Yamanaka_Ankersen}:
+	\[\begin{array}{ccccc}
+	\underline{\omega}\times \underline{\dot{r}} = 
+	\left\{ \begin{array}{c}
+	\omega \dot{z} \\
+	0 \\
+	\omega \dot{x}
+	\end{array}\right\} 
+	& \qquad &
+	\underline{\dot{\omega}} \times \underline{r} = 
+	\left\{ \begin{array}{c}
+	-\dot{\omega} z\\
+	0 \\
+	\dot{\omega} x
+	\end{array}\right\} 
+	\\
+	\underline{\omega}\times\left(\underline{\omega} \times\underline{r}\right) = 
+	\left\{ \begin{array}{c}
+	- \omega^2 x \\
+	0 \\
+	- \omega^2 z 
+	\end{array}\right\} 
+	& \qquad &
+	\underline{r} - 3 \dfrac{\underline{R}^T \underline{r}}{\norm{\underline{R}}^2} = 
+	\left\{ \begin{array}{c}
+	x \\
+	y \\
+	- 2 z 
+	\end{array}\right\} 
+	\end{array}
+	\]
+	%
+	\noindent and introducing these results into \eqref{eqCh2: 	Rel_motion_2}, we arrive to:
 	%
 	\begin{equation}
 	\left\{
@@ -85,7 +135,7 @@
 	\noindent where $k$ is a constant defined by 
 	%
 	\[
-	\dfrac{\mu}{R^3} = \left(\dfrac{\mu }{h^{3/2}} \equiv k \omega^{3/2} \Leftrightarrow k \equiv \dfrac{\mu} {h^{3/2}}
+	\dfrac{\mu}{R^3} = \left(\dfrac{\mu }{h^{3/2}}\right) \equiv k \omega^{3/2} \Leftrightarrow k \equiv \dfrac{\mu} {h^{3/2}}
 	\]
 	%
 	\indent and $h = \omega R^2$ is the chief's angular momentum. TO BE CONTINUED, MATRIX FORM OF HILL EQUATIONS. ALSO ADD VECTOR NOTATION OF EACH

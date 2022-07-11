@@ -1,18 +1,20 @@
 \babel@toc {english}{}\relax 
 \addvspace {10\p@ }
-\contentsline {xchapter}{Relative dynamics around elliptic reference orbits.}{1}{chapter.1}%
+\contentsline {xchapter}{Relative dynamics around a near-circular reference orbit.}{1}{chapter.1}%
 \addvspace {10\p@ }
-\contentsline {xchapter}{Absolute and relative orbital element sets.}{3}{appendix.A}%
-\contentsline {figure}{\numberline {A.1}{\ignorespaces Workflow for transforming between two arbitary absolute element sets.\relax }}{4}{figure.caption.5}%
-\contentsline {figure}{\numberline {A.2}{\ignorespaces Frame rotation from inertial to perifocal frame.\relax }}{5}{figure.caption.6}%
-\contentsline {figure}{\numberline {A.3}{\ignorespaces Workflow for transforming any relative set into KOE.\relax }}{10}{figure.caption.8}%
-\contentsline {figure}{\numberline {A.4}{\ignorespaces Workflow for transforming RKOE into any other set.\relax }}{11}{figure.caption.9}%
-\contentsline {figure}{\numberline {A.5}{\ignorespaces Relative ccentricity \& inclination vectors. \relax }}{12}{figure.caption.10}%
+\contentsline {xchapter}{Relative dynamics around elliptic reference orbits.}{5}{chapter.2}%
 \addvspace {10\p@ }
-\contentsline {xchapter}{Cartesian reference systems.}{15}{appendix.B}%
-\contentsline {figure}{\numberline {B.1}{\ignorespaces Sketch of the different time systems.\relax }}{16}{figure.caption.11}%
-\contentsline {figure}{\numberline {B.2}{\ignorespaces Absolute and relative frames.\relax }}{18}{figure.caption.12}%
-\contentsline {figure}{\numberline {B.3}{\ignorespaces ECI and ECEF reference frames.\relax }}{22}{figure.caption.13}%
-\contentsline {figure}{\numberline {B.4}{\ignorespaces Nutation and precession motion.\relax }}{24}{figure.caption.14}%
-\contentsline {figure}{\numberline {B.5}{\ignorespaces RTN frame \blx@tocontentsinit {0}\cite {dAmicoDLR}.\relax }}{29}{figure.caption.15}%
-\contentsline {figure}{\numberline {B.6}{\ignorespaces Relative reference frames.\relax }}{34}{figure.caption.17}%
+\contentsline {xchapter}{Absolute and relative orbital element sets.}{7}{appendix.A}%
+\contentsline {figure}{\numberline {A.1}{\ignorespaces Workflow for transforming between two arbitary absolute element sets.\relax }}{8}{figure.caption.5}%
+\contentsline {figure}{\numberline {A.2}{\ignorespaces Frame rotation from inertial to perifocal frame.\relax }}{9}{figure.caption.6}%
+\contentsline {figure}{\numberline {A.3}{\ignorespaces Workflow for transforming any relative set into KOE.\relax }}{14}{figure.caption.8}%
+\contentsline {figure}{\numberline {A.4}{\ignorespaces Workflow for transforming RKOE into any other set.\relax }}{15}{figure.caption.9}%
+\contentsline {figure}{\numberline {A.5}{\ignorespaces Relative ccentricity \& inclination vectors. \relax }}{16}{figure.caption.10}%
+\addvspace {10\p@ }
+\contentsline {xchapter}{Cartesian reference systems.}{19}{appendix.B}%
+\contentsline {figure}{\numberline {B.1}{\ignorespaces Sketch of the different time systems.\relax }}{20}{figure.caption.11}%
+\contentsline {figure}{\numberline {B.2}{\ignorespaces Absolute and relative frames.\relax }}{22}{figure.caption.12}%
+\contentsline {figure}{\numberline {B.3}{\ignorespaces ECI and ECEF reference frames.\relax }}{26}{figure.caption.13}%
+\contentsline {figure}{\numberline {B.4}{\ignorespaces Nutation and precession motion.\relax }}{28}{figure.caption.14}%
+\contentsline {figure}{\numberline {B.5}{\ignorespaces RTN frame \blx@tocontentsinit {0}\cite {dAmicoDLR}.\relax }}{33}{figure.caption.15}%
+\contentsline {figure}{\numberline {B.6}{\ignorespaces Relative reference frames.\relax }}{38}{figure.caption.17}%
