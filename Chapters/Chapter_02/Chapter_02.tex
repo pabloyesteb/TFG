@@ -1,389 +1,91 @@
-\chapter{Simulación del engelamiento en aeronaves.}
+\chapter{Relative dynamics around a near-circular reference orbit.}
 %
-\label{chap: CFD_in_flight}
+\label{chap: HCW}
 %
-\section{Introducción.}
+\section{Introduction.}
 %
-\indent La simulación numérica del proceso de formación de hielo en vuelo sobre una superficie es un proceso realmente complejo, en el que varias cuestiones entran en juego. Se trata de una aproximación modular del problema, en la que se distinguen tres bloques fundamentales:
 %
-\begin{itemize}
-\item La simulación del flujo aerodinámico sobre una geometría dada (en adelante \textbf{Módulo CFD}).
-\item La simulación del impacto de las gotas de agua subenfriada, y su distribución sobre la geometría dada (en adelante \textbf{Módulo de impacto de gotas}).
-\item La simulación de la formación y crecimiento de hielo (en adelante \textbf{Módulo termodinámico})
-\end{itemize}
+\section{Equations of motion.}
 %
-
-\indent El funcionamiento completo del código requiere de un módulo que transfiera el efecto de la formación de hielo sobre la geometría original. Dado el coste computacional y la falta de una total automatización del proceso de generación de malla, actualmente se prefiere la transferencia de deformaciones de los nodos superficiales al resto de la malla fluida.La complejidad no reside sólo en la división en módulos del mismo, sino en el modo en que estos interactúan y trabajan de manera conjunta. En primer lugar, la relación entre los módulos CFD y de impacto de gotas parece lógica. Los campos de velocidades y de densidades del fluido determinarán cómo las gotas de agua subenfriada se desplazan hasta impactar con la superficie. En segundo lugar, el módulo termodinámico requiere información de los otros dos. Del módulo CFD, los campos de temperaturas y presiones (aguas arriba y sobre la superficie), así como el esfuerzo viscoso y el flujo convectivo sobre la superficie; y del módulo de impacto de gotas, los datos de impacto, es decir, cantidad, velocidad y temperatura. Más adelante se verá cómo se puede cuantificar cada una de las magnitudes termodinámicas enumeradas. Por último, y cerrando este ciclo de realimentación, la propia formación de hielo causará un desplazamiento de los nodos del módulo CFD, de modo que el ciclo deberá ser repetido tras actualizar la posición de los nodos de la malla computacional, y así sucesivamente. Una representación de estas interacciones puede verse en la figura \ref{fig: Feedback}\\
 %
-\begin{figure}[ht]
-\centering\includegraphics[width = 0.7\linewidth]{Chapter_02/Feedback}
-\caption{Módulos implicados e interacciones entre ellos.}
-\label{fig: Feedback}
-\end{figure}\\
-%
-\indent A continuación, se expondrán unas pinceladas sobre cada uno de los módulos, a fin de dar una visión general sobre su funcionamiento y su modelización de cada uno de los fenómenos que tratan de analizar.
-%
-\section{Flujo aerodinámico. Módulo CFD.}
-%
-\subsection{Generalidades.}
-%
-\indent Un solver CFD (\textit{Computational Fluid Dynamics}) tiene como misión discretizar un campo fluido alrededor de una geometría dada (sea bidimensional o tridimensional), y simular la dinámica del movimiento de dicho campo fluido bajo unas ciertas condiciones e hipótesis. Se trata de una parte muy compleja y de muy alto consumo de recursos de cualquier simulación, y en particular del problema de la formación de hielo. Sin embargo, desde el punto de vista computacional, es la generación de una nueva malla CFD la parte que más recursos consume del proceso completo. Los métodos numéricos que permiten resolver las ecuaciones de la mecánica de fluidos son amplios, numerosos y muy distintos en simplicidad, hipótesis, precisión y coste computacional. Con gran generalidad, la práctica totalidad de la mecánica de fluidos está descrita de forma exacta por las ecuaciones de Navier-Stokes, ecuaciones de las que sin embargo no se conoce la solución analítica. Para un estudio detallado sobre los distintos planteamientos y su complejidad, se recomienda consultar \cite{hirsch} (en particular, el capítulo 2).\\
-%
-\begin{figure}
-\centering\includegraphics[width = 0.5\linewidth]{Chapter_02/Hierarchy}
-\caption{Jerarquía de los distintos métodos CFD en relación a su complejidad. \cite{hirsch}}
-\label{fig: Hierarchy}
-\end{figure}
-%
-\indent En la figura \ref{fig: Hierarchy} se muestra la jerarquía de los distintos niveles de aproximación de la solución numérica del campo fluido. En general, se trata de tres conceptos o hipótesis los que diferencian unos modelos de otros: la turbulencia, la viscosidad y la compresibilidad, en orden decreciente de complejidad. Partiendo de las ecuaciones de Navier-Stokes, la sustitución de modelos de viscosidad y conductividad por un modelo directo de turbulencia deriva en las llamadas ecuaciones RANS (\textit{Reynolds Averaged Navier-Stokes equations}). Un nivel posterior de simplicidad aparece si se desprecian grandes zonas de flujo viscoso, apareciendo las ecuaciones de Navier-Stokes parabolizadas y los modelos de capa límite, en los cuales el campo fluido se separa en un campo externo, donde el flujo puede aproximarse por ideal (sin viscosidad y mucho más sencillo) y un campo interno, la denominada capa límite, donde la viscosidad no puede ser despreciada. Los modelos no viscosos se refieren fundamentalmente a las denominadas ecuaciones de Euler, mientras que las capas límite son modelizadas de muy variadas formas. En un último nivel de simplicidad se encuentran los modelos de flujo potencial, donde se considera un flujo ideal en todas las regiones del campo fluido. Es interesante remarcar que, dado un solver de unas ciertas características, es razonablemente sencillo adaptarlo para simulaciones de menor complejidad: Un solver tridimensional puede funcionar como bidimensional, uno que simule la compresibilidad puede despreciarla, etc.\\
-%
-\begin{figure}[ht]
-\centering\includegraphics[width = 0.7\linewidth]{Chapter_02/Evolucion_airbus}
-\caption{Evolución de las herramientas CFD utilizadas por Airbus. \cite{hirsch}}
-\label{fig: Evolucion_airbus}
-\end{figure}\\
-%
-\indent Desde las primeras herramientas CFD, que comenzaron a aplicarse en la aeronáutica en los años 60, se ha producido un enorme desarrollo y refinado de las mismas, escalando en la jerarquía descrita anteriormente. En la figura \ref{fig: Evolucion_airbus} se puede ver el avance de los métodos utilizados \cite{hirsch}. Uno de los aspectos que más destaca de esta evolución es cómo se ha pasado de únicamente analizar la aerodinámica de alas (de perfiles originalmente), de geometría razonablemente regular, a analizar un gran número de partes de la aeronave. Por otra parte, en la figura \ref{fig: Boeing_777} se puede observar cada una de las partes del Boeing 777 diseñadas esencialmente a través de métodos CFD. Pese a lo costoso de su desarrollo, han supuesto un valioso recurso en muchas dimensiones. Podría parecer que el ahorro en ensayos aerodinámicos de alas, tanto en fases tempranas de desarrollo como en el diseño de detalle, podría ser la mayor de las ventajas. Pese a lo significativo de dichas mejoras, existe un impacto estratégico muchísimo más crítico: el ahorro de tiempo en las fases de desarrollo. En el mercado aeronáutico, el tiempo empleado en desarrollar y certificar aeronaves es de un valor incalculable, y el CFD ha permitido (aún teniendo margen de crecimiento) recortar este trámite de manera significativa. \\
-%
-\begin{figure}[ht]
-\centering\includegraphics[width=0.7\linewidth]{Chapter_02/Boeing_777}
-\caption{Papel del CFD en el diseño del Boeing 777. \cite{hirsch}}
-\label{fig: Boeing_777}
-\end{figure}\\
-%
-	\subsection{Solver CFD TAU.}
+	\subsection{Differential equations of proximity relative motion.} \label{sec: Diff_eqs_prox}
 	%
-	\indent El solver utilizado para simular los flujos aerodinámicos es el TAU-Code \cite{TAU_code}, desarrollado inicialmente por el \textit{DLR} (\textit{Deutsches Zentrum für Luft- und Raumfahrt}). Se trata de un código de predicción de flujos viscosos y no viscosos alrededor de geometrías complejas, desde el régimen subsónico bajo hasta el hipersónico, empleando mallas híbridas no estructuradas. Realmente, el TAU-Code es más bien un sistema de software, compuesto por un conjunto de módulos y librerías, un enfoque que facilita su desarrollo, mantenimiento y reutilización. Cada uno de sus módulos puede ser utilizado como una herramienta independiente, mediante ficheros de entrada y salida o bien haciendo uso del lenguaje Python, que permite la comunicación intermodular y la simplificación en cuanto a la manipulación de archivos.\\
+	\indent Let us consider the motion of two spacecrafts, namely, chief and deputy. The general equations of motion for each of them can be written as:
 	%
-	\indent Una gran ventaja del TAU-Code es su muy alta eficiencia cuando se aplica la computación en paralelo, una habilidad casi imprescindible en cualquier tipo de simulación que requiera una cierta potencia computacional. Mientras que la aplicación principal del TAU es la simulación de flujos complejos en aeronaves, existen extensiones del código que permiten aplicarlo para flujos de reentrada, donde la química del gas toma un papel de gran importancia. \\
+	\begin{equation}
+	\begin{align}
+	\left\{ \begin{array}{ccccc}
+	\text{Chief} 		& \Rightarrow & \underline{\ddot{R}} & = & - \mu \dfrac{\underline{R}}{\norm{\underline{R}}} + \underline{a}_{C, d} \label{eqCh2:	chief_eq}\\[1.2em]
+	\text{Deputy} 	& \Rightarrow & \underline{\ddot{R}} + \underline{\ddot{r}} & = & - \mu \dfrac{\underline{R} + \underline{r}}{\norm{\underline{R} + \underline{r}}} + \underline{a}_{D, d} + \underline{a_f} \label{eqCh2:	deputy_eq}
+	\end{array}\right.
+	\begin{align}
+	\end{equation}
 	%
-	\indent El desarrollo del código TAU, conceptualizado inicialmente en la década de los 90 en Göttingen, ha sido posible gracias a numerosos proyectos de investigación a nivel nacional e internacional, siendo los núcleos principales los institutos del \textit{DLR} en Göttingen y en Braunschweig. Desde sus primeras etapas de desarrollo, se decidió que los recursos no eran suficientes como para incluir una herramienta de generación de mallas no estructuradas. No se hizo por despreciar su importancia, ya que supone un aspecto crítico de toda simulación, sino por reconocer que había sistemas en el mercado más que capaces de realizar dicha función. Se establecieron para ello colaboraciones estratégicas para facilitar la compatibilidad y la aplicabilidad del TAU. Prueba de ello son el software CENTAUR (de \textit{CentaurSoft}), dedicado a la generación de mallas de tipo híbrido, y el software SOLAR, orientado exclusivamente a mallas no estructuradas.\\
+	\noindent where $\underline{R}$ and $\underline{r}$ are the chief's absolute position vector and the deputy's relative position vector, respectively. $\underline{a}_{\bullet, d}$ is the disturbing acceleration on each spacecraft, while $\underline{a}_f$ denotes the thrust vector of the deputy. In order to facilitate the linearization, let us rewrite the orbital radius of the deputy as:
 	%
-	\indent A continuación pasan a describirse brevemente cada uno de los módulos básicos que constituyen el sistema de software TAU:
+	\[
+	\norm{\underline{R} + \underline{r}} = \left[ (\underline{R} + \underline{r})^T (\underline{R} + \underline{r}) \right]^{1/2} = \norm{\underline{R}} \right( 1 + 2 \dfrac{\underline{R}^T \underline{r}}{\norm{\underline{R}}^2} + \dfrac{\norm{\underline{r}}^2}{\norm{\underline{R}}^2} \right)^{1/2}
+	\]
 	%
-	\paragraph{I. Fraccionamiento de mallado. \\ }
+	\noindent then, the effect of the gravity field on the deputy can be expressed as:
 	%
-	\indent Esta herramienta tiene como función la división inicial de un mallado dado en varios dominios. Es posible que, en función de los resultados, sea necesario un refraccionamiento.
+	\[
+	\dfrac{\underline{R} + \underline{r}}{\norm{\underline{R} + \underline{r}}^{3}} = \dfrac{\underline{R} + \underline{r}}{\norm{\underline{R}}^{3}} = \left( 1 + 2 \dfrac{\underline{R}^T \underline{r}}{\norm{\underline{R}}^2} + \dfrac{\norm{\underline{r}}^2}{\norm{\underline{R}}^2} \right)^{-\frac{3}{2}}
+	\]
+	\indent Assuming that the relative distance is much smaller than the chief's orbital radius:
 	%
-	\paragraph{II. Pre-proceso. \\}
+	\begin{equation}
+	\dfrac{\underline{R} + \underline{r}}{\norm{\underline{R} + \underline{r}}^{3}} \approx \dfrac{\underline{R} + \underline{r}}{\norm{\underline{R}}^{3}} \left[1 - \frac{3}{2} \left( 2 \dfrac{\underline{R}^T \underline{r}}{\norm{\underline{R}}^2} + \dfrac{\norm{\underline{r}}^2}{\norm{\underline{R}}^2} \right) \right] \approx  \dfrac{1}{\norm{\underline{R}}^{3}} \left(\underline{R} + \underline{r} - 3 \dfrac{\underline{R}^T \underline{r}}{\norm{\underline{R}}^2} \underline{R}
+	\label{eqCh2: 	Rplusr}
+	\end{equation}
 	%
-	\indent El pre-proceso es una parte fundamental de cualquier simulación. Se trata de un proceso que convierte el mallado geométrico en algo con sentido físico, con las métricas específicas, las conectividades y la numeración de cada uno de los volúmenes de control resultantes del mallado.
+	\indent If we now substitute \eqref{eqCh2: 	Rplusr} in the difference \eqref{eqCh2:	deputy_eq} minus \eqref{eqCh2:	chief_eq}, we arrive to:
 	%
-	\paragraph{III. Solver. \\}
+	\begin{equation}
+	\underline{\ddot{r}} = - \dfrac{\mu}{\norm{\underline{R}}^3} \left(\underline{r} - 3 \dfrac{\underline{R}^T \underline{r}}{\norm{\underline{R}}^2} \underline{R} \right) + \underline{a}_f + \underline{a}_{D, d} - \underline{a}_{C, d}
+	\label{eqCh2: 	Rel_motion_1}
+	\end{equation}
 	%
-	\indent El solver del TAU-Code utiliza un tipo de esquema para los términos viscosos y otro diferente para el resto de términos, manteniendo la precisión de segundo orden en el espacio. En cuanto a la integración temporal del problema, durante mucho tiempo (y hasta la actualidad) se utiliza un método explícito de Runge-Kutta, con algunos retoques que aceleran la convergencia del esquema. Sin embargo, un problema importante de este esquema es la restricción existente sobre el número CFL (cuya definición se verá más adelante), que en términos sencillos implica que el paso de tiempo está seriamente limitado por arriba. Por tanto, el número de pasos temporales es indeseablemente alto, o por lo menos recortable. A consecuencia de esto, se desarrolló e implementó un nuevo método de tipo \textit{LU-SGS} (\textit{Lower-Upper Symmetric Gauss-Seidel}), que incluye un escaso requerimiento de memoria, un bajo número de operaciones necesarias y además facilita la computación en paralelo. Numéricamente, se trata de un esquema virtualmente incondicionalmente estable, permitiendo un paso temporal mayor que el Runge-Kutta. La mejora del rendimiento conseguida con este método puede plasmarse con el ahorro en tiempo de cálculo, reduciendo el valor total de éste en un factor de 2.5 respecto al método Runge-Kutta.
+	\indent Experience shows it is convenient to express equation \eqref{eqCh2: 	Rel_motion_1} in the RTN frame (see \ref{sec: RTN}). This leads to the need of applying Coriolis' Theorem twice, so as to get the non-inertial effects derived from describing the motion in a rotating frame. The equations of motion take now the following form:
 	%
-	\paragraph{IV. Adaptación del mallado. \\}
+	\begin{equation}
+	\underline{\ddot{r}} = - \dfrac{\mu}{\norm{\underline{R}}^3} \left(\underline{r} - 3 \dfrac{\underline{R}^T \underline{r}}{\norm{\underline{R}}^2} \underline{R} \right) - 2 \underline{\omega}\times  \underline{\dot{r}} - \underline{\dot{omega}}\times \underline{r} - \underline{\omega}\times \left( \underline{\omega} \times \underline{r}\right) + \underline{a}_f + \underline{a}_{D, d} - \underline{a}_{C, d}
+	\label{eqCh2: 	Rel_motion_2}
+	\end{equation}
 	%
-	\indent A fin de resolver zonas detalladas del flujo, un algoritmo de adaptación de mallados híbridos basado en el refinado local fue incluido entre los módulos del sistema TAU. Este algoritmo fue extendido también para lo contrario, es decir, reducir el refinado de la malla en zonas donde la complejidad del flujo haya disminuido con respecto a instantes anteriores. Este método de refinado local alivia el consumo de memoria, a costa de un incremento del tiempo de computación. En el caso de usar métodos de refinado local, el coste computacional y de memoria sería ingentemente mayor.
+	\noindent where $\underline{\omega}$ is the target orbital rate. Let us now express each vector in the RTN frame:
 	%
-	\paragraph{V. Deformación del mallado. \\}
-	%
-	\indent Una herramienta fundamental del código en vistas de su aplicación a la aeronáutica es la asimilación de cambios en la geometría, debidos por ejemplo a la actuación de fuerzas aerodinámicas sobre la estructura estudiada. Pese a que esto entra en el campo de la elasticidad, bien es cierto que una aproximación sencilla a la par que precisa es la elasticidad lineal.
-	%
-	\paragraph{VI. Implementación de CHIMERA. \\}
-	%
-	\indent La técnica CHIMERA es una prestación del código cuya principal aplicación es el análisis de aeronaves en maniobra, donde superficies de control en movimiento entran en juego.
-	%
-	\paragraph{VII. Modelización de la turbulencia y la transición. \\}
-	%
-	\indent Los modelos de turbulencia implementados en el TAU-Code incluyen formas funcionales que aproximan la viscosidad de forma tanto lineal como no lineal, con una o dos ecuaciones dependiendo del modelo exacto. Por defecto, el modelo de turbulencia es el de Spalart-Allmaras con la modificación de Edwards. No se entra en mayores discusiones acerca de este tema por lo complejo del mismo y por no ser relevante en este estudio.
-	%
-	\subsubsection{Aplicaciones y validación del solver TAU.}
-	%
-	\indent El espectro de aplicación del sistema TAU-Code es razonablemente amplio, extendiéndose desde el análisis bidimensional en subsónico bajo de perfiles aerodinámicos hasta la computación de simulaciones tridimensionales de vehículos espaciales en flujos hipersónicos. Entre medias se encuentra por supuesto el análisis de aviones de transporte y militares, así como helicópteros. Las simulaciones más típicas llevadas a cabo sin embargo son sobre los aviones de transporte, simulándose condiciones de crucero, alta sustentación (aterrizaje y despegue) así como situaciones fuera de diseño. Los resultados derivados de los análisis son coeficientes de fuerzas y momentos, aspectos de la mecánica del vuelo y respuesta estructural; a fin de estudiar la respuesta de sistemas de control, la integración del motor, la optimización de las configuraciones de alta sustentación y la validación con resultados experimentales preexistentes. Un ejemplo de la aplicación del TAU puede verse en la figura \ref{fig: X_31}, donde se observa una simulación del flujo sobre el X-31, con detalles sobre la morfología del flujo \cite{TAU_figura}.
-	%
-	\begin{figure}
-	\centering\includegraphics[width = 0.7 \linewidth]{Chapter_02/X_31}
-	\caption{Simulación del flujo alrededor del X-31 mediante el solver TAU. \cite{TAU_figura}}
-	\label{fig: X_31}
-	\end{figure}
-
+	\[\begin{array}{ccc}
+	\underline{\omega} = \left\{ \begin{array}{c}
 	
-\section{Impacto de gotas.}
-% 	
-\subsection{Generalidades.}
-%
-\indent El cálculo de la trayectoria e impacto de las gotas es una característica imprescindible de la simulación de la formación y crecimiento de hielo, pues son las gotas subenfriadas las que realmente inducen la existencia de una masa de agua congelada sobre el cuerpo estudiado. Los resultados que se necesitan son una cuantificación del impacto de las gotas a lo largo del cuerpo, así como la velocidad con que dicho impacto se realiza en cada punto, mediante los cuales se consigue obtener la masa de agua y la entalpía que entra en el volumen de control.\\
-%
-\indent Las ecuaciones que rigen el movimiento del fluido no varían por la presencia de las gotas, dada la muy escasa cantidad de las mismas en comparación con el volumen de aire estudiado; por lo tanto, es válida (y necesaria) la utilización de los resultados volcados por el solver CFD que se utilice (el TAU-Code en este caso). Para el análisis de la dinámica de las gotas, existen dos planteamientos fundamentales: el enfoque lagrangiano, que se centra en cada una de las gotas y las acompaña en su movimiento, y el enfoque euleriano, que estudia un cierto volumen de control que constantemente es atravesado por las gotas. Se trata de dos puntos de vista muy diferentes, pero que en el caso de resolverse de forma adecuada, derivan en unos resultados idénticos. Destacar que el enfoque euleriano es el empleado en la mecánica de los fluidos, mientras que un enfoque lagrangiano es más adecuado para la dinámica de partículas.\\
-%
-\indent Tanto en un modelo como otro, el objetivo es obtener dos distribuciones: la eficiencia o parámetro de colección $\beta$, definido físicamente como la cantidad de agua que impacta sobre una cierta región en comparación a la que impactaría si estuviera expuesta directamente a la corriente sin perturbar, es decir \cite{beta}:
-%
-\[
-\beta \equiv \dfrac{\left(\dfrac{\dot{m}_{\beta}}{A}\right)}{\left(\dfrac{\dot{m}_{\beta}}{A}\right)_{\infty}}
-\]
-%
-\indent Dependiendo de la formulación, se obtiene una expresión funcional distinta. La segunda magnitud a calcular es la velocidad de impacto de las gotas. Se verá que todas las ecuaciones planteadas se resuelven para un diámetro de gota particular, $d$, pero como resulta natural, las nubes contienen una cierta distribución de tamaño de gotas. Para computar el impacto de gotas de distinto tamaño, es útil plantear particiones del intervalo de diámetros presentes en un tipo de nube dada, y resolver cada una de las clases derivadas como un problema independiente. Denotando el porcentaje de la clase i-ésima presente en una nube como $p_i$ y el coeficiente de captación para dicha clase como $\beta_i$ y considerando un conjunto de $N$ clases de gotas, el parámetro de captación total de una región dada resulta:
-%
-\[
-\beta = \dsum_{i = 1}^{N} p_i \beta_i
-\]
-%
-\indent Un modelo muy ampliamente utilizado de una nube típica de engelamiento es la distribución Langmuir-D. Dado un $MVD$ (\textit{Mean Volumetric Diameter}), el modelo da los valores de probabilidad $p_i$ y de los diámetros de cada clase $d_i$, centrados en torno al valor del $MVD$, como parece lógico. En la tabla \ref{tab: Langmuir_D} se muestra la distribución de Langmuir-D para un valor de $MVD = 16 \mu m$.
-%
-\begin{table}
-\begin{center}
-\begin{tabular}{|c|c|}
-\hline 
-Porcentaje del LWC (\%) & Diámetro de gota ($\mu m$) \\ 
-\hline 
-0.05 & 5 \\ 
-\hline 
-0.1 & 8.3 \\ 
-\hline 
-0.2 & 11.4 \\ 
-\hline 
-0.3 & 16 \\ 
-\hline 
-0.2 & 21.9 \\ 
-\hline 
-0.1 & 27.8 \\ 
-\hline 
-0.05 & 35.5 \\ 
-\hline 
-\end{tabular} 
-\caption{Distribución Langmuir-D de diámetros de gota para $MVD = 16 \mu m$}
-\label{tab: Langmuir_D}
-\end{center}
-\end{table}\\
-%
-\indent Una vez han sido tratados los conceptos básicos del impacto de gotas, se pasa a estudiar cada una de las aproximaciones enunciadas: la lagrangiana y la euleriana.
-%
-\subsubsection{Enfoque lagrangiano.}
-%
-\indent Las hipótesis generales tomadas en el enfoque lagrangiano son las siguientes \cite{thesis}:
-%
-\begin{itemize}
-\item La influencia de las gotas sobre el campo fluido es despreciable.
-\item Las gotas son perfectamente esféricas, sin deformación ni ruptura.
-\item No hay colisión ni coalescencia de gotas.
-\item Las únicas fuerzas que aparecen son la resistencia, la gravedad y la flotación (que generalmente es despreciable)
-\end{itemize}
-\indent El tamaño de la gota determinará el equilibrio entre las fuerzas de inercia y las de resistencia. Las gotas pequeñas seguirán casi perfectamente las líneas de corriente hasta el impacto, mientras que las más grandes seguirán su propia inercia hasta dicho instante. La ecuación a aplicar es la ecuación de Newton a cada gota. Considerando como únicas fuerzas sobre la misma la gravedad y la resistencia aerodinámica, se obtiene:
-%
-\[m_{d} \bar{\gamma}_d = \dfrac{1}{2}\rho_{a} A_d \left\rvert \bar{V}_r \right\rvert \bar{V}_r C_d + m_d \bar{g}\]
-%
-\indent Donde $m_d$ es la masa de la gota (\textit{droplet}), $\bar{\gamma}_d$ su aceleración, $A_d$ su área frontal (círculo), y $\bar{V}_r$ su velocidad relativa al aire. Asimismo, $C_d$ es el coeficiente de resistencia, que depende del número de Reynolds de la gota ($Re_d = \frac{\left\rvert \bar{V}_r \right\rvert d}{\nu}$), $\rho_a$ la densidad del aire y $\bar{g}$ el vector de la gravedad.\\
-%
-\indent Para calcular las trayectorias de manera numérica, se resuelve la ecuación diferencial anterior mediante su integración numérica, generalmente utilizando un esquema Runge-Kutta. Para ello, es necesario decidir la posición de lanzamiento, que en un caso bidimensional, viene dado por una coordenada $x$ en el sentido del flujo y una coordenada $y$ perpendicular a él. La primera de ellas se escoge de forma que la velocidad del flujo en dicho punto sea prácticamente la del fluido en el infinito sin perturbar, a lo largo del rango en $y$ escogido, es decir:
-%
-\[
-\left\rvert 1 - \dfrac{U(x_0,y)}{U_{\infty}}\right\rvert_{y_{0, min}}^{y_{0, max}} \leq \varepsilon \, , \quad \forall y \in [y_{0, min}, y_{0, max} ]
-\]
-%
-\indent Donde $\varepsilon$, $y_{0, min}$ y $y_{0, max}$ son parámetros que, junto a $x_0$, definen la región de lanzamiento de las gotas. Una representación la estructura mencionada se encuentra en la figura \ref{fig: Regiones_lanzamiento}. Los valores extremos de la coordenada $y$ se obtienen tras sucesivas iteraciones, imponiendo que sean los puntos desde los cuales una gota presenta una trayectoria tangente al cuerpo (perfil en este caso). Para determinar, por ejemplo, el límite superior, el programa \textit{LEWICE} \cite{ruff} opera del siguiente modo. En primer lugar, el usuario especifica unos valores iniciales (al alza en principio), $y_{0, min}$ e $y_{0, max}$, de modo que en ambos casos las trayectorias no impacten sobre el perfil. Hecho esto, se calcula la trayectoria para una coordenada intermedia $y_{0/1}$, definido como el punto medio entre $y_{0, min}$ y $y_{0, max}$. Si la trayectoria sigue sin impactar, se calcula el punto medio entre éste último punto y el límite inferior $y_{0, min}$ (buscando el impacto); mientras que si impacta, se calcula el punto medio entre $y_{0/1}$ e $y_{0, max}$. De este modo, se busca limitar el dominio en el que se pasa de no haber impacto a haberlo, utilizando básicamente el método de la bisección.\\
-%
-\begin{figure}[ht]
-\centering\includegraphics[width = 0.6 \linewidth]{Chapter_02/Regiones_lanzamiento}
-\caption{Esquema de la región de lanzamiento.}
-\label{fig: Regiones_lanzamiento}
-\end{figure}\\
-%
-\indent Una vez se ha obtenido la región de lanzamiento, se calculan las trayectorias para un número de puntos dentro de dicha región, así como el punto donde impacta y su velocidad al alcanzarlo. En particular, para obtener el valor del coeficiente de captación local $\beta$, se acude a su definición, es decir:
-%
-\[\beta(s) \equiv \dfrac{\left(\dfrac{\dot{m}_{\beta}}{A}\right)}{\left(\dfrac{\dot{m}_{\beta}}{A}\right)_{\infty}} = \dfrac{A_{\infty}}{A} = \dfrac{dy_0}{ds}\]
-%
-\indent Donde $dy_0$ es la amplitud de la región de lanzamiento donde están previamente las gotas que impactan en el segmento $ds$. A nivel global, por tanto, el coeficiente de captación resulta:
-%
-\[\beta_{TOT} = \dfrac{1}{H} \dint_{s_L}^{s_U} \beta(s) ds = \dfrac{y_0}{H}\]
-%
-\indent Donde $s_L$ y $s_U$ son la posición, medida como arco de la curva que representa el perfil, de los límites de impacto inferior y superior. El cálculo anterior es análogo para unos límites discretos $s_i$ y $s_j$, obteniéndose el promedio en una hipotética celda. Asimismo, $y_0$ es la amplitud total de la región de lanzamiento, y $H$ es la proyección ortogonal del perfil sobre la región de lanzamiento (ver figura \ref{fig: Beta}).
-%
-\begin{figure}[ht]
-\centering\includegraphics[width = 0.7\linewidth]{Chapter_02/Beta}
-\caption{Esquema de los coeficientes de captación local y global}
-\label{fig: Beta}
-\end{figure}\\
-%
-\indent Los métodos de tipo lagrangiano son muy efectivos en problemas en dos dimensiones, pero requieren de un gran esfuerzo computacional para el paso a problemas tridimensionales, debido a la tediosa tarea de la determinación de la región de lanzamiento.
-
-\subsubsection{Enfoque euleriano.}
-%
-\indent En los modelos de tipo euleriano hay una serie de hipótesis simplificativas \cite{thesis}:
-%
-\begin{itemize}
-\item Se considera un medio continuo (las gotas están uniformemente distribuidas).
-\item Las gotas son perfectamente esféricas, sin deformación ni ruptura.
-\item No hay colisión ni coalescencia de gotas.
-\item No hay intercambio de calor ni masa entre las gotas y el entorno.
-\item Se desprecian efectos de la turbulencia sobre las gotas.
-\item Las únicas fuerzas que aparecen son la resistencia, la gravedad y la flotación (que generalmente es despreciable).
-\end{itemize}
-%
-
-\indent Las variables físicas a determinar en este método son el volumen de agua en relación al volumen total de fluido $\alpha ( \bar{x}, t)$ y el campo de velocidades adimensional de las gotas $\bar{u}_d( \bar{x}, t)$. Para ello, se integran las ecuaciones de continuidad y de cantidad de movimiento, expresadas de manera conveniente en las variables anteriores como:
-%
-\[\left\{ \begin{array}{lll}
-\dfrac{\partial \alpha }{\partial t} + \nabla \cdot \left( \alpha \bar{u}_d\right) = 0 \\[1.5em]
-\dfrac{\partial\bar{u}_d}{\partial t} + \bar{u}_d \cdot \nabla \bar{u}_d = \dfrac{C_D\, Re_d}{24 K} \left( \bar{u}_a - \bar{u}_d\right) + \left(1 - \dfrac{\rho_a}{\rho_w}\right) \dfrac{1}{Fr^2} \bar{g} + \dfrac{\rho_a}{\rho_w} \left(\dfrac{\partial \bar{u}_a}{\partial t}  + \bar{u}_a \cdot \nabla  \bar{u}_a \right)
-\end{array}\right.
-\]
-%
-\noindent donde $\bar{u}_a$ es el campo de velocidades adimensional del aire (conocido a través del solver CFD) y $\rho_w$ es la densidad del agua. Las constantes involucradas en la segunda ecuación son:
-\begin{itemize}
-\item $Fr$: Número de Froude, que expresa el cociente fuerzas de inercia-fuerzas másicas, y responde a: 
-%
-$$Fr = \dfrac{U_{\infty}}{\sqrt{l g_0}}$$
-%
-\noindent siendo $l$ la longitud caracterísitica del problema (cuerda del perfil).
-%
-\item $K$: Parámetro de inercia, definido como: 
-%
-$$K = \dfrac{\rho_w d^2 U_{\infty}}{18 l \mu}$$
-%
-\noindent siendo $d$ el diámetro de las gotas y $\mu$ la viscosidad dinámica del agua.
-\item $C_D$:  Coeficiente de resistencia, generalmente función del nº de Reynolds, que en este caso responde a: $Re_d = \dfrac{\rho_w d U_{\infty} \left\rvert \bar{u}_a - \bar{u}_d \right\rvert}{\mu}$.
-\end{itemize}
-%
-\indent Una posible aproximación para la resolución de las ecuaciones anteriores (la escogida por Beaugendre et al, \cite{thesis}) es el método de Galerkin. Una vez calculados los valores de las variables $\alpha$ y $\bar{u}_d$ en el campo fluido, los valores requeridos para la computación del crecimiento de hielo se obtienen como sigue:
-%
-\[\left\{ \begin{array}{lll}
-\beta \equiv \dfrac{\left(\dfrac{\dot{m}_{\beta}}{A}\right)}{\left(\dfrac{\dot{m}_{\beta}}{A}\right)_{\infty}} = \dfrac{\bar{U}_d \cdot \bar{n}}{U_{\infty}} \dfrac{LWC}{LWC_{\infty}} =  - \alpha \bar{u}_d \cdot \bar{n} \\[2em]
-\bar{U}_d = U_{\infty} \bar{u}_d
-\end{array}\right.
-\]
-%
-\indent Este tipo de planteamiento supone una complejidad a priori mayor, pero es fácilmente extrapolable a problemas en tres dimensiones, en contraposición a la formulación lagrangiana 
-%
-\section{Formación y crecimiento de hielo.}
-%
-\indent El módulo termodinámico es el encargado de la simulación de la formación y crecimiento de hielo en un cuerpo dado. Su concepto básico de funcionamiento es, en virtud de ciertos datos obtenidos de los otros dos módulos, aplicar las ecuaciones de conservación de la termofluidodinámica a un cierto volumen de control apoyado sobre la superficie del cuerpo. El resultado principal que se deriva de este módulo es la distribución de la masa de hielo formada sobre el cuerpo simulado, pudiendo realizarse la simulación en un solo paso (\textit{one-shot}) o bien con sucesivos ciclos de simulación CFD-impacto de gotas-termodinámica (\textit{multi-step}). Además, existen dos enfoques generales a la hora de resolver las ecuaciones termodinámicas sobre una superficie dada: por un lado el método de Messinger \cite{messinger}, de enfoque algebraico, en el que se plantea directamente el equilibrio termodinámico, y, por otro, el método basado en el planteamiento de las ecuaciones de conservación de la mecánica de fluidos en el volumen de control en cuestión, que conducen a la resolución de un sistema de ecuaciones en derivadas parciales (\textit{EDPs}) \cite{thesis}.
-%
-\paragraph{Métodos \textit{one-shot} y métodos \textit{multi-step}.\\}
-%
-\indent Los métodos \textit{one-shot} presentan como ventaja la sencillez de su proceso de resolución, ya que no requieren la interacción explícita entre los módulos termodinámicos y de CFD. En su contra está que la convergencia de los resultados no es total, puesto que, en cierto modo, se desprecian los efectos de la formación de hielo sobre el flujo aerodinámico.\\
-%
-\indent Por su parte, los métodos \textit{multi-step} presentan una mayor complejidad  pero los resultados son, como cabe esperar, más precisos y consistentes con la realidad. En el presente proyecto, y debido a la falta de manejo del código TAU, se ha optado por un método de tipo \textit{one-shot}, pese a lo cual el módulo en sí no difiere mucho de lo que sería un planteamiento \textit{multi-step}. En particular, sería necesario ajustar los datos de salida y crear un código que calcule los desplazamientos nodales asociados. En la figura \ref{fig: One_multi} se encuentran representados conceptualmente ambos tipos de métodos, y en la figura \ref{fig: Flow_chart_one_multi}, se muestra un diagrama de flujo en cada caso.
-%
-\begin{figure}[ht]
-\centering
-\medskip
-\begin{subfigure}[t]{.45\linewidth}
-\centering\includegraphics[width=\linewidth]{Chapter_02/One_shot}
-\caption{Método \textit{one-shot}.}
-\label{fig: One_shot}
-\end{subfigure}
-\begin{subfigure}[t]{.45\linewidth}
-\centering\includegraphics[width=\linewidth]{Chapter_02/Multi_step}
-\caption{Método \textit{multi-step}.}
-\label{fig: Multi_step}
-\end{subfigure}
-\captionsetup{justification=centering, margin = 0.5cm}
-\caption{Representación esquemática del funcionamiento de los distintos métodos de simulación de crecimiento de hielo.}
-\label{fig: One_multi}
-\end{figure}
-%
-\begin{figure}[ht]
-\centering
-\medskip
-\begin{subfigure}[t]{.45\linewidth}
-\centering\includegraphics[width=\linewidth]{Chapter_02/Flow_chart_one_shot}
-\caption{Método \textit{one-shot}.}
-\label{fig: Flow_chart_one_shot}
-\end{subfigure}
-\begin{subfigure}[t]{.45\linewidth}
-\centering\includegraphics[width=\linewidth]{Chapter_02/Flow_chart_multi_step}
-\caption{Método \textit{multi-step}.}
-\label{fig: Flow_chart_multi_step}
-\end{subfigure}
-\caption{Diagramas de flujo de cada uno de los métodos de simulación de crecimiento de hielo.}
-\label{fig: Flow_chart_one_multi}
-\end{figure}
-%
-\subsection{Generalidades del problema.}
-%
-\indent El primer paso, previo al planteamiento de las diferentes metodologías enumeradas, es fijar la termodinámica del problema, es decir, a cada uno de los fenómenos que entran en juego. Supóngase un perfil aerodinámico sometido en un flujo aerodinámico con condiciones propicias para el engelamiento. En tales condiciones, se producen los siguientes flujos másicos y energéticos:
-%
-\begin{itemize}
-\item \textbf{Flujos másicos:}
-	\begin{itemize}
-	\item[\labelitemii] Impacto de gotas ($\dot{m}_{\beta}$).
-	\item[\labelitemii] Evaporación y/o sublimación de agua ($\dot{m}_{evap}$).
-	\item[\labelitemii] Formación de hielo ($\dot{m}_{ice}$).
-	\item[\labelitemii] Flujo de agua líquida sobre el perfil ($\dot{m}_{l, in/out}$).
-	\end{itemize}
-\item \textbf{Flujos energéticos:} 
-	\begin{itemize}
-	\item[\labelitemii] Energía cinética de las gotas ($\dot{Q}_{\beta, k}$).
-	\item[\labelitemii] Energía térmica de las gotas (estado subenfriado) ($\dot{Q}_{\beta, T}$).
-	\item[\labelitemii] Evaporación y/o sublimación de agua ($\dot{Q}_{evap}$).
-	\item[\labelitemii] Calentamiento aerodinámico por fricción viscosa ($\dot{Q}_{conv, \mu}$).
-	\item[\labelitemii] Flujo de calor por formación de hielo ($\dot{Q}_{ice}$).
-	\item[\labelitemii] Flujo de calor por el flujo de agua líquida sobre el perfil ($\dot{Q}_{l, in/out}$).
-	\item[\labelitemii] Flujo de calor por convección ($\dot{Q}_{conv}$).
-	\item[\labelitemii] Flujo de calor por radiación ($\dot{Q}_{rad}$).
-	\item[\labelitemii] Flujo de calor por conducción (contacto con el perfil) ($\dot{Q}_{cond}$).
-	\end{itemize}
-\end{itemize}
-%
-\indent De entre los anteriores términos, un análisis preliminar indican que los flujos de calor por radiación y por conducción resultan despreciables frente al resto de términos. También es cierto que ciertos términos desaparecen bajo determinadas condiciones (por ejemplo, en caso de que todo el impacto de gotas se convierta en hielo, no hay flujo de agua líquida). A partir de ahora, surgen dos formas de plantear las ecuaciones de la termodinámica: el enfoque de Messinger y el enfoque basado en ecuaciones diferenciales en derivadas parciales (\textit{PDE based}). 
-%
-\subsubsection{Modelización de Messinger.}
-%
-\indent El planteamiento de Messinger (ver \cite{messinger}) presenta un tratamiento algebraico del problema, resolviendo el equilibrio termodinámico como un conjunto de términos fuente y sumidero en las ecuaciones de la masa y de la energía. Considérese el volumen de control $\Omega$ (véanse las figuras \ref{fig: V_C_ECM_A} y \ref{fig: V_C_ECE_A}), de una forma arbitraria pero apoyado sobre la superficie del ala (o del hielo en caso de existir previamente). De la aplicación de la ecuación de conservación de la masa al mismo se deriva:
-%
-\[\dot{m}_{l, in} - \dot{m}_{l, out} + \dot{m}_{imp} - \dot{m}_{evap} - \dot{m}_{ice} = 0\]
-%
-\indent Se define la fracción de hielo formada, $f$, como la cantidad de masa de hielo formada en relación la masa total que entra en el volumen de control, es decir
-%
-\[f \equiv \dfrac{\dot{m}_{ice}}{\dot{m}_{\beta} + \dot{m}_{l, in}}\]
-%
-\noindent resultando la ecuación de conservación de la masa:
-%
-\[\dot{m}_{l, out } = (1-f) \left( \dot{m}_{\beta} + \dot{m}_{l, in} \right) - \dot{m}_{evap}\]
-%
-\begin{figure}[ht]
-\centering
-\medskip
-\begin{subfigure}[t]{.4995\linewidth}
-\centering\includegraphics[width=\linewidth]{Chapter_02/V_C_ECM}
-\caption{Flujos másicos.}
-\label{fig: V_C_ECM_A}	
-\end{subfigure}
-\begin{subfigure}[t]{.495\linewidth}
-\centering\includegraphics[width=\linewidth]{Chapter_02/V_C_ECE}
-\caption{Flujos energéticos.}
-\label{fig: V_C_ECE_A}	
-\end{subfigure}
-\caption{Volumen de control utilizado en la modelización de la formación de hielo.}
-\end{figure}\\
-%
-\indent La aplicación de la ecuación de la energía a dicho volumen de control resulta en:
-%
-\[\dot{Q}_{l, in} - \dot{Q}_{l, out} + \dot{Q}_{imp} - \dot{Q}_{evap} - \dot{Q}_{ice} - \dot{Q}_{conv} = 0\]
-%
-\noindent donde se han agrupado los términos de convección y fricción viscosa en $\dot{Q}_{conv}$. La ecuación anterior se puede modificar, introduciendo expresiones y modelos para los flujos de entalpía. La resolución de las dos ecuaciones resultantes se encuentra desarrollado en \cite{messinger}, pormenorizando cada uno de los casos.
-%
-\subsubsection{Planteamientos basados en ecuaciones en derivadas parciales.}
-%
-\indent Los métodos basados en ecuaciones diferenciales se fundamentan en las ecuaciones de conservación de la mecánica de fluidos a un volumen de control extendido desde la superficie del ala (hielo si lo hubiere) hasta la superficie libre del líquido (mostrado anteriormente en las figuras \ref{fig: V_C_ECM_A} y \ref{fig: V_C_ECE_A}). Para un desarrollo más en detalle, se recomienda acudir al capítulo quinto, donde se encuentran plasmadas con mayor detalle. A efectos de este apartado, se adjuntan a continuación, comenzando por la ecuación de conservación de la masa:
-%
-\[
-\dfrac{\partial h}{\partial t} + \dfrac{1}{S_i} \dint_{\partial \Omega_i} (\bar{ \bm U}_f h) \bm n d\sigma = \dfrac{1}{S_i}\dfrac{\dot{m}}{\rho_w}
-\]
-%
-\noindent donde $S_i$ es el área de la superficie del volumen de control apoyada sobre el ala o cuerpo en cuestión, $h$ es el espesor de la película líquida y $\bar{\bm U}_f$ es la velocidad del agua promediada en el espesor. El término fuente de flujos másicos $\dot{m}$ agrupa las siguientes aportaciones:
-%
-\[
-\dot{m} \equiv \dot{m}_{imp} - \dot{m}_{evap} - \dot{m}_{ice}
-\]
-%
-\indent Por otra parte, la ecuación de la conservación de la entalpía en el volumen de control $\Omega_i$ resulta, tras unas ciertas modificaciones, en:
-%
-\[
-\dfrac{\partial hT}{\partial t} + \dfrac{1}{S_i} \dint_{\partial \Omega_i} (\bm U_f h T) \bm n d\sigma = \dfrac{1}{S_i}\dfrac{\dot{Q}}{\rho_w}
-\]
-%
-\noindent donde $T$ hace referencia a la temperatura de la película de agua líquida, y $\dot{Q}$ es el término fuente de la ecuación, de expresión:
-%
-\[
-\dot{Q} \equiv \dot{Q}_{imp} - \dot{Q}_{evap} + \dot{Q}_{ice} + \dot{Q}_{conv}
-\]
-%
-\indent Las ecuaciones desarrolladas hasta ahora cuentan con un serio problema. Si bien son dos ecuaciones, involucran tres incógnitas: el espesor $h$, la temperatura $T$ y el flujo másico de hielo $\dot{m}_{ice}$. Para resolver este inconveniente, se imponen una serie de restricciones termodinámicas, como se verá más adelante, restricciones que concluyen en una superficie matemática que supone la condición de cierre del problema. El método planteado en este proyecto para la resolución de las ecuaciones anteriores se basa en la utilización de una variable y una ecuación de cierre (la mencionada superficie); esto es, en función de una hipótesis inicial, se supone conocida una de las variables, y con ella se resuelven las ecuaciones diferenciales una vez han sido convenientemente discretizadas. Todo esto se encuentra pormenorizado en el capítulo quinto del trabajo.
-%
-\section{Consideraciones finales.}
-%
-\indent El problema de la formación de hielo en vuelo tiene una gran dificultad inherente, tanto a nivel global por la interacción de sus módulos involucrados, como por la complejidad de cada uno de ellos por separado. El enfoque modular permite hasta cierto punto variar cada componente de manera independiente (sea el solver CFD, el cálculo de las trayectorias de las gotas o el módulo termodinámico). De su interacción surge la primera gran dificultad: el mallado del problema. Si bien lo ideal sería un mallado para cada módulo, optimizado para su funcionamiento individual, esto resulta una tarea inabarcable y, dado que el más restrictivo en este respecto es el solver CFD, se utilizará su mallado para todos los problemas. Toda esta complejidad se vuelve aún más acusada al considerar un problema tridimensional, a nivel modular y a nivel sistemático. Remarcar por último que el principal objeto de este trabajo es desarrollar un módulo termodinámico eficiente y robusto (en principio para un problema bidimensional), basado en el enfoque diferencial mediante la aplicación de las ecuaciones de conservación de la mecánica de fluidos. Para ello, se analizarán en el siguiente capítulo los diferentes métodos numéricos de modelización y discretización de problemas físicos basados en ecuaciones diferenciales en derivadas parciales.
-%
+	\end{array}
+	\end{array}
+	
+	\]
+	
+	%
+	\noindent and introducing this result into \eqref{eqCh2: 	Rel_motion_2}, we arrive to \cite{Yamanaka_Ankersen}:
+	%
+	\begin{equation}
+	\left\{
+	\begin{array}{c}
+	\ddot{x}\\
+	\ddot{y}\\
+	\ddot{z}
+	\end{array}\right\}
+	= 
+	\left\{
+	\begin{array}{c}
+	- k \omega^{3/2} x + 2\omega \dot{z} + \dot{\omega} z + \omega^2 x	
+	\end{array}\right\}
+	+ \underline{a}_f + \underline{a}_{D, d} - \underline{a}_{C, d}
+	\label{eqCh2: Diff_eqs_prox}
+	\end{equation}
+	%
+	\noindent where $k$ is a constant defined by 
+	%
+	\[
+	\dfrac{\mu}{R^3} = \left(\dfrac{\mu }{h^{3/2}} \equiv k \omega^{3/2} \Leftrightarrow k \equiv \dfrac{\mu} {h^{3/2}}
+	\]
+	%
+	\indent and $h = \omega R^2$ is the chief's angular momentum. TO BE CONTINUED, MATRIX FORM OF HILL EQUATIONS. ALSO ADD VECTOR NOTATION OF EACH
