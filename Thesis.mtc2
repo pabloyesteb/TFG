@@ -1,12 +1,22 @@
 {\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {1.1}Introduction.}{\reset@font\mtcSfont 1}{section.1.1}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {1.2}Motion model and STM.}{\reset@font\mtcSfont 2}{section.1.2}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {1.2.1}Differential equations of proximity relative motion.}{\reset@font\mtcSSfont 2}{subsection.1.2.1}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {1.2.2}Simplification of equations of motion: YA solution.}{\reset@font\mtcSSfont 2}{subsection.1.2.2}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {1.2.3}YA STM and integration constants.}{\reset@font\mtcSSfont 2}{subsection.1.2.3}}
-{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {1.2.3.1}In-plane motion.}{\reset@font\mtcSSSfont 2}{subsubsection.1.2.3.1}}
-{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {1.2.3.2}Out-of-plane motion.}{\reset@font\mtcSSSfont 2}{subsubsection.1.2.3.2}}
-{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {1.2.3.3}Solution scheme.}{\reset@font\mtcSSSfont 2}{subsubsection.1.2.3.3}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {1.2.4}Results: Comparison with HCW and Hi-Fi propagation.}{\reset@font\mtcSSfont 2}{subsection.1.2.4}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {1.3}Orbit safety in eccentric, unperturbed orbits.}{\reset@font\mtcSfont 2}{section.1.3}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {1.3.1}Generalized eccentricity/inclination vectors separation.}{\reset@font\mtcSSfont 2}{subsection.1.3.1}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {1.3.2}General trajectories and safe orbits.}{\reset@font\mtcSSfont 2}{subsection.1.3.2}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {1.2}Motion model: Hill equations.}{\reset@font\mtcSfont 1}{section.1.2}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {1.2.1}Differential equations of proximity relative motion.}{\reset@font\mtcSSfont 1}{subsection.1.2.1}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {1.2.2}Hill equations.}{\reset@font\mtcSSfont 3}{subsection.1.2.2}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {1.3}Solutions of Hill equations.}{\reset@font\mtcSfont 3}{section.1.3}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {1.3.1}Approaches.}{\reset@font\mtcSSfont 3}{subsection.1.3.1}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {1.3.2}Direct numerical integration.}{\reset@font\mtcSSfont 3}{subsection.1.3.2}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {1.3.3}Clohessy-Wiltshire solution.}{\reset@font\mtcSSfont 3}{subsection.1.3.3}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {1.3.4}State transition matrix propagation.}{\reset@font\mtcSSfont 3}{subsection.1.3.4}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {1.3.4.1}Jordan canonical decomposition.}{\reset@font\mtcSSSfont 3}{subsubsection.1.3.4.1}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {1.3.5}Results: Comparison against High-Fidelity.}{\reset@font\mtcSSfont 3}{subsection.1.3.5}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {1.3.5.1}Scenario 1: XXXXXX}{\reset@font\mtcSSSfont 3}{subsubsection.1.3.5.1}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {1.3.5.2}Scenario 2: XXXXXX}{\reset@font\mtcSSSfont 3}{subsubsection.1.3.5.2}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {1.3.5.3}Scenario 3: XXXXXX}{\reset@font\mtcSSSfont 3}{subsubsection.1.3.5.3}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {1.4}Orbit safety in near-circular orbits.}{\reset@font\mtcSfont 3}{section.1.4}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {1.4.1}Orbit safety concept.}{\reset@font\mtcSSfont 3}{subsection.1.4.1}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {1.4.2}Eccentricity-inclination vector separation strategy.}{\reset@font\mtcSSfont 3}{subsection.1.4.2}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {1.4.2.1}Eccentricity and inclination vectors.}{\reset@font\mtcSSSfont 3}{subsubsection.1.4.2.1}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {1.4.2.2}Linearized effect of $\delta e$ and $\delta i$ in relative position.}{\reset@font\mtcSSSfont 3}{subsubsection.1.4.2.2}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {1.4.2.3}Collision avoidance: $\delta {\underline {e}} / \delta {\underline {i}}$ separation.}{\reset@font\mtcSSSfont 3}{subsubsection.1.4.2.3}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Parallel configuration. \\}{\reset@font\mtcPfont 3}{subsubsection.1.4.2.3}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Antiparallel configuration. \\}{\reset@font\mtcPfont 4}{subsubsection.1.4.2.3}}
