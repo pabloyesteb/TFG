@@ -1030,7 +1030,7 @@
 		\]
 		%
 	%
-	\subsection{Relative Keplerian OEs to RTN.}
+	\subsection{Relative Keplerian OEs to RTN.}\label{sec:RKOE2RTN}
 	%
 	\indent Although one can technically go from RKOEs to RTN coordinates in several steps already described, there is a direct mapping between them, developed by H. Schaub \cite{Schaub2004}. Without further ado, the position mapping is expressed as follows:
 	%

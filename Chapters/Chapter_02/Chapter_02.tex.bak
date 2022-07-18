@@ -173,15 +173,74 @@
 %
 	\subsection{Orbit safety concept.}
 	%
+	\indent Orbit or trajectory safety can be understood as how protected from danger or risk our spacecraft set is. It is essentially a kinematic condition, being closely related to the notions of relative position and distance, and how these vary over time. Both branches of relative motion (\ie rendez-vous and formation flying) are subject to this concept. \\
+	%
+	\indent One of the biggest concerns about orbit safety is trajectory uncertainty. If we knew the exact position of each spacecraft, safety margins could be lowered down to almost zero, but unfortunately, that is not the case. For this reason, distance margins have to be established. As we have seen, there are three basic components in relative motion: radial, along-track and cross-track. The most susceptible one to estimation errors is the along-track component, due to the high influence of the semimajor axis on the angular rate, thus on the angular position \cite{Eckstein}. Hence, along-track uncertainty will always tend to be much higher than either radial or cross-track.\\
+	%
+	\indent With this fact in mind, it seems logical to try and separate the spacecrafts in radial or cross-track components, as motion can be more accurately predicted in those directions. It is here where the eccentricity/inclination vector separation concept raises, as an approach to describe the periodic relative motion that takes place in said components. In the following section, its grounds and applications will be discussed, both in general terms and applied to near-circular reference orbits.
 	%
 	\subsection{Eccentricity-inclination vector separation strategy.}
 	%
 	%
 		\subsubsection{Eccentricity and inclination vectors.}
 		%
+		\indent The eccentricity and inclination vectors constitute an interesting way to parametrize relative motion. This description was firstly introduced by Eckstein \cite{Eckstein}, aimed at geostationary orbits. Later on, it was extended to proximity LEO operations \cite{Montenbruck_DAmico}, which is today's main scope of application. \\
+		%
+		\indent This approach to orbit safety will be treated recurrently along the thesis, being progressively extended as the orbits grow in complexity. In this section, the basics of this concept will be described, starting with the parametrization of proximity relative motion in terms of the eccentricity and inclination vectors (see appendix \ref{sec:EIROE}). After that, the two setups of $\delta \underline{e}$ and $\delta \underline{i}$ are discussed.
 		%
 		\subsubsection{Linearized effect of $\delta e$ and $\delta i$ in relative position.}
 		%
+		\indent Our target is to obtain an expression which relates the eccentricity and inclination vector components to the radial, along-track and cross-track distances. This can be done by applying some transformations to the already available Keplerian OE set to RTN (see \ref{sec:RKOE2RTN}), or through a geometric analysis of the motion. As the first one is almost trivial (considered said section), let us proceed with the second one.\\
+		%
+			\paragraph{Effect of relative eccentricity vector $\delta \underline{e}$. \\}
+			%
+			\indent The relative eccentricity vector accounts for the variation in the eccentricity value and the argument of perigee. Assuming no other variation in any element, it can be projected on the chief's orbital plane, leading to:
+			%
+			\[
+			\underline{e} = \left\{ 
+			\begin{array}{c}
+			 e_x \\[1.5em]
+			 e_y
+			\end{array}\right\} 
+			 = e \begin{array}{c}
+			 \cos\omega \\[1.5em]
+			 \sin\omega \Rightarrow
+			\end{array}\right\} 
+			\delta \underline{e} = 
+			\left\{ 
+			\begin{array}{c}
+			\delta e_x \\[1.5em]
+			\delta e_y
+			\end{array}
+			\right\} = \delta e
+			\left\{ 
+			\begin{array}{c}
+			\cos\varphi \\[1.5em]
+			\sin\varphi
+			\end{array}
+			\right\}
+			\]
+			%
+			\indent The relative eccentricity has an effect on the in-plane motion. That is to say, on the radial and along-track components. In order to get these, we must first derive some expressions for the orbital radius $r$ and the difference $\theta - M$. \\
+			%
+			\indent The orbital radius for near-circular orbits ($\abs{e}<<1$) can be expressed as:
+			%
+			\begin{align}
+			\nonumber \dfrac{r}{a} = 1 -e\cos E \approx 1 - e\cos M = 1 - e\cos\left(\lambda - \omega\right) = 1 - e\cos\omega \cos \lambda+ e \sin \lambda \sin\omega \\
+			\dfrac{r}{a} \approx 1 - e_x \cos\lambda - e_y \sin \lambda
+			\label{eqCh2:orbital_radius}
+			\end{align}
+			%
+			\noindent where $\lambda$ is the mean argument of perigee, which embodies the time-varying element of the E/I element set. The second auxiliary expression $\theta - M$ can be obtained in many handbooks, by looking for the series expansion of the mean anomaly in terms of the true \cite{Battin}:
+			%
+			\begin{align}
+			&\nonumber M =\theta+ 2\dsum_{n=1}^{\infty} (-1)^{n} \left( \dfrac{1}{n} + \sqrt{1 - e^2} \right) \beta^n \sin n\theta \underset{e<<1}{\approx} \theta - 2 e \sin\theta\\
+			& \theta - M = 2 e\sin M = 2 e \sin\left(\lambda - \omega\right) = 2e\left(\sin\lambda\cos\omega - \cos\lambda\sin\omega\right) = 2 e_x\sin u - 2 e_y \cos\lam
+			\label{eqCh2:M_expansion}
+			\end{align}
+			
+			
+			
 		%
 		\subsubsection{Collision avoidance: $\delta{\underline{e}} / \delta{\underline{i}}$ separation.}
 		%
