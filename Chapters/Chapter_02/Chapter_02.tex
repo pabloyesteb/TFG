@@ -188,9 +188,10 @@
 		%
 		\indent This approach to orbit safety will be treated recurrently along the thesis, being progressively extended as the orbits grow in complexity. In this section, the basics of this concept will be described, starting with the parametrization of proximity relative motion in terms of the eccentricity and inclination vectors (see appendix \ref{sec:EIROE}). After that, the two setups of $\delta \underline{e}$ and $\delta \underline{i}$ are discussed.
 		%
-		\subsubsection{Linearized effect of $\delta e$ and $\delta i$ in relative position.}
+%		\subsubsection{Linearized effect of $\delta e$ and $\delta i$ in relative position.}
+		\subsubsection{Linearized equations of relative motion in terms of $\delta\underline{e}$ and $\delta\underline{i}$.}
 		%
-		\indent Our target is to obtain an expression which relates the eccentricity and inclination vector components to the radial, along-track and cross-track distances. This can be done by applying some transformations to the already available Keplerian OE set to RTN (see \ref{sec:RKOE2RTN}), or through a geometric analysis of the motion. As the first one is almost trivial (considered said section), let us proceed with the second one.\\
+		\indent Our target is to obtain an expression which relates the eccentricity and inclination vector components to the radial, along-track and cross-track distances. This can be done by applying some transformations to the already available Keplerian OE set to RTN (see \ref{sec:RKOE2RTN}), or through a geometric analysis of the motion. As the first one is almost trivial (considered said section), let us proceed with the second one, explained in more detail in \cite{DAmico_Montenbruck}:\\
 		%
 			\paragraph{I. Effect of relative eccentricity vector $\delta \underline{e}$. \\}
 			%
@@ -202,10 +203,11 @@
 			 e_x \\[1.5em]
 			 e_y
 			\end{array}\right\} 
-			 = e \begin{array}{c}
+			 = e \left\{\begin{array}{c}
 			 \cos\omega \\[1.5em]
-			 \sin\omega \Rightarrow
+			 \sin\omega 
 			\end{array}\right\} 
+			\Rightarrow
 			\delta \underline{e} = 
 			\left\{ 
 			\begin{array}{c}
@@ -226,38 +228,269 @@
 			\indent The orbital radius for near-circular orbits ($\abs{e}<<1$) can be expressed as:
 			%
 			\begin{align}
-			\nonumber \dfrac{r}{a} = 1 -e\cos E \approx 1 - e\cos M = 1 - e\cos\left(\lambda - \omega\right) = 1 - e\cos\omega \cos \lambda+ e \sin \lambda \sin\omega \\
-			\dfrac{r}{a} \approx 1 - e_x \cos\lambda - e_y \sin \lambda
+			&\nonumber \dfrac{r}{a} = 1 -e\cos E \approx 1 - e\cos M = 1 - e\cos\left(\lambda - \omega\right) = 1 - e\cos\omega \cos \lambda+ e \sin \lambda \sin\omega \\
+			& \dfrac{r}{a} \approx 1 - e_x \cos\lambda - e_y \sin \lambda
 			\label{eqCh2:orbital_radius}
 			\end{align}
 			%
-			\noindent where $\lambda$ is the mean argument of perigee, which embodies the time-varying element of the E/I element set. The second auxiliary expression $\theta - M$ can be obtained in many handbooks, by looking for the series expansion of the mean anomaly in terms of the true \cite{Battin}:
+			\noindent where $\lambda$ is the mean argument of latitude, which embodies the time-varying element of the E/I element set. The second auxiliary expression $\theta - M$ can be obtained in many handbooks, by looking for the series expansion of the mean anomaly in terms of the true \cite{Battin}:
 			%
 			\begin{align}
 			&\nonumber M =\theta+ 2\dsum_{n=1}^{\infty} (-1)^{n} \left( \dfrac{1}{n} + \sqrt{1 - e^2} \right) \beta^n \sin n\theta \underset{e<<1}{\approx} \theta - 2 e \sin\theta\\
-			& \theta - M = 2 e\sin M = 2 e \sin\left(\lambda - \omega\right) = 2e\left(\sin\lambda\cos\omega - \cos\lambda\sin\omega\right) = 2 e_x\sin\lambda - 2 e_y \cos\lambda
+			& \Rightarrow \theta - M = 2 e\sin M = 2 e \sin\left(\lambda - \omega\right) = 2e\left(\sin\lambda\cos\omega - \cos\lambda\sin\omega\right) = 2 e_x\sin\lambda - 2 e_y \cos\lambda
 			\label{eqCh2:M_expansion}
 			\end{align}
+			%%
+			\indent Assuming that both spacecrafts have the same mean argument of latitude and semimajor axis, the radial and along-track distance ($\delta r_R$, $\delta r_T$) between chief and deputy are due to (a) the difference in orbital radius $\delta r$ and (b) the difference in true argument of latitude $\delta u = \delta \theta + \delta \omega$. With this in mind, let us construct a graphical representation of the situation, shown in \ref{figCh2:ecc_effect}:
 			%
-			\subparagraph{I.A. Effect of $\delta \underline{e}$ in $\delta r_R$. \\}
+			\begin{figure}[!htb]
+			\centering\includegraphics[width = 0.4\linewidth]{Figures/Dummy_figure}
+			\caption{Effect of $\delta r$ and $\delta u$ in radial and along-track distances.}
+			\label{figCh2:ecc_effect}
+			\end{figure}
 			%
-			\indent Assuming that both spacecrafts have the same mean argument of perigee and semimajor axis, the radial distance between them is due just to the difference in orbital radius. That is, in virtue of \eqref{eqCh2:orbital_radius}:
+			\FloatBarrier
+			%
+			\indent The angle $\alpha$ can be developed in terms of known magnitudes, that is:
 			%
 			\begin{align}
-			&\nonumber \delta r_R = \delta r = r_2 - r_1 \approx a \left(e_1 \cos M_1 - e_2 \cos M_2\right)\\
-			& \theta - M = 2 e\sin M = 2 e \sin\left(\lambda - \omega\right) = 2e\left(\sin\lambda\cos\omega - \cos\lambda\sin\omega\right) = 2 e_x\sin\lambda - 2 e_y \cos\lambda
-			\label{eqCh2:r_R_ecc}
+			&\nonumber \alpha = u_2 - u_1 = \left(\lambda_2 - \lambda_1\right) + \left(\theta_2 - M_2\right) - \left(\theta_1 - M_1\right) = \\
+			&\label{eqCh2:alpha}0 + 2 e_2 \sin M_2 - 2 e_1 \sin M_1 = 2 \delta e_x \sin\lambda - 2 \delta e_y \cos\lambda \mathcal{O}(\delta e) \sim 10^{-3} \ \
+			\end{align}
+			\subparagraph{\textcolor{GMVred}{I.A.} Effect of $\delta \underline{e}$ in $\delta r_R$. \\}
+			%
+			\indent Radial distance can be derived from figure \ref{figCh2:ecc_effect} as:
+			%
+			\begin{align}
+			\nonumber \delta r_R = r_2 \cos\alpha - r_1 \approx r_2 - r_1 = \delta r
 			\end{align}
 			%
-			\subparagraph{I.B. Effect of $\delta \underline{e}$ in $\delta r_T$. \\}
-			
-		%
-		\subsubsection{Collision avoidance: $\delta{\underline{e}} / \delta{\underline{i}}$ separation.}
-		%
-		%
-			\paragraph{Parallel configuration. \\}
+			\indent In virtue of equation \eqref{eqCh2:orbital_radius}:
 			%
+			\begin{align}
+			&\nonumber \delta r_R = \delta_r = a \left(e_1 \cos M_1 - e_2 \cos M_2 
+			&\nonumber \dfrac{\delta r_R}{a} = e_1 \left( \cos\lambda \cos\omega_1 - \sin\lambda\sin\omega_1 \right) - e_2 \left(\cos \lambda \cos\omega_2 - \sin\lambda\sin\omega_2\right) = \cos\lambda \left(e_{x1} - e_{x2}\right) - \sin\lambda \left(e_{y1} - e_{y2}\right) \\
+			&\label{eqCh2:r_R_ecc} \Rightarrow \dfrac{\delta r_R}{a}\rvert_{\delta e} \approx - \delta e_y\sin\lambda - \delta e_x \cos\lambda
+			\end{align}
 			%
-			\paragraph{Antiparallel configuration. \\}
+			\subparagraph{\textcolor{GMVred}{I.B.} Effect of $\delta \underline{e}$ in $\delta r_T$. \\}
 			%
+			\indent The along-track distance can be computed in a similar manner, neglecting terms of order $e\delta e$ and higher:
+			%
+			\begin{align}
+			&\nonumber \delta r_T = r_2 \sin\alpha \underset{\abs{\alpha} << 1}{\approx} a \left(1 - e_2 \cos M_2\right) \alpha \underset{\abs{e\delta e} << \delta e}{\approx} a\alpha \\
+			& \label{eqCh2:r_T_ecc}\Rightarrow \dfrac{\delta r_T}{a}\rvert_{\delta e} \approx \alpha =  2 \delta e_x \sin\lambda - 2 \delta e_y \cos\lambda
+			\end{align}
+			%
+			\paragraph{\textcolor{GMVred}{II.} Effect of relative inclination vector $\delta \underline{i}$. \\}
+			%
+			\indent As presented in section \ref{sec:EIROE}, the relative inclination vector takes the following form:
+			%
+			\[
+			\delta \underline{i} = \sin\delta i\left\{
+			\begin{array}{c}
+			\cos\psi\\
+			\sin\psi
+			\end{array}
+			\right\}
+			\approx \left\{
+			\begin{array}{c}
+			\delta i \\
+			\sin i \delta \Omega
+			\end{array}
+			\right\}
+			\]
+			%
+			\indent Its effect on the cross-track distance can be derived from the spherical triangle in figure \ref{figCh2:inc_rN}, applying the law of sines as:
+			%
+			\begin{align}
+			&\label{eqCh2:r_N_1} \dfrac{\sin \left(u_2 - \psi\right)}{\sin\frac{\pi}{2}} = \dfrac{\sin\dfrac{\delta r_N}{a}}{\sin \delta i} \Rightarrow \sin \dfrac{\delta r_N}{a} \underset{\delta r_N << a}{\approx} \dfrac{\delta r_N}{a} = \sin \delta i \sin\left(u_2 - \psi\right)
+			\end{align}
+			%
+			\indent However, we need an expression with the mean argument of latitude instead of the true one. As we look to retain only first-order terms:
+			%
+			\begin{align}
+			&\nonumber \sin(u -  \psi) 	&&= \sin \left[ (\lambda - \psi) + (u - \lambda)\right] = \sin (\lambda - \psi) \cos (\u - \lambda) + \cos(\lambda-\psi)\sin (u -  \lambda) =\\
+			&\label{eqCh2:Lambda_u} 							&&  \sin (\lambda - \psi) \cos(2e\sin\theta) + \cos(\lambda-\psi)\sin (2e\sin \theta) \underset{\abs{2e\sin\theta} <<1}{\approx}\sin (\lambda - \psi) \left(1 - \dfrac{(2e\sin\theta)^{2}}{2}\right) +  \cos(\lambda-\psi) 2e\sin\theta = \sin (\lambda - \psi) + \mathcal{O}(e)
+			\end{align}
+			%
+			\indent Substituting \eqref{eqCh2:Lambda_u} into \eqref{eqCh2:r_N_1}:
+			%
+			\begin{align}
+			&\nonumber \dfrac{\delta r_N}{a} \approx \sin\delta i \sin(\lambda - \psi) = \sin\delta i \cos\psi \sin \lambda - \sin\delta i \sin \theta \cos\lambda \\
+			& \label{eqCh2:r_N_2} \Rightarrow \dfrac{\delta r_N}{a}\rvert_{\delta i} \approx \delta i_x \sin \lambda - \delta i_y \cos\lambda
+			\end{align}
+			%
+			\begin{figure}[!htb]
+			\centering\includegraphics[width = 0.4\linewidth]{Figures/Dummy_figure}
+			\caption{Inclination vector and cross-track distance.}
+			\label{figCh2:inc_rN}
+			\end{figure}
+			%
+			\FloatBarrier
+			%
+			\paragraph{\textcolor{GMVred}{III.} Effect of relative semimajor axis and mean argument of latitude $\delta a$, $\delta \lambda$. \\}
+			%
+			\indent As previously stated, the relative semimajor axis has a crucial influence on the relative dynamics, as it varies the angular rate of the orbit, leading to a unbounded along-track drift. Consequently, let us estimate, to first order, the effect of a relative semimajor axis $\delta a$ in the angular rate $\dot{\lambda}$:
+			%
+			\begin{align}
+			&\nonumber \dot{\lambda}(a) = \dot{\omega} + \dot{M}(a) = \dot{M}(a) = n = \dsqrt{\mu}{a^3} \\
+			& \nonumber \Rightarrow \delta\dot{\lambda}_{\delta a} = \dot{\lambda}(a + \delta_a) - \dot{\lambda}(a) =\dsqrt{\mu}{(a + \delta a)^3} - \dsqrt{\mu}{a^3} = \dsqrt{\mu}{a^3}\left[ \dfrac{1}{\left(1 + \frac{\delta a}{a}\right)^{3/2}} - 1\right] \underset{\abs{\frac{\delta a}{a}<<1}}{\approx} - \dfrac{3}{2}\dfrac{\delta a}{a} n\\
+			%
+			& \label{eqCh2:dLambda} \delta \lambda\rvert_{\delta a} \dint_{t_0}^{t} \delta \dot{\lambda} dt = - \dfrac{3}{2}\dfrac{\delta a}{a} n (t - t_0) = - \dfrac{3}{2}\dfrac{\delta a}{a} (M - M_0) = - \dfrac{3}{2}\dfrac{\delta a}{a} (\lambda - \lambda_0)
+			\end{align}
+			%
+			\subparagraph{\textcolor{GMVred}{III.A.} Effect of $\delta \underline{a}, \; \delta \lambda$ in $\delta r_R$. \\}
+			%
+			\indent The expression for the radial distance induced by $\delta a$ is, assuming a constant mean argument of latitude $\lambda$ and argument of perigee $\omega$:
+			%
+			\begin{align}
+			&\nonumber \delta r_R \approx r_2 - r_1 \approx (a + \delta a) (1 - e_2 \cos M_2) - a (1 - e_1 \cos M_1) \approx \delta a \\
+			& \label{eqCh2:r_R_a} \dfrac{\delta r_R}{a}\rvert_{\delta a} \approx \dfrac{\delta a}{a}
+			\end{align}
+			%
+			\noindent where it is assumed that the relative mean argument of latitude has no effect on it.
+			%
+			\subparagraph{\textcolor{GMVred}{III.B.} Effect of $\delta \underline{a}, \; \delta \lambda$ in $\delta r_T$. \\}
+			%
+			\indent The effect in along-track distance is due to both $\delta a$ and $\delta \lambda$, as $\lambda$ is intrinsically affected by $\delta a$ (see eq. \eqref{eqCh2:dLambda}). Without further ado:
+			%
+			\begin{align}
+			&\nonumber \delta r_T = r_2 \sin(u_2 - u_1) \underset{\eqref{eqCh2:dLambda}}{\approx} r_2 \sin(\lambda_2 - \lambda_1) \underset{\abs{\lambda_2 - \lambda_1} << 1}{\approx} (a + \delta a) \left(1 - e_2 \cos M_2\right) (\lambda_2 - \lambda_1) \underset{e<<1}{\approx} (a + \delta a) \left[\delta \lambda - \dfrac{3}{2}\dfrac{\delta a}{a} (\lambda - \lambda_0) \right] 
+			& \label{eqCh2:r_T_a_lam} \dfrac{\delta r_T}{a}\rvert_{\delta a \delta\lambda} \approx \delta\lambda - \dfrac{3}{2}\dfrac{\delta a}{a} (\lambda - \lambda_0)
+			\end{align}
+			%
+			\paragraph{\textcolor{GMVred}{IV.} Final set of linearized equations. \\}
+			%
+			\indent Now, considering all the previous effects, we can reach a compact set of equations \cite{Montenbruck_DAmico}:
+			%
+			\begin{align}
+			\label{eqCh2:Lin_eqs_full} \left\{ \begin{array}{c}
+			\delta r_R\\
+			\delta r_T\\
+			\delta r_N
+			\end{array}\right\}
+			 = 
+			\left\{ \begin{array}{c}
+			\delta a\\
+			\delta \lambda - \frac{3}{2}\frac{\delta a}{a} (\lambda - \lambda_0) \\
+			0
+			\end{array}\right\}
+			+
+			a\delta e \left\{ \begin{array}{c}
+			-\cos(\lambda - \varphi)\\
+			2\sin (\lambda - \varphi) \\
+			0
+			\end{array}\right\}
+			+
+			a\delta i \left\{ \begin{array}{c}
+			0 \\
+			0 \\
+			\sin (\lambda - \psi)
+			\end{array}\right\}
+			\\
+			&\label{eqCh2:Lin_eqs_compact} \left\{ \begin{array}{c}
+			\delta r_R\\
+			\delta r_T\\
+			\delta r_N
+			\end{array}\right\} 
+			= 
+			\left[\begin{array}{cccc}
+			\delta a / a 	& 0 						& -\delta e_x 	& -\delta e_y \\
+			\delta \lambda 	& -\frac{3}{2} \delta a / a & -2\delta e_y 	& 2\delta e_x \\
+			0				& 0 						& -\delta i_y 	& \delta i_x \\
+			\end{array}\right]
+			\left\{ \begin{array}{c}
+			1\\
+			\lambda - \lambda_0\\
+			\cos\lambda \\
+			\sin \lambda
+			\end{array}\right\} 
+			\end{align}
+			%
+			\indent A comparison of \ref{eqCh2:Lin_eqs_compact} and the analytical solution of the HCW equations show a complete correspondence of individual terms, hence proving the mathematical equivalence of both formulations. This equation can also be understood as a linearized approach to the Gauss Variational Equations, and finally, as an alternative to the mapping provided in \ref{sec:RKOE2RTN}.
+			%
+		\subsubsection{Collision avoidance for bounded trajectories: $\delta{\underline{e}} / \delta{\underline{i}}$ separation.}
+		%
+		\indent Let us now particularize the previous equations for the bounded trajectory case. This means that there is no mutual drift, hence relative semimajor axis drops to zero. The equations for the relative distances between both spacecrafts can be expressed as:
+		%
+		\begin{subequations}
+		\label{eqCh2:EI_1}
+		\begin{alignat}{4}[left = \empheqlbrace]
+		& \dfrac{\delta r_R}{a} = -\delta e \cos(\lambda -  \varphi) \\
+		& \dfrac{\delta r_T}{a} = 2\delta e \sin(\lambda -  \varphi) \\
+		& \dfrac{\delta r_N}{a} =  \delta i \sin(\lambda -  \psi) \\
+		\end{alignat}
+		\end{subequations}
+		%
+		\indent This formulation eases facilitates the safety analysis, as we will later see. In order to avoid collision hazard, considering along-track position uncertainties, a proper separation in radial and cross-track components must be set up. As shown in  \cite{Terrasar}, two possible strategies to achieve this are (a) a parallel alignment of $\delta \underline{e}$ and $\delta \underline{i}$ and (b) an antiparallel (orthogonal) arrangement.\\
+		%
+		\indent Before discussing these alternatives, let us do a quick analysis of the relevant positions that may arise from \eqref{eqCh2:EI_1}. If $\lambda = \varphi$, tangential distance vanishes, that is, the deputy is right below the chief (at a certain cross-track distance). Conversely, if $\lambda = \varphi + \frac{pi}{2}$, radial distance vanishes, and the deputy comes just in front of the chief. Similar statements can be made with the out-of-plane motion. A graphical representation of the mentioned geometry is shown in figure \ref{figCh2:E_I_general}.
+		%
+		%
+		\begin{figure}[!htb]
+		\centering\includegraphics[width = 0.4\linewidth]{Figures/Dummy_figure}
+		\caption{Relative motion in RTN frame for $\delta a = 0$ and a general $\delta \underline{e}$ - $\delta \underline{i}$ alignment.}
+		\label{figCh2:E_I_general}
+		\end{figure}
+		%
+		\FloatBarrier
+		%
+			\paragraph{\textcolor{GMVred}{A.} Parallel configuration. \\}
+			%
+			\indent If the relative eccentricity and inclination vectors are parallel, then we can write:
+			%
+			\begin{align}
+			& \delta\underline{e} \rVert \delta \underline{i} \Rightarrow \delta \underline{e} \cdot \delta\underline{i} = \delta e \delta i \left\{ \begin{array}{cc}
+			\cos\varphi & \sin\varphi
+			\end{array}\right}
+			\left\{ \begin{array}{c}
+			\cos\psi\\
+			\sin\psi
+			\end{array}\right\} =  \delta e \delta i \cos (\varphi - \psi) \underset{\delta\underline{e} \rVert \delta \underline{i}} {\xlongequal}  1\\
+			& \label{eqCh2:Parallel_ei}\Longrightarrow \varphi = \psi + 2\pi k\; , \qquad k \in \mathbb{Z}
+			\end{align}
+			%
+			\indent For this configuration, the radial and cross-track distances never drop to zero simultaneously. In fact, if $\delta r_R = 0$, then $\delta r_N$ is maximum, and viceversa. Hence, minimum separation satisfies:
+			%
+			\[
+			\mod{\delta \underline{r}} \geq \min\left(a \delta e, \; a\delta i\right)
+			\]
+			%
+			\indent In conclusion, separation between the spacecrafts is ensured, even if tangential distance is null. A graphical representation of this configuration can be seen in 
+			%
+
+			\paragraph{\textcolor{GMVred}{B.}Antiparallel configuration. \\}
+			%
+			\indent The condition for antiparallel configuration can be expressed as:
+			%
+			\begin{align}
+			& \delta\underline{e} \perp \delta \underline{i} \Rightarrow \delta \underline{e} \cdot \delta\underline{i} = \delta e \delta i \left\{ \begin{array}{cc}
+			\cos\varphi & \sin\varphi
+			\end{array}\right}
+			\left\{ \begin{array}{c}
+			\cos\psi\\
+			\sin\psi
+			\end{array}\right\} =  \delta e \delta i \cos (\varphi - \psi) \underset{\delta\underline{e} \perp \delta \underline{i}} {\xlongequal} 0\\
+			& \label{eqCh2:Antiparallel_ei}\Longrightarrow \varphi = \psi + (2k+1)\frac{\pi}{2}\; , \qquad k \in \mathbb{Z}
+			\end{align}
+			%
+			\begin{figure}[ht]
+			\centering
+			\medskip
+			\begin{subfigure}[t]{.32\linewidth}
+			\centering\includegraphics[width=\linewidth]{Figures/Dummy_figure}
+			\caption{Parallel configuration.}
+			\label{figCh2:Antiparallel}
+			\end{subfigure}
+			\begin{subfigure}[t]{.32\linewidth}
+			\centering\includegraphics[width=\linewidth]{Figures/Dummy_figure}
+			\caption{Antiparallel configuration.}
+			\label{figCh2:Antiparallel}
+			\end{subfigure}
+			\caption{Relative motion for parallel and antiparallel $\delta \underline{e}/\delta\underline{i}$ vectors.}
+			\label{fig:E_I_par_anti}
+			\end{figure}
+			%
+			\FloatBarrier
 			%

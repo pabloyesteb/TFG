@@ -34,6 +34,7 @@
 \usepackage{multirow}
 \usepackage{mathtools}
 \usepackage{ctable}
+\usepackage{extarrows}
 
 %% === === === === === === BIBLATEX  === === === === === ===
 \usepackage[backend=biber,
@@ -163,6 +164,7 @@ decoration={snake,amplitude=.8mm,segment length=2mm,post length=1mm}}
 
 \usepackage[super]{nth}
 %% === === === === === === NEW MATH COMMANDS  === === === === === ===
+\newcommand{\abs}[1]{\mbox{$\left\lvert #1 \right\rvert$}}
 \newcommand{\sign}{\text{sign}}
 \newcommand{\degree}{\mbox{$^{\circ}$}}
 \newcommand{\eye}{\mathbb{I}}

@@ -17,107 +17,111 @@
 \contentsline {subsubsection}{\numberline {1.3.5.3}Scenario 3: XXXXXX}{3}{subsubsection.1.3.5.3}%
 \contentsline {section}{\numberline {1.4}Orbit safety in near-circular orbits.}{3}{section.1.4}%
 \contentsline {subsection}{\numberline {1.4.1}Orbit safety concept.}{3}{subsection.1.4.1}%
-\contentsline {subsection}{\numberline {1.4.2}Eccentricity-inclination vector separation strategy.}{3}{subsection.1.4.2}%
-\contentsline {subsubsection}{\numberline {1.4.2.1}Eccentricity and inclination vectors.}{3}{subsubsection.1.4.2.1}%
-\contentsline {subsubsection}{\numberline {1.4.2.2}Linearized effect of $\delta e$ and $\delta i$ in relative position.}{3}{subsubsection.1.4.2.2}%
-\contentsline {subsubsection}{\numberline {1.4.2.3}Collision avoidance: $\delta {\underline {e}} / \delta {\underline {i}}$ separation.}{3}{subsubsection.1.4.2.3}%
-\contentsline {paragraph}{Parallel configuration. \\}{3}{subsubsection.1.4.2.3}%
-\contentsline {paragraph}{Antiparallel configuration. \\}{4}{subsubsection.1.4.2.3}%
-\contentsline {chapter}{\numberline {2}Relative dynamics around elliptic reference orbits.}{5}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Introduction.}{5}{section.2.1}%
-\contentsline {section}{\numberline {2.2}Motion model and STM.}{6}{section.2.2}%
-\contentsline {subsection}{\numberline {2.2.1}Simplification of equations of motion: YA solution.}{6}{subsection.2.2.1}%
-\contentsline {paragraph}{Solution of the simplified set of equations. \\}{7}{AMS.18}%
-\contentsline {subsection}{\numberline {2.2.2}YA STM and integration constants.}{9}{subsection.2.2.2}%
-\contentsline {subsubsection}{\numberline {2.2.2.1}In-plane motion.}{10}{subsubsection.2.2.2.1}%
-\contentsline {subsubsection}{\numberline {2.2.2.2}Out-of-plane motion.}{10}{subsubsection.2.2.2.2}%
-\contentsline {subsubsection}{\numberline {2.2.2.3}Full matrices.}{11}{subsubsection.2.2.2.3}%
-\contentsline {subsubsection}{\numberline {2.2.2.4}Pseudo-initial state vector.}{12}{subsubsection.2.2.2.4}%
-\contentsline {subsubsection}{\numberline {2.2.2.5}Solution scheme.}{13}{subsubsection.2.2.2.5}%
-\contentsline {subsection}{\numberline {2.2.3}Results: Comparison with HCW and Hi-Fi propagation.}{13}{subsection.2.2.3}%
-\contentsline {subsubsection}{\numberline {2.2.3.1}Scenario 1: $e = 0.1$.}{15}{subsubsection.2.2.3.1}%
-\contentsline {subsubsection}{\numberline {2.2.3.2}Scenario 2: $e = 0.7$.}{16}{subsubsection.2.2.3.2}%
-\contentsline {section}{\numberline {2.3}Orbit safety in eccentric, unperturbed orbits.}{18}{section.2.3}%
-\contentsline {subsection}{\numberline {2.3.1}Generalized eccentricity/inclination vectors separation.}{18}{subsection.2.3.1}%
-\contentsline {subsection}{\numberline {2.3.2}General trajectories and safe orbits.}{18}{subsection.2.3.2}%
-\contentsline {chapter}{\numberline {A}Absolute and relative orbital element sets.}{19}{appendix.A}%
-\contentsline {section}{\numberline {A.1}Introduction.}{19}{section.A.1}%
-\contentsline {section}{\numberline {A.2}Absolute element sets.}{19}{section.A.2}%
-\contentsline {subsection}{\numberline {A.2.1}Workflow for transformations between absolute element sets.}{19}{subsection.A.2.1}%
-\contentsline {subsection}{\numberline {A.2.2}Element sets.}{20}{subsection.A.2.2}%
-\contentsline {subsubsection}{\numberline {A.2.2.1}Keplerian orbital elements (KOE).}{20}{subsubsection.A.2.2.1}%
-\contentsline {subsubsection}{\numberline {A.2.2.2}Eccentricity/inclination vectors orbital elements (EIOE).}{21}{subsubsection.A.2.2.2}%
-\contentsline {paragraph}{Eccentricity vector \\}{22}{subsubsection.A.2.2.2}%
-\contentsline {paragraph}{Inclination vector \\}{22}{AMS.45}%
-\contentsline {paragraph}{Element set \\}{22}{AMS.45}%
-\contentsline {subsubsection}{\numberline {A.2.2.3}Quasi-nonsingular orbital elements (QNSOE).}{23}{subsubsection.A.2.2.3}%
-\contentsline {subsubsection}{\numberline {A.2.2.4}Equinoctial orbital elements (EOE).}{23}{subsubsection.A.2.2.4}%
-\contentsline {subsubsection}{\numberline {A.2.2.5}Delaunay orbital elements (DOE).}{23}{subsubsection.A.2.2.5}%
-\contentsline {section}{\numberline {A.3}Relative sets.}{24}{section.A.3}%
-\contentsline {subsection}{\numberline {A.3.1}Workflow for transformations between ROEs. }{24}{subsection.A.3.1}%
-\contentsline {paragraph}{A) From any ROE set to RKOE\\}{25}{subsection.A.3.1}%
-\contentsline {paragraph}{B) From RKOE to any ROE set\\}{26}{figure.caption.54}%
-\contentsline {subsection}{\numberline {A.3.2}Element sets.}{27}{subsection.A.3.2}%
-\contentsline {subsubsection}{\numberline {A.3.2.1}Eccentricity/inclination vectors relative orbital elements (REIOE).}{27}{subsubsection.A.3.2.1}%
-\contentsline {paragraph}{Concept \& meaning\\}{28}{figure.caption.59}%
-\contentsline {subsubsection}{\numberline {A.3.2.2}Peters-Noomen C set of relative orbital elements (CROE).}{29}{subsubsection.A.3.2.2}%
-\contentsline {chapter}{\numberline {B}Cartesian reference systems.}{31}{appendix.B}%
-\contentsline {section}{\numberline {B.1}Introduction.}{31}{section.B.1}%
-\contentsline {subsection}{\numberline {B.1.1}Inertial and rotating reference frames.}{31}{subsection.B.1.1}%
-\contentsline {subsection}{\numberline {B.1.2}Absolute and relative frames.}{31}{subsection.B.1.2}%
-\contentsline {subsection}{\numberline {B.1.3}Time measurement.}{31}{subsection.B.1.3}%
-\contentsline {section}{\numberline {B.2}Transformations between reference systems.}{32}{section.B.2}%
-\contentsline {subsection}{\numberline {B.2.1}Direct analytical differentiation.}{34}{subsection.B.2.1}%
-\contentsline {subsection}{\numberline {B.2.2}Classical motion composition.}{35}{subsection.B.2.2}%
-\contentsline {section}{\numberline {B.3}Absolute reference systems.}{36}{section.B.3}%
-\contentsline {subsection}{\numberline {B.3.1}Earth-Centered-Inertial reference system (ECI).}{36}{subsection.B.3.1}%
-\contentsline {subsection}{\numberline {B.3.2}Earth-Centered, Earth-Fixed reference system (ECEF).}{37}{subsection.B.3.2}%
-\contentsline {subsubsection}{\numberline {B.3.2.1}Conversion from ECI to ECEF.}{37}{subsubsection.B.3.2.1}%
-\contentsline {paragraph}{Decomposition of the conversion. \\}{38}{figure.caption.77}%
-\contentsline {paragraph}{Involved intermediate frames \& rotations.}{38}{figure.caption.77}%
-\contentsline {subparagraph}{ECI(J200) to Mean of Date. \\}{38}{figure.caption.77}%
-\contentsline {subparagraph}{Mean of Date to True of Date \\}{39}{figure.caption.79}%
-\contentsline {subparagraph}{True of Date to Pseudo-Body-Fixed\\}{40}{AMS.80}%
-\contentsline {subparagraph}{Pseudo-Body-Fixed to Body-Fixed (ECEF)\\}{41}{AMS.81}%
-\contentsline {paragraph}{Full rotation matrix $R_{ECI\rightarrow ECEF}$. \\}{41}{AMS.82}%
-\contentsline {subsection}{\numberline {B.3.3}Perifocal (PQW) reference frame.}{41}{subsection.B.3.3}%
-\contentsline {subsubsection}{\numberline {B.3.3.1}Definition.}{41}{subsubsection.B.3.3.1}%
-\contentsline {subsubsection}{\numberline {B.3.3.2}State vector transformation.}{42}{subsubsection.B.3.3.2}%
-\contentsline {paragraph}{Rotation matrix from \& to ECI. \\}{42}{subsubsection.B.3.3.2}%
-\contentsline {paragraph}{Angular velocity. \\}{43}{subsubsection.B.3.3.2}%
-\contentsline {paragraph}{Transformation matrices $\mbox {\boldmath {${T}$}}_{PQW\rightarrow ECI}$, $\mbox {\boldmath {${T}$}}_{ECI\rightarrow PQW}$. \\}{44}{subsubsection.B.3.3.2}%
-\contentsline {section}{\numberline {B.4}Relative reference systems.}{44}{section.B.4}%
-\contentsline {subsection}{\numberline {B.4.1}RTN reference frame.}{44}{subsection.B.4.1}%
-\contentsline {subsubsection}{\numberline {B.4.1.1}Definition.}{44}{subsubsection.B.4.1.1}%
-\contentsline {subsubsection}{\numberline {B.4.1.2}State vector transformation.}{45}{subsubsection.B.4.1.2}%
-\contentsline {paragraph}{Rotation matrix from ECI. \\}{45}{subsubsection.B.4.1.2}%
-\contentsline {paragraph}{Angular velocity. \\}{45}{subsubsection.B.4.1.2}%
-\contentsline {paragraph}{Transformation matrices $\mbox {\boldmath {${T}$}}_{RTN\rightarrow ECI}$, $\mbox {\boldmath {${T}$}}_{ECI\rightarrow RTN}$. \\}{46}{subsubsection.B.4.1.2}%
-\contentsline {subsection}{\numberline {B.4.2}LVLH reference frame.}{46}{subsection.B.4.2}%
-\contentsline {subsubsection}{\numberline {B.4.2.1}Definition.}{46}{subsubsection.B.4.2.1}%
-\contentsline {subsubsection}{\numberline {B.4.2.2}State vector transformation.}{46}{subsubsection.B.4.2.2}%
-\contentsline {paragraph}{A) Using reference orbit's Keplerian OEs. \\}{47}{subsubsection.B.4.2.2}%
-\contentsline {subparagraph}{Rotation matrix from ECI. \\}{47}{subsubsection.B.4.2.2}%
-\contentsline {subparagraph}{Angular velocity. \\}{47}{subsubsection.B.4.2.2}%
-\contentsline {paragraph}{B) Using reference ECI state vector. \\}{47}{subsubsection.B.4.2.2}%
-\contentsline {subparagraph}{Rotation matrix from ECI. \\}{48}{AMS.85}%
-\contentsline {subparagraph}{Rotation matrix derivative. \\}{48}{AMS.85}%
-\contentsline {subsection}{\numberline {B.4.3}TAN reference frame.}{49}{subsection.B.4.3}%
-\contentsline {subsubsection}{\numberline {B.4.3.1}Definition.}{49}{subsubsection.B.4.3.1}%
-\contentsline {subsubsection}{\numberline {B.4.3.2}State vector transformation.}{49}{subsubsection.B.4.3.2}%
-\contentsline {paragraph}{Rotation matrix from LVLH. \\}{49}{subsubsection.B.4.3.2}%
-\contentsline {paragraph}{Angular velocity. \\}{50}{subsubsection.B.4.3.2}%
-\contentsline {section}{\numberline {B.5}Conversions from OEs to cartesian coordinates.}{50}{section.B.5}%
-\contentsline {subsection}{\numberline {B.5.1}Keplerian OEs to ECI and vice versa.}{50}{subsection.B.5.1}%
-\contentsline {subsubsection}{\numberline {B.5.1.1}KOE to ECI transformation.}{50}{subsubsection.B.5.1.1}%
-\contentsline {subsubsection}{\numberline {B.5.1.2}ECI to KOE transformation.}{51}{subsubsection.B.5.1.2}%
-\contentsline {subparagraph}{Case A) Non-singular eccentricity or inclination.\\}{52}{subsubsection.B.5.1.2}%
-\contentsline {subparagraph}{Case B) Null inclination, non-singular eccentricity. \\}{52}{subsubsection.B.5.1.2}%
-\contentsline {subparagraph}{Case C) Null eccentricity, non-singular inclination. \\}{52}{subsubsection.B.5.1.2}%
-\contentsline {subparagraph}{Case D) Null eccentricity and inclination. \\}{52}{subsubsection.B.5.1.2}%
-\contentsline {subsection}{\numberline {B.5.2}Relative Keplerian OEs to RTN.}{52}{subsection.B.5.2}%
-\contentsline {chapter}{Bibliography}{55}{appendix*.89}%
-\contentsline {section}{General}{55}{section*.90}%
-\contentsline {section}{Eccentric Dynamics}{56}{section*.90}%
-\contentsline {section}{Perturbations}{56}{section*.90}%
-\contentsline {section}{\textsc {Matlab} Exchange libraries}{57}{section*.90}%
+\contentsline {subsection}{\numberline {1.4.2}Eccentricity-inclination vector separation strategy.}{4}{subsection.1.4.2}%
+\contentsline {subsubsection}{\numberline {1.4.2.1}Eccentricity and inclination vectors.}{4}{subsubsection.1.4.2.1}%
+\contentsline {subsubsection}{\numberline {1.4.2.2}Linearized effect of $\delta e$ and $\delta i$ in relative position.}{4}{subsubsection.1.4.2.2}%
+\contentsline {paragraph}{I. Effect of relative eccentricity vector $\delta \underline {e}$. \\}{4}{subsubsection.1.4.2.2}%
+\contentsline {subparagraph}{\leavevmode {\color {GMVred}I.A.} Effect of $\delta \underline {e}$ in $\delta r_R$. \\}{6}{figure.caption.15}%
+\contentsline {subparagraph}{\leavevmode {\color {GMVred}I.B.} Effect of $\delta \underline {e}$ in $\delta r_T$. \\}{6}{AMS.16}%
+\contentsline {subparagraph}{I.B. Effect of $\delta \underline {e}$ in $\delta r_T$. \\}{6}{AMS.16}%
+\contentsline {subsubsection}{\numberline {1.4.2.3}Collision avoidance: $\delta {\underline {e}} / \delta {\underline {i}}$ separation.}{6}{subsubsection.1.4.2.3}%
+\contentsline {paragraph}{Parallel configuration. \\}{6}{subsubsection.1.4.2.3}%
+\contentsline {paragraph}{Antiparallel configuration. \\}{6}{subsubsection.1.4.2.3}%
+\contentsline {chapter}{\numberline {2}Relative dynamics around elliptic reference orbits.}{7}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Introduction.}{7}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Motion model and STM.}{8}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}Simplification of equations of motion: YA solution.}{8}{subsection.2.2.1}%
+\contentsline {paragraph}{Solution of the simplified set of equations. \\}{9}{AMS.22}%
+\contentsline {subsection}{\numberline {2.2.2}YA STM and integration constants.}{11}{subsection.2.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.2.1}In-plane motion.}{12}{subsubsection.2.2.2.1}%
+\contentsline {subsubsection}{\numberline {2.2.2.2}Out-of-plane motion.}{12}{subsubsection.2.2.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.2.3}Full matrices.}{13}{subsubsection.2.2.2.3}%
+\contentsline {subsubsection}{\numberline {2.2.2.4}Pseudo-initial state vector.}{14}{subsubsection.2.2.2.4}%
+\contentsline {subsubsection}{\numberline {2.2.2.5}Solution scheme.}{15}{subsubsection.2.2.2.5}%
+\contentsline {subsection}{\numberline {2.2.3}Results: Comparison with HCW and Hi-Fi propagation.}{15}{subsection.2.2.3}%
+\contentsline {subsubsection}{\numberline {2.2.3.1}Scenario 1: $e = 0.1$.}{17}{subsubsection.2.2.3.1}%
+\contentsline {subsubsection}{\numberline {2.2.3.2}Scenario 2: $e = 0.7$.}{18}{subsubsection.2.2.3.2}%
+\contentsline {section}{\numberline {2.3}Orbit safety in eccentric, unperturbed orbits.}{20}{section.2.3}%
+\contentsline {subsection}{\numberline {2.3.1}Generalized eccentricity/inclination vectors separation.}{20}{subsection.2.3.1}%
+\contentsline {subsection}{\numberline {2.3.2}General trajectories and safe orbits.}{20}{subsection.2.3.2}%
+\contentsline {chapter}{\numberline {A}Absolute and relative orbital element sets.}{21}{appendix.A}%
+\contentsline {section}{\numberline {A.1}Introduction.}{21}{section.A.1}%
+\contentsline {section}{\numberline {A.2}Absolute element sets.}{21}{section.A.2}%
+\contentsline {subsection}{\numberline {A.2.1}Workflow for transformations between absolute element sets.}{21}{subsection.A.2.1}%
+\contentsline {subsection}{\numberline {A.2.2}Element sets.}{22}{subsection.A.2.2}%
+\contentsline {subsubsection}{\numberline {A.2.2.1}Keplerian orbital elements (KOE).}{22}{subsubsection.A.2.2.1}%
+\contentsline {subsubsection}{\numberline {A.2.2.2}Eccentricity/inclination vectors orbital elements (EIOE).}{23}{subsubsection.A.2.2.2}%
+\contentsline {paragraph}{Eccentricity vector \\}{24}{subsubsection.A.2.2.2}%
+\contentsline {paragraph}{Inclination vector \\}{24}{AMS.49}%
+\contentsline {paragraph}{Element set \\}{24}{AMS.49}%
+\contentsline {subsubsection}{\numberline {A.2.2.3}Quasi-nonsingular orbital elements (QNSOE).}{25}{subsubsection.A.2.2.3}%
+\contentsline {subsubsection}{\numberline {A.2.2.4}Equinoctial orbital elements (EOE).}{25}{subsubsection.A.2.2.4}%
+\contentsline {subsubsection}{\numberline {A.2.2.5}Delaunay orbital elements (DOE).}{25}{subsubsection.A.2.2.5}%
+\contentsline {section}{\numberline {A.3}Relative sets.}{26}{section.A.3}%
+\contentsline {subsection}{\numberline {A.3.1}Workflow for transformations between ROEs. }{26}{subsection.A.3.1}%
+\contentsline {paragraph}{A) From any ROE set to RKOE\\}{27}{subsection.A.3.1}%
+\contentsline {paragraph}{B) From RKOE to any ROE set\\}{28}{figure.caption.58}%
+\contentsline {subsection}{\numberline {A.3.2}Element sets.}{29}{subsection.A.3.2}%
+\contentsline {subsubsection}{\numberline {A.3.2.1}Relative eccentricity/inclination vectors orbital elements (REIOE).}{29}{subsubsection.A.3.2.1}%
+\contentsline {paragraph}{Concept \& meaning\\}{30}{figure.caption.63}%
+\contentsline {subsubsection}{\numberline {A.3.2.2}Peters-Noomen C set of relative orbital elements (CROE).}{31}{subsubsection.A.3.2.2}%
+\contentsline {chapter}{\numberline {B}Cartesian reference systems.}{33}{appendix.B}%
+\contentsline {section}{\numberline {B.1}Introduction.}{33}{section.B.1}%
+\contentsline {subsection}{\numberline {B.1.1}Inertial and rotating reference frames.}{33}{subsection.B.1.1}%
+\contentsline {subsection}{\numberline {B.1.2}Absolute and relative frames.}{33}{subsection.B.1.2}%
+\contentsline {subsection}{\numberline {B.1.3}Time measurement.}{33}{subsection.B.1.3}%
+\contentsline {section}{\numberline {B.2}Transformations between reference systems.}{34}{section.B.2}%
+\contentsline {subsection}{\numberline {B.2.1}Direct analytical differentiation.}{36}{subsection.B.2.1}%
+\contentsline {subsection}{\numberline {B.2.2}Classical motion composition.}{37}{subsection.B.2.2}%
+\contentsline {section}{\numberline {B.3}Absolute reference systems.}{38}{section.B.3}%
+\contentsline {subsection}{\numberline {B.3.1}Earth-Centered-Inertial reference system (ECI).}{38}{subsection.B.3.1}%
+\contentsline {subsection}{\numberline {B.3.2}Earth-Centered, Earth-Fixed reference system (ECEF).}{39}{subsection.B.3.2}%
+\contentsline {subsubsection}{\numberline {B.3.2.1}Conversion from ECI to ECEF.}{39}{subsubsection.B.3.2.1}%
+\contentsline {paragraph}{Decomposition of the conversion. \\}{40}{figure.caption.81}%
+\contentsline {paragraph}{Involved intermediate frames \& rotations.}{40}{figure.caption.81}%
+\contentsline {subparagraph}{ECI(J200) to Mean of Date. \\}{40}{figure.caption.81}%
+\contentsline {subparagraph}{Mean of Date to True of Date \\}{41}{figure.caption.83}%
+\contentsline {subparagraph}{True of Date to Pseudo-Body-Fixed\\}{42}{AMS.84}%
+\contentsline {subparagraph}{Pseudo-Body-Fixed to Body-Fixed (ECEF)\\}{43}{AMS.85}%
+\contentsline {paragraph}{Full rotation matrix $R_{ECI\rightarrow ECEF}$. \\}{43}{AMS.86}%
+\contentsline {subsection}{\numberline {B.3.3}Perifocal (PQW) reference frame.}{43}{subsection.B.3.3}%
+\contentsline {subsubsection}{\numberline {B.3.3.1}Definition.}{43}{subsubsection.B.3.3.1}%
+\contentsline {subsubsection}{\numberline {B.3.3.2}State vector transformation.}{44}{subsubsection.B.3.3.2}%
+\contentsline {paragraph}{Rotation matrix from \& to ECI. \\}{44}{subsubsection.B.3.3.2}%
+\contentsline {paragraph}{Angular velocity. \\}{45}{subsubsection.B.3.3.2}%
+\contentsline {paragraph}{Transformation matrices $\mbox {\boldmath {${T}$}}_{PQW\rightarrow ECI}$, $\mbox {\boldmath {${T}$}}_{ECI\rightarrow PQW}$. \\}{46}{subsubsection.B.3.3.2}%
+\contentsline {section}{\numberline {B.4}Relative reference systems.}{46}{section.B.4}%
+\contentsline {subsection}{\numberline {B.4.1}RTN reference frame.}{46}{subsection.B.4.1}%
+\contentsline {subsubsection}{\numberline {B.4.1.1}Definition.}{46}{subsubsection.B.4.1.1}%
+\contentsline {subsubsection}{\numberline {B.4.1.2}State vector transformation.}{47}{subsubsection.B.4.1.2}%
+\contentsline {paragraph}{Rotation matrix from ECI. \\}{47}{subsubsection.B.4.1.2}%
+\contentsline {paragraph}{Angular velocity. \\}{47}{subsubsection.B.4.1.2}%
+\contentsline {paragraph}{Transformation matrices $\mbox {\boldmath {${T}$}}_{RTN\rightarrow ECI}$, $\mbox {\boldmath {${T}$}}_{ECI\rightarrow RTN}$. \\}{48}{subsubsection.B.4.1.2}%
+\contentsline {subsection}{\numberline {B.4.2}LVLH reference frame.}{48}{subsection.B.4.2}%
+\contentsline {subsubsection}{\numberline {B.4.2.1}Definition.}{48}{subsubsection.B.4.2.1}%
+\contentsline {subsubsection}{\numberline {B.4.2.2}State vector transformation.}{48}{subsubsection.B.4.2.2}%
+\contentsline {paragraph}{A) Using reference orbit's Keplerian OEs. \\}{49}{subsubsection.B.4.2.2}%
+\contentsline {subparagraph}{Rotation matrix from ECI. \\}{49}{subsubsection.B.4.2.2}%
+\contentsline {subparagraph}{Angular velocity. \\}{49}{subsubsection.B.4.2.2}%
+\contentsline {paragraph}{B) Using reference ECI state vector. \\}{49}{subsubsection.B.4.2.2}%
+\contentsline {subparagraph}{Rotation matrix from ECI. \\}{50}{AMS.89}%
+\contentsline {subparagraph}{Rotation matrix derivative. \\}{50}{AMS.89}%
+\contentsline {subsection}{\numberline {B.4.3}TAN reference frame.}{51}{subsection.B.4.3}%
+\contentsline {subsubsection}{\numberline {B.4.3.1}Definition.}{51}{subsubsection.B.4.3.1}%
+\contentsline {subsubsection}{\numberline {B.4.3.2}State vector transformation.}{51}{subsubsection.B.4.3.2}%
+\contentsline {paragraph}{Rotation matrix from LVLH. \\}{51}{subsubsection.B.4.3.2}%
+\contentsline {paragraph}{Angular velocity. \\}{52}{subsubsection.B.4.3.2}%
+\contentsline {section}{\numberline {B.5}Conversions from OEs to cartesian coordinates.}{52}{section.B.5}%
+\contentsline {subsection}{\numberline {B.5.1}Keplerian OEs to ECI and vice versa.}{52}{subsection.B.5.1}%
+\contentsline {subsubsection}{\numberline {B.5.1.1}KOE to ECI transformation.}{52}{subsubsection.B.5.1.1}%
+\contentsline {subsubsection}{\numberline {B.5.1.2}ECI to KOE transformation.}{53}{subsubsection.B.5.1.2}%
+\contentsline {subparagraph}{Case A) Non-singular eccentricity or inclination.\\}{54}{subsubsection.B.5.1.2}%
+\contentsline {subparagraph}{Case B) Null inclination, non-singular eccentricity. \\}{54}{subsubsection.B.5.1.2}%
+\contentsline {subparagraph}{Case C) Null eccentricity, non-singular inclination. \\}{54}{subsubsection.B.5.1.2}%
+\contentsline {subparagraph}{Case D) Null eccentricity and inclination. \\}{54}{subsubsection.B.5.1.2}%
+\contentsline {subsection}{\numberline {B.5.2}Relative Keplerian OEs to RTN.}{54}{subsection.B.5.2}%
+\contentsline {chapter}{Bibliography}{57}{appendix*.93}%
+\contentsline {section}{General}{57}{section*.94}%
+\contentsline {section}{Eccentric Dynamics}{58}{section*.94}%
+\contentsline {section}{Perturbations}{58}{section*.94}%
+\contentsline {section}{\textsc {Matlab} Exchange libraries}{59}{section*.94}%
