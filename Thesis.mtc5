@@ -1,54 +1,54 @@
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {B.1}Introduction.}{\reset@font\mtcSfont 31}{section.B.1}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {B.1.1}Inertial and rotating reference frames.}{\reset@font\mtcSSfont 31}{subsection.B.1.1}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {B.1.2}Absolute and relative frames.}{\reset@font\mtcSSfont 31}{subsection.B.1.2}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {B.1.3}Time measurement.}{\reset@font\mtcSSfont 31}{subsection.B.1.3}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {B.2}Transformations between reference systems.}{\reset@font\mtcSfont 32}{section.B.2}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {B.2.1}Direct analytical differentiation.}{\reset@font\mtcSSfont 34}{subsection.B.2.1}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {B.2.2}Classical motion composition.}{\reset@font\mtcSSfont 35}{subsection.B.2.2}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {B.3}Absolute reference systems.}{\reset@font\mtcSfont 36}{section.B.3}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {B.3.1}Earth-Centered-Inertial reference system (ECI).}{\reset@font\mtcSSfont 36}{subsection.B.3.1}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {B.3.2}Earth-Centered, Earth-Fixed reference system (ECEF).}{\reset@font\mtcSSfont 37}{subsection.B.3.2}}
-{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {B.3.2.1}Conversion from ECI to ECEF.}{\reset@font\mtcSSSfont 37}{subsubsection.B.3.2.1}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Decomposition of the conversion. \\}{\reset@font\mtcPfont 38}{figure.caption.77}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Involved intermediate frames \& rotations.}{\reset@font\mtcPfont 38}{figure.caption.77}}
-{\reset@font\mtcSPfont\mtc@string\contentsline{subparagraph}{\noexpand \leavevmode ECI(J200) to Mean of Date. \\}{\reset@font\mtcSPfont 38}{figure.caption.77}}
-{\reset@font\mtcSPfont\mtc@string\contentsline{subparagraph}{\noexpand \leavevmode Mean of Date to True of Date \\}{\reset@font\mtcSPfont 39}{figure.caption.79}}
-{\reset@font\mtcSPfont\mtc@string\contentsline{subparagraph}{\noexpand \leavevmode True of Date to Pseudo-Body-Fixed\\}{\reset@font\mtcSPfont 40}{AMS.80}}
-{\reset@font\mtcSPfont\mtc@string\contentsline{subparagraph}{\noexpand \leavevmode Pseudo-Body-Fixed to Body-Fixed (ECEF)\\}{\reset@font\mtcSPfont 41}{AMS.81}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Full rotation matrix $R_{ECI\rightarrow ECEF}$. \\}{\reset@font\mtcPfont 41}{AMS.82}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {B.3.3}Perifocal (PQW) reference frame.}{\reset@font\mtcSSfont 41}{subsection.B.3.3}}
-{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {B.3.3.1}Definition.}{\reset@font\mtcSSSfont 41}{subsubsection.B.3.3.1}}
-{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {B.3.3.2}State vector transformation.}{\reset@font\mtcSSSfont 42}{subsubsection.B.3.3.2}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Rotation matrix from \& to ECI. \\}{\reset@font\mtcPfont 42}{subsubsection.B.3.3.2}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Angular velocity. \\}{\reset@font\mtcPfont 43}{subsubsection.B.3.3.2}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Transformation matrices $\mbox {\boldmath {${T}$}}_{PQW\rightarrow ECI}$, $\mbox {\boldmath {${T}$}}_{ECI\rightarrow PQW}$. \\}{\reset@font\mtcPfont 44}{subsubsection.B.3.3.2}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {B.4}Relative reference systems.}{\reset@font\mtcSfont 44}{section.B.4}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {B.4.1}RTN reference frame.}{\reset@font\mtcSSfont 44}{subsection.B.4.1}}
-{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {B.4.1.1}Definition.}{\reset@font\mtcSSSfont 44}{subsubsection.B.4.1.1}}
-{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {B.4.1.2}State vector transformation.}{\reset@font\mtcSSSfont 45}{subsubsection.B.4.1.2}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Rotation matrix from ECI. \\}{\reset@font\mtcPfont 45}{subsubsection.B.4.1.2}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Angular velocity. \\}{\reset@font\mtcPfont 45}{subsubsection.B.4.1.2}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Transformation matrices $\mbox {\boldmath {${T}$}}_{RTN\rightarrow ECI}$, $\mbox {\boldmath {${T}$}}_{ECI\rightarrow RTN}$. \\}{\reset@font\mtcPfont 46}{subsubsection.B.4.1.2}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {B.4.2}LVLH reference frame.}{\reset@font\mtcSSfont 46}{subsection.B.4.2}}
-{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {B.4.2.1}Definition.}{\reset@font\mtcSSSfont 46}{subsubsection.B.4.2.1}}
-{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {B.4.2.2}State vector transformation.}{\reset@font\mtcSSSfont 46}{subsubsection.B.4.2.2}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode A) Using reference orbit's Keplerian OEs. \\}{\reset@font\mtcPfont 47}{subsubsection.B.4.2.2}}
-{\reset@font\mtcSPfont\mtc@string\contentsline{subparagraph}{\noexpand \leavevmode Rotation matrix from ECI. \\}{\reset@font\mtcSPfont 47}{subsubsection.B.4.2.2}}
-{\reset@font\mtcSPfont\mtc@string\contentsline{subparagraph}{\noexpand \leavevmode Angular velocity. \\}{\reset@font\mtcSPfont 47}{subsubsection.B.4.2.2}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode B) Using reference ECI state vector. \\}{\reset@font\mtcPfont 47}{subsubsection.B.4.2.2}}
-{\reset@font\mtcSPfont\mtc@string\contentsline{subparagraph}{\noexpand \leavevmode Rotation matrix from ECI. \\}{\reset@font\mtcSPfont 48}{AMS.85}}
-{\reset@font\mtcSPfont\mtc@string\contentsline{subparagraph}{\noexpand \leavevmode Rotation matrix derivative. \\}{\reset@font\mtcSPfont 48}{AMS.85}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {B.4.3}TAN reference frame.}{\reset@font\mtcSSfont 49}{subsection.B.4.3}}
-{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {B.4.3.1}Definition.}{\reset@font\mtcSSSfont 49}{subsubsection.B.4.3.1}}
-{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {B.4.3.2}State vector transformation.}{\reset@font\mtcSSSfont 49}{subsubsection.B.4.3.2}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Rotation matrix from LVLH. \\}{\reset@font\mtcPfont 49}{subsubsection.B.4.3.2}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Angular velocity. \\}{\reset@font\mtcPfont 50}{subsubsection.B.4.3.2}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {B.5}Conversions from OEs to cartesian coordinates.}{\reset@font\mtcSfont 50}{section.B.5}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {B.5.1}Keplerian OEs to ECI and vice versa.}{\reset@font\mtcSSfont 50}{subsection.B.5.1}}
-{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {B.5.1.1}KOE to ECI transformation.}{\reset@font\mtcSSSfont 50}{subsubsection.B.5.1.1}}
-{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {B.5.1.2}ECI to KOE transformation.}{\reset@font\mtcSSSfont 51}{subsubsection.B.5.1.2}}
-{\reset@font\mtcSPfont\mtc@string\contentsline{subparagraph}{\noexpand \leavevmode Case A) Non-singular eccentricity or inclination.\\}{\reset@font\mtcSPfont 52}{subsubsection.B.5.1.2}}
-{\reset@font\mtcSPfont\mtc@string\contentsline{subparagraph}{\noexpand \leavevmode Case B) Null inclination, non-singular eccentricity. \\}{\reset@font\mtcSPfont 52}{subsubsection.B.5.1.2}}
-{\reset@font\mtcSPfont\mtc@string\contentsline{subparagraph}{\noexpand \leavevmode Case C) Null eccentricity, non-singular inclination. \\}{\reset@font\mtcSPfont 52}{subsubsection.B.5.1.2}}
-{\reset@font\mtcSPfont\mtc@string\contentsline{subparagraph}{\noexpand \leavevmode Case D) Null eccentricity and inclination. \\}{\reset@font\mtcSPfont 52}{subsubsection.B.5.1.2}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {B.5.2}Relative Keplerian OEs to RTN.}{\reset@font\mtcSSfont 52}{subsection.B.5.2}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {B.1}Introduction.}{\reset@font\mtcSfont 65}{section.B.1}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {B.1.1}Inertial and rotating reference frames.}{\reset@font\mtcSSfont 65}{subsection.B.1.1}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {B.1.2}Absolute and relative frames.}{\reset@font\mtcSSfont 65}{subsection.B.1.2}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {B.1.3}Time measurement.}{\reset@font\mtcSSfont 65}{subsection.B.1.3}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {B.2}Transformations between reference systems.}{\reset@font\mtcSfont 66}{section.B.2}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {B.2.1}Direct analytical differentiation.}{\reset@font\mtcSSfont 68}{subsection.B.2.1}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {B.2.2}Classical motion composition.}{\reset@font\mtcSSfont 69}{subsection.B.2.2}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {B.3}Absolute reference systems.}{\reset@font\mtcSfont 70}{section.B.3}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {B.3.1}Earth-Centered-Inertial reference system (ECI).}{\reset@font\mtcSSfont 70}{subsection.B.3.1}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {B.3.2}Earth-Centered, Earth-Fixed reference system (ECEF).}{\reset@font\mtcSSfont 71}{subsection.B.3.2}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {B.3.2.1}Conversion from ECI to ECEF.}{\reset@font\mtcSSSfont 71}{subsubsection.B.3.2.1}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Decomposition of the conversion. \\}{\reset@font\mtcPfont 72}{figure.caption.166}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Involved intermediate frames \& rotations.}{\reset@font\mtcPfont 72}{figure.caption.166}}
+{\reset@font\mtcSPfont\mtc@string\contentsline{subparagraph}{\noexpand \leavevmode ECI(J200) to Mean of Date. \\}{\reset@font\mtcSPfont 72}{figure.caption.166}}
+{\reset@font\mtcSPfont\mtc@string\contentsline{subparagraph}{\noexpand \leavevmode Mean of Date to True of Date \\}{\reset@font\mtcSPfont 73}{figure.caption.168}}
+{\reset@font\mtcSPfont\mtc@string\contentsline{subparagraph}{\noexpand \leavevmode True of Date to Pseudo-Body-Fixed\\}{\reset@font\mtcSPfont 74}{AMS.169}}
+{\reset@font\mtcSPfont\mtc@string\contentsline{subparagraph}{\noexpand \leavevmode Pseudo-Body-Fixed to Body-Fixed (ECEF)\\}{\reset@font\mtcSPfont 75}{AMS.170}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Full rotation matrix $R_{ECI\rightarrow ECEF}$. \\}{\reset@font\mtcPfont 75}{AMS.171}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {B.3.3}Perifocal (PQW) reference frame.}{\reset@font\mtcSSfont 75}{subsection.B.3.3}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {B.3.3.1}Definition.}{\reset@font\mtcSSSfont 75}{subsubsection.B.3.3.1}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {B.3.3.2}State vector transformation.}{\reset@font\mtcSSSfont 76}{subsubsection.B.3.3.2}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Rotation matrix from \& to ECI. \\}{\reset@font\mtcPfont 76}{subsubsection.B.3.3.2}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Angular velocity. \\}{\reset@font\mtcPfont 77}{subsubsection.B.3.3.2}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Transformation matrices $\mbox {\boldmath {${T}$}}_{PQW\rightarrow ECI}$, $\mbox {\boldmath {${T}$}}_{ECI\rightarrow PQW}$. \\}{\reset@font\mtcPfont 77}{subsubsection.B.3.3.2}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {B.4}Relative reference systems.}{\reset@font\mtcSfont 78}{section.B.4}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {B.4.1}RTN reference frame.}{\reset@font\mtcSSfont 78}{subsection.B.4.1}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {B.4.1.1}Definition.}{\reset@font\mtcSSSfont 78}{subsubsection.B.4.1.1}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {B.4.1.2}State vector transformation.}{\reset@font\mtcSSSfont 79}{subsubsection.B.4.1.2}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Rotation matrix from ECI. \\}{\reset@font\mtcPfont 79}{subsubsection.B.4.1.2}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Angular velocity. \\}{\reset@font\mtcPfont 79}{subsubsection.B.4.1.2}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Transformation matrices $\mbox {\boldmath {${T}$}}_{RTN\rightarrow ECI}$, $\mbox {\boldmath {${T}$}}_{ECI\rightarrow RTN}$. \\}{\reset@font\mtcPfont 80}{subsubsection.B.4.1.2}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {B.4.2}LVLH reference frame.}{\reset@font\mtcSSfont 80}{subsection.B.4.2}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {B.4.2.1}Definition.}{\reset@font\mtcSSSfont 80}{subsubsection.B.4.2.1}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {B.4.2.2}State vector transformation.}{\reset@font\mtcSSSfont 80}{subsubsection.B.4.2.2}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode A) Using reference orbit's Keplerian OEs. \\}{\reset@font\mtcPfont 80}{subsubsection.B.4.2.2}}
+{\reset@font\mtcSPfont\mtc@string\contentsline{subparagraph}{\noexpand \leavevmode Rotation matrix from ECI. \\}{\reset@font\mtcSPfont 81}{subsubsection.B.4.2.2}}
+{\reset@font\mtcSPfont\mtc@string\contentsline{subparagraph}{\noexpand \leavevmode Angular velocity. \\}{\reset@font\mtcSPfont 81}{subsubsection.B.4.2.2}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode B) Using reference ECI state vector. \\}{\reset@font\mtcPfont 81}{subsubsection.B.4.2.2}}
+{\reset@font\mtcSPfont\mtc@string\contentsline{subparagraph}{\noexpand \leavevmode Rotation matrix from ECI. \\}{\reset@font\mtcSPfont 82}{AMS.174}}
+{\reset@font\mtcSPfont\mtc@string\contentsline{subparagraph}{\noexpand \leavevmode Rotation matrix derivative. \\}{\reset@font\mtcSPfont 82}{AMS.174}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {B.4.3}TAN reference frame.}{\reset@font\mtcSSfont 83}{subsection.B.4.3}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {B.4.3.1}Definition.}{\reset@font\mtcSSSfont 83}{subsubsection.B.4.3.1}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {B.4.3.2}State vector transformation.}{\reset@font\mtcSSSfont 83}{subsubsection.B.4.3.2}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Rotation matrix from LVLH. \\}{\reset@font\mtcPfont 83}{subsubsection.B.4.3.2}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Angular velocity. \\}{\reset@font\mtcPfont 84}{subsubsection.B.4.3.2}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {B.5}Conversions from OEs to cartesian coordinates.}{\reset@font\mtcSfont 84}{section.B.5}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {B.5.1}Keplerian OEs to ECI and vice versa.}{\reset@font\mtcSSfont 84}{subsection.B.5.1}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {B.5.1.1}KOE to ECI transformation.}{\reset@font\mtcSSSfont 84}{subsubsection.B.5.1.1}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {B.5.1.2}ECI to KOE transformation.}{\reset@font\mtcSSSfont 85}{subsubsection.B.5.1.2}}
+{\reset@font\mtcSPfont\mtc@string\contentsline{subparagraph}{\noexpand \leavevmode Case A) Non-singular eccentricity or inclination.\\}{\reset@font\mtcSPfont 86}{subsubsection.B.5.1.2}}
+{\reset@font\mtcSPfont\mtc@string\contentsline{subparagraph}{\noexpand \leavevmode Case B) Null inclination, non-singular eccentricity. \\}{\reset@font\mtcSPfont 86}{subsubsection.B.5.1.2}}
+{\reset@font\mtcSPfont\mtc@string\contentsline{subparagraph}{\noexpand \leavevmode Case C) Null eccentricity, non-singular inclination. \\}{\reset@font\mtcSPfont 86}{subsubsection.B.5.1.2}}
+{\reset@font\mtcSPfont\mtc@string\contentsline{subparagraph}{\noexpand \leavevmode Case D) Null eccentricity and inclination. \\}{\reset@font\mtcSPfont 86}{subsubsection.B.5.1.2}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {B.5.2}Relative Keplerian OEs to RTN.}{\reset@font\mtcSSfont 86}{subsection.B.5.2}}

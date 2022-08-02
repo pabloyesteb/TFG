@@ -502,23 +502,32 @@
 	%
 		\subsubsection{Scenario 1: $e = 0.1$.}
 		%
-		\begin{figure}[ht]
+%		
+		\begin{figure}[!htb]
+		\begin{changemargin}{-2.2cm}{-1cm}
+		\begin{adjustbox}{width=1.2\textwidth}
 		\centering
 		\medskip
-		\begin{subfigure}[t]{.9\linewidth}
+		\begin{subfigure}[t]{1.1\linewidth}
 		\centering\includegraphics[width=\linewidth]{Chapters/Chapter_03/YA_scenario_1_(e___0_1)_IP}
 		\caption{In-plane motion.}
 		\label{figCh3:Scenario1_IP}
 		\end{subfigure}
+		\end{adjustbox}
+		\end{changemargin}
 		\end{figure}
 		\begin{figure}
+		\begin{changemargin}{-2.2cm}{-1cm}
+		\begin{adjustbox}{width=1.2\textwidth}
 		\ContinuedFloat
 		\centering
-		\begin{subfigure}[t]{.9\linewidth}
+		\begin{subfigure}[t]{1.2\linewidth}
 		\centering\includegraphics[width=\linewidth]{Chapters/Chapter_03/YA_scenario_1_(e___0_1)_OOP}
 		\caption{Out-of-plane motion.}
 		\label{figCh3:Scenario1_OOP}
 		\end{subfigure}
+		\end{adjustbox}
+		\end{changemargin}
 		\caption{Scenario 1($e= 0.1$): Comparison between Hi-Fi, HCW and YA. }
 		\label{figCh3:Scenario1}
 		\end{figure}
@@ -528,22 +537,30 @@
 		\subsubsection{Scenario 2: $e = 0.7$.}
 		%
 		\begin{figure}[ht]
+		\begin{changemargin}{-2.2cm}{-1cm}
+		\begin{adjustbox}{width=1.2\textwidth}
 		\centering
 		\medskip
-		\begin{subfigure}[t]{.9\linewidth}
+		\begin{subfigure}[t]{\linewidth}
 		\centering\includegraphics[width=\linewidth]{Chapters/Chapter_03/YA_scenario_2_(e___0_7)_IP}
 		\caption{In-plane motion.}
 		\label{figCh3:Scenario2_IP}
 		\end{subfigure}
+		\end{adjustbox}
+		\end{changemargin}
 		\end{figure}
 		\begin{figure}
+		\begin{changemargin}{-2.2cm}{-1cm}
+		\begin{adjustbox}{width=1.2\textwidth}
 		\ContinuedFloat
 		\centering
-		\begin{subfigure}[t]{.7\linewidth}
+		\begin{subfigure}[t]{\linewidth}
 		\centering\includegraphics[width=\linewidth]{Chapters/Chapter_03/YA_scenario_2_(e___0_7)_OOP}
 		\caption{Out-of-plane motion.}
 		\label{figCh3:Scenario2_OOP}
 		\end{subfigure}
+		\end{adjustbox}
+		\end{changemargin}
 		\caption{Scenario 2 ($e= 0.7$): Comparison between Hi-Fi, HCW and YA. }
 		\label{figCh3:Scenario2}
 		\end{figure}
@@ -552,11 +569,186 @@
 		%
 \section{Orbit safety in eccentric, unperturbed orbits.}
 %
+\indent As orbit safety has already been introduced in section \ref{sec:Orbit_safety}, we just need to extend it to eccentric orbits. This is neatly presented in \cite{Peters_Noomen}, whose main concern is linear cotangential transfers. As a quick summary, trajectory safety is tightly related to the notions of relative position, looking for avoiding collision by maintaining a certain distance and orientation between the spacecrafts.\\
 %
-	\subsection{Generalized eccentricity/inclination vectors separation.}
+\indent One substantial fact that differentiates eccentric and circular orbits is that orbital radius is no longer constant. As a consequence, orbital velocity is also time-varying. This two facts lead to the definition of the TAN frame (see \ref{sec:TAN_frame}), which embodies a set of characteristics that allow for a much simpler description of the relative motion. That is to say, as for near-circular orbits we used the LVLH frame, we will now use the TAN frame for describing the relative motion. Later on, said advantages will be duly looked at. \\
+%
+\indent This section starts by giving a brief description of the parametrization of the relative motion in the TAN frame. Secondly, general relative trajectories for eccentric reference orbits will be discussed, and finally, safe orbit families will be defined and represented, extending as well the eccentricity-inclination vector separation strategy.
+%
+	\subsection{Relative motion description in TAN frame.}
+	%
+	\indent In order to properly follow the herewith developed relations, it is recommended to first understand sections \ref{sec:C_ROE} and \ref{sec:TAN_frame}. As already explained, we analyze the radial and cross-track coordinates to ensure orbit safety, as along-track uncertainty is much larger. Our target is then to describe the relative motion in TAN frame, that is, to have a description of $(y_{TAN}, z_{TAN})$ in terms of some relative orbital elements, in a somewhat analog manner compared to \ref{sec:Orbit_safety}.\\
+	%
+	\indent The QNS relative OE set is quite useful in near-circular orbits, greatly simplifying the relative motion description. Nonetheless, this simplicity fades away for elliptic reference orbits. This is where the C relative OE set becomes useful. The elements $C_1$, $C_2$ and $C_3$ will somehow describe the radial coordinate, while $C_4$ is associated with the along-track position. Finally, $C_5$ and $C_6$ describe the cross-track relative motion. We can then draft a one-to-one relation between the QNS ROEs and the C ROEs, as shown in table \ref{tabCh3:QNS_C_correspondence}.\\
+	%
+	\input{Chapters/Chapter_03/QNS_C_correspondence}
+	%
+	\paragraph{\textcolor{GMVred}{I.} Parameter reformulation. \\}
+	\indent The description we arrived at in \ref{sec:Orbit_safety} (see equation \ref{eqCh2:EI_1}) depended on the relative inclination and eccentricity $\delta i$ and $\delta e$ and the angles $\varphi$ and $\theta$. The complete $y-z$ motion in LVLH frame was then determined by four parameters: The amplitude of two oscillations and their respective phase angles. A similar formulation can be developed here for the C ROE set. Let us start by converting $C_2$ and $C_3$ into an radial amplitude $C_m$ and a radial phase angle $\alpha$ as \cite{Peters_Noomen}:
+	%
+	\begin{subequations}
+	\label{eqCh3: Cm_alpha}
+	\begin{alignat}{4}[left = \empheqlbrace]
+	C_m 		&= \dsqrt{C_2^2 + C_3^2} \\[1em]
+	\alpha 	&= \atantwo(C_3, C_2)
+	\end{alignat}
+	\end{subequations}
+	% 
+	\noindent that is, 
+	%
+	\begin{subequations}
+	\label{eqCh3: C2_C3}
+	\begin{alignat}{4}[left = \empheqlbrace]
+	C_2 & = C_m \cos\alpha \\[1em]
+	C_3 & = C_m \sin\alpha 
+	\end{alignat}
+	\end{subequations}
+	%
+	\indent Now it is turn to do the same for the cross-track component. The cross-track amplitude is defined by the ratio $\Lambda$, hand in hand with the cross-track phase $\beta$:
 	%
 	%
+	\begin{subequations}
+	\label{eqCh3:Lambda_beta}
+	\begin{alignat}{4}[left = \empheqlbrace]
+	\Lambda C_m 		&= \dsqrt{C_5^2 + C_6^2} \\[1em]
+	\beta 	&= \atantwo(C_6, C_5)
+	\end{alignat}
+	\end{subequations}
+	% 
+	\noindent that is, 
+	%
+	\begin{subequations}
+	\label{eqCh3:C5_C6}
+	\begin{alignat}{4}[left = \empheqlbrace]
+	C_5 & = \Lambda C_m \cos\beta \\[1em]
+	C_6 & = \Lambda C_m \sin\beta 
+	\end{alignat}
+	\end{subequations}
+	%
+	\indent With these expressions at hand, the description turns easier and parallel to the developed for near-circular orbits.
+	%
+	\paragraph{\textcolor{GMVred}{II.} Radial and cross-track coordinates.}
+	%
+	\indent The TAN coordinates can be easily obtained from the C ROE set and the true anomaly of the chief $\theta$ as \cite[][appendix B] {Peters_Noomen}:
+	%
+	\begin{subequations}
+	\label{eqCh3:yz_TAN}
+	\begin{alignat}{4}[left = \empheqlbrace]
+	\label{eqCh3:yTAN}\hat{y}_{TAN} & = \rho y_{TAN} = C_5 \sin\theta - C_6\cos\theta \\[1em]
+	\label{eqCh3:zTAN}\hat{z}_{TAN} & = \rho \Theta z_{TAN} = -\left( C_1 + C_2 \cos\theta + C_3\sin\theta\right) 
+	\end{alignat}
+	\end{subequations}
+	%
+	\noindent where the variables with a hat denote the scaled variables (unlike the regular, unscaled ones). $\rho$ (defined as before) and $\Theta = \sqrt{2 \rho - eta^2}$ are the scaling factors. Substituting \eqref{eqCh3: C2_C3} and \eqref{eqCh3:C5_C6} into \eqref{eqCh3:yz_TAN} and applying trigonometric relations, we arrive to:
+	%
+	\begin{subequations}
+	\label{eqCh3:yz_TAN_2}
+	\begin{alignat}{4}[left = \empheqlbrace]
+	\label{eqCh3:yTAN_2}\hat{y}_{TAN} & =  \Lambda C_m \sin\left(\tau - \tau_0\right) \\[1em]
+	\label{eqCh3:zTAN_2}\hat{z}_{TAN} & =  C_m \cos\tau - C_1 
+	\end{alignat}
+	\end{subequations}
+	%
+	\noindent where $\tau = \theta - \alpha$ is the radial phase referred to the maximum radial separation and $\tau_0 = \beta - \alpha$ is the relative phase between radial and cross-track motion. Now we have arrived to a very similar expression compared to \eqref{eqCh2:EI_1}, especially considering that, for bounded trajectories, $C_1 = 0$. From a very primitive analysis, we see that $\tau_0$ will determine the shape of the $y-z$ motion, similarly to what $\varphi -  \psi$ did in near-circular orbits. 
+%	
 	\subsection{General trajectories and safe orbits.}
 	%
-	%
-	
+		\subsubsection{Orbit families.}
+		%
+		\indent In this context, an orbit family is a set of relative orbits who share most of the defining elements (in particular, $C_1$, $C_m$, $e$ and $\tau_0$), being differenced just by the phase angle $\alpha$ (anomaly at which radial distance is maximum). Scaled variables are actually independent of $\alpha$, conversely to the unscaled ones. This will be later graphically portrayed. As a summary, table \ref{tabCh3:Orbit_family} shows the different elements which define an orbit family.
+		%
+		\input{Chapters/Chapter_03/Orbit_family_parameters}
+		%
+		\subsubsection{Eccentricity/inclination vector separation in eccentric orbits.}
+		%
+		\indent By simply looking at equation \eqref{eqCh3:yz_TAN_2}, it is clear that $\tau_0$ will determine the eccentricity/inclination vector relative orientation. As for the near-circular case, the parallel configuration takes place when both phases have the same value, that is:
+		%
+		\begin{align*}
+		\beta = \alpha  \Rightarrow \tau_0 = 0 
+		\end{align*}
+		%
+		\indent In that case, the scaled coordinates behave as:
+		%
+		\begin{subequations}
+		\label{eqCh3:yz_TAN_e_i}
+		\begin{alignat}{4}[left = \empheqlbrace]
+		\label{eqCh3:yTAN_e_i}\hat{y}_{TAN} & =  \Lambda C_m \sin\tau  \\[1em]
+		\label{eqCh3:zTAN_e_i}\hat{z}_{TAN} & =  C_m \cos\tau - C_1 
+		\end{alignat}
+		\end{subequations}
+		%
+		\noindent which is the equation of an ellipse with center at $(0, -C_1)$, a semimajor axis $C_m$ and semiminor axis $\Lambda C_m$. An antiparallel configuration is obtained if $\tau_0 = \pi$, exactly as for near-circular reference orbits. Nonetheless, the useful configuration is the parallel one, and that is why we will now analyze a safe orbit family with that characteristic.\\
+		%
+		\paragraph{\textcolor{GMVred}{I.} Scenario definition.\\}
+		%
+		\indent Our goal is to propagate a family of safe orbits, which as we know, is defined by (a) the chief's orbit and (b) the amplitudes and phase angles of the radial and cross-track components. In fact, only the eccentricity of the chief's orbit is required. Table \ref{tabCh3:Scenarios_safe_orbits} shows the two scenarios that have been chosen for this validation, as well as the different values of $\alpha$ within each family. 
+		%
+		\input{Chapters/Chapter_03/Scenarios_safe_orbits}
+		%
+		\paragraph{\textcolor{GMVred}{II. A.} Bounded trajectory case ($C_1 = 0$). \\}
+		%
+		\indent Figure \ref{figCh3:Safe_orbit_1} shows the scaled coordinates, the unscaled coordinates (one for each $\alpha$ value) and the lower and upper boundaries of the relative motion. They can be easily obtained from the scaled variables by applying the maximum and minimum scaling factors, respectively. That is:
+		%
+		\begin{equation}
+		\left\{ \begin{array}{llll}
+		y_{TAN, LB}  & = \dfrac{1}{\rho(\theta = 0)} \Lambda C_m \sin\tau  &= \dfrac{\Lambda C_m }{1 + e} \sin\tau \\[1.3em]
+		z_{TAN, LB}  & = \dfrac{1}{\rho(\theta = 0) \Theta(\theta = 0)} C_m \cos\tau  &= \dfrac{ C_m }{(1 + e)^2} \cos\tau 
+		\end{array} \right.
+		\label{eqCh3:LB}
+		\end{equation}
+		%
+		\begin{equation}
+		\left\{ \begin{array}{llll}
+		y_{TAN, UB}  & = \dfrac{1}{\rho(\theta = \pi)} \Lambda C_m \sin\tau  &= \dfrac{\Lambda C_m }{1 - e} \sin\tau \\[1.3em]
+		z_{TAN, UB}  & = \dfrac{1}{\rho(\theta = \pi) \Theta(\theta = \pi)} C_m \cos\tau  &= \dfrac{ C_m }{(1 - e)^2} \cos\tau 
+		\end{array} \right.
+		\label{eqCh3:UB}
+		\end{equation}
+		%
+		\begin{figure}[!htb]
+		\centering\includegraphics[width = 0.7\linewidth]{Chapters/Chapter_03/Safe_orbit_C1_0}
+		\caption{Safe orbit family: Scenario 1 ($C_1 = 0$).}
+		\label{figCh3:Safe_orbit_1}
+		\end{figure}
+		%
+		\FloatBarrier
+		%
+		\indent As $C_1 = 0$, the every member of the family is an ellipse is centered at the origin.
+		%
+		\paragraph{\textcolor{GMVred}{II. B.} Unbounded trajectory case ($C_1 = 0$). \\}		
+		%
+		\indent The orbit family for this second case is shown in figure \ref{figCh3:Safe_orbit_2}. The main difference now is that every orbit passes through the origin, as both boundaries collapse there.
+		%
+		\begin{figure}[!htb]
+		\centering\includegraphics[width = 0.7\linewidth]{Chapters/Chapter_03/Safe_orbit_C1_10}
+		\caption{Safe orbit family: Scenario 2 ($C_1 = C_m$).}
+		\label{figCh3:Safe_orbit_2}
+		\end{figure}
+		%
+		\FloatBarrier
+		%
+		\indent Besides analyzing the results by themselves, we can additionally compare them to a truth model (High-Fidelity). For this to be done, we have to (a) convert the C ROEs into Keplerian and (b) define some dummy values of the chief's orbit. An example of this can be seen in figure \ref{figCh3:PN_vs_HiFi}, where some members of the previously graphed families are shown. The chief's orbit is defined by the first case specified in \ref{tabCh3:Scenarios_YA}.
+		%
+		\begin{figure}[ht]
+		\centering
+		\medskip
+		\begin{subfigure}[t]{.7\linewidth}
+		\centering\includegraphics[width=\linewidth]{Chapters/Chapter_03/Safe_orbit_comp_C1_0}
+		\caption{Scenario 1: No offset ($C_1 = 0$m).}
+		\label{figCh3:PN_vs_HiFi_1}
+		\end{subfigure}
+		\end{figure}
+		\begin{figure}
+		\centering
+		\ContinuedFloat
+		\begin{subfigure}[t]{.7\linewidth}
+		\centering\includegraphics[width=\linewidth]{Chapters/Chapter_03/Safe_orbit_comp_C1_10}
+		\caption{Scenario 2: Offset ($C_1 = C_m = 10$m).}
+		\label{figCh3:PN_vs_HiFi_2}
+		\end{subfigure}
+		\caption{Comparison between Peters-Noomen approach and High-Fidelity propagation.}
+		\label{figCh3:PN_vs_HiFi}
+		\end{figure}
+		%
+		\FloatBarrier
+		%

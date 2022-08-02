@@ -1,0 +1,28 @@
+\begin{table}[!htb]
+\begin{center}
+\begin{tabular}{cccc}
+\hline 
+\hline
+\rowcolor{Gray!30}
+		& \textbf{Parameter} & \textbf{Meaning} & \textbf{Units}\\
+\hline 
+\hline
+ 		& $e$ 		& Chief's orbit eccentricity 			& [--] \\
+Fixed	& $C_1$ 	& Relative radial offset 				& [m] \\
+for each& $C_m$ 	& Radial motion amplitude				& [m] \\
+family	& $\Lambda$ & Cross-track/radial amplitude ratio   	& [--] \\
+		& $\tau_0$ 	& Cross-track/radial relative phase		& [rad] \\
+\hline 
+Member parameter & $\alpha$ 		& Radial motion phase 	& [rad]\\
+\hline 
+Propagation parameter & $\theta$ 	& Chief's true anomaly	& [rad]\\
+\hline
+\hline
+\end{tabular} 
+\end{center}
+\caption{Parameters of an orbit family.}
+\label{tabCh3:Orbit_family}
+\end{table}
+%
+\FloatBarrier
+%

@@ -1,24 +1,35 @@
 \babel@toc {english}{}\relax 
 \addvspace {10\p@ }
 \contentsline {xchapter}{Relative dynamics around a near-circular reference orbit.}{1}{chapter.1}%
-\contentsline {figure}{\numberline {1.1}{\ignorespaces Effect of $\delta r$ and $\delta u$ in radial and along-track distances.\relax }}{5}{figure.caption.15}%
+\contentsline {figure}{\numberline {1.1}{\ignorespaces Difference in relative distance between HCW methods and Hi-Fi (V-bar approach).\relax }}{20}{figure.caption.59}%
+\contentsline {figure}{\numberline {1.2}{\ignorespaces x-z trajectory comparison between STM propagation (HCW) and High-Fidelity.\relax }}{20}{figure.caption.61}%
+\contentsline {figure}{\numberline {1.3}{\ignorespaces HCW methods vs. High-Fidelity\relax }}{21}{figure.caption.62}%
+\contentsline {figure}{\numberline {1.3}{\ignorespaces Difference in relative distance between HCW methods and Hi-Fi (R-bar approach).\relax }}{21}{figure.caption.63}%
+\contentsline {figure}{\numberline {1.4}{\ignorespaces x-z trajectory comparison between STM propagation (HCW) and High-Fidelity (R-bar approach).\relax }}{22}{figure.caption.65}%
+\contentsline {figure}{\numberline {1.5}{\ignorespaces Effect of $\delta r$ and $\delta u$ in radial and along-track distances.\relax }}{24}{figure.caption.68}%
+\contentsline {figure}{\numberline {1.6}{\ignorespaces Inclination vector and cross-track distance.\relax }}{26}{figure.caption.75}%
+\contentsline {figure}{\numberline {1.7}{\ignorespaces Relative motion in RTN frame for $\delta a = 0$ and a general $\delta \underline {e}$ - $\delta \underline {i}$ alignment.\relax }}{29}{figure.caption.81}%
+\contentsline {figure}{\numberline {1.8}{\ignorespaces Relative motion for parallel and antiparallel $\delta \underline {e}/\delta \underline {i}$ vectors.\relax }}{30}{figure.caption.85}%
 \addvspace {10\p@ }
-\contentsline {xchapter}{Relative dynamics around elliptic reference orbits.}{7}{chapter.2}%
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Workflow of the propagation with YA STM.\relax }}{16}{figure.caption.38}%
-\contentsline {figure}{\numberline {2.2}{\ignorespaces Scenario 1($e= 0.1$): Comparison between Hi-Fi, HCW and YA. \relax }}{18}{figure.caption.42}%
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Scenario 2 ($e= 0.7$): Comparison between Hi-Fi, HCW and YA. \relax }}{19}{figure.caption.44}%
+\contentsline {xchapter}{Relative dynamics around elliptic reference orbits.}{31}{chapter.2}%
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Workflow of the propagation with YA STM.\relax }}{40}{figure.caption.107}%
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Scenario 1($e= 0.1$): Comparison between Hi-Fi, HCW and YA. \relax }}{42}{figure.caption.111}%
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Scenario 2 ($e= 0.7$): Comparison between Hi-Fi, HCW and YA. \relax }}{44}{figure.caption.113}%
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Safe orbit family: Scenario 1 ($C_1 = 0$).\relax }}{49}{figure.caption.126}%
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Safe orbit family: Scenario 2 ($C_1 = C_m$).\relax }}{50}{figure.caption.127}%
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Comparison between Peters-Noomen approach and High-Fidelity propagation.\relax }}{51}{figure.caption.129}%
 \addvspace {10\p@ }
-\contentsline {xchapter}{Absolute and relative orbital element sets.}{21}{appendix.A}%
-\contentsline {figure}{\numberline {A.1}{\ignorespaces Workflow for transforming between two arbitary absolute element sets.\relax }}{22}{figure.caption.46}%
-\contentsline {figure}{\numberline {A.2}{\ignorespaces Frame rotation from inertial to perifocal frame.\relax }}{23}{figure.caption.48}%
-\contentsline {figure}{\numberline {A.3}{\ignorespaces Workflow for transforming any relative set into KOE.\relax }}{28}{figure.caption.58}%
-\contentsline {figure}{\numberline {A.4}{\ignorespaces Workflow for transforming RKOE into any other set.\relax }}{29}{figure.caption.60}%
-\contentsline {figure}{\numberline {A.5}{\ignorespaces Relative ccentricity \& inclination vectors. \relax }}{30}{figure.caption.63}%
+\contentsline {xchapter}{Absolute and relative orbital element sets.}{53}{appendix.A}%
+\contentsline {figure}{\numberline {A.1}{\ignorespaces Workflow for transforming between two arbitary absolute element sets.\relax }}{54}{figure.caption.131}%
+\contentsline {figure}{\numberline {A.2}{\ignorespaces Frame rotation from inertial to perifocal frame.\relax }}{55}{figure.caption.133}%
+\contentsline {figure}{\numberline {A.3}{\ignorespaces Workflow for transforming any relative set into KOE.\relax }}{60}{figure.caption.143}%
+\contentsline {figure}{\numberline {A.4}{\ignorespaces Workflow for transforming RKOE into any other set.\relax }}{61}{figure.caption.145}%
+\contentsline {figure}{\numberline {A.5}{\ignorespaces Relative ccentricity \& inclination vectors. \relax }}{62}{figure.caption.148}%
 \addvspace {10\p@ }
-\contentsline {xchapter}{Cartesian reference systems.}{33}{appendix.B}%
-\contentsline {figure}{\numberline {B.1}{\ignorespaces Sketch of the different time systems.\relax }}{34}{figure.caption.68}%
-\contentsline {figure}{\numberline {B.2}{\ignorespaces Absolute and relative frames.\relax }}{35}{figure.caption.69}%
-\contentsline {figure}{\numberline {B.3}{\ignorespaces ECI and ECEF reference frames.\relax }}{40}{figure.caption.81}%
-\contentsline {figure}{\numberline {B.4}{\ignorespaces Nutation and precession motion.\relax }}{41}{figure.caption.83}%
-\contentsline {figure}{\numberline {B.5}{\ignorespaces RTN frame \blx@tocontentsinit {0}\cite {dAmicoDLR}.\relax }}{47}{figure.caption.87}%
-\contentsline {figure}{\numberline {B.6}{\ignorespaces Relative reference frames.\relax }}{51}{figure.caption.90}%
+\contentsline {xchapter}{Cartesian reference systems.}{65}{appendix.B}%
+\contentsline {figure}{\numberline {B.1}{\ignorespaces Sketch of the different time systems.\relax }}{66}{figure.caption.153}%
+\contentsline {figure}{\numberline {B.2}{\ignorespaces Absolute and relative frames.\relax }}{67}{figure.caption.154}%
+\contentsline {figure}{\numberline {B.3}{\ignorespaces ECI and ECEF reference frames.\relax }}{72}{figure.caption.166}%
+\contentsline {figure}{\numberline {B.4}{\ignorespaces Nutation and precession motion.\relax }}{73}{figure.caption.168}%
+\contentsline {figure}{\numberline {B.5}{\ignorespaces RTN frame \blx@tocontentsinit {0}\cite {dAmicoDLR}.\relax }}{79}{figure.caption.172}%
+\contentsline {figure}{\numberline {B.6}{\ignorespaces Relative reference frames.\relax }}{83}{figure.caption.175}%
