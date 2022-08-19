@@ -1,22 +1,18 @@
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {2.1}Introducci\'on.}{\reset@font\mtcSfont 27}{section.2.1}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {2.2}Flujo aerodin\'amico. M\'odulo CFD.}{\reset@font\mtcSfont 28}{section.2.2}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {2.2.1}Generalidades.}{\reset@font\mtcSSfont 28}{subsection.2.2.1}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {2.2.2}Solver CFD TAU.}{\reset@font\mtcSSfont 31}{subsection.2.2.2}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode I. Fraccionamiento de mallado. \\ }{\reset@font\mtcPfont 32}{subsection.2.2.2}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode II. Pre-proceso. \\}{\reset@font\mtcPfont 32}{subsection.2.2.2}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode III. Solver. \\}{\reset@font\mtcPfont 32}{subsection.2.2.2}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode IV. Adaptaci\'on del mallado. \\}{\reset@font\mtcPfont 33}{subsection.2.2.2}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode V. Deformaci\'on del mallado. \\}{\reset@font\mtcPfont 33}{subsection.2.2.2}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode VI. Implementaci\'on de CHIMERA. \\}{\reset@font\mtcPfont 33}{subsection.2.2.2}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode VII. Modelizaci\'on de la turbulencia y la transici\'on. \\}{\reset@font\mtcPfont 33}{subsection.2.2.2}}
-{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {2.2.2.1}Aplicaciones y validaci\'on del solver TAU.}{\reset@font\mtcSSSfont 33}{subsubsection.2.2.2.1}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {2.3}Impacto de gotas.}{\reset@font\mtcSfont 34}{section.2.3}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {2.3.1}Generalidades.}{\reset@font\mtcSSfont 34}{subsection.2.3.1}}
-{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {2.3.1.1}Enfoque lagrangiano.}{\reset@font\mtcSSSfont 36}{subsubsection.2.3.1.1}}
-{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {2.3.1.2}Enfoque euleriano.}{\reset@font\mtcSSSfont 38}{subsubsection.2.3.1.2}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {2.4}Formaci\'on y crecimiento de hielo.}{\reset@font\mtcSfont 40}{section.2.4}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode M\'etodos \textit {one-shot} y m\'etodos \textit {multi-step}.\\}{\reset@font\mtcPfont 40}{section.2.4}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {2.4.1}Generalidades del problema.}{\reset@font\mtcSSfont 41}{subsection.2.4.1}}
-{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {2.4.1.1}Modelizaci\'on de Messinger.}{\reset@font\mtcSSSfont 43}{subsubsection.2.4.1.1}}
-{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {2.4.1.2}Planteamientos basados en ecuaciones en derivadas parciales.}{\reset@font\mtcSSSfont 43}{subsubsection.2.4.1.2}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {2.5}Consideraciones finales.}{\reset@font\mtcSfont 45}{section.2.5}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {D.1}Software tool: \textsc {Matlab}}{\reset@font\mtcSfont 97}{section.D.1}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {D.2}Code repository.}{\reset@font\mtcSfont 97}{section.D.2}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {D.2.1}Purpose and approach.}{\reset@font\mtcSSfont 97}{subsection.D.2.1}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {D.2.2}General structure.}{\reset@font\mtcSSfont 98}{subsection.D.2.2}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {D.2.2.1}Relative dynamics models.}{\reset@font\mtcSSSfont 98}{subsubsection.D.2.2.1}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {D.2.2.2}Perturbation models.}{\reset@font\mtcSSSfont 98}{subsubsection.D.2.2.2}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {D.2.2.3}Input.}{\reset@font\mtcSSSfont 99}{subsubsection.D.2.2.3}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {D.2.2.4}Utilities.}{\reset@font\mtcSSSfont 99}{subsubsection.D.2.2.4}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {D.2.3}General orbit propagation workflow.}{\reset@font\mtcSSfont 100}{subsection.D.2.3}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode \leavevmode {\color {GMVred}I.} \myul [GMVred]{Parameter load and scenario preprocessing} \\}{\reset@font\mtcPfont 100}{subsection.D.2.3}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode \leavevmode {\color {GMVred}II.} \myul [GMVred]{Trajectory propagation} \\}{\reset@font\mtcPfont 101}{subsection.D.2.3}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode \leavevmode {\color {GMVred}III.} \myul [GMVred]{Graphical representation} \\}{\reset@font\mtcPfont 101}{subsection.D.2.3}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {D.2.4}High-Fidelity simulator.}{\reset@font\mtcSSfont 101}{subsection.D.2.4}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {D.2.4.1}Single orbit propagation.}{\reset@font\mtcSSSfont 101}{subsubsection.D.2.4.1}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Main function: \texttt {propRK4\_HiFi}. \\}{\reset@font\mtcPfont 101}{subsubsection.D.2.4.1}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Dynamics function: \texttt {SCDynamicsMatlab}.\\}{\reset@font\mtcPfont 102}{figure.caption.199}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {D.2.4.2}Relative dynamics propagation.}{\reset@font\mtcSSSfont 102}{subsubsection.D.2.4.2}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {D.2.5}\textsc {Matlab} Exchange libraries.}{\reset@font\mtcSSfont 102}{subsection.D.2.5}}

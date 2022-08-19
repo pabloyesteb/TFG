@@ -1,16 +1,164 @@
-\chapter{State Transition Matrices.}
+\chapter{Software \& simulator.}
 %
-\label{app: 	STMs}
+\label{app:Software}
 %
-\section{Introduction.}
+\section{Software tool: \textsc{Matlab}}
 %
+\indent Software implementation represents a very big part of this thesis (if not the biggest). It allows to replicate, compare and analyze the results that are provided in the literature. As this involves a fast prototyping approach, non-compiled programming languages are the most rewarding choice. In this case, the particular choice is \textsc{Matlab} in its 2017a release. The selection of said release is due to its stability and relatively long period of usage, assuring up to a certain grade that unfound errors are unlikely to appear. \\
 %
-\section{STM for circular, unperturbed reference orbit.}
+\indent While being a commercial software tool, \textsc{Matlab} also provides a sharing platform (\textsc{Matlab} exchange) in which many useful libraries and functionalities can be found. As it will later be explained, the code repository developed for this thesis includes some \textsc{Matlab} exchange files, which will be duly quoted.
 %
-%
-\section{STM for elliptic, unperturbed reference orbit.}
-%
-%
-\section{STM for elliptic, J2-perturbed orbit.}
+\section{Code repository.}
 %
 %
+	\subsection{Purpose and approach.}
+	%
+	\indent The purpose of this code repository is to comprehend a self-contained tool which can simulate a variety of relative dynamics models as well as perturbation theories, not forgetting all the utilities and libraries that support them. The followed approach is to implement incrementally more complex models in both topics, developing or including on the go the required auxiliary functions.\\
+	%
+	\indent A version control system has been implemented, in order to keep track of changes and develop new features in a structured way. In the future, a Continuous Integration workflow should be integrated, in order to streamline the development, testing and integration of the new features or the solution of known issues.
+	%
+	\subsection{General structure.}
+	%
+		\subsubsection{Relative dynamics models.}
+		%
+		\indent In line with the developed theory throughout the thesis, the following relative dynamics models have been implemented:
+		%
+		\begin{itemize}
+		\item[\GMVred{I.}] \myul[GMVred]{High-fidelity cartesian propagator}: Explained in more detail in section \ref{sec:HiFi_sim}, this model consists on the direct integration of Newton's equations considering a certain amount of effects (central body, third bodies, non-spherical gravity, \ldots). It provides a truth value for any orbit propagation model, acting as a benchmark for testing them.
+		%
+		\item[\GMVred{II.}] \myul[GMVred]{Circular unperturbed model}: Includes all the methods of propagating Hill/Clohessy-Wiltshire equations, as shown in chapter \ref{chap:HCW}.
+		%
+		\item[\GMVred{III.}] \myul[GMVred]{Eccentric unperturbed model}: Refers to the Yamanaka-Ankersen \cite{Yamanaka_Ankersen} model and the safe orbit theory developed by Peters and Noomen \cite{Peters_Noomen}, both explained in chapter \ref{chap:Eccentric}.
+		%
+		\item[\GMVred{IV.}] \myul[GMVred]{Perturbed model}: A simplified perturbed model has been implemented following D'Amico \cite{dAmicoDLR}, which is restricted to near-circular orbits. Future work should also focus on the implementation of the later described perturbation models into relative dynamics, enlarging this section.
+		\end{itemize}
+		%
+		\subsubsection{Perturbation models.}
+		%
+		\indent The implemented perturbation models are listed below:
+		%
+		\begin{itemize}
+		\item[\GMVred{I.}] \myul[GMVred]{Gauss Variational Equations (GVEs)}: Truth model based on the implementation of GVEs (see appendix \textbf{PUT APPENDIX GVES}) for different accelerations, mainly related to Earth's asphericity.
+		%
+		\item[\GMVred{II.}] \myul[GMVred]{Lagrange Planetary Equations (LPEs)}: Another truth model that in this case considers the LPEs, which can be understood as a potential form of the GVEs. 
+		%
+		\item[\GMVred{III.}] \myul[GMVred]{Gim-Alfriend model}\cite{GA_STM}: Derived from Brouwer's theory \cite{Brouwer}, involves a mean to osculating element transformation that allows for a very simple integration of GVEs.
+		%
+		\item[\GMVred{IV.}] \myul[GMVred]{Kaula's theory }\cite{Kaula}: Includes the implementation of Kaula's functions and its testing against LPEs.
+		\end{itemize}
+		%
+		\subsubsection{Input.}
+		%
+		\indent Besides the surveyed models themselves, a vital part of the repository lies on the input folder. It basically contains two types of things: Body data and orbit scenarios. Each of them is next described:
+		%
+		\begin{itemize}
+		\item[\GMVred{1.}]\myul[GMVred]{Body Data}: This subfolder includes three types of parameters: celestial body data (\eg radii, gravitational parameter) (based on SPICE database), physical constants (\eg AU, solar constant, \ldots) and spacecraft data (\eg ID, mass, \ldots). These three types of data can be hold in the same file, as it will later be shown.
+		%
+		\item[\GMVred{2.}]\myul[GMVred]{Scenarios}: Holds several files with the needed data for propagating certain scenarios under certain assumptions. It includes the following data:
+		%
+			\begin{itemize}
+			\item Scenario ID: Identifier of the scenario.
+			%
+			\item Force flags: Used to select the effects to take into account for the High-Fidelity simulation.
+			%
+			\item Propagation parameters: Includes all the data related to time propagation (\eg timestep, initial epoch, \ldots)
+			%
+			\item Initial conditions: Contains the reference orbit's orbital elements and the relative state between chief and deputy.
+			%
+			\item Graphics settings: Comprises the setup of the figure computation (\eg title, save path, legend, \ldots).
+			\end{itemize}
+		%
+		\end{itemize}
+		%
+		\indent Computationally, this data is accessed within \textsc{Matlab} as a structure, which means that it can be accessed as \code{BodyData.EarthData.mu}, for example, or \code{Scenario.force\_flags.J2}. This allows for a very intuitive manipulation, rather than having a large number of individual variables. \\
+		%
+		\indent The question now is, how to load said parameters into \textsc{Matlab}. This can be done by running a \textsc{Matlab} function that returns the structure file after loading each value one by one or, alternatively, through a JSON file. A JSON file is a file that stores simple data structures and objects in JavaScript Object Notation (JSON), and its main advantages are their light weight, the easy human read and the very fast computer read. Although \textsc{Matlab} has some interfaces to work with this type of files, a in-house set of functions has been developed.
+		%
+		\subsubsection{Utilities.}
+		%
+		\indent Orbit propagation as well as its pre- and postprocessing require a decent amount of auxiliary functions, which can be more or less related to orbital mechanics. The Utilities folder gives place to those that are either used in more than topic (\eg element conversion) or that are not strictly related to orbital mechanics (\eg Graphics, mathematical functions). The folder itself is structured as:
+		%
+		\begin{itemize}
+		\item[\GMVred{I.}] \myul[GMVred]{Angle conversions}: Includes the functions that convert between absolute and relative anomalies (true, eccentric and mean), and between date and sidereal angle. 
+		%
+		\item[\GMVred{II.}] \myul[GMVred]{Element conversions}: Contains the functions that compute the transformations between the different state descriptions of a spacecraft (cartesian or orbital element based). These are explained in more detail in appendix \ref{app:App_A} and \ref{app:App_B}.
+		%
+		\item[\GMVred{III.}] \myul[GMVred]{Graphics}: This folder comprises the main and the auxiliary functions used for graphic representation, allowing for a much sleeker data evaluation in code prototyping.
+		%
+		\item[\GMVred{IV.}] \myul[GMVred]{Input-Output (I-0)}: Contains the functions used for input data preprocessing and for file generation (except figures, which is handled by the preceeding subfolder).
+		%
+		\item[\GMVred{V.}] \myul[GMVred]{Math functions}: Includes general math functions (dot product, angle wrapping\ldots) and numerical propagators, which act more of a template to be tailored for different purposes.
+		%
+		\item[\GMVred{VI.}] \myul[GMVred]{Miscellaneous}: Gives place to functions related to \textsc{Matlab} manipulation.
+		\end{itemize}
+		%
+	%
+	%
+	\subsection{General orbit propagation workflow.}
+	%
+	\indent The usual workflow followed to simulate an orbit or a relative dynamics scenario goes as follows:
+	%
+	\paragraph{\GMVred{I.} \myul[GMVred]{Parameter load and scenario preprocessing} \\}
+	%
+	\indent This preprocessing stage consists on accessing and manipulate the data contained in the Input folder. First, the \code{DynStruct} variable is loaded through its namesake JSON file, which contains the celestial body data, constants and spacecraft data. Afterwards, the \code{Scenario} is loaded and preprocessed, procedure in which the following things are done:
+	%
+	\begin{itemize}
+	\item[\GMVred{1.}] JSON file is read.
+	%
+	\item[\GMVred{2.}] Reference orbit's OEs are converted to Keplerian.
+	%
+	\item[\GMVred{3.}](\textsl{Only in relative dynamics.} Deputy's relative state is converted to LVLH frame.
+	%
+	\item[\GMVred{4.}] Keplerian orbital period is computed (for representation purposes).
+	%
+	\item[\GMVred{5.}] Initial epoch is converted to MJD2000 format.
+	%
+	\item[\GMVred{6.}] Required number of timesteps is calculated (for variable allocation).
+	\end{itemize}
+	%
+	\paragraph{\GMVred{II.} \myul[GMVred]{Trajectory propagation} \\}
+	%
+	\indent In this stage, each spacecraft's orbit is computed, or in case of pure relative dynamics models, the relative motion is directly computed.
+	%
+	\paragraph{\GMVred{III.} \myul[GMVred]{Graphical representation} \\}
+	%
+	\indent The desired results are plotted through the use of graphics functions.
+	%
+	\subsection{High-Fidelity simulator.}\label{sec:HiFi_sim}
+	%
+	\indent As it is not explained elsewhere in the thesis, this section is dedicated to briefly describe how the High-Fidelity simulator works. Firstly, the computation of a single orbit will be introduced, to later explain how relative dynamics are derived from individual orbits.
+	%
+		\subsubsection{Single orbit propagation.}
+		%
+		\paragraph{Main function: \code{propRK4\_HiFi}. \\}
+		%
+		\indent This main function is in charge of, given a scenario, a set of parameters and the hierarchy of the spacecraft (chief/target or deputy/chaser), returning the spacecraft's ECI state vector along time. It mainly consists of a time loop in which the trajectory is integrated through a Runge-Kutta 4-step algorithm. A graphical representation of the workflow this function goes through is shown in figure \ref{tikz:propRK4_workflow}.
+		%
+		\input{Appendices/Appendix_E/propRK4_workflow}
+		%
+		%
+		\paragraph{Dynamics function: \code{SCDynamicsMatlab}.\\}
+		%
+		\indent The Runge-Kutta method (and any integrator really) requires a function that calculates the time derivative of the variable vector (the ECI state vector in this case). For the High-Fidelity integrator, this function -- called \code{SCDynamicsMatlab} -- adds up every considered force for this scenario. This is done through the previously described force flags, which enable or not the calculation of each effect. The available effects to consider are:
+		%
+		\begin{itemize}
+		\item Central body acceleration. 
+		%
+		\item Non-spherical gravity of the Earth: Either a full gravity model or a $J_2$ model.
+		%
+		\item Third body perturbations from Sun and Moon.
+		%
+		\item Solar radiation pressure.
+		\end{itemize}
+		%
+		\subsubsection{Relative dynamics propagation.}
+		%
+		\indent The dynamics of a deputy around a chief spacecraft are represented via a LVLH state vector. As one would expect, this can be done by simply propagating both spacecrafts as explained before to then, somehow, transform the deputy's state vector to a chief-centered LVLH frame. This is simply shown in \ref{tikz:propRDHiFi_workflow}.
+		%
+		\input{Appendices/Appendix_E/RD_workflow}
+	%
+	\subsection{\textsc{Matlab} Exchange libraries.}
+	%
+	\indent The \textsc{Matlab} Exchange libraries used in this repository are cited in the bibliography. They mainly have to do with either graphics or input/output operations, involving no technical knowledge that should be herewith described.
+	%
+	

@@ -1,23 +1,237 @@
-\chapter{Software \& simulator.}
+\chapter{Miscellaneous}
 %
-\label{app: 	Software}
+\label{app:App_Misc}
 %
-\section{Software tool: \textsc{Matlab}}
-%
-%
-\section{Code repository.}
+\section{State Transition Matrices.}
 %
 %
-	\subsection{Purpose.}
+	\subsection{STM for circular, unperturbed reference orbit.}
 	%
 	%
-	\subsection{General structure.}
+	\subsection{STM for elliptic, unperturbed reference orbit.}
 	%
 	%
-	\subsection{High-Fidelity simulator.}
+	\subsection{STM for elliptic, J2-perturbed orbit.}
 	%
 	%
-	\subsection{\textsc{Matlab} Exchange libraries.}
+\section{Variational equations.}
+%
+\indent The equations of motion of a spacecraft immersed in a potential field $V$ can be expressed, in an inertial reference frame, as:
+%
+\[
+\ddot{\underline{r}} = \nabla V = \underline{a}
+\]
+%
+\indent These equations can be converted, as usual, to a system of six first-order equations, by treating the velocity components as variables. Accordingly:
+%
+\begin{equation}
+\begin{array}{lc}
+\left\{\begin{array}{lll}
+\dfrac{d}{dt} x_i = \dot{x}_i \\
+\dfrac{d}{dt} \dot{x_i}= \dfrac{\partial V}{\partial x_i} = a_i \\
+\end{array}\right. & i = 1, 2, 3
+\end{array}
+\label{eqAppE:EqsMotion1}
+\end{equation}
+%
+\indent One can expect that these coordinates and velocities change rapidly, requiring a smaller integration timestep. However, it is known that there are some phase spaces in which the state vector does not change so quickly, if it change at all. The obvious example for this is the Keplerian Orbital Elements, which for the two body problem remain constant (except for the mean anomaly, which grows linearly). If the target is to analyze a problem that differs very slightly from the two body problem, an interesting approach would be to use the Keplerian Elements as a parametrization, as they would change slowly. The question now is, how to express the equations of motion in terms of the orbital elements (Keplerian in this case). \\
+%
+\indent This is where the variational equations appear, as they are (by construction) said equations. There are two approaches, depending on whether it is desirable to work with perturbation potentials ($V$) or perturbation accelerations ($\underline{a}$), which are the so-called Lagrange Planetary Equations (LPEs) and the Gauss Variational Equations (GVEs) respectively.
+%
+	\subsection{Lagrange Planetary Equations.}
 	%
+	\indent The procedure followed herewith is derived from Kaula \cite{Kaula}. Firstly, the rates of change of position and velocity are assumed to be functions of the rates of change of the Keplerian OEs $ds_k/dt$, where $s_k$ represents any of $a, e, i, \Omega, \omega, M$. Equation \eqref{eqAppE:EqsMotion1} can be then reformulated as:
 	%
+	\begin{align}
+	\label{eqAppE:EqsMotion2_A} \sum_{k=1}^{6} \frac{\partial x_{i}}{\partial s_{k}} \cdot \frac{d s_{k}}{d t}=\frac{\partial x_{i}}{\partial s_{k}} \cdot \frac{d s_{k}}{d t}=\dot{x}_{i}, \quad i=1,2,3 \\
+	\label{eqAppE:EqsMotion2_B} \sum_{k=1}^{6} \frac{\partial \dot{x}_{i}}{\partial s_{k}} \cdot \frac{d s_{k}}{d t}=\frac{\partial \dot{x}_{i}}{\partial s_{k}} \cdot \frac{d s_{k}}{d t}=\frac{\partial V}{\partial x_{i}}, \quad i=1,2,3
+	\end{align}
+	%
+	\noindent where the partial derivatives $\frac{\partial x_{i}}{\partial s_{k}}$ and $\frac{\partial \dot{x}_{i}}{\partial s_{k}}$ can be computed through \eqref{eqAppB:PQW2ECI}. Furthermore, if one adds the multiplication of \eqref{eqAppE:EqsMotion2_A} times $- \frac{\partial \dot{x}_{i}}{\partial s_{k}}$ plus the product of \eqref{eqAppE:EqsMotion2_B} times $\frac{\partial x_{i}}{\partial s_{k}}$, it follows that:
+	%
+	\begin{equation}
+	-\frac{\partial \dot{x}_{i}}{\partial s_{l}} \cdot \frac{\partial x_{i}}{\partial s_{k}} \cdot \frac{d s_{k}}{d t}+\frac{\partial x_{i}}{\partial s_{l}} \cdot \frac{\partial \dot{x}_{i}}{\partial s_{k}} \cdot \frac{d s_{k}}{d t}=-\frac{\partial \dot{x}_{i}}{\partial s_{l}} \dot{x}_{i}+\frac{\partial x_{i}}{\partial s_{l}} \cdot \frac{\partial V}{\partial x_{i}}
+	\label{eqAppE:EqsMotion3}
+	\end{equation}
+	%
+	\noindent which can be more succinctly written as:
+	%
+	\begin{equation}
+	[s_l, s_k] \dfrac{d s_k}{dt} = \dfrac{\partial F}{\partial s_l}
+	\label{eqAppE:LPE_compact}
+	\end{equation}
+	%
+	\noindent where two new concepts appear. The first one is the Lagrange brackets, which are defined as:
+	%
+	\begin{equation}
+	\left[s_{l}, s_{k}\right]=\frac{\partial x_{i}}{\partial s_{l}} \cdot \frac{\partial \dot{x}_{i}}{\partial s_{k}}-\frac{\partial \dot{x}_{i}}{\partial s_{l}} \cdot \frac{\partial x_{i}}{\partial s_{k}}
+	\end{equation}
+	%
+	\noindent and the function $F$, which is equal to:
+	%
+	\[
+	F = V - T = V - \frac{1}{2 \dot{x}_i \dot{x}_i}
+	\]
+	%
+	\indent Solving for $ds_k/dt$ in \eqref{eqAppE:LPE_compact} leaves exactly what one was looking for: an initial value problem expressed in terms of the Keplerian OEs. Skipping the mathematical specifics of the development (detailed in \cite{Kaula}, eqs. 3.34-3.37), the final form of the equations is:
+	%
+	\begin{equation}
+	\left\{ \begin{array}{llll}
+	\dfrac{da}{dt} 		& = \dfrac{2}{na} \dfrac{ \partial F}{\partial M} \\[1.2 em]
+	\dfrac{de}{dt} 		& = \dfrac{\eta^2}{na^2 e} \dfrac{ \partial F}{\partial M} - \dfrac{\eta}{na^2e} \dfrac{\partial F}{\partial e} \\[1.2 em]
+	\dfrac{di}{dt} 		& = \dfrac{\cos i}{na^2 \eta \sin i} \dfrac{ \partial F}{\partial \omega} - \dfrac{1}{na^2 \eta \sin i} \dfrac{\partial F}{\partial \Omega} \\[1.2 em]
+	\dfrac{d\omega}{dt} & = -\dfrac{\cos i}{na^2 \eta \sin i} \dfrac{ \partial F}{\partial i} + \dfrac{\eta}{na^2  e} \dfrac{\partial F}{\partial e}\\[1.2 em]
+	\dfrac{d\Omega}{dt} & = \dfrac{1}{na^2 \eta \sin i} \dfrac{ \partial F}{\partial i} \\[1.2 em]
+	\dfrac{dM}{dt}		& = - \dfrac{\eta^2}{n a^2 e}\dfrac{\partial F}{\partial e} - \dfrac{2}{na} \dfrac{\partial F}{\partial a}
+	\end{array}\right.
+	\label{eq:LPE}
+	\end{equation} 
+	%
+	\indent It is common to express the force function $F$ as:
+	%
+	\[
+	F = \dfrac{\mu}{r} + R - T = \dfrac{\mu }{2a} + R
+	\]
+	%
+	\noindent where $R$ is the disturbing function, and comprises all terms except the central body acceleration ($\approx$ the two body part of the problem). Hence, the usual form of Lagrange Planetary Equations is:
+	%
+	\begin{equation}
+	\left\{ \begin{array}{llll}
+	\dfrac{da}{dt} 		& = \dfrac{2}{na} \dfrac{ \partial R}{\partial M} \\[1.2 em]
+	\dfrac{de}{dt} 		& = \dfrac{\eta^2}{na^2 e} \dfrac{ \partial R}{\partial M} - \dfrac{\eta}{na^2e} \dfrac{\partial R}{\partial e} \\[1.2 em]
+	\dfrac{di}{dt} 		& = \dfrac{\cos i}{na^2 \eta \sin i} \dfrac{ \partial R}{\partial \omega} - \dfrac{1}{na^2 \eta \sin i} \dfrac{\partial R}{\partial \Omega} \\[1.2 em]
+	\dfrac{d\omega}{dt} & = -\dfrac{\cos i}{na^2 \eta \sin i} \dfrac{ \partial R}{\partial i} + \dfrac{\eta}{na^2  e} \dfrac{\partial R}{\partial e}\\[1.2 em]
+	\dfrac{d\Omega}{dt} & = \dfrac{1}{na^2 \eta \sin i} \dfrac{ \partial R}{\partial i} \\[1.2 em]
+	\dfrac{dM}{dt}		& = n - \dfrac{\eta^2}{n a^2 e}\dfrac{\partial R}{\partial e} - \dfrac{2}{na} \dfrac{\partial R}{\partial a}
+	\end{array}\right.
+	\label{eq:LPE_final}
+	\end{equation} 
+	%
+	\indent As a side note, Wiesel \cite{Wiesel} provides yet another approach to obtain these equations in section 3.8.
+	%
+	\subsection{Gauss Variational Equations.}
+	%
+	\indent A possible drawback or limitation of the LPEs is that it assumes the existence of a force potential whose functional form is known. Nonetheless, there are some cases in which either only the force is modelled or it does not come from a potential field, as it happens with aerodynamic drag. Gauss Variational Equations involve only the components of the perturbing acceleration, allowing to model a wider spectrum of forces. Its derivation is also mathematically dense, as it can be seen in Wiesel \cite{Wiesel}, section 3.3. It involves several ``happy thoughts'' to reach the following expression:
+	%
+	\begin{equation}
+	\left\{ \begin{array}{llll}
+	\frac{d a}{d t}=&\frac{2 e \sin \theta}{n \eta} a_{r}+\frac{2 a \eta}{n r} a_{\theta} \\
+	\frac{d e}{d t}=& \frac{\eta \sin \theta}{n a} a_{r}+\frac{\eta}{n a^{2} e}\left(\frac{a^{2}\eta^2}{r}-r\right) a_{\theta} \\
+	\frac{d i}{d t}=&\frac{r \cos (\omega+\theta)}{n a^{2} \eta} a_{N} \\
+	\frac{d \Omega}{d t}=&\frac{r \sin (\omega+\theta)}{n a^{2} \eta \sin i} a_{N} \\
+	\frac{d \omega}{d t}=& -\dfrac{\eta \cos\theta}{nae}a_r - \dfrac{r\cot i\sin(\omega + \theta)}{na^2 \eta} a_N + \dfrac{\eta}{nae} \left( 1 + \dfrac{1}{1 + e\cos\theta}\right) \sin \theta a_{\theta}\\
+	\frac{d M}{d t}=& n -\dfrac{1}{na} \left( \dfrac{2r}{a} - \dfrac{\eta^2 }{e}\cos\theta\right) a_r - \dfrac{\eta^2}{nae} \left( 1 + \dfrac{1}{1 + e\cos\theta}\right) \sin \theta a_{\theta}\\
+	\end{array}\right.
+	\label{eqAppE:GVE_Wiesel}
+	\end{equation}
+	%
+	\noindent where $a_r, a_{\theta}$ and $a_N$ are the radial, azimuthal and normal (RTN) components of the acceleration on the spacecraft. This equations allow for a very intuitive evaluation of the cuantitative effects of a certain kind of acceleration. For example, it is clear that only an out-of-plane acceleration is able to change the inclination or the ascending node of the orbit. The problem of equation \eqref{eqAppE:GVE_Wiesel} is that, as it involves the use of the true anomaly $\theta$, it requires the solution of Kepler's equation at every timestep. Another option is to substitute the variational equation of the mean anomaly by its true anomaly equivalent, or even integrate the seven of them. \\
+	%
+	\indent To finalize, it should be remarked that both LPEs and GVEs as here presented become singular for null eccentricity and for equatorial/polar orbits, due to the in some sense poor election of the OEs. There are though several alternatives in the literature, in which LPEs and GVEs are expressed for non-singular elements, such as the Equinoctial elements or the Delaunay elements.
+	%
+\section{Elliptic anomaly mapping.}
+%
+\indent The parametrization of the elliptic motion of a spacecraft in its orbit plane may involve the use of three different angles: the true anomaly, the eccentric anomaly and the mean anomaly. Without stopping in its academic definitions, let's remark that the true anomaly is the most physically meaningful one, while the eccentric and the mean are basically mathematical constructs that simplify the motion parametrization.\\
+%
+\indent That being said, it is usually impossible -- or at least uncomfortable -- to use just one of them. That is why a mapping between them is required, as it is also recurrently used in the software side. 
+%
+	\subsection{Angles.}
+	%
+		\subsubsection{Eccentric to mean and viceversa.}
+		%
+		\indent The relation between mean and eccentric anomalies is more of a definition, as Kepler's equation states:
+		%
+		\begin{equation}
+		M = E - \sin E
+		\label{eqAppE:Kepler_equation}
+		\end{equation}
+		%
+		\indent It is quite clear that the direct transformation (\ie $E\to  M$) is trivial. The inverse transformation is a bit more tricky. There is no closed-form solution for $E = E(M)$, so an alternative way must be developed. A common exact solution of said equation consists of an infinite series of Bessel functions, which is not handy or worth the calculation. However, a simple iterative scheme can be obtained, solving for the linear term $E$ and substituting the precedent value in the $\sin$ function. A usually good initial approximation is $E_0 = M$, although for highly eccentric orbit, $E_0 = \pi$ yields better results. In summary, this numeric method can be written as:
+		%
+		\begin{equation}
+		[P] \equiv \left\{ \begin{array}{ll}
+		E_{i + 1} = M + e \sin E_i \\
+		E_0 = M
+		\end{array}\right.
+		\label{eqAppE:mean2ecc}
+		\end{equation}
+		%
+		\indent This is called a fixed-point iteration. Of course, several other methods can be implemented (\eg Newton's Method).
+		
+		\subsubsection{True to eccentric and viceversa.}
+		%
+		\indent The position of the spacecraft in the perifocal frame can be parametrized by both the true and the eccentric anomaly:
+		%
+		\begin{equation}
+		\left\{ \begin{array}{ll}
+		X = r\cos\theta = \dfrac{a\eta^2\cos\theta}{1 + e\cos\theta} = a (\cos E - e)\\
+		Y = r\sin\theta = \dfrac{a\eta^2\sin\theta}{1 + e\cos\theta} = b \sin E = a \eta \sin E
+		\end{array}\right.
+		\end{equation}
+		%
+		\indent These lead to a handy pair of equations for $\sin E$ and $\cos E$:
+		%
+		\begin{alignat}{4}[left = \empheqlbrace]
+		\label{eqAppE:cosE}\cos E = \dfrac{e + \cos\theta}{1 + e\cos\theta}\\
+		\label{eqAppE:sinE}\sin E = \dfrac{\eta \sin\theta}{1 + e\cos\theta}
+		\end{alignat}
+		%
+		\indent In the seeking of a more concise relation between $E$ and $\theta$, let us substitute them for their half angles, which after a little manipulation, leads to:
+		%
+		\begin{alignat}{4}[left = \empheqlbrace]
+		\label{eqAppE:cosE_V2} 2 \cos^2 E/2 = 1 + \cos E = \dfrac{(1 + e) (1 + \cos \theta)}{1 + e\cos\theta} = \dfrac{(1 + e) 2\cos^2 \theta/2 }{1 + e\cos\theta}\\
+		\label{eqAppE:sinE_V2}\sin E = 2 \sin E/2 \cos E/2 = \dfrac{\eta 2 \sin \theta/2 \cos \theta/2}{1 + e\cos\theta}
+		\end{alignat}
+		%
+		\indent Dividing \eqref{eqAppE:sinE_V2} by \eqref{eqAppE:cosE_V2} and simplifying:
+		%
+		\begin{equation}
+		\tan \dfrac{E}{2}= \dsqrt{\dfrac{1 - e}{1 + e}} \tan \dfrac{\theta}{2}
+		\label{eqAppE:true2ecc}
+		\end{equation}
+		%
+		\indent The inverse transformation is again trivial, by just solving for $\tan \theta/2$.
+		%
+		\subsubsection{True to mean and viceversa.}
+		%
+		\indent As simple or absurd as it sounds, and although a closed form exists for the direct transformation (\ie $\theta \to M$), the simplest procedure is to just concatenate the transformations \eqref{eqAppE:true2ecc} and \eqref{eqAppE:Kepler_equation}.
+		
+	\subsection{Angle rates.}
+	%
+	\indent The eccentric and true anomaly rates are usually required, although the fact that they vary along any eccentric orbit makes them unpleasant to manipulate or integrate. In order to tackle their conversion to mean anomaly rate (or mean motion, which is constant along any unperturbed eccentric orbit) it is enough to calculate the time derivatives of the already prescribed equations, that is \cite[][appendix E]{Schaub_Junkins}:
+	%
+	\begin{itemize}
+	\item[\GMVred{A.}] \myul[GMVred]{Mean to eccentric rate}: By differentiating in \eqref{eqAppE:Kepler_equation}, the sensitivity is obtained:
+	%
+	\begin{equation}
+	\dfrac{dM}{dE} = 1 - e\cos E = \dfrac{\eta^2}{\rho} = \dfrac{r}{a}
+	\label{eqAppE:dMdE}
+	\end{equation}
+	%
+	\noindent where $\rho = 1 + e\cos\theta$ as usual. The relation between the mean and eccentric rates is obtained by simply using the chain rule:
+	%
+	\begin{equation}
+	\dfrac{dM}{dt} = \dot{M} = n = \dfrac{dM}{dE}\dfrac{dE}{dt}\dfrac{\eta^2}{\rho} \dfrac{dE}{dt} \Rightarrow \dot{E} = \dfrac{\rho}{\eta^2} n
+	\label{eqAppE:Edot}
+	\end{equation}
+	\item[\GMVred{B.}] \myul[GMVred]{Mean to true rate}: Differentiating \eqref{eqAppE:cosE} and rearranging terms, the sensitivity of the true anomaly with respect to the eccentric is obtained\cite{Schaub_Junkins}:
+	%
+	\begin{equation}
+	\dfrac{d\theta}{dE} = \dfrac{\eta}{1 - e\cos E} = \dfrac{\rho}{\eta} = \dfrac{b}{r}
+	\label{eqAppE:dthetadE}
+	\end{equation}
+	%
+	\indent Combining \eqref{eqAppE:dthetadE} and \eqref{eqAppE:dMdE}, and taking time derivatives, it is pretty much straightaway to get $\dot{\theta}$:
+	%
+	\begin{equation}
+	\dfrac{d\theta}{dt} = \dfrac{d\theta}{dE} \left(\dfrac{dM}{dE}\right)^{-1} \dfrac{dM}{dt} \Rightarrow \dot{\theta} = \dfrac{\rho^2}{\eta^3}n
+	\label{eqAppE:thetadot}
+	\end{equation}
+	\end{itemize}
 	
+	\subsection{Relative anomalies.}
+	%
+	%
+\section{Data sources.}
+%
+%

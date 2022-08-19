@@ -1,0 +1,106 @@
+\chapter{Perturbations: Non-spherical gravity.}
+%
+\label{chap:Chapter_4}
+%
+\section{Introduction.}
+%
+\indent Up until now, every single orbit propagation has been made under the assumption of unperturbed motion. In other words, only two-body problems have been solved. This hypothesis is technically flawed: not a single celestial system in the nature is \textit{exactly} a two body problem. \\
+%
+\indent However, most of said systems are really close two the two-body configuration, deviating from it due to small perturbations. Of course, there are exceptions for that, as for example an interplanetary transfer, in which by definition two bodies are, though maybe in different stages, equally important. The wide variety of perturbations and its notorious effect when needing accurate results induces the development of theories that (a) model and implement said perturbations and (b) yield knowledge about them. \\
+%
+\indent In any case, whatever theory that is formulated, one thing needs to be kept in mind: perturbation theories are build upon the assumption that perturbations remain small. The solutions that these theories may return are otherwise not valid nor useful. \\
+%
+\indent Of all the perturbations that may be considered in spacecraft motion, one of the most relevant (if not \textit{the} most) is the deviation from the gravity field to that of a central body. This is usually referred to as non-spherical gravity, and the target is to accurately model the mass distribution of the central body and hence the gravity field derived from it. An example of overall knowledge is the Earth's oblateness (\ie the Earth being flattened in its rotation direction). Although a flattened spheroid is usually a good enough approximation, the mathematical architecture behind most theories allows for a very accurate representation of the Earth's shape. This will undoubtedly improve the accuracy of the results. \\
+%
+\indent The implementation of a non-spherical gravity model can be approached as a raw computation of its value -- with a High-Fidelity propagation in mind -- or as a way to further understand its effects and obtain closed-form solutions. Though the former improves the truth model, it is the latter who yields more knowledge and fewer computational cost.\\
+%
+\indent This chapter intends to (a) provide an outlook on how to model perturbations in general through averaging methods and (b) focus on the non-spherical gravity field analysis and implementation. Its structure is outlined with that in mind, starting by analyzing which perturbations should be considered and introducing general averaging methods. That is followed by a general description of the non-spherical gravity field, which leads to the two main sections of the chapter. The first one is about mean and osculating elements, its definition, how they simplify orbit propagation and how they are actually calculated for the oblate Earth. The second one deals with Kaula's theory, which provides a different insight on the spherical harmonic formulation of the gravity field.
+%
+	\subsection{Relevant perturbations in spacecraft motion.}
+	%
+	\indent 
+	%
+	%
+	\begin{figure}[!htb]
+	\centering\includegraphics[width = 0.7\linewidth]{Chapters/Chapter_04/Pert_montenbruck}
+	\caption{Order of magnitude of various perturbations of a satellite orbit. \cite{Montenbruck}}
+	\label{figCh4:Pert_montenbruck}
+	\end{figure}
+	%
+	\FloatBarrier
+	%
+	%
+	\subsection{Variational formulation of perturbed motion: Averaging methods.}
+	%
+	%
+		\subsubsection{Von Zeipel's method.}
+		%
+		%
+		\subsubsection{Lie series method.}
+		%
+		%
+\section{Non-spherical gravity: General concepts.}
+%
+%
+\section{Mean and osculating elements.}
+%
+%
+	\subsection{Brouwer's theory.}
+	%
+	%
+	\subsection{Validation.}
+	%
+	%
+\section{Kaula's theory.}
+%
+%
+	\subsection{Approach.}
+	%
+	%
+	\subsection{Subfunctions $\bm{F_{lmp}}$, $\bm{ G_{lpq}}$ and $\bm{ S_{lmpq}}$.}
+	%
+	%
+		\subsubsection{Subfunction $\bm{F_{lmp}}$.}
+		%
+		%
+		\paragraph{Example: Calculation of $\bm{F_{321}}$}
+		%
+		%
+		\subsubsection{Subfunction $\bm{G_{lpq}}$.}
+		%
+		\paragraph{Example: Calculation of $\bm{G_{201}}$}
+		%
+		%
+		\subsubsection{Subfunction $\bm{S_{lmpq}}$.}
+		%
+		%
+	\subsection{Implementation.}
+	%
+		\subsubsection{Target and approach.}
+		%
+		%
+		\subsubsection{Computation of $\bm{V_{lm}}$}
+		%
+		%
+			\paragraph{\GMVred{I.} Subfunction $\bm{F_{lmp}}$. }
+			%
+			%
+			\paragraph{\GMVred{II.} Subfunction $\bm{ G_{lpq}}$. }
+			%
+			%
+			\paragraph{\GMVred{III.} Subfunction $\bm{ S_{lmpq}}$. }
+			%
+			%
+		\subsection{Validation.}
+		%
+		%
+			\subsubsection{Target and approach.}
+			%
+			%
+			\subsubsection{High-Fidelity propagation vs. Kaula's LPEs.}
+			%
+			%
+			\subsubsection{Kaula's LPEs vs. Wiesel's LPEs.}
+			%
+			%
+	\textbf{Remember to add Report's appendices to thesis' appendices.}

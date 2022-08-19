@@ -1,4 +1,11 @@
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode General}{\reset@font\mtcSfont 89}{section*.179}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode Eccentric Dynamics}{\reset@font\mtcSfont 90}{section*.179}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode Perturbations}{\reset@font\mtcSfont 91}{section*.179}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \textsc {Matlab} Exchange libraries}{\reset@font\mtcSfont 92}{section*.179}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {C.1}Introduction.}{\reset@font\mtcSfont 91}{section.C.1}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {C.2}Lagrangian formulation.}{\reset@font\mtcSfont 91}{section.C.2}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {C.2.1}Generalized coordinates \& energy of a dynamical system.}{\reset@font\mtcSSfont 91}{subsection.C.2.1}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {C.2.2}Lagrangian function.}{\reset@font\mtcSSfont 91}{subsection.C.2.2}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {C.2.3}Lagrange equations.}{\reset@font\mtcSSfont 92}{subsection.C.2.3}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {C.3}Hamiltonian formulation.}{\reset@font\mtcSfont 92}{section.C.3}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {C.3.1}Hamiltonian function.}{\reset@font\mtcSSfont 92}{subsection.C.3.1}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {C.3.2}Hamilton equations.}{\reset@font\mtcSSfont 92}{subsection.C.3.2}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {C.3.3}Canonical transformations.}{\reset@font\mtcSSfont 92}{subsection.C.3.3}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {C.3.4}Hamilton-Jacobi theory.}{\reset@font\mtcSSfont 94}{subsection.C.3.4}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {C.4}Application to the two-body problem.}{\reset@font\mtcSfont 95}{section.C.4}}

@@ -1,6 +1,6 @@
 \chapter{Cartesian reference systems.}
 %
-\label{chap: App_B}
+\label{app:App_B}
 %
 \section{Introduction.}
 %
@@ -265,7 +265,7 @@
 %
 	\subsection{Earth-Centered-Inertial reference system (ECI).}
 	%
-	\indent As previously stated, any Earth-centered reference system will in turn be non-inertial. That leads to the need of defining a common baseline, \ie an epoch at which the reference system is known. The chosen epoch is denoted as J2000.0\footnote{J2000 denotes a reference frame, being analog to ECI. J2000.0 refers to the mentioned epoch.}, which translates to January \nth{1}, at 12:00:00.000 (midday) in Julian years \cite[see][, glossary]{Time_handbook}. Effectively, the ECI reference system, is geometrically defined as follows \cite{Tapley}:
+	\indent As previously stated, any Earth-fixed reference system will in turn be non-inertial. That leads to the need of defining a common baseline, \ie an epoch at which the reference system is known. The chosen epoch is denoted as J2000.0\footnote{J2000 denotes a reference frame, being analog to ECI. J2000.0 refers to the mentioned epoch.}, which translates to January \nth{1}, at 12:00:00.000 (midday) in Julian years \cite[see][, glossary]{Time_handbook}. Effectively, the ECI reference system, is geometrically defined as follows \cite{Tapley}:
 	%
 	\[
 	\arraycolsep=10pt
@@ -617,9 +617,18 @@
 	\end{array}\right]
 			\]
 			%
-			\indent It is important to note that, as the rotation angles are Keplerian OEs, the unperturbed assumption leads to a null angular velocity (as the orbital plane remains unchanged along time). That greatly simplifies the transformation, turning into a trivial rotation of the position and velocity vectors.
+			\indent It is important to note that, as the rotation angles are Keplerian OEs, the unperturbed assumption leads to a null angular velocity (as the orbital plane remains unchanged along time). That greatly simplifies the transformation, turning into a trivial rotation of the position and velocity vectors, which can be expressed as:
 			%
-		
+			\begin{equation}
+			\left\{\begin{array}{lll}
+			\underline{x}_{ECI} & = R_{PQW\to ECI} \underline{q} \\
+			\underline{\dot{x}}_{ECI} & = R_{PQW\to ECI} \underline{\dot{q}} 
+			\end{array}\right.
+			\label{eqAppB:PQW2ECI}
+			\end{equation}
+			%
+			\noindent where the functional dependencies are separated, as $R_{PQW\to ECI}(\Omega, i, \omega)$ and $[\underline{q}, \underline{\dot{q}}] = f(a, e, M)$. This fact will prove useful later on.
+			%
 \section{Relative reference systems.}
 %
 \indent It is time now to address relative reference frames. For each of them, a description is provided, followed by a conversion to and from the ECI reference frame. 

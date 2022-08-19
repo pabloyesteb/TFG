@@ -40,7 +40,8 @@
 \usepackage{rotating}
 \usepackage{cases}
 \usepackage{tabularx}
-%\usepackage{arydshln}
+\usepackage{soul}
+\usepackage{tcolorbox} 
 %% === === === === === === LISTINGS  === === === === === ===
 \usepackage{listings}
 \definecolor{codegreen}{rgb}{0,0.6,0}
@@ -78,6 +79,7 @@
   escapechar         = ",
   mlshowsectionrules = true,
 }
+\newcommand{\code}[1]{\texttt{#1}}
 %% === === === === === === BIBLATEX  === === === === === ===
 \usepackage[backend=biber,
         style=numeric-comp, hyperref, giveninits=true, backref = true, sorting=none]{biblatex}
@@ -130,7 +132,7 @@ bottom color=white, font=\itshape, text height=1.5ex,text depth=.25ex}}
 %___________________________________________________________________________________________________________________
 \tikzset{nonterminal_red/.style = {
 rectangle, minimum size=10mm, very thick, draw=GMVred, top color=GMVred!20 ,
-bottom color=GMVred!20, font=\itshape, text height=1.5ex,text depth=.25ex}}
+bottom color=GMVred!20, text height=1.5ex,text depth=.25ex}}
 %___________________________________________________________________________________________________________________
 \tikzset{bluerect/.style = {
 rectangle, minimum size=10mm, very thick, draw=CadetBlue, top color=CadetBlue!20 ,
@@ -168,7 +170,7 @@ bottom color=white, font=\ttfamily, text height=1.5ex, text depth=.25ex}}
 circle, thick, draw=GMVred, fill=GMVred!20, minimum size=8mm, font=\ttfamily, text height=1.5ex, text depth=.25ex}}
 %___________________________________________________________________________________________________________________
 \tikzstyle{decision} = [diamond, draw, fill=white,
-    text width=4.5em, text badly centered, node distance=3cm, inner sep=0pt]
+    text width=4.5em, text centered, node distance=3cm, inner sep=0pt]
 %___________________________________________________________________________________________________________________
 \tikzstyle{block} = [rectangle, draw, fill=gray!20, text width=7.5em, rounded corners, minimum height=4.1em]
 %___________________________________________________________________________________________________________________
@@ -270,6 +272,7 @@ decoration={snake,amplitude=.8mm,segment length=2mm,post length=1mm}}
 \newcommand{\GMVred}[1]{\textcolor{GMVred}{#1}}
 \newcommand{\longeq}{\scalebox{3}[1]{=}}
 \newcommand{\longapprox}{\scalebox{2}[1]{$\approx$}}
+\newcommand{\myul}[2][black]{\setulcolor{#1}\ul{#2}\setulcolor{black}}
     
 \newcommand{\be}{\begin{equation}}
 % $$ 
@@ -320,6 +323,8 @@ decoration={snake,amplitude=.8mm,segment length=2mm,post length=1mm}}
                                                    % and gray colored rows
 \newcommand\ccr[1]{\cellcolor{red!15}{#1}}         % for cells in  second column 
                                                    % white colored rows
+%% === === === === === COLORBOX  === === === === ===     
+\newtcolorbox{GMVbox}{colback=red!5!white,colframe=red!75!black}              
 %------------------------------------------------------------------------------
 \def\floatpagefraction{.8}
 \DeclareGraphicsExtensions{.pdf,.png,.jpg} % solo para PDFLaTeX

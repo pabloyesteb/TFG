@@ -1,0 +1,56 @@
+\begin{figure}[!htb]
+%\begin{changemargin}{-2.2cm}{-1cm}
+\begin{adjustbox}{width=\textwidth}
+\begin{tikzpicture}[,>=stealth,thick, text=black,
+every new ->/.style={shorten >=1pt}]
+%\tikzstyle{every node}=[font=\small]
+% ---------- NODES ----------
+\matrix[column sep=4mm] { 
+% === === === === F_lmp diagram === === === === 
+% ***** First row *****
+\node (Scenario)	[terminal_gray] {Scenario}; 							& \node (p12)		[point] 			{};									& 
+\node (OE_ref)		[terminal_gray] {\code{Scenario.ICs.OE\_ref}}; 			& \node (KOE2ECI)	[nonterminal_red] 	{$ KOE2ECI $}; 						&
+\node (yTECI0)		[terminal_red] 	{$ \left. y_{T, ECI}\right\rvert_{0}$}; & 																			& 
+ 																			& 																			& 
+ 																			\\[2ex]	
+% ***** Second row *****
+\node (SC)			[terminal_gray] {SC}; 									& \node (p22)		[point] 		{};										& 
+\node (decision)	[decision] {$\tiny{SC \overset{\mathord{?}}{=} \text{`Target'}}$};	& \node (SC_yes)	[cloud] 		{Yes}; 						&
+\node (yTECI0_1)	[terminal_red] {$ \left. y_{T, ECI}\right\rvert_{0}$}; & 																			& 
+ 																			& 																			& 
+ 																			\\
+ 																			
+% ***** Third row *****
+\node (DynStruct)	[terminal_gray] {DynStruct};							& \node (p32)		[point] 		{};										&  
+ 																			& 																			&
+ 																			& 																			& 
+\node (p37)			[point] 		{};										& \node (prop_tf)	[nonterminal_red] {Prop. until $t = t_f$}; 				& 
+\node (yECI)		[terminal_red] 	{$ y_{C/T, ECI} (t)$}; 					\\[2ex]	
+
+% ***** 4th row *****
+																			& 																			& 
+\node (SC_no)		[cloud] 		{No}; 									& \node (dx)		[terminal_gray] {\code{Scenario.ICs.dx}}; 				&
+\node (LVLH2ECI)	[nonterminal_red] 	{$ LVLH2ECI $};						& \node (yCECI0)		[terminal_red] 	{$ \left. y_{C, ECI}\right\rvert_{0}$}; & 
+																			&  																			& 
+																			\\
+																			};
+% ----------- GRAPH ----------
+\node (prop_text)	[GMVred!70, above = 14ex of yTECI0]		{\huge{\code{propRK4\_HiFi} \textbf{function}}};
+\begin{pgfonlayer}{background}
+\draw	[GMVred!50, thick, fill = GMVred, opacity = 0.05] 	($(OE_ref.north west) - (5ex, 0.6ex)$) rectangle ($(prop_tf.south east) - (5ex, 20ex)$);
+\end{pgfonlayer}
+\graph [use existing nodes] {
+Scenario 			-> p12;
+SC					-> p22;
+DynStruct 			-> p32;
+OE_ref 				-> KOE2ECI 		-> yTECI0 							-> [bend left, dotted, thick] yTECI0_1 		-- [hv path] p37 	-> prop_tf 		-> yECI;
+decision 			-> SC_yes 		-> [double distance=2pt] yTECI0_1;
+decision 			-> SC_no 		-> [double distance=2pt] dx 		-> LVLH2ECI 								-> yCECI0 			--[hv path] p37;
+yTECI0 				-> [bend right, dotted, thick] LVLH2ECI;
+};
+\end{tikzpicture}
+\end{adjustbox}
+%\end{changemargin}
+\caption{Workflow of the High-Fidelity propagator.}
+\label{tikz:propRK4_workfflow}
+\end{figure}

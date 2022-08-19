@@ -1,6 +1,6 @@
 \chapter{Absolute and relative orbital element sets.}
 %
-\label{chap:App_A}
+\label{app:App_A}
 %
 \section{Introduction.}
 %
@@ -95,7 +95,7 @@ OE_tilde -> OE_tilde2KOE -> KOE -> KOE2OE_star -> OE_star;};
 	%
 	\paragraph{Eccentricity vector \\}
 	%
-	\indent The notion of the eccentricity vector is quite basic, as it is, when in unperturbed motion, a constant of the dynamic system. It is defined as the eccentricity-sized vector pointing towards the perigee. Nonetheless, for this purpose, the eccentricity vector is defined as \cite{DAmico_montenbruck}:
+	\indent The notion of the eccentricity vector is quite basic, as it is, when in unperturbed motion, a constant of the dynamic system. It is defined as the eccentricity-sized vector pointing towards the perigee. Nonetheless, for this purpose, the eccentricity vector is defined as \cite{DAmico_Montenbruck}:
 	%
 	\begin{equation}
 	\underline{e} = 
@@ -195,7 +195,7 @@ OE_tilde -> OE_tilde2KOE -> KOE -> KOE2OE_star -> OE_star;};
 	%
 	\subsubsection{Delaunay orbital elements (DOE).}
 	%
-	\indent Delaunay elements arise when formulating the two-body problem through analytical mechanics. All of the previous element sets are clearly non-canonical (\ie they do not satisfy Hamilton's equations). Starting from the canonical set of elements (see appendix \ref{chap:App_C}), Delaunay elements are reached after performing a canonical transformation, leading to the following definition:
+	\indent Delaunay elements arise when formulating the two-body problem through analytical mechanics. All of the previous element sets are clearly non-canonical (\ie they do not satisfy Hamilton's equations). Starting from the canonical set of elements (see appendix \ref{app:App_C}), Delaunay elements are reached after performing a canonical transformation, leading to the following definition:
 	%
 	\begin{equation}
 	\left\{ 
@@ -411,7 +411,7 @@ KOE_c ->  KOE2OE_2 -> OE_c ->[hv path] plusminus -> delta_OE;
 %
 	\subsubsection{Relative eccentricity/inclination vectors orbital elements (REIOE).} \label{sec:REIOE}
 	%
-	\indent This ROE set is the counterpart of the EI set (see \ref{sec: EIOE}). It is nonetheless interesting to see the meaning and shape of it, as it is quite widely used in literature \cite{DAmico_montenbruck, Schaub2004, dAmicoDLR}. Let us first define its elements, to later analyze the meaning behind them:
+	\indent This ROE set is the counterpart of the EI set (see \ref{sec: EIOE}). It is nonetheless interesting to see the meaning and shape of it, as it is quite widely used in literature \cite{DAmico_Montenbruck, Schaub2004, dAmicoDLR}. Let us first define its elements, to later analyze the meaning behind them:
 	%
 	\begin{equation}
 	\left\{ 
@@ -484,7 +484,7 @@ KOE_c ->  KOE2OE_2 -> OE_c ->[hv path] plusminus -> delta_OE;
 	\label{eq: 	e_vec_mat}
 	\end{equation}
 	%
-	\noindent where we have neglected terms of second order and higher. The relative inclination vector is defined in an alternative way \cite{DAmico_montenbruck} (comparing with the absolute counterpart). Mathematically:
+	\noindent where we have neglected terms of second order and higher. The relative inclination vector is defined in an alternative way \cite{DAmico_Montenbruck} (comparing with the absolute counterpart). Mathematically:
 	%
 	\[
 	\delta \underline{i} = \sin \delta i
@@ -554,7 +554,7 @@ KOE_c ->  KOE2OE_2 -> OE_c ->[hv path] plusminus -> delta_OE;
 	\end{equation} 
 	%
 	\indent A graphical representation of this concept can be seen in figure \ref{fig: 	inc_vector}.
-	\subsubsection{Peters-Noomen C set of relative orbital elements (CROE).}
+	\subsubsection{Peters-Noomen C set of relative orbital elements (CROE).}\label{sec:C_ROE}
 	%
 	\indent Defined by Peters \& Noomen in \cite{Peters_Noomen}, this set is also closely related with the orbit safety notion. It arises from the analysis of the Gauss Variational Equations (GVEs) applied to the relative dynamics between a deputy and a chief spacecraft, when the former performs a cotangential transfer. Without further ado, let us define them as:
 	%
