@@ -1,17 +1,17 @@
 \chapter{Analytical mechanics applied to the two-body problem.}
 %
-\label{app: 	Analytical_mechanics}
+\label{app:App_C}
 %
 \section{Introduction.}
 %
-\indent Lagrangian and Hamiltonian mechanics are the two most widely used approaches to analytical mechanics, which constitute a generalization of the classical Newtonian mechanics. These formalisms are closely related to each other, and they usually lead to the same solution. Both approaches will be here succinctly describe, as they embody significant advantages for the treatment of some problems of relative motion. For more in-depth content on this topic, please see \cite{Wiesel, SCFormationFlying}.
+\indent Lagrangian and Hamiltonian mechanics are the two most widely used approaches to analytical mechanics, which constitute a generalization of the classical Newtonian mechanics. These formalisms are closely related to each other, and they usually lead to the same solution. Both approaches will be here succinctly described, as they embody significant advantages for the treatment of some problems of relative motion. For more in-depth content on this topic, please see \cite{Wiesel, SCFormationFlying}.
 %
 \section{Lagrangian formulation.}
 %
 %
 	\subsection{Generalized coordinates \& energy of a dynamical system.}
 	%
-	\indent Let us consider any given dynamical system. Lagrangian mechanics deal with a configuration space $\mathrm{Q}$, which is parametrized by a set of generalized coordinates $q_i\in \mathrm{Q}$ and generalized velocities $\dot{q}_i$. It is through $(q_i, \dot{q}_i)$ how we will describe said dynamical system. \\
+	\indent Consider any given dynamical system. Lagrangian mechanics deal with a configuration space $\mathrm{Q}$, which is parametrized by a set of generalized coordinates $q_i\in \mathrm{Q}$ and generalized velocities $\dot{q}_i$. It is through $(q_i, \dot{q}_i)$ how we will describe said dynamical system. \\
 	%
 	\indent The equations that describe the evolution of the system can be reached through two main approaches. The first one is the Lagrangian formulation, which is described next.
 	%
@@ -65,7 +65,7 @@
 	%
 	\begin{equation}
 	\left\{ \begin{array}{ccc}
-	\dot{q}_i = \dfrac{\partial H }{\partial p_i} \\
+	\dot{q}_i = \dfrac{\partial H }{\partial p_i} \\[1.2em]
 	\dot{p}_i = -\dfrac{\partial H}{\partial q_i}
 	\end{array}\right.
 	\label{eqAppC:Ham_eqs}
@@ -79,7 +79,7 @@
 	%
 	\begin{equation}
 	\left\{ \begin{array}{ccc}
-	\dot{Q}_i = \dfrac{\partial K }{\partial P_i} \\
+	\dot{Q}_i = \dfrac{\partial K }{\partial P_i} \\[1.2em]
 	\dot{P}_i = -\dfrac{\partial K}{\partial Q_i}
 	\end{array}\right.
 	\label{eqAppC:Ham_eqs_tx}
@@ -89,7 +89,7 @@
 	%
 	\begin{subequations}
 	\begin{alignat}{4}[left = \empheqlbrace]
-	\delta \dint_a^b \left( \dsum_{i = 1}^N p_i \dot{q}_i - H\right) dt = 0\\
+	\delta \dint_a^b \left( \dsum_{i = 1}^N p_i \dot{q}_i - H\right) dt = 0\\[1.2em]
 	\delta \dint_a^b \left( \dsum_{i = 1}^N P_i \dot{Q}_i - K\right) dt = 0
 	\end{alignat}
 	\end{subequations}
@@ -111,9 +111,9 @@
 	$F_1(q_i, Q_i, t)$ & $F_2(q_i, P_i, t)$ & $F_3(p_i, Q_i, t)$ & $F_4(p_i, P_i, t)$ \\ 
 	\hline
 	\hline 
-	$p_i = \dfrac{\partial F_1}{\partial q_i}$ & $p_i = \dfrac{\partial F_2}{\partial q_i}$ & $q_i= -\dfrac{\partial F_3}{\partial p_i}$ & $q_i = -\dfrac{\partial F_4}{\partial p_i}$ 	\\ 
+	$p_i = \dfrac{\partial F_1}{\partial q_i}$ & $p_i = \dfrac{\partial F_2}{\partial q_i}$ & $q_i= -\dfrac{\partial F_3}{\partial p_i}$ & $q_i = -\dfrac{\partial F_4}{\partial p_i}$ 	\\ [10pt]
 	\hline 
-	$P_i = -\dfrac{\partial F_1}{\partial Q_i}$ & $Q_i = \dfrac{\partial F_2}{\partial P_i}$ & $P_i = - \dfrac{\partial F_3}{\partial Q_i}$ & $Q_i = \dfrac{\partial F_4}{\partial P_i}$ \\ 
+	$P_i = -\dfrac{\partial F_1}{\partial Q_i}$ & $Q_i = \dfrac{\partial F_2}{\partial P_i}$ & $P_i = - \dfrac{\partial F_3}{\partial Q_i}$ & $Q_i = \dfrac{\partial F_4}{\partial P_i}$ \\ [10pt]
 	\hline 
 	\end{tabular} 
 	\caption{Canonical transformation relations \cite{Wiesel}.}
@@ -129,14 +129,14 @@
 	%
 	\subsection{Hamilton-Jacobi theory.}
 	%
-	\indent It is clear that expressing a problem in a certain choice of coordinates can dramatically help with its solution. A possible approach would be to find the transformation which leads to the most simple form of the problem. In this case, the more coordinates or momenta that are missing in the transformed hamiltonian \eqref{eqAppC:Ham_tx}, the more momenta or coordinates are constant. The most advantageous situation then would be that the hamiltonian itself is null, which translates into a constant set of generalized coordinates and conjugate momenta. This is expressed mathematically as:
+	\indent It is clear that expressing a problem in a certain choice of coordinates can dramatically help with its solution. A possible approach would be to find the transformation which leads to the most simple form of the problem. In this case, the more coordinates or momenta that are missing in the transformed Hamiltonian \eqref{eqAppC:Ham_tx}, the more momenta or coordinates are constant. The most advantageous situation then would be that the Hamiltonian itself is null, which translates into a constant set of generalized coordinates and conjugate momenta. This is expressed mathematically as:
 	%
 	\begin{equation}
 	H(q_i, p_i, t) + \dfrac{\partial F}{\partial t} = 0
 	\label{eqAppC:HJ_eq}
 	\end{equation}
 	%
-	\noindent which is called the Hamilton-Jacobi equation. It is valid for all kinds of transformating functions, although generally, it is applied for $F_2(q_i, P_i$, meaning:
+	\noindent which is called the Hamilton-Jacobi equation. It is valid for all kinds of transformating functions, although generally, it is applied for $F_2(q_i, P_i)$, meaning:
 	%
 	\begin{equation}
 	H\left(q_i, \dfrac{\partial F_2}{\partial q_i}, t\right) + \dfrac{\partial F_2}{\partial t} = 0
@@ -165,7 +165,7 @@
 	\label{eqAppC:HJ_4}
 	\end{equation}%
 	%
-	\indent This way, we have two different terms that are functions of different variables. It is clear that if two functions of different variables are equal, both must be constant, so we can write:
+	\indent This way, two different terms that are functions of different variables arise. It is clear that if two functions of different variables are equal, both must be constant, so that:
 	%
 	\begin{subequations}
 	\begin{alignat}{4}[left = \empheqlbrace]
@@ -179,7 +179,7 @@
 %
 \section{Application to the two-body problem.}
 %
-\indent \cite[Wiesel][]{Wiesel} provides a succinct variational approach for the two body problem. In particular, the Hamiltonian function of a certain body rotating within the gravity a central body can be expressed as:
+\indent Wiesel \cite{Wiesel} provides a succinct variational approach for the two body problem. In particular, the Hamiltonian function of a certain body rotating within the gravity a central body can be expressed as:
 %
 \begin{equation}
 H = \dfrac{1}{2} \left( p_r^2 + \dfrac{1}{r^2} p_{\theta}^2 + \dfrac{1}{r^2 \sin^2 \theta} p_{\phi}^2 \right) - \dfrac{\mu}{r}
@@ -219,7 +219,7 @@ W = W_r(r) + W_{\theta} (\theta) + W_{\phi} (\phi)
 \left(\dfrac{\partial W}{\partial \theta}\right)^2 + \dfrac{1}{r^2 \sin^2 \theta} \left(P_{\phi} \right)^2 \equiv P_3^2
 \end{equation}
 %
-\indent As of now, three new constant conjugate momenta have been reached. Half of the problem is now solved, as we still have to find the actual form of the generating function $W$, which allows the calculation of the generalized coordinates $Q_i$. This involves a much more arduous manipulation which will not be herewith developed: just quoted. \\
+\indent As of now, three new constant conjugate momenta have been reached. Half of the problem is now solved, as the actual form of the generating function $W$ is still to be found, which allows the calculation of the generalized coordinates $Q_i$. This involves a much more arduous manipulation which will not be herewith developed: just quoted. \\
 %
 \indent The constant coordinate $Q_E$ conjugate to the total energy $P_E$ needs to be a constant time, as its time derivative has to be non-dimensional. This time turns out to be the perigee passage time $T_0$, or most commonly, its negative $- T_0$. $P_3$ represents the total angular momentum, whose conjugate coordinate is the argument of perigee $\omega$. Finally, the conjugate coordinate to the z-angular momentum $P_{\phi}$ is the RAAN $\Omega$.\\
 %

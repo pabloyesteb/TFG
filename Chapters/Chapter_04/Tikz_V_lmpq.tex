@@ -1,0 +1,91 @@
+\begin{figure}[!htb]
+\begin{changemargin}{-1cm}{-1cm}
+\begin{tikzpicture}[,>=stealth,thick, text=black,
+every new ->/.style={shorten >=1pt}]
+% ---------- NODES ----------
+\matrix[column sep=4mm] { 
+% ***** First row *****
+\node (p11)			[point] 		{}; 									& 																			& 
+\node (p13)			[point] 		{}; 									& 																			&
+\node (p15)			[point] 		{}; 									& 																			& 
+\node (p17)			[point] 		{}; 									\\[4ex]	
+% ***** Second row *****
+																			& \node (p_0) 		[terminal_white]{$ p = 0 $}; 							& 
+\node (p)			[terminal_gray] {$ p $};  								& \node (lm)		[terminal_gray] {$ l, m $}; 							&
+\node (q)			[terminal_gray] {$ q $};  								& \node (q_qmax) 	[terminal_white]{$ q = q_{max} $}; 						& 
+																			\\[4ex]																	
+% ***** Third row *****
+																			& 																			&
+\node (p33)			[point] 		{}; 									& \node (p34)			[point] 		{}; 								&
+\node (p35) 		[point] 		{}; 									& 																			&
+																			\\[4ex]
+% ***** Fourth row *****
+																			& 																			&
+\node (lmp)			[terminal_gray] {$l, m, p$}; 							& \node (lpq)		[terminal_gray] {$l, p, q$}; 							&
+\node (lmpq) 		[terminal_gray] {$l, m, p, q$}; 						& 																			&
+																			\\[4ex]																		
+% ***** Fifth row *****																		
+\node (p_plus_1)	[nonterminal] 	{$ p = p + 1$};  						& 																			&
+\node (F_lmp)		[terminal_red] 		{$F_{lmp}(i)$}; 						& \node (G_lpq)		[terminal_red] 		{$G_{lpq}(e)$}; 						&
+\node (S_lmpq) 		[terminal_red] 		{$S_{lmpq}(\omega, M, \Omega, \Theta)$};& 																			&
+\node (q_plus_1)	[nonterminal] 	{$ q = q + 1$};  						\\[4ex]		
+% ***** Sixth row *****																		
+																			& 																			&
+																			& \node (V_lmpq)	[terminal_red] 		{$V_{lmpq} = F_{lmp}G_{lpq}S_{lmpq}$}; 	&
+																			& 																			&
+																			\\[4ex]	
+% ***** Seventh row *****																		
+																			& 																			&
+\node (V_lm_0)		[terminal_white]{$V_{lm} = 0$}; 						& \node (V_lm)		[terminal_red] 		{$V_{lm} =	V_{lm} + V_{lmpq} $}; 		&
+																			& 																			&
+\node (p87)			[point] 		{}; 									\\[4ex]	
+% ***** Eighth row *****																		
+																			& 																			&
+																			& \node (q_decision)[decision] 		{$q \overset{\mathord{?}}{=} q_{max} $};&
+\node (q_no)		[cloud] 		{No}; 									& 																			&
+																			\\[4ex]	
+% ***** Ninth row *****																		
+																			& 																			&
+																			& \node (q_yes)		[cloud] 		{Yes}; 									&
+																			& 																			&
+																			\\[4ex]	
+% ***** Tenth row *****																		
+																			& 																			&
+\node (p_no)		[cloud] 		{No}; 									& \node (p_decision)[decision] 		{$p \overset{\mathord{?}}{=} l $};&
+																			& 																			&
+																			\\[4ex]																			
+% ***** Eleventh row *****																		
+																			& 																			&
+																			& \node (p_yes)		[cloud] 		{Yes}; 									&
+																			& 																			&
+																			\\[4ex]	
+% ***** Twelfth row *****																		
+																			& 																			&
+																			& \node (end)	[terminal_red] 			{$V_{lm} $}; 							&
+																			& 																			&
+																			\\[4ex]	
+																			};
+% ----------- GRAPH ----------
+\graph [use existing nodes] {
+p_0 				-> [double distance=2pt] p;
+q_qmax 				-> [double distance=2pt] q; 
+p 					-> p33;
+lm 					-> p34;
+q 					-> p35;
+lmp 				-> F_lmp 						->  [vhv path]V_lmpq.north west;
+lpq 				-> G_lpq 						->  V_lmpq 							-> V_lm -> q_decision -> q_yes 	-> p_decision -> p_yes -> end;
+lmpq 				-> S_lmpq 						-> 	[vhv path] V_lmpq.north east;
+V_lm_0 				-> [double distance=2pt] V_lm; 
+q_decision 			-> q_no 						-> [hv path] q_plus_1 				-- [vh path] p15 -> q;
+p_decision 			-> p_no 						-> [hv path] p_plus_1 				-- [vh path] p13 -> p;
+};
+%\node[rectangle, draw=GMVred!50, thick] (rect) at  
+\begin{pgfonlayer}{background}
+\draw[GMVred!50, thick, fill = GMVred, opacity = 0.1] ($(lmpq.north east) + (8ex, 0.6ex)$) rectangle ($(V_lm_0.south west) + (-5ex, -0.6)$);
+\node[GMVred!70, above = 0.5ex of lpq]{$V_{lmpq}$ calculation};
+\end{pgfonlayer}
+\end{tikzpicture}
+\caption{Workflow of the computation of $V_{lm}$.}
+\label{tikz:Workflow_V_lm}
+\end{changemargin}
+\end{figure}

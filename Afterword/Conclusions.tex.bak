@@ -1,0 +1,23 @@
+\chapter{Conclusions and research outlook.}
+%
+\indent The increasingly higher relevance of relative motion is beyond question. Satellite constellations, rendez-vous operations and formation flying missions are becoming an everyday occurrence, and their growing success rates are no coincidence. Incrementally better models (\ie truer-to-life, accounting for more effects) have an essential role in this. \\
+%
+\indent In order to gain a comprehensible insight on this topic, this thesis has followed the same bottom-up structure, starting from the very simple Hill/Clohessy-Wiltshire equations up to the modelling of perturbations. The use of linear, closed-form models (through STMs) is an advantageous approach: firstly, computational cost drops, but even more importantly, deeper knowledge about the dynamics of the system is achieved. This allows for, among other things, the design of relative orbits with certain characteristics (\ie safe orbits).\\
+%
+\indent Any state-of-the-art model requires an analysis of the relevant perturbations to be carried out. For the case of Earth artificial satellites, this usually leaves the non-spherical gravity as the most important of them. Kaula's theory allows for the analysis of the effect of any spherical harmonic, which naturally leads for better accuracy models. Although it features certain singular cases (resonances and circular or equatorial orbits), these can be solved. Many applications can be branched from this theory, such as mean-to-osculating transformations, linearized relative motion models, resonance analysis \ldots \\
+%
+\indent In conclusion, the modelling of perturbations is key for the construction of accurate linearised relative motion models as well as relative orbit design; both of which play a paramount role in the constantly growing discipline of distributed space systems.
+%
+\paragraph{\indent Research outlook and future work. \\}
+%
+\indent The very wide horizon in which this topic is framed leads for countless possible research areas. \\
+%
+\indent The evaluation of a robust implementation of Kaula's theory is the first on the list. This would be followed by an analysis of the resonant and secular terms, such as done by Chao \cite{Chao}. The development of mean-to-osculating transformations through this theory is also considered, which could derive into the development of linear relative motion models based on it.\\
+%
+\indent In a somewhat more general sense, the survey, analysis and implementation of perturbed relative motion models (STMs) is to be tackled. A performance analysis of these models against a High-Fidelity and unperturbed models would be insightful, surely. \\
+%
+\indent Orbit safety might also be an interesting topic to follow up on. A review of the existent models for non-circular, perturbed reference orbits would be insightful, and would continue on the here developed models for simpler cases (\ie circular perturbed and elliptic unperturbed).\\
+%
+\indent Further down the road, other types of perturbations might be analyzed, through the averaging methods here presented. Third bodies or drag are the most relevant ones, although second-order NSG effects are also to be considered. \\
+%
+\indent Finally, real world scenarios may be analyzed, and eventually, a self-contained tool for this purpose could be regarded. Hopefully, this sort of roadmap looks as compelling as it does to the author.

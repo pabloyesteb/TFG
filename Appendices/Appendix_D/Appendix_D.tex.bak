@@ -1,10 +1,10 @@
 \chapter{Software \& simulator.}
 %
-\label{app:Software}
+\label{app:App_D}
 %
 \section{Software tool: \textsc{Matlab}}
 %
-\indent Software implementation represents a very big part of this thesis (if not the biggest). It allows to replicate, compare and analyze the results that are provided in the literature. As this involves a fast prototyping approach, non-compiled programming languages are the most rewarding choice. In this case, the particular choice is \textsc{Matlab} in its 2017a release. The selection of said release is due to its stability and relatively long period of usage, assuring up to a certain grade that unfound errors are unlikely to appear. \\
+\indent Software implementation represents a huge part of this thesis (if not the biggest). It allows to replicate, compare and analyze the results that are provided in the literature. As this involves a fast prototyping approach, non-compiled programming languages are the most rewarding choice. In this case, the particular choice is \textsc{Matlab} in its 2017a release. The selection of said release is due to its stability and relatively long period of usage, assuring up to a certain grade that unfound errors are unlikely to appear. \\
 %
 \indent While being a commercial software tool, \textsc{Matlab} also provides a sharing platform (\textsc{Matlab} exchange) in which many useful libraries and functionalities can be found. As it will later be explained, the code repository developed for this thesis includes some \textsc{Matlab} exchange files, which will be duly quoted.
 %
@@ -24,11 +24,11 @@
 		\indent In line with the developed theory throughout the thesis, the following relative dynamics models have been implemented:
 		%
 		\begin{itemize}
-		\item[\GMVred{I.}] \myul[GMVred]{High-fidelity cartesian propagator}: Explained in more detail in section \ref{sec:HiFi_sim}, this model consists on the direct integration of Newton's equations considering a certain amount of effects (central body, third bodies, non-spherical gravity, \ldots). It provides a truth value for any orbit propagation model, acting as a benchmark for testing them.
+		\item[\GMVred{I.}] \myul[GMVred]{High-fidelity cartesian propagator}: Explained in more detail in section \ref{secAppD:HiFi_sim}, this model consists on the direct integration of Newton's equations considering a certain amount of effects (central body, third bodies, non-spherical gravity, \ldots). It provides a truth value for any orbit propagation model, acting as a benchmark for testing them.
 		%
-		\item[\GMVred{II.}] \myul[GMVred]{Circular unperturbed model}: Includes all the methods of propagating Hill/Clohessy-Wiltshire equations, as shown in chapter \ref{chap:HCW}.
+		\item[\GMVred{II.}] \myul[GMVred]{Circular unperturbed model}: Includes all the methods of propagating Hill/Clohessy-Wiltshire equations, as shown in chapter \ref{chap:Chap_2}.
 		%
-		\item[\GMVred{III.}] \myul[GMVred]{Eccentric unperturbed model}: Refers to the Yamanaka-Ankersen \cite{Yamanaka_Ankersen} model and the safe orbit theory developed by Peters and Noomen \cite{Peters_Noomen}, both explained in chapter \ref{chap:Eccentric}.
+		\item[\GMVred{III.}] \myul[GMVred]{Eccentric unperturbed model}: Refers to the Yamanaka-Ankersen \cite{Yamanaka_Ankersen} model and the safe orbit theory developed by Peters and Noomen \cite{Peters_Noomen}, both explained in chapter \ref{chap:Chap_3}.
 		%
 		\item[\GMVred{IV.}] \myul[GMVred]{Perturbed model}: A simplified perturbed model has been implemented following D'Amico \cite{dAmicoDLR}, which is restricted to near-circular orbits. Future work should also focus on the implementation of the later described perturbation models into relative dynamics, enlarging this section.
 		\end{itemize}
@@ -38,7 +38,7 @@
 		\indent The implemented perturbation models are listed below:
 		%
 		\begin{itemize}
-		\item[\GMVred{I.}] \myul[GMVred]{Gauss Variational Equations (GVEs)}: Truth model based on the implementation of GVEs (see appendix \textbf{PUT APPENDIX GVES}) for different accelerations, mainly related to Earth's asphericity.
+		\item[\GMVred{I.}] \myul[GMVred]{Gauss Variational Equations (GVEs)}: Truth model based on the implementation of GVEs (see appendix \ref{secAppE:Variational}) for different accelerations, mainly related to Earth's asphericity.
 		%
 		\item[\GMVred{II.}] \myul[GMVred]{Lagrange Planetary Equations (LPEs)}: Another truth model that in this case considers the LPEs, which can be understood as a potential form of the GVEs. 
 		%
@@ -57,15 +57,15 @@
 		\item[\GMVred{2.}]\myul[GMVred]{Scenarios}: Holds several files with the needed data for propagating certain scenarios under certain assumptions. It includes the following data:
 		%
 			\begin{itemize}
-			\item Scenario ID: Identifier of the scenario.
+			\item \underline{Scenario ID}: Identifier of the scenario.
 			%
-			\item Force flags: Used to select the effects to take into account for the High-Fidelity simulation.
+			\item \underline{Force flags:} Used to select the effects to take into account for the High-Fidelity simulation.
 			%
-			\item Propagation parameters: Includes all the data related to time propagation (\eg timestep, initial epoch, \ldots)
+			\item \underline{Propagation parameters:} Includes all the data related to time propagation (\eg timestep, initial epoch, \ldots)
 			%
-			\item Initial conditions: Contains the reference orbit's orbital elements and the relative state between chief and deputy.
+			\item \underline{Initial conditions:} Contains the reference orbit's orbital elements and the relative state between chief and deputy.
 			%
-			\item Graphics settings: Comprises the setup of the figure computation (\eg title, save path, legend, \ldots).
+			\item \underline{Graphics settings:} Comprises the setup of the figure computation (\eg title, save path, legend, \ldots).
 			\end{itemize}
 		%
 		\end{itemize}
@@ -103,17 +103,17 @@
 	\indent This preprocessing stage consists on accessing and manipulate the data contained in the Input folder. First, the \code{DynStruct} variable is loaded through its namesake JSON file, which contains the celestial body data, constants and spacecraft data. Afterwards, the \code{Scenario} is loaded and preprocessed, procedure in which the following things are done:
 	%
 	\begin{itemize}
-	\item[\GMVred{1.}] JSON file is read.
+	\item[\GMVred{\nth{1}}] JSON file is read.
 	%
-	\item[\GMVred{2.}] Reference orbit's OEs are converted to Keplerian.
+	\item[\GMVred{\nth{2}}] Reference orbit's OEs are converted to Keplerian.
 	%
-	\item[\GMVred{3.}](\textsl{Only in relative dynamics.} Deputy's relative state is converted to LVLH frame.
+	\item[\GMVred{\nth{3}}] Deputy's relative state is converted to LVLH frame (\textsl{Only in relative dynamics}).
 	%
-	\item[\GMVred{4.}] Keplerian orbital period is computed (for representation purposes).
+	\item[\GMVred{\nth{4}}] Keplerian orbital period is computed (for representation purposes).
 	%
-	\item[\GMVred{5.}] Initial epoch is converted to MJD2000 format.
+	\item[\GMVred{\nth{5}}] Initial epoch is converted to MJD2000 format.
 	%
-	\item[\GMVred{6.}] Required number of timesteps is calculated (for variable allocation).
+	\item[\GMVred{\nth{6}}] Required number of timesteps is calculated (for variable allocation).
 	\end{itemize}
 	%
 	\paragraph{\GMVred{II.} \myul[GMVred]{Trajectory propagation} \\}
@@ -124,20 +124,20 @@
 	%
 	\indent The desired results are plotted through the use of graphics functions.
 	%
-	\subsection{High-Fidelity simulator.}\label{sec:HiFi_sim}
+	\subsection{High-Fidelity simulator.}\label{secAppD:HiFi_sim}
 	%
 	\indent As it is not explained elsewhere in the thesis, this section is dedicated to briefly describe how the High-Fidelity simulator works. Firstly, the computation of a single orbit will be introduced, to later explain how relative dynamics are derived from individual orbits.
 	%
 		\subsubsection{Single orbit propagation.}
 		%
-		\paragraph{Main function: \code{propRK4\_HiFi}. \\}
+		\paragraph{\GMVred{I.}\myul[GMVred]{Main function:}\code{propRK4\_HiFi}\\}
 		%
 		\indent This main function is in charge of, given a scenario, a set of parameters and the hierarchy of the spacecraft (chief/target or deputy/chaser), returning the spacecraft's ECI state vector along time. It mainly consists of a time loop in which the trajectory is integrated through a Runge-Kutta 4-step algorithm. A graphical representation of the workflow this function goes through is shown in figure \ref{tikz:propRK4_workflow}.
 		%
 		\input{Appendices/Appendix_E/propRK4_workflow}
 		%
 		%
-		\paragraph{Dynamics function: \code{SCDynamicsMatlab}.\\}
+		\paragraph{\GMVred{II.} \myul[GMVred]{Dynamics function:}\code{SCDynamicsMatlab}\\} 	
 		%
 		\indent The Runge-Kutta method (and any integrator really) requires a function that calculates the time derivative of the variable vector (the ECI state vector in this case). For the High-Fidelity integrator, this function -- called \code{SCDynamicsMatlab} -- adds up every considered force for this scenario. This is done through the previously described force flags, which enable or not the calculation of each effect. The available effects to consider are:
 		%

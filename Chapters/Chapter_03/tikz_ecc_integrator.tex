@@ -4,14 +4,14 @@ every new ->/.style={shorten >=1pt}]
 % ---------- NODES ----------
 \matrix[column sep=4mm] { 
 % ***** First row *****
-\node (x_LVLH_0)	[terminal_blue] {$ \underline{x}_{LVLH}\rvert_0$}; 		& \node (LVLH2YA) 	[nonterminal] 	{$ LVLH\Rightarrow YA $}; 				& 
-\node (x_YA_0)		[terminal_blue] {$ \underline{x}_{YA}\rvert_0$};  		&  																			&
-\node (YA_STM) 		[nonterminal] 	{$ \Phi_{\theta_0}^{\theta} $}; 		& \node (x_YA_t) 	[terminal_blue] {$ \underline{x}_{YA}\rvert_t$};		&
-\node (YA2LVLH) 	[nonterminal] 	{$ YA\Rightarrow LVLH $}; 				& \node (x_LVLH_t) 	[terminal_blue] {$ \underline{x}_{LVLH}\rvert_t$};		\\[2em]
+\node (x_LVLH_0)	[terminal_gray] {$ \underline{x}_{LVLH}(t_0)$}; 		& \node (LVLH2YA) 	[nonterminal_red] 	{$ LVLH\Rightarrow YA $}; 			& 
+\node (x_YA_0)		[terminal_gray] {$ \underline{x}_{YA}(t_0)$};  			&  																			&
+\node (YA_STM) 		[nonterminal_red] 	{$ \Phi_{\theta_0}^{\theta} $}; 	& \node (x_YA_t) 	[terminal_gray] {$ \underline{x}_{YA}(t)$};				&
+\node (YA2LVLH) 	[nonterminal_red] 	{$ YA\Rightarrow LVLH $}; 			& \node (x_LVLH_t) 	[terminal_red] {$ \underline{x}_{LVLH}(t)$};			\\[2em]
 % ***** Third row *****																		
-\node (KOE_0)		[terminal] 		{$ \underline{KOE}\rvert_0$}; 			& \node (p22) 		[point] 		{};										&
-\node (prop_KOE)	[nonterminal] 	{$ \text{Prop. KOE}$};  				& 																			&
-\node (p25) 		[point] 		{}; 									& \node (KOE_t)		[terminal] 		{$ \underline{KOE}\rvert_t$};			&
+\node (KOE_0)		[terminal_gray] 		{$ \underline{KOE}(t_0)$}; 		& \node (p22) 		[point] 		{};										&
+\node (prop_KOE)	[nonterminal_red] 	{Prop. KOE};  			& 																			&
+\node (p25) 		[point] 		{}; 									& \node (KOE_t)		[terminal_gray] 		{$ \underline{KOE}(t)$};			&
 \node (p27) 		[point] 		{}; 									&																			\\[2em]
 % ***** Fifth row *****
 \node (t)			[terminal_white]{$ t $}; 								&  																			& 
@@ -22,9 +22,9 @@ every new ->/.style={shorten >=1pt}]
 % ----------- GRAPH ----------
 \graph [use existing nodes] {
 x_LVLH_0 	-> LVLH2YA 				-> x_YA_0 				-> YA_STM 	-> x_YA_t				-> YA2LVLH 	-> x_LVLH_t;
-KOE_0 		-> prop_KOE 			-> KOE_t				-- p27 		-> [\snake] YA2LVLH;
-p22 		-> [\snake] LVLH2YA; 
-t 			-- p33 					-> [\snake]prop_KOE; 
+KOE_0 		-> prop_KOE 			-> KOE_t				-- p27 		-> YA2LVLH;
+p22 		-> LVLH2YA; 
+t 			->[hv path] prop_KOE; 
 };
 
 \end{tikzpicture}

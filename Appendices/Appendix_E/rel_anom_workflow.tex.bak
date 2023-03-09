@@ -1,0 +1,33 @@
+\begin{figure}[!htb]
+\begin{tikzpicture}[,>=stealth,thick,black!50, text=black,
+every new ->/.style={shorten >=1pt}]
+% ---------- NODES ----------
+\matrix[column sep=4mm] { 
+% ***** First row *****
+\node (E_C)			[terminal_gray] {$ E_C, e_C$}; 							&  																			& 
+ 																			& \node (E2M_1) 	[nonterminal_red] 	{$ E \Rightarrow M $};				&
+\node (M_C) 		[terminal_gray] {$ M_C$};								&  																			&
+ 																			\\[2em]
+% ***** Second row *****																		
+ 																			&  																			&
+ 																			& 																			&
+ 																			& \mptbsum{sum} 															&
+\node (dM) 		[terminal_red] 			{$\delta M$}; 						\\[2em]
+% ***** Third row *****																		
+\node (dE)			[terminal_gray] {$ \delta E, \delta e$}; 				& \pptlsum{sum2};															&
+\node (E_D)			[terminal_gray] {$E_D, e_D$};  							& \node (E2M_2) 	[nonterminal_red] 		{$ E \Rightarrow M $};			&
+\node (M_C) 		[terminal_gray] {$ M_D$};								& 																			&
+																			\\[2em]
+																			};
+% ----------- GRAPH ----------
+\node (osc2mean_text)	[GMVred!70, above = 5ex of E2M_1]		{\Large{Relative anomaly conversion}};
+\graph [use existing nodes] {
+E_C 		-> E2M_1 	-> M_C 	-> [hv path] sum2 	-> dM;
+dE 			-> sum 		-> E_D 	-> E2M_2 			-> M_D 	-> [hv path] sum_2;
+E_C 		-> [hv path] sum; 
+};
+
+\end{tikzpicture}
+\caption{Workflow of the relative anomaly transformation (eccentric to mean).}
+\label{tikz:rel_anom_workflow}
+\end{figure}

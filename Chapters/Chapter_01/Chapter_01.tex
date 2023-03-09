@@ -1,520 +1,210 @@
-\chapter{Engelamiento en aeronaves.}
+\chapter{General concepts on spacecraft relative dynamics and STMs.}
 %
-\label{chap: Engelamiento}
+\label{chap:Chap_1}
 %
-\section{Introducción.}
+%\indent This thesis is developed over a particular method of describing 
 %
-\indent El engelamiento es un fenómeno que consiste en la formación de hielo por impacto de cristales de hielo y/o gotas de agua en estado subenfriado. Se trata de un fenómeno meteorológico que afecta a muchos sistemas, tales como aerogeneradores, pero su principal víctima son las aeronaves. El cuadro de perjuicios que el engelamiento induce en los aviones es de tal gravedad que es una de las mayores causas de siniestralidad en aeronaves. Solamente en Estados Unidos, se reportan alrededor de 20 fatalidades relacionadas con el engelamiento cada año \cite{Icing_accidents}, con un desenlace trágico en un porcentaje razonable de los mismos, especialmente en aviación general, que no cuentan con las defensas ni con información tan precisa con que trabaja la aviación comercial. \\
+\section{Spacecraft relative dynamics.}
 %
-\indent La fenomenología del engelamiento reviste una enorme complejidad en varios niveles. En primer lugar, la propia simulación de la formación de hielo en el ala, si bien ha progresado de manera apreciable, a día de hoy no presenta la precisión adecuada para representar ciertas condiciones, pese al éxito en otras. En segundo lugar, la predicción meteorológica de condiciones que propicien el engelamiento no está muy avanzada, aunque se estén redoblando esfuerzos en este aspecto. En numerosas ocasiones, el engelamiento se detecta cuando ya está sucediendo, y ha de ser remediado o bien huyendo de la zona o bien con métodos antihielo. Un fuerte esfuerzo está siendo realizado en este respecto, con el ensayo de nuevas tecnologías más efectivas y eficientes que permitan eliminar el hielo una vez se ha formado sobre el ala \cite{politovich}.\\
+\indent Spacecraft relative dynamics is a vast, very relevant and ever-increasing branch of celestial mechanics. It tries to analyze, rather than the motion around a central body, that of a secondary body (or set of bodies) around a primary, assuming that neither of them generate a gravitational effect on each other. This discipline hence focuses on analyzing how a certain force field -- which may include different influences -- differentially affects two or more different spacecrafts in a mostly common orbit.\\
 %
-\indent El estudio del engelamiento se realiza en tres escalas:
+\indent Relative dynamics models are regularly reached through the manipulation of the absolute dynamics of each of the spacecrafts, although they come in all kinds of flavours. Some of them may be formulated through variational mechanics, while others are directly derived from Newton's equations of motion. Naturally, there is a variety also in the kind of variables they use, mainly being orbital elements or cartesian coordinates. When the spacecrafts are close enough together, the linearization of the equations becomes a common procedure, simplifying and increasing the efficiency of the formulation at the expense of accuracy. The trade-off between these two figures of merit will be a recurring topic along this thesis.\\
 %
-\begin{itemize}
-\item La microescala (o microfísica), que analiza el impacto y crecimiento de las gotas subenfriadas en distintas superficies del avión.
-\item La mesoescala, que investiga la detección in-situ de las condiciones de engelamiento y la relación.
-\item La escala a nivel de nube, que analiza la predicción de condiciones de engelamiento, y cuya distinción con la mesoescala es difusa.
-\end{itemize}
+\indent Spacecraft relative dynamics is embedded in the Distributed Space Systems discipline. A Distributed Space System is a system composed of two or more satellites that work together to accomplish an objective, impossible using a single spacecraft. A diagram of the different sub-groups of missions is shown in figure \ref{figCh1:Dist_space_systems}. Along this thesis, only proximity motion is considered. Hence, only two branches will be analyzed: rendez-vous and formation flying. 
 %
-\indent Existen distintas formas en las que la formación de hielo puede tener lugar. El fenómeno físico en sí consiste básicamente en el impacto de gotas de agua en estado subenfriado o subfundido, es decir, en un estado metaestable, al sobrepasar el punto de fusión ($T<0ºC$) pero manteniéndose en estado líquido. Dicho estado se denomina metaestable, dado que un ligero aumento en la presión provoca la transformación inmediata en hielo, cosa que sucede al impactar sobre la superficie en cuestión. Los dos tipos más habituales de engelamiento son el hielo granular (\textit{rime ice}) y el hielo glaseado o vítreo (\textit{glaze ice}), aunque existen otros tipos menos comunes y con otra fenomenología asociada. Contrariamente a lo que podría parecer, la adhesión de hielo por precipitación no supone ningún tipo de problema, ni en vuelo (no adhiere) ni en tierra (pues se limpia sencillamente) \cite{avion_y_piloto}.\\
+\begin{figure}[!htb]
+\centering\includegraphics[width = \linewidth]{Chapters/Chapter_01/Dist_space_systems}
+\caption{Distributed space systems classification.}
+\label{figCh1:Dist_space_systems}
+\end{figure}
 %
-\indent Resulta interesante preguntarse cuánto tiempo permanece un avión en condiciones de engelamiento, también en relación a su tiempo de vida. Pese a que las condiciones de engelamiento se producen con gran asiduidad, es necesario recordar que, a nivel puntual, se encuentran confinadas en una nube, y por grande que sea, un avión en condición de crucero tarda escasos minutos en atravesarla \cite{politovich}. Ello no quita que la gravedad de sus efectos sea capital, pero conviene tener en cuenta una escala temporal del problema. No obstante, según el fabricante Airbus, una aeronave comercial se encuentra en condiciones de engelamiento hasta en un 15\% de su tiempo de vida .\\
+\FloatBarrier
 %
-\indent El objeto de este capítulo no es otro que presentar la casuística y la fenomenología del engelamiento, así como sus efectos, su predicción, su prevención y su remedio. Estos aspectos serán tratados uno por uno a continuación.
-%
-\section{El engelamiento atmosférico.}
-%
-\indent Pese a que el asunto de interés en este trabajo es la simulación del engelamiento en aeronaves, no se trata del único escenario donde este fenómeno aparece. En este apartado, se presentará una clasificación general del fenómeno del engelamiento, que será extendido y desarrollado más adelante para los tipos más relevantes en la aeronave. De forma general, el engelamiento atmosférico puede clasificarse en:
-%
-\begin{itemize}
-\item \textbf{Engelamiento de precipitación} (lluvia engelante o \textit{freezing rain}): Se trata de unas condiciones en las que hay un alto contenido de agua en el aire (el denominado \textit{Liquid Water Content} o \textit{LWC}), oscilando entre 1 y 10 $g/m^3$; acompañado de un tamaño de gota grande, alrededor de los $100 \mu m$ de diámetro. Su formación se produce cuando la nieve cae de una nube de precipitación en una capa de aire cálido, funde y progresa hacia una zona de aire frío, subenfriándose y alcanzando uno u otro estado, en función de la distancia recorrida en dicho ambiente frío. A su vez puede dividirse en otros dos tipos de precipitación.
-%
+	\subsection{Rendez-vous.}
+	%
+	\indent A rendez-vous flight is basically an operation or a mission in which a spacecraft (chaser or deputy) approaches another one (target or chief) \cite{Fehse}. It is normally followed by a mating procedure, after which both spacecrafts are connected by a rigid link. The final goal of this kinds of missions may be ``simply'' meet the chief spacecraft (\eg reaching the International Space Station for research purposes), station keeping (\eg maintaining nominal conditions on the orbit of a passive spacecraft through impulses), on-orbit servicing or, lately, debris removal. \\
+	%
+	\indent A general rendez-vous mission generally consists of the following stages \cite{Fehse}:
+	%
 	\begin{itemize}
-	\item[\labelitemii] \underline{Hielo glaseado}: Se trata de un escenario muy peligroso para el engelamiento en aeronaves, caracterizado por una predominancia del estado líquido de la precipitación, tras un corto tiempo en condiciones de subenfriado. Se compone por tanto principalmente de gotas de agua subenfriadas, que en el momento del impacto solidifican parcial o totalmente, pudiendo fluir posteriormente. Se trata de un hielo de tipo muy claro, casi transparente, que se forma a temperaturas altas (entre 0 y -10ºC) (ver figura \ref{fig: Glaze_cherry}).
+	\item[\GMVred{\nth{1}}] \myul[GMVred]{Launch phase and injection}: This phase begins with the lift-off, greatly influenced by the launch window, and ends with the chaser vehicle in an injection orbit, considerably below and behind the target.
 	%
-	\item[\labelitemii] \underline{Nieve húmeda}: La nieve húmeda (o aguanieve) es una precipitación en la que el agua ha pasado un largo tiempo en condiciones frías, llegando a solidificar parcialmente, y coexistiendo por tanto fase sólida y líquida. Se trata de una precipitación cuyos efectos no incluyen a las aeronaves, sino que afectan a estructuras de ingeniería en tierra. Conviene distinguirla de la nieve seca, de un contenido en agua muchísimo menor (ver figura \ref{fig: Aguanieve}).
+	\item[\GMVred{\nth{2}}] \myul[GMVred]{Phasing}: This stage aims to reduce the phase angle between the spacecrafts, which is achieved by exploiting the higher orbital rate of lower orbits. This phase ends with the acquisition of either an aim point or an entry gate, which marks the starting point of the rendez-vous procedure. Two main constraints are usually considered: the phasing constraint (arriving at the correct relative position) and the scheduling constraint (arriving at the correct time).
+	%
+	\item[\GMVred{\nth{3}}]\myul[GMVred]{Far-range rendez-vous}: The tasks of this phase are (a) the reduction of approach velocity (b) the synchronisation of the mission timeline and (c) lead the chaser to close proximity. It begins with said vehicle at the aim point and ends with it at the final approach hold point.
+	%
+	\item[\GMVred{\nth{4}}] \myul[GMVred]{Close-range rendez-vous}: This stage is subdivided into a preparation phase (\ie closing phase) and the final approach. The first one basically is devoted to a controlled range reduction (as well as obtaining the conditions for the final approach) while the latter is aimed to end with mating conditions (axis alignment, etc.). Depending on the kind of mating procedure (docking or berthing, see phase \nth{5}), these conditions differ.
+	%
+	\item[\GMVred{\nth{5}}] \myul[GMVred]{Mating}: This phase aims to achieve a certain connection between both spacecrafts. There are two main procedures for this purpose: Docking and berthing, which are shown in figure \ref{figCh1:Docking_berthing}. The connection, besides structural, usually involves power, data and possibly fluids. It is important to note that residual relative motion must be attenuated.
+	%
 	\end{itemize}
-%
-
-\begin{figure}[ht]
-\centering
-\medskip
-\begin{subfigure}[t]{.49\linewidth}
-\centering\includegraphics[width=\linewidth]{Chapter_01/Glaze_ice_cherry}
-\captionsetup{justification=centering, margin = 0.5cm}
-\caption{Formación de hielo glaseado por precipitación. \cite{cherry}}
-\label{fig: Glaze_cherry}
-\end{subfigure}
-\begin{subfigure}[t]{.49\linewidth}
-\centering\includegraphics[width=\linewidth]{Chapter_01/Aguanieve}
-\captionsetup{justification=centering, margin = 0.5cm}
-\caption{Formación de hielo por nieve húmeda en un cable de alta tensión. \cite{aguanieve}}
-\label{fig: Aguanieve}
-\end{subfigure}
-\caption{Engelamiento por precipitación.}
-\end{figure}
-\item \textbf{Engelamiento en nube}: Se trata del principal escenario estudiado del engelamiento en aeronaves. Se caracteriza por unos contenidos de agua líquida entre uno y dos órdenes de magnitud más pequeño, rondando entre 0.1 y 1 $g/m^3$. Este tipo de formación de hielo se produce por el contacto directo entre la niebla o nube y la estructura, y en tierra suele tener lugar en zonas de elevada altitud y climas fríos. A su vez, se pueden distinguir distintos tipos de engelamiento en nube, dependiendo de cuatro parámetros principalmente: la temperatura, la cantidad de agua líquida en la nube, el tamaño medio de gota (\textit{Median Volume Diameter}, MVD) y la velocidad relativa entre la nube y el cuerpo. Se discutirá con más detalle más adelante, no obstante se adjunta una escueta clasificación y caracterización de los tipos:
-%
-	\begin{itemize}
-	\item[\labelitemii] \underline{Hielo glaseado (\textit{glaze})}: Se trata de un proceso y de una formación muy similar a la modalidad de engelamiento por precipitación: Las gotas subenfriadas impactan sobre la superficie, solidificando parcialmente en general, y fluyendo hacia otros puntos de la superficie. A diferencia del engelamiento por precipitación, los tamaños de gota son bajos (un orden de magnitud inferior), pero sí que sucede en el mismo rango aproximado de temperatura (-10-0ºC). Es una acreción que presenta una gran adhesión sobre la superficie, lo cual supone un problema grave en aeronaves.
-	%
-	\item[\labelitemii] \underline{Hielo escarcha (\textit{rime})}: El hielo escarcha es una formación que tiene lugar a temperaturas más bajas (hasta -20ºC), en la cual las gotas subenfriadas solidifican de manera total e inmediata, sin fluir (\textit{runback}). Se trata de una formación más porosa, debido a esta última característica, y tiene por tanto una tonalidad blanquecina, en contraposición a la transparencia predominante en el hielo glaseado.
-	\end{itemize}
-\end{itemize}
-\section{Efectos del engelamiento.}
-% 	
-	\subsection{Efectos del engelamiento en aeronaves.}
-\indent Aunque el concepto básico del engelamiento en vuelo sea sencillo, los procesos que contribuyen a la formación de hielo y sus resultados son muy complejos a la par que fascinantes, y suponen una preocupación importante de meteorólogos, ingenieros y pilotos, dados los severos efectos que se inducen sobre la aeronave. En general, el hielo se adhiere a los elementos expuestos al viento relativo así como a aquellas partes que sobresalen de la célula del avión, pudiendo dar lugar a \cite{tema_14}:
-%
-\begin{itemize}
-\item Alteración de la aerodinámica del ala: Se produce un efecto dramático sobre la curva de sustentación y sobre la polar del avión, incluso con espesores del orden de milímetros. 
-\item Pérdida de capacidad de mando y control: En el común caso de que se forme hielo en superficies estabilizadoras y de control, los efectos son críticos.
-\item Reducción de visibilidad.
-\item Interferencias en las ondas de radio.
-\item Errores en los instrumentos.
-\item Pérdida de potencia en plantas motoras (engelamiento interno).
-\item Vibraciones por la variación en las propiedades inerciales del ala.
-\item Incremento de peso: Reviste importancia únicamente en aeronaves de pequeño tamaño.
-\end{itemize}
-%
-
-\indent El vuelo de una aeronave en condiciones de engelamiento (\textit{icing conditions}) está permitido, siempre y cuando esté certificado para ello. De hecho, se trata de una de las condiciones más importantes en las que el avión ha de ser certificado, estando recogido en las normas de la \textit{Federal Aviation Administration}, las denominadas FAR (parte 25, apéndice C) (ver \cite{FAR_icing}). Para alcanzar tal certificación, suele ser común que cuenten con algún tipo de defensas antihielo, ya sean para prevenirlo o para remediarlo. \\
-%
-\indent El engelamiento suelen afectar con mayor asiduidad a aviación general, en comparación con aviación comercial. Estos aviones, de menor tamaño, vuelan a altitudes más bajas, donde el engelamiento es una situación más repetida. Además, suelen carecer de equipos antihielo, así como de potencia adicional para escapar rápidamente de estas condiciones perjudiciales. La aviación comercial suele tener como protocolo ascender de manera rápida, proceso en el cual atraviesan nubes que pueden propiciar el engelamiento. En el vuelo de crucero, se encuentran a altitudes en las que el engelamiento no es posible. Entre ambos tipos de aeronave se encuentran los reactores ejecutivos, tanto por capacidad de actuación ante el engelamiento como por la altitud de vuelo. Son por tanto más susceptibles que los aviones comerciales ante estas condiciones.
-	%
-		\subsubsection{Clasificación de los efectos.}
-		%
-		\indent Puesto que la formación de hielo puede producirse tanto en superficies exteriores como en elementos internos (motores), los efectos se pueden clasificar de manera análoga:
-		%
-		\paragraph{Efectos estructurales. \\}
-		%
-		\indent El engelamiento estructural se produce por la acumulación de hielo en el exterior del avión, y su efecto fundamental es la alteración de las propiedades aerodinámicas de la aeronave:
-		%
-		\begin{itemize}
-		\item \underline{Bordes de ataque de ala y cola}: La acumulación de hielo modifica los perfiles aerodinámicos, degradando el coeficiente de sustentación y el de resistencia. Por tanto, el avión tendrá que volar a mayor ángulo de ataque, acercándose con ello a la entrada en pérdida. Además, el coeficiente de sustentación máximo disminuye, por lo cual aumenta la velocidad de entrada en pérdida. De todos modos, los efectos dependen de la morfología del hielo formado, pero en todo caso daña el comportamiento del avión. Véanse las figuras \ref{fig: CL_alfa} y \ref{fig: CD_CL}.
-		%
-		\begin{figure}[ht]
-\centering
-\medskip
-\begin{subfigure}[t]{.45\linewidth}
-\centering\includegraphics[width=\linewidth]{Chapter_01/CL_alfa}
-\captionsetup{justification=centering, margin = 0.5cm}
-\caption{Curva de sustentación en función del ángulo de ataque.}
-\label{fig: CL_alfa}
-\end{subfigure}	
-\begin{subfigure}[t]{.45\linewidth}
-\centering\includegraphics[width=\linewidth]{Chapter_01/CD_CL}
-\captionsetup{justification=centering, margin = 0.5cm}	
-\caption{Curva polar del perfil.}
-\label{fig: CD_CL}
-\end{subfigure}
-\caption{Características aerodinámicas de un mismo perfil limpio y engelado.}
-\end{figure}\\
-		%
-		\item \underline{Hélices}: Tal y como sucede con los perfiles del ala, se ven deformados, y además se produce un desequilibrio másico que genera vibraciones y esfuerzos adicionales.
-		%
-		\item \underline{Tubos de Pitot y de Venturi}: Los tubos de pitot, que miden la velocidad respecto al aire del avión, pueden verse obstruidos por el hielo, proporcionando lecturas erróneas y causando que el piloto actúe como si volara en otras condiciones (subiendo el ángulo de ataque por ejemplo). No ocurrió a consecuencia del engelamiento, pero el accidente Birgenair 301 (1996) tuvo como motivo potencial la obstrucción de un tubo de pitot (por una avispa en este caso).
-		%
-		\item \underline{Antenas}: La acumulación de hielo en las antenas puede generar vibraciones que dificultan o incluso impiden las comunicaciones.
-		%
-		\item \underline{Cristales del parabrisas en cabina}: Se produce un descenso en la visibilidad por la acumulación de hielo.
-		%
-		\item \underline{Tren de aterrizaje y flaps}: Se puede perder eficacia y, en un caso extremo, pueden llegar a bloquearse.
-		\end{itemize}
-		%
-		
-		\indent El engelamiento en la cola (\textit{tailplane icing}) constituye un fenómeno que difiere bastante del que tiene lugar en las alas. La configuración aerodinámica de la cola, así como el comportamiento con formación de hielo, es notablemente distinto al que sucede en un perfil típico de ala. Una cuestión relacionada con este problema es la pérdida del plano de cola, un problema gravísimo de las aeronaves, pues desaparece el momento aerodinámico que equilibra el cabeceo del avión así como el método básico de corregirlo. Más información al respecto puede ser encontrada en la referencia \cite{Tailplane}.
-		\paragraph{Efectos internos. \\}
-		%
-		\indent Los efectos internos hacen referencia a la operación de los motores, incluyendo el engelamiento por impacto en las entradas de aire y el engelamiento en el carburador. El efecto principal es la pérdida de potencia parcial o total. Desde 1988, se han reportado más de 150 pérdidas de potencia sensibles por motivo de la formación de hielo en motores \cite{compressor_icing}.
-		%
-		\begin{itemize}
-		\item \underline{Formación de hielo en las entradas de aire}: El concepto es igual que en el caso de las alas, solo que la superficie de análisis es la góndola y el difusor del motor (\textit{inlet}). Una reducción de su área a consecuencia de esto implica una progresiva reducción de potencia entregada por el motor. (ver figura \ref{fig: INLET_ICING})
-		%
-		\item \underline{Formación de hielo en el carburador}: La entrada de aire húmedo en el motor puede provocar la formación de hielo en el carburador (ver figura \ref{fig: CARBURETOR_ICING}), que puede llegar a obstruirse, y generar serios problemas en el funcionamiento del motor.
-		%
-		\begin{figure}[hb]
-			\begin{minipage}{0.55\textwidth}
-    			\centering\includegraphics[width = \linewidth]{Chapter_01/INLET_ICING}
-    			\captionsetup{justification=centering, margin = 0.5cm}
-				\caption{Formación de hielo en la entrada de aire. \cite{inlet}}
-    			\label{fig: INLET_ICING}
-  			\end{minipage}
-  			\hfill
-  			\begin{minipage}{0.3\textwidth}
-    			\centering\includegraphics[width = \linewidth]{Chapter_01/Carburetor_Icing}
-    			\captionsetup{justification=centering, margin = 0.5cm}
-				\caption{Formación de hielo en el carburador. \cite{carburetor}}
-				\label{fig: CARBURETOR_ICING}
-  			\end{minipage}
-		\end{figure} 
-		\clearpage
-		%
-		\item \underline{Formación de hielo en el compresor}: Abundantes cristales de hielo y gotas subenfriadas entran en el compresor, impactando y acumulándose en el estátor. Llegado un punto, el hielo se separa del componente al que estuviera adherido, alcanzando fases posteriores del motor y eventualmente generando problemas graves, como entradas en pérdida (\textit{surge}) con las consecuentes inversiones de flujo. (ver las figuras \ref{fig: Compressor_icing_1}, \ref{fig: Compressor_icing_2} y \ref{fig: Compressor_icing_3})
-		%
-		\begin{figure}[ht]
-		\centering
-		\medskip
-		\begin{subfigure}[t]{.45\linewidth}
-		\centering\includegraphics[width=\linewidth]{Chapter_01/Compressor_icing_1}
-		\caption{Primeras etapas.}
-		\label{fig: Compressor_icing_1}
-		\end{subfigure}
-		\vspace{5mm}\\
-		\begin{subfigure}[t]{.45\linewidth}
-		\centering\includegraphics[width=\linewidth]{Chapter_01/Compressor_icing_2}
-		\caption{Acumulación.}
-		\label{fig: Compressor_icing_2}
-		\end{subfigure}
-		\vspace{5mm}\\
-		\begin{subfigure}[t]{.45\linewidth}
-		\centering\includegraphics[width=\linewidth]{Chapter_01/Compressor_icing_3}
-		\caption{Desprendimiento.}
-		\label{fig: Compressor_icing_3}
-		\end{subfigure}
-		\caption{Formación de hielo en el compresor. NASA Glenn Research Center \cite{compressor_icing}.}
-		\end{figure}
-		\end{itemize}
-		%
-		\clearpage
-		%
-\section{Gravedad del engelamiento y factores determinantes.}
-%
-\indent La severidad del engelamiento se encuentra actualmente clasificada en cuatro categorías, crecientes en gravedad: perceptible (\textit{trace}), débil (\textit{light}), moderada (\textit{moderate}) y grave (\textit{severe}). La severidad se evalúa como una combinación del estado objetivo del entorno meteorológico, la respuesta de la aeronave y la opinión del piloto al respecto de dicha respuesta. La \textit{FAA} \cite{FAR_icing} tiene caracterizaciones para cada uno de los anteriores estados, recogidos en la tabla \ref{table: Severity}.
-%
-\begin{table}[ht]
-\centering
-\begin{tabular}{|c|c|}
-\hline 
-\textbf{Categoría} & \textbf{Descripción} \\ 
-\hline 
-  & El hielo se vuelve perceptible. La acumulación es ligeramente superior   \\ 
-\textit{Trace}		& a la sublimación. No resulta peligroso aún no contando con equipos  \\
-				& antihielo, salvo si se encuentra durante $t>1h$ \\
-\hline 
- & El ritmo de acumulación de hielo puede causar problemas si   \\ 
-\textit{Light} &              el vuelo se extiende en el entorno ($t>1h$). El uso ocasional \\
- 				&  de defensas antihielo es efectivo. \\
-\hline 
- & El ritmo de crecimiento de hielo es tal que pequeños períodos   \\ 
-\textit{Moderate} &		 de tiempo en la región resultan potencialmente peligrosos.\\
-				&  El uso de defensas antihielo o la evasión son necesarias.\\
-\hline 
- & El ritmo de acumulación de hielo es de tal magnitud que el  \\ 
-\textit{Severe}& equipamiento antihielo es inefectivo. Es necesario una \\
- 			& maniobra de evasión inmediata.\\
-\hline 
-\end{tabular} 
-\centering\caption{Severidad del engelamiento según la \textit{FAA} \cite{FAR_icing}.}
-\label{table: Severity}
-\end{table}\\
-%
-\indent Pese a la descripción anterior, es necesario establecer unos parámetros que caractericen las condiciones de engelamiento de una manera cuantitativa. De entre los que afectan al engelamiento, los más importantes son \textbf{el contenido de agua líquida} ($LWC$, \textit{Liquid Water Content}), \textbf{la temperatura exterior} ($T_{\infty}$) y \textbf{el tamaño de las gotas}, caracterizado por el diámetro de las gotas promediado en volumen ($MVD$, \textit{Median Volume Diameter}). La velocidad relativa entre el flujo y el cuerpo (también denominada velocidad de impacto) es también un factor relevante, pero en una escala inferior. \\
-%
-\indent El contenido de agua líquida favorece la formación de hielo, puesto que pone más masa a disposición para su congelación. Por tanto, unos valores altos de \textit{LWC} están directamente asociados con condiciones más severas de engelamiento. La temperatura ambiente $T_{\infty}$, por su parte, controla lo que le sucede a las gotas al impactar: ya sea una congelación inmediata (para temperaturas suficientemente bajas) o un flujo posterior hacia otras posiciones (\textit{runback}), que podrían no tener protección antihielo. En consecuencia, una temperatura mayor (pero negativa) está relacionada con una severidad mayor del engelamiento. El tamaño de las gotas controla la denominada eficiencia de colección ($\beta$), es decir, la distribución del agua al impactar sobre la estructura. Globalmente, el efecto de este parámetro no es tan determinante como el de los dos anteriores hasta que se alcanzan tamaños de salpicadura (\textit{drizzle}), rondando los $50 \mu m$, a partir del cual el impacto provoca en casi todos los casos una dispersión del agua, con el efecto de alcanzar zonas desprotegidas.\\
-%
-\indent En consecuencia, las condiciones que agravarían de forma particular el engelamiento en aeronaves sería un alto contenido de agua líquida, con una temperatura alta y negativa, y un tamaño de gota grande. Se verá que en función de estos parámetros es posible definir los tipos más generales de la formación de hielo: \textit{glaze} y \textit{rime}. A modo de nota, el efecto de la velocidad de impacto es un tanto complejo de analizar. Por un lado, facilita el flujo hacia zonas desprotegidas, por contar con mayor energía cinética; pero por otra parte, una mayor velocidad implica un flujo de entalpía positivo en la superficie, disipando más energía en el impacto y, por tanto, elevando la temperatura de la misma.
-%	
-	\subsection{Características microfísicas.}
-	%
-	\indent Una vez han sido mostradas las tendencias de los parámetros determinantes, es interesante establecer en qué rangos se mueven en situaciones habituales.
-	\paragraph{A. Contenido de agua líquida. \\}
-	%
-	\indent El contenido de agua líquida en condiciones de engelamiento suele ser bastante baja. En nubes de tipo convectivo, alrededor del 90\% de los valores está por debajo de $0.7 g/m^3$, y en el caso de nubes estratiformes, el valor baja hasta los $0.5 g/m^3$. Los valores máximos pueden oscilar en torno a $1.2 g/m^3$, en nubes convectivas profundas. Una característica a tener en cuenta es la distancia en que un valor de \textit{LWC} se mantiene por encima de un cierto límite. Como parece lógico, al aumentar el límite, disminuye la distancia en que aparecen estas condiciones. Por ejemplo, un valor de \textit{LWC} superior a $0.5 g/m^3$ se ha encontrado de manera consistente en distancias inferiores a $13 km$; mientras que si el límite se reduce a $0.1 g/m^3$, la distancia crece a $83 km$ de vuelo.
-	%
-	\paragraph{B. Temperatura ambiente. \\}
-	%
-	\indent En general, se pueden establecer los límites superior e inferior para el engelamiento en aeronaves en $0ºC$ y $-25 ºC$, con una media en torno a los $-10ºC$. A temperaturas inferiores a $-20ºC$ no es común encontrar incidentes relacionados con el engelamiento; y a temperaturas superiores a $-5ºC$, la compresión del aire que se produce en el perfil sitúa las temperaturas en los bordes de ataque por encima del punto de congelación, al suponer un incremento de $1-2ºC$ en aviones pequeños pero de hasta $6-8ºC$ en aviones comerciales.\\
-	%
-	\paragraph{C. Tamaño de las gotas. \\}
-	%
-	\indent El tamaño de las gotas es típicamente pequeño (entre 10 y 20 micras de diámetro). Los máximos valores que se encuentran en general alcanzan las 50 micras (a excepción de los \textit{SLDs}, ver apartado siguiente). Las tendencias generales muestran que las nubes de tipo cumuliforme contienen gotas de mayor diámetro en comparación con las estratiformes y, además, las nubes marítimas presentan también gotas de mayor tamaño (en relación a las continentales). Al igual que sucede con el \textit{LWC}, el tamaño de las gotas crece con la altura en nubes de una sola capa, siendo el comportamiento de nubes multicapa de mayor complejidad.
-	%
-%
-\section{Tipos de engelamiento en aeronaves.}
-%
-\indent De todos los tipos de engelamiento atmosférico enunciados anteriormente, en el escenario particular de las aeronaves solamente se consideran dos tipos de formaciones principales: el hielo glaseado o transparente(\textit{glaze}) y el hielo escarcha o granulado (\textit{rime}). En el caso del primero, se pueden distinguir dos situaciones derivadas: la denominada lluvia engelante (el engelamiento por precipitación de hielo glaseado) y el engelamiento en nube de hielo glaseado. Adicionalmente, existe la posibilidad de que ambas formas (\textit{glaze} y \textit{rime}) se combinen en un modo intermedio entre ambos; y también es necesario tener en cuenta el fenómeno de impacto de \textit{SLD}. Respectivamente, cada una de las situaciones mencionadas se pueden observar en las figuras \ref{fig: Glenn_glaze}, \ref{fig: Glenn_rime}, \ref{fig: Glenn_mixed} y \ref{fig: Glenn_SLD} \cite{icing_glenn}. \\
-%
-\begin{figure}[hb]
-\centering
-\medskip
-\begin{subfigure}[t]{.49\linewidth}
-\centering\includegraphics[width=\linewidth]{Chapter_01/Glenn_glaze}
-\caption{Hielo \textit{glaze} de gravedad severa.}
-\label{fig: Glenn_glaze}
-\end{subfigure}
-\begin{subfigure}[t]{.49\linewidth}
-\centering\includegraphics[width=\linewidth]{Chapter_01/Glenn_rime}
-\caption{Hielo \textit{rime} de gravedad leve.}
-\label{fig: Glenn_rime}
-\end{subfigure}
-\end{figure}
-\begin{figure}\ContinuedFloat
-\begin{subfigure}[t]{.49\linewidth}
-\centering\includegraphics[width=\linewidth]{Chapter_01/Glenn_mixed}
-\caption{Hielo mezcla de gravedad moderada.}
-\label{fig: Glenn_mixed}
-\end{subfigure}
-\begin{subfigure}[t]{.49\linewidth}
-\centering\includegraphics[width=\linewidth]{Chapter_01/Glenn_SLD}
-\caption{Hielo de \textit{SLDs}.}
-\label{fig: Glenn_SLD}
-\end{subfigure}
-\caption{Fotografías tras vuelo de una aeronave. NASA Glenn Research Center \cite{icing_glenn}.}
-\end{figure}
-%\clearpage
-
-%
-	\subsection{Hielo glaseado (\textit{glaze}).}
-	%
-	\indent El hielo \textit{glaze} o transparente (figura \ref{fig: Glaze_scheme}) se forma a unas temperaturas no muy bajas, puesto que el modo en que se genera es mediante la congelación parcial de las gotas subenfriadas durante el impacto, para extenderse a zonas posteriores y ahí solidificar de manera definitiva. El rango oscila entre los $-2ºC$ y $-15ºC$, aunque esto depende de la fuente consultada, al no existir un límite físico objetivo. Habitualmente está asociado a gotas de tamaño moderado a grande, cuyo volumen permite su extensión tras el impacto. El contenido de agua líquida es también grande en estos casos. El proceso de congelación del hielo glaseado es lento, y resulta en un hielo con una gran capacidad de adhesión a la superficie por adaptarse a su forma (ver figura \ref{fig: Adhesion}). Esto, unido al mayor perjuicio aerodinámico por su mayor extensión, hacen que sea uno de los tipos más peligrosos de engelamiento en aeronaves. De todas maneras, una cuantificación de los efectos de este tipo de formación requiere de un análisis de la aeronave, a nivel aerodinámico, de condición de vuelo y de equipamiento antihielo.
-	%
-	\begin{figure}[ht]
-	\centering\includegraphics[width = 0.6\linewidth]{Chapter_01/Glaze_scheme}
-	\caption{Formación de hielo \textit{glaze}.}
-	\label{fig: Glaze_scheme}
-	\end{figure}\\
-	%
-	\indent Un caso particular de la formación de hielo glaseado es la denominada lluvia engelante, explicada esquemáticamente en la figura \ref{fig: Freezing_rain}. Resulta especialmente peligrosa ya que, a la condición de hielo transparente, se une la uniformidad con que afecta a toda la aeronave.
-	%
-	\begin{figure}
-	\centering\includegraphics[width = 0.6\linewidth]{Chapter_01/Freezing_rain}
-	\caption{Fenómeno de la lluvia engelante \cite{Freezing_rain}.}
-	\label{fig: Freezing_rain}
-	\end{figure}
-	\subsection{Hielo escarcha (\textit{rime})}
-	%
-	\indent El hielo granular o \textit{rime} (ver figura \ref{fig: Rime_scheme}) se forma por el congelamiento directo e instantáneo de las gotas que impactan sobre el perfil. Como parece normal, está asociado a temperaturas más bajas, generalmente inferiores a $-10ºC$, aunque de nuevo existen distintos criterios en función de las referencias consultadas. Está relacionado también con un tamaño de gota menor, capaz de congelarse de manera inmediata tras el impacto. Dado que no tiene tiempo de cambiar su forma, el hielo toma un aspecto más rugoso y blanquecino, recordando a la nieve. La adherencia es inferior a la del hielo glaseado, y el efecto aerodinámico es comparativamente inferior. Dada su tonalidad, es más fácil de detectar desde cabina, lo que supone un aspecto a su favor.
-	%
-	\begin{figure}[ht]
-	\centering\includegraphics[width = 0.6\linewidth]{Chapter_01/Rime_scheme}
-	\caption{Formación de hielo \textit{rime}.}
-	\label{fig: Rime_scheme}
-	\end{figure}
 	%
 	%
-	\begin{figure}[ht]
-	\centering\includegraphics[width = 0.3\linewidth]{Chapter_01/Adhesion}
-	\caption{Formación por capas de hielo \textit{glaze} (arriba) y \textit{rime} (abajo).}
-	\label{fig: Adhesion}
-	\end{figure}\\
-	%
-	\subsection{Hielo mezcla.}
-	%
-	\indent El hielo mezcla aparece generalmente por la intercalación de capas de hielo transparente y granular. Sus características suelen estar entre un tipo y otro, presentando una notable adhesividad pero con una cierta fragilidad.
-	%
-	\subsection{\textit{Supercooled large droplet icing} (SLD).}
-	%
-	\indent El fenómeno de impacto de gotas grandes subenfriadas (\textit{supercooled large droplet icing}) se analiza prácticamente como un caso aparte, dada la severidad que conlleva así como la forma en que se generan. No obstante guarda una cierta similaridad con el hielo \textit{glaze}, pero con numerosos matices. Sus efectos son muy perjudiciales, ya que dado su gran tamaño (diámetros que superan los $50 \mu m$), son capaces de alcanzar zonas del avión que de otra manera permanecerían impasibles. Además, la formación de hielo en zonas avanzadas del perfil genera una rugosidad con un influjo mucho más grave sobre la aerodinámica del perfil que la formada en el borde de ataque.\\
-	%
-	\indent Existen dos situaciones generales que inducen la formación de \textit{SLDs}. La primera de ellas es el fenómeno de la lluvia engelante (ya descrita anteriormente), que se puede predecir de una forma más o menos sencilla, dado lo específico del perfil termodinámico que tiene que tener lugar. La segunda situación es la coalescencia de gotas más pequeñas, mucho más difícil de detectar. Está causada por esfuerzos cortantes del viento (\textit{wind shear}), es decir, diferencias en velocidad del viento en las partes superiores de las nubes, pero conviene aclarar que no se han detectado los mecanismos exactos mediante los cuales sucede este fenómeno. Sí se ha estimado que el contenido en agua líquida debe oscilar entre $0.2-0.25 g/m^3$ en nubes continentales y $0.1 g/m^3$ en nubes oceánicas.
-%
-\section{El entorno engelante.}
-%
-\indent Aunque ya se han sentado las bases sobre los parámetros que afectan al engelamiento, es necesario establecer una relación con el conjunto de condiciones meteorológicas que conforman el entorno engelante. En primer lugar, se introducirán las condiciones meteorológicas que más comúnmente vienen relacionadas con el engelamiento, para posteriormente realizar un análisis geográfico de los reportes de sucesos de formación de hielo. Finalmente, se describirá ligeramente la relación entre el engelamiento y los tipos de nubes que lo producen.\\
-%
-	\subsection{Condiciones meteorológicas y engelamiento.}
-	%
-	\indent Dado que están ligados a nubes húmedas o de precipitación, los sucesos de engelamiento están asociados a meteorologías que produzcan esas condiciones. La mayor parte de los reportes de pilotos (\textit{PIREPs}, \textit{pilot reports}) de condiciones de engelamiento tienen lugar en zonas cercanas a frentes cálidos cercanos a la superficie, al sustentar aire húmedo desde capas más bajas. No obstante, aunque menos habitual, los frentes fríos también generan estas condiciones.\\
-	%
-	\indent Las masas de aire marítimo contienen una mayor cantidad de humedad, y están más frecuentemente asociadas a \textit{PIREPs} que las masas de aire continental, especialmente aquellas más alejadas de las zonas polares. La topografía también ejerce una influencia sobre las condiciones de engelamiento, al producir fuentes locales de elevación de masas de aire. Tomando el ejemplo de Estados Unidos, las Montañas Rocosas inducen la elevación de masas de aire húmedo en el centro de la nación, induciendo condiciones favorables para sucesos de engelamiento lejos de la costa.\\
-	%
-	\indent Pese a lo que pueda parecer, las condiciones meteorológicas en tierra no son de mucha utilidad para estimar la posibilidad de sucesos engelantes: los \textit{PIREPs} se reparten prácticamente a partes iguales entre precipitación de agua o nieve en la superficie y condiciones secas. Sin embargo, la siniestralidad sí se concentra en zonas frías y nubosas. En la figura \ref{fig: Incidencia_USA} se observa una representación de la frecuencia de los sucesos de engelamiento en los Estados Unidos. La tendencia es bastante clara: Los incidentes se concentran en las latitudes más altas, multiplicándose casi por diez entre las zonas más septentrionales respecto a las meridionales. La siniestralidad media al año oscila los treinta incidentes sólo en este país, concentrándose en los meses del invierno.
-	%
-	\begin{figure}[ht]
-	\centering\includegraphics[width = 0.7\linewidth]{Chapter_01/Incidencia_USA}
-	\captionsetup{justification=centering, margin = 0.5cm}
-	\caption{Frecuencia de incidentes de engelamiento en Estados Unidos, expresada en porcentaje de tiempo de vuelo. \cite{politovich}.}
-	\label{fig: Incidencia_USA}
-	\end{figure}\\
-	%
-	\indent En lo que respecta a la altitud en que suceden estos reportes, la media de estos se encuentra alrededor de los $3000\,m$, existiendo muy escasos sucesos en altitudes superiores a $6000 \, m$. Ello resulta tranquilizador en cierto modo, puesto que la altitud de crucero de un avión comercial se sitúa bastante por encima de dicho nivel. En cuanto al reparto de \textit{PIREPs} a lo largo de un día, éste obedece básicamente a la frecuencia de vuelos, cayendo durante las horas nocturnas. Una prueba que reafirma este comportamiento es que a lo largo de una semana, de nuevo obedecen a los días de mayor tráfico (de Martes a Jueves).
-	%
-	\subsection{Tipología de nubes y relación con el engelamiento.}
-	%
-	\indent Existen dos tipos principales de nubosidad que albergan condiciones engelantes \cite{meteorology}:
-	%
-	\paragraph{A. Nubes cumuliformes. \\}
-	%
-	\indent Las nubes de tipo cumuliforme se forman por fuertes corrientes de aire ascendente, lo cual les dota de la forma alargada verticalmente. Este tipo de nube incluye muchos otros tipos, pero las que provocan engelamiento generalmente son los cumulonimbos (Cb), denominadas coloquialmente nubes de tormenta, y los cumulus congestus, especialmente alargadas verticalmente. El contenido en agua líquida de estas nubes es notablemente alto (alrededor de $3\,g/m^3$), lo cual las convierte en un tipo de nube peligrosa en estas condiciones. La ventaja que juega a su favor es su corta extensión, sin sobrepasar los $10km$, toda vez que puede ser una distancia más que suficiente para que la formación de hielo sea severa. A continuación se adjuntan dos gráficas, extraídas de las normas \textit{FAR} \cite{FAR_icing}, que muestran respectivamente \ref{fig: LWC_T_cumu} la envolvente de las condiciones engelantes para las nubes cumuliformes, en las cuales el avión ha de ser capaz de volar con seguridad para ser certificados y \ref{fig: LWC_horizontal_extent_cumu} la extensión de las nubes para un contenido de agua líquida dado. Se observa que la certificación abarca desde los $0ºC$ hasta los $-40ºC$, con unos valores de \textit{LWC} notablemente altos. Asimismo, el \textit{MVD} alcanza las 50 micras, valor al que las nubes estratiformes no llegan. Por tanto, la formación de hielo en estas nubes es habitualmente hielo transparente (el más peligroso).
-	%
-	\begin{figure}[ht]
-	\centering\includegraphics[width = 0.7\linewidth]{Chapter_01/LWC_T_cumu.png}
-	\captionsetup{justification=centering, margin = 0.5cm}
-	\caption{Envolvente de certificación en condiciones de engelamiento continuo (nubes cumuliformes) \cite{FAR_icing}.}
-	\label{fig: LWC_T_cumu}
-	\end{figure}
-	\begin{figure}[ht]
-	\centering\includegraphics[width = 0.66\linewidth]{Chapter_01/LWC_horizontal_extent_cumu.png}
-	\captionsetup{justification=centering, margin = 0.5cm}
-	\caption{Extensión de nubes cumuliformes para un \textit{LWC} dado \cite{FAR_icing}.}
-	\label{fig: LWC_horizontal_extent_cumu}
+	\begin{figure}[!htb]
+	\centering\includegraphics[width = 0.7\linewidth]{Chapters/Chapter_01/Docking_berthing}
+	\caption{Docking and berthing \cite{Fehse}.}
+	\label{figCh1:Docking_berthing}
 	\end{figure}
 	%
 	\FloatBarrier
-	\paragraph{B. Nubes estratiformes. \\}
 	%
-	\indent Las nubes estratiformes se generan a partir de corrientes de aire que ascienden de una forma más débil, lo que provoca una forma más aplanada y alargada en sentido horizontal. Se trata de nubes de una gran extensión, que pueden superar los 300 kilómetros (aunque no sea lo común); mientras que su contenido en agua líquida en la envolvente de certificación es sensiblemente inferior al de las nubes cumuliformes ($<1\,g/m^3$). El tamaño de gota es también inferior, por debajo de las 40 micras. En las figuras \ref{fig: LWC_T_strat} y \ref{fig: LWC_horizontal_extent_strat} se pueden observar las mismas envolventes y curvas que se han mostrado para las nubes cumuliformes. Merece mención el título que reciben para la \textit{FAA}, denotando como \textit{continuous maximum} a las estratiformes (por la necesidad de exposición prolongada) y \textit{intermitent maximum} a las cumuliformes. En dichas envolventes además se indica la exposición a la que debe someterse el avión para ser certificado, siendo 2.6 millas náuticas para las cumuliformes y 17.4 para las estratiformes.
+	\subsection{Formation flying.}
 	%
-	\begin{figure}[ht]
-	\centering\includegraphics[width = 0.66\linewidth]{Chapter_01/LWC_T_strat.png}
-	\captionsetup{justification=centering, margin = 0.5cm}
-	\caption{Envolvente de certificación en condiciones de engelamiento continuo (nubes estratiformes) \cite{FAR_icing}.}
-	\label{fig: LWC_T_strat}
-	\end{figure}
-	\begin{figure}[ht]
-	\centering\includegraphics[width = 0.7\linewidth]{Chapter_01/LWC_horizontal_extent_strat.png}
-	\captionsetup{justification=centering, margin = 0.5cm}
-	\caption{Extensión de nubes estratiformes para un \textit{LWC} dado \cite{FAR_icing}.}
-	\label{fig: LWC_horizontal_extent_strat}
-	\end{figure}
-	\clearpage
+	\indent Formation flying does not have a specially precise definition, varying from institution to institution. However, NASA's Goddard Space Flight Center provides a definition to which most of the space community would agree, defining it as the tracking or maintenance of a desired relative separation, orientation or position between or among spacecraft \cite{SCFormationFlying}. It involves longer-term planning and operations than rendez-vous, hence usually requiring or being further rewarded by the usage of more accurate models. Fuel consumption becomes an even more critical concern, depending on several factors such as mission requirements, initial conditions, drag or thrusting errors.\\
 	%
-\section{Detección de condiciones de engelamiento.}
-%
-	\subsection{Sensores \textit{in situ}.}
-\indent La detección \textit{in situ} del engelamiento se puede realizar o bien visualmente o bien a través de algún tipo de instrumentos. En general, los pilotos cuentan con una vista bastante impedida de las alas del avión, de modo que se suele evaluar en vista de la formación de hielo en el parabrisas o en tubos de pitot en el morro del avión. Además, y de acuerdo a la tabla \ref{table: Severity}, el piloto puede detectar variaciones en el comportamiento del avión que le sirvan para evaluar la condición del mismo. \\
-%
-\indent Sin embargo, los métodos más eficaces para detectar el engelamiento en ciertas partes del avión son los instrumentales. Los detectores de hielo avisan al piloto de la formación de hielo en ciertas partes del avión. Habitualmente, estos instrumentos proporcionan un aviso temprano mucho antes de que el piloto pueda observar visualmente el hielo. Existen numerosos tipos de detectores, destacando los siguientes:
-%
-\begin{itemize}
-\item \underline{Sensores de capacitancia}: Montados en la superficie del ala, detectan diferencias en la capacitancia de la superficie, la cual varía según avanza el engelamiento.
-%
-\item \underline{Varillas de vibración} (\textit{vibrating rod}): Se trata de una varilla expuesta al flujo que detecta la variación de las frecuencias naturales de la misma al formarse hielo. (figura \ref{fig: Vibrating_rod}, \cite{Vibrating_rod})
-%
-\item \underline{Cámaras infrarrojas}: Actualmente en desarrollo, analizan radiación infrarroja reflejada por el ala, y detectan con ello variaciones en su superficie.(figura \ref{fig: Capacitance}, \cite{Capacitance})
-\end{itemize}
-
-\begin{figure}[ht]
-\centering
-\medskip
-\begin{subfigure}[ht]{.4\linewidth}
-\centering\includegraphics[width=\linewidth]{Chapter_01/Vibrating_rod}
-\caption{Varilla vibratoria \cite{Vibrating_rod}.}
-\label{fig: Vibrating_rod}
-\end{subfigure}
-\begin{subfigure}[ht]{.57\linewidth}
-\centering\includegraphics[width=\linewidth]{Chapter_01/Capacitance}
-\caption{Sensor de capacitancia \cite{Capacitance}.}
-\label{fig: Capacitance}
-\end{subfigure}
-\caption{Sensores \textit{in situ} de detección de hielo.}
-\end{figure}
-%
-\indent La ventaja de los sistemas de detección \textit{in situ} es que proporcionan una descripción definida de las condiciones de engelamiento. Sin embargo, presentan una gran desventaja, y es que el avión debe encontrarse en tales condiciones, y ello no es algo para nada deseable.
-%
-	\subsection{Sensores remotos.}
+	\indent Missions involving spacecraft formation flying have been certainly infrequent. The required knowledge about control, measurement and modeling have turned some groundbreaking projects down due to their costs. Nonetheless, there are current missions such as CLUSTER and GRACE which feature concepts closely related to the discipline. Furthermore, missions like PRISMA or the upcoming Proba-3 and LISA are the main bids to develop the involved methodologies and technologies of formation flying.\\
 	%
-	\indent Los sensores remotos de condiciones de engelamiento se encuentran en fases muy tempranas de su desarrollo. De hecho, en la actualidad, no existe ningún instrumento que permita la detección precisa y suficientemente remota de agua subenfriada en la atmósfera. La metodología usada combina información de diversas fuentes, como lo son radares aeroportuarios (como el \textit{TDWR} o el \textit{NEXRAD}) que si bien no fueron diseñados para ello, pueden dar algún tipo de información relevante acerca de las condiciones en un entorno razonable del avión. Esto, con ayuda de modelos numéricos de predicción meteorológica, imágenes satélite o condiciones en tierra, puede dar pistas sobre la existencia de condiciones de engelamiento. Otra estrategia que se considera es la actualización de radares, que mediante pequeñas modificaciones, pueden resultar de gran utilidad.\\
-	%
-	\indent Un problema de la detección con sensores remotos es la imposibilidad de distinguir entre agua líquida y hielo con el uso de la reflectividad. Una posible estrategia en desarrollo es la implementación de sensores de polarización, que ayuden a determinar la forma del meteoro. En otro respecto, los satélites geoestacionarios opreacionales ambientales (\textit{GOES}) muestran resultados prometedores como detectores de condiciones engelantes. Su funcionamiento se basa en la detección de radiación en el espectro visible combinada con el infrarrojo, que permite la localización de nubes con agua subenfriada en su parte superior. Aun así, por sí solos no resultan suficientes, necesitando una vez más de otros datos y sensores para poder dar una detección lo suficientemente precisa.
-	%
-\section{Predicción de condiciones de engelamiento.}
+	\indent A very important concern about formation flying is orbit safety, being very tightly related to formation control. This will be a recurrent topic along the thesis, analyzing state-of-the-art methodologies and practical examples of greater or smaller complexities.
 %
-\indent La predicción de condiciones de engelamiento es análoga la de la existencia de agua subenfriada en las nubes, lo que supone una tarea muy complicada. En general, se suele realizar un proceso de predicción progresivamente restrictivo, contando con los pasos siguientes:
+\section{State transition matrices.}
 %
-\[
-\begin{array}{ccccccc}
-\text{Nubes/precipitación} & \rightarrow & \text{Temperaturas favorables} \: [-20, 0]ºC & \rightarrow \\
- \rightarrow  \text{ Aire ascendente que produzca líquido} & \rightarrow & \text{ Ausencia de hielo que pueda inducir solidificación}
-
-\end{array}
-\]
+\indent Orbit propagation is a very wide and varied field. It comprises many different approaches and methods to obtain more or less accurate results, with a higher or lower computational cost. Some examples are the numerical integration of the equations of motion in cartesian coordinates, the numerical integration of the variational equations (\ie equations of motion expressed in OEs) and the development of closed-form solutions by simplifying the problem. Within this last group, State Transition Matrices arise.\\
 %
-	\subsection{Métodos actuales.}
-	% 
-	\indent Pese a la gran variedad de métodos de predicción que existen en la actualidad, todos ellos tienen una serie de aspectos en común: requieren mucho personal y tiempo, tienen un cierto grado de subjetividad y los resultados finales suelen ser difíciles de interpretar. El mayor inconveniente existente en la actualidad es que se trabaja con unos datos recogidos para otros fines, es decir, hay que extrapolar en cierto modo datos implícitos. Una metodología habitual es la interpretación de datos de temperatura y humedad relativa de modelos meteorológicos numéricos, que proveen de una precisión del 75\% (entendiendo como precisión el número de reportes de engelamiento en zonas donde estaba prevista su existencia).
-	%
-	\subsection{Métodos en desarrollo.}
-	\indent Con la llegada de modelos numéricos avanzados de predicción meteorológica, de la mano de la detección del contenido de agua líquida en nubes, se abre un nuevo potencial de detección \textit{real} del engelamiento, en lugar de la inferencia llevada a cabo hasta ahora. Ejemplos de los mencionados modelos son el \textit{MM5} o el \textit{RAMS}, ambos desarrollados en los Estados Unidos. Un impedimento de su implementación es la demanda de tiempo, potencia y almacenamiento computacional. De todos modos, el rastreo del contenido de agua líquida es la única vía hacia la detección certera de condiciones de engelamiento.\\
-	%
-	\indent Ninguna fuente de información es suficiente por sí sola para predecir dónde se encuentran condiciones propicias para el engelamiento, o aspectos como su severidad o su tipo. Los meteorólogos combinan la información de varias fuentes para construir la historia completa, y poder determinar con seguridad todos estos aspectos. Su gran valor y su enormes requerimientos de tiempo sugieren y justifican el hecho de desarrollar algoritmos que automáticamente alcancen esos resultados. La clave para una predicción efectiva de condiciones engelantes reside en un entendimiento profundo de (A) los procesos que resultan en la formación de agua subenfriada, (B) el modo en que estos procesos se relacionan con fenómenos observables y (C) cómo combinar la información de todas las fuentes posibles para obtener la imagen más precisa de la situación.
-	%
-\section{Defensas antihielo.}
+\indent The State Transition Matrix is a linearization procedure of a nonlinear dynamical system. It is used to approximate the dynamics of said system over short periods of time, allowing for a lower computational cost while maintaining an acceptable accuracy. This concept is not restricted to orbital mechanics, although it is one of the main fields in which it is used \cite{Montenbruck}. \\
 %
-\indent A fin de protegerse ante los efectos que el engelamiento provoca sobre la aeronave, aquellas cuya vida incluya el vuelo en estas condiciones han de estar equipadas con algún tipo de defensa antihielo. En una aeronave, en general, hay tres tipos de zonas: las zonas provistas de sistemas antihielo (\textit{anti-ice}), las que han sido desheladas (\textit{de-ice}) y las que están desprotegidas. Para evitar la formación de hielo y sus muy peligrosos efectos, hay dos líneas de actuación. O bien se previene la formación de hielo, o bien se elimina una vez ha sido depositado. 
+\indent This section intends to provide some background in (a) its mathematical formulation and (b) its applications in orbit theory.
 %
-	\subsection{Medidas meteorológicas.}
+	\subsection{Concept: System dynamics.}
 	%
-	\indent Las medidas meteorológicas simplemente marcan actitudes a la hora de volar en ciertas regiones, es decir, cómo evitar las condiciones de engelamiento (al menos en su variante severa). Para ello, se debe evitar volar en las siguientes condiciones \cite{enemigo_oculto}:
+	\indent Consider the uncontrolled, nonlinear dynamic system that is characterized through the state vector $\underline{y} = \left[ y_1, y_2, \ldots, y_n \right]$. The Initial Value Problem (IVP) for this system may be expressed as:
+	%
+	\begin{equation}
+	[P] \equiv \left\{ \begin{array}{lll}
+	\text{Eq.}	 	& \dfrac{d \underline{y}}{dt} = \bm F(\underline{y}, t) \\
+	\text{ICs.} 	& \underline{y}(t_0) = \underline{y}_0
+	\end{array}\right.
+	\label{eqCh1:Problem_def}
+	\end{equation}
+	%
+	\noindent where $\bm F(\underline{y}, t)$ represents the nonlinear dynamics of the system. This problem is unsolvable in general, mainly due to its nonlinearity. In the context of orbit propagation, the state vector $\underline{y}$ might be the position and velocity (be it relative or absolute) of the celestial body, and the dynamics function $\bm F$ contains the considered force model. In order to arrive at a closed-form, solvable problem, it is assumed that the solution $\underline{y}(t)$ can be expressed as:
+	%
+	\begin{equation}
+	\underline{y}(t) = \Phi (t, t_0) \underline{y}(t_0)
+	\label{eqCh1:STM_1}
+	\end{equation}
+	%
+	\noindent where $\Phi (t, t_0)$ is the State Transition Matrix (STM) of the system. This matrix allows the state vector at a certain epoch $t$ to be calculated as the product of the matrix times the initial condition. This expression is obviously very favorable, but the question now is how does one compute it. Its actual definition can be easily derived from \eqref{eqCh1:STM_1} as:
+	%
+	\begin{equation}
+	\Phi (t, t_0) \equiv \dfrac{\partial \underline{y}}{\partial \underline{y}_0}
+	\label{eqCh1:STM_2}
+	\end{equation}
+	%
+	\indent Yet again, how to compute it is not clear at all. There are three main options, depending on the situation:
 	%
 	\begin{itemize}
-	\item Zonas con frentes temporales fríos particularmente severos.
-	\item Zonas con nubosidad cumuliforme de gran desarrollo vertical o simplemente densa.
-	\item Zonas de precipitación de un frente temporal dado.
-	\item Nieblas densas.
-	\item Nubes estratiformes densas con gran contenido de agua.
-	\item En zonas montañosas, evitar nubosidad de tipo convectivo.
+	\item[\GMVred{A.}] If the nonlinear solution as a function of the initial condition is known, then the expression \eqref{eqCh1:STM_2} is directly applied. This is an uncommon case, although simplified examples exist in the orbit propagation field. For example, the Keplerian motion equations expressed in Keplerian orbital elements (OEs) can be solved this way, due to the trivial remaining equations. Another example is the Clohessy-Wiltshire solution, from which the STM can be directly obtained. This process is detailed later on in section \ref{secCh2:CW_STM}.
+	%
+	\item[\GMVred{B.}] The nonlinear solution is unknown in the original state space, but can be calculated in a different space through a transformation. Mathematically, this can be written as:
+	%
+	\begin{equation}
+	\Phi_{y} (t, t_0) = \dfrac{\partial \underline{y}}{\partial \underline{y}_0} = \dfrac{\partial \underline{y}}{\partial \underline{u}} \dfrac{\partial \underline{u}}{\partial \underline{u}_0} \dfrac{\partial
+	\underline{u}_0}{\partial \underline{y}_0} \equiv W(t) \Phi_u(t, t_0) \left( W(t_0) \right)^{-1}
+	\label{eqCh1:STM_decomp}
+	\end{equation}
+	%
+	\noindent where $W(t)$ is the transformation matrix, where it is assumed that the transformation $\underline{y} = h(\underline{u})$ is known. An example of this kind of approach is the transformation of the Cartesian equations of motion into the Keplerian OEs, whose solution is known, as mentioned in \GMVred{A.}. This is a very commonly used method in relative orbit propagation, as in \cite{Yamanaka_Ankersen, GA_STM}.
+	%
+	\item[\GMVred{C.}] If none of the above can be performed, then the STM can be integrated itself, to be then used to calculate the state vector. This starts by differentiating \eqref{eqCh1:Problem_def} with respect to the initial condition $\underline{y}_0$, leading to:
+	\[
+	\begin{array}{ll}
+	\bullet & \dfrac{\partial}{{\partial \underline{y}(t_0)}} \dfrac{d\underline{y}(t)}{dt} = \dfrac{d}{dt}\dfrac{\partial \underline{y}(t)} {{\partial \underline{y}(t_0)}} = \dfrac{d}{dt} \bm \Phi (t, t_0) \\[1.2em]
+	\bullet & \dfrac{\partial \bm F(t, \underline{y})}{{\partial \underline{y}(t_0)}}  = \dfrac{\partial \bm F(t, \underline{y})}{{\partial \underline{y}(t)}} \dfrac{\partial \underline{y}}{{\partial \underline{y}(t_0)}} = \bm A \bm \Phi(t, t_0)
+	\end{array}
+	\]
+	%
+	\begin{equation}
+	\Rightarrow [P] \equiv \left\{ \begin{array}{lll}
+	\text{Eq.} 	& \dfrac{d}{dt} \Phi (t, t_0) = \bm A \Phi(t, t_0)\\
+	\text{IC} 	& \Phi(t_0, t_0) = \eye_{nxn}
+	\end{array}\right.
+	\label{eqCh1:STM_prop}
+	\end{equation}
+	%
+	\indent This last method is a bit unrewarding, as it forces one to integrate an IVP. However, the problem in terms of $\Phi(t, t_0)$ (eq. \eqref{eqCh1:STM_prop}) might be simpler or more efficient than the original (eq. \eqref{eqCh1:Problem_def}), although it is rare. An example of this approach is shown later in section \ref{secApp2:STM_prop}.
+	%
 	\end{itemize}
 	%
-	\indent En caso de encontrarse con alguna situación de las anteriores, lo correcto es modificar la ruta como sea necesario para minimizar o anular la distancia recorrida en tales condiciones. Este comportamiento se encuentra ilustrado en la figura \ref{fig: Flight_path}.
+	\subsection{Applications of STMs in celestial mechanics.}
 	%
-	\begin{figure}[ht]
-	\centering\includegraphics[width = 0.5\linewidth]{Chapter_01/Flight_path}
-	\caption{Travesía correcta para atravesar un frente frío evitando condiciones de engelamiento \cite{avion_y_piloto}.}
-	\label{fig: Flight_path}
-	\end{figure}
+	\indent State Transition Matrices can be useful in a wide range of spacecraft dynamics applications. Some of the most important are \cite{STM_Apps}:
 	%
-	\subsection{Medidas técnicas.}
+	\paragraph{\GMVred{A.} \myul[GMVred]{Precise Orbit Determination.}\\}
 	%
-	\indent Pese a evitar en la medida de lo posible las condiciones que propicien el engelamiento, existe la posibilidad que de todos modos acabe formándose hielo en la aeronave; o también es posible necesitar de una protección por pura precaución. Las medidas que están destinadas a eliminar (deshielo) o prevenir (antihielo) el hielo formado en la aeronave se denominan medidas técnicas, que generalmente están diseñadas en varias líneas:
+	\indent Precise Orbit Determination (POD) is a method through which the orbit of a flying spacecraft can be determined with a high accuracy \cite{POD}. This estimation is performed using general orbit determination algorithms, such as Kalman filtering or a batch least squares. It requires both high-precision geodetic receivers and high-precision dynamics models, where STMs comes to play. POD usually requires all typically important perturbations, such as non-spherical gravity, drag, tidal forces \ldots 
+	%
+	\paragraph{\GMVred{B.} \myul[GMVred]{Guidance, Navigation and Control (GNC).} \\}
+	%
+	\indent GNC deals with the design the systems to control the spacecraft. It involves the determination of the desired trajectory (guidance), the instantaneous determination of the spacecraft's position (navigation) and the manipulation of the controllers to execute guidance commands (control). STMs become very useful specially in situations in which the linearization error is small, such as in rendez-vous, station-keeping or formation flying operations. They prove to be useful in all three branches:
 	%
 	\begin{itemize}
-	\item \textbf{Medidas químicas}: Se basan en rociar ciertas superficies de la aeronave antes del despegue con un líquido anticongelante, cuyo principio físico es disminuir el punto de congelación del agua. Se trata de un tratamiento que generalmente se aplica en zonas geográficas frías y con precipitación abundante y frecuente, buscando además eliminar posibles acumulaciones de hielo preexistentes.
+	\item Guidance: STMs are a lightweight yet precise tool to generate reference trajectories.
 	%
-	\begin{figure}
-	\centering\includegraphics[width = 0.5\linewidth]{Chapter_01/De_icing_airport}
-	\caption{Tratamiento químico antihielo en un Airbus A330 \cite{De_icing_airport}. }
-	\end{figure}\\
+	\item Navigation: Signal filtering makes extensive use of STMs for the propagation of the estimated state. This is certainly one of the most relevant applications.
 	%
-	\item \textbf{Medidas mecánicas}: Se basan en la modificación mecánica de la superficie sobre la cual hay hielo, a fin de desprenderlo por fragilidad. Existen distintas medidas dentro de este conjunto:
-	%
-		\begin{itemize}
-		\item[\labelitemii] \underline{Botas neumáticas}: El hielo formado es eliminado mediante el inflado cíclico de \textit{botas} (cámaras de aire) internas al borde de ataque. provocando la deformación del borde de ataque, y la rotura del hielo por su inherente fragilidad, desprendiéndose de manera bastante sencilla. Cuentan con el inconveniente de ser incapaces de eliminar capas pequeñas de hielo.
-		\item[\labelitemii] \underline{Sistemas de impulso neumático}: Están basados en el mismo principio que el sistema anterior, pero tienen la capacidad de eliminar capas pequeñas de hielo al contar con varios tubos inflables en lugar de uno solo más grande (figura \ref{fig: Pneumatic_boot}).
-		\item[\labelitemii] \underline{Electroimpulsos}: Una serie de electroimanes son excitados de manera cíclica, deformando la superficie metálica. Su mayor inconveniente es la fatiga que generan sobre el metal.
-		\item[\labelitemii] \underline{Electro-expulsión}: Se hace correr una corriente eléctrica sobre unos alambres de cobre en la superficie, generando un campo magnético que permite romper el hielo en pequeños fragmentos que fácilmente caen del avión.
-		\end{itemize}
-	%
-	\item \textbf{Medidas térmicas:} El hielo se funde por calentamiento de la superficie. En el caso de que el calor sea suficiente para evitar la congelación de las gotas subenfriadas, se denomina antihielo, mientras que si el hielo se elimina una vez formado, se denomina deshielo. Existe una serie de tecnologías actuales dentro de este grupo:
-	%
-		\begin{itemize}
-		\item[\labelitemii] \underline{Sangrado de aire del motor}: Se extrae aire del motor (de la primera etapa de compresor en particular), y se redirige hacia el ala, donde calienta el borde de ataque mediante los denominados tubos de \textit{piccolo} (ver figura \ref{fig: Piccolo}). Otra variante es el uso de conductos S o D, que permiten el calentamiento de los bordes de ataque de las góndolas, evitando el engelamiento en el difusor. También es común su utilización para evitar el congelamiento de los carburadores.
-		\item[\labelitemii] \underline{Panel electrotérmico}: Se trata de calentadores eléctricos embebidos en la superficie a deshelar, basados en el efecto Joule.
-		\end{itemize}
+	\item Control: Algorithms like robust online optimal control involve state propagation, using the STM.
 	\end{itemize}
 	%
-	\begin{figure}[ht]
-\centering
-\medskip
-\begin{subfigure}[t]{.48\linewidth}
-\centering\includegraphics[width=\linewidth]{Chapter_01/Pneumatic_boot}
-\caption{Sistema de deshielo neumático \cite{Pneumatic_boot}.}
-\label{fig: Pneumatic_boot}
-\end{subfigure}
-\begin{subfigure}[t]{.48\linewidth}
-\centering\includegraphics[width=\linewidth]{Chapter_01/Piccolo}
-\caption{Sistema de deshielo térmico (tubo de piccolo) \cite{Piccolo}.}
-\label{fig: Piccolo}
-\end{subfigure}
-\caption{Sistemas de deshielo actuales.}
-\end{figure}
-
-%
-	\indent Es necesario destacar que el deshielo mediante medidas térmicas provoca que el agua fluya hacia zonas posteriores, pudiendo volver a congelar y haciéndolo además en una zona desprotegida a priori. Por tanto, hay que ser cuidadosos con la aplicación de estos sistemas. También se debe remarcar que estos métodos suponen una pérdida de potencia notoria, que en muchas situaciones puede no ser importante, pero en aviones pequeños, que adicionalmente, se encuentren ascendiendo, puede ser algo a tener muy en cuenta. 
+%	\indent Unfavorable scenarios (\eg elliptic or perturbed orbit) may lead to greater linearization errors, unless an enhanced model is developed. This will be one recurring topic around the thesis.
+%	%
+	\paragraph{\GMVred{C.} \myul[GMVred]{Orbit design.} \\}
 	%
-		\subsubsection{Medidas técnicas en desarrollo.}
-		%
-		\indent Actualmente existen numerosas investigaciones sobre métodos más efectivos y eficientes de deshielo y antihielo. A continuación se enumeran algunas de las más importantes \cite{nanotech}:
-		%
-		\paragraph{I. Capa de nanotubos de carbono. \\}
-		%
-		\indent Desarrollado por el \textit{Battelle Memorial Institute} en Ohio, EE.UU., consiste en aplicar una capa de nanotubos de carbono en las superficies a proteger de la aeronave, y utilizarlos como un panel electrotérmico, es decir, se calienta por el flujo de corriente eléctrica. Se trata de un sistema realmente eficiente, pero sobre todo, muy ligero, rondando el 1\% de cualquier equipo antihielo actual \cite{nanotubos}.
-		%
-		\paragraph{II. Recubrimiento de partículas hidrófugas. \\}
-		%
-		\indent Obra de científicos japoneses, se trata de un recubrimiento superhidrófugo que impide que el agua se adhiera a la superficie del avión, compuesto por politetrafluoroetileno (PTFE), que reduce la energía necesaria para separar una gota de una superficie dada. Se está estudiando su implementación en todo el avión a modo de una capa de pintura.
-		%
-		\paragraph{III. Recubrimiento con plasma. \\}
-		%
-		\indent Llevada a cabo en el centro CICATA de Querétaro, México, se trata de un método que planea cubrir con una película de plasma las superficies expuestas de la aeronave. Los polímeros que componen dicho plasma inducen un aumento de la tensión superficial del agua, incitándola a formar gotas de mayor tamaño que acaban por escurrirse.
+	\indent Alternatively, rather than propagating already defined orbits, it may be useful to solve the inverse problem: that is, find the orbit that satisfies a set of conditions (\eg optimality). This is specially relevant for the Circular Restricted Three Body Problem (CR3BP), or its particular case of Halo orbits (periodic 3D orbit near one of the Lagrange libration points). STMs are quite useful to determine an initial solution for said Halo orbits, and can also be used to evaluate the effect of a deviation in initial conditions or other parameters. 
+	%
+	\paragraph{\GMVred{D.} \myul[GMVred]{Covariance matrix propagation.} \\}
+	%
+	\indent Some degree of uncertainty will always be assumed in the estimation of a spacecraft's position and velocity. This matter becomes really important in the context of collision avoidance, where ideally, said uncertainty would be exactly calculated. However, these values are usually not something inherently worrying. What is worrying indeed is that this uncertainty may propagate in a divergent fashion, leading to unbounded trajectories with its inherent collision risk.\\
+	%
+	\indent Here is where the covariance matrix comes to light. Conceptually, it can be seen as an entity which indicates how certain are each of the components of the state vector. That is represented by their variances and covariances. Mathematically, it is defined as:
+	%
+	\[
+	P(t) 	= E\left[ \left(\underline{\hat{x}} - \underline{x}\right) \left(\underline{\hat{x}} - \underline{x}\right)^T \right]
+	\]
+	%
+	\indent If one knew the covariance at a certain epoch $t_j$, it is possible to map it to a different epoch $t_k$ (latter or earlier) through the STM, that is:
+	%
+	\[
+	\begin{array} {c} P(t_k) 	=  E\left[ \left(\underline{\hat{x}_k} - \underline{x_k}\right) \left(\underline{\hat{x}_k} - \underline{x}_k\right)^T \right] = E\left[\Phi(t_k, t_j) \left(\underline{\hat{x}_j} - \underline{x}_j\right) \left(\underline{\hat{x}_j} - \underline{x_j}\right)^T \Phi^T(t_k, t_j)\right] \\[1.3em]
+	\Rightarrow P(t_k)=  \Phi(t_k, t_j) P(t_j) \Phi^T(t_k, t_j) \end{array}
+	\]
+	%
+	\indent Now, once the mathematical formalism has been stated, it is time to apply it to the situation at hand. Spacecraft state uncertainty has essentially two sources: estimation error (associated to navigation) and execution error (associated to control/manoeuvres). \\
+	%
+	\indent In a fairly relaxed approach (\ie assuming the state variables be decoupled), the covariance matrix associated to the estimation error has the following shape:\\
+	%
+	\begin{equation}
+	P_{est} = \left[ \begin{array}{cccccc}
+	\delta x^2 	& 0 			& 0 			& 0 			& 0 			& 0 \\
+	0 			& \delta y^2	& 0 			& 0 			& 0 			& 0 \\	
+	0 			& 0 			& \delta z^2 	& 0 			& 0 			& 0 \\
+	0			& 0 			& 0 			& \delta v_x^2 	& 0 			& 0 \\
+	0			& 0 			& 0 			& 0				& \delta v_y^2 	& 0 \\
+	0			& 0 			& 0 			& 0				& 0 			& \delta v_z^2 \\
+	\end{array} \right]
+	\label{eqCh1:P_est}
+	\end{equation}
+	%
+	\noindent where $\delta \psi$ indicates the standard deviation of the variable $\psi$. An useful way to visualize the covariance is the probability ellipsoid, defined by:
+	%
+	\[
+	\left[\begin{array}{ccc}
+	\tilde{x} & \tilde{y} & \tilde{z}
+	\end{array} \right] 
+	P_{xyz}^{-1} 
+	\left[ \begin{array}{c}
+	\tilde{x} \\ \tilde{y} \\ \tilde{z} \\
+	\end{array} \right] = l^2
+	\]
+	%
+	\noindent where $\tilde{x}, \tilde{y}, \tilde{z}$ are the coordinates of a point of the ellipsoid (referred to its center), $P_{xyz}$ is the partition of the covariance matrix related to the position and $l$ is the sigma coefficient. That is, for $l = 2$, the equation represents the ellipsoid in which the spacecraft will be found with a $2\sigma$ probability. An example of the evolution of this ellipsoid can be seen for a small radial hop in figure \ref{figCh1:Covariance_segment}. 
+	%
+	\begin{figure}[!htb]
+	\centering\includegraphics[width = 0.90\linewidth]{Chapters/Chapter_01/Covariance_segment}
+	\caption{Covariance ellipsoid evolution along a radial hop.}
+	\label{figCh1:Covariance_segment}
+	\end{figure}
+	%
+	\FloatBarrier
+	%
+	\indent Most of these concepts lie out of the thesis' scope. However, it is important to know that the STMs developed or quoted throughout this thesis can be used in many different fields of celestial mechanics.
+	%

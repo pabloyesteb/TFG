@@ -1,23 +1,23 @@
 \chapter{Relative dynamics around elliptic reference orbits.}
 %
-\label{chap:Eccentric}
+\label{chap:Chap_3}
 %
 \section{Introduction.}
 %
-\indent In the previous chapter, the Clohessy-Wiltshire set of equations of motion has been analyzed. Getting them from Newton's law required the fulfillment of two assumptions. Firstly, the distance between deputy and chief must be negligible compared to either spacecraft's orbital radius. This is usually the case when dealing both with formation flying and rendez-vous maneuvers. The second assumption is that both orbits are near-circular ($e<<1$), which is not as acceptable as the first one. This is specially relevant on formation flying, as the timescale is usually large enough to experience sensible deviations. \\
+\indent In the previous chapter, the Clohessy-Wiltshire set of equations of motion has been analysed. Getting them from Newton's law required the fulfilment of two assumptions. Firstly, the distance between deputy and chief must be negligible compared to either spacecraft's orbital radius. This is usually the case when dealing both with formation flying and rendez-vous manoeuvres. The second assumption is that both orbits are near-circular ($e<<1$), which is not as acceptable as the first one. This is specially relevant on formation flying, as the timescale is usually large enough to experience sensible deviations. \\
 %
-\indent Conceptually, there are some obvious differences between near-circular and eccentric orbits. First of all, orbital radius varies over time, which means that, at every point, the spacecraft is radially closing or moving away from the central body (\ie the Earth). But more importantly, the angular velocity is no longer constant, which means that the non-inertial effects when analyzing the relative motion are not constant. That will surely make it harder to get analytical expressions, though through some simplifications, it may be done.\\
+\indent Conceptually, there are some obvious differences between near-circular and eccentric orbits. First of all, orbital radius varies over time, which means that, at every point, the spacecraft is radially closing or moving away from the central body (\ie the Earth). But more importantly, the angular velocity is no longer constant, which means that the non-inertial effects when analysing the relative motion are not constant. That will surely make it harder -yet not impossible- to get analytical expressions, though through some simplifications, it may be done.\\
 %
 \indent For this reason, several motion models for elliptic orbits have been developed \cite{Sullivan}. Both linear and nonlinear models are present in the literature, though the first ones are the most usually employed. Tschauner and Hempel \cite{Tschauner_Hempel} developed a linear, first-order model via the truncation of the Taylor series expansion of the differential gravity. The so-called Tschauner-Hempel equations were widely used at the time, as they are consistent with the Hill/Clohessy-Wiltshire (HCW) model. Nonetheless, they were subsequently improved, due to the existence of singularities in the in-plane motion. Carter \cite{Carter} provides a non-singular solution for this issue. \\
 %
-\indent Instead of these solutions, the motion model used for elliptic, unperturbed orbits in this thesis is one developed by Yamanaka and Ankersen \cite{Yamanaka_Ankersen} (YA onwards). It results in a fairly simpler STM, which is generally considered the state-of-the-art solution for linear propagation of the relative position and velocity in eccentric orbits. It will actually be used in the PROBA-3 mission, which flies in a highly elliptical orbit.\\
+\indent Instead of these solutions, the motion model used for elliptic, unperturbed orbits in this thesis was developed by Yamanaka and Ankersen \cite{Yamanaka_Ankersen} (YA onwards). It results in a fairly simpler STM, which is generally considered the state-of-the-art solution for linear propagation of the relative position and velocity in eccentric orbits. It will actually be used in the PROBA-3 mission, which flies in a highly elliptical orbit.\\
 %
-\indent During this chapter, we will firstly develop YA's approach for the motion model and their proposed solution for it. This enables in turn to develop the YA STM, which will be duly tested with their own scenarios. Lastly, orbit safety concerns will be approached, extending the prior knowledge from near-circular orbits to arbitrarily elliptical, as done by Peters and Noomen \cite{Peters_Noomen}.
+\indent During this chapter, YA's approach for the motion model and their proposed solution for it will be firstly developed. This enables in turn to develop the YA STM, which will be duly tested with their own scenarios. Lastly, orbit safety concerns will be approached, extending the prior knowledge from near-circular orbits to arbitrarily elliptical, as done by Peters and Noomen \cite{Peters_Noomen}.
 %
 \section{Motion model and STM.}
 %
 %
- 	\subsection{Simplification of equations of motion: YA solution.}
+ 	\subsection{Simplification of equations of motion: Yamanaka-Ankersen solution.}
 	%
 	\indent As developed in section \ref{sec: Diff_eqs_prox}, the differential equations for proximity relative motion are:
 	%
@@ -39,7 +39,7 @@
 	\label{eqCh3: Diff_eqs_prox}
 	\end{equation}
 	%
-	\indent In this chapter, we will focus solely on the unperturbed version of this problem, that is, $\underline{a}_f = \underline{a}_{D, d} = \underline{a}_{C, d} = \underline{0}$. A slightly more general approach is to assume that, if dealing with perturbed motion, the perturbation acceleration is equal on either body. The main difference now with respect to Hill equations (CITE HILL EQUATIONS) is that the angular rate $\omega$ is now time-varying, whereas before it was constant ($\omega = n = \const $). This fact completely changes the character of the mathematical problem: the coefficient matrix is no longer constant.\\
+	\indent In this chapter, only the unperturbed version of this problem will be approached, that is, $\underline{a}_f = \underline{a}_{D, d} = \underline{a}_{C, d} = \underline{0}$. A slightly more general approach is to assume that, if dealing with perturbed motion, the perturbation acceleration is equal on either body. The main difference now with respect to Hill equations (see \ref{secCh2:Hill_eqs}) is that the angular rate $\omega$ is now time-varying, whereas before it was constant ($\omega = n = \const $). This fact completely changes the character of the mathematical problem: the coefficient matrix is no longer constant.\\
 	%
 	\indent It is here where Yamanaka and Ankersen, following Carter's approach, implement two changes. Firstly, chief's true anomaly $\theta$ is adopted as the independent variable instead of time. That changes the derivative definition, and for a certain variable $\xi$, the conversion from time to true anomaly derivatives is as follows:
 	%
@@ -55,7 +55,7 @@
 	\noindent where $\omega^{\prime}$ is calculated by simply using the angular momentum definition:
 	%
 	\begin{equation}
-	\omega = \dfrac{h}{R^2} = \dfrac{h}{p^2} \left( 1 + e \cos\theta\right)^2 = k^2 \rho^2 \Rightarrow \omega\prime = 2 k^2\rho \rho^{\prime} = -2k^2 e \sin\theta \rho
+	\omega = \dfrac{h}{R^2} = \dfrac{h}{p^2} \left( 1 + e \cos\theta\right)^2 = k^2 \rho^2 \Rightarrow \omega^{\prime} = 2 k^2\rho \rho^{\prime} = -2k^2 e \sin\theta \rho
 	\label{eqCh3: omegaprime}
 	\end{equation}
 	%
@@ -93,7 +93,7 @@
 	\noindent which, if substituted in \eqref{eqCh3: primeprime}, lead to the rather simple following set of equations:
 	%
 	\begin{subequations}
-	\label{eqCh3: primeprime} 
+	\label{eqCh3: primeprime_V2} 
 	\begin{alignat}{4}[left=\empheqlbrace]
 	&\label{eqCh3: tildeprime_x}\widetilde{x}^{\prime\prime} = && 2 \widetilde{z}^{\prime} \\
 	&\label{eqCh3: tildeprime_y}\widetilde{y}^{\prime\prime} = && -\widetilde{y}\\
@@ -138,16 +138,16 @@
 	\label{eqCh3: IP_eqz}
 	\end{equation} 
 	%
-	\noindent with $\widetilde{x}$ is calculated from $\widetilde{z}$ as:
+	\noindent with $\widetilde{x}$ calculated from $\widetilde{z}$ as:
 	%
 	\begin{equation}
-	\widetilde{z}^{\prime} = 2 \widetilde{z} + K_{x1}
+	\widetilde{x}^{\prime} = 2 \widetilde{z} + K_{x1}
 	\label{eqCh3: IP_eqx}
 	\end{equation}
 	%
 	\noindent where $K_i$ is the set of integration constants, derived from the prescribed initial conditions. The relation between them will be later described.\\
 	%
-	\indent The task at hand now is to solve \eqref{eqCh3: IP_eqz}. Yamanaka and Ankersen propose a new solution to it, whose mathematical development is explained in  \cite{Yamanaka_Ankersen}. Bottom line is that, the solution for $\widetilde{z}$ is:
+	\indent The task at hand now is to solve \eqref{eqCh3: IP_eqz}. Yamanaka and Ankersen propose a new solution to it, whose mathematical development is detailed in  \cite{Yamanaka_Ankersen}. Bottom line is that, the solution for $\widetilde{z}$ is:
 	%
 	\begin{equation}
 	\widetilde{z} = K_{z1} \rho\sin\theta + \left(K_{z2} - \dfrac{K_{x1}}{e}\right) \rho\cos\theta - K_{z2} e\left(2 - 3 e\rho\sin\theta J\right)
@@ -159,7 +159,7 @@
 	\[
 	J = k^2 (t - t_0)
 	\]	
-	Substituting into \eqref{eqCh3: IP_eqx} and integrating:
+	\indent Substituting into \eqref{eqCh3: IP_eqx} and integrating:
 	%
 	\begin{equation}
 	\widetilde{x} = K_{x2} - K_{z1} \cos\theta \left(\rho + 1\right) + \left(K_{z2} - \dfrac{K_{x1}}{e}\right) \sin\theta \left(\rho + 1\right) - 3 K_{z2} e\rho^2 J
@@ -181,12 +181,12 @@
 	%
 	\begin{subequations} 
 	\begin{alignat}{4}[left=\empheqlbrace]
-	&\label{eqCh3: x_tilde}\widetilde{x} && = K_1 - K_2 c \left(1 + \frac{1}{\rho}\right) + K_3 s \left(1 + \frac{1}{\rho}\right) + 3 K_4 \rho^2 J \\
-	&\label{eqCh3: z_tilde}\widetilde{z} && = K_2 s + K_3 c + K_4 \left(2 - 3 e s J\right)
+	&\label{eqCh3: x_tilde}\widetilde{x} && = K_1 - K_2 c \left(1 + \frac{1}{\rho}\right) + K_3 s \left(1 + \frac{1}{\rho}\right) + 3 K_4 \rho^2 J \\[1.2em]
+	&\label{eqCh3: z_tildeee}\widetilde{z} && = K_2 s + K_3 c + K_4 \left(2 - 3 e s J\right)
 	\end{alignat}
 	\end{subequations}
 	%
-	\indent By simply differentiating the latter equations, we can obtain the in-plane velocity components. Considering both position and velocity, a simple matrix form can be achieved:
+	\indent By simply differentiating the latter equations, the in-plane velocity components can be obtained. Considering both position and velocity, a simple matrix form can be achieved:
 	%
 	\begin{equation}
 	\left\{
@@ -248,9 +248,9 @@
 	\label{eqCh3: phi_theta_OOP}
 	\end{equation}
 	%
-	\subsection{YA STM and integration constants.}
+	\subsection{Yamanaka-Ankersen STM and integration constants.}
 	%
-	\indent Our target is to obtain a state transition matrix, that is, a matrix which when fed a state vector at a given time, returns the state vector at a latter epoch. Generally speaking, said entity is built as:
+	\indent The target is to obtain a state transition matrix, that is, a matrix which when fed a state vector at a given time, returns the state vector at a latter epoch. Generally speaking, said entity is built as:
 	%
 	\[
 	\Phi_{\theta_0}^{\theta} = \Phi_{\theta} \Phi_{\theta_0}^{-1}	\Rightarrow \underline{x} \left(\theta\right) = \Phi_{\theta_0}^\theta \underline{x} \left(\theta_0 \right) 
@@ -262,9 +262,10 @@
 	\underline{\overline{x}}_0 =  \Phi_{\theta_0}^\theta \underline{x} \left(\theta_0 \right) 
 	\]	
 	%
-	\noindent which is also called the YA element set. With this in mind, our target now is to obtain both matrices, which in fact can be built from the in- and out-of-plane parts, previously defined in \eqref{eqCh3: phi_theta_IP} and \eqref{eqCh3: phi_theta_OOP}.
+	\noindent which is also called the Yamanaka-Ankersen (YA onwards) element set. With this in mind, the goal now is to obtain both matrices, which in fact can be built from the in- and out-of-plane parts, previously defined in \eqref{eqCh3: phi_theta_IP} and \eqref{eqCh3: phi_theta_OOP}.
 	%
 		\subsubsection{In-plane motion.}
+		%
 		\indent The first component $\Phi_{\theta}$ was already defined as \eqref{eqCh3: phi_theta_IP}:
 		%
 		\begin{equation}
@@ -279,7 +280,7 @@
 		\label{eqCh3: phi_IP}
 		\end{equation}
 		%
-		\indent In order to get $\Phi_{\theta_0}\rvert_{IP}^{-1}$, let us note that $J(\theta_0) = J(t_0) = 0$. Once applied that, the inverse is not so hard to compute, namely:
+		\indent In order to get $\Phi_{\theta_0}\rvert_{IP}^{-1}$, note that $J(\theta_0) = J(t_0) = 0$. Once applied that, the inverse is not so hard to compute, namely:
 		%
 		\begin{equation}
 		\Phi_{\theta_0}\rvert_{IP}^{-1} = 
@@ -297,7 +298,7 @@
 		%
 		\subsubsection{Out-of-plane motion.}
 		%
-		\indent The out-of-plane equations require a less cumbersome manipulation. As we already have the full STM in \eqref{eqCh3: phi_theta_OOP}, we have to first divide it into the two subcomponents by substituting $\theta$ for $\theta - \theta_0$. Then, using trigonometric relations for the sum of sines and cosines, it is easy to pull both matrices apart as:
+		\indent The out-of-plane equations are identical to those of the harmonic oscillator, whose solution is trivial. However, and so as to build an STM solution, the first step is to divide the full STM in \eqref{eqCh3: phi_theta_OOP} into the two subcomponents by substituting $\theta$ for $\theta - \theta_0$. Then, using trigonometric relations for the sum of sines and cosines, it is easy to pull both matrices apart as:
 		%
 		\begin{equation}
 		\Phi_{\theta_0}^{\theta} = 
@@ -324,15 +325,14 @@
 		\label{eqCh3:phi_OOP}
 		\end{equation}
 		%
-		\indent This expression could have also been reached similarly to the in-plane counterpart. 
+%		\indent This expression could have also been reached similarly to the in-plane counterpart. 
 		%
 		\subsubsection{Full matrices.}
 		%
-		\indent By simply but carefully placing the elements of \eqref{eqCh3: phi_IP}, \eqref{eqCh3: phi_inv_IP}, and \eqref{eqCh3:phi_OOP} in a 6x6 matrix, we can finally reach the full matrices as:
+		\indent By simply but carefully placing the elements of \eqref{eqCh3: phi_IP}, \eqref{eqCh3: phi_inv_IP}, and \eqref{eqCh3:phi_OOP} in a 6x6 matrix, the full matrices are reached:
 		%
-		\begin{subequations}
-		\begin{alignat}{2}
-		&\label{eqCh3:phi_final} \Phi_{\theta} = 
+		\begin{equation}
+		\label{eqCh3:phi_final} \Phi_{\theta} = 
 		\left[
 		\begin{array}{cccccc}
 		1 	&    0 			&  -c  (1 + \rho^{-1})	& s  (1 + \rho^{-1})	&    0			&                  3 \rho^2 J \\
@@ -342,7 +342,10 @@
         0	& -\sin\theta   &                0 		&                 0&  \cos\theta 	&                              0\\
         0	&	0 			&             s^{\prime}	&            c^{\prime}&    0			& -3  e  (s^{\prime}  J + s/\rho^2)
 		\end{array}
-		\right] \\
+		\right]
+		\end{equation}
+		%
+		\begin{alignat}{4}
 		&\nonumber \Phi_{\theta_0}^{-1} = \dfrac{1}{1 - e^2}\times \\ 
 		&\label{eqCh3:phi_inv_final}\left[
 		\begin{array}{cccccc}
@@ -355,14 +358,13 @@
 		\end{array}
 		\right]
 		\end{alignat}
-		\end{subequations}
 		%
 		\subsubsection{Pseudo-initial state vector.}
 		%
-		\indent Finally, let us compute the so-called pseudoinitial conditions as defined before, namely:
+		\indent Finally, the so-called pseudoinitial conditions is computed as defined before, namely:
 		%
-		\begin{alignat}{2}
-		&\nonumber &&\left\{
+		\[
+		\left\{
 		\begin{array}{c}
 		\overline{x}_0 \\
 		\overline{y}_0 \\
@@ -373,7 +375,9 @@
 		\end{array}
 		\right\} =
 		\Phi_{\theta_0}^{-1} \widetilde{\underline{x}}_0 = 
-		\dfrac{1}{1 - e^2} \times \\
+		\dfrac{1}{1 - e^2} \times
+		\]
+		\begin{alignat}{2}
 		&\label{eqCh3: Pseudo_ICs}&&\left[
 		\begin{array}{cccccc}
 		1 - e^2	&    0 					&  3 e  (s/\rho)  (1 + \rho^{-1})		& -e s  (1 + \rho^{-1})	&    0						&                 2 - e c\\
@@ -396,7 +400,7 @@
 		\right\}
 		\end{alignat}
 		%
-		\noindent where $C = \cos$ and $S = \sin$. Nonetheless, the right hand side vector $\underline{\widetilde{x}}_0$ is actually a transformation of a genuine LVLH state vector (see \eqref{eqCh3:rho_tx}), which is the true inputs of our relative dynamics problem. For that reason, it is necessary to map the transformed state vector $\underline{\widetilde{x}}$ from and to the original one $\underline{x}$. This is done through the matrix $T_{\theta}$ as follows:
+		\noindent where $C = \cos$ and $S = \sin$. Nonetheless, the right hand side vector $\underline{\widetilde{x}}_0$ is actually a transformation of a genuine LVLH state vector (see \eqref{eqCh3:rho_tx}), which is the true input of our relative dynamics problem. For that reason, it is necessary to map the transformed state vector $\underline{\widetilde{x}}$ from and to the original one $\underline{x}$. This is done through the matrix $T_{\theta}$ as follows:
 		%
 		\begin{equation}
 		\underline{\widetilde{x}} = T_{\theta} \underline{x} \Rightarrow
@@ -421,11 +425,12 @@
 		\label{eqCh3:T_theta}
 		\end{equation}
 		%
-		\indent The combination of \eqref{eqCh3: Pseudo_ICs} and \eqref{eqCh3:T_theta} lead to a transformation between a LVLH state vector and the so-called Yamanaka-Ankersen element set, through the transformation matrix $T_{LVLH\to YA}$:
+		\indent The combination of \eqref{eqCh3: Pseudo_ICs} and \eqref{eqCh3:T_theta} leads to a transformation between a LVLH state vector and the so-called Yamanaka-Ankersen element set, through the transformation matrix $T_{LVLH\to YA}$:
 		%
-		\begin{alignat}{2}
-		&\nonumber && \underline{\overline{x}} \equiv \underline{x}_{YA} = \Phi_{\theta_0}^{-1} T_{\theta} \underline{x}_{LVLH} = \dfrac{1}{1 - e^2} \times \\
-		&\nonumber && \left[
+		\[\underline{\overline{x}} \equiv \underline{x}_{YA} = \Phi_{\theta_0}^{-1} T_{\theta} \underline{x}_{LVLH} = \dfrac{1}{1 - e^2} \times\]
+		%
+		\[
+		\left[
 		\begin{array}{cccccc}
 		1 - e^2	&    0 					&  3 e  (s/\rho)  (1 + \rho^{-1})		& -e s  (1 + \rho^{-1})	&    0						&                 2 - e c\\
         0		&  (1 - e^2) \cos\theta	&         0							&                 0		&  -(1 - e^2) \sin\theta 	&              0\\
@@ -434,8 +439,11 @@
         0		& (1 - e^2) \sin\theta 	&                0 					&                 0		&  (1 - e^2) \cos\theta 	&                              0\\
         0		&	0 					&             3  \rho + e^2 - 1		&           -\rho^2 	&    0						& e s
 		\end{array}
-		\right] \times\\
-		&\label{eqCh3:LVLH2YA}&&
+		\right] \times
+		\]
+		%
+		\begin{equation}
+		\label{eqCh3:LVLH2YA}
 		\left[
 		\begin{array}{cccccc}
 		\rho  			& 0 			& 0 			&  						&  						&  	\\
@@ -447,7 +455,7 @@
 		\end{array}
 		\right]
 		\underline{x}_{LVLH}
-		\end{alignat}
+		\end{equation}
 		%
 		\subsubsection{Solution scheme.}
 		%
@@ -461,15 +469,15 @@
 		\item $t$: Time elapsed from the initial time epoch to the desired one.
 		%
 		\end{itemize}
-		\indent This is, as explained in appendix \ref{chap:App_software}, the usual workflow for orbit propagation. With all the operations and transformations previously described, this process is graphically described in \ref{tikz:Workflow_ecc_integrator}.
+		\indent With all the operations and transformations previously described, this process is graphically described in \ref{tikz:Workflow_ecc_integrator}.
 		%
 		\input{Chapters/Chapter_03/tikz_ecc_integrator}
 		%
 	\subsection{Results: Comparison with HCW and Hi-Fi propagation.}
 	%
-	\indent Once we have defined the complete model for orbit propagation, it is turn to discuss how does it compare with respect to the previous solution (HCW) and the High-Fidelity propagation. The workflows for both of these approach are available at \textbf{REF HCW DIAGRAM} and \textbf{REF HIFI DIAGRAM}. \\
+	\indent Once the complete model for orbit propagation has been defined, it is turn to discuss how does it compare with respect to the previous solution (HCW) and the High-Fidelity propagation (see \ref{secAppD:HiFi_sim})\\
 	%
-	\indent Now, let us define (rather cite) a scenario to test this method. In order to be able to compare the results with the method source, we will use the scenarios defined by Yamanaka and Ankersen \cite{Yamanaka_Ankersen}. As we know, if no body-dependent perturbations are considered, a scenario is completely defined by:
+	\indent Now, it is turn to define (rather cite) a scenario to test this method. In order to be able to compare the results with the method source, the scenarios defined by Yamanaka and Ankersen will be used \cite{Yamanaka_Ankersen}. If no body-dependent perturbations are considered, a scenario is completely defined by:
 	%
 	\begin{itemize}
 	\item \underline{Chief's reference orbit} (Keplerian OEs)
@@ -483,13 +491,13 @@
 	%
 	\input{Chapters/Chapter_03/Scenarios_YA}
 	%
-	\indent Nonetheless, we must get the set of Keplerian OEs as defined in \ref{secAppA:KOE}. Firstly, let us compute the semimajor axis from the perigee height $h_p$ as:
+	\indent Nonetheless, one must get the set of Keplerian OEs as defined in \ref{secAppA:KOE}. Firstly, the semimajor axis is computed from the perigee height $h_p$ as:
 	%
 	\[
 	h_p = a (1 - e) \Rightarrow a = \dfrac{h_p}{1 - e}
 	\]
 	%
-	\indent Secondly, the mean anomaly is computed from the true anomaly and the eccentricity, as explained in \textbf{REF MEAN2TRUE}. Then, the Keplerian OEs for both scenarios are:
+	\indent Secondly, the mean anomaly is computed from the true anomaly and the eccentricity, as explained in section \ref{secAppE:mean2true}. Then, the Keplerian OEs for both scenarios are:
 	%
 	\begin{subequations}
 	\begin{alignat}{3}[left=\empheqlbrace]
@@ -498,18 +506,18 @@
 	\end{alignat}
 	\end{subequations}
 	%
-	\indent Let us now proceed with the result evaluation.
 	%
-		\subsubsection{Scenario 1: $e = 0.1$.}
+		\subsubsection{Scenario 1: $\bm{e = 0.1}$.}
 		%
-%		
+%		%
+		\indent Figure \ref{figCh3:Scenario1} shows the in-plane and out-of-plane motion for the low eccentricity case. As it can be seen, the correlation between the YA model and the High-Fidelity is almost perfect, with the HCW falling quite behind (more and more as the orbit continues).
 		\begin{figure}[!htb]
 		\begin{changemargin}{-2.2cm}{-1cm}
 		\begin{adjustbox}{width=1.2\textwidth}
 		\centering
 		\medskip
 		\begin{subfigure}[t]{1.1\linewidth}
-		\centering\includegraphics[width=\linewidth]{Chapters/Chapter_03/YA_scenario_1_(e___0_1)_IP}
+		\centering\includegraphics[width=\linewidth]{Chapters/Chapter_03/Low_quality/YA_scenario_1_(e___0_1)_IP}
 		\caption{In-plane motion.}
 		\label{figCh3:Scenario1_IP}
 		\end{subfigure}
@@ -522,7 +530,7 @@
 		\ContinuedFloat
 		\centering
 		\begin{subfigure}[t]{1.2\linewidth}
-		\centering\includegraphics[width=\linewidth]{Chapters/Chapter_03/YA_scenario_1_(e___0_1)_OOP}
+		\centering\includegraphics[width=\linewidth]{Chapters/Chapter_03/Low_quality/YA_scenario_1_(e___0_1)_OOP}
 		\caption{Out-of-plane motion.}
 		\label{figCh3:Scenario1_OOP}
 		\end{subfigure}
@@ -533,29 +541,34 @@
 		\end{figure}
 		%
 		\FloatBarrier
+		
 		%
-		\subsubsection{Scenario 2: $e = 0.7$.}
+		\subsubsection{Scenario 2: $\bm{e = 0.7}$.}
+		%
+		%
+		\indent Again, the matching between the YA solution and the eccentric is quite flawless both in-plane (\ref{figCh3:Scenario2_IP}) and out-of-plane (\ref{figCh3:Scenario2_OOP}). The difference between them and the circular model is specially big in the OOP, being unacceptable from the very beginning.
+		\clearpage
 		%
 		\begin{figure}[ht]
 		\begin{changemargin}{-2.2cm}{-1cm}
-		\begin{adjustbox}{width=1.2\textwidth}
+		\begin{adjustbox}{width=1.18\textwidth}
 		\centering
 		\medskip
 		\begin{subfigure}[t]{\linewidth}
-		\centering\includegraphics[width=\linewidth]{Chapters/Chapter_03/YA_scenario_2_(e___0_7)_IP}
+		\centering\includegraphics[width=\linewidth]{Chapters/Chapter_03/Low_quality/YA_scenario_2_(e___0_7)_IP}
 		\caption{In-plane motion.}
 		\label{figCh3:Scenario2_IP}
 		\end{subfigure}
 		\end{adjustbox}
 		\end{changemargin}
-		\end{figure}
-		\begin{figure}
+%		\end{figure}
+%		\begin{figure}
 		\begin{changemargin}{-2.2cm}{-1cm}
-		\begin{adjustbox}{width=1.2\textwidth}
-		\ContinuedFloat
-		\centering
+		\begin{adjustbox}{width=1.18\textwidth}
+%		\ContinuedFloat
+%		\centering
 		\begin{subfigure}[t]{\linewidth}
-		\centering\includegraphics[width=\linewidth]{Chapters/Chapter_03/YA_scenario_2_(e___0_7)_OOP}
+		\centering\includegraphics[width=\linewidth]{Chapters/Chapter_03/Low_quality/YA_scenario_2_(e___0_7)_OOP}
 		\caption{Out-of-plane motion.}
 		\label{figCh3:Scenario2_OOP}
 		\end{subfigure}
@@ -569,22 +582,23 @@
 		%
 \section{Orbit safety in eccentric, unperturbed orbits.}
 %
-\indent As orbit safety has already been introduced in section \ref{sec:Orbit_safety}, we just need to extend it to eccentric orbits. This is neatly presented in \cite{Peters_Noomen}, whose main concern is linear cotangential transfers. As a quick summary, trajectory safety is tightly related to the notions of relative position, looking for avoiding collision by maintaining a certain distance and orientation between the spacecrafts.\\
+\indent As orbit safety has already been introduced in section \ref{sec:Orbit_safety},just an extension to eccentric orbits has to be made. This is neatly presented in \cite{Peters_Noomen}, whose main concern is linear cotangential transfers. As a quick summary, trajectory safety is tightly related to the notions of relative position, looking for avoiding collision by maintaining a certain distance and orientation between the spacecrafts.\\
 %
-\indent One substantial fact that differentiates eccentric and circular orbits is that orbital radius is no longer constant. As a consequence, orbital velocity is also time-varying. This two facts lead to the definition of the TAN frame (see \ref{sec:TAN_frame}), which embodies a set of characteristics that allow for a much simpler description of the relative motion. That is to say, as for near-circular orbits we used the LVLH frame, we will now use the TAN frame for describing the relative motion. Later on, said advantages will be duly looked at. \\
+\indent As stated before, one substantial fact that differentiates eccentric and circular orbits is that orbital radius is no longer constant. As a consequence, orbital velocity is also time-varying. These two facts lead to the definition of the TAN frame (see \ref{sec:TAN_frame}), which embodies a set of characteristics that allow for a much simpler description of the relative motion. That is to say, as for near-circular orbits the LVLH frame was employed, the TAN frame will be now used to describe the relative motion. Later on, said advantages will be duly looked at. \\
 %
 \indent This section starts by giving a brief description of the parametrization of the relative motion in the TAN frame. Secondly, general relative trajectories for eccentric reference orbits will be discussed, and finally, safe orbit families will be defined and represented, extending as well the eccentricity-inclination vector separation strategy.
 %
 	\subsection{Relative motion description in TAN frame.}
 	%
-	\indent In order to properly follow the herewith developed relations, it is recommended to first understand sections \ref{sec:C_ROE} and \ref{sec:TAN_frame}. As already explained, we analyze the radial and cross-track coordinates to ensure orbit safety, as along-track uncertainty is much larger. Our target is then to describe the relative motion in TAN frame, that is, to have a description of $(y_{TAN}, z_{TAN})$ in terms of some relative orbital elements, in a somewhat analog manner compared to \ref{sec:Orbit_safety}.\\
+	\indent In order to properly follow the herewith developed relations, it is recommended to first understand sections \ref{sec:C_ROE} and \ref{sec:TAN_frame}. As already explained, the radial and cross-track coordinates are analysed to ensure orbit safety, as along-track uncertainty is much larger. The target is then to describe the relative motion in TAN frame, that is, to have a description of $(y_{TAN}, z_{TAN})$ in terms of some relative orbital elements, in a somewhat analog manner compared to \ref{sec:Orbit_safety}.\\
 	%
-	\indent The QNS relative OE set is quite useful in near-circular orbits, greatly simplifying the relative motion description. Nonetheless, this simplicity fades away for elliptic reference orbits. This is where the C relative OE set becomes useful. The elements $C_1$, $C_2$ and $C_3$ will somehow describe the radial coordinate, while $C_4$ is associated with the along-track position. Finally, $C_5$ and $C_6$ describe the cross-track relative motion. We can then draft a one-to-one relation between the QNS ROEs and the C ROEs, as shown in table \ref{tabCh3:QNS_C_correspondence}.\\
+	\indent The QNS relative OE set is quite useful in near-circular orbits, greatly simplifying the relative motion description. Nonetheless, this simplicity fades away for elliptic reference orbits. This is where the C relative OE set becomes useful. The elements $C_1$, $C_2$ and $C_3$ will somehow describe the radial coordinate, while $C_4$ is associated with the along-track position. Finally, $C_5$ and $C_6$ describe the cross-track relative motion. A one-to-one relation between the QNS ROEs and the C ROEs can be drafted, as shown in table \ref{tabCh3:QNS_C_correspondence}.\\
 	%
 	\input{Chapters/Chapter_03/QNS_C_correspondence}
 	%
-	\paragraph{\textcolor{GMVred}{I.} Parameter reformulation. \\}
-	\indent The description we arrived at in \ref{sec:Orbit_safety} (see equation \ref{eqCh2:EI_1}) depended on the relative inclination and eccentricity $\delta i$ and $\delta e$ and the angles $\varphi$ and $\theta$. The complete $y-z$ motion in LVLH frame was then determined by four parameters: The amplitude of two oscillations and their respective phase angles. A similar formulation can be developed here for the C ROE set. Let us start by converting $C_2$ and $C_3$ into an radial amplitude $C_m$ and a radial phase angle $\alpha$ as \cite{Peters_Noomen}:
+	\paragraph{\textcolor{GMVred}{I.} \myul[GMVred]{Parameter reformulation.} \\}
+	%
+	\indent The description reached at \ref{sec:Orbit_safety} (see equation \ref{eqCh2:EI_1}) depended on the relative inclination and eccentricity $\delta i$ and $\delta e$ and the angles $\varphi$ and $\theta$. The complete $y-z$ motion in LVLH frame was then determined by four parameters: The amplitude of two oscillations and their respective phase angles. A similar formulation can be developed here for the C ROE set. To start, $C_2$ and $C_3$ are converted into an radial amplitude $C_m$ and a radial phase angle $\alpha$ as shown in \cite{Peters_Noomen}:
 	%
 	\begin{subequations}
 	\label{eqCh3: Cm_alpha}
@@ -627,7 +641,7 @@
 	%
 	\indent With these expressions at hand, the description turns easier and parallel to the developed for near-circular orbits.
 	%
-	\paragraph{\textcolor{GMVred}{II.} Radial and cross-track coordinates.}
+	\paragraph{\textcolor{GMVred}{II.} \myul[GMVred]{Radial and cross-track coordinates.}\\}
 	%
 	\indent The TAN coordinates can be easily obtained from the C ROE set and the true anomaly of the chief $\theta$ as \cite[][appendix B] {Peters_Noomen}:
 	%
@@ -639,7 +653,7 @@
 	\end{alignat}
 	\end{subequations}
 	%
-	\noindent where the variables with a hat denote the scaled variables (unlike the regular, unscaled ones). $\rho$ (defined as before) and $\Theta = \sqrt{2 \rho - eta^2}$ are the scaling factors. Substituting \eqref{eqCh3: C2_C3} and \eqref{eqCh3:C5_C6} into \eqref{eqCh3:yz_TAN} and applying trigonometric relations, we arrive to:
+	\noindent where the variables with a hat denote the scaled variables (unlike the regular, unscaled ones). $\rho$ (defined as before) and $\Theta = \sqrt{2 \rho - eta^2}$ are the scaling factors. Substituting \eqref{eqCh3: C2_C3} and \eqref{eqCh3:C5_C6} into \eqref{eqCh3:yz_TAN} and applying trigonometric relations, it follows that:
 	%
 	\begin{subequations}
 	\label{eqCh3:yz_TAN_2}
@@ -649,7 +663,7 @@
 	\end{alignat}
 	\end{subequations}
 	%
-	\noindent where $\tau = \theta - \alpha$ is the radial phase referred to the maximum radial separation and $\tau_0 = \beta - \alpha$ is the relative phase between radial and cross-track motion. Now we have arrived to a very similar expression compared to \eqref{eqCh2:EI_1}, especially considering that, for bounded trajectories, $C_1 = 0$. From a very primitive analysis, we see that $\tau_0$ will determine the shape of the $y-z$ motion, similarly to what $\varphi -  \psi$ did in near-circular orbits. 
+	\noindent where $\tau = \theta - \alpha$ is the radial phase referred to the maximum radial separation and $\tau_0 = \beta - \alpha$ is the relative phase between radial and cross-track motion. This is a very similar expression compared to \eqref{eqCh2:EI_1}, especially considering that, for bounded trajectories, $C_1 = 0$. From a very primitive analysis, it is seen that $\tau_0$ will determine the shape of the $y-z$ motion, similarly to what $\varphi -  \psi$ did in near-circular orbits. 
 %	
 	\subsection{General trajectories and safe orbits.}
 	%
@@ -659,7 +673,7 @@
 		%
 		\input{Chapters/Chapter_03/Orbit_family_parameters}
 		%
-		\subsubsection{Eccentricity/inclination vector separation in eccentric orbits.}
+		\subsubsection{Eccentricity/inclination vector separation in eccentric orbits.}\label{secCh3:EI}
 		%
 		\indent By simply looking at equation \eqref{eqCh3:yz_TAN_2}, it is clear that $\tau_0$ will determine the eccentricity/inclination vector relative orientation. As for the near-circular case, the parallel configuration takes place when both phases have the same value, that is:
 		%
@@ -677,15 +691,15 @@
 		\end{alignat}
 		\end{subequations}
 		%
-		\noindent which is the equation of an ellipse with center at $(0, -C_1)$, a semimajor axis $C_m$ and semiminor axis $\Lambda C_m$. An antiparallel configuration is obtained if $\tau_0 = \pi$, exactly as for near-circular reference orbits. Nonetheless, the useful configuration is the parallel one, and that is why we will now analyze a safe orbit family with that characteristic.\\
+		\noindent which is the equation of an ellipse with center at $(0, -C_1)$, a semimajor axis $C_m$ and semiminor axis $\Lambda C_m$. An antiparallel configuration is obtained if $\tau_0 = \pi$, exactly as for near-circular reference orbits. Nonetheless, the useful configuration is the parallel one, which is now analysed.\\
 		%
-		\paragraph{\textcolor{GMVred}{I.} Scenario definition.\\}
+		\paragraph{\textcolor{GMVred}{I.} \myul[GMVred]{Scenario definition.}\\}
 		%
-		\indent Our goal is to propagate a family of safe orbits, which as we know, is defined by (a) the chief's orbit and (b) the amplitudes and phase angles of the radial and cross-track components. In fact, only the eccentricity of the chief's orbit is required. Table \ref{tabCh3:Scenarios_safe_orbits} shows the two scenarios that have been chosen for this validation, as well as the different values of $\alpha$ within each family. 
+		\indent The goal is to propagate a family of safe orbits, defined by (a) the chief's orbit and (b) the amplitudes and phase angles of the radial and cross-track components. In fact, only the eccentricity of the chief's orbit is required. Table \ref{tabCh3:Scenarios_safe_orbits} shows the two scenarios that have been chosen for this validation, as well as the different values of $\alpha$ within each family. 
 		%
 		\input{Chapters/Chapter_03/Scenarios_safe_orbits}
 		%
-		\paragraph{\textcolor{GMVred}{II. A.} Bounded trajectory case ($C_1 = 0$). \\}
+		\paragraph{\textcolor{GMVred}{II. A.} \myul[GMVred]{Bounded trajectory case ($\bm{C_1 = 0}$).} \\}
 		%
 		\indent Figure \ref{figCh3:Safe_orbit_1} shows the scaled coordinates, the unscaled coordinates (one for each $\alpha$ value) and the lower and upper boundaries of the relative motion. They can be easily obtained from the scaled variables by applying the maximum and minimum scaling factors, respectively. That is:
 		%
@@ -706,7 +720,7 @@
 		\end{equation}
 		%
 		\begin{figure}[!htb]
-		\centering\includegraphics[width = 0.7\linewidth]{Chapters/Chapter_03/Safe_orbit_C1_0}
+		\centering\includegraphics[width = \linewidth]{Chapters/Chapter_03/High_quality/Safe_orbit_C1_0}
 		\caption{Safe orbit family: Scenario 1 ($C_1 = 0$).}
 		\label{figCh3:Safe_orbit_1}
 		\end{figure}
@@ -715,25 +729,25 @@
 		%
 		\indent As $C_1 = 0$, the every member of the family is an ellipse is centered at the origin.
 		%
-		\paragraph{\textcolor{GMVred}{II. B.} Unbounded trajectory case ($C_1 = 0$). \\}		
+		\paragraph{\textcolor{GMVred}{II. B.} \myul[GMVred]{Unbounded trajectory case ($\bm{C_1 \neq 0}$).} \\}		
 		%
 		\indent The orbit family for this second case is shown in figure \ref{figCh3:Safe_orbit_2}. The main difference now is that every orbit passes through the origin, as both boundaries collapse there.
 		%
 		\begin{figure}[!htb]
-		\centering\includegraphics[width = 0.7\linewidth]{Chapters/Chapter_03/Safe_orbit_C1_10}
+		\centering\includegraphics[width = \linewidth]{Chapters/Chapter_03/High_quality/Safe_orbit_C1_10}
 		\caption{Safe orbit family: Scenario 2 ($C_1 = C_m$).}
 		\label{figCh3:Safe_orbit_2}
 		\end{figure}
 		%
 		\FloatBarrier
 		%
-		\indent Besides analyzing the results by themselves, we can additionally compare them to a truth model (High-Fidelity). For this to be done, we have to (a) convert the C ROEs into Keplerian and (b) define some dummy values of the chief's orbit. An example of this can be seen in figure \ref{figCh3:PN_vs_HiFi}, where some members of the previously graphed families are shown. The chief's orbit is defined by the first case specified in \ref{tabCh3:Scenarios_YA}.
+		\indent Besides analyzing the results by themselves, they can additionally be compared to a truth model (High-Fidelity). For this to be done, it is necessary to (a) convert the C ROEs into Keplerian and (b) define some dummy values of the chief's orbit. An example of this can be seen in figure \ref{figCh3:PN_vs_HiFi}, where some members of the previously graphed families are shown. The chief's orbit is defined by the first case specified in \ref{tabCh3:Scenarios_YA}.
 		%
 		\begin{figure}[ht]
 		\centering
 		\medskip
-		\begin{subfigure}[t]{.7\linewidth}
-		\centering\includegraphics[width=\linewidth]{Chapters/Chapter_03/Safe_orbit_comp_C1_0}
+		\begin{subfigure}[t]{\linewidth}
+		\centering\includegraphics[width=\linewidth]{Chapters/Chapter_03/Low_quality/Safe_orbit_comp_C1_0}
 		\caption{Scenario 1: No offset ($C_1 = 0$m).}
 		\label{figCh3:PN_vs_HiFi_1}
 		\end{subfigure}
@@ -741,8 +755,8 @@
 		\begin{figure}
 		\centering
 		\ContinuedFloat
-		\begin{subfigure}[t]{.7\linewidth}
-		\centering\includegraphics[width=\linewidth]{Chapters/Chapter_03/Safe_orbit_comp_C1_10}
+		\begin{subfigure}[t]{\linewidth}
+		\centering\includegraphics[width=\linewidth]{Chapters/Chapter_03/High_quality/Safe_orbit_comp_C1_10}
 		\caption{Scenario 2: Offset ($C_1 = C_m = 10$m).}
 		\label{figCh3:PN_vs_HiFi_2}
 		\end{subfigure}
@@ -752,3 +766,4 @@
 		%
 		\FloatBarrier
 		%
+		\indent The good correlation with the High-Fidelity propagation is enough to validate this theory, as it can be seen in figures \ref{figCh3:PN_vs_HiFi_1} and \ref{figCh3:PN_vs_HiFi_2}

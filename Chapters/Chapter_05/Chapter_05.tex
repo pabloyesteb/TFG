@@ -1,0 +1,623 @@
+\chapter{Perturbed relative motion.}
+%
+\label{chap:Chap_5}
+%
+\section{Introduction.}
+%
+\indent Once the perturbation theory and some relevant models have been discussed and validated, it is time to apply it to the main topic of the thesis. This chapter is devoted to perturbed relative motion, and in particular, linear formulations of it (\ie STMs). \\
+%
+\indent It is unsurprising how better dynamics models lead to more accurate results. Furthermore, when a linear model is implemented upon this type of theories, a warming balance between said increased accuracy and computational efficiency is obtained. When perturbation effects' modelling (specially the secular) is improved, two important by-products in the relative dynamics field are:
+%
+\begin{itemize}
+\item[\GMVred{I.}] Better guidance, which leads to a more fuel-efficient operation (less corrections).
+%
+\item[\GMVred{II.}] Enhanced understanding of the perturbations, allowing for more educated orbit design (\eg safe orbits).
+\end{itemize}
+%
+\indent Firstly, a small introduction on the workflow of these orbit propagation methods is presented, to later show a particular example on the $J_2$-perturbed Gim-Alfriend STM. Afterwards, a succinct research of the state-of-the-art STM formulations of relative motion is performed, and finally, a brief analysis of orbit safety in $J_2$-perturbed orbits is carried out. \\
+%
+	\subsection{Relative orbit propagation in perturbed relative motion.}
+	%
+	\indent Generally, orbit propagation can be understood as a process in which, when feeding the initial state of one or more celestial bodies, it returns the updated state/s at a latter epoch. When dealing with the relative motion between two bodies, the initial states can be expressed in different ways: both in an absolute fashion (\ie completely defined by itself) or the chief in absolute and the deputy in relative terms. The latter option is the most usual, as in relative motion, the relative state is the most meaningful. \\
+	%
+	\indent These inputs are generally processed prior to its propagation, so as to have them in a favourable phase space. This is particularly true for perturbed orbits, as some element descriptions greatly simplify the computation. Once propagated, a back-transformation must be made, in order to return to the same structure as that of the inputs. However, the output might only be the relative state, not including the reference orbit. \\
+	%
+	\indent The variety of how these processes may be expressed, with different and a greater or lower number of transformations, makes it impossible to go any further in general terms. Sullivan \cite{Sullivan} provides a good example on this. Nonetheless, in order to have an insight on an example, an orbit propagation diagram is shown in \ref{tikz:Mean_prop_workflow} for the process followed as in this thesis. Additionally, the sub-processes of converting to and from mean elements is specified in \ref{tikz:Cart2mean}.
+	%
+	\input{Chapters/Chapter_05/Mean_prop_workflow}
+	\input{Chapters/Chapter_05/Cart2mean_workflow}
+	%
+\section{Gim-Alfriend STM.}\label{secCh5:GA_STM}
+%
+	\subsection{Gim-Alfriend STM structure.}
+	%
+	\indent Gim and Alfriend \cite{GA_STM} came up with a precise analytic solution for the relative motion in elliptic and perturbed orbits, accounting specifically for the differential effect of the equatorial bulge $J_2$. It is a STM-oriented method, performing some clever transformations to the mean element space. \\
+	%
+	\indent The approach of the authors is to map the LVLH state vector (which is the physical magnitude of interest) into the relative osculating element space $\delta \underline{OE}$. This is then mapped into the mean orbital element space $\delta \underline{\overline{OE}}$, after which it is propagated and brought back to a cartesian state. Each of the aforementioned transformations is presented next:\\
+	%
+	\begin{itemize}
+	\item[\GMVred{\nth{1}}] \myul[GMVred]{LVLH to $\delta \underline{OE}$:} Gim and Alfriend make use of the so-called Geometric Method, which is represented by:
+	%
+	\begin{equation}
+	\underline{y}_{LVLH}(t) = \left[ A(t) + \alpha B(t) \right] \delta \underline{OE}  \equiv \Sigma(t) \delta \underline{OE} 
+	\end{equation}
+	%
+	\indent This mapping effectively separates the effects of $\delta \underline{OE} $ in two parts: the ones caused by the pure difference in orbital elements, however they may vary (through the matrix $A(t)$ ) and the effects caused by the $J_2$ perturbation (through $\alpha B(t)$). The first matrix is exactly the same in the unperturbed case, though the second one obviously vanishes. Their expressions can be found in \cite{GA_STM}, appendices A and B. With this mapping, the STM can be formulated as:
+	%
+	\begin{equation}
+	\phi_{J2} (t, t_0) = \Sigma(t) \phi_e(t, t_0) \left(\Sigma(t_0)\right)^{-1} \Longleftrightarrow \underline{y}_{LVLH}(t) = \phi_{J2} (t, t_0) \underline{y}_{LVLH}(t_0)
+	\label{eqCh4:GA_STM}
+	\end{equation}
+	%
+	\item[\GMVred{\nth{2}}] \myul[GMVred]{$\delta \underline{OE}$ to $\delta \underline{\overline{OE}}$ (osculating to mean):} Equation \eqref{eqCh4:GA_STM} involves the direct propagation of relative osculating OEs, which turns out to lead to a very much complicated form of the matrix $\phi_e$. This is where Brouwer's theory comes into play: the authors suggest a mapping to and from mean elements as:
+	%
+	\begin{equation}
+	\delta \underline{OE}_{osc} = D(t) \delta \underline{OE}_{mean} \Leftrightarrow \delta \underline{OE} = D(t) \delta \underline{\overline{OE}}
+	\end{equation}
+	%
+	\indent The mean elements are from now on referred to either through an overline or the subindex $mean$, if extra clarity is required. This leads to the following decomposition of $\phi_e$:
+	%
+	\begin{equation}
+	\phi_e (t, t_0) = D(t) \overline{\phi}_e(t, t_0) D^{-1}(t_0)
+	\end{equation}
+	%
+	\indent So that the final form of the state transition matrix becomes:
+	\begin{equation}
+	\phi_{J2}(t, t_0) = \Sigma(t) D(t) \overline{\phi}_e(t, t_0) D^{-1}(t_0) \Sigma(t_0)
+	\end{equation}
+	\end{itemize}
+	%
+	\indent Although the structure of the matrix and the geometric method are quite interesting topics, the spotlight is now on the $D(t)$ matrix, and how it relates to the previously introduced Brouwer's theory.
+	%
+	\subsection{Linearised mean to osculating transformation.}
+	%
+	\indent The matrix $D$ is the linearised form of a mean to osculating transformation. Mathematically:
+	%
+	\begin{equation}
+	D = \dfrac{\partial \underline{OE}_{osc}}{\partial \underline{OE}_{mean}}
+	\label{eqCh5:D_matrix}
+	\end{equation}
+	%
+	\indent The osculating elements are by definition the addition of the mean elements plus the periodic oscillations, that is:
+	%
+	\begin{equation}
+	\underline{OE} = \overline{\underline{OE}} + \Delta \underline{OE}^{(p)}
+	\end{equation}
+	%
+	\indent Lie theorem provides the following expression for the oscillations $\Delta \underline{OE}^{(p)}$:
+	%
+	\begin{equation}
+	\Delta \underline{OE}^{(p)}  = \varepsilon [\underline{OE}, W]
+	\label{eqCh5:DELTA_OE}
+	\end{equation}
+	%
+	\noindent where $\varepsilon = -J_2 a_e^2$ is the small parameter, and $W$ is the generating function of the mean to osculating elements transformation. This generating function can be decomposed into three components, each linked to one of the subsequent transformations that get rid of the short and long-period oscillations. Mathematically:
+	%
+	\begin{equation}
+	W = W^{(sp1)} + W^{(sp2)} + W^{(lp)}
+	\label{eqCh5:W_fun}
+	\end{equation}
+	%
+	\indent It is important to note that $W = W_1$ is the first order component of the full generating function. If \eqref{eqCh5:W_fun} is substituted into \eqref{eqCh5:DELTA_OE}, a similar separation comes up:
+	%
+	\begin{equation}
+	\Delta \underline{OE}^{(p)} = \Delta \underline{OE}^{(sp1)} + \Delta \underline{OE}^{(sp2)} + \Delta \underline{OE}^{(lp)}
+	\end{equation}
+	%
+	\noindent where $\Delta \underline{OE}_{i} = \varepsilon [\underline{OE}, W^{(i)}]$. If this is now introduced into the $D$ matrix definition \eqref{eqCh5:D_matrix}, it follows that:
+	%
+	\[
+	\begin{array}{lll}
+	D 	& = \dfrac{\partial }{\partial \overline{\underline{OE}}}\left( \overline{\underline{OE} } + \Delta \underline{OE}^{(sp1)} + \Delta \underline{OE}^{(sp2)} + \Delta \underline{OE}^{(lp)}\right) = \\
+		& = \mathbb{I}_{6x6} + \varepsilon \left( \dfrac{\partial [\underline{OE}, W^{(sp1)}] }{\partial \underline{\overline{OE}}} + \dfrac{\partial [\underline{OE}, W^{(sp2)}] }{\partial \underline{\overline{OE}}} + \dfrac{\partial [\underline{OE}, W^{(lp)}] }{\partial \underline{\overline{OE}}}\right)
+	\end{array}
+	\]
+	%
+	\begin{equation}
+	\Rightarrow D =  \mathbb{I}_{6x6} - J_2 a_e^2 \left( D^{(sp1)} + D^{(sp2)} + D^{(lp)}\right)
+	\end{equation}
+	%
+	\indent A particularity from this article is that quasi-nonsingular elements are used. However, the expressions for the oscillations (\ie $\delta \underline{OE}^{(i)}$) and the $D$ matrices (\ie $D^{(i)}$) are provided. The former were carefully implemented, though the latter are numerically calculated, due to its uncomfortably long expressions. \\
+	%
+	\indent To summarize, Gim and Alfriend provide a new approach on $J_2$-perturbed, non-circular orbit linear propagation. They do so through two essential steps:
+	%
+	\begin{itemize}
+	\item[\GMVred{I.}] A new proposal (\ie the geometric method) to map relative, quasi-non-singular elements into relative cartesian curvilinear coordinates.
+	%
+	\item[\GMVred{II.}] The implementation of a mean to osculating transformation (\ie Lyddane's modification of Brouwer's theory) to propagate mean elements rather than osculating.
+	\end{itemize}
+	%
+	\subsection{Inverse transformation.}
+	%
+	\indent Gim and Alfriend do not tackle the osculating to mean transformation explicitly. Brouwer's theory, due to its first-order truncation nature, can be ``inverted'' by simply switching the sign of the small parameter. Nonetheless, there is also a more general method that allows for performing a osculating to mean transformation by only having the direct one (\ie mean to osc.). This is done through an iterative numeric scheme, which is next outlined:
+	%
+	\begin{itemize}
+	\item[] \GMVred{Input:} Osculating elements.
+	\item[\GMVred{\nth{1}}]: Initialize the mean elements with the osculating.
+	%
+	\item[\GMVred{\nth{2}}]: Compute the oscillations ($\Delta \underline{OE}^{(lp)}, \Delta \underline{OE}^{(sp1)}, \Delta \underline{OE}^{(sp2)}$) with the approximation of the mean elements.
+	%
+	\item[\GMVred{\nth{3}}]: Compute the new mean elements by subtracting the oscillations from the osculating.
+	%
+	\item[\GMVred{\nth{4}}]: Convergence evaluation: If the variation between the last and the current iteration is below the threshold, stop iterating. Come back to the second step otherwise, with the updated mean element estimation.
+	\end{itemize}
+	%
+	\indent The approximation herewith presented can be mathematically described as:
+	%
+	\begin{alignat}{4}[left = \empheqlbrace]
+	\text{Direct: \quad} & \underline{OE} = \underline{\overline{OE}} + \Delta \underline{OE}^{(p)} (\underline{\overline{OE}}) \Rightarrow \underline{OE} = f\left( \underline{\overline{OE}}\right) \\
+	\text{Inverse: \quad} & \underline{\overline{OE}} = \underline{OE} - \Delta \underline{OE}^{(p)} (\underline{\overline{OE}}) \approx \underline{OE} - \Delta \underline{OE}^{(p)} (\underline{OE}) \Rightarrow \underline{\overline{OE}} = f^{-1}( \underline{OE}) 
+	\end{alignat}
+	%
+	\noindent where the actual approximation is assuming that the periodic contributions $\Delta \underline{OE}$ are approximately equal when calculated using the osculating elements. Of course, as more iteration cycles are performed, the accuracy of this approach rises.\\
+	%
+	\indent In this way, there is no need for developing the inverse transformation. The main setback is that no exact result is obtained, and that the computational cost becomes greater. A simple diagram of the outlined workflow is shown in \ref{tikz:osc2mean_workflow}.
+	%
+	\input{Chapters/Chapter_05/osc2mean_workflow}
+	%
+%
+\section{State-of-the art perturbed STMs.}
+%
+\indent Although an in-depth analysis of this methods lies out of the scope of the thesis, it is nonetheless insightful to draft a quick survey of the state-of-the-art methods for perturbed STMs. A very useful and well-structured classification of the historic and recent STMs is done by Sullivan et al. \cite{Sullivan}, yielding a very good outlook on how this field is structured. Going from unperturbed to perturbed and from circular to non-circular orbits, it also provides some very interesting results when comparing the models to a set truth model.\\
+%
+\indent The considered perturbed models are the following:
+%
+\begin{itemize}
+\item[\GMVred{I.}] \myul[GMVred]{Gim-Alfriend STM}: Already described. As it proposes two important changes (the geometric method and the mean elements propagation), two versions of it may be considered, so as to isolate the effect of the coordinate transformations. The first one uses the full STM provided by Gim and Alfriend, while the second one just uses the relative orbital element differences propagation (\ie $\overline{\phi}_e(t, t_0)$) and makes use of the full non-linear Brouwer transformation for the mean-osculating transformations, and a regular transformation between osculating elements and LVLH frame. This one is referred to as the Gim-Alfriend core method.
+%
+\item[\GMVred{II.}] \myul[GMVred]{Yan-Alfriend STM}: In an alternative approach, Yan and Alfriend \cite{Yan_Alfriend} propose an expansion of the mean orbital element differences up to second-order, leading to a nonlinear model including second-order $J_2$ effects.
+%
+\item[\GMVred{III.}] \myul[GMVred]{GAM STM}: Developed by Gaias et al. \cite{GAM}, it includes a time-varying differential drag as well as the $J_2$ effect for a more accurate relative motion model. The main setback is the assumption of near-circular reference orbits, which restricts this theory to a limited amount of scenarios
+%
+\item[\GMVred{IV.}] \myul[GMVred]{KGD STM}: Constructed by Koenig et al. \cite{Koenig}, it uses Floquet theory to arrive to a compact STM. It is developed for several types of OEs (singular, quasi-nonsingular and fully nonsingular) and can be generalized so as to incorporate any type of perturbations.
+%
+\item[\GMVred{V.}] \myul[GMVred]{Biria-Russell STM}: Biria and Russell chose to incorporate Vinti's theory rather than Brouwer's, which through the usage of spheroidal coordinates allows for a simpler, more precise formulation. This theory is claimed (and proven) to provide a higher accuracy than Brouwer's.
+%
+\end{itemize} 
+%
+\indent These five models are compared against each other and a High-fidelity propagation with a full-force model (120x120 gravity field, atmospheric drag, SRP, Sun and Moon, relativistic and tidal effects) for three different scenarios. Depending on which scenario is considered, the supposedly best method changes, which leads to the conclusion that for each application there might be a different best method. In any case, for a small distance between the spacacrafts (\ie small linearization error) all methods converge to an error of the same order. A more thorough analysis can be seen in the mentioned survey \cite{Sullivan}, as well as a computational cost study.\\
+%
+\indent A reference worth reading is Chihabi's approach to building an orbital element based STM \cite{Chihabi}. It progressively specifies how to include some perturbations, including a NSG model of up to $J_5$, third bodies and drag. Not only is it a thorough, complete reference, but also provides some compelling results.
+%
+\section{Orbit safety in perturbed motion.}\label{secCh5:EI}
+%
+\indent Finally, and in an analogue manner as done in chapters \ref{chap:Chap_2} and \ref{chap:Chap_3}, a brief description of orbit safety in perturbed orbits is presented. Its roots are on the theory developed by D'Amico and Montenbruck \cite{DAmico_Montenbruck}, shown in chapter \ref{chap:Chap_2}, thus being restricted to near-circular orbits. \\
+%
+\indent The analysis of perturbations is usually eased by the utilisation of orbital elements, although in relative motion, the final motive or the sought variables are the relative cartesian position and velocity. For this purpose, the equivalence between the cartesian and the OE based formulation is first analyzed, as done by D'Amico \cite{dAmicoDLR}, who is inspired by Eckstein's approach for the collocation of geostationary satellites \cite{Eckstein}. After that, a short qualitative analysis on the effects of a non-spherical gravity field on relative OEs is performed, and finally, some applications of this approach are discussed.
+%
+	\subsection{Equivalence of cartesian coordinates and relative OEs.}
+	%
+	%
+		\subsubsection{Cartesian formulation: HCW equations.}
+		%
+		\indent D'Amico proposes a nondimensionalization of the Hill equations in RTN frame \ref{secAppB:RTN}. The relative position vector of the deputy in said frame is expressed as:
+		%
+		\[
+		\delta \underline{r} = \underline{r}_D - \underline{r}_C = \delta r_R \underline{e}_R + \delta r_T \underline{e}_T + \delta r_N \underline{e}_N
+		\]
+		%
+		\indent This vector can be nondimensionalized with the chief's orbital radius $r$ --which under the assumption of a circular reference orbit is constant and equal to the semimajor axis $a$. Effectively:
+		%
+		\begin{equation}
+		\underline{\rho} = \dfrac{\delta \underline{r}}{r} = \left\{ x, y, z\right\}^T
+		\label{eqCh5:rho}
+		\end{equation}
+		%
+		\indent Time can as well be nondimensionalized with the mean anomaly rate $n$ as:
+		%
+		\begin{equation}
+		\dfrac{d}{d\tau} = \dfrac{1}{n} \dfrac{d}{dt} 
+		\label{eqCh5:tau}
+		\end{equation}
+		%
+		\indent The nondimensional version of Hill equations can be simply derived from \eqref{eqCh2:Hill_eqs_V1}, changing from the LVLH to the RTN frame and considering \eqref{eqCh5:rho} and \eqref{eqCh5:tau}:
+		%
+		\begin{equation}
+		\left\{
+		\begin{array}{c}
+		\ddot{x}\\
+		\ddot{y}\\
+		\ddot{z}
+		\end{array}\right\}
+		= 
+		\left\{
+		\begin{array}{c}
+		2\dot{y} + 3 x \\
+		-2 \dot{x} \\
+		-z 
+		\end{array}\right\}
+		\label{eqCh5:Hill_eqs_RTN}
+		\end{equation}
+		%
+		\noindent where $\dot{x_i}$ denotes the time derivative of $x_i$ with respect to $\tau$. D'Amico proposes an equivalent form to the Clohessy-Wiltshire solution, although with different integration constants, as:
+		%
+		\begin{equation}
+		\left\{
+		\begin{array}{c}
+		x\\
+		y\\
+		z\\
+		\dot{x}\\
+		\dot{y}\\
+		\dot{z}
+		\end{array}\right\}
+		= 
+		\left[ \begin{array}{cccccc}
+		1 								& 0	& -\cos\tau & -\sin\tau 	& 0 		& 0 \\
+		-\frac{3}{2}(\tau - \tau_0) 	& 1 & 2\sin\tau & -2\cos\tau 	& 0 		& 0\\
+		0 								& 0 & 0 		& 0 			& \sin\tau 	& -\cos\tau \\
+		0 								& 0 & \sin\tau 	& -\cos\tau 	& 0 		& 0\\
+		-\frac{3}{2}					& 0 & 2\cos\tau & 2\sin \tau 	& 0 		& 0\\
+		0 								& 0 & 0 		& 0 			& \cos\tau 	& \sin \tau
+		\end{array}\right]
+		\left\{
+		\begin{array}{c}
+		a_1\\
+		a_2\\
+		a_3\\
+		a_4\\
+		a_5\\
+		a_6
+		\end{array}\right\}
+		\label{eqCh5:Hill_eqs_RTN_V2}
+		\end{equation}
+		%
+		\indent The integration constants $(a_1, a_2, a_3, a_4, a_5, a_6)$ are related to the initial state vector $(x_0, y_0, z_0, \dot{x}_0, \dot{y}_0, \dot{z}_0 )$ by:
+		%
+		\begin{equation}
+		\left\{
+		\begin{array}{c}
+		a_1\\
+		a_2\\
+		a_3\\
+		a_4\\
+		a_5\\
+		a_6
+		\end{array}\right\} = 
+		\left\{
+		\begin{array}{c}
+		4x_0 + 2 \dot{y}_0\\
+		y_0 - 2\dot{x}_0\\
+		3 x_0 + 2 \dot{y}_0\\
+		-\dot{x}_0\\
+		\dot{z}_0\\
+		-z_0
+		\end{array}\right\}
+		\label{eqCh5:a_i}
+		\end{equation}
+		%
+		\indent The meaning of this integration constants will be duly explained later.
+		%
+		\subsubsection{Relative OE formulation: GVEs.}
+		%
+		\indent Near-circular orbits feature an uncomfortable singularity, in that the argument of perigee is not defined. In order to avoid this, the quasi-non-singular element set (see \ref{secAppA:QNSOE}) is used.\\
+		%
+		\indent Gauss Variational Equations (see \ref{secAppE:GVE}) express the evolution of the orbital elements as a function of the acceleration on the celestial body or spacecraft. That acceleration is now nondimensionalized as:
+		%
+		\begin{equation}
+		\underline{a} =  \dfrac{r^2}{\mu} \underline{A}
+		\end{equation}
+		%
+		\noindent where $\underline{A}$ is the dimensional counterpart. With this in mind, and after some manipulation, the GVEs for the circular, non-equatorial case are:
+		%
+		\begin{equation}
+		\left\{\begin{array}{c}
+		\dot{a} \\
+		\dot{\lambda} \\
+		\dot{e}_x \\
+		\dot{e}_y \\
+		\dot{i} \\
+		\dot{\Omega}
+		\end{array}\right\} =\left[\begin{array}{cccc}
+		0 & 0 & 2 a & 0 \\
+		1 & -2 & 0 & -\sin \tau / \tan i \\
+		0 & \sin \tau & 2 \cos \tau & 0 \\
+		0 & -\cos \tau & 2 \sin \tau & 0 \\
+		0 & 0 & 0 & \cos \tau \\
+		0 & 0 & 0 & \sin \tau / \sin i
+		\end{array}\right] \left\{\begin{array}{c}
+		1 \\
+		a_R \\
+		a_T \\
+		a_N
+		\end{array}\right\}
+		\end{equation}
+		%
+		\indent These equations can actually be integrated in both sides with respect to time, assuming an instantaneous velocity increment. Conceptually, this can be understood as the deviation of the deputy's orbital elements with respect to the chaser's due to a difference in velocity. Effectively:
+		\begin{equation}
+		\left\{\begin{array}{c}
+		\delta a / a\\
+		\delta \lambda \\
+		\delta e_x \\
+		\delta e_y \\
+		\delta i \\
+		\delta \Omega 
+		\end{array}\right\} =\left[\begin{array}{cccc}
+		0 & 2 a & 0 \\
+		-2 & 0 & -\sin \tau_0 / \tan i \\
+		\sin \tau_0 & 2 \cos \tau_0 & 0 \\
+		-\cos \tau_0 & 2 \sin \tau_0 & 0 \\
+		0 & 0 & \cos \tau_0 \\
+		0 & 0 & \sin \tau_0 / \sin i
+		\end{array}\right] \left\{\begin{array}{c}
+		\delta v_R \\
+		\delta v_T \\
+		\delta v_N
+		\end{array}\right\}
+		\end{equation}
+		%
+		\indent Finally, this equations can be transformed to use the eccentricity/inclination vectors element set, which has proven to be useful for trajectory safety purposes. By simply remembering the inclination vector definition:
+		%
+		\begin{equation}
+		\left\{\begin{array}{c}
+		\delta a / a\\
+		\delta \lambda \\
+		\delta e_x \\
+		\delta e_y \\
+		\delta i_x \\
+		\delta i_y 
+		\end{array}\right\} =\left[\begin{array}{cccc}
+		0 & 2 & 0 \\
+		-2 & 0 & -\sin \tau_0 / \tan i \\
+		\sin \tau_0 & 2 \cos \tau_0 & 0 \\
+		-\cos \tau_0 & 2 \sin \tau_0 & 0 \\
+		0 & 0 & \cos \tau_0 \\
+		0 & 0 & \sin \tau_0
+		\end{array}\right] \left\{\begin{array}{c}
+		\delta v_R \\
+		\delta v_T \\
+		\delta v_N
+		\end{array}\right\}
+		\label{eqCh5:ICs_V1}
+		\end{equation}
+		%
+		\subsubsection{Equivalence.}
+		%
+		\indent Equation \eqref{eqCh5:Hill_eqs_RTN_V2} can be inverted, hence expressing the integration constants in terms of the RTN state vector. If both spacecrafts are assumed to be at the same position at $t = t_0$ (hence $\rho_0 = 0$), it reduces to:
+		%
+		\begin{equation}
+		\left\{
+		\begin{array}{c}
+		a_1\\
+		a_2\\
+		a_3\\
+		a_4\\
+		a_5\\
+		a_6
+		\end{array}\right\} 
+		= 
+		\left[\begin{array}{cccc}
+		0 & 2 a & 0 \\
+		-2 & 0 &  \\
+		\sin \tau & 2 \cos \tau & 0 \\
+		-\cos \tau & 2 \sin \tau & 0 \\
+		0 & 0 & \cos \tau \\
+		0 & 0 & \sin \tau
+		\end{array}\right] 
+		\left\{\begin{array}{c}
+		\delta \dot{x}_0 \\
+		\delta \dot{y}_0 \\
+		\delta \dot{z}_0
+		\end{array}\right\}
+		\label{eqCh5:ICs_V2}
+		\end{equation}
+		%
+		\indent Equations \eqref{eqCh5:ICs_V1} and \eqref{eqCh5:ICs_V2} are clearly similar. This suggests the use of the integration constants $a_i$ as dimensionless relative orbital elements, related to the E/I element set as:
+		%
+		\begin{equation}
+		\left\{ \begin{array}{lll}
+		a_1 = & \dfrac{a_D - a_C}{a} & = \dfrac{\delta a}{a}\\
+		a_2 = & \lambda_D(\tau_0) - \lambda_C (\tau_0)  + \left( \Omega_D - \Omega_C  \right) \cos i & = \delta \lambda_0 + \delta \Omega \cos i \equiv \delta l_0 \\
+		a_3 = & e_{x, D} - e_{x, C} & = \delta e_x \\
+		a_4 = & e_{y, D} - e_{y, C} & = \delta e_y \\
+		a_5 = & i_D - i_C & = \delta i_x\\
+		a_6 = & \left( \Omega_D - \Omega_C \right) \sin i & = \delta i_y
+		\end{array}\right.
+		\end{equation}
+		%
+		\indent The only different orbital element is the so-called modified relative mean longitude $\delta l_0$. 
+		%
+		\subsubsection{Conclusion: HCW solution in terms of orbital elements.}
+		%
+		\indent Once the mapping between the integration constants $a_i$ and the relative OEs has been established, equation \eqref{eqCh5:Hill_eqs_RTN_V2} can be expressed in those terms as:
+		%
+		\begin{equation}
+		\left\{
+		\begin{array}{c}
+		x\\
+		y\\
+		z\\
+		\dot{x}\\
+		\dot{y}\\
+		\dot{z}
+		\end{array}\right\}
+		= 
+		\left[ \begin{array}{cccccc}
+		1 								& 0	& -\cos\tau & -\sin\tau 	& 0 		& 0 \\
+		-\frac{3}{2}(\tau - \tau_0) 	& 1 & 2\sin\tau & -2\cos\tau 	& 0 		& 0\\
+		0 								& 0 & 0 		& 0 			& \sin\tau 	& -\cos\tau \\
+		0 								& 0 & \sin\tau 	& -\cos\tau 	& 0 		& 0\\
+		-\frac{3}{2}					& 0 & 2\cos\tau & 2\sin \tau 	& 0 		& 0\\
+		0 								& 0 & 0 		& 0 			& \cos\tau 	& \sin \tau
+		\end{array}\right]
+		\left\{
+		\begin{array}{c}
+		\delta a / a\\
+		\delta l_0\\
+		\delta e_x\\
+		\delta e_y\\
+		\delta i_x\\
+		\delta i_y
+		\end{array}\right\}
+		\label{eqCh5:HCW_ROEs}
+		\end{equation}
+		%
+		\indent The dimensional form of \eqref{eqCh5:HCW_ROEs} is very widely used in orbit safety analysis. It is obtained after using the relations \eqref{eqCh5:rho} and \eqref{eqCh5:tau}, leading to:
+		%
+		\begin{equation}
+		\left\{ \begin{array}{ll}
+		\dfrac{\delta r_R}{a} = & \dfrac{\delta a}{a} - \delta e_x \cos\lambda - \delta e_y \sin\lambda \\[1.2 em]
+		\dfrac{\delta r_T}{a} = & \delta l_0 - \dfrac{3}{2}\dfrac{\delta a}{a}(\lambda - \lambda_0) - -2 \delta e_y \cos\lambda + \delta e_x \sin\lambda \\[1.2 em]
+		\dfrac{\delta r_N}{a} = & - \delta i_y \cos\lambda + \delta i_x \sin\lambda \\
+		\end{array}\right.
+		\label{eqCh5:HCW_RTN}
+		\end{equation}
+		%
+		\noindent where $\tau$ has been substituted by $\lambda$, as: 
+		%
+		\[
+		\tau - \tau_0 = \int d\tau = \int n dt = \lambda - \lambda_0 - (\omega -  \omega_0) = \lambda - \lambda_0
+		\]
+		%
+		\indent Equation \eqref{eqCh5:HCW_RTN} can be simplified for the case of non-drifting ($\delta a = 0$) centered ($\delta l_0$) relative orbits, leading to:
+		%
+		\begin{equation}
+		\left\{ \begin{array}{ll}
+		\dfrac{\delta r_R}{a} = &  - a \delta e \cos(\lambda - \varphi) \\[1.2 em]
+		\dfrac{\delta r_T}{a} = & 2a\delta e \sin(\lambda - \varphi)\\[1.2 em]
+		\dfrac{\delta r_N}{a} = & a\delta i \sin(\lambda - \psi) \\
+		\end{array}\right.
+		\label{eqCh5:HCW_RTN_simp}
+		\end{equation}
+		%
+		\noindent where:
+		%
+		\[
+		\begin{array}{cc}
+		\delta e = \dsqrt{\delta e_x^2 + \delta e_y^2} & \delta i =  \dsqrt{\delta i_x^2 + \delta i_y^2} \\[1.2 em]
+		\varphi = \atantwo (\delta e_y, \delta e_x) &		\psi = \atantwo (\delta i_y, \delta i_x)  
+		\end{array}
+		\]
+		%
+		\noindent are the amplitudes and phases of the in-plane and out-of-plane motion. These equations were already reached in \eqref{eqCh2:EI_1}, though in a less formal way. \\
+		%
+		\indent The current formulation allows to easily implement any perturbation on the orbital elements, in order to then obtain the effect on the actual RTN coordinates. A small introduction about how to do so with the $J_2$ term is now discussed.
+		%
+	\subsection{Effect of non-spherical gravity field: $J_2$.}
+	%
+	\indent As discussed extensively before, perturbations induces two basic types of effects in spacecraft's motion: secular and periodic. Short-period effects are mainly dependent on the argument of latitude, which means that, for short baselines ($\delta l_0$), said effects can be neglected. Hence, only the secular effects will be considered. \\
+	%
+	\indent The secular variations of the Keplerian elements is expressed as \cite{GA_STM}:
+	%
+%	\begin{equation}
+%	\left\{ \begin{array}{lll}
+	\begin{subequations}
+ 	\begin{alignat}{4}[left = \empheqlbrace]
+ 	\dfrac{da^{(s)}}{dt} &= 0 \\[1.2 em]
+	\dfrac{de^{(s)}}{dt} &= 0 \\[1.2 em]
+	\dfrac{di^{(s)}}{dt} &= 0 \\[1.2 em]
+	\dfrac{d\Omega^{(s)}}{dt} &= - \dfrac{\alpha}{2} \dfrac{n_0}{a_0^2 \eta_0^4} \cos i_0 \\[1.2 em]
+	\dfrac{d\omega^{(s)}}{dt} &= \dfrac{\alpha}{4} \dfrac{n_0}{a_0^2 \eta_0^4} \left( 5\cos^2 i_0 - 1 \right)\\[1.2 em]
+	\dfrac{dM^{(s)}}{dt} &= n_0 + \dfrac{\alpha}{4} \dfrac{n_0}{a_0^2 \eta_0^3} \left( 3 \cos^2 i_0 - 1 \right)
+ 	\end{alignat}
+ 	\end{subequations}
+ 	%
+ 	\noindent where $\alpha = 3 J_2 a_e^2$ and the variables with subscript $0$ denote the initial values of said parameters, which remain unchanged (secularly). This equations can be nondimensionalized as usual, leading to:
+ 	%
+ 	\begin{subequations}
+ 	\begin{alignat}{4}[left = \empheqlbrace]
+ 	\dot{a}^{(s)} &= 0 \\[1.2 em]
+	\dot{e}^{(s)} &= 0 \\[1.2 em]
+	\dot{i}^{(s)} &= 0 \\[1.2 em]
+	\dot{\Omega}^{(s)} &= - \dfrac{\alpha}{2} \dfrac{1}{a_0^2 \eta_0^4} \cos i_0 \\[1.2 em]
+	\dot{\omega}^{(s)}  &= \dfrac{\alpha}{4} \dfrac{1}{a_0^2 \eta_0^4} \left( 5\cos^2 i_0 - 1 \right)\\[1.2 em]
+	\dot{M}^{(s)} 		&= 1 + \dfrac{\alpha}{4} \dfrac{1}{a_0^2 \eta_0^3} \left( 3 \cos^2 i_0 - 1 \right)
+ 	\end{alignat}
+ 	\end{subequations}
+	%
+	\indent The relative growth of the deputy with respect to the chief in E/I elements can be simply obtained by its definition:
+	%
+	\begin{subequations}
+	\label{eqCh5:J2_EI_V1}
+	\begin{alignat}{4}[left = \empheqlbrace]
+ 	\delta\dot{a}^{(s)} 	&= \dot{a}^{(s)}_{D} - \dot{a}^{(s)}_C \\[1.2 em]
+	\delta\dot{l_0}^{(s)} 	&= \left[ \left( \dot{\lambda}_0  \right)_D^{(s)} - \left( \dot{\lambda}_0  \right)_C^{(s)} \right] + \dfrac{d}{d\tau} \left[ \left( \Omega_D^{(s)} - \Omega_C^{(s)}  \right)\cos i \right]\\[1.2 em]
+	\delta\dot{e_x}^{(s)} 	&= \left( \dot{e}_x \right)_D^{(s)} - \left( \dot{e}_x \right)_C^{(s)} \\[1.2 em]
+	\delta\dot{e_y}^{(s)} 	&= \left( \dot{e}_y \right)_D^{(s)} - \left( \dot{e}_y \right)_C^{(s)} \\[1.2 em]
+	\delta\dot{i_x}^{(s)} 	&= \dot{i}_D^{(s)} - \dot{i}_C^{(s)} \\[1.2 em]
+	\delta\dot{i_y}^{(s)}  	&= \dfrac{d}{d\tau} \left[ \left( \Omega_D^{(s)} - \Omega_C^{(s)}  \right)\sin i \right]
+ 	\end{alignat}
+ 	\end{subequations}
+ 	%
+ 	\indent Substituting the definitions of the eccentricity vector and the secular rates of the Keplerian elements in equation \eqref{eqCh5:J2_EI_V1} lead to:
+ 	%
+ 	\begin{subequations}
+	\label{eqCh5:J2_EI_V2}
+	\begin{alignat}{4}[left = \empheqlbrace]
+ 	\delta\dot{a}^{(s)} 	& \approx 0 \\[1.2 em]
+	\delta\dot{l_0}^{(s)} 	& \approx - \dfrac{7}{4} \dfrac{\alpha}{a_0^2 \eta_0^4} \sin(2 i_0) \delta i_{x0} \\[1.2 em]
+	\delta\dot{e_x}^{(s)} 	& \approx -\dfrac{\alpha}{4} \dfrac{1}{a_0^2 \eta_0^4} \left(5 \cos^2 i_0 - 1 \right)\delta e_{y0} \\[1.2 em]
+	\delta\dot{e_y}^{(s)} 	& \approx \dfrac{\alpha}{4} \dfrac{1}{a_0^2 \eta_0^4} \left(5 \cos^2 i_0 - 1 \right)\delta e_{x0} \\[1.2 em]
+	\delta\dot{i_x}^{(s)} 	& \approx 0\\[1.2 em]
+	\delta\dot{i_y}^{(s)}  	& \approx \dfrac{\alpha}{2} \dfrac{1}{a_0^2 \eta_0^4} \sin^2 i_0 \delta i_{x0} 
+ 	\end{alignat}
+ 	\end{subequations}
+ 	%
+ 	\noindent where second order terms in the relative OEs have been neglected. These equations can finally be integrated with respect to $\tau$, leading to:
+ 	%
+ 	\begin{subequations}
+	\label{eqCh5:J2_EI_V3}
+	\begin{alignat}{4}[left = \empheqlbrace]
+ 	\delta a 	& \approx \delta a_0\\[1.2 em]
+	\delta l_0 	& \approx \delta l_0(\tau_0) - \dfrac{7}{4} \dfrac{\alpha}{a_0^2 \eta_0^4} \sin(2 i_0) \delta i_{x0} (\lambda - \lambda_0) \\[1.2 em]
+	\delta e_x 	& \approx \delta e_0 \cos(\varphi_0 + \varphi' (\lambda - \lambda_0)) \\[1.2 em]
+	\delta e_y 	& \approx \delta e_0 \sin(\varphi_0 + \varphi' (\lambda - \lambda_0)) \\[1.2 em]
+	\delta i_x 	& \approx \delta i_{x0}\\[1.2 em]
+	\delta i_y 	& \approx \delta i_{y0} - \dfrac{\alpha}{4} \dfrac{1}{a_0^2 \eta_0^4} \sin^2 i_0 \delta i_{x0} (\lambda - \lambda_0)
+ 	\end{alignat}
+ 	\end{subequations}
+ 	%
+ 	\noindent where $\varphi' = \frac{\alpha}{4 a_0^2 \eta_0^4} (5\cos^2 i_0 - 1)$ is the derivative of the relative argument of perigee. \\
+ 	%
+ 	\indent It is easy to lose track of what has been done until now. Firstly, an equivalence between the HCW formulation and the GVEs has been established, so that now, the RTN state vector is linked to the variation of the OEs. Going one step further, said variations of the OEs can be obtained for a given perturbation ($J_2$ in this case), so that the effect of that variation can be directly estimated on the RTN state vector. In conclusion, the effect of the $J_2$ term of the gravity field on the relative position of the deputy is now known.\\
+ 	%
+ 	\paragraph{Effect on the eccentricity and inclination vectors \\} 
+ 	%
+ 	\indent Expression \eqref{eqCh5:J2_EI_V3} provides the components of both eccentricity and inclination vectors along time. A simple derivation leads to the following expressions\cite{DAmico_Montenbruck}:
+ 	%
+ 	\begin{subequations}
+	\begin{alignat}{4}[left = \empheqlbrace]
+	\label{eqCh5:J2_Ecc_der}
+ 	\dfrac{d}{d\tau} \delta \underline{e} = \dfrac{d}{d\tau} (\delta e_0) \left\{ \begin{array}{c}
+ 	\cos(\varphi_0 + \varphi' (\lambda - \lambda_0))\\
+ 	\sin(\varphi_0 + \varphi' (\lambda - \lambda_0))
+	\end{array}\right\} = 
+	\delta e_0	\left\{ \begin{array}{c}
+ 	-\varphi' \sin(\varphi_0 + \varphi' (\lambda - \lambda_0))\\
+ 	\varphi'\cos(\varphi_0 + \varphi' (\lambda - \lambda_0)) \end{array}\right\} \\[1.2 em]
+ 	\label{eqCh5:J2_inc_der}
+ 	\dfrac{d}{d\tau} \delta \underline{i} = \dfrac{d}{d\tau} \left\{ \begin{array}{c}
+ 	\delta i_{x0} \\ 
+	\delta i_{y0} - \dfrac{\alpha}{4} \dfrac{1}{a_0^2 \eta_0^4} \sin^2 i_0 \delta i_{x0} (\lambda - \lambda_0)\end{array}\right\}
+	=
+	\left\{ \begin{array}{c}
+ 	0\\ 
+	-\dfrac{\alpha}{4} \dfrac{1}{a_0^2 \eta_0^4} \sin^2 i_0 \delta i_{x0} \end{array}\right\}
+ 	\end{alignat}
+ 	\end{subequations}
+ 	%
+ 	\indent The results are quite clear: the relative eccentricity vector derivative induces a rotation in it, as it is perpendicular to it at every instant, without ever changing the module. Conversely, the inclination vector features a negative drift in the vertical component. These behaviours are shown in figure \ref{figCh5:Ecc_inc_der}.\\
+ 	\begin{figure}[!htb]
+	\centering
+	\medskip
+	\begin{subfigure}[t]{.47\linewidth}
+	\centering\includegraphics[width=\linewidth]{Chapters/Chapter_05/ecc_der}
+	\caption{Eccentricity vector.}
+	\end{subfigure}
+	\begin{subfigure}[t]{.47\linewidth}
+	\centering\includegraphics[width=\linewidth]{Chapters/Chapter_05/inc_der}
+	\caption{Inclination vector.}
+	\end{subfigure}
+	\caption{$J_2$ effect on the relative eccentricity and inclination vectors.}
+	\label{figCh5:Ecc_inc_der}
+	\end{figure}
+	%
+	\FloatBarrier
+	%
+ 	%
+ 	\indent The concern now is how this will impact orbit safety. As explained in section \ref{secCh2:E_I_separation}, a useful strategy is the separation of the eccentricity and inclination vectors, so as to guarantee separation in either tangential or out-of-plane direction. This is done by imposing the same phase in both vectors ($\varphi = \psi$), which in the unperturbed problem was not much of a concern. However, now both vectors feature secular variations, which shatters this geometric condition. If the target is to maintain a parallel configuration of both vectors, correction manoeuvres need to be performed.\\
+ 	%
+ 	\indent In view of this fact, a better approximation of the secular motion (through more accurate approximations) would lead to a better planning of the correction manoeuvres, hence more efficient.
+	%
+%
+	

@@ -1,99 +1,82 @@
-
-\nomenclature[T]{$LWC$}{Contenido en agua líquida, \textit{liquid water content} \nomunit{$\left[\dfrac{kg}{m^3}\right]$}}%
-\nomenclature[T]{$MVD$}{Tamaño volumétrico medio de las gotas, \textit{median volumetric diameter}\nomunit{[$\mu m$]}}%
-\nomenclature[T]{$\beta$}{Coeficiente de captación  \nomunit{[$---$]}}%
-\nomenclature[T]{$\dot{m}$}{Flujo másico \nomunit{$\left[\dfrac{kg}{s}\right]$}}%
-\nomenclature[T]{$\dot{m}'$}{Flujo másico por unidad de área \nomunit{$\left[\dfrac{kg}{s} \dfrac{1}{m^2}\right]$}}%
-\nomenclature[T]{$\dot{Q}$}{Flujo de calor [$W$]}%
-\nomenclature[T]{$\dot{q}$}{Flujo de calor por unidad de área \nomunit{$\left[\dfrac{W}{m^2}\right]$}}%
-\nomenclature[T]{$\rho$}{Densidad de un fluido \nomunit{$\left[\dfrac{kg}{m^3}\right]$}}%
-\nomenclature[T]{$d$}{Diámetro de las gotas  \nomunit{[$\mu m$]}}%
-\nomenclature[C]{$\gamma$}{Coeficiente de dilatación adiabática de un gas \nomunit{[---]}}%
-\nomenclature[C]{$T_C$}{Temperatura del punto triple \nomunit{$[K]$}}%
-\nomenclature[T]{$p$}{Presión de un fluido \nomunit{[$Pa$]}}%
-\nomenclature[T]{$p_{v, sat}$}{Presión de vapor de saturación \nomunit{[$Pa$]}}%
-\nomenclature[T]{$\mu$}{Viscosidad dinámica de un fluido \nomunit{[$Pa \cdot s$]}}%
-\nomenclature[T]{$\nu$}{Viscosidad cinemática de un fluido \nomunit{$\left[\dfrac{m^2}{s}\right]$}}%
-\nomenclature[T]{$C_D$}{Coeficiente de resistencia de un cuerpo \nomunit{[$---$]}}%
-\nomenclature[T]{$\alpha_w$}{Fracción volumétrica de agua en aire \nomunit{[$---$]}}%
-\nomenclature[T]{$\alpha$}{Difusividad térmica \nomunit{$\left[ \dfrac{m^2}{s}\right]$}}%
-\nomenclature[T]{$\bar{U}$}{Vector velocidad de un cuerpo o fluido \nomunit{$\left[\dfrac{m}{s}\right]$]}}%
-\nomenclature[T]{$\bar{u}$}{Vector velocidad adimensional de un cuerpo o fluido \nomunit{[$---$]}}%
-\nomenclature[T]{$f$}{Fracción de agua congelada \nomunit{[$---$]}}%
-\nomenclature[T]{$h$}{Espesor de una película de agua  \nomunit{[$m$]}}%
-\nomenclature[T]{$T$}{Temperatura absoluta \nomunit{[$K$]}}%
-\nomenclature[T]{$k$}{Conductividad térmica de un fluido  \nomunit{$\left[\dfrac{W}{m\,K}\right]$}}%
-\nomenclature[T]{$r$}{Factor de recuperación adiabática  \nomunit{[$---$]}}%
-\nomenclature[T]{$C_p$}{Calor específico a presión constante  \nomunit{$\left[\dfrac{J}{kg\, K}\right]$}}%
-\nomenclature[T]{$h_c$}{Coeficiente de transferencia de calor por convección  \nomunit{$\left[\dfrac{W}{m^2 \, K}\right]$}}%
-\nomenclature[T]{$\overline{\tau}_{wall}$}{Esfuerzo viscoso de un fluido sobre una pared \nomunit{[$Pa$]}}%
-\nomenclature[T]{$L$}{Calor latente de un fluido \nomunit{$\left[ \dfrac{J}{kg} \right]$}}%
-\nomenclature[T]{$\overline{c}_f$}{Coeficiente de fricción viscosa sobre una pared \nomunit{[$---$]}}%
-\nomenclature[T]{$\tilde{T}$}{Temperatura \nomunit{[$ºC$]}}%
-\nomenclature[T]{$\theta$}{Temperatura absoluta adimensionalizada con la del punto triple \nomunit{[$---$]}}%
-\nomenclature[S]{$\infty$}{Variable en el infinito sin perturbar}%
-\nomenclature[S]{$e$}{Borde de la capa límite (\textit{edge})}% 
-\nomenclature[S]{$d$}{Gota (\textit{droplet})}%
-\nomenclature[S]{$c$}{Característica}%
-\nomenclature[S]{$w$}{Agua (\textit{water})}%
-\nomenclature[S]{$f$}{Película de agua (\textit{water film})}%
-
-\nomenclature[D]{$\bm U$}{Vector de variables dependientes de un sistema de ecuaciones diferenciales}%\\
-\nomenclature[D]{$\bm A$}{Matriz del sistema de una ecuación diferencial}%
-\nomenclature[D]{$\bm F(\bm U)$}{Vector de flujos de una ecuación diferencial}%
-\nomenclature[D]{$\bm R$}{Vector de términos fuente de una ecuación diferencial}%
-\nomenclature[D]{$\bm U$}{Vector de variables dependientes de una ecuación diferencial}%
-\nomenclature[D]{$\bm I$}{Matriz identidad}%
-\nomenclature[D]{$\bm K^{(i)}$}{Autovector \textit{i}-ésimo de la matriz del sistema}%
-\nomenclature[D]{$\bm \lambda_i$}{Autovalor \textit{i}-ésimo de la matriz del sistema}%
-\nomenclature[D]{$\mathcal{L}(\bm U)$}{Operador diferencial espacial de una ecuación diferencial en derivadas parciales}%
-\nomenclature[D]{$\phi$}{Superficie característica de una ecuación diferencial en derivadas parciales}%
-\nomenclature[D]{$\Sigma$}{Superficie geométrica}%
-\nomenclature[D]{$\Omega$}{Volumen geométrico}%
-\nomenclature[D]{$\partial \Omega$}{Frontera del volumen $\Omega$}%
-\nomenclature[D]{$\bm K^{(i)}$}{Autovector \textit{i}-ésimo de la matriz del sistema}%
-\nomenclature[D]{$d\gamma, \: d\sigma, \: d\omega$}{Diferenciales de arco, superficie y volumen}%
-\nomenclature[D]{$\bm W$}{Vector de variables dependientes canónicas de un sistema de ecuaciones diferenciales}%
-\nomenclature[D]{$\bm \Lambda$}{Matriz de autovalores de un sistema de ecuaciones diferenciales}%
-\nomenclature[D]{$s$}{Parámetro de longitud de arco}%
-\nomenclature[D]{$\bm n$}{Vector normal exterior a una superficie}%
-\nomenclature[D]{$\mathbb{I}$}{Unidad imaginaria}%
-
-\nomenclature[G]{$\sigma$}{Número CFL}%
-\nomenclature[G]{$\Omega_i$}{Volumen de control \textit{i}-ésimo}%
-\nomenclature[G]{$u_i^n$}{Solución computada de un esquema numérico}%
-\nomenclature[G]{$\bar{u}_i^n$}{Solución exacta de un esquema numérico}%
-\nomenclature[G]{$\tilde{u}_i^n$}{Solución exacta de un modelo matemático}%
-\nomenclature[G]{$\bm U_{i+1/2}$}{Solución computada en el extremo superior del volumen finito \textit{i}-ésimo}%
-\nomenclature[G]{$x_{i + 1/2}$}{Extremo superior del volumen finito \textit{i}-ésimo}%
-\nomenclature[G]{$\bm F_{i + 1/2}$}{Flujos numéricos en el extremo superior del volumen finito \textit{i}-ésimo}%
-\nomenclature[G]{$\Delta x, \: \Delta t$}{Pasos espacial y temporal}%
-\nomenclature[G]{$S_{max}^n$}{Velocidad máxima de propagación de información en un problema de evolución discretizado}
-\nomenclature[G]{$\epsilon_T$}{Error de truncamiento de un esquema numérico}%
-\nomenclature[G]{$N(\bullet)$}{Esquema numérico}%
-\nomenclature[G]{$\tilde{\bm A}$}{Matriz promediada del sistema}%
-\nomenclature[G]{$\tilde{\lambda}_i$}{Autovalor \textit{i}-ésimo de la matriz promediada del sistema}%
-\nomenclature[G]{$\tilde{K}^{(i)}$}{Autovector \textit{i}-ésimo de la matriz promediada del sistema}%
-\nomenclature[G]{$\bm Q$}{Vector de parámetros del método de Roe}%
-\nomenclature[G]{$I_{i}$}{Centroide del volumen finito \textit{i}-ésimo}%
-\nomenclature[G]{$\lambda_j$}{Longitud de onda del armónico \textit{j}-ésimo}%
-\nomenclature[G]{$k_j$}{Número de onda del armónico \textit{j}-ésimo}%
-\nomenclature[G]{$\phi_j$}{Fase del armónico \textit{j}-ésimo}%
-\nomenclature[G]{$V_j^n$}{Amplitud del armónico \textit{j}-ésimo en el instante \textit{n}-ésimo}%
-\nomenclature[G]{$G_j$}{Factor de amplificación o ganancia del armónico \textit{j}-ésimo }%
-\nomenclature[G]{$\omega $}{Relación de dispersión numérica}%
-\nomenclature[G]{$\tilde{\omega} $}{Relación de dispersión}%
-\nomenclature[G]{$S$}{Velocidad de propagación de una discontinuidad}%
-
-\nomenclature[N]{$Re$}{Número de Reynolds \nomunit{$Re = \dfrac{\rho_c U_c L_c}{\mu_c}$}}%
-\nomenclature[N]{$Pr$}{Número de Prandtl \nomunit{$Pr = \dfrac{\nu}{\alpha}$}}%
-\nomenclature[N]{$Nu$}{Número de Nusselt \nomunit{$Nu = \dfrac{h_c L_c}{k}$}}%
-\nomenclature[N]{$Fr$}{Número de Froude \nomunit{$Fr = \dfrac{U_c}{\sqrt{g_0 L_c}}$}}%
+% === === === === === === === === === === === === Acronyms === === === === === === === === === === === === 
+\nomenclature[A]{ECI}{Earth-Centered Inertial frame }%
+\nomenclature[A]{ECEF}{Earth-Centered Earth-Fixed frame}%
+\nomenclature[A]{TOD}{True-of-Date frame}%
+\nomenclature[A]{MOD}{Mean-of-Date frame}%
+\nomenclature[A]{BF}{Body-Fixed frame}%
+\nomenclature[A]{PBF}{Pseudo-Body-Fixed frame}%
+\nomenclature[A]{RTN}{Radial-Transverse-Normal frame}%
+\nomenclature[A]{LVLH}{Local-Vertical, Local-Horizontal frame}%
+\nomenclature[A]{IP}{In-plane}%
+\nomenclature[A]{OOP}{Out-of-plane}%
+\nomenclature[A]{NSG}{Non-spherical gravity}%
+\nomenclature[A]{SRP}{Solar Radiation Pressure}%
+\nomenclature[A]{STM}{State Transition Matrix}%
+\nomenclature[A]{ICs}{Initial Conditions}%
+\nomenclature[A]{LEO}{Low Earth Orbit}%
+\nomenclature[A]{CR3BP}{Circular Restricted Three Body Problem}%
+\nomenclature[A]{OEs}{Orbital Elements}%
+\nomenclature[A]{KOE}{Keplerian OEs vector}
+\nomenclature[A]{YA}{Yamanaka-Ankersen}%%
+\nomenclature[A]{GA}{Gim-Alfriend}%
+\nomenclature[A]{CW}{Clohessy-Wiltshire}%
+\nomenclature[A]{HCW}{Hill/Clohessy-Wiltshire}%
+\nomenclature[A]{Hi-Fi}{High-Fidelity}%
+\nomenclature[A]{ODE}{Ordinary Differential Equation}%
+\nomenclature[A]{IVP}{Initial Value Problem}%
 
 
+% === === === === === === === === === === === === Perturbations === === === === === === === === === === === ===
+\nomenclature[P]{$q_i, Q_i$}{Generalized coordinate (original or transformed)}%
+\nomenclature[P]{$p_i, P_i$}{Generalized momentum (original or transformed)}%
+\nomenclature[P]{$H$}{Hamiltonian of the system }%
+\nomenclature[P]{$K$}{Modified Hamiltonian of the system }%
+\nomenclature[P]{$\varepsilon$}{Small parameter \nomunit{$[---]$}}%
+\nomenclature[P]{$S, W$}{Generating function of the transformation }%
+\nomenclature[P]{$R$}{Disturbing function \nomunit{$?$}}%
+\nomenclature[P]{$\underline{OE}$}{Osculating orbital element vector }%
+\nomenclature[P]{$\underline{\overline{OE}}$}{Mean orbital element vector }%
 
+% === === === === === === === === === === === === Sub and superindices === === === === === === === === === === === === 
+\nomenclature[S]{$\left. \right\rvert_{i}$}{Expressed in frame $i$}%
+\nomenclature[S]{$\bullet_C$}{Variable from the chief spacecraft}% 
+\nomenclature[S]{$\bullet_D$}{Variable from the deputy spacecraft}%
+\nomenclature[S]{$\bullet_0$}{Variable at $t = t_0$}%
+ 
+ % === === === === === === === === === === === === Orbital parameters === === === === === === === === === === === === 
+\nomenclature[O]{$a$}{Semimajor axis \nomunit{$\left[ m \right]$}}%
+\nomenclature[O]{$e$}{Eccentricity \nomunit{$\left[ --- \right]$}}%
+\nomenclature[O]{$i$}{Inclination \nomunit{$\left[ rad \right], \left[ \deg \right]$}}%
+\nomenclature[O]{$\Omega$}{Right Ascension of Ascending Node \nomunit{$\left[ rad \right], \left[ \deg \right]$}}%
+\nomenclature[O]{$\omega$}{Argument of periapsis \nomunit{$\left[ rad \right], \left[ \deg \right]$}}%
+\nomenclature[O]{$M$}{Mean anomaly\nomunit{$\left[ rad \right]$}}%
+\nomenclature[O]{$E$}{Eccentric anomaly\nomunit{$\left[ rad \right]$}}%
+\nomenclature[O]{$\theta$}{True anomaly\nomunit{$\left[ rad \right], \left[ \deg \right]$}}%
+\nomenclature[O]{$u$}{True argument of latitude \nomunit{$\left[ rad \right], \left[ \deg \right]$}}%
+\nomenclature[O]{$\lambda$}{Mean argument of latitude \nomunit{$\left[ rad \right]$}}%
+\nomenclature[O]{$F$}{Eccentric argument of latitude \nomunit{$\left[ rad \right]$}}%
 
+ % === === === === === === === === === === === === Useful expressions === === === === === === === === === === === ===
+\nomenclature[U]{$\rho = 1 + e\cos\theta$}{\nomunit{$\left[ --- \right]$}}%
+\nomenclature[U]{$\eta = \sqrt{1-e^2}$}{\nomunit{$\left[ --- \right]$}}%
+\nomenclature[U]{$h$}{Orbit altitude or orbit momentum\nomunit{$\left[ m \right] \text{or} \left[ \dfrac{m^2}{s} \right]$}}%
+\nomenclature[U]{$\phi, \lambda$}{Geodetic latitude and longitude \nomunit{$\left[ rad \right], \left[ \deg \right]$}}%
 
+% === === === === === === === === === === === === Math === === === === === === === === === === === ===
+\nomenclature[M]{$\underline{u}, \underline{y}$}{State vector of a system of ODEs}%
+\nomenclature[M]{$\bm A$}{System's matrix of a system of ODEs}%
+\nomenclature[M]{$\underline{f}$}{Dynamics function of a system }%
+\nomenclature[M]{$ \mathbb{I}$}{Identity matrix}%
+\nomenclature[M]{$ V $}{Real or complex eigenvector matrix}%
+\nomenclature[M]{$ \Lambda $}{Real or complex eigenvalue matrix}%
+\nomenclature[M]{$ J $}{Jordan form}%
+\nomenclature[M]{$ \Phi (t, t_0) $}{State Transition Matrix}%
+\nomenclature[M]{$ \delta \bullet$}{Relative quantity (deputy's minus chief's value)}%
+\nomenclature[M]{$ \Delta \bullet$}{Variation or increment of a quantity}%
 
-
-
+% === === === === === === === === === === === === General === === === === === === === === === === === === 
+\nomenclature[G]{$\mu $}{Gravitational parameter of a celestial body \nomunit{$\left[ \dfrac{m^3}{s^2} \right]$}}%
+\nomenclature[G]{$a_e $}{Equatorial radius of a celestial body  \nomunit{$\left[ m \right]$}}%
+\nomenclature[G]{$\underline{F}_i$}{Force on body $i$  \nomunit{$\left[ N \right]$}}%
+\nomenclature[G]{$\underline{a}_i$}{Acceleration on body $i$  \nomunit{$\left[ \dfrac{m}{s^2} \right]$}}%
+\nomenclature[G]{$m_i$}{Mass off body $i$  \nomunit{$\left[ kg \right]$}}%

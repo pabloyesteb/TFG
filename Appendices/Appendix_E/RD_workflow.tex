@@ -8,17 +8,17 @@ every new ->/.style={shorten >=1pt}]
 \matrix[column sep=4mm] { 
 % === === === === F_lmp diagram === === === === 
 % ***** First row *****
-\node (SCtarget)	[terminal_gray] {SC = `Target'}; 						& \node (prop_target)[nonterminal_red] {\code{propRK4\_HiFi} (`Target')};	& 
-\node (yTECI)		[terminal_red] 	{$y_{T, ECI}$}; 						& 																			&
+\node (SCtarget)	[terminal_gray] {SC = `Chief'}; 						& \node (prop_target)[nonterminal_red] {\code{propRK4\_HiFi} (`Chief')};	& 
+\node (yTECI)		[terminal_red] 	{$y_{C, ECI}$}; 						& 																			&
 																			\\[2ex]	
 % ***** Second row *****
 																			& 																			& 
 																			& \node (ECI2LVLH)	[nonterminal_red] 	{$ ECI2LVLH $}; 					&
-\node (yLVLH)		[terminal_red] 	{$ y_{C, LVLH} (t)$}; 					\\
+\node (yLVLH)		[terminal_red] 	{$ y_{D, LVLH} (t)$}; 					\\
  																			
 % ***** Third row *****
-\node (SCchaser)	[terminal_gray] {SC = `Chaser'}; 						& \node (prop_chaser)[nonterminal_red] {\code{propRK4\_HiFi} (`Chaser')};	& 
-\node (yCECI)		[terminal_red] 	{$y_{C, ECI}$}; 						& 																			&
+\node (SCchaser)	[terminal_gray] {SC = `Deputy'}; 						& \node (prop_chaser)[nonterminal_red] {\code{propRK4\_HiFi} (`Deputy')};	& 
+\node (yCECI)		[terminal_red] 	{$y_{D, ECI}$}; 						& 																			&
 																			\\[2ex]	
 																			};
 % ----------- GRAPH ----------

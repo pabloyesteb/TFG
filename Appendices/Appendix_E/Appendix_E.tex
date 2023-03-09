@@ -1,20 +1,77 @@
 \chapter{Miscellaneous}
 %
-\label{app:App_Misc}
+\label{app:App_E}
 %
 \section{State Transition Matrices.}
 %
 %
 	\subsection{STM for circular, unperturbed reference orbit.}
 	%
+	\indent As analyzed in chapter \ref{chap:Chap_2}, out of the four surveyed HCW methods, only two of them provide a true closed-form expression for the STM. Furthermore, as these two are mere different approaches or decompositions of the same matrix, the simplest result will be here shown: that is, the Clohessy-Wiltshire solution STM:
+	%
+	\begin{equation}
+	\bm \Phi (t, t_0) = \left[
+	\begin{array}{cccccc}
+	1	& \ccg{0}					& 6(\omega\tau - \sin\omega\tau)	& \frac{4}{\omega} \sin\omega\tau - 3\tau	& \ccg{0}						& \frac{2}{\omega} (1 - \cos\omega\tau) \\
+	\rowcolor{Gray!20}
+	0	& \cos\omega\tau			& 0									& 0 										&\frac{1}{\omega}\sin\omega\tau & 0 \\
+	0	& \ccg{0}					& 4 - 3 \cos\omega\tau				& \frac{2}{\omega} (\cos\omega\tau - 1)		& \ccg{0}						& \frac{1}{\omega} \sin\omega\tau\\
+	0	& \ccg{0}					& 6\omega (1 - \cos\omega\tau)		& 4\cos\omega\tau - 3						& \ccg{0}						& 2\sin\omega\tau	\\
+	\rowcolor{Gray!20}
+	0	& -\omega \sin\omega\tau	& 0									& 0											& \cos\omega\tau				& 0\\
+	0	& \ccg{0}					& 3\omega\sin\omega\tau 			& -2 \sin\omega\tau							& \ccg{0}						& \cos\omega\tau
+	\end{array}\right]
+	\label{eqAppE:CW_STM}
+	\end{equation}
 	%
 	\subsection{STM for elliptic, unperturbed reference orbit.}
 	%
+	\indent The one and only implementation is the state-of-the-art Yamanaka-Ankersen STM, which is computed through:
+	%
+	\begin{equation}
+	\Phi_{\theta_0}^{\theta} = \Phi_{\theta} \left(\Phi_{\theta_0}\right)^{-1}
+	\end{equation}
+	\noindent where:
+	\begin{subequations}
+	\begin{alignat}{2}
+	&\label{eqCh3:phi_final} \Phi_{\theta} = 
+	\left[
+	\begin{array}{cccccc}
+	1 	&    0 			&  -c  (1 + \rho^{-1})	& s  (1 + \rho^{-1})	&    0			&                  3 \rho^2 J \\
+        0	&  \cos\theta 	&                   0	&                 0	&  \sin\theta 	&                              0\\
+        0 	&  	0			&                  s	&                 c	&    0			&              2 - 3  e  s  J\\
+        0	&    0			&              2  s		&         2  c - e	&    0			&       3  (1  - 2 e  s  J)\\
+        0	& -\sin\theta   &                0 		&                 0&  \cos\theta 	&                              0\\
+        0	&	0 			&             s^{\prime}	&            c^{\prime}&    0			& -3  e  (s^{\prime}  J + s/\rho^2)
+	\end{array}
+	\right] \\
+	&\nonumber \Phi_{\theta_0}^{-1} = \dfrac{1}{1 - e^2}\times \\ 
+	&\label{eqCh3:phi_inv_final}\left[
+	\begin{array}{cccccc}
+	1 - e^2	&    0 					&  3 e  (s/\rho)  (1 + \rho^{-1})		& -e s  (1 + \rho^{-1})	&    0						&                 2 - e c\\
+        0		&  (1 - e^2) \cos\theta	&         0							&                 0		&  -(1 - e^2) \sin\theta 	&              0\\
+        0 		&  	0					&     -3  (s/\rho)  (1 + e^2/\rho)	&   s  (1 + \rho^{-1})	&    0						&              c - 2e	\\
+        0		&    0					&          -3  (c/\rho + e)			&  c  (1 + \rho^{-1}) + e	&    0						&      -s 		\\
+        0		& (1 - e^2) \sin\theta 	&                0 					&                 0		&  (1 - e^2) \cos\theta 	&                              0\\
+        0		&	0 					&             3  \rho + e^2 - 1		&           -\rho^2 	&    0						& e s
+	\end{array}
+	\right]
+	\end{alignat}
+	\end{subequations}
+	%
+	\indent It shall be remarked that this matrices operates on the modified LVLH state vector, derived from the original LVLH state vector. If one wishes to have an expression for the STM in which a true LVLH state vector is fed and returned, a slight modification must be performed:
+	%
+	\begin{equation}
+	\Phi(t, t_0) =\left( T_{\theta}(\theta)\right)^{-1} \Phi_{\theta} \left(\Phi_{\theta_0}\right)^{-1} T_{\theta}(\theta_0)
+	\end{equation}
+	%
+	\noindent where $T_{\theta}(\theta)$ is the matrix that converts a regular LVLH state vector into the modified form.
 	%
 	\subsection{STM for elliptic, J2-perturbed orbit.}
 	%
+	\indent Outlined in section \ref{secCh5:GA_STM}, the Gim-Alfriend STM components is specified in \cite{GA_STM}, appendices A to E.
 	%
-\section{Variational equations.}
+\section{Variational equations.}\label{secAppE:Variational}
 %
 \indent The equations of motion of a spacecraft immersed in a potential field $V$ can be expressed, in an inertial reference frame, as:
 %
@@ -27,7 +84,7 @@
 \begin{equation}
 \begin{array}{lc}
 \left\{\begin{array}{lll}
-\dfrac{d}{dt} x_i = \dot{x}_i \\
+\dfrac{d}{dt} x_i = \dot{x}_i \\[1.2em]
 \dfrac{d}{dt} \dot{x_i}= \dfrac{\partial V}{\partial x_i} = a_i \\
 \end{array}\right. & i = 1, 2, 3
 \end{array}
@@ -38,7 +95,7 @@
 %
 \indent This is where the variational equations appear, as they are (by construction) said equations. There are two approaches, depending on whether it is desirable to work with perturbation potentials ($V$) or perturbation accelerations ($\underline{a}$), which are the so-called Lagrange Planetary Equations (LPEs) and the Gauss Variational Equations (GVEs) respectively.
 %
-	\subsection{Lagrange Planetary Equations.}
+	\subsection{Lagrange Planetary Equations.}\label{secAppE:LPE}
 	%
 	\indent The procedure followed herewith is derived from Kaula \cite{Kaula}. Firstly, the rates of change of position and velocity are assumed to be functions of the rates of change of the Keplerian OEs $ds_k/dt$, where $s_k$ represents any of $a, e, i, \Omega, \omega, M$. Equation \eqref{eqAppE:EqsMotion1} can be then reformulated as:
 	%
@@ -70,7 +127,7 @@
 	\noindent and the function $F$, which is equal to:
 	%
 	\[
-	F = V - T = V - \frac{1}{2 \dot{x}_i \dot{x}_i}
+	F = V - T = V - \frac{1}{2} \dot{x}_i \dot{x}_i
 	\]
 	%
 	\indent Solving for $ds_k/dt$ in \eqref{eqAppE:LPE_compact} leaves exactly what one was looking for: an initial value problem expressed in terms of the Keplerian OEs. Skipping the mathematical specifics of the development (detailed in \cite{Kaula}, eqs. 3.34-3.37), the final form of the equations is:
@@ -109,18 +166,55 @@
 	%
 	\indent As a side note, Wiesel \cite{Wiesel} provides yet another approach to obtain these equations in section 3.8.
 	%
-	\subsection{Gauss Variational Equations.}
+		\subsubsection{Delaunay elements from the LPEs.}\label{secAppE:Delaunay}
+		%
+		\indent The structure of equation \eqref{eqAppE:LPE_compact} as well as the symmetry of the Lagrangian brackets suggests that a simpler form of the LPEs may be reached, when using an adequate set of elements. In particular, consider a set of elements $L, G, H$ such that:
+		%
+		\begin{equation}
+		\begin{array}{ccc}
+		\left[M, L\right] = 1, 			& \left[M, G\right] = 0,		&  \left[M, H\right] = 0, \\
+		\left[\omega, L\right] = 0, 	& \left[\omega, G\right] = 1,	&  \left[\omega, H\right] = 0, \\		
+		\left[\Omega, L\right] = 0, 	& \left[\Omega, G\right] = 0,	&  \left[\Omega, H\right] = 1, 				
+		\end{array}
+		\label{eqAppE:Delaunay_1}
+		\end{equation}
+		%
+		\indent In order to derive the expressions for $L, G$ and $H$, it is necessary to apply the definition of the Lagrangian brackets and the chain rule. For the case of $H$, and considering the already known bracket $[\Omega, i]$:
+		%
+		\[
+		[\Omega, i] = [\Omega, L] \dfrac{\partial L}{\partial i} + [\Omega, G] \dfrac{\partial G}{\partial i} + [\Omega, H] \dfrac{\partial H}{\partial i} = [\Omega, H] \dfrac{\partial H}{\partial i} = \dfrac{\partial H}{\partial i}
+		\]
+		\[\Rightarrow \dfrac{\partial H}{\partial i} = [\Omega, i] = -na^2 \eta \sin i\]
+		\[\Rightarrow H = na^2\eta \cos i\]
+		
+		%
+		\indent As a check, the brackets $[\Omega, e]$ and $[\Omega, a]$ can be computed, while it is also possible to derive $H$ directly from them. Proceeding in an analog manner with $G$ and $L$ leads to:
+		%
+		\[G = na^2\eta, \qquad L = na^2\]
+		%
+		\indent The set $L, G, H, l = M, g = \omega, h = \Omega$ is the so-called Delaunay element set, matching the definition provided in appendix \ref{app:App_A}. To conclude, the LPEs for this set of elements become (by design):
+		%
+		\begin{equation}
+		\left\{ \begin{array}{ccc}
+		\dfrac{dL}{dt} = \dfrac{\partial F}{\partial l}\; , \qquad \dfrac{dl}{dt} = - \dfrac{\partial F}{\partial L} \\[1.2em]
+		\dfrac{dG}{dt} = \dfrac{\partial F}{\partial g}\; , \qquad \dfrac{dg}{dt} = - \dfrac{\partial F}{\partial G} \\[1.2em]
+		\dfrac{dH}{dt} = \dfrac{\partial F}{\partial h}\; , \qquad \dfrac{dh}{dt} = - \dfrac{\partial F}{\partial H}
+		\end{array}\right. 
+		\label{eqAppE:LPE_DOE}
+		\end{equation}
+		%
+	\subsection{Gauss Variational Equations.}\label{secAppE:GVE}
 	%
 	\indent A possible drawback or limitation of the LPEs is that it assumes the existence of a force potential whose functional form is known. Nonetheless, there are some cases in which either only the force is modelled or it does not come from a potential field, as it happens with aerodynamic drag. Gauss Variational Equations involve only the components of the perturbing acceleration, allowing to model a wider spectrum of forces. Its derivation is also mathematically dense, as it can be seen in Wiesel \cite{Wiesel}, section 3.3. It involves several ``happy thoughts'' to reach the following expression:
 	%
 	\begin{equation}
 	\left\{ \begin{array}{llll}
-	\frac{d a}{d t}=&\frac{2 e \sin \theta}{n \eta} a_{r}+\frac{2 a \eta}{n r} a_{\theta} \\
-	\frac{d e}{d t}=& \frac{\eta \sin \theta}{n a} a_{r}+\frac{\eta}{n a^{2} e}\left(\frac{a^{2}\eta^2}{r}-r\right) a_{\theta} \\
-	\frac{d i}{d t}=&\frac{r \cos (\omega+\theta)}{n a^{2} \eta} a_{N} \\
-	\frac{d \Omega}{d t}=&\frac{r \sin (\omega+\theta)}{n a^{2} \eta \sin i} a_{N} \\
-	\frac{d \omega}{d t}=& -\dfrac{\eta \cos\theta}{nae}a_r - \dfrac{r\cot i\sin(\omega + \theta)}{na^2 \eta} a_N + \dfrac{\eta}{nae} \left( 1 + \dfrac{1}{1 + e\cos\theta}\right) \sin \theta a_{\theta}\\
-	\frac{d M}{d t}=& n -\dfrac{1}{na} \left( \dfrac{2r}{a} - \dfrac{\eta^2 }{e}\cos\theta\right) a_r - \dfrac{\eta^2}{nae} \left( 1 + \dfrac{1}{1 + e\cos\theta}\right) \sin \theta a_{\theta}\\
+	\dfrac{d a}{d t}=&\dfrac{2 e \sin \theta}{n \eta} a_{r}+\dfrac{2 a \eta}{n r} a_{\theta} \\[1.2em]
+	\dfrac{d e}{d t}=& \dfrac{\eta \sin \theta}{n a} a_{r}+\dfrac{\eta}{n a^{2} e}\left(\dfrac{a^{2}\eta^2}{r}-r\right) a_{\theta} \\[1.2em]
+	\dfrac{d i}{d t}=&\dfrac{r \cos (\omega+\theta)}{n a^{2} \eta} a_{N} \\[1.2em]
+	\dfrac{d \Omega}{d t}=&\dfrac{r \sin (\omega+\theta)}{n a^{2} \eta \sin i} a_{N} \\[1.2em]
+	\dfrac{d \omega}{d t}=& -\dfrac{\eta \cos\theta}{nae}a_r - \dfrac{r\cot i\sin(\omega + \theta)}{na^2 \eta} a_N + \dfrac{\eta}{nae} \left( 1 + \dfrac{1}{1 + e\cos\theta}\right) \sin \theta a_{\theta}\\[1.2em]
+	\dfrac{d M}{d t}=& n -\dfrac{1}{na} \left( \dfrac{2r}{a} - \dfrac{\eta^2 }{e}\cos\theta\right) a_r - \dfrac{\eta^2}{nae} \left( 1 + \dfrac{1}{1 + e\cos\theta}\right) \sin \theta a_{\theta}
 	\end{array}\right.
 	\label{eqAppE:GVE_Wiesel}
 	\end{equation}
@@ -150,7 +244,7 @@
 		%
 		\begin{equation}
 		[P] \equiv \left\{ \begin{array}{ll}
-		E_{i + 1} = M + e \sin E_i \\
+		E_{i + 1} = M + e \sin E_i \\[1.2em]
 		E_0 = M
 		\end{array}\right.
 		\label{eqAppE:mean2ecc}
@@ -164,7 +258,7 @@
 		%
 		\begin{equation}
 		\left\{ \begin{array}{ll}
-		X = r\cos\theta = \dfrac{a\eta^2\cos\theta}{1 + e\cos\theta} = a (\cos E - e)\\
+		X = r\cos\theta = \dfrac{a\eta^2\cos\theta}{1 + e\cos\theta} = a (\cos E - e)\\[1.2em]
 		Y = r\sin\theta = \dfrac{a\eta^2\sin\theta}{1 + e\cos\theta} = b \sin E = a \eta \sin E
 		\end{array}\right.
 		\end{equation}
@@ -172,15 +266,15 @@
 		\indent These lead to a handy pair of equations for $\sin E$ and $\cos E$:
 		%
 		\begin{alignat}{4}[left = \empheqlbrace]
-		\label{eqAppE:cosE}\cos E = \dfrac{e + \cos\theta}{1 + e\cos\theta}\\
+		\label{eqAppE:cosE}\cos E = \dfrac{e + \cos\theta}{1 + e\cos\theta}\\[1.2em]
 		\label{eqAppE:sinE}\sin E = \dfrac{\eta \sin\theta}{1 + e\cos\theta}
 		\end{alignat}
 		%
-		\indent In the seeking of a more concise relation between $E$ and $\theta$, let us substitute them for their half angles, which after a little manipulation, leads to:
+		\indent In the seeking of a more concise relation between $E$ and $\theta$, they are substituted by their half angles, which after a little manipulation, leads to:
 		%
 		\begin{alignat}{4}[left = \empheqlbrace]
-		\label{eqAppE:cosE_V2} 2 \cos^2 E/2 = 1 + \cos E = \dfrac{(1 + e) (1 + \cos \theta)}{1 + e\cos\theta} = \dfrac{(1 + e) 2\cos^2 \theta/2 }{1 + e\cos\theta}\\
-		\label{eqAppE:sinE_V2}\sin E = 2 \sin E/2 \cos E/2 = \dfrac{\eta 2 \sin \theta/2 \cos \theta/2}{1 + e\cos\theta}
+		\label{eqAppE:cosE_V2} & 2 \cos^2 E/2 = 1 + \cos E = \dfrac{(1 + e) (1 + \cos \theta)}{1 + e\cos\theta} = \dfrac{(1 + e) 2\cos^2 \theta/2 }{1 + e\cos\theta}\\[1.2em]
+		\label{eqAppE:sinE_V2} & \sin E = 2 \sin E/2 \cos E/2 = \eta\dfrac{ 2 \sin \theta/2 \cos \theta/2}{1 + e\cos\theta}
 		\end{alignat}
 		%
 		\indent Dividing \eqref{eqAppE:sinE_V2} by \eqref{eqAppE:cosE_V2} and simplifying:
@@ -192,7 +286,7 @@
 		%
 		\indent The inverse transformation is again trivial, by just solving for $\tan \theta/2$.
 		%
-		\subsubsection{True to mean and viceversa.}
+		\subsubsection{True to mean and viceversa.}\label{secAppE:mean2true}
 		%
 		\indent As simple or absurd as it sounds, and although a closed form exists for the direct transformation (\ie $\theta \to M$), the simplest procedure is to just concatenate the transformations \eqref{eqAppE:true2ecc} and \eqref{eqAppE:Kepler_equation}.
 		
@@ -211,7 +305,7 @@
 	\noindent where $\rho = 1 + e\cos\theta$ as usual. The relation between the mean and eccentric rates is obtained by simply using the chain rule:
 	%
 	\begin{equation}
-	\dfrac{dM}{dt} = \dot{M} = n = \dfrac{dM}{dE}\dfrac{dE}{dt}\dfrac{\eta^2}{\rho} \dfrac{dE}{dt} \Rightarrow \dot{E} = \dfrac{\rho}{\eta^2} n
+	\dfrac{dM}{dt} = \dot{M} = n = \dfrac{dM}{dE}\dfrac{dE}{dt} = \dfrac{\eta^2}{\rho} \dfrac{dE}{dt} \Rightarrow \dot{E} = \dfrac{\rho}{\eta^2} n
 	\label{eqAppE:Edot}
 	\end{equation}
 	\item[\GMVred{B.}] \myul[GMVred]{Mean to true rate}: Differentiating \eqref{eqAppE:cosE} and rearranging terms, the sensitivity of the true anomaly with respect to the eccentric is obtained\cite{Schaub_Junkins}:
@@ -231,7 +325,61 @@
 	
 	\subsection{Relative anomalies.}
 	%
+	\indent Relative motion may be expressed through relative elements, hence relative anomalies. In order to convert them, one must keep in mind that the aforementioned transformations are defined for absolute values. That is, when converting relative anomalies, firstly the absolute values must be computed before they are transformed. For example, consider the transformation from relative eccentric anomaly to relative mean anomaly, assuming as inputs the relative value $\delta E$ and the absolute value of the chief $E_C$. The diagram shown in \ref{tikz:rel_anom_workflow} shows the process of this conversion.
 	%
-\section{Data sources.}
+	\input{Appendices/Appendix_E/rel_anom_workflow}
+	%
+\section{Kaula's functions.}
+%
+\indent The developments of Kaula's theory, in particular, equations \eqref{eq:F_lmp} and \eqref{eq:G_lpq_Kaula}, as well as its derivatives \eqref{eq:dF_lmp} and \eqref{eq:dG_lpq}, can be computed for a given set of indices $lmpq$. Tables \ref{table:F_lmp}, \ref{table:dF_lmp} and \ref{table:G} include these functions for $l = \left\{2, 3, 4\right\}$, $m = \left\{0, 1, 2, 3, 4\right\}$, $p = \left\{0, 1, 2, 3, 4\right\}$ and $q  = \left\{-4, -3, -2, -1, 0, 1, 2, 3, 4\right\}$.
+%
+\input{Appendices/Appendix_E/Tables/Table_F_lmp}
+\input{Appendices/Appendix_E/Tables/Table_dF_lmp}
+\input{Appendices/Appendix_E/Tables/Table_G}
+%
+
+\section{Series expansions for $\beta$ and $e/\beta$.}
+%
+\indent In order to match the convenient formulation from Kaula for $G_{lpq}$ results, the series expansions for $\beta = e/(1 + \eta)$ and $e/\beta$ are now provided, as they appear recurrently in the $P_{lpqk}$ and $G_{lpqk}$ functions. 
+%
+	\subsection{$\bm\beta$ series expansion.}\label{sec:Beta}
+	%
+	\indent Brouwer and Clemence \cite[][page 63]{Brouwer} show the series development of $\beta$ up to the seventh power ($\beta^7$) in terms of the eccentricity, retaining terms of up to seventh power ($e^7$). The results are:
+	%
+	\begin{subequations}
+	\label{eq:beta_exp}
+	\begin{alignat}{4}[left = \empheqlbrace]
+	& \beta = && \dfrac{1}{2} e + \dfrac{1}{8} e^3 + \dfrac{1}{16} e^5 + \dfrac{5}{128} e^7 + \mathcal{O}(e^9) \\
+	& \beta^2 = && \dfrac{1}{4} e^2 + \dfrac{1}{8} e^4 + \dfrac{5}{64} e^6 + \mathcal{O}(e^8) \\
+	& \beta^3 = && \dfrac{1}{8} e^3 + \dfrac{3}{32} e^5 + \dfrac{9}{128} e^7 + \mathcal{O}(e^9) \\
+	& \beta^4 = && \dfrac{1}{16} e^4 + \dfrac{1}{16} e^6 + \mathcal{O}(e^8) \\
+	& \beta^5 = &&  \dfrac{1}{32} e^5 + \dfrac{5}{128} e^7 + \mathcal{O}(e^9) \\
+	& \beta^6 = && \dfrac{1}{64} e^6  + \mathcal{O}(e^8) \\
+	& \beta^7 = && \dfrac{1}{128} e^7 + \mathcal{O}(e^9) 
+	\end{alignat}
+	\end{subequations}
+	%
+%	\clearpage
+	\subsection{$\bm e/ \bm \beta$ series expansion.}
+	%
+	\indent This series expansion is not explicitly mentioned, though it is necessary, as it is not directly derived from the $\beta$ expansion (at least in \textsc{Matlab}). Using \eqref{eq:beta_exp}, we arrive to the following result:
+	%
+	\begin{subequations}
+	\label{eq:e_over_beta_exp}
+	\begin{alignat}{4}[left = \empheqlbrace]
+	& \left(\dfrac{e}{\beta}\right)		&&  = 2 	- \dfrac{1}{2} e^2 - \dfrac{5}{16} e^4 + \mathcal{O}(e^6) \\
+	& \left(\dfrac{e}{\beta}\right)^2  	&& = 4 	- 2 e^2 - \dfrac{9}{8} e^4 + \mathcal{O}(e^6) \\
+	& \left(\dfrac{e}{\beta}\right)^3  	&& = 8 	- 6 e^2 - \dfrac{27}{4} e^4 + \mathcal{O}(e^6) \\
+	& \left(\dfrac{e}{\beta}\right)^4  	&& = 16 	- 16 e^2 - 8 e^4 + \mathcal{O}(e^6) \\
+	& \left(\dfrac{e}{\beta}\right)^5 	&& = 32 	- 40 e^2 - 25 e^4 + \mathcal{O}(e^6) \\
+	& \left(\dfrac{e}{\beta}\right)^6 	&& = 64 	+ \mathcal{O}(e^6) \\
+	& \left(\dfrac{e}{\beta}\right)^7  	&& = 128 	+ \mathcal{O}(e^6)
+	\end{alignat}
+	\end{subequations}
+	%
+%	\indent Note that terms of order greater than four will be neglected, coherently with Kaula's tables.
+	%
+%
+%\section{Data sources.}
 %
 %

@@ -1,0 +1,65 @@
+\begin{figure}[!htb]
+%\begin{changemargin}{-2.2cm}{-1cm}
+%\begin{adjustbox}{width=\textwidth}
+\begin{tikzpicture}[,>=stealth,thick, text=black,
+every new ->/.style={shorten >=1pt}]
+%\tikzstyle{every node}=[font=\small]
+% ---------- NODES ----------
+\matrix[column sep=4mm] { 
+% === === === === F_lmp diagram === === === === 
+% ***** First row *****
+\node (yD_0)[terminal_gray] {$\left.\underline{y}_D\right\rvert_{LVLH}(t_0)$};& \node (p12)		[point] 		{};										& 
+\node (p13)		[GMVred!70] 	{Conversion};								& \node (p14)		[point] 		{};										&
+\node (p15)		[point] 		{};											& \node (p16)		[point] 		{};										& 
+\node (p17)		[point] 		{};											& \node (p18)		[point] 		{};										& 
+\node (p19)		[GMVred!70] 	{Conversion};								& \node (p110)		[point] 		{};										&
+\node (yD)	[terminal_red] {$\left.\underline{y}_D\right\rvert_{LVLH}(t)$};	\\[2ex]
+% ***** Second row *****
+ 																			& \node (p22)		[point] 		{};										& 
+\node (p23)		[GMVred!70] 	{to mean};									& \node (p24)		[point] 		{};										&
+\node (p25)		[point] 		{};											& \node (p26)		[GMVred!70] 	{Propagation};							& 
+\node (p27)		[point] 		{};											& \node (p28)		[point] 		{};										& 
+\node (p29)		[GMVred!70] 	{to cartesian};								& \node (p210)		[point] 		{};										&
+ 																			\\[2ex]
+ 																			
+% ***** Third row *****
+\node (yC_0)[terminal_gray] {$\left.\underline{y}_C\right\rvert_{ECI}(t_0)$};& \node (p32)		[point] 		{};										& 
+\node (p33)		[GMVred!70] 	{elements};									& \node (p34)		[point] 		{};										&
+\node (p35)		[point] 		{};											& \node (p36)		[point] 		{};										& 
+\node (p37)		[point] 		{};											& \node (p38)		[point] 		{};										& 
+\node (p39)		[GMVred!70] 	{state};									& \node (p310)		[point] 		{};										&
+\node (yC)	[terminal_red] {$\left.\underline{y}_C\right\rvert_{ECI}(t)$};	\\[2ex]
+																			};
+
+
+% ----------- GRAPH ----------	
+%\node (Cart2mean_1)	[GMVred!70, above = 2ex of p23]		{Conversion};
+%\node (Cart2mean_2)	[GMVred!70, above = 0ex of p23]		{to mean};
+%\node (Cart2mean_3)	[GMVred!70, below = 2ex of p23]		{elements};
+%\node (Mean2cart_1)	[GMVred!70, above = 2ex of p29]		{Conversion};
+%\node (Mean2cart_2)	[GMVred!70, above = 0ex of p29]		{to cartesian};
+%\node (Mean2cart_3)	[GMVred!70, below = 2ex of p29]		{state};
+%\node (Cart2mean)	[GMVred!70, above = 0ex of p26]		{Propagation};
+%\node (aux_52)	[point, left= 2ex of p52]		{};
+%\node (aux_32)	[point, left= 2ex of p32]		{};
+\begin{pgfonlayer}{background}
+\draw	[GMVred!50, thick, fill = GMVred, opacity = 0.05] 	($(p12.north west) + (0ex, 5ex)$) rectangle ($(p34.south east) - (0ex, 5ex)$);
+\draw	[GMVred!50, thick, fill = GMVred, opacity = 0.05] 	($(p15.north west) + (0ex, 5ex)$) rectangle ($(p37.south east) - (0ex, 5ex)$);
+\draw	[GMVred!50, thick, fill = GMVred, opacity = 0.05] 	($(p18.north west) + (0ex, 5ex)$) rectangle ($(p310.south east) - (0ex, 5ex)$);
+\end{pgfonlayer}
+\graph [use existing nodes] {
+yD_0 				-> p12;
+p14 				-> p15;
+p17 				-> p18;
+p110 				-> yD;
+yC_0 				-> p32;
+p34 				-> p35;
+p37 				-> p38;
+p310 				-> [dotted] yC;
+};
+\end{tikzpicture}
+%\end{adjustbox}
+%\end{changemargin}
+\caption{Workflow of mean element propagation from and to cartesian states.}
+\label{tikz:Mean_prop_workflow}
+\end{figure}
