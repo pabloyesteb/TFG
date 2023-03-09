@@ -1,11 +1,44 @@
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {C.1}Introduction.}{\reset@font\mtcSfont 91}{section.C.1}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {C.2}Lagrangian formulation.}{\reset@font\mtcSfont 91}{section.C.2}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {C.2.1}Generalized coordinates \& energy of a dynamical system.}{\reset@font\mtcSSfont 91}{subsection.C.2.1}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {C.2.2}Lagrangian function.}{\reset@font\mtcSSfont 91}{subsection.C.2.2}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {C.2.3}Lagrange equations.}{\reset@font\mtcSSfont 92}{subsection.C.2.3}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {C.3}Hamiltonian formulation.}{\reset@font\mtcSfont 92}{section.C.3}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {C.3.1}Hamiltonian function.}{\reset@font\mtcSSfont 92}{subsection.C.3.1}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {C.3.2}Hamilton equations.}{\reset@font\mtcSSfont 92}{subsection.C.3.2}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {C.3.3}Canonical transformations.}{\reset@font\mtcSSfont 92}{subsection.C.3.3}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {C.3.4}Hamilton-Jacobi theory.}{\reset@font\mtcSSfont 94}{subsection.C.3.4}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {C.4}Application to the two-body problem.}{\reset@font\mtcSfont 95}{section.C.4}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {2.1}Introduction.}{\reset@font\mtcSfont 11}{section.2.1}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {2.2}Motion model: Hill equations.}{\reset@font\mtcSfont 11}{section.2.2}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {2.2.1}Equations of motion of a spacecraft.}{\reset@font\mtcSSfont 11}{subsection.2.2.1}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {2.2.2}Forces in the spacecraft motion problem.}{\reset@font\mtcSSfont 12}{subsection.2.2.2}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode \textcolor {GMVred}{{I.} }\myul [GMVred]{Gravitational forces}\\}{\reset@font\mtcPfont 12}{subsection.2.2.2}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode \textcolor {GMVred}{{II.} }\myul [GMVred]{Thrust}\\}{\reset@font\mtcPfont 13}{subsection.2.2.2}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode \textcolor {GMVred}{{III.} }\myul [GMVred]{Other forces}\\}{\reset@font\mtcPfont 13}{subsection.2.2.2}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {2.2.3}Two-body problem.}{\reset@font\mtcSSfont 13}{subsection.2.2.3}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {2.2.3.1}Perturbed two-body problem.}{\reset@font\mtcSSSfont 14}{subsubsection.2.2.3.1}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {2.2.4}Three-body problem.}{\reset@font\mtcSSfont 15}{subsection.2.2.4}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {2.2.4.1}Reduced three-body problem.}{\reset@font\mtcSSSfont 15}{subsubsection.2.2.4.1}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {2.2.5}Differential equations of proximity relative motion.}{\reset@font\mtcSSfont 15}{subsection.2.2.5}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {2.2.6}Hill equations.}{\reset@font\mtcSSfont 17}{subsection.2.2.6}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {2.3}Solutions of Hill equations.}{\reset@font\mtcSfont 18}{section.2.3}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {2.3.1}Direct numerical integration.}{\reset@font\mtcSSfont 19}{subsection.2.3.1}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {2.3.2}Clohessy-Wiltshire solution and STM.}{\reset@font\mtcSSfont 19}{subsection.2.3.2}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {2.3.2.1}Clohessy-Wiltshire STM.}{\reset@font\mtcSSSfont 20}{subsubsection.2.3.2.1}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {2.3.3}State transition matrix propagation.}{\reset@font\mtcSSfont 21}{subsection.2.3.3}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {2.3.4}Jordan canonical decomposition.}{\reset@font\mtcSSfont 22}{subsection.2.3.4}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {2.3.4.1}Jordan canonical forms of $\mbox {\boldmath {${A}$}}$.}{\reset@font\mtcSSSfont 22}{subsubsection.2.3.4.1}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode \textcolor {GMVred}{A.} \myul [GMVred]{Complex Jordan form}. \\}{\reset@font\mtcPfont 22}{subsubsection.2.3.4.1}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode \textcolor {GMVred}{B.} \myul [GMVred]{Real Jordan form.} \\}{\reset@font\mtcPfont 24}{AMS.47}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {2.3.4.2}Exponential of the Jordan matrix.}{\reset@font\mtcSSSfont 25}{subsubsection.2.3.4.2}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode \textcolor {GMVred}{III.} \myul [GMVred]{Final expression of the in-plane motion STM.} \\}{\reset@font\mtcPfont 27}{AMS.59}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode \textcolor {GMVred}{IV.} \myul [GMVred]{Out-of-plane motion STM.}\\}{\reset@font\mtcPfont 27}{AMS.62}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {2.3.5}Results: Comparison against High-Fidelity.}{\reset@font\mtcSSfont 28}{subsection.2.3.5}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {2.3.5.1}Scenario 1: V-Bar approach. }{\reset@font\mtcSSSfont 29}{subsubsection.2.3.5.1}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {2.3.5.2}Scenario 2: R-Bar approach. }{\reset@font\mtcSSSfont 31}{subsubsection.2.3.5.2}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {2.4}Orbit safety in near-circular orbits.}{\reset@font\mtcSfont 33}{section.2.4}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {2.4.1}Orbit safety concept.}{\reset@font\mtcSSfont 33}{subsection.2.4.1}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {2.4.2}Eccentricity-inclination vector separation strategy.}{\reset@font\mtcSSfont 34}{subsection.2.4.2}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {2.4.2.1}Eccentricity and inclination vectors.}{\reset@font\mtcSSSfont 34}{subsubsection.2.4.2.1}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {2.4.2.2}Linearized equations of relative motion in terms of $\delta \underline {e}$ and $\delta \underline {i}$.}{\reset@font\mtcSSSfont 34}{subsubsection.2.4.2.2}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode \textcolor {GMVred}{I.} \myul [GMVred]{Effect of relative eccentricity vector $\mbox {\boldmath {${\delta \underline {e}}$}}$}. \\}{\reset@font\mtcPfont 34}{subsubsection.2.4.2.2}}
+{\reset@font\mtcSPfont\mtc@string\contentsline{subparagraph}{\noexpand \leavevmode \textcolor {GMVred}{I.A.} \myul [GMVred]{Effect of $\mbox {\boldmath {${\delta \underline {e}}$}}$ in $\mbox {\boldmath {${\delta r_R}$}}$}. \\}{\reset@font\mtcSPfont 36}{AMS.81}}
+{\reset@font\mtcSPfont\mtc@string\contentsline{subparagraph}{\noexpand \leavevmode \textcolor {GMVred}{I.B.}\myul [GMVred]{ Effect of $\mbox {\boldmath {${\delta \underline {e}}$}}$ in $\mbox {\boldmath {${\delta r_T}$}}$.} \\}{\reset@font\mtcSPfont 36}{AMS.82}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode \textcolor {GMVred}{II.} \myul [GMVred]{Effect of relative inclination vector $\mbox {\boldmath {${\delta \underline {i}}$}}$.} \\}{\reset@font\mtcPfont 36}{AMS.83}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode \textcolor {GMVred}{III.} \myul [GMVred]{Effect of relative semimajor axis and mean argument of latitude $\mbox {\boldmath {${\delta a}$}}$, $\mbox {\boldmath {${\delta \lambda }$}}$.} \\}{\reset@font\mtcPfont 38}{figure.caption.87}}
+{\reset@font\mtcSPfont\mtc@string\contentsline{subparagraph}{\noexpand \leavevmode \textcolor {GMVred}{III.A.} \myul [GMVred]{Effect of $\mbox {\boldmath {${\delta \underline {a}, \tmspace +\thickmuskip {.2777em} \delta \lambda }$}}$ in $\mbox {\boldmath {${\delta r_R}$}}$.} \\}{\reset@font\mtcSPfont 38}{AMS.88}}
+{\reset@font\mtcSPfont\mtc@string\contentsline{subparagraph}{\noexpand \leavevmode \textcolor {GMVred}{III.B.}\myul [GMVred]{ Effect of $\mbox {\boldmath {${\delta \underline {a}, \tmspace +\thickmuskip {.2777em} \delta \lambda }$}}$ in $\mbox {\boldmath {${\delta r_T}$}}$.} \\}{\reset@font\mtcSPfont 38}{AMS.89}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode \textcolor {GMVred}{IV.} \myul [GMVred]{Final set of linearized equations.} \\}{\reset@font\mtcPfont 38}{AMS.90}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {2.4.2.3}Collision avoidance for bounded trajectories: $\mbox {\boldmath {${\delta }$}}{\underline {e}} / \mbox {\boldmath {${\delta }$}}{\underline {i}}$ separation.}{\reset@font\mtcSSSfont 39}{subsubsection.2.4.2.3}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode \textcolor {GMVred}{A.} \myul [GMVred]{Parallel configuration.} \\}{\reset@font\mtcPfont 40}{figure.caption.93}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode \textcolor {GMVred}{B.}\myul [GMVred]{Antiparallel configuration.} \\}{\reset@font\mtcPfont 40}{AMS.94}}

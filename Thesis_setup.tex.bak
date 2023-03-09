@@ -4,6 +4,7 @@
 \usepackage[latin1]{inputenc}
 \usepackage{graphicx}
 \usepackage{epic}
+\usepackage{xcolor}
 \usepackage{curves}
 \usepackage{multicol}
 \usepackage{longtable}
@@ -166,8 +167,10 @@ bottom color=GMVgarnet!20, font=\ttfamily, text height=1.5ex, text depth=.25ex}}
 rounded rectangle, minimum size=10mm, very thick, draw=white, top color=white,
 bottom color=white, font=\ttfamily, text height=1.5ex, text depth=.25ex}}
 %___________________________________________________________________________________________________________________
-\tikzset{sum/.style={
+\tikzset{sum_red/.style={
 circle, thick, draw=GMVred, fill=GMVred!20, minimum size=8mm, font=\ttfamily, text height=1.5ex, text depth=.25ex}}
+\tikzset{sum/.style={
+circle, thick, draw=Gray, fill=Gray!10, minimum size=8mm, font=\ttfamily, text height=1.5ex, text depth=.25ex}}
 %___________________________________________________________________________________________________________________
 \tikzstyle{decision} = [diamond, draw, fill=white,
     text width=4.5em, text centered, node distance=3cm, inner sep=0pt]
@@ -183,25 +186,62 @@ circle, thick, draw=GMVred, fill=GMVred!20, minimum size=8mm, font=\ttfamily, te
 %___________________________________________________________________________________________________________________    
 \newcommand{\lbsum}[1]{
 	\node(#1)[sum]{};
- 	\draw [draw=GMVred]	(#1.north east) -- (#1.south west)
+ 	\draw [draw=Gray]	(#1.north east) -- (#1.south west)
     		(#1.north west) -- (#1.south east);
-	\draw [draw=GMVred]	(#1.north east) -- (#1.south west)
+	\draw [draw=Gray]	(#1.north east) -- (#1.south west)
 			(#1.north west) -- (#1.south east);
  
-	\node[left=-1pt] at (#1.center){\textcolor{GMVred}{\scriptsize $\bm +$}};
-	\node[below]	 at (#1.center){\textcolor{GMVred}{\scriptsize $\bm + $}};
+	\node[left=-1pt] at (#1.center){\textcolor{Gray}{\scriptsize $\bm +$}};
+	\node[below]	 at (#1.center){\textcolor{Gray}{\scriptsize $\bm + $}};
 	}
-
-\newcommand{\pmtbsum}[1]{
+\newcommand{\pptlsum}[1]{
 	\node(#1)[sum]{};
- 	\draw 	[draw=GMVred](#1.north east) -- (#1.south west)
+ 	\draw 	[draw=Gray](#1.north east) -- (#1.south west)
     		(#1.north west) -- (#1.south east);
-	\draw 	[draw=GMVred](#1.north east) -- (#1.south west)
+	\draw 	[draw=Gray](#1.north east) -- (#1.south west)
 			(#1.north west) -- (#1.south east);
  
-	\node[above] at (#1.center){\textcolor{GMVred}{\scriptsize $\bm + $}};
-	\node[below] at (#1.center){\textcolor{GMVred}{\scriptsize $\bm -$}};}
-
+	\node[above] at (#1.center){\textcolor{Gray}{\scriptsize $\bm + $}};
+	\node[left=-1pt] at (#1.center){\textcolor{Gray}{\scriptsize \textbf{+}}};}
+	%
+\newcommand{\mptbsum}[1]{
+	\node(#1)[sum]{};
+ 	\draw 	[draw=Gray](#1.north east) -- (#1.south west)
+    		(#1.north west) -- (#1.south east);
+	\draw 	[draw=Gray](#1.north east) -- (#1.south west)
+			(#1.north west) -- (#1.south east);
+ 
+	\node[above] at (#1.center){\textcolor{Gray}{\scriptsize $\bm - $}};
+	\node[below] at (#1.center){\textcolor{Gray}{\scriptsize $\bm + $}};}
+	%
+	\newcommand{\pmtbsum}[1]{
+	\node(#1)[sum]{};
+ 	\draw 	[draw=Gray](#1.north east) -- (#1.south west)
+    		(#1.north west) -- (#1.south east);
+	\draw 	[draw=Gray](#1.north east) -- (#1.south west)
+			(#1.north west) -- (#1.south east);
+ 
+	\node[above] at (#1.center){\textcolor{Gray}{\scriptsize $\bm + $}};
+	\node[below] at (#1.center){\textcolor{Gray}{\scriptsize $\bm -$}};}
+\newcommand{\ppptlbsum}[1]{
+	\node(#1)[sum]{};
+ 	\draw 	[draw=Gray](#1.north east) -- (#1.south west)
+    		(#1.north west) -- (#1.south east);
+	\draw 	[draw=Gray](#1.north east) -- (#1.south west)
+			(#1.north west) -- (#1.south east);
+ 
+	\node[above] at (#1.center){\textcolor{Gray}{\scriptsize $\bm + $}};
+	\node[left=-1pt] at (#1.center){\textcolor{Gray}{\scriptsize \textbf{+}}};
+	\node[below] at (#1.center){\textcolor{Gray}{\scriptsize $\bm + $}};}
+\newcommand{\pmlbsum}[1]{
+	\node(#1)[sum]{};
+ 	\draw 	[draw=Gray](#1.north east) -- (#1.south west)
+    		(#1.north west) -- (#1.south east);
+	\draw 	[draw=Gray](#1.north east) -- (#1.south west)
+			(#1.north west) -- (#1.south east);
+ 
+	\node[left=-1pt] at (#1.center){\textcolor{Gray}{\scriptsize $\bm +$}};
+	\node[below] at (#1.center){\textcolor{Gray}{\scriptsize $\bm - $}};}
 %\tikzset{point/.style={circle,inner sep=0pt,minimum size=2pt,fill=red}}
 \tikzset{point/.style={circle,inner sep=0pt,minimum size=0pt, fill=black!50}}
 \tikzset{skip loop/.style={to path={-- ++(0,#1) -| (\tikztotarget)}}}
@@ -216,19 +256,32 @@ decoration={snake,amplitude=.8mm,segment length=2mm,post length=1mm}}
 \renewcommand{\nomentryend}{\hspace*{\fill}#1}}
 \makenomenclature
 \usepackage{ifthen}
-\renewcommand{\nomgroup}[1]{%
+\usepackage{etoolbox}
+%\renewcommand{\nomgroup}[1]{%
+%\item[\bfseries
+%    \ifthenelse{\equal{#1}{A}}{Acronyms}{%
+%    \ifthenelse{\equal{#1}{P}}{Perturbations}{%
+%    \ifthenelse{\equal{#1}{S}}{Subindices}{%
+%    \ifthenelse{\equal{#1}{O}}{Orbital elements}{%
+%    \ifthenelse{\equal{#1}{U}}{Useful expressions}{%
+%    \ifthenelse{\equal{#1}{G}}{General}{%
+%    \ifthenelse{\equal{#1}{M}}{Mathematics}{}}}}}}%
+%    ]}
+\renewcommand\nomgroup[1]{%
 \item[\bfseries
-    \ifthenelse{\equal{#1}{C}}{Physical constants}{%
-    \ifthenelse{\equal{#1}{N}}{Characteristic numbers}{%
-    \ifthenelse{\equal{#1}{T}}{Orbital elements}{%
-    \ifthenelse{\equal{#1}{G}}{Cartesian coordinates}{%
-    \ifthenelse{\equal{#1}{D}}{ }{%
-    \ifthenelse{\equal{#1}{S}}{Suffixes}{}}}}}}%
+    \ifstrequal{#1}{A}{Acronyms}{%
+    \ifstrequal{#1}{P}{Perturbations}{%
+    \ifstrequal{#1}{S}{Subindices}{%
+    \ifstrequal{#1}{O}{Orbital elements}{%
+    \ifstrequal{#1}{U}{Useful expressions}{%
+    \ifstrequal{#1}{G}{General}{%
+    \ifstrequal{#1}{M}{Mathematics}{}}}}}}}%
     ]}
-    
+\renewcommand{\nompreamble}{\scriptsize \begin{multicols}{2}}
+\renewcommand{\nompostamble}{\end{multicols}}    
     
 \setcounter{secnumdepth}{3}
-    
+
 %% === === === === === === SUBCAPTION  === === === === === ===
 \usepackage{subcaption}
 \captionsetup[subfigure]{subrefformat=simple,labelformat=simple}
@@ -244,6 +297,7 @@ decoration={snake,amplitude=.8mm,segment length=2mm,post length=1mm}}
 %\setlength{\unitlength}{0.18mm}
 
 \usepackage[super]{nth}
+\newcolumntype{a}{>{\columncolor{Gray!30}}c}
 %% === === === === === === NEW MATH COMMANDS  === === === === === ===
 \newcommand{\abs}[1]{\mbox{$\left\lvert #1 \right\rvert$}}
 \newcommand{\sign}{\text{sign}}

@@ -1,18 +1,23 @@
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {D.1}Software tool: \textsc {Matlab}}{\reset@font\mtcSfont 97}{section.D.1}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {D.2}Code repository.}{\reset@font\mtcSfont 97}{section.D.2}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {D.2.1}Purpose and approach.}{\reset@font\mtcSSfont 97}{subsection.D.2.1}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {D.2.2}General structure.}{\reset@font\mtcSSfont 98}{subsection.D.2.2}}
-{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {D.2.2.1}Relative dynamics models.}{\reset@font\mtcSSSfont 98}{subsubsection.D.2.2.1}}
-{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {D.2.2.2}Perturbation models.}{\reset@font\mtcSSSfont 98}{subsubsection.D.2.2.2}}
-{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {D.2.2.3}Input.}{\reset@font\mtcSSSfont 99}{subsubsection.D.2.2.3}}
-{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {D.2.2.4}Utilities.}{\reset@font\mtcSSSfont 99}{subsubsection.D.2.2.4}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {D.2.3}General orbit propagation workflow.}{\reset@font\mtcSSfont 100}{subsection.D.2.3}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode \leavevmode {\color {GMVred}I.} \myul [GMVred]{Parameter load and scenario preprocessing} \\}{\reset@font\mtcPfont 100}{subsection.D.2.3}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode \leavevmode {\color {GMVred}II.} \myul [GMVred]{Trajectory propagation} \\}{\reset@font\mtcPfont 101}{subsection.D.2.3}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode \leavevmode {\color {GMVred}III.} \myul [GMVred]{Graphical representation} \\}{\reset@font\mtcPfont 101}{subsection.D.2.3}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {D.2.4}High-Fidelity simulator.}{\reset@font\mtcSSfont 101}{subsection.D.2.4}}
-{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {D.2.4.1}Single orbit propagation.}{\reset@font\mtcSSSfont 101}{subsubsection.D.2.4.1}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Main function: \texttt {propRK4\_HiFi}. \\}{\reset@font\mtcPfont 101}{subsubsection.D.2.4.1}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Dynamics function: \texttt {SCDynamicsMatlab}.\\}{\reset@font\mtcPfont 102}{figure.caption.199}}
-{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {D.2.4.2}Relative dynamics propagation.}{\reset@font\mtcSSSfont 102}{subsubsection.D.2.4.2}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {D.2.5}\textsc {Matlab} Exchange libraries.}{\reset@font\mtcSSfont 102}{subsection.D.2.5}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {3.1}Introduction.}{\reset@font\mtcSfont 43}{section.3.1}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {3.2}Motion model and STM.}{\reset@font\mtcSfont 44}{section.3.2}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.2.1}Simplification of equations of motion: Yamanaka-Ankersen solution.}{\reset@font\mtcSSfont 44}{subsection.3.2.1}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Solution of the simplified set of equations. \\}{\reset@font\mtcPfont 45}{AMS.102}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.2.2}Yamanaka-Ankersen STM and integration constants.}{\reset@font\mtcSSfont 47}{subsection.3.2.2}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {3.2.2.1}In-plane motion.}{\reset@font\mtcSSSfont 48}{subsubsection.3.2.2.1}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {3.2.2.2}Out-of-plane motion.}{\reset@font\mtcSSSfont 48}{subsubsection.3.2.2.2}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {3.2.2.3}Full matrices.}{\reset@font\mtcSSSfont 49}{subsubsection.3.2.2.3}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {3.2.2.4}Pseudo-initial state vector.}{\reset@font\mtcSSSfont 49}{subsubsection.3.2.2.4}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {3.2.2.5}Solution scheme.}{\reset@font\mtcSSSfont 51}{subsubsection.3.2.2.5}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.2.3}Results: Comparison with HCW and Hi-Fi propagation.}{\reset@font\mtcSSfont 51}{subsection.3.2.3}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {3.2.3.1}Scenario 1: $\mbox {\boldmath {${e = 0.1}$}}$.}{\reset@font\mtcSSSfont 52}{subsubsection.3.2.3.1}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {3.2.3.2}Scenario 2: $\mbox {\boldmath {${e = 0.7}$}}$.}{\reset@font\mtcSSSfont 54}{subsubsection.3.2.3.2}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {3.3}Orbit safety in eccentric, unperturbed orbits.}{\reset@font\mtcSfont 56}{section.3.3}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.3.1}Relative motion description in TAN frame.}{\reset@font\mtcSSfont 56}{subsection.3.3.1}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode \textcolor {GMVred}{I.} \myul [GMVred]{Parameter reformulation.} \\}{\reset@font\mtcPfont 57}{table.caption.125}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode \textcolor {GMVred}{II.} \myul [GMVred]{Radial and cross-track coordinates.}\\}{\reset@font\mtcPfont 58}{AMS.129}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.3.2}General trajectories and safe orbits.}{\reset@font\mtcSSfont 58}{subsection.3.3.2}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {3.3.2.1}Orbit families.}{\reset@font\mtcSSSfont 58}{subsubsection.3.3.2.1}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {3.3.2.2}Eccentricity/inclination vector separation in eccentric orbits.}{\reset@font\mtcSSSfont 59}{subsubsection.3.3.2.2}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode \textcolor {GMVred}{I.} \myul [GMVred]{Scenario definition.}\\}{\reset@font\mtcPfont 59}{AMS.133}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode \textcolor {GMVred}{II. A.} \myul [GMVred]{Bounded trajectory case ($\mbox {\boldmath {${C_1 = 0}$}}$).} \\}{\reset@font\mtcPfont 60}{table.caption.134}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode \textcolor {GMVred}{II. B.} \myul [GMVred]{Unbounded trajectory case ($\mbox {\boldmath {${C_1 \neq 0}$}}$).} \\}{\reset@font\mtcPfont 61}{figure.caption.137}}

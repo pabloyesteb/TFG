@@ -1,34 +1,53 @@
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {A.1}Introducci\'on.}{\reset@font\mtcSfont 175}{section.Alph1.1}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {A.2}Conceptos b\'asicos.}{\reset@font\mtcSfont 176}{section.Alph1.2}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode \indent A. Consistencia. \vspace \medskipamount \\}{\reset@font\mtcPfont 176}{section.Alph1.2}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode \indent B. Estabilidad. \vspace \medskipamount \\}{\reset@font\mtcPfont 176}{section.Alph1.2}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode \indent C. Convergencia. \vspace \medskipamount \\}{\reset@font\mtcPfont 177}{section.Alph1.2}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {A.2.1}Teorema de equivalencia de Lax.}{\reset@font\mtcSSfont 177}{subsection.Alph1.2.1}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {A.3}Consistencia de esquemas num\'ericos.}{\reset@font\mtcSfont 178}{section.Alph1.3}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {A.3.1}Metodolog\IeC {\'\i }a b\'asica.}{\reset@font\mtcSSfont 178}{subsection.Alph1.3.1}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {A.3.2}Interpretaci\'on de la condici\'on de consistencia.}{\reset@font\mtcSSfont 180}{subsection.Alph1.3.2}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {A.4}Estabilidad de esquemas num\'ericos. M\'etodo de Von Neumann.}{\reset@font\mtcSfont 181}{section.Alph1.4}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {A.4.1}Bases del m\'etodo.}{\reset@font\mtcSSfont 182}{subsection.Alph1.4.1}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {A.4.2}Condici\'on de estabilidad de Von Neumann.}{\reset@font\mtcSSfont 184}{subsection.Alph1.4.2}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {A.4.3}Metodolog\IeC {\'\i }a de Von Neumann. Aplicaci\'on a la ecuaci\'on de la advecci\'on.}{\reset@font\mtcSSfont 184}{subsection.Alph1.4.3}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode \indent A. Diferencias finitas centradas de segundo orden en el espacio y esquema expl\IeC {\'\i }cito de primer orden en el tiempo. \vspace \medskipamount \\}{\reset@font\mtcPfont 185}{subsection.Alph1.4.3}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode \indent B. Diferencias finitas centradas de segundo orden en el espacio y esquema impl\IeC {\'\i }cito de primer orden en el tiempo. \vspace \medskipamount \\}{\reset@font\mtcPfont 187}{figure.caption.105}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode \indent C. Esquema \textit {FOU} expl\IeC {\'\i }cito (\textit {first order upwind}) \vspace \medskipamount \\}{\reset@font\mtcPfont 187}{figure.caption.106}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode \indent D. Esquema \textit {FOU} impl\IeC {\'\i }cito \vspace \medskipamount \\}{\reset@font\mtcPfont 188}{figure.caption.107}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode \indent E. Esquema Runge-Kutta de 2 etapas. \vspace \medskipamount \\}{\reset@font\mtcPfont 189}{figure.caption.108}}
-{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {A.4.3.1}Comentarios sobre la condici\'on del CFL.}{\reset@font\mtcSSSfont 191}{subsubsection.Alph1.4.3.1}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {A.5}An\'alisis espectral de errores num\'ericos.}{\reset@font\mtcSfont 193}{section.Alph1.5}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {A.5.1}Manipulaci\'on de las soluciones exacta y num\'erica.}{\reset@font\mtcSSfont 193}{subsection.Alph1.5.1}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode \indent Soluci\'on anal\IeC {\'\i }tica. \vspace \medskipamount \\}{\reset@font\mtcPfont 193}{subsection.Alph1.5.1}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode \indent Soluci\'on num\'erica. \vspace \medskipamount \\}{\reset@font\mtcPfont 194}{subsection.Alph1.5.1}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode \indent Modificaciones finales. \\}{\reset@font\mtcPfont 195}{equation.Alph1.5.13}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {A.5.2}Errores de difusi\'on y de dispersi\'on.}{\reset@font\mtcSSfont 195}{subsection.Alph1.5.2}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {A.5.3}Metodolog\IeC {\'\i }a de an\'alisis.}{\reset@font\mtcSSfont 196}{subsection.Alph1.5.3}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {A.5.4}An\'alisis de errores en la ecuaci\'on de la advecci\'on.}{\reset@font\mtcSSfont 196}{subsection.Alph1.5.4}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode \indent Comentarios.\\}{\reset@font\mtcPfont 197}{subsection.Alph1.5.4}}
-{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {A.5.4.1}Errores de dispersi\'on y difusi\'on de distintos esquemas.}{\reset@font\mtcSSSfont 197}{subsubsection.Alph1.5.4.1}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode \indent A. Esquema \textit {FOU}. \vspace \medskipamount \\}{\reset@font\mtcPfont 197}{subsubsection.Alph1.5.4.1}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode \indent B. Esquema Runge-Kutta de 2 pasos. \vspace \medskipamount \\}{\reset@font\mtcPfont 199}{figure.caption.111}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {A.5.5}Resultados y discusi\'on.}{\reset@font\mtcSSfont 200}{subsection.Alph1.5.5}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {A.5.6}Esquema \textit {FOU} (M\'etodo de Euler).}{\reset@font\mtcSSfont 201}{subsection.Alph1.5.6}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {A.5.7}Esquema Runge-Kutta de 2 pasos.}{\reset@font\mtcSSfont 201}{subsection.Alph1.5.7}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {B.1}Introduction.}{\reset@font\mtcSfont 145}{section.B.1}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {B.1.1}Inertial and rotating reference frames.}{\reset@font\mtcSSfont 145}{subsection.B.1.1}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {B.1.2}Absolute and relative frames.}{\reset@font\mtcSSfont 145}{subsection.B.1.2}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {B.2}Transformations between reference systems.}{\reset@font\mtcSfont 145}{section.B.2}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {B.2.1}Direct analytical differentiation.}{\reset@font\mtcSSfont 147}{subsection.B.2.1}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {B.2.2}Classical motion composition.}{\reset@font\mtcSSfont 148}{subsection.B.2.2}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {B.3}Absolute reference systems.}{\reset@font\mtcSfont 150}{section.B.3}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {B.3.1}Earth-Centered-Inertial reference system (ECI).}{\reset@font\mtcSSfont 150}{subsection.B.3.1}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {B.3.2}Earth-Centered, Earth-Fixed reference system (ECEF).}{\reset@font\mtcSSfont 151}{subsection.B.3.2}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {B.3.2.1}Conversion from ECI to ECEF.}{\reset@font\mtcSSSfont 151}{subsubsection.B.3.2.1}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Decomposition of the conversion. \\}{\reset@font\mtcPfont 151}{figure.caption.319}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode \textcolor {GMVred}{I.} \myul [GMVred]{Involved intermediate frames \& rotations.}}{\reset@font\mtcPfont 152}{figure.caption.319}}
+{\reset@font\mtcSPfont\mtc@string\contentsline{subparagraph}{\noexpand \leavevmode \textcolor {GMVred}{I.A.} \myul [GMVred]{ECI(J2000) to Mean of Date. }\\}{\reset@font\mtcSPfont 152}{figure.caption.319}}
+{\reset@font\mtcSPfont\mtc@string\contentsline{subparagraph}{\noexpand \leavevmode \textcolor {GMVred}{I.B.} \myul [GMVred]{Mean of Date to True of Date.}\\}{\reset@font\mtcSPfont 153}{figure.caption.321}}
+{\reset@font\mtcSPfont\mtc@string\contentsline{subparagraph}{\noexpand \leavevmode \textcolor {GMVred}{I.C.}\myul [GMVred]{True of Date to Pseudo-Body-Fixed.}\\}{\reset@font\mtcSPfont 154}{AMS.322}}
+{\reset@font\mtcSPfont\mtc@string\contentsline{subparagraph}{\noexpand \leavevmode \textcolor {GMVred}{I.D.}\myul [GMVred]{Pseudo-Body-Fixed to Body-Fixed (ECEF).}\\}{\reset@font\mtcSPfont 154}{AMS.323}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode \textcolor {GMVred}{II.} \myul [GMVred]{Full rotation matrix $\mbox {\boldmath {${R_{ECI\rightarrow ECEF}}$}}$. }\\}{\reset@font\mtcPfont 154}{AMS.324}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {B.3.3}Perifocal (PQW) reference frame.}{\reset@font\mtcSSfont 155}{subsection.B.3.3}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {B.3.3.1}Definition.}{\reset@font\mtcSSSfont 155}{subsubsection.B.3.3.1}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {B.3.3.2}State vector transformation.}{\reset@font\mtcSSSfont 155}{subsubsection.B.3.3.2}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode \textcolor {GMVred}{I.} \myul [GMVred]{Rotation matrix from \& to ECI.} \\}{\reset@font\mtcPfont 155}{subsubsection.B.3.3.2}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode \textcolor {GMVred}{II.} \myul [GMVred]{Angular velocity. }\\}{\reset@font\mtcPfont 156}{subsubsection.B.3.3.2}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode \textcolor {GMVred}{III.}\myul [GMVred]{Transformation matrices $\mbox {\boldmath {${T_{PQW\rightarrow ECI}}$}}$, $\mbox {\boldmath {${T_{ECI\rightarrow PQW}}$}}$. }\\}{\reset@font\mtcPfont 157}{subsubsection.B.3.3.2}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {B.4}Relative reference systems.}{\reset@font\mtcSfont 158}{section.B.4}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {B.4.1}RTN reference frame.}{\reset@font\mtcSSfont 158}{subsection.B.4.1}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {B.4.1.1}Definition.}{\reset@font\mtcSSSfont 158}{subsubsection.B.4.1.1}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {B.4.1.2}State vector transformation.}{\reset@font\mtcSSSfont 158}{subsubsection.B.4.1.2}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode \textcolor {GMVred}{I.}\myul [GMVred]{Rotation matrix from ECI. }\\}{\reset@font\mtcPfont 158}{subsubsection.B.4.1.2}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode \textcolor {GMVred}{II.} \myul [GMVred]{Angular velocity. }\\}{\reset@font\mtcPfont 159}{subsubsection.B.4.1.2}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode \textcolor {GMVred}{III.}\myul [GMVred]{Transformation matrices $\mbox {\boldmath {${T_{RTN\rightarrow ECI}}$}}$, $\mbox {\boldmath {${T_{ECI\rightarrow RTN}}$}}$.} \\}{\reset@font\mtcPfont 159}{subsubsection.B.4.1.2}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {B.4.2}LVLH reference frame.}{\reset@font\mtcSSfont 160}{subsection.B.4.2}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {B.4.2.1}Definition.}{\reset@font\mtcSSSfont 160}{subsubsection.B.4.2.1}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {B.4.2.2}State vector transformation.}{\reset@font\mtcSSSfont 160}{subsubsection.B.4.2.2}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode \textcolor {GMVred}{A)} Using reference orbit's Keplerian OEs. \\}{\reset@font\mtcPfont 160}{subsubsection.B.4.2.2}}
+{\reset@font\mtcSPfont\mtc@string\contentsline{subparagraph}{\noexpand \leavevmode \textcolor {GMVred}{I.} \myul [GMVred]{Rotation matrix from ECI.} \\}{\reset@font\mtcSPfont 160}{subsubsection.B.4.2.2}}
+{\reset@font\mtcSPfont\mtc@string\contentsline{subparagraph}{\noexpand \leavevmode \textcolor {GMVred}{II.} \myul [GMVred]{Angular velocity. }\\}{\reset@font\mtcSPfont 160}{subsubsection.B.4.2.2}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode \textcolor {GMVred}{B)} Using reference ECI state vector. \\}{\reset@font\mtcPfont 161}{subsubsection.B.4.2.2}}
+{\reset@font\mtcSPfont\mtc@string\contentsline{subparagraph}{\noexpand \leavevmode \textcolor {GMVred}{I.} \myul [GMVred]{Rotation matrix from ECI. }\\}{\reset@font\mtcSPfont 161}{AMS.328}}
+{\reset@font\mtcSPfont\mtc@string\contentsline{subparagraph}{\noexpand \leavevmode \textcolor {GMVred}{II.} \myul [GMVred]{Rotation matrix derivative. }\\}{\reset@font\mtcSPfont 161}{AMS.328}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {B.4.3}TAN reference frame.}{\reset@font\mtcSSfont 162}{subsection.B.4.3}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {B.4.3.1}Definition.}{\reset@font\mtcSSSfont 163}{subsubsection.B.4.3.1}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {B.4.3.2}State vector transformation.}{\reset@font\mtcSSSfont 163}{subsubsection.B.4.3.2}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode \textcolor {GMVred}{I.} \myul [GMVred]{Rotation matrix from LVLH. }\\}{\reset@font\mtcPfont 163}{subsubsection.B.4.3.2}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode \textcolor {GMVred}{II.} \myul [GMVred]{Angular velocity.} \\}{\reset@font\mtcPfont 163}{subsubsection.B.4.3.2}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {B.5}Conversions from OEs to cartesian coordinates.}{\reset@font\mtcSfont 164}{section.B.5}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {B.5.1}Keplerian OEs to ECI and vice versa.}{\reset@font\mtcSSfont 164}{subsection.B.5.1}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {B.5.1.1}KOE to ECI transformation.}{\reset@font\mtcSSSfont 164}{subsubsection.B.5.1.1}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {B.5.1.2}ECI to KOE transformation.}{\reset@font\mtcSSSfont 165}{subsubsection.B.5.1.2}}
+{\reset@font\mtcSPfont\mtc@string\contentsline{subparagraph}{\noexpand \leavevmode \textcolor {GMVred}{Case A)} Non-singular eccentricity or inclination.\\}{\reset@font\mtcSPfont 165}{subsubsection.B.5.1.2}}
+{\reset@font\mtcSPfont\mtc@string\contentsline{subparagraph}{\noexpand \leavevmode \textcolor {GMVred}{Case B)} Null inclination, non-singular eccentricity. \\}{\reset@font\mtcSPfont 166}{subsubsection.B.5.1.2}}
+{\reset@font\mtcSPfont\mtc@string\contentsline{subparagraph}{\noexpand \leavevmode \textcolor {GMVred}{Case C)} Null eccentricity, non-singular inclination. \\}{\reset@font\mtcSPfont 166}{subsubsection.B.5.1.2}}
+{\reset@font\mtcSPfont\mtc@string\contentsline{subparagraph}{\noexpand \leavevmode \textcolor {GMVred}{Case D)} Null eccentricity and inclination. \\}{\reset@font\mtcSPfont 166}{subsubsection.B.5.1.2}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {B.5.2}Relative Keplerian OEs to RTN.}{\reset@font\mtcSSfont 166}{subsection.B.5.2}}

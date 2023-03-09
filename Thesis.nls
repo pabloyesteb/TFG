@@ -1,96 +1,79 @@
 
 \begin{thenomenclature} 
-\nomgroup{C}
-  \item [{$\gamma$}]\begingroup Coeficiente de dilatación adiabática de un gas \nomunit{[---]}\nomeqref {3.0}\nompageref{50}
-  \item [{$T_C$}]\begingroup Temperatura del punto triple \nomunit{$[K]$}\nomeqref {3.0}\nompageref{50}
-\nomgroup{D}
-  \item [{$\bm \Lambda$}]\begingroup Matriz de autovalores de un sistema de ecuaciones diferenciales\nomeqref {3.0}\nompageref{50}
-  \item [{$\bm \lambda_i$}]\begingroup Autovalor \textit{i}-ésimo de la matriz del sistema\nomeqref {3.0}\nompageref{50}
-  \item [{$\bm A$}]\begingroup Matriz del sistema de una ecuación diferencial\nomeqref {3.0}\nompageref{50}
-  \item [{$\bm F(\bm U)$}]\begingroup Vector de flujos de una ecuación diferencial\nomeqref {3.0}\nompageref{50}
-  \item [{$\bm I$}]\begingroup Matriz identidad\nomeqref {3.0}\nompageref{50}
-  \item [{$\bm K^{(i)}$}]\begingroup Autovector \textit{i}-ésimo de la matriz del sistema\nomeqref {3.0}\nompageref{50}
-  \item [{$\bm n$}]\begingroup Vector normal exterior a una superficie\nomeqref {3.0}\nompageref{50}
-  \item [{$\bm R$}]\begingroup Vector de términos fuente de una ecuación diferencial\nomeqref {3.0}\nompageref{50}
-  \item [{$\bm U$}]\begingroup Vector de variables dependientes de un sistema de ecuaciones diferenciales\nomeqref {3.0}\nompageref{50}
-  \item [{$\bm U$}]\begingroup Vector de variables dependientes de una ecuación diferencial\nomeqref {3.0}\nompageref{50}
-  \item [{$\bm W$}]\begingroup Vector de variables dependientes canónicas de un sistema de ecuaciones diferenciales\nomeqref {3.0}\nompageref{50}
-  \item [{$\mathbb{I}$}]\begingroup Unidad imaginaria\nomeqref {3.0}\nompageref{50}
-  \item [{$\mathcal{L}(\bm U)$}]\begingroup Operador diferencial espacial de una ecuación diferencial en derivadas parciales\nomeqref {3.0}\nompageref{50}
-  \item [{$\Omega$}]\begingroup Volumen geométrico\nomeqref {3.0}\nompageref{50}
-  \item [{$\partial \Omega$}]\begingroup Frontera del volumen $\Omega$\nomeqref {3.0}\nompageref{50}
-  \item [{$\phi$}]\begingroup Superficie característica de una ecuación diferencial en derivadas parciales\nomeqref {3.0}\nompageref{50}
-  \item [{$\Sigma$}]\begingroup Superficie geométrica\nomeqref {3.0}\nompageref{50}
-  \item [{$d\gamma, \: d\sigma, \: d\omega$}]\begingroup Diferenciales de arco, superficie y volumen\nomeqref {3.0}\nompageref{50}
-  \item [{$s$}]\begingroup Parámetro de longitud de arco\nomeqref {3.0}\nompageref{50}
+\nomgroup{A}
+  \item [{BF}]\begingroup Body-Fixed frame\nomeqref {0}\nompageref{xiv}
+  \item [{CR3BP}]\begingroup Circular Restricted Three Body Problem\nomeqref {0}\nompageref{xiv}
+  \item [{CW}]\begingroup Clohessy-Wiltshire\nomeqref {0}\nompageref{xiv}
+  \item [{ECEF}]\begingroup Earth-Centered Earth-Fixed frame\nomeqref {0}\nompageref{xiv}
+  \item [{ECI}]\begingroup Earth-Centered Inertial frame \nomeqref {0}\nompageref{xiv}
+  \item [{GA}]\begingroup Gim-Alfriend\nomeqref {0}\nompageref{xiv}
+  \item [{HCW}]\begingroup Hill/Clohessy-Wiltshire\nomeqref {0}\nompageref{xiv}
+  \item [{Hi-Fi}]\begingroup High-Fidelity\nomeqref {0}\nompageref{xiv}
+  \item [{ICs}]\begingroup Initial Conditions\nomeqref {0}\nompageref{xiv}
+  \item [{IP}]\begingroup In-plane\nomeqref {0}\nompageref{xiv}
+  \item [{IVP}]\begingroup Initial Value Problem\nomeqref {0}\nompageref{xiv}
+  \item [{KOE}]\begingroup Keplerian OEs vector\nomeqref {0}\nompageref{xiv}
+  \item [{LEO}]\begingroup Low Earth Orbit\nomeqref {0}\nompageref{xiv}
+  \item [{LVLH}]\begingroup Local-Vertical, Local-Horizontal frame\nomeqref {0}\nompageref{xiv}
+  \item [{MOD}]\begingroup Mean-of-Date frame\nomeqref {0}\nompageref{xiv}
+  \item [{NSG}]\begingroup Non-spherical gravity\nomeqref {0}\nompageref{xiv}
+  \item [{ODE}]\begingroup Ordinary Differential Equation\nomeqref {0}\nompageref{xiv}
+  \item [{OEs}]\begingroup Orbital Elements\nomeqref {0}\nompageref{xiv}
+  \item [{OOP}]\begingroup Out-of-plane\nomeqref {0}\nompageref{xiv}
+  \item [{PBF}]\begingroup Pseudo-Body-Fixed frame\nomeqref {0}\nompageref{xiv}
+  \item [{RTN}]\begingroup Radial-Transverse-Normal frame\nomeqref {0}\nompageref{xiv}
+  \item [{SRP}]\begingroup Solar Radiation Pressure\nomeqref {0}\nompageref{xiv}
+  \item [{STM}]\begingroup State Transition Matrix\nomeqref {0}\nompageref{xiv}
+  \item [{TOD}]\begingroup True-of-Date frame\nomeqref {0}\nompageref{xiv}
+  \item [{YA}]\begingroup Yamanaka-Ankersen\nomeqref {0}\nompageref{xiv}
 \nomgroup{G}
-  \item [{$\bar{u}_i^n$}]\begingroup Solución exacta de un esquema numérico\nomeqref {3.0}\nompageref{50}
-  \item [{$\bm F_{i + 1/2}$}]\begingroup Flujos numéricos en el extremo superior del volumen finito \textit{i}-ésimo\nomeqref {3.0}\nompageref{50}
-  \item [{$\bm Q$}]\begingroup Vector de parámetros del método de Roe\nomeqref {3.0}\nompageref{50}
-  \item [{$\bm U_{i+1/2}$}]\begingroup Solución computada en el extremo superior del volumen finito \textit{i}-ésimo\nomeqref {3.0}\nompageref{50}
-  \item [{$\Delta x, \: \Delta t$}]\begingroup Pasos espacial y temporal\nomeqref {3.0}\nompageref{50}
-  \item [{$\epsilon_T$}]\begingroup Error de truncamiento de un esquema numérico\nomeqref {3.0}\nompageref{50}
-  \item [{$\lambda_j$}]\begingroup Longitud de onda del armónico \textit{j}-ésimo\nomeqref {3.0}\nompageref{50}
-  \item [{$\omega $}]\begingroup Relación de dispersión numérica\nomeqref {3.0}\nompageref{50}
-  \item [{$\Omega_i$}]\begingroup Volumen de control \textit{i}-ésimo\nomeqref {3.0}\nompageref{50}
-  \item [{$\phi_j$}]\begingroup Fase del armónico \textit{j}-ésimo\nomeqref {3.0}\nompageref{50}
-  \item [{$\sigma$}]\begingroup Número CFL\nomeqref {3.0}\nompageref{50}
-  \item [{$\tilde{\bm A}$}]\begingroup Matriz promediada del sistema\nomeqref {3.0}\nompageref{50}
-  \item [{$\tilde{\lambda}_i$}]\begingroup Autovalor \textit{i}-ésimo de la matriz promediada del sistema\nomeqref {3.0}\nompageref{50}
-  \item [{$\tilde{\omega} $}]\begingroup Relación de dispersión\nomeqref {3.0}\nompageref{50}
-  \item [{$\tilde{K}^{(i)}$}]\begingroup Autovector \textit{i}-ésimo de la matriz promediada del sistema\nomeqref {3.0}\nompageref{50}
-  \item [{$\tilde{u}_i^n$}]\begingroup Solución exacta de un modelo matemático\nomeqref {3.0}\nompageref{50}
-  \item [{$G_j$}]\begingroup Factor de amplificación o ganancia del armónico \textit{j}-ésimo \nomeqref {3.0}\nompageref{50}
-  \item [{$I_{i}$}]\begingroup Centroide del volumen finito \textit{i}-ésimo\nomeqref {3.0}\nompageref{50}
-  \item [{$k_j$}]\begingroup Número de onda del armónico \textit{j}-ésimo\nomeqref {3.0}\nompageref{50}
-  \item [{$N(\bullet)$}]\begingroup Esquema numérico\nomeqref {3.0}\nompageref{50}
-  \item [{$S$}]\begingroup Velocidad de propagación de una discontinuidad\nomeqref {3.0}\nompageref{50}
-  \item [{$S_{max}^n$}]\begingroup Velocidad máxima de propagación de información en un problema de evolución discretizado\nomeqref {3.0}\nompageref{50}
-  \item [{$u_i^n$}]\begingroup Solución computada de un esquema numérico\nomeqref {3.0}\nompageref{50}
-  \item [{$V_j^n$}]\begingroup Amplitud del armónico \textit{j}-ésimo en el instante \textit{n}-ésimo\nomeqref {3.0}\nompageref{50}
-  \item [{$x_{i + 1/2}$}]\begingroup Extremo superior del volumen finito \textit{i}-ésimo\nomeqref {3.0}\nompageref{50}
-\nomgroup{N}
-  \item [{$Fr$}]\begingroup Número de Froude \nomunit{$Fr = \dfrac{U_c}{\sqrt{g_0 L_c}}$}\nomeqref {3.0}\nompageref{50}
-  \item [{$Nu$}]\begingroup Número de Nusselt \nomunit{$Nu = \dfrac{h_c L_c}{k}$}\nomeqref {3.0}\nompageref{50}
-  \item [{$Pr$}]\begingroup Número de Prandtl \nomunit{$Pr = \dfrac{\nu}{\alpha}$}\nomeqref {3.0}\nompageref{50}
-  \item [{$Re$}]\begingroup Número de Reynolds \nomunit{$Re = \dfrac{\rho_c U_c L_c}{\mu_c}$}\nomeqref {3.0}\nompageref{50}
+  \item [{$\mu $}]\begingroup Gravitational parameter of a celestial body \nomunit{$\left[ \dfrac{m^3}{s^2} \right]$}\nomeqref {0}\nompageref{xiv}
+  \item [{$\underline{a}_i$}]\begingroup Acceleration on body $i$  \nomunit{$\left[ \dfrac{m}{s^2} \right]$}\nomeqref {0}\nompageref{xiv}
+  \item [{$\underline{F}_i$}]\begingroup Force on body $i$  \nomunit{$\left[ N \right]$}\nomeqref {0}\nompageref{xiv}
+  \item [{$a_e $}]\begingroup Equatorial radius of a celestial body  \nomunit{$\left[ m \right]$}\nomeqref {0}\nompageref{xiv}
+  \item [{$m_i$}]\begingroup Mass off body $i$  \nomunit{$\left[ kg \right]$}\nomeqref {0}\nompageref{xiv}
+\nomgroup{M}
+  \item [{$ \Delta \bullet$}]\begingroup Variation or increment of a quantity\nomeqref {0}\nompageref{xiv}
+  \item [{$ \delta \bullet$}]\begingroup Relative quantity (deputy's minus chief's value)\nomeqref {0}\nompageref{xiv}
+  \item [{$ \Lambda $}]\begingroup Real or complex eigenvalue matrix\nomeqref {0}\nompageref{xiv}
+  \item [{$ \mathbb{I}$}]\begingroup Identity matrix\nomeqref {0}\nompageref{xiv}
+  \item [{$ \Phi (t, t_0) $}]\begingroup State Transition Matrix\nomeqref {0}\nompageref{xiv}
+  \item [{$ J $}]\begingroup Jordan form\nomeqref {0}\nompageref{xiv}
+  \item [{$ V $}]\begingroup Real or complex eigenvector matrix\nomeqref {0}\nompageref{xiv}
+  \item [{$\bm A$}]\begingroup System's matrix of a system of ODEs\nomeqref {0}\nompageref{xiv}
+  \item [{$\underline{f}$}]\begingroup Dynamics function of a system \nomeqref {0}\nompageref{xiv}
+  \item [{$\underline{u}, \underline{y}$}]\begingroup State vector of a system of ODEs\nomeqref {0}\nompageref{xiv}
+\nomgroup{O}
+  \item [{$\lambda$}]\begingroup Mean argument of latitude \nomunit{$\left[ rad \right]$}\nomeqref {0}\nompageref{xiv}
+  \item [{$\Omega$}]\begingroup Right Ascension of Ascending Node \nomunit{$\left[ rad \right], \left[ \deg \right]$}\nomeqref {0}\nompageref{xiv}
+  \item [{$\omega$}]\begingroup Argument of periapsis \nomunit{$\left[ rad \right], \left[ \deg \right]$}\nomeqref {0}\nompageref{xiv}
+  \item [{$\theta$}]\begingroup True anomaly\nomunit{$\left[ rad \right], \left[ \deg \right]$}\nomeqref {0}\nompageref{xiv}
+  \item [{$a$}]\begingroup Semimajor axis \nomunit{$\left[ m \right]$}\nomeqref {0}\nompageref{xiv}
+  \item [{$E$}]\begingroup Eccentric anomaly\nomunit{$\left[ rad \right]$}\nomeqref {0}\nompageref{xiv}
+  \item [{$e$}]\begingroup Eccentricity \nomunit{$\left[ --- \right]$}\nomeqref {0}\nompageref{xiv}
+  \item [{$F$}]\begingroup Eccentric argument of latitude \nomunit{$\left[ rad \right]$}\nomeqref {0}\nompageref{xiv}
+  \item [{$i$}]\begingroup Inclination \nomunit{$\left[ rad \right], \left[ \deg \right]$}\nomeqref {0}\nompageref{xiv}
+  \item [{$M$}]\begingroup Mean anomaly\nomunit{$\left[ rad \right]$}\nomeqref {0}\nompageref{xiv}
+  \item [{$u$}]\begingroup True argument of latitude \nomunit{$\left[ rad \right], \left[ \deg \right]$}\nomeqref {0}\nompageref{xiv}
+\nomgroup{P}
+  \item [{$\underline{\overline{OE}}$}]\begingroup Mean orbital element vector \nomeqref {0}\nompageref{xiv}
+  \item [{$\underline{OE}$}]\begingroup Osculating orbital element vector \nomeqref {0}\nompageref{xiv}
+  \item [{$\varepsilon$}]\begingroup Small parameter \nomunit{$[---]$}\nomeqref {0}\nompageref{xiv}
+  \item [{$H$}]\begingroup Hamiltonian of the system \nomeqref {0}\nompageref{xiv}
+  \item [{$K$}]\begingroup Modified Hamiltonian of the system \nomeqref {0}\nompageref{xiv}
+  \item [{$p_i, P_i$}]\begingroup Generalized momentum (original or transformed)\nomeqref {0}\nompageref{xiv}
+  \item [{$q_i, Q_i$}]\begingroup Generalized coordinate (original or transformed)\nomeqref {0}\nompageref{xiv}
+  \item [{$R$}]\begingroup Disturbing function \nomunit{$?$}\nomeqref {0}\nompageref{xiv}
+  \item [{$S, W$}]\begingroup Generating function of the transformation \nomeqref {0}\nompageref{xiv}
 \nomgroup{S}
-  \item [{$\infty$}]\begingroup Variable en el infinito sin perturbar\nomeqref {3.0}\nompageref{50}
-  \item [{$c$}]\begingroup Característica\nomeqref {3.0}\nompageref{50}
-  \item [{$d$}]\begingroup Gota (\textit{droplet})\nomeqref {3.0}\nompageref{50}
-  \item [{$e$}]\begingroup Borde de la capa límite (\textit{edge})\nomeqref {3.0}\nompageref{50}
-  \item [{$f$}]\begingroup Película de agua (\textit{water film})\nomeqref {3.0}\nompageref{50}
-  \item [{$w$}]\begingroup Agua (\textit{water})\nomeqref {3.0}\nompageref{50}
-\nomgroup{T}
-  \item [{$\alpha$}]\begingroup Difusividad térmica \nomunit{$\left[ \dfrac{m^2}{s}\right]$}\nomeqref {3.0}\nompageref{50}
-  \item [{$\alpha_w$}]\begingroup Fracción volumétrica de agua en aire \nomunit{[$---$]}\nomeqref {3.0}\nompageref{50}
-  \item [{$\bar{U}$}]\begingroup Vector velocidad de un cuerpo o fluido \nomunit{$\left[\dfrac{m}{s}\right]$]}\nomeqref {3.0}\nompageref{50}
-  \item [{$\bar{u}$}]\begingroup Vector velocidad adimensional de un cuerpo o fluido \nomunit{[$---$]}\nomeqref {3.0}\nompageref{50}
-  \item [{$\beta$}]\begingroup Coeficiente de captación  \nomunit{[$---$]}\nomeqref {3.0}\nompageref{50}
-  \item [{$\dot{m}$}]\begingroup Flujo másico \nomunit{$\left[\dfrac{kg}{s}\right]$}\nomeqref {3.0}\nompageref{50}
-  \item [{$\dot{m}'$}]\begingroup Flujo másico por unidad de área \nomunit{$\left[\dfrac{kg}{s} \dfrac{1}{m^2}\right]$}\nomeqref {3.0}\nompageref{50}
-  \item [{$\dot{Q}$}]\begingroup Flujo de calor [$W$]\nomeqref {3.0}\nompageref{50}
-  \item [{$\dot{q}$}]\begingroup Flujo de calor por unidad de área \nomunit{$\left[\dfrac{W}{m^2}\right]$}\nomeqref {3.0}\nompageref{50}
-  \item [{$\mu$}]\begingroup Viscosidad dinámica de un fluido \nomunit{[$Pa \cdot s$]}\nomeqref {3.0}\nompageref{50}
-  \item [{$\nu$}]\begingroup Viscosidad cinemática de un fluido \nomunit{$\left[\dfrac{m^2}{s}\right]$}\nomeqref {3.0}\nompageref{50}
-  \item [{$\overline{\tau}_{wall}$}]\begingroup Esfuerzo viscoso de un fluido sobre una pared \nomunit{[$Pa$]}\nomeqref {3.0}\nompageref{50}
-  \item [{$\overline{c}_f$}]\begingroup Coeficiente de fricción viscosa sobre una pared \nomunit{[$---$]}\nomeqref {3.0}\nompageref{50}
-  \item [{$\rho$}]\begingroup Densidad de un fluido \nomunit{$\left[\dfrac{kg}{m^3}\right]$}\nomeqref {3.0}\nompageref{50}
-  \item [{$\theta$}]\begingroup Temperatura absoluta adimensionalizada con la del punto triple \nomunit{[$---$]}\nomeqref {3.0}\nompageref{50}
-  \item [{$\tilde{T}$}]\begingroup Temperatura \nomunit{[$ºC$]}\nomeqref {3.0}\nompageref{50}
-  \item [{$C_D$}]\begingroup Coeficiente de resistencia de un cuerpo \nomunit{[$---$]}\nomeqref {3.0}\nompageref{50}
-  \item [{$C_p$}]\begingroup Calor específico a presión constante  \nomunit{$\left[\dfrac{J}{kg\, K}\right]$}\nomeqref {3.0}\nompageref{50}
-  \item [{$d$}]\begingroup Diámetro de las gotas  \nomunit{[$\mu m$]}\nomeqref {3.0}\nompageref{50}
-  \item [{$f$}]\begingroup Fracción de agua congelada \nomunit{[$---$]}\nomeqref {3.0}\nompageref{50}
-  \item [{$h$}]\begingroup Espesor de una película de agua  \nomunit{[$m$]}\nomeqref {3.0}\nompageref{50}
-  \item [{$h_c$}]\begingroup Coeficiente de transferencia de calor por convección  \nomunit{$\left[\dfrac{W}{m^2 \, K}\right]$}\nomeqref {3.0}\nompageref{50}
-  \item [{$k$}]\begingroup Conductividad térmica de un fluido  \nomunit{$\left[\dfrac{W}{m\,K}\right]$}\nomeqref {3.0}\nompageref{50}
-  \item [{$L$}]\begingroup Calor latente de un fluido \nomunit{$\left[ \dfrac{J}{kg} \right]$}\nomeqref {3.0}\nompageref{50}
-  \item [{$LWC$}]\begingroup Contenido en agua líquida, \textit{liquid water content} \nomunit{$\left[\dfrac{kg}{m^3}\right]$}\nomeqref {3.0}\nompageref{50}
-  \item [{$MVD$}]\begingroup Tamaño volumétrico medio de las gotas, \textit{median volumetric diameter}\nomunit{[$\mu m$]}\nomeqref {3.0}\nompageref{50}
-  \item [{$p$}]\begingroup Presión de un fluido \nomunit{[$Pa$]}\nomeqref {3.0}\nompageref{50}
-  \item [{$p_{v, sat}$}]\begingroup Presión de vapor de saturación \nomunit{[$Pa$]}\nomeqref {3.0}\nompageref{50}
-  \item [{$r$}]\begingroup Factor de recuperación adiabática  \nomunit{[$---$]}\nomeqref {3.0}\nompageref{50}
-  \item [{$T$}]\begingroup Temperatura absoluta \nomunit{[$K$]}\nomeqref {3.0}\nompageref{50}
+  \item [{$\bullet_0$}]\begingroup Variable at $t = t_0$\nomeqref {0}\nompageref{xiv}
+  \item [{$\bullet_C$}]\begingroup Variable from the chief spacecraft\nomeqref {0}\nompageref{xiv}
+  \item [{$\bullet_D$}]\begingroup Variable from the deputy spacecraft\nomeqref {0}\nompageref{xiv}
+  \item [{$\left. \right\rvert_{i}$}]\begingroup Expressed in frame $i$\nomeqref {0}\nompageref{xiv}
+\nomgroup{U}
+  \item [{$\eta = \sqrt{1-e^2}$}]\begingroup \nomunit{$\left[ --- \right]$}\nomeqref {0}\nompageref{xiv}
+  \item [{$\phi, \lambda$}]\begingroup Geodetic latitude and longitude \nomunit{$\left[ rad \right], \left[ \deg \right]$}\nomeqref {0}\nompageref{xiv}
+  \item [{$\rho = 1 + e\cos\theta$}]\begingroup \nomunit{$\left[ --- \right]$}\nomeqref {0}\nompageref{xiv}
+  \item [{$h$}]\begingroup Orbit altitude or orbit momentum\nomunit{$\left[ m \right] \text{or} \left[ \dfrac{m^2}{s} \right]$}\nomeqref {0}\nompageref{xiv}
 
 \end{thenomenclature}

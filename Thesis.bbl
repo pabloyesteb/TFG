@@ -19,6 +19,70 @@
 
 \refsection{0}
   \datalist[entry]{none/global//global/global}
+    \entry{Fehse}{book}{}
+      \name{author}{1}{}{%
+        {{hash=5ecb95438e87e12b20e8c9e9c27d0db7}{%
+           family={Fehse},
+           familyi={F\bibinitperiod},
+           given={Wigbert},
+           giveni={W\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Cambridge}%
+      }
+      \list{publisher}{1}{%
+        {Cambridge University Press}%
+      }
+      \strng{namehash}{5ecb95438e87e12b20e8c9e9c27d0db7}
+      \strng{fullhash}{5ecb95438e87e12b20e8c9e9c27d0db7}
+      \strng{bibnamehash}{5ecb95438e87e12b20e8c9e9c27d0db7}
+      \strng{authorbibnamehash}{5ecb95438e87e12b20e8c9e9c27d0db7}
+      \strng{authornamehash}{5ecb95438e87e12b20e8c9e9c27d0db7}
+      \strng{authorfullhash}{5ecb95438e87e12b20e8c9e9c27d0db7}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{series}{Cambridge Aerospace Series}
+      \field{title}{Automated Rendezvous and Docking of Spacecraft}
+      \field{year}{2003}
+      \verb{doi}
+      \verb 10.1017/CBO9780511543388
+      \endverb
+      \keyw{general}
+    \endentry
+    \entry{SCFormationFlying}{book}{}
+      \name{author}{2}{}{%
+        {{hash=d2989068c98f22a0e452565ffdc24582}{%
+           family={T.\bibnamedelimi Alfriend},
+           familyi={T\bibinitperiod\bibinitdelim A\bibinitperiod},
+           given={Kyle},
+           giveni={K\bibinitperiod}}}%
+        {{hash=8f6fac0c0f9e1b88fcdb4d07cfafde47}{%
+           family={Srinivas},
+           familyi={S\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Oxford, United Kingdom}%
+      }
+      \list{publisher}{1}{%
+        {Elsevier}%
+      }
+      \strng{namehash}{9586fc2f84f6bb67f3a559b1a9a8d898}
+      \strng{fullhash}{9586fc2f84f6bb67f3a559b1a9a8d898}
+      \strng{bibnamehash}{9586fc2f84f6bb67f3a559b1a9a8d898}
+      \strng{authorbibnamehash}{9586fc2f84f6bb67f3a559b1a9a8d898}
+      \strng{authornamehash}{9586fc2f84f6bb67f3a559b1a9a8d898}
+      \strng{authorfullhash}{9586fc2f84f6bb67f3a559b1a9a8d898}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{1}
+      \field{title}{Spacecraft Formation Flying}
+      \field{year}{2010}
+      \keyw{general}
+    \endentry
     \entry{Montenbruck}{book}{}
       \name{author}{2}{}{%
         {{hash=80a8be6ff5184fbb0119b6701e40cfb1}{%
@@ -53,108 +117,168 @@
       \field{year}{2001}
       \keyw{general}
     \endentry
-    \entry{Tapley}{book}{}
-      \name{author}{3}{}{%
-        {{hash=d2322cd60717b84a9b357c3478d16037}{%
-           family={Tapley},
-           familyi={T\bibinitperiod},
-           given={Byron\bibnamedelima D.},
-           giveni={B\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
-        {{hash=66f153b6859c96a5715fb868fb51715d}{%
-           family={Schutz},
-           familyi={S\bibinitperiod},
-           given={Bob\bibnamedelima E.},
-           giveni={B\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
-        {{hash=99d9e4d7ca7ae4170062a8d41d006bdb}{%
-           family={Born},
-           familyi={B\bibinitperiod},
-           given={George\bibnamedelima H.},
-           giveni={G\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
-      }
-      \list{location}{1}{%
-        {Amsterdam, Netherlands}%
-      }
-      \list{publisher}{1}{%
-        {Elsevier}%
-      }
-      \strng{namehash}{415a0bba2e2e7f3ff2d6d29311617685}
-      \strng{fullhash}{415a0bba2e2e7f3ff2d6d29311617685}
-      \strng{bibnamehash}{415a0bba2e2e7f3ff2d6d29311617685}
-      \strng{authorbibnamehash}{415a0bba2e2e7f3ff2d6d29311617685}
-      \strng{authornamehash}{415a0bba2e2e7f3ff2d6d29311617685}
-      \strng{authorfullhash}{415a0bba2e2e7f3ff2d6d29311617685}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{edition}{1}
-      \field{title}{{Statistical Orbit Determination}}
-      \field{year}{2004}
-      \true{nocite}
-      \keyw{general}
-    \endentry
-    \entry{SCFormationFlying}{book}{}
+    \entry{Yamanaka_Ankersen}{article}{}
       \name{author}{2}{}{%
-        {{hash=d2989068c98f22a0e452565ffdc24582}{%
-           family={T.\bibnamedelimi Alfriend},
-           familyi={T\bibinitperiod\bibinitdelim A\bibinitperiod},
-           given={Kyle},
+        {{hash=4631da1a9cf263094ff98f0dbde84946}{%
+           family={Yamanaka},
+           familyi={Y\bibinitperiod},
+           given={Koji},
            giveni={K\bibinitperiod}}}%
-        {{hash=8f6fac0c0f9e1b88fcdb4d07cfafde47}{%
-           family={Srinivas},
-           familyi={S\bibinitperiod}}}%
-      }
-      \list{location}{1}{%
-        {Oxford, United Kingdom}%
-      }
-      \list{publisher}{1}{%
-        {Elsevier}%
-      }
-      \strng{namehash}{9586fc2f84f6bb67f3a559b1a9a8d898}
-      \strng{fullhash}{9586fc2f84f6bb67f3a559b1a9a8d898}
-      \strng{bibnamehash}{9586fc2f84f6bb67f3a559b1a9a8d898}
-      \strng{authorbibnamehash}{9586fc2f84f6bb67f3a559b1a9a8d898}
-      \strng{authornamehash}{9586fc2f84f6bb67f3a559b1a9a8d898}
-      \strng{authorfullhash}{9586fc2f84f6bb67f3a559b1a9a8d898}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{edition}{1}
-      \field{title}{Spacecraft Formation Flying}
-      \field{year}{2010}
-      \true{nocite}
-      \keyw{general}
-    \endentry
-    \entry{Battin}{book}{}
-      \name{author}{1}{}{%
-        {{hash=e8fb45d024eae4bc9b2bf3a208797691}{%
-           family={H.\bibnamedelimi Battin},
-           familyi={H\bibinitperiod\bibinitdelim B\bibinitperiod},
-           given={Richard},
-           giveni={R\bibinitperiod}}}%
-      }
-      \list{location}{1}{%
-        {Reston, Virginia}%
+        {{hash=c40dd1ad4324d5d35d8fa2151962cc4f}{%
+           family={Ankersen},
+           familyi={A\bibinitperiod},
+           given={Finn},
+           giveni={F\bibinitperiod}}}%
       }
       \list{publisher}{2}{%
         {American Institute of Aeronautics}%
         {Astronautics}%
       }
-      \strng{namehash}{e8fb45d024eae4bc9b2bf3a208797691}
-      \strng{fullhash}{e8fb45d024eae4bc9b2bf3a208797691}
-      \strng{bibnamehash}{e8fb45d024eae4bc9b2bf3a208797691}
-      \strng{authorbibnamehash}{e8fb45d024eae4bc9b2bf3a208797691}
-      \strng{authornamehash}{e8fb45d024eae4bc9b2bf3a208797691}
-      \strng{authorfullhash}{e8fb45d024eae4bc9b2bf3a208797691}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \strng{namehash}{0d76214d0bd5bead32ede905b151fc58}
+      \strng{fullhash}{0d76214d0bd5bead32ede905b151fc58}
+      \strng{bibnamehash}{0d76214d0bd5bead32ede905b151fc58}
+      \strng{authorbibnamehash}{0d76214d0bd5bead32ede905b151fc58}
+      \strng{authornamehash}{0d76214d0bd5bead32ede905b151fc58}
+      \strng{authorfullhash}{0d76214d0bd5bead32ede905b151fc58}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{edition}{1}
-      \field{title}{{An Introduction to the Mathematics and Methods of Astrodynamics, Revised Edition}}
-      \field{year}{1999}
-      \true{nocite}
+      \field{journaltitle}{{Journal of Guidance, Control \& Dynamics}}
+      \field{number}{1}
+      \field{title}{New State Transition Matrix for Relative Motion on an Arbitrary Elliptical Orbit}
+      \field{volume}{25}
+      \field{year}{2002}
+      \field{pages}{60\bibrangedash 66}
+      \range{pages}{7}
+      \verb{doi}
+      \verb 10.2514/2.4875
+      \endverb
+      \keyw{eccentric}
+    \endentry
+    \entry{GA_STM}{article}{}
+      \name{author}{2}{}{%
+        {{hash=2f8ebbbe02bdff3a984e40ca7c65a693}{%
+           family={Gim},
+           familyi={G\bibinitperiod},
+           given={Dong-Woo},
+           giveni={D\bibinithyphendelim W\bibinitperiod}}}%
+        {{hash=0b4dd7c34b0d73f7648d35e73721a08f}{%
+           family={Alfriend},
+           familyi={A\bibinitperiod},
+           given={Kyle},
+           giveni={K\bibinitperiod}}}%
+      }
+      \strng{namehash}{b7a6b44ea9ddd80bc79f16cd6eeb9e11}
+      \strng{fullhash}{b7a6b44ea9ddd80bc79f16cd6eeb9e11}
+      \strng{bibnamehash}{b7a6b44ea9ddd80bc79f16cd6eeb9e11}
+      \strng{authorbibnamehash}{b7a6b44ea9ddd80bc79f16cd6eeb9e11}
+      \strng{authornamehash}{b7a6b44ea9ddd80bc79f16cd6eeb9e11}
+      \strng{authorfullhash}{b7a6b44ea9ddd80bc79f16cd6eeb9e11}
+      \field{extraname}{1}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Guidance Control and Dynamics}
+      \field{month}{11}
+      \field{title}{State Transition Matrix of Relative Motion for the Perturbed Noncircular Reference Orbit}
+      \field{volume}{26}
+      \field{year}{2003}
+      \field{pages}{956\bibrangedash 971}
+      \range{pages}{16}
+      \verb{doi}
+      \verb 10.2514/2.6924
+      \endverb
+      \keyw{perturbations}
+    \endentry
+    \entry{STM_Apps}{online}{}
+      \name{author}{1}{}{%
+        {{hash=38534a6d9d1da31660770afc8438c9ee}{%
+           family={Exchange},
+           familyi={E\bibinitperiod},
+           given={Space-Stack},
+           giveni={S\bibinithyphendelim S\bibinitperiod}}}%
+      }
+      \strng{namehash}{38534a6d9d1da31660770afc8438c9ee}
+      \strng{fullhash}{38534a6d9d1da31660770afc8438c9ee}
+      \strng{bibnamehash}{38534a6d9d1da31660770afc8438c9ee}
+      \strng{authorbibnamehash}{38534a6d9d1da31660770afc8438c9ee}
+      \strng{authornamehash}{38534a6d9d1da31660770afc8438c9ee}
+      \strng{authorfullhash}{38534a6d9d1da31660770afc8438c9ee}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Practical Uses of an STM}
+      \field{year}{2019}
+      \field{dateera}{ce}
+      \verb{urlraw}
+      \verb https://space.stackexchange.com/questions/32916
+      \endverb
+      \verb{url}
+      \verb https://space.stackexchange.com/questions/32916
+      \endverb
+      \keyw{others}
+    \endentry
+    \entry{POD}{online}{}
+      \name{author}{1}{}{%
+        {{hash=afafc7a086f96baed3f76650e4fcdc5d}{%
+           family={ESA},
+           familyi={E\bibinitperiod}}}%
+      }
+      \strng{namehash}{afafc7a086f96baed3f76650e4fcdc5d}
+      \strng{fullhash}{afafc7a086f96baed3f76650e4fcdc5d}
+      \strng{bibnamehash}{afafc7a086f96baed3f76650e4fcdc5d}
+      \strng{authorbibnamehash}{afafc7a086f96baed3f76650e4fcdc5d}
+      \strng{authornamehash}{afafc7a086f96baed3f76650e4fcdc5d}
+      \strng{authorfullhash}{afafc7a086f96baed3f76650e4fcdc5d}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Precise Orbit Determination}
+      \field{year}{2011}
+      \field{dateera}{ce}
+      \verb{urlraw}
+      \verb https://gssc.esa.int/navipedia/index.php/Precise_Orbit_Determination
+      \endverb
+      \verb{url}
+      \verb https://gssc.esa.int/navipedia/index.php/Precise_Orbit_Determination
+      \endverb
+      \keyw{others}
+    \endentry
+    \entry{Hill}{article}{}
+      \name{author}{1}{}{%
+        {{hash=6e114c910e5898d17f0977859d8ab5f7}{%
+           family={Hill},
+           familyi={H\bibinitperiod},
+           given={G.\bibnamedelimi W.},
+           giveni={G\bibinitperiod\bibinitdelim W\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Johns Hopkins University Press}%
+      }
+      \strng{namehash}{6e114c910e5898d17f0977859d8ab5f7}
+      \strng{fullhash}{6e114c910e5898d17f0977859d8ab5f7}
+      \strng{bibnamehash}{6e114c910e5898d17f0977859d8ab5f7}
+      \strng{authorbibnamehash}{6e114c910e5898d17f0977859d8ab5f7}
+      \strng{authornamehash}{6e114c910e5898d17f0977859d8ab5f7}
+      \strng{authorfullhash}{6e114c910e5898d17f0977859d8ab5f7}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{American Journal of Mathematics}
+      \field{number}{2}
+      \field{title}{Researches in the Lunar Theory}
+      \field{volume}{1}
+      \field{year}{1878}
+      \field{pages}{129\bibrangedash 147}
+      \range{pages}{19}
+      \verb{doi}
+      \verb 10.2307/2369304
+      \endverb
       \keyw{general}
     \endentry
     \entry{Wiesel}{book}{}
@@ -177,15 +301,667 @@
       \strng{authorbibnamehash}{3a9027659e19be37a91bbe17808f8077}
       \strng{authornamehash}{3a9027659e19be37a91bbe17808f8077}
       \strng{authorfullhash}{3a9027659e19be37a91bbe17808f8077}
-      \field{sortinit}{6}
-      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{edition}{2}
       \field{title}{{Modern Astrodynamics}}
       \field{year}{2010}
-      \true{nocite}
       \keyw{general}
+    \endentry
+    \entry{CW}{article}{}
+      \name{author}{2}{}{%
+        {{hash=ab18038c7b484ed46b56ed3ecd584b69}{%
+           family={Clohessy},
+           familyi={C\bibinitperiod},
+           given={W.\bibnamedelimi H.},
+           giveni={W\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+        {{hash=fb122c9c8515f7b4a0d9d7156c787d15}{%
+           family={Wiltshire},
+           familyi={W\bibinitperiod},
+           given={R.\bibnamedelimi S.},
+           giveni={R\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+      }
+      \strng{namehash}{5c6fa172cc7a1ba23637337caf329441}
+      \strng{fullhash}{5c6fa172cc7a1ba23637337caf329441}
+      \strng{bibnamehash}{5c6fa172cc7a1ba23637337caf329441}
+      \strng{authorbibnamehash}{5c6fa172cc7a1ba23637337caf329441}
+      \strng{authornamehash}{5c6fa172cc7a1ba23637337caf329441}
+      \strng{authorfullhash}{5c6fa172cc7a1ba23637337caf329441}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of the Aerospace Sciences}
+      \field{number}{9}
+      \field{title}{Terminal Guidance System for Satellite Rendezvous}
+      \field{volume}{27}
+      \field{year}{1960}
+      \field{pages}{653\bibrangedash 658}
+      \range{pages}{6}
+      \verb{doi}
+      \verb 10.2514/8.8704
+      \endverb
+      \keyw{general}
+    \endentry
+    \entry{cdf2rdf}{online}{}
+      \name{author}{1}{}{%
+        {{hash=8f631b769d4710fba49eafd295c9d96d}{%
+           family={Mathworks},
+           familyi={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{8f631b769d4710fba49eafd295c9d96d}
+      \strng{fullhash}{8f631b769d4710fba49eafd295c9d96d}
+      \strng{bibnamehash}{8f631b769d4710fba49eafd295c9d96d}
+      \strng{authorbibnamehash}{8f631b769d4710fba49eafd295c9d96d}
+      \strng{authornamehash}{8f631b769d4710fba49eafd295c9d96d}
+      \strng{authorfullhash}{8f631b769d4710fba49eafd295c9d96d}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Convert complex diagonal form into real diagonal form}
+      \field{year}{2022}
+      \field{dateera}{ce}
+      \verb{urlraw}
+      \verb https://www.mathworks.com/help/matlab/ref/cdf2rdf.html
+      \endverb
+      \verb{url}
+      \verb https://www.mathworks.com/help/matlab/ref/cdf2rdf.html
+      \endverb
+      \keyw{others}
+    \endentry
+    \entry{Wakker}{book}{}
+      \name{author}{1}{}{%
+        {{hash=9f67f7e163f525368297b347baa02ce6}{%
+           family={Wakker},
+           familyi={W\bibinitperiod},
+           given={Karel},
+           giveni={K\bibinitperiod}}}%
+      }
+      \strng{namehash}{9f67f7e163f525368297b347baa02ce6}
+      \strng{fullhash}{9f67f7e163f525368297b347baa02ce6}
+      \strng{bibnamehash}{9f67f7e163f525368297b347baa02ce6}
+      \strng{authorbibnamehash}{9f67f7e163f525368297b347baa02ce6}
+      \strng{authornamehash}{9f67f7e163f525368297b347baa02ce6}
+      \strng{authorfullhash}{9f67f7e163f525368297b347baa02ce6}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{978-94-6186-419-2}
+      \field{month}{01}
+      \field{title}{Fundamentals of Astrodynamics}
+      \field{year}{2015}
+    \endentry
+    \entry{Eckstein}{inproceedings}{}
+      \name{author}{3}{}{%
+        {{hash=0e5a9c44928ffa2995b6940bbe1c133e}{%
+           family={Eckstein},
+           familyi={E\bibinitperiod},
+           given={M.C.},
+           giveni={M\bibinitperiod}}}%
+        {{hash=58e91f9208dd5ef68e999837c02e22f1}{%
+           family={Rajasingh},
+           familyi={R\bibinitperiod},
+           given={C.K.},
+           giveni={C\bibinitperiod}}}%
+        {{hash=09703d4a15558d26ddc0f7ca82f4f49b}{%
+           family={Blumer},
+           familyi={B\bibinitperiod},
+           given={P.},
+           giveni={P\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Oberpfaffenhofen, Germany}%
+      }
+      \list{publisher}{1}{%
+        {DLR GSOC}%
+      }
+      \strng{namehash}{258eaa64bb7c65774ba6b4486f00f719}
+      \strng{fullhash}{258eaa64bb7c65774ba6b4486f00f719}
+      \strng{bibnamehash}{258eaa64bb7c65774ba6b4486f00f719}
+      \strng{authorbibnamehash}{258eaa64bb7c65774ba6b4486f00f719}
+      \strng{authornamehash}{258eaa64bb7c65774ba6b4486f00f719}
+      \strng{authorfullhash}{258eaa64bb7c65774ba6b4486f00f719}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{CNES International Symposium on Space Dynamics}
+      \field{month}{11}
+      \field{title}{{Colocation Strategy and Collision Avoidance for the Geostationary Satellites at 19 Degrees West}}
+      \field{volume}{25}
+      \field{year}{1989}
+      \field{pages}{60\bibrangedash 66}
+      \range{pages}{7}
+      \keyw{eccentric}
+    \endentry
+    \entry{Montenbruck_DAmico}{article}{}
+      \name{author}{3}{}{%
+        {{hash=80a8be6ff5184fbb0119b6701e40cfb1}{%
+           family={Montenbruck},
+           familyi={M\bibinitperiod},
+           given={Oliver},
+           giveni={O\bibinitperiod}}}%
+        {{hash=0930289d440ac1f1f7d144119f96ccf7}{%
+           family={Kirschner},
+           familyi={K\bibinitperiod},
+           given={Michael},
+           giveni={M\bibinitperiod}}}%
+        {{hash=ea13c363649ca2667cc3e443056d36c5}{%
+           family={D'Amico},
+           familyi={D\bibinitperiod},
+           given={Simone},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{326a1dd1cf23b55ae8b56ddc8609dcb6}
+      \strng{fullhash}{326a1dd1cf23b55ae8b56ddc8609dcb6}
+      \strng{bibnamehash}{326a1dd1cf23b55ae8b56ddc8609dcb6}
+      \strng{authorbibnamehash}{326a1dd1cf23b55ae8b56ddc8609dcb6}
+      \strng{authornamehash}{326a1dd1cf23b55ae8b56ddc8609dcb6}
+      \strng{authorfullhash}{326a1dd1cf23b55ae8b56ddc8609dcb6}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Aerospace Science and Technology}
+      \field{title}{E/I-vector separation for safe switching of the GRACE formation}
+      \field{volume}{10}
+      \field{year}{2006}
+      \field{pages}{628\bibrangedash 635}
+      \range{pages}{8}
+      \verb{doi}
+      \verb 10.1016/j.ast.2006.04.001
+      \endverb
+      \keyw{general}
+    \endentry
+    \entry{DAmico_Montenbruck}{article}{}
+      \name{author}{2}{}{%
+        {{hash=ea13c363649ca2667cc3e443056d36c5}{%
+           family={D'Amico},
+           familyi={D\bibinitperiod},
+           given={Simone},
+           giveni={S\bibinitperiod}}}%
+        {{hash=80a8be6ff5184fbb0119b6701e40cfb1}{%
+           family={Montenbruck},
+           familyi={M\bibinitperiod},
+           given={Oliver},
+           giveni={O\bibinitperiod}}}%
+      }
+      \list{publisher}{2}{%
+        {American Institute of Aeronautics}%
+        {Astronautics}%
+      }
+      \strng{namehash}{99cc30d684c858bf3c9d85f06f523323}
+      \strng{fullhash}{99cc30d684c858bf3c9d85f06f523323}
+      \strng{bibnamehash}{99cc30d684c858bf3c9d85f06f523323}
+      \strng{authorbibnamehash}{99cc30d684c858bf3c9d85f06f523323}
+      \strng{authornamehash}{99cc30d684c858bf3c9d85f06f523323}
+      \strng{authorfullhash}{99cc30d684c858bf3c9d85f06f523323}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{{Journal of Guidance, Control \& Dynamics}}
+      \field{number}{3}
+      \field{title}{Proximity Operations of Formation-Flying Spacecraft Using an Eccentricity/Inclination Vector Separation}
+      \field{volume}{29}
+      \field{year}{2006}
+      \field{pages}{554\bibrangedash 563}
+      \range{pages}{10}
+      \verb{doi}
+      \verb 10.2514/1.15114
+      \endverb
+      \keyw{eccentric}
+    \endentry
+    \entry{Battin}{book}{}
+      \name{author}{1}{}{%
+        {{hash=e8fb45d024eae4bc9b2bf3a208797691}{%
+           family={H.\bibnamedelimi Battin},
+           familyi={H\bibinitperiod\bibinitdelim B\bibinitperiod},
+           given={Richard},
+           giveni={R\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Reston, Virginia}%
+      }
+      \list{publisher}{2}{%
+        {American Institute of Aeronautics}%
+        {Astronautics}%
+      }
+      \strng{namehash}{e8fb45d024eae4bc9b2bf3a208797691}
+      \strng{fullhash}{e8fb45d024eae4bc9b2bf3a208797691}
+      \strng{bibnamehash}{e8fb45d024eae4bc9b2bf3a208797691}
+      \strng{authorbibnamehash}{e8fb45d024eae4bc9b2bf3a208797691}
+      \strng{authornamehash}{e8fb45d024eae4bc9b2bf3a208797691}
+      \strng{authorfullhash}{e8fb45d024eae4bc9b2bf3a208797691}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{1}
+      \field{title}{{An Introduction to the Mathematics and Methods of Astrodynamics, Revised Edition}}
+      \field{year}{1999}
+      \keyw{general}
+    \endentry
+    \entry{Terrasar}{report}{}
+      \name{author}{1}{}{%
+        {{hash=593d5a57309b860955c3e776f8866639}{%
+           family={Fiedler},
+           familyi={F\bibinitperiod},
+           given={Hauke},
+           giveni={H\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {Deutsches Zentrum für Luft- und Raumfahrt (DLR)}%
+      }
+      \list{location}{1}{%
+        {Oberpfaffenhofen, Germany}%
+      }
+      \strng{namehash}{593d5a57309b860955c3e776f8866639}
+      \strng{fullhash}{593d5a57309b860955c3e776f8866639}
+      \strng{bibnamehash}{593d5a57309b860955c3e776f8866639}
+      \strng{authorbibnamehash}{593d5a57309b860955c3e776f8866639}
+      \strng{authornamehash}{593d5a57309b860955c3e776f8866639}
+      \strng{authorfullhash}{593d5a57309b860955c3e776f8866639}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{11}
+      \field{note}{\url{https://elib.dlr.de/22345/}}
+      \field{title}{Analysis of TerraSAR-L Cartwheel Constellations}
+      \field{year}{2003}
+      \keyw{general}
+    \endentry
+    \entry{Sullivan}{article}{}
+      \name{author}{3}{}{%
+        {{hash=724b995e12d13b7426262e44d00af760}{%
+           family={Sullivan},
+           familyi={S\bibinitperiod},
+           given={Joshua},
+           giveni={J\bibinitperiod}}}%
+        {{hash=47106cf1237c0a90b9300080bd6e962e}{%
+           family={Grimberg},
+           familyi={G\bibinitperiod},
+           given={Sebastian},
+           giveni={S\bibinitperiod}}}%
+        {{hash=ea13c363649ca2667cc3e443056d36c5}{%
+           family={D'Amico},
+           familyi={D\bibinitperiod},
+           given={Simone},
+           giveni={S\bibinitperiod}}}%
+      }
+      \list{publisher}{2}{%
+        {American Institute of Aeronautics}%
+        {Astronautics}%
+      }
+      \strng{namehash}{0aef3d40e01252a4fc361ae338296c02}
+      \strng{fullhash}{0aef3d40e01252a4fc361ae338296c02}
+      \strng{bibnamehash}{0aef3d40e01252a4fc361ae338296c02}
+      \strng{authorbibnamehash}{0aef3d40e01252a4fc361ae338296c02}
+      \strng{authornamehash}{0aef3d40e01252a4fc361ae338296c02}
+      \strng{authorfullhash}{0aef3d40e01252a4fc361ae338296c02}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{{Journal of Guidance, Control \& Dynamics}}
+      \field{number}{8}
+      \field{title}{Comprehensive Survey and Assessment of Spacecraft Relative Motion Dynamics Models}
+      \field{volume}{40}
+      \field{year}{2017}
+      \field{pages}{1837\bibrangedash 1859}
+      \range{pages}{23}
+      \verb{doi}
+      \verb 10.2514/1.G002309
+      \endverb
+      \keyw{general}
+    \endentry
+    \entry{Tschauner_Hempel}{article}{}
+      \name{author}{2}{}{%
+        {{hash=d83db3300d0eb58f7a4ba6f856008511}{%
+           family={Tschauner},
+           familyi={T\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod}}}%
+        {{hash=6d1959e827497cc3aaa69b39ff22f7c7}{%
+           family={Hempel},
+           familyi={H\bibinitperiod},
+           given={P.},
+           giveni={P\bibinitperiod}}}%
+      }
+      \strng{namehash}{9963bf91b0036a70fc09e6341b78fa64}
+      \strng{fullhash}{9963bf91b0036a70fc09e6341b78fa64}
+      \strng{bibnamehash}{9963bf91b0036a70fc09e6341b78fa64}
+      \strng{authorbibnamehash}{9963bf91b0036a70fc09e6341b78fa64}
+      \strng{authornamehash}{9963bf91b0036a70fc09e6341b78fa64}
+      \strng{authorfullhash}{9963bf91b0036a70fc09e6341b78fa64}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Astronautica Acta}
+      \field{title}{Optimale Beschleunigungsprogramme fÃ¼r das Rendezvous-Manöver}
+      \field{volume}{10}
+      \field{year}{1964}
+      \field{pages}{296\bibrangedash 307}
+      \range{pages}{12}
+      \keyw{eccentric}
+    \endentry
+    \entry{Carter}{article}{}
+      \name{author}{1}{}{%
+        {{hash=613679091e8ca1cb3632ce9fbbd24789}{%
+           family={Carter},
+           familyi={C\bibinitperiod},
+           given={Thomas},
+           giveni={T\bibinitperiod}}}%
+      }
+      \strng{namehash}{613679091e8ca1cb3632ce9fbbd24789}
+      \strng{fullhash}{613679091e8ca1cb3632ce9fbbd24789}
+      \strng{bibnamehash}{613679091e8ca1cb3632ce9fbbd24789}
+      \strng{authorbibnamehash}{613679091e8ca1cb3632ce9fbbd24789}
+      \strng{authornamehash}{613679091e8ca1cb3632ce9fbbd24789}
+      \strng{authorfullhash}{613679091e8ca1cb3632ce9fbbd24789}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Guidance Control and Dynamics}
+      \field{month}{01}
+      \field{title}{State Transition Matrices for Terminal Rendezvous Studies: Brief Survey and New Example}
+      \field{volume}{21}
+      \field{year}{1998}
+      \field{pages}{148\bibrangedash 155}
+      \range{pages}{8}
+      \verb{doi}
+      \verb 10.2514/2.4211
+      \endverb
+      \keyw{eccentric}
+    \endentry
+    \entry{Peters_Noomen}{article}{}
+      \name{author}{2}{}{%
+        {{hash=24c47c2be2fd6dd4a3f862e571578442}{%
+           family={Vincent\bibnamedelima Peters},
+           familyi={V\bibinitperiod\bibinitdelim P\bibinitperiod},
+           given={Thomas},
+           giveni={T\bibinitperiod}}}%
+        {{hash=7da3be880fbe1816b424c01a110982e6}{%
+           family={Noomen},
+           familyi={N\bibinitperiod},
+           given={Ron},
+           giveni={R\bibinitperiod}}}%
+      }
+      \list{publisher}{2}{%
+        {American Institute of Aeronautics}%
+        {Astronautics}%
+      }
+      \strng{namehash}{3c958361e46617021179d780e75bc2c9}
+      \strng{fullhash}{3c958361e46617021179d780e75bc2c9}
+      \strng{bibnamehash}{3c958361e46617021179d780e75bc2c9}
+      \strng{authorbibnamehash}{3c958361e46617021179d780e75bc2c9}
+      \strng{authornamehash}{3c958361e46617021179d780e75bc2c9}
+      \strng{authorfullhash}{3c958361e46617021179d780e75bc2c9}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{{Journal of Guidance, Control \& Dynamics}}
+      \field{number}{4}
+      \field{title}{Linear Cotangential Transfers and Safe Orbits for Elliptic Orbit Rendezvous}
+      \field{volume}{44}
+      \field{year}{2021}
+      \field{pages}{732\bibrangedash 748}
+      \range{pages}{17}
+      \verb{doi}
+      \verb 10.2514/1.G005152
+      \endverb
+      \keyw{eccentric}
+    \endentry
+    \entry{Nayfeh}{book}{}
+      \name{author}{1}{}{%
+        {{hash=aded628cfb77b62db19cb3243f425b8b}{%
+           family={H.\bibnamedelimi Nayfeh},
+           familyi={H\bibinitperiod\bibinitdelim N\bibinitperiod},
+           given={Ali},
+           giveni={A\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Weinheim, Germany}%
+      }
+      \list{publisher}{1}{%
+        {Wiley-VCH}%
+      }
+      \strng{namehash}{aded628cfb77b62db19cb3243f425b8b}
+      \strng{fullhash}{aded628cfb77b62db19cb3243f425b8b}
+      \strng{bibnamehash}{aded628cfb77b62db19cb3243f425b8b}
+      \strng{authorbibnamehash}{aded628cfb77b62db19cb3243f425b8b}
+      \strng{authornamehash}{aded628cfb77b62db19cb3243f425b8b}
+      \strng{authorfullhash}{aded628cfb77b62db19cb3243f425b8b}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{{Perturbation Methods}}
+      \field{year}{2004}
+      \keyw{perturbations}
+    \endentry
+    \entry{Hori}{article}{}
+      \name{author}{1}{}{%
+        {{hash=db002c27a377557f68cdbe60ff9e79a7}{%
+           family={{Hori}},
+           familyi={H\bibinitperiod},
+           given={G.},
+           giveni={G\bibinitperiod}}}%
+      }
+      \strng{namehash}{db002c27a377557f68cdbe60ff9e79a7}
+      \strng{fullhash}{db002c27a377557f68cdbe60ff9e79a7}
+      \strng{bibnamehash}{db002c27a377557f68cdbe60ff9e79a7}
+      \strng{authorbibnamehash}{db002c27a377557f68cdbe60ff9e79a7}
+      \strng{authornamehash}{db002c27a377557f68cdbe60ff9e79a7}
+      \strng{authorfullhash}{db002c27a377557f68cdbe60ff9e79a7}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Publications of the Astronomical Society of Japan}
+      \field{month}{1}
+      \field{title}{{Theory of General Perturbation with Unspecified Canonical Variable}}
+      \field{volume}{18}
+      \field{year}{1966}
+      \field{pages}{287\bibrangedash 296}
+      \range{pages}{10}
+    \endentry
+    \entry{Deprit}{article}{}
+      \name{author}{1}{}{%
+        {{hash=35a361a71ca45d501e1f001b9d959b22}{%
+           family={{Deprit}},
+           familyi={D\bibinitperiod},
+           given={André},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{35a361a71ca45d501e1f001b9d959b22}
+      \strng{fullhash}{35a361a71ca45d501e1f001b9d959b22}
+      \strng{bibnamehash}{35a361a71ca45d501e1f001b9d959b22}
+      \strng{authorbibnamehash}{35a361a71ca45d501e1f001b9d959b22}
+      \strng{authornamehash}{35a361a71ca45d501e1f001b9d959b22}
+      \strng{authorfullhash}{35a361a71ca45d501e1f001b9d959b22}
+      \field{extraname}{1}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Celestial Mechanics}
+      \field{month}{3}
+      \field{number}{1}
+      \field{title}{{Canonical transformations depending on a small parameter}}
+      \field{volume}{1}
+      \field{year}{1969}
+      \field{pages}{12\bibrangedash 30}
+      \range{pages}{19}
+      \verb{doi}
+      \verb 10.1007/BF01230629
+      \endverb
+    \endentry
+    \entry{Deprit_2}{article}{}
+      \name{author}{1}{}{%
+        {{hash=dc5303060c2ccb5f93410de582fc5eed}{%
+           family={{Deprit}},
+           familyi={D\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{dc5303060c2ccb5f93410de582fc5eed}
+      \strng{fullhash}{dc5303060c2ccb5f93410de582fc5eed}
+      \strng{bibnamehash}{dc5303060c2ccb5f93410de582fc5eed}
+      \strng{authorbibnamehash}{dc5303060c2ccb5f93410de582fc5eed}
+      \strng{authornamehash}{dc5303060c2ccb5f93410de582fc5eed}
+      \strng{authorfullhash}{dc5303060c2ccb5f93410de582fc5eed}
+      \field{extraname}{2}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Celestial Mechanics}
+      \field{month}{1}
+      \field{number}{1}
+      \field{title}{{Delaunay Normalisations}}
+      \field{volume}{26}
+      \field{year}{1982}
+      \field{pages}{9\bibrangedash 21}
+      \range{pages}{13}
+      \verb{doi}
+      \verb 10.1007/BF01233178
+      \endverb
+      \keyw{Eccentric Orbits,Kepler Laws,Normalizing,Orbit Perturbation,Perturbation Theory,Power Series,Artificial Satellites,Lie Groups,Paradoxes,Satellite Perturbation,Three Body Problem,Astronomy}
+    \endentry
+    \entry{Chihabi}{inproceedings}{}
+      \name{author}{2}{}{%
+        {{hash=98e4f59e5d4da63239a0441eb015af1b}{%
+           family={Chihabi},
+           familyi={C\bibinitperiod},
+           given={Yazan},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=f3de3711a02757d9fcb4614193d64955}{%
+           family={Ulrich},
+           familyi={U\bibinitperiod},
+           given={Steve},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{0e9028c6ad0d2ddb7cf1a456871db776}
+      \strng{fullhash}{0e9028c6ad0d2ddb7cf1a456871db776}
+      \strng{bibnamehash}{0e9028c6ad0d2ddb7cf1a456871db776}
+      \strng{authorbibnamehash}{0e9028c6ad0d2ddb7cf1a456871db776}
+      \strng{authornamehash}{0e9028c6ad0d2ddb7cf1a456871db776}
+      \strng{authorfullhash}{0e9028c6ad0d2ddb7cf1a456871db776}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{01}
+      \field{title}{Spacecraft Formation Guidance Law using a State Transition Matrix With Gravitational, Drag and Third-Body Perturbations}
+      \field{year}{2020}
+      \verb{doi}
+      \verb 10.2514/6.2020-1460
+      \endverb
+    \endentry
+    \entry{Brouwer_paper}{article}{}
+      \name{author}{1}{}{%
+        {{hash=0a6bbc521dde2c5fbba62c2b627ffcf6}{%
+           family={Brouwer},
+           familyi={B\bibinitperiod},
+           given={Dirk},
+           giveni={D\bibinitperiod}}}%
+      }
+      \strng{namehash}{0a6bbc521dde2c5fbba62c2b627ffcf6}
+      \strng{fullhash}{0a6bbc521dde2c5fbba62c2b627ffcf6}
+      \strng{bibnamehash}{0a6bbc521dde2c5fbba62c2b627ffcf6}
+      \strng{authorbibnamehash}{0a6bbc521dde2c5fbba62c2b627ffcf6}
+      \strng{authornamehash}{0a6bbc521dde2c5fbba62c2b627ffcf6}
+      \strng{authorfullhash}{0a6bbc521dde2c5fbba62c2b627ffcf6}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Astronomical Journal}
+      \field{month}{11}
+      \field{number}{5}
+      \field{title}{Solution of the problem of artificial satellite theory without drag}
+      \field{volume}{64}
+      \field{year}{1959}
+      \field{pages}{378}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1086/107958
+      \endverb
+      \keyw{perturbations}
+    \endentry
+    \entry{Gaias_mean2osc}{article}{}
+      \name{author}{3}{}{%
+        {{hash=8b796085773bae90281bbfc5770adba1}{%
+           family={Gaias},
+           familyi={G\bibinitperiod},
+           given={Gabriella},
+           giveni={G\bibinitperiod}}}%
+        {{hash=7ca8913d671009db827cb65835e80adf}{%
+           family={Colombo},
+           familyi={C\bibinitperiod},
+           given={Camilla},
+           giveni={C\bibinitperiod}}}%
+        {{hash=315408691d84f31991f8675d8cfaae51}{%
+           family={Lara},
+           familyi={L\bibinitperiod},
+           given={Martin},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{36f88b66e2a1d70933657395bca8d775}
+      \strng{fullhash}{36f88b66e2a1d70933657395bca8d775}
+      \strng{bibnamehash}{36f88b66e2a1d70933657395bca8d775}
+      \strng{authorbibnamehash}{36f88b66e2a1d70933657395bca8d775}
+      \strng{authornamehash}{36f88b66e2a1d70933657395bca8d775}
+      \strng{authorfullhash}{36f88b66e2a1d70933657395bca8d775}
+      \field{extraname}{1}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{02}
+      \field{note}{\url{https://www.researchgate.net/publication/340378956_Accurate_OsculatingMean_Orbital_Elements_Conversions_for_Spaceborne_Formation_Flying}}
+      \field{title}{Accurate Osculating/Mean Orbital Elements Conversions for Spaceborne Formation Flying}
+      \field{year}{2018}
+      \keyw{perturbations}
+    \endentry
+    \entry{Lyddane}{article}{}
+      \name{author}{1}{}{%
+        {{hash=178bf8558061a59c8080dcb73e950720}{%
+           family={{Lyddane}},
+           familyi={L\bibinitperiod},
+           given={R.\bibnamedelimi H.},
+           giveni={R\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+      }
+      \strng{namehash}{178bf8558061a59c8080dcb73e950720}
+      \strng{fullhash}{178bf8558061a59c8080dcb73e950720}
+      \strng{bibnamehash}{178bf8558061a59c8080dcb73e950720}
+      \strng{authorbibnamehash}{178bf8558061a59c8080dcb73e950720}
+      \strng{authornamehash}{178bf8558061a59c8080dcb73e950720}
+      \strng{authorfullhash}{178bf8558061a59c8080dcb73e950720}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Astronomical Journal}
+      \field{month}{10}
+      \field{title}{{Small eccentricities or inclinations in the Brouwer theory of the artificial satellite}}
+      \field{volume}{68}
+      \field{year}{1963}
+      \field{pages}{555}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1086/109179
+      \endverb
+      \keyw{perturbations}
     \endentry
     \entry{Brouwer}{book}{}
       \name{author}{2}{}{%
@@ -218,7 +994,6 @@
       \field{labeltitlesource}{title}
       \field{title}{{Methods of Celestial Mechanics}}
       \field{year}{1961}
-      \true{nocite}
       \keyw{general}
     \endentry
     \entry{Schaub_Junkins}{book}{}
@@ -246,131 +1021,17 @@
       \strng{authorbibnamehash}{1d7a171a58363aa8bf04eece48bbe6dd}
       \strng{authornamehash}{1d7a171a58363aa8bf04eece48bbe6dd}
       \strng{authorfullhash}{1d7a171a58363aa8bf04eece48bbe6dd}
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{month}{10}
       \field{title}{Analytical Mechanics of Space Systems}
       \field{year}{2003}
-      \true{nocite}
       \verb{doi}
       \verb 10.2514/4.861550
       \endverb
       \keyw{general}
-    \endentry
-    \entry{Fehse}{book}{}
-      \name{author}{1}{}{%
-        {{hash=5ecb95438e87e12b20e8c9e9c27d0db7}{%
-           family={Fehse},
-           familyi={F\bibinitperiod},
-           given={Wigbert},
-           giveni={W\bibinitperiod}}}%
-      }
-      \list{location}{1}{%
-        {Cambridge}%
-      }
-      \list{publisher}{1}{%
-        {Cambridge University Press}%
-      }
-      \strng{namehash}{5ecb95438e87e12b20e8c9e9c27d0db7}
-      \strng{fullhash}{5ecb95438e87e12b20e8c9e9c27d0db7}
-      \strng{bibnamehash}{5ecb95438e87e12b20e8c9e9c27d0db7}
-      \strng{authorbibnamehash}{5ecb95438e87e12b20e8c9e9c27d0db7}
-      \strng{authornamehash}{5ecb95438e87e12b20e8c9e9c27d0db7}
-      \strng{authorfullhash}{5ecb95438e87e12b20e8c9e9c27d0db7}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{series}{Cambridge Aerospace Series}
-      \field{title}{Automated Rendezvous and Docking of Spacecraft}
-      \field{year}{2003}
-      \true{nocite}
-      \verb{doi}
-      \verb 10.1017/CBO9780511543388
-      \endverb
-      \keyw{general}
-    \endentry
-    \entry{Time_handbook}{book}{}
-      \name{author}{1}{}{%
-        {{hash=7aae3c76356e6c2d8205ca8f584a1b93}{%
-           family={Dennis\bibnamedelimb D.\bibnamedelimi McCarthy},
-           familyi={D\bibinitperiod\bibinitdelim D\bibinitperiod\bibinitdelim M\bibinitperiod},
-           given={P.\bibnamedelimi Kenneth\bibnamedelima Seidelmann},
-           giveni={P\bibinitperiod\bibinitdelim K\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
-      }
-      \list{publisher}{1}{%
-        {Wiley-VCH}%
-      }
-      \strng{namehash}{7aae3c76356e6c2d8205ca8f584a1b93}
-      \strng{fullhash}{7aae3c76356e6c2d8205ca8f584a1b93}
-      \strng{bibnamehash}{7aae3c76356e6c2d8205ca8f584a1b93}
-      \strng{authorbibnamehash}{7aae3c76356e6c2d8205ca8f584a1b93}
-      \strng{authornamehash}{7aae3c76356e6c2d8205ca8f584a1b93}
-      \strng{authorfullhash}{7aae3c76356e6c2d8205ca8f584a1b93}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{isbn}{3527407804; 9783527407804}
-      \field{title}{Time: From Earth Rotation to Atomic Physics}
-      \field{year}{2009}
-      \true{nocite}
-      \keyw{general}
-    \endentry
-    \entry{Wakker}{book}{}
-      \name{author}{1}{}{%
-        {{hash=9f67f7e163f525368297b347baa02ce6}{%
-           family={Wakker},
-           familyi={W\bibinitperiod},
-           given={Karel},
-           giveni={K\bibinitperiod}}}%
-      }
-      \strng{namehash}{9f67f7e163f525368297b347baa02ce6}
-      \strng{fullhash}{9f67f7e163f525368297b347baa02ce6}
-      \strng{bibnamehash}{9f67f7e163f525368297b347baa02ce6}
-      \strng{authorbibnamehash}{9f67f7e163f525368297b347baa02ce6}
-      \strng{authornamehash}{9f67f7e163f525368297b347baa02ce6}
-      \strng{authorfullhash}{9f67f7e163f525368297b347baa02ce6}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{isbn}{978-94-6186-419-2}
-      \field{month}{01}
-      \field{title}{Fundamentals of Astrodynamics}
-      \field{year}{2015}
-      \true{nocite}
-    \endentry
-    \entry{Nayfeh}{book}{}
-      \name{author}{1}{}{%
-        {{hash=aded628cfb77b62db19cb3243f425b8b}{%
-           family={H.\bibnamedelimi Nayfeh},
-           familyi={H\bibinitperiod\bibinitdelim N\bibinitperiod},
-           given={Ali},
-           giveni={A\bibinitperiod}}}%
-      }
-      \list{location}{1}{%
-        {Weinheim, Germany}%
-      }
-      \list{publisher}{1}{%
-        {Wiley-VCH}%
-      }
-      \strng{namehash}{aded628cfb77b62db19cb3243f425b8b}
-      \strng{fullhash}{aded628cfb77b62db19cb3243f425b8b}
-      \strng{bibnamehash}{aded628cfb77b62db19cb3243f425b8b}
-      \strng{authorbibnamehash}{aded628cfb77b62db19cb3243f425b8b}
-      \strng{authornamehash}{aded628cfb77b62db19cb3243f425b8b}
-      \strng{authorfullhash}{aded628cfb77b62db19cb3243f425b8b}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{title}{{Perturbation Methods}}
-      \field{year}{2004}
-      \true{nocite}
-      \keyw{perturbations}
     \endentry
     \entry{Kaula}{book}{}
       \name{author}{1}{}{%
@@ -392,14 +1053,43 @@
       \strng{authorbibnamehash}{a5d8ee096fc8780081f9d4403188d626}
       \strng{authornamehash}{a5d8ee096fc8780081f9d4403188d626}
       \strng{authorfullhash}{a5d8ee096fc8780081f9d4403188d626}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{{Theory of Satellite Geodesy}}
       \field{year}{2013}
-      \true{nocite}
       \keyw{perturbations}
+    \endentry
+    \entry{Chao}{book}{}
+      \name{author}{2}{}{%
+        {{hash=16aebe2df8f3d14d03122206d95f5f79}{%
+           family={Chao},
+           familyi={C\bibinitperiod},
+           given={C.C.},
+           giveni={C\bibinitperiod}}}%
+        {{hash=b15b51719bef647e6f3b4686a176f592}{%
+           family={Hoots},
+           familyi={H\bibinitperiod},
+           given={F.R.},
+           giveni={F\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Aerospace Press}%
+      }
+      \strng{namehash}{79b1fac74380a15000d09e05aabd73ac}
+      \strng{fullhash}{79b1fac74380a15000d09e05aabd73ac}
+      \strng{bibnamehash}{79b1fac74380a15000d09e05aabd73ac}
+      \strng{authorbibnamehash}{79b1fac74380a15000d09e05aabd73ac}
+      \strng{authornamehash}{79b1fac74380a15000d09e05aabd73ac}
+      \strng{authorfullhash}{79b1fac74380a15000d09e05aabd73ac}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{9781523123346}
+      \field{title}{Applied Orbit Perturbation and Maintenance}
+      \field{year}{2018}
     \endentry
     \entry{Tisserand}{book}{}
       \name{author}{1}{}{%
@@ -418,60 +1108,184 @@
       \strng{authorbibnamehash}{fe825ec9d3bdbaa3aaac4903b15ce75c}
       \strng{authornamehash}{fe825ec9d3bdbaa3aaac4903b15ce75c}
       \strng{authorfullhash}{fe825ec9d3bdbaa3aaac4903b15ce75c}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{{Traité de Mécanique Céleste}}
       \field{volume}{1}
       \field{year}{1889}
-      \true{nocite}
       \keyw{perturbations}
     \endentry
-    \entry{Sullivan}{article}{}
+    \entry{Yan_Alfriend}{inproceedings}{}
+      \name{author}{2}{}{%
+        {{hash=4be98aa3f42188b70e4a5d51e1e9ec19}{%
+           family={Alfriend},
+           familyi={A\bibinitperiod},
+           given={K.T.},
+           giveni={K\bibinitperiod}}}%
+        {{hash=2b9d05be40eef94c345e6989c30daf40}{%
+           family={Yan},
+           familyi={Y\bibinitperiod},
+           given={H.},
+           giveni={H\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Toulouse, France}%
+      }
+      \strng{namehash}{d98120d706d2d01a9782fee9f834de36}
+      \strng{fullhash}{d98120d706d2d01a9782fee9f834de36}
+      \strng{bibnamehash}{d98120d706d2d01a9782fee9f834de36}
+      \strng{authorbibnamehash}{d98120d706d2d01a9782fee9f834de36}
+      \strng{authornamehash}{d98120d706d2d01a9782fee9f834de36}
+      \strng{authorfullhash}{d98120d706d2d01a9782fee9f834de36}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Proceedings of the International Formation Flying Conference: Missions and Technologies}
+      \field{month}{02}
+      \field{title}{An Orbital Elements Based Approach to the Nonlinear Formation Flying Problem}
+      \field{year}{2016}
+      \keyw{perturbations}
+    \endentry
+    \entry{GAM}{article}{}
       \name{author}{3}{}{%
-        {{hash=724b995e12d13b7426262e44d00af760}{%
-           family={Sullivan},
-           familyi={S\bibinitperiod},
-           given={Joshua},
-           giveni={J\bibinitperiod}}}%
-        {{hash=47106cf1237c0a90b9300080bd6e962e}{%
-           family={Grimberg},
+        {{hash=8b796085773bae90281bbfc5770adba1}{%
+           family={Gaias},
            familyi={G\bibinitperiod},
-           given={Sebastian},
-           giveni={S\bibinitperiod}}}%
+           given={Gabriella},
+           giveni={G\bibinitperiod}}}%
+        {{hash=c27ae8e4ac7affeca9ed98622f85db03}{%
+           family={Ardaens},
+           familyi={A\bibinitperiod},
+           given={J.S.},
+           giveni={J\bibinitperiod}}}%
+        {{hash=7b2860cad0944fd99cdbd545c723679c}{%
+           family={Montenbruck},
+           familyi={M\bibinitperiod},
+           given={O.},
+           giveni={O\bibinitperiod}}}%
+      }
+      \strng{namehash}{e666988e089692430e594190ee711138}
+      \strng{fullhash}{e666988e089692430e594190ee711138}
+      \strng{bibnamehash}{e666988e089692430e594190ee711138}
+      \strng{authorbibnamehash}{e666988e089692430e594190ee711138}
+      \strng{authornamehash}{e666988e089692430e594190ee711138}
+      \strng{authorfullhash}{e666988e089692430e594190ee711138}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Celestial Mechanics and Dynamical Astronomy}
+      \field{title}{Model of J2 Perturbed Satellite Relative Motion with Time-Varying Differential Drag}
+      \field{year}{2015}
+      \keyw{perturbations}
+    \endentry
+    \entry{Koenig}{inproceedings}{}
+      \name{author}{3}{}{%
+        {{hash=398a32b3c2f2e5795ccdf65c60b4d278}{%
+           family={Koenig},
+           familyi={K\bibinitperiod},
+           given={Adam},
+           giveni={A\bibinitperiod}}}%
+        {{hash=b4124c22bf4e7b11103cb30b076e7a44}{%
+           family={Guffanti},
+           familyi={G\bibinitperiod},
+           given={Tommaso},
+           giveni={T\bibinitperiod}}}%
         {{hash=ea13c363649ca2667cc3e443056d36c5}{%
            family={D'Amico},
            familyi={D\bibinitperiod},
            given={Simone},
            giveni={S\bibinitperiod}}}%
       }
-      \list{publisher}{2}{%
-        {American Institute of Aeronautics}%
-        {Astronautics}%
-      }
-      \strng{namehash}{0aef3d40e01252a4fc361ae338296c02}
-      \strng{fullhash}{0aef3d40e01252a4fc361ae338296c02}
-      \strng{bibnamehash}{0aef3d40e01252a4fc361ae338296c02}
-      \strng{authorbibnamehash}{0aef3d40e01252a4fc361ae338296c02}
-      \strng{authornamehash}{0aef3d40e01252a4fc361ae338296c02}
-      \strng{authorfullhash}{0aef3d40e01252a4fc361ae338296c02}
+      \strng{namehash}{84c96604dee3b5f214fbb33f647f7946}
+      \strng{fullhash}{84c96604dee3b5f214fbb33f647f7946}
+      \strng{bibnamehash}{84c96604dee3b5f214fbb33f647f7946}
+      \strng{authorbibnamehash}{84c96604dee3b5f214fbb33f647f7946}
+      \strng{authornamehash}{84c96604dee3b5f214fbb33f647f7946}
+      \strng{authorfullhash}{84c96604dee3b5f214fbb33f647f7946}
       \field{sortinit}{1}
       \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{journaltitle}{{Journal of Guidance, Control \& Dynamics}}
-      \field{number}{8}
-      \field{title}{Comprehensive Survey and Assessment of Spacecraft Relative Motion Dynamics Models}
-      \field{volume}{40}
-      \field{year}{2017}
-      \true{nocite}
-      \field{pages}{1837\bibrangedash 1859}
-      \range{pages}{23}
+      \field{month}{09}
+      \field{title}{New State Transition Matrices for Relative Motion of Spacecraft Formations in Perturbed Orbits}
+      \field{year}{2016}
       \verb{doi}
-      \verb 10.2514/1.G002309
+      \verb 10.2514/6.2016-5635
       \endverb
-      \keyw{general}
+      \keyw{perturbations}
+    \endentry
+    \entry{dAmicoDLR}{report}{}
+      \name{author}{1}{}{%
+        {{hash=b7057a298bccb39982474a51a2ccd39c}{%
+           family={D'Amico},
+           familyi={D\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {Deutsches Zentrum für Luft- und Raumfahrt (DLR)}%
+      }
+      \list{location}{1}{%
+        {Oberpfaffenhofen, Germany}%
+      }
+      \strng{namehash}{b7057a298bccb39982474a51a2ccd39c}
+      \strng{fullhash}{b7057a298bccb39982474a51a2ccd39c}
+      \strng{bibnamehash}{b7057a298bccb39982474a51a2ccd39c}
+      \strng{authorbibnamehash}{b7057a298bccb39982474a51a2ccd39c}
+      \strng{authornamehash}{b7057a298bccb39982474a51a2ccd39c}
+      \strng{authorfullhash}{b7057a298bccb39982474a51a2ccd39c}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{number}{TN 05-08}
+      \field{title}{Relative Orbital Elements as Integration Constants of Hill's Equations}
+      \field{year}{2005}
+      \keyw{perturbations}
+    \endentry
+    \entry{Gim_Alfriend_equinoctial}{article}{}
+      \name{author}{2}{}{%
+        {{hash=2f8ebbbe02bdff3a984e40ca7c65a693}{%
+           family={Gim},
+           familyi={G\bibinitperiod},
+           given={Dong-Woo},
+           giveni={D\bibinithyphendelim W\bibinitperiod}}}%
+        {{hash=bda899410e386bdbfa8a7bdd63c5dec8}{%
+           family={Alfriend},
+           familyi={A\bibinitperiod},
+           given={Kyle\bibnamedelima T.},
+           giveni={K\bibinitperiod\bibinitdelim T\bibinitperiod}}}%
+      }
+      \list{publisher}{2}{%
+        {Springer Science}%
+        {Business Media LLC}%
+      }
+      \strng{namehash}{816dec555b2f8907b7602caf61908a57}
+      \strng{fullhash}{816dec555b2f8907b7602caf61908a57}
+      \strng{bibnamehash}{816dec555b2f8907b7602caf61908a57}
+      \strng{authorbibnamehash}{816dec555b2f8907b7602caf61908a57}
+      \strng{authornamehash}{816dec555b2f8907b7602caf61908a57}
+      \strng{authorfullhash}{816dec555b2f8907b7602caf61908a57}
+      \field{extraname}{2}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{{Celestial Mechanics and Dynamical Astronomy}}
+      \field{number}{4}
+      \field{title}{Satellite Relative Motion Using Differential Equinoctial Elements}
+      \field{volume}{92}
+      \field{year}{2005}
+      \field{pages}{295\bibrangedash 336}
+      \range{pages}{42}
+      \verb{doi}
+      \verb 10.1007/s10569-004-1799-0
+      \endverb
+      \keyw{perturbations}
     \endentry
     \entry{Schaub2004}{article}{}
       \name{author}{1}{}{%
@@ -500,12 +1314,154 @@
       \field{title}{Relative Orbit Geometry Through Classical Orbit Element Differences}
       \field{volume}{27}
       \field{year}{2004}
-      \true{nocite}
       \field{pages}{839\bibrangedash 848}
       \range{pages}{10}
       \verb{doi}
       \verb 10.2514/1.12595
       \endverb
+      \keyw{general}
+    \endentry
+    \entry{LVLH}{report}{}
+      \name{author}{1}{}{%
+        {{hash=2f9ea127a38aa7b9bb961325b1251dd3}{%
+           family={Williams},
+           familyi={W\bibinitperiod},
+           given={Jacob},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{2f9ea127a38aa7b9bb961325b1251dd3}
+      \strng{fullhash}{2f9ea127a38aa7b9bb961325b1251dd3}
+      \strng{bibnamehash}{2f9ea127a38aa7b9bb961325b1251dd3}
+      \strng{authorbibnamehash}{2f9ea127a38aa7b9bb961325b1251dd3}
+      \strng{authornamehash}{2f9ea127a38aa7b9bb961325b1251dd3}
+      \strng{authorfullhash}{2f9ea127a38aa7b9bb961325b1251dd3}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{\url{https://degenerateconic.com/uploads/2015/03/lvlh.pdf}}
+      \field{title}{LVLH Transformations}
+      \field{year}{2014}
+      \keyw{general}
+    \endentry
+    \entry{Time_handbook}{book}{}
+      \name{author}{1}{}{%
+        {{hash=7aae3c76356e6c2d8205ca8f584a1b93}{%
+           family={Dennis\bibnamedelimb D.\bibnamedelimi McCarthy},
+           familyi={D\bibinitperiod\bibinitdelim D\bibinitperiod\bibinitdelim M\bibinitperiod},
+           given={P.\bibnamedelimi Kenneth\bibnamedelima Seidelmann},
+           giveni={P\bibinitperiod\bibinitdelim K\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Wiley-VCH}%
+      }
+      \strng{namehash}{7aae3c76356e6c2d8205ca8f584a1b93}
+      \strng{fullhash}{7aae3c76356e6c2d8205ca8f584a1b93}
+      \strng{bibnamehash}{7aae3c76356e6c2d8205ca8f584a1b93}
+      \strng{authorbibnamehash}{7aae3c76356e6c2d8205ca8f584a1b93}
+      \strng{authornamehash}{7aae3c76356e6c2d8205ca8f584a1b93}
+      \strng{authorfullhash}{7aae3c76356e6c2d8205ca8f584a1b93}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{3527407804; 9783527407804}
+      \field{title}{Time: From Earth Rotation to Atomic Physics}
+      \field{year}{2009}
+      \keyw{general}
+    \endentry
+    \entry{Tapley}{book}{}
+      \name{author}{3}{}{%
+        {{hash=d2322cd60717b84a9b357c3478d16037}{%
+           family={Tapley},
+           familyi={T\bibinitperiod},
+           given={Byron\bibnamedelima D.},
+           giveni={B\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+        {{hash=66f153b6859c96a5715fb868fb51715d}{%
+           family={Schutz},
+           familyi={S\bibinitperiod},
+           given={Bob\bibnamedelima E.},
+           giveni={B\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+        {{hash=99d9e4d7ca7ae4170062a8d41d006bdb}{%
+           family={Born},
+           familyi={B\bibinitperiod},
+           given={George\bibnamedelima H.},
+           giveni={G\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Amsterdam, Netherlands}%
+      }
+      \list{publisher}{1}{%
+        {Elsevier}%
+      }
+      \strng{namehash}{415a0bba2e2e7f3ff2d6d29311617685}
+      \strng{fullhash}{415a0bba2e2e7f3ff2d6d29311617685}
+      \strng{bibnamehash}{415a0bba2e2e7f3ff2d6d29311617685}
+      \strng{authorbibnamehash}{415a0bba2e2e7f3ff2d6d29311617685}
+      \strng{authornamehash}{415a0bba2e2e7f3ff2d6d29311617685}
+      \strng{authorfullhash}{415a0bba2e2e7f3ff2d6d29311617685}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{1}
+      \field{title}{{Statistical Orbit Determination}}
+      \field{year}{2004}
+      \keyw{general}
+    \endentry
+    \entry{DinVu}{online}{}
+      \name{author}{1}{}{%
+        {{hash=61a203ca97ce3ccb9dfe0102c817bd95}{%
+           family={Delgado},
+           familyi={D\bibinitperiod},
+           given={Manuel\bibnamedelima Ruiz},
+           giveni={M\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Universidad PolitÃ©cnica de Madrid}%
+      }
+      \strng{namehash}{61a203ca97ce3ccb9dfe0102c817bd95}
+      \strng{fullhash}{61a203ca97ce3ccb9dfe0102c817bd95}
+      \strng{bibnamehash}{61a203ca97ce3ccb9dfe0102c817bd95}
+      \strng{authorbibnamehash}{61a203ca97ce3ccb9dfe0102c817bd95}
+      \strng{authornamehash}{61a203ca97ce3ccb9dfe0102c817bd95}
+      \strng{authorfullhash}{61a203ca97ce3ccb9dfe0102c817bd95}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{4}
+      \field{title}{Lecture notes: Basics of Orbital Mechanics I}
+      \field{year}{2008}
+      \keyw{notes}
+    \endentry
+    \entry{IERS_conventions}{report}{}
+      \name{author}{1}{}{%
+        {{hash=44b11b044d204e0404ccad8f7a324667}{%
+           family={McCarthy},
+           familyi={M\bibinitperiod},
+           given={Dennis\bibnamedelima D.},
+           giveni={D\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {Central Bureau of IERS - Observatoire de Paris}%
+      }
+      \list{location}{1}{%
+        {Paris, France}%
+      }
+      \strng{namehash}{44b11b044d204e0404ccad8f7a324667}
+      \strng{fullhash}{44b11b044d204e0404ccad8f7a324667}
+      \strng{bibnamehash}{44b11b044d204e0404ccad8f7a324667}
+      \strng{authorbibnamehash}{44b11b044d204e0404ccad8f7a324667}
+      \strng{authornamehash}{44b11b044d204e0404ccad8f7a324667}
+      \strng{authorfullhash}{44b11b044d204e0404ccad8f7a324667}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{number}{21}
+      \field{title}{IERS Conventions (1992)}
+      \field{year}{1996}
       \keyw{general}
     \endentry
     \entry{Schaub_Alfriend}{article}{}
@@ -540,7 +1496,6 @@
       \field{title}{Hybrid Cartesian and Orbit Element Feedback Law for Formation Flying Spacecraft}
       \field{volume}{25}
       \field{year}{2002}
-      \true{nocite}
       \field{pages}{387\bibrangedash 393}
       \range{pages}{7}
       \verb{doi}
@@ -581,171 +1536,6 @@
       \range{pages}{17}
       \keyw{general}
     \endentry
-    \entry{IERS_conventions}{report}{}
-      \name{author}{1}{}{%
-        {{hash=44b11b044d204e0404ccad8f7a324667}{%
-           family={McCarthy},
-           familyi={M\bibinitperiod},
-           given={Dennis\bibnamedelima D.},
-           giveni={D\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
-      }
-      \list{institution}{1}{%
-        {Central Bureau of IERS - Observatoire de Paris}%
-      }
-      \list{location}{1}{%
-        {Paris, France}%
-      }
-      \strng{namehash}{44b11b044d204e0404ccad8f7a324667}
-      \strng{fullhash}{44b11b044d204e0404ccad8f7a324667}
-      \strng{bibnamehash}{44b11b044d204e0404ccad8f7a324667}
-      \strng{authorbibnamehash}{44b11b044d204e0404ccad8f7a324667}
-      \strng{authornamehash}{44b11b044d204e0404ccad8f7a324667}
-      \strng{authorfullhash}{44b11b044d204e0404ccad8f7a324667}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{number}{21}
-      \field{title}{IERS Conventions (1992)}
-      \field{year}{1996}
-      \true{nocite}
-      \keyw{general}
-    \endentry
-    \entry{LVLH}{report}{}
-      \name{author}{1}{}{%
-        {{hash=2f9ea127a38aa7b9bb961325b1251dd3}{%
-           family={Williams},
-           familyi={W\bibinitperiod},
-           given={Jacob},
-           giveni={J\bibinitperiod}}}%
-      }
-      \strng{namehash}{2f9ea127a38aa7b9bb961325b1251dd3}
-      \strng{fullhash}{2f9ea127a38aa7b9bb961325b1251dd3}
-      \strng{bibnamehash}{2f9ea127a38aa7b9bb961325b1251dd3}
-      \strng{authorbibnamehash}{2f9ea127a38aa7b9bb961325b1251dd3}
-      \strng{authornamehash}{2f9ea127a38aa7b9bb961325b1251dd3}
-      \strng{authorfullhash}{2f9ea127a38aa7b9bb961325b1251dd3}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{note}{\url{https://degenerateconic.com/uploads/2015/03/lvlh.pdf}}
-      \field{title}{LVLH Transformations}
-      \field{year}{2014}
-      \true{nocite}
-      \keyw{general}
-    \endentry
-    \entry{Terrasar}{report}{}
-      \name{author}{1}{}{%
-        {{hash=593d5a57309b860955c3e776f8866639}{%
-           family={Fiedler},
-           familyi={F\bibinitperiod},
-           given={Hauke},
-           giveni={H\bibinitperiod}}}%
-      }
-      \list{institution}{1}{%
-        {Deutsches Zentrum für Luft- und Raumfahrt (DLR)}%
-      }
-      \list{location}{1}{%
-        {Oberpfaffenhofen, Germany}%
-      }
-      \strng{namehash}{593d5a57309b860955c3e776f8866639}
-      \strng{fullhash}{593d5a57309b860955c3e776f8866639}
-      \strng{bibnamehash}{593d5a57309b860955c3e776f8866639}
-      \strng{authorbibnamehash}{593d5a57309b860955c3e776f8866639}
-      \strng{authornamehash}{593d5a57309b860955c3e776f8866639}
-      \strng{authorfullhash}{593d5a57309b860955c3e776f8866639}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{month}{11}
-      \field{note}{\url{https://elib.dlr.de/22345/}}
-      \field{title}{Analysis of TerraSAR-L Cartwheel Constellations}
-      \field{year}{2003}
-      \true{nocite}
-      \keyw{general}
-    \endentry
-    \entry{Yamanaka_Ankersen}{article}{}
-      \name{author}{2}{}{%
-        {{hash=4631da1a9cf263094ff98f0dbde84946}{%
-           family={Yamanaka},
-           familyi={Y\bibinitperiod},
-           given={Koji},
-           giveni={K\bibinitperiod}}}%
-        {{hash=c40dd1ad4324d5d35d8fa2151962cc4f}{%
-           family={Ankersen},
-           familyi={A\bibinitperiod},
-           given={Finn},
-           giveni={F\bibinitperiod}}}%
-      }
-      \list{publisher}{2}{%
-        {American Institute of Aeronautics}%
-        {Astronautics}%
-      }
-      \strng{namehash}{0d76214d0bd5bead32ede905b151fc58}
-      \strng{fullhash}{0d76214d0bd5bead32ede905b151fc58}
-      \strng{bibnamehash}{0d76214d0bd5bead32ede905b151fc58}
-      \strng{authorbibnamehash}{0d76214d0bd5bead32ede905b151fc58}
-      \strng{authornamehash}{0d76214d0bd5bead32ede905b151fc58}
-      \strng{authorfullhash}{0d76214d0bd5bead32ede905b151fc58}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{{Journal of Guidance, Control \& Dynamics}}
-      \field{number}{1}
-      \field{title}{New State Transition Matrix for Relative Motion on an Arbitrary Elliptical Orbit}
-      \field{volume}{25}
-      \field{year}{2002}
-      \true{nocite}
-      \field{pages}{60\bibrangedash 66}
-      \range{pages}{7}
-      \verb{doi}
-      \verb 10.2514/2.4875
-      \endverb
-      \keyw{eccentric}
-    \endentry
-    \entry{DAmico_Montenbruck}{article}{}
-      \name{author}{2}{}{%
-        {{hash=ea13c363649ca2667cc3e443056d36c5}{%
-           family={D'Amico},
-           familyi={D\bibinitperiod},
-           given={Simone},
-           giveni={S\bibinitperiod}}}%
-        {{hash=80a8be6ff5184fbb0119b6701e40cfb1}{%
-           family={Montenbruck},
-           familyi={M\bibinitperiod},
-           given={Oliver},
-           giveni={O\bibinitperiod}}}%
-      }
-      \list{publisher}{2}{%
-        {American Institute of Aeronautics}%
-        {Astronautics}%
-      }
-      \strng{namehash}{99cc30d684c858bf3c9d85f06f523323}
-      \strng{fullhash}{99cc30d684c858bf3c9d85f06f523323}
-      \strng{bibnamehash}{99cc30d684c858bf3c9d85f06f523323}
-      \strng{authorbibnamehash}{99cc30d684c858bf3c9d85f06f523323}
-      \strng{authornamehash}{99cc30d684c858bf3c9d85f06f523323}
-      \strng{authorfullhash}{99cc30d684c858bf3c9d85f06f523323}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{{Journal of Guidance, Control \& Dynamics}}
-      \field{number}{3}
-      \field{title}{Proximity Operations of Formation-Flying Spacecraft Using an Eccentricity/Inclination Vector Separation}
-      \field{volume}{29}
-      \field{year}{2006}
-      \true{nocite}
-      \field{pages}{554\bibrangedash 563}
-      \range{pages}{10}
-      \verb{doi}
-      \verb 10.2514/1.15114
-      \endverb
-      \keyw{eccentric}
-    \endentry
     \entry{Broucke}{article}{}
       \name{author}{1}{}{%
         {{hash=4008167c97bc7dde725c7244dd27db0d}{%
@@ -760,8 +1550,8 @@
       \strng{authorbibnamehash}{4008167c97bc7dde725c7244dd27db0d}
       \strng{authornamehash}{4008167c97bc7dde725c7244dd27db0d}
       \strng{authorfullhash}{4008167c97bc7dde725c7244dd27db0d}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Astronomy and Astrophysics}
@@ -773,337 +1563,6 @@
       \field{pages}{173}
       \range{pages}{1}
       \keyw{eccentric}
-    \endentry
-    \entry{Peters_Noomen}{article}{}
-      \name{author}{2}{}{%
-        {{hash=24c47c2be2fd6dd4a3f862e571578442}{%
-           family={Vincent\bibnamedelima Peters},
-           familyi={V\bibinitperiod\bibinitdelim P\bibinitperiod},
-           given={Thomas},
-           giveni={T\bibinitperiod}}}%
-        {{hash=7da3be880fbe1816b424c01a110982e6}{%
-           family={Noomen},
-           familyi={N\bibinitperiod},
-           given={Ron},
-           giveni={R\bibinitperiod}}}%
-      }
-      \list{publisher}{2}{%
-        {American Institute of Aeronautics}%
-        {Astronautics}%
-      }
-      \strng{namehash}{3c958361e46617021179d780e75bc2c9}
-      \strng{fullhash}{3c958361e46617021179d780e75bc2c9}
-      \strng{bibnamehash}{3c958361e46617021179d780e75bc2c9}
-      \strng{authorbibnamehash}{3c958361e46617021179d780e75bc2c9}
-      \strng{authornamehash}{3c958361e46617021179d780e75bc2c9}
-      \strng{authorfullhash}{3c958361e46617021179d780e75bc2c9}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{{Journal of Guidance, Control \& Dynamics}}
-      \field{number}{4}
-      \field{title}{Linear Cotangential Transfers and Safe Orbits for Elliptic Orbit Rendezvous}
-      \field{volume}{44}
-      \field{year}{2021}
-      \true{nocite}
-      \field{pages}{732\bibrangedash 748}
-      \range{pages}{17}
-      \verb{doi}
-      \verb 10.2514/1.G005152
-      \endverb
-      \keyw{eccentric}
-    \endentry
-    \entry{Eckstein}{inproceedings}{}
-      \name{author}{3}{}{%
-        {{hash=0e5a9c44928ffa2995b6940bbe1c133e}{%
-           family={Eckstein},
-           familyi={E\bibinitperiod},
-           given={M.C.},
-           giveni={M\bibinitperiod}}}%
-        {{hash=58e91f9208dd5ef68e999837c02e22f1}{%
-           family={Rajasingh},
-           familyi={R\bibinitperiod},
-           given={C.K.},
-           giveni={C\bibinitperiod}}}%
-        {{hash=09703d4a15558d26ddc0f7ca82f4f49b}{%
-           family={Blumer},
-           familyi={B\bibinitperiod},
-           given={P.},
-           giveni={P\bibinitperiod}}}%
-      }
-      \list{location}{1}{%
-        {Oberpfaffenhofen, Germany}%
-      }
-      \list{publisher}{1}{%
-        {DLR GSOC}%
-      }
-      \strng{namehash}{258eaa64bb7c65774ba6b4486f00f719}
-      \strng{fullhash}{258eaa64bb7c65774ba6b4486f00f719}
-      \strng{bibnamehash}{258eaa64bb7c65774ba6b4486f00f719}
-      \strng{authorbibnamehash}{258eaa64bb7c65774ba6b4486f00f719}
-      \strng{authornamehash}{258eaa64bb7c65774ba6b4486f00f719}
-      \strng{authorfullhash}{258eaa64bb7c65774ba6b4486f00f719}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{booktitle}{CNES International Symposium on Space Dynamics}
-      \field{month}{11}
-      \field{title}{{Colocation Strategy and Collision Avoidance for the Geostationary Satellites at 19 Degrees West}}
-      \field{volume}{25}
-      \field{year}{1989}
-      \true{nocite}
-      \field{pages}{60\bibrangedash 66}
-      \range{pages}{7}
-      \keyw{eccentric}
-    \endentry
-    \entry{Tschauner_Hempel}{article}{}
-      \name{author}{2}{}{%
-        {{hash=d83db3300d0eb58f7a4ba6f856008511}{%
-           family={Tschauner},
-           familyi={T\bibinitperiod},
-           given={J.},
-           giveni={J\bibinitperiod}}}%
-        {{hash=6d1959e827497cc3aaa69b39ff22f7c7}{%
-           family={Hempel},
-           familyi={H\bibinitperiod},
-           given={P.},
-           giveni={P\bibinitperiod}}}%
-      }
-      \strng{namehash}{9963bf91b0036a70fc09e6341b78fa64}
-      \strng{fullhash}{9963bf91b0036a70fc09e6341b78fa64}
-      \strng{bibnamehash}{9963bf91b0036a70fc09e6341b78fa64}
-      \strng{authorbibnamehash}{9963bf91b0036a70fc09e6341b78fa64}
-      \strng{authornamehash}{9963bf91b0036a70fc09e6341b78fa64}
-      \strng{authorfullhash}{9963bf91b0036a70fc09e6341b78fa64}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Astronautica Acta}
-      \field{title}{Optimale Beschleunigungsprogramme fÃ¼r das Rendezvous-Manöver}
-      \field{volume}{10}
-      \field{year}{1964}
-      \true{nocite}
-      \field{pages}{296\bibrangedash 307}
-      \range{pages}{12}
-      \keyw{eccentric}
-    \endentry
-    \entry{Carter}{article}{}
-      \name{author}{1}{}{%
-        {{hash=613679091e8ca1cb3632ce9fbbd24789}{%
-           family={Carter},
-           familyi={C\bibinitperiod},
-           given={Thomas},
-           giveni={T\bibinitperiod}}}%
-      }
-      \strng{namehash}{613679091e8ca1cb3632ce9fbbd24789}
-      \strng{fullhash}{613679091e8ca1cb3632ce9fbbd24789}
-      \strng{bibnamehash}{613679091e8ca1cb3632ce9fbbd24789}
-      \strng{authorbibnamehash}{613679091e8ca1cb3632ce9fbbd24789}
-      \strng{authornamehash}{613679091e8ca1cb3632ce9fbbd24789}
-      \strng{authorfullhash}{613679091e8ca1cb3632ce9fbbd24789}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Journal of Guidance Control and Dynamics}
-      \field{month}{01}
-      \field{title}{State Transition Matrices for Terminal Rendezvous Studies: Brief Survey and New Example}
-      \field{volume}{21}
-      \field{year}{1998}
-      \true{nocite}
-      \field{pages}{148\bibrangedash 155}
-      \range{pages}{8}
-      \verb{doi}
-      \verb 10.2514/2.4211
-      \endverb
-      \keyw{eccentric}
-    \endentry
-    \entry{Montenbruck_DAmico}{article}{}
-      \name{author}{3}{}{%
-        {{hash=80a8be6ff5184fbb0119b6701e40cfb1}{%
-           family={Montenbruck},
-           familyi={M\bibinitperiod},
-           given={Oliver},
-           giveni={O\bibinitperiod}}}%
-        {{hash=0930289d440ac1f1f7d144119f96ccf7}{%
-           family={Kirschner},
-           familyi={K\bibinitperiod},
-           given={Michael},
-           giveni={M\bibinitperiod}}}%
-        {{hash=ea13c363649ca2667cc3e443056d36c5}{%
-           family={D'Amico},
-           familyi={D\bibinitperiod},
-           given={Simone},
-           giveni={S\bibinitperiod}}}%
-      }
-      \strng{namehash}{326a1dd1cf23b55ae8b56ddc8609dcb6}
-      \strng{fullhash}{326a1dd1cf23b55ae8b56ddc8609dcb6}
-      \strng{bibnamehash}{326a1dd1cf23b55ae8b56ddc8609dcb6}
-      \strng{authorbibnamehash}{326a1dd1cf23b55ae8b56ddc8609dcb6}
-      \strng{authornamehash}{326a1dd1cf23b55ae8b56ddc8609dcb6}
-      \strng{authorfullhash}{326a1dd1cf23b55ae8b56ddc8609dcb6}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Aerospace Science and Technology}
-      \field{title}{E/I-vector separation for safe switching of the GRACE formation}
-      \field{volume}{10}
-      \field{year}{2006}
-      \true{nocite}
-      \field{pages}{628\bibrangedash 635}
-      \range{pages}{8}
-      \verb{doi}
-      \verb 10.1016/j.ast.2006.04.001
-      \endverb
-      \keyw{general}
-    \endentry
-    \entry{dAmicoDLR}{report}{}
-      \name{author}{1}{}{%
-        {{hash=b7057a298bccb39982474a51a2ccd39c}{%
-           family={D'Amico},
-           familyi={D\bibinitperiod},
-           given={S.},
-           giveni={S\bibinitperiod}}}%
-      }
-      \list{institution}{1}{%
-        {Deutsches Zentrum für Luft- und Raumfahrt (DLR)}%
-      }
-      \list{location}{1}{%
-        {Oberpfaffenhofen, Germany}%
-      }
-      \strng{namehash}{b7057a298bccb39982474a51a2ccd39c}
-      \strng{fullhash}{b7057a298bccb39982474a51a2ccd39c}
-      \strng{bibnamehash}{b7057a298bccb39982474a51a2ccd39c}
-      \strng{authorbibnamehash}{b7057a298bccb39982474a51a2ccd39c}
-      \strng{authornamehash}{b7057a298bccb39982474a51a2ccd39c}
-      \strng{authorfullhash}{b7057a298bccb39982474a51a2ccd39c}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{number}{TN 05-08}
-      \field{title}{Relative Orbital Elements as Integration Constants of Hill's Equations}
-      \field{year}{2005}
-      \true{nocite}
-      \keyw{perturbations}
-    \endentry
-    \entry{Gim_Alfriend_equinoctial}{article}{}
-      \name{author}{2}{}{%
-        {{hash=2f8ebbbe02bdff3a984e40ca7c65a693}{%
-           family={Gim},
-           familyi={G\bibinitperiod},
-           given={Dong-Woo},
-           giveni={D\bibinithyphendelim W\bibinitperiod}}}%
-        {{hash=bda899410e386bdbfa8a7bdd63c5dec8}{%
-           family={Alfriend},
-           familyi={A\bibinitperiod},
-           given={Kyle\bibnamedelima T.},
-           giveni={K\bibinitperiod\bibinitdelim T\bibinitperiod}}}%
-      }
-      \list{publisher}{2}{%
-        {Springer Science}%
-        {Business Media LLC}%
-      }
-      \strng{namehash}{816dec555b2f8907b7602caf61908a57}
-      \strng{fullhash}{816dec555b2f8907b7602caf61908a57}
-      \strng{bibnamehash}{816dec555b2f8907b7602caf61908a57}
-      \strng{authorbibnamehash}{816dec555b2f8907b7602caf61908a57}
-      \strng{authornamehash}{816dec555b2f8907b7602caf61908a57}
-      \strng{authorfullhash}{816dec555b2f8907b7602caf61908a57}
-      \field{extraname}{1}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{{Celestial Mechanics and Dynamical Astronomy}}
-      \field{number}{4}
-      \field{title}{Satellite Relative Motion Using Differential Equinoctial Elements}
-      \field{volume}{92}
-      \field{year}{2005}
-      \true{nocite}
-      \field{pages}{295\bibrangedash 336}
-      \range{pages}{42}
-      \verb{doi}
-      \verb 10.1007/s10569-004-1799-0
-      \endverb
-      \keyw{perturbations}
-    \endentry
-    \entry{GA_STM}{article}{}
-      \name{author}{2}{}{%
-        {{hash=2f8ebbbe02bdff3a984e40ca7c65a693}{%
-           family={Gim},
-           familyi={G\bibinitperiod},
-           given={Dong-Woo},
-           giveni={D\bibinithyphendelim W\bibinitperiod}}}%
-        {{hash=0b4dd7c34b0d73f7648d35e73721a08f}{%
-           family={Alfriend},
-           familyi={A\bibinitperiod},
-           given={Kyle},
-           giveni={K\bibinitperiod}}}%
-      }
-      \strng{namehash}{b7a6b44ea9ddd80bc79f16cd6eeb9e11}
-      \strng{fullhash}{b7a6b44ea9ddd80bc79f16cd6eeb9e11}
-      \strng{bibnamehash}{b7a6b44ea9ddd80bc79f16cd6eeb9e11}
-      \strng{authorbibnamehash}{b7a6b44ea9ddd80bc79f16cd6eeb9e11}
-      \strng{authornamehash}{b7a6b44ea9ddd80bc79f16cd6eeb9e11}
-      \strng{authorfullhash}{b7a6b44ea9ddd80bc79f16cd6eeb9e11}
-      \field{extraname}{2}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Journal of Guidance Control and Dynamics}
-      \field{month}{11}
-      \field{title}{State Transition Matrix of Relative Motion for the Perturbed Noncircular Reference Orbit}
-      \field{volume}{26}
-      \field{year}{2003}
-      \true{nocite}
-      \field{pages}{956\bibrangedash 971}
-      \range{pages}{16}
-      \verb{doi}
-      \verb 10.2514/2.6924
-      \endverb
-      \keyw{perturbations}
-    \endentry
-    \entry{Gaias_mean2osc}{article}{}
-      \name{author}{3}{}{%
-        {{hash=8b796085773bae90281bbfc5770adba1}{%
-           family={Gaias},
-           familyi={G\bibinitperiod},
-           given={Gabriella},
-           giveni={G\bibinitperiod}}}%
-        {{hash=7ca8913d671009db827cb65835e80adf}{%
-           family={Colombo},
-           familyi={C\bibinitperiod},
-           given={Camilla},
-           giveni={C\bibinitperiod}}}%
-        {{hash=315408691d84f31991f8675d8cfaae51}{%
-           family={Lara},
-           familyi={L\bibinitperiod},
-           given={Martin},
-           giveni={M\bibinitperiod}}}%
-      }
-      \strng{namehash}{36f88b66e2a1d70933657395bca8d775}
-      \strng{fullhash}{36f88b66e2a1d70933657395bca8d775}
-      \strng{bibnamehash}{36f88b66e2a1d70933657395bca8d775}
-      \strng{authorbibnamehash}{36f88b66e2a1d70933657395bca8d775}
-      \strng{authornamehash}{36f88b66e2a1d70933657395bca8d775}
-      \strng{authorfullhash}{36f88b66e2a1d70933657395bca8d775}
-      \field{extraname}{1}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{month}{02}
-      \field{note}{\url{https://www.researchgate.net/publication/340378956_Accurate_OsculatingMean_Orbital_Elements_Conversions_for_Spaceborne_Formation_Flying}}
-      \field{title}{Accurate Osculating/Mean Orbital Elements Conversions for Spaceborne Formation Flying}
-      \field{year}{2018}
-      \true{nocite}
-      \keyw{perturbations}
     \endentry
     \entry{Gaias_LOS}{article}{}
       \name{author}{3}{}{%
@@ -1129,8 +1588,8 @@
       \strng{authorbibnamehash}{9797c6c3c80e811360b2cab209116610}
       \strng{authornamehash}{9797c6c3c80e811360b2cab209116610}
       \strng{authorfullhash}{9797c6c3c80e811360b2cab209116610}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Advances in Space Research}
@@ -1172,8 +1631,8 @@
       \strng{authornamehash}{36f88b66e2a1d70933657395bca8d775}
       \strng{authorfullhash}{36f88b66e2a1d70933657395bca8d775}
       \field{extraname}{2}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Journal of Guidance, Control, and Dynamics}
@@ -1189,160 +1648,34 @@
       \endverb
       \keyw{perturbations}
     \endentry
-    \entry{Brouwer_paper}{article}{}
-      \name{author}{1}{}{%
-        {{hash=0a6bbc521dde2c5fbba62c2b627ffcf6}{%
-           family={Brouwer},
+    \entry{Biria_Russell}{inproceedings}{}
+      \name{author}{2}{}{%
+        {{hash=3f91c232222fd19c283368cd55dc35c4}{%
+           family={Biria},
            familyi={B\bibinitperiod},
-           given={Dirk},
-           giveni={D\bibinitperiod}}}%
-      }
-      \strng{namehash}{0a6bbc521dde2c5fbba62c2b627ffcf6}
-      \strng{fullhash}{0a6bbc521dde2c5fbba62c2b627ffcf6}
-      \strng{bibnamehash}{0a6bbc521dde2c5fbba62c2b627ffcf6}
-      \strng{authorbibnamehash}{0a6bbc521dde2c5fbba62c2b627ffcf6}
-      \strng{authornamehash}{0a6bbc521dde2c5fbba62c2b627ffcf6}
-      \strng{authorfullhash}{0a6bbc521dde2c5fbba62c2b627ffcf6}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Astronomical Journal}
-      \field{month}{11}
-      \field{number}{5}
-      \field{title}{Solution of the problem of artificial satellite theory without drag}
-      \field{volume}{64}
-      \field{year}{1959}
-      \true{nocite}
-      \field{pages}{378}
-      \range{pages}{1}
-      \verb{doi}
-      \verb 10.1086/107958
-      \endverb
-      \keyw{perturbations}
-    \endentry
-    \entry{Lyddane}{article}{}
-      \name{author}{1}{}{%
-        {{hash=178bf8558061a59c8080dcb73e950720}{%
-           family={{Lyddane}},
-           familyi={L\bibinitperiod},
-           given={R.\bibnamedelimi H.},
-           giveni={R\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
-      }
-      \strng{namehash}{178bf8558061a59c8080dcb73e950720}
-      \strng{fullhash}{178bf8558061a59c8080dcb73e950720}
-      \strng{bibnamehash}{178bf8558061a59c8080dcb73e950720}
-      \strng{authorbibnamehash}{178bf8558061a59c8080dcb73e950720}
-      \strng{authornamehash}{178bf8558061a59c8080dcb73e950720}
-      \strng{authorfullhash}{178bf8558061a59c8080dcb73e950720}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Astronomical Journal}
-      \field{month}{10}
-      \field{title}{{Small eccentricities or inclinations in the Brouwer theory of the artificial satellite}}
-      \field{volume}{68}
-      \field{year}{1963}
-      \true{nocite}
-      \field{pages}{555}
-      \range{pages}{1}
-      \verb{doi}
-      \verb 10.1086/109179
-      \endverb
-      \keyw{perturbations}
-    \endentry
-    \entry{Deprit}{article}{}
-      \name{author}{1}{}{%
-        {{hash=35a361a71ca45d501e1f001b9d959b22}{%
-           family={{Deprit}},
-           familyi={D\bibinitperiod},
-           given={André},
+           given={Ashley},
            giveni={A\bibinitperiod}}}%
+        {{hash=1550352598fdb9298d0b727fb942e611}{%
+           family={Russell},
+           familyi={R\bibinitperiod},
+           given={Ryan},
+           giveni={R\bibinitperiod}}}%
       }
-      \strng{namehash}{35a361a71ca45d501e1f001b9d959b22}
-      \strng{fullhash}{35a361a71ca45d501e1f001b9d959b22}
-      \strng{bibnamehash}{35a361a71ca45d501e1f001b9d959b22}
-      \strng{authorbibnamehash}{35a361a71ca45d501e1f001b9d959b22}
-      \strng{authornamehash}{35a361a71ca45d501e1f001b9d959b22}
-      \strng{authorfullhash}{35a361a71ca45d501e1f001b9d959b22}
-      \field{extraname}{1}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \strng{namehash}{90bd2f57eb88627b99271a93985e7b14}
+      \strng{fullhash}{90bd2f57eb88627b99271a93985e7b14}
+      \strng{bibnamehash}{90bd2f57eb88627b99271a93985e7b14}
+      \strng{authorbibnamehash}{90bd2f57eb88627b99271a93985e7b14}
+      \strng{authornamehash}{90bd2f57eb88627b99271a93985e7b14}
+      \strng{authorfullhash}{90bd2f57eb88627b99271a93985e7b14}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{journaltitle}{Celestial Mechanics}
-      \field{month}{3}
-      \field{number}{1}
-      \field{title}{{Canonical transformations depending on a small parameter}}
-      \field{volume}{1}
-      \field{year}{1969}
+      \field{month}{02}
+      \field{title}{A Satellite Relative Motion Model Including J2 and J3 via Vinti's Intermediary}
+      \field{year}{2016}
       \true{nocite}
-      \field{pages}{12\bibrangedash 30}
-      \range{pages}{19}
-      \verb{doi}
-      \verb 10.1007/BF01230629
-      \endverb
-    \endentry
-    \entry{Deprit_2}{article}{}
-      \name{author}{1}{}{%
-        {{hash=dc5303060c2ccb5f93410de582fc5eed}{%
-           family={{Deprit}},
-           familyi={D\bibinitperiod},
-           given={A.},
-           giveni={A\bibinitperiod}}}%
-      }
-      \strng{namehash}{dc5303060c2ccb5f93410de582fc5eed}
-      \strng{fullhash}{dc5303060c2ccb5f93410de582fc5eed}
-      \strng{bibnamehash}{dc5303060c2ccb5f93410de582fc5eed}
-      \strng{authorbibnamehash}{dc5303060c2ccb5f93410de582fc5eed}
-      \strng{authornamehash}{dc5303060c2ccb5f93410de582fc5eed}
-      \strng{authorfullhash}{dc5303060c2ccb5f93410de582fc5eed}
-      \field{extraname}{2}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Celestial Mechanics}
-      \field{month}{1}
-      \field{number}{1}
-      \field{title}{{Delaunay Normalisations}}
-      \field{volume}{26}
-      \field{year}{1982}
-      \true{nocite}
-      \field{pages}{9\bibrangedash 21}
-      \range{pages}{13}
-      \verb{doi}
-      \verb 10.1007/BF01233178
-      \endverb
-      \keyw{Eccentric Orbits,Kepler Laws,Normalizing,Orbit Perturbation,Perturbation Theory,Power Series,Artificial Satellites,Lie Groups,Paradoxes,Satellite Perturbation,Three Body Problem,Astronomy}
-    \endentry
-    \entry{cdf2rdf}{online}{}
-      \name{author}{1}{}{%
-        {{hash=8f631b769d4710fba49eafd295c9d96d}{%
-           family={Mathworks},
-           familyi={M\bibinitperiod}}}%
-      }
-      \strng{namehash}{8f631b769d4710fba49eafd295c9d96d}
-      \strng{fullhash}{8f631b769d4710fba49eafd295c9d96d}
-      \strng{bibnamehash}{8f631b769d4710fba49eafd295c9d96d}
-      \strng{authorbibnamehash}{8f631b769d4710fba49eafd295c9d96d}
-      \strng{authornamehash}{8f631b769d4710fba49eafd295c9d96d}
-      \strng{authorfullhash}{8f631b769d4710fba49eafd295c9d96d}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{title}{Convert complex diagonal form into real diagonal form}
-      \field{year}{2022}
-      \field{dateera}{ce}
-      \true{nocite}
-      \verb{urlraw}
-      \verb https://www.mathworks.com/help/matlab/ref/cdf2rdf.html
-      \endverb
-      \verb{url}
-      \verb https://www.mathworks.com/help/matlab/ref/cdf2rdf.html
-      \endverb
+      \keyw{perturbations}
     \endentry
     \entry{subtightplot}{misc}{}
       \name{author}{1}{}{%
@@ -1361,8 +1694,8 @@
       \strng{authorbibnamehash}{70cc65d3064b366149435080373e0ddb}
       \strng{authornamehash}{70cc65d3064b366149435080373e0ddb}
       \strng{authorfullhash}{70cc65d3064b366149435080373e0ddb}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{note}{\url{https://www.mathworks.com/matlabcentral/fileexchange/39664-subtightplot}}
@@ -1388,8 +1721,8 @@
       \strng{authorbibnamehash}{2612de45c34b5823877a4a2a009f2576}
       \strng{authornamehash}{2612de45c34b5823877a4a2a009f2576}
       \strng{authorfullhash}{2612de45c34b5823877a4a2a009f2576}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{note}{\url{https://www.mathworks.com/matlabcentral/fileexchange/42673-beautiful-and-distinguishable-line-colors-colormap}}
@@ -1413,8 +1746,8 @@
       \strng{authorbibnamehash}{e68564f23e0e939acea76dc3d2bc01bf}
       \strng{authornamehash}{e68564f23e0e939acea76dc3d2bc01bf}
       \strng{authorfullhash}{e68564f23e0e939acea76dc3d2bc01bf}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{note}{\url{https://www.mathworks.com/matlabcentral/fileexchange/31437-windowapi}}
@@ -1440,8 +1773,8 @@
       \strng{authorbibnamehash}{8219e6a78841f04aefdca7b9e1e3bef8}
       \strng{authornamehash}{8219e6a78841f04aefdca7b9e1e3bef8}
       \strng{authorfullhash}{8219e6a78841f04aefdca7b9e1e3bef8}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{note}{\url{https://www.mathworks.com/matlabcentral/fileexchange/14056-arrow3}}
@@ -1467,8 +1800,8 @@
       \strng{authorbibnamehash}{655cc8a485d63f5dda9971fcd304fb09}
       \strng{authornamehash}{655cc8a485d63f5dda9971fcd304fb09}
       \strng{authorfullhash}{655cc8a485d63f5dda9971fcd304fb09}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{note}{\url{https://www.mathworks.com/matlabcentral/fileexchange/44274-latextable}}
