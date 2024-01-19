@@ -31,7 +31,7 @@
   \item [{$\underline{a}_i$}]\begingroup Acceleration on body $i$  \nomunit{$\left[ \dfrac{m}{s^2} \right]$}\nomeqref {0}\nompageref{xiv}
   \item [{$\underline{F}_i$}]\begingroup Force on body $i$  \nomunit{$\left[ N \right]$}\nomeqref {0}\nompageref{xiv}
   \item [{$a_e $}]\begingroup Equatorial radius of a celestial body  \nomunit{$\left[ m \right]$}\nomeqref {0}\nompageref{xiv}
-  \item [{$m_i$}]\begingroup Mass off body $i$  \nomunit{$\left[ kg \right]$}\nomeqref {0}\nompageref{xiv}
+  \item [{$m_i$}]\begingroup Mass of body $i$  \nomunit{$\left[ kg \right]$}\nomeqref {0}\nompageref{xiv}
 \nomgroup{M}
   \item [{$ \Delta \bullet$}]\begingroup Variation or increment of a quantity\nomeqref {0}\nompageref{xiv}
   \item [{$ \delta \bullet$}]\begingroup Relative quantity (deputy's minus chief's value)\nomeqref {0}\nompageref{xiv}

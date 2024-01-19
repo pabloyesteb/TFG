@@ -1,62 +1,64 @@
-\chapter{General concepts on spacecraft relative dynamics and STMs.}
+\chapter{The Validation Loop}
 %
 \label{chap:Chap_1}
 %
 %\indent This thesis is developed over a particular method of describing 
 %
-\section{Spacecraft relative dynamics.}
+\section{Introduccion}
 %
-\indent Spacecraft relative dynamics is a vast, very relevant and ever-increasing branch of celestial mechanics. It tries to analyze, rather than the motion around a central body, that of a secondary body (or set of bodies) around a primary, assuming that neither of them generate a gravitational effect on each other. This discipline hence focuses on analyzing how a certain force field -- which may include different influences -- differentially affects two or more different spacecrafts in a mostly common orbit.\\
+\indent Spacecraft relative dynamics is a vast, very relevant and ever-increasing branch of celestial mechanics. It tries to analyse, rather than the motion around a central body, that of a secondary body (or set of bodies) around a primary, assuming that neither of them generate a gravitational effect on each other. This discipline hence focuses on analysing how a certain force field -- which may include different influences -- differentially affects two or more different spacecrafts in a mostly common orbit.\\
 %
-\indent Relative dynamics models are regularly reached through the manipulation of the absolute dynamics of each of the spacecrafts, although they come in all kinds of flavours. Some of them may be formulated through variational mechanics, while others are directly derived from Newton's equations of motion. Naturally, there is a variety also in the kind of variables they use, mainly being orbital elements or cartesian coordinates. When the spacecrafts are close enough together, the linearization of the equations becomes a common procedure, simplifying and increasing the efficiency of the formulation at the expense of accuracy. The trade-off between these two figures of merit will be a recurring topic along this thesis.\\
+\section{Train-test split}
+\subsection{Preliminaries}
+\indent In supervised learning applications, the dataset is typically divided into the training, the validation, and the test sets. Each set is used for different tasks, namely: training, model validation and hyperparameter tuning. Keeping different sets for each task is fundamental in order to prevent bias of the model for certain data or data features. Typical figures for the train-validation-test split are 60\%-20\%-20\%\cite[pp. 20-21]{Marsland2015Machine}.\\
 %
-\indent Spacecraft relative dynamics is embedded in the Distributed Space Systems discipline. A Distributed Space System is a system composed of two or more satellites that work together to accomplish an objective, impossible using a single spacecraft. A diagram of the different sub-groups of missions is shown in figure \ref{figCh1:Dist_space_systems}. Along this thesis, only proximity motion is considered. Hence, only two branches will be analyzed: rendez-vous and formation flying. 
+\indent Training and evaluating the NN on the same dataset would result in the phenomenon called overfitting\cite[pp. 19-20]{Marsland2015Machine}, which basically consists of the NN fitting the noise in the training data and thus losing inference ability.\\
 %
-\begin{figure}[!htb]
-\centering\includegraphics[width = \linewidth]{Chapters/Chapter_01/Dist_space_systems}
-\caption{Distributed space systems classification.}
-\label{figCh1:Dist_space_systems}
-\end{figure}
+\indent With the dataset split into the train, evaluation, and test sets, the training and validation loop is as follows: the model is trained to ''fit'' the data in the training set. After a certain amount of training, its performance is measured on the evaluation set. The test set is used to compare the performance of different hyperparameter configurations. Note that the NN is always evaluated with data not previously ''seen'' during training, and as such cannot develop any bias for the training set (although bias for the validation or test sets may exist).\\
 %
-\FloatBarrier
+\indent In the model validation loop, the first question that should be asked, even before training the model, is whether the dataset split is appropriate for training.
 %
-	\subsection{Rendez-vous.}
-	%
-	\indent A rendez-vous flight is basically an operation or a mission in which a spacecraft (chaser or deputy) approaches another one (target or chief) \cite{Fehse}. It is normally followed by a mating procedure, after which both spacecrafts are connected by a rigid link. The final goal of this kinds of missions may be ``simply'' meet the chief spacecraft (\eg reaching the International Space Station for research purposes), station keeping (\eg maintaining nominal conditions on the orbit of a passive spacecraft through impulses), on-orbit servicing or, lately, debris removal. \\
-	%
-	\indent A general rendez-vous mission generally consists of the following stages \cite{Fehse}:
-	%
-	\begin{itemize}
-	\item[\GMVred{\nth{1}}] \myul[GMVred]{Launch phase and injection}: This phase begins with the lift-off, greatly influenced by the launch window, and ends with the chaser vehicle in an injection orbit, considerably below and behind the target.
-	%
-	\item[\GMVred{\nth{2}}] \myul[GMVred]{Phasing}: This stage aims to reduce the phase angle between the spacecrafts, which is achieved by exploiting the higher orbital rate of lower orbits. This phase ends with the acquisition of either an aim point or an entry gate, which marks the starting point of the rendez-vous procedure. Two main constraints are usually considered: the phasing constraint (arriving at the correct relative position) and the scheduling constraint (arriving at the correct time).
-	%
-	\item[\GMVred{\nth{3}}]\myul[GMVred]{Far-range rendez-vous}: The tasks of this phase are (a) the reduction of approach velocity (b) the synchronisation of the mission timeline and (c) lead the chaser to close proximity. It begins with said vehicle at the aim point and ends with it at the final approach hold point.
-	%
-	\item[\GMVred{\nth{4}}] \myul[GMVred]{Close-range rendez-vous}: This stage is subdivided into a preparation phase (\ie closing phase) and the final approach. The first one basically is devoted to a controlled range reduction (as well as obtaining the conditions for the final approach) while the latter is aimed to end with mating conditions (axis alignment, etc.). Depending on the kind of mating procedure (docking or berthing, see phase \nth{5}), these conditions differ.
-	%
-	\item[\GMVred{\nth{5}}] \myul[GMVred]{Mating}: This phase aims to achieve a certain connection between both spacecrafts. There are two main procedures for this purpose: Docking and berthing, which are shown in figure \ref{figCh1:Docking_berthing}. The connection, besides structural, usually involves power, data and possibly fluids. It is important to note that residual relative motion must be attenuated.
-	%
-	\end{itemize}
-	%
-	%
-	\begin{figure}[!htb]
-	\centering\includegraphics[width = 0.7\linewidth]{Chapters/Chapter_01/Docking_berthing}
-	\caption{Docking and berthing \cite{Fehse}.}
-	\label{figCh1:Docking_berthing}
-	\end{figure}
-	%
-	\FloatBarrier
-	%
-	\subsection{Formation flying.}
-	%
-	\indent Formation flying does not have a specially precise definition, varying from institution to institution. However, NASA's Goddard Space Flight Center provides a definition to which most of the space community would agree, defining it as the tracking or maintenance of a desired relative separation, orientation or position between or among spacecraft \cite{SCFormationFlying}. It involves longer-term planning and operations than rendez-vous, hence usually requiring or being further rewarded by the usage of more accurate models. Fuel consumption becomes an even more critical concern, depending on several factors such as mission requirements, initial conditions, drag or thrusting errors.\\
-	%
-	\indent Missions involving spacecraft formation flying have been certainly infrequent. The required knowledge about control, measurement and modeling have turned some groundbreaking projects down due to their costs. Nonetheless, there are current missions such as CLUSTER and GRACE which feature concepts closely related to the discipline. Furthermore, missions like PRISMA or the upcoming Proba-3 and LISA are the main bids to develop the involved methodologies and technologies of formation flying.\\
-	%
-	\indent A very important concern about formation flying is orbit safety, being very tightly related to formation control. This will be a recurrent topic along the thesis, analyzing state-of-the-art methodologies and practical examples of greater or smaller complexities.
+\indent For the case of applicability of this section, we suppose we have a dataset which has been split into a training set
+
+$${\cal S}_{\text{train}}=\{({\bf X^{tr}},{\bf Y^{tr}})_i\}_{i=1}^{N_{training}}$$
+
+and a test set
+
+$${\cal S}_{\text{test}}=\{({\bf X^{te}},{\bf Y^{te}})_i\}_{i=1}^{N_{test}},$$
+
+where ${\bf X}=(X_1,X_2,\dots,X_m)$ is the vector of input variables (also called feature vector), $m$ is the dimensionality of the input parameter space, and ${\bf Y}=(Y_1,Y_2,\dots,Y_q)$ is the vector of output variables, with dimensionality $q$. Individual variables $X_k$ can be numerical or categorical. For instance, for stress problems such as MSP-S18, we have a combination of numerical  (eg external loads) and categorical (eg discrete geometrical variables such as ''Frame'' or ''Stringer'', and purely categorical such as ''dp''). Individual variables $Y_k$ describe the prediction and these are typically numerical (for stress problems such as MSP-S18, $q=6$ and these are so-called reserve factors, quantifying the failure likelihood of different failure modes).
+
+The aim of this section is to propose a set of tests to evaluate to which extent splitting fulfils the necessary conditions for the subsequent surrogate model ${\bf \hat{Y}}=F({\bf X})$ to be appropriately trained on ${\cal S}_{\text{train}}$ and tested on ${\cal S}_{\text{test}}$.\\
 %
-\section{State transition matrices.}
+ 
+\subsection{The train-test split problem in supervised learning}
+\indent The idea that the model evaluation consists of evaluating the NN's fitness to a dataset statistically as close as possible to the training one should be kept in mind. This can be expressed by the equation \eqref{eqC1:TT1}:
+
+\begin{equation} \label{eqC1:TT1}
+	P_{training}(x)=P_{test}(x)
+\end{equation}
+where $x=(x_1, x_2, x_3,...,x_m)$ is the vector of input variables.\\
+%
+\indent The above condition can be applied also to the validation dataset. Therefore, for the rest of this section only the train-test split will be referred, nevertheless everything herein said for the train-test split is fully applicable to the train-validation split.\\
+%
+\indent In fact, the condition given by \eqref{eqC1:TT1} indeed assures statistical equivalence between the two sets, nonetheless is impossible to fulfil given that ${\cal S}_{train} \cap {\cal S}_{test} = \emptyset$. Instead, we will see that the goodness of the train-test split is closely related to the idea of interpolation. We now of NN that they perform better at interpolating than at extrapolating tasks. This is a matter of discussion highly debated in the literature (see v. gr.\cite{pmlr-v80-barrett18a,DBLP:journals/corr/abs-1711-00350,DBLP:journals/corr/abs-1904-01557}).\\
+
+%
+\indent There are plenty of definitions for the interpolation region of a given dataset. Some authors define it as the smallest hypercube enclosing the data\cite{ebert2014interpolation} although this might lead to points well far-away from the training set being considered to fall inside the interpolation region. Many authors (see v. gr. \cite{loh2007extrapolation,4505337}) define the interpolation region as the \textit{convex hull} of the training data, \ie:
+
+\begin{definition}\label{def:interpolacion}
+	Interpolation occurs for a sample $\mathbf{x}$ whenever this sample belongs to the convex hull of a set of samples $\mathbf{X}\triangleq \left\{\mathbf{x}_1,...,\mathbf{x}_N\right\}$.
+\end{definition}
+
+\indent The convex hull can be simply defined as the smallest convex set containing the data\cite{Preparata1985}. Definition \ref{def:interpolacion} will be taken as a first approach for the train-test split validation.\\
+%
+
+%
+
+
+
+
+\section{Las movidas de Rodrigo}
 %
 \indent Orbit propagation is a very wide and varied field. It comprises many different approaches and methods to obtain more or less accurate results, with a higher or lower computational cost. Some examples are the numerical integration of the equations of motion in cartesian coordinates, the numerical integration of the variational equations (\ie equations of motion expressed in OEs) and the development of closed-form solutions by simplifying the problem. Within this last group, State Transition Matrices arise.\\
 %

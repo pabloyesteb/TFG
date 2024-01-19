@@ -1,68 +1,68 @@
-\nomenclatureentry{AECI@[{ECI}]\begingroup Earth-Centered Inertial frame \nomeqref {0}|nompageref}{xiv}
-\nomenclatureentry{AECEF@[{ECEF}]\begingroup Earth-Centered Earth-Fixed frame\nomeqref {0}|nompageref}{xiv}
-\nomenclatureentry{ATOD@[{TOD}]\begingroup True-of-Date frame\nomeqref {0}|nompageref}{xiv}
-\nomenclatureentry{AMOD@[{MOD}]\begingroup Mean-of-Date frame\nomeqref {0}|nompageref}{xiv}
-\nomenclatureentry{ABF@[{BF}]\begingroup Body-Fixed frame\nomeqref {0}|nompageref}{xiv}
-\nomenclatureentry{APBF@[{PBF}]\begingroup Pseudo-Body-Fixed frame\nomeqref {0}|nompageref}{xiv}
-\nomenclatureentry{ARTN@[{RTN}]\begingroup Radial-Transverse-Normal frame\nomeqref {0}|nompageref}{xiv}
-\nomenclatureentry{ALVLH@[{LVLH}]\begingroup Local-Vertical, Local-Horizontal frame\nomeqref {0}|nompageref}{xiv}
-\nomenclatureentry{AIP@[{IP}]\begingroup In-plane\nomeqref {0}|nompageref}{xiv}
-\nomenclatureentry{AOOP@[{OOP}]\begingroup Out-of-plane\nomeqref {0}|nompageref}{xiv}
-\nomenclatureentry{ANSG@[{NSG}]\begingroup Non-spherical gravity\nomeqref {0}|nompageref}{xiv}
-\nomenclatureentry{ASRP@[{SRP}]\begingroup Solar Radiation Pressure\nomeqref {0}|nompageref}{xiv}
-\nomenclatureentry{ASTM@[{STM}]\begingroup State Transition Matrix\nomeqref {0}|nompageref}{xiv}
-\nomenclatureentry{AICs@[{ICs}]\begingroup Initial Conditions\nomeqref {0}|nompageref}{xiv}
-\nomenclatureentry{ALEO@[{LEO}]\begingroup Low Earth Orbit\nomeqref {0}|nompageref}{xiv}
-\nomenclatureentry{ACR3BP@[{CR3BP}]\begingroup Circular Restricted Three Body Problem\nomeqref {0}|nompageref}{xiv}
-\nomenclatureentry{AOEs@[{OEs}]\begingroup Orbital Elements\nomeqref {0}|nompageref}{xiv}
-\nomenclatureentry{AKOE@[{KOE}]\begingroup Keplerian OEs vector\nomeqref {0}|nompageref}{xiv}
-\nomenclatureentry{AYA@[{YA}]\begingroup Yamanaka-Ankersen\nomeqref {0}|nompageref}{xiv}
-\nomenclatureentry{AGA@[{GA}]\begingroup Gim-Alfriend\nomeqref {0}|nompageref}{xiv}
-\nomenclatureentry{ACW@[{CW}]\begingroup Clohessy-Wiltshire\nomeqref {0}|nompageref}{xiv}
-\nomenclatureentry{AHCW@[{HCW}]\begingroup Hill/Clohessy-Wiltshire\nomeqref {0}|nompageref}{xiv}
-\nomenclatureentry{AHi-Fi@[{Hi-Fi}]\begingroup High-Fidelity\nomeqref {0}|nompageref}{xiv}
-\nomenclatureentry{AODE@[{ODE}]\begingroup Ordinary Differential Equation\nomeqref {0}|nompageref}{xiv}
-\nomenclatureentry{AIVP@[{IVP}]\begingroup Initial Value Problem\nomeqref {0}|nompageref}{xiv}
-\nomenclatureentry{P$q_i, Q_i$@[{$q_i, Q_i$}]\begingroup Generalized coordinate (original or transformed)\nomeqref {0}|nompageref}{xiv}
-\nomenclatureentry{P$p_i, P_i$@[{$p_i, P_i$}]\begingroup Generalized momentum (original or transformed)\nomeqref {0}|nompageref}{xiv}
-\nomenclatureentry{P$H$@[{$H$}]\begingroup Hamiltonian of the system \nomeqref {0}|nompageref}{xiv}
-\nomenclatureentry{P$K$@[{$K$}]\begingroup Modified Hamiltonian of the system \nomeqref {0}|nompageref}{xiv}
-\nomenclatureentry{P$\varepsilon$@[{$\varepsilon$}]\begingroup Small parameter \nomunit{$[---]$}\nomeqref {0}|nompageref}{xiv}
-\nomenclatureentry{P$S, W$@[{$S, W$}]\begingroup Generating function of the transformation \nomeqref {0}|nompageref}{xiv}
-\nomenclatureentry{P$R$@[{$R$}]\begingroup Disturbing function \nomunit{$?$}\nomeqref {0}|nompageref}{xiv}
-\nomenclatureentry{P$\underline{OE}$@[{$\underline{OE}$}]\begingroup Osculating orbital element vector \nomeqref {0}|nompageref}{xiv}
-\nomenclatureentry{P$\underline{\overline{OE}}$@[{$\underline{\overline{OE}}$}]\begingroup Mean orbital element vector \nomeqref {0}|nompageref}{xiv}
-\nomenclatureentry{S$\left. \right\rvert_{i}$@[{$\left. \right\rvert_{i}$}]\begingroup Expressed in frame $i$\nomeqref {0}|nompageref}{xiv}
-\nomenclatureentry{S$\bullet_C$@[{$\bullet_C$}]\begingroup Variable from the chief spacecraft\nomeqref {0}|nompageref}{xiv}
-\nomenclatureentry{S$\bullet_D$@[{$\bullet_D$}]\begingroup Variable from the deputy spacecraft\nomeqref {0}|nompageref}{xiv}
-\nomenclatureentry{S$\bullet_0$@[{$\bullet_0$}]\begingroup Variable at $t = t_0$\nomeqref {0}|nompageref}{xiv}
-\nomenclatureentry{O$a$@[{$a$}]\begingroup Semimajor axis \nomunit{$\left[ m \right]$}\nomeqref {0}|nompageref}{xiv}
-\nomenclatureentry{O$e$@[{$e$}]\begingroup Eccentricity \nomunit{$\left[ --- \right]$}\nomeqref {0}|nompageref}{xiv}
-\nomenclatureentry{O$i$@[{$i$}]\begingroup Inclination \nomunit{$\left[ rad \right], \left[ \deg \right]$}\nomeqref {0}|nompageref}{xiv}
-\nomenclatureentry{O$\Omega$@[{$\Omega$}]\begingroup Right Ascension of Ascending Node \nomunit{$\left[ rad \right], \left[ \deg \right]$}\nomeqref {0}|nompageref}{xiv}
-\nomenclatureentry{O$\omega$@[{$\omega$}]\begingroup Argument of periapsis \nomunit{$\left[ rad \right], \left[ \deg \right]$}\nomeqref {0}|nompageref}{xiv}
-\nomenclatureentry{O$M$@[{$M$}]\begingroup Mean anomaly\nomunit{$\left[ rad \right]$}\nomeqref {0}|nompageref}{xiv}
-\nomenclatureentry{O$E$@[{$E$}]\begingroup Eccentric anomaly\nomunit{$\left[ rad \right]$}\nomeqref {0}|nompageref}{xiv}
-\nomenclatureentry{O$\theta$@[{$\theta$}]\begingroup True anomaly\nomunit{$\left[ rad \right], \left[ \deg \right]$}\nomeqref {0}|nompageref}{xiv}
-\nomenclatureentry{O$u$@[{$u$}]\begingroup True argument of latitude \nomunit{$\left[ rad \right], \left[ \deg \right]$}\nomeqref {0}|nompageref}{xiv}
-\nomenclatureentry{O$\lambda$@[{$\lambda$}]\begingroup Mean argument of latitude \nomunit{$\left[ rad \right]$}\nomeqref {0}|nompageref}{xiv}
-\nomenclatureentry{O$F$@[{$F$}]\begingroup Eccentric argument of latitude \nomunit{$\left[ rad \right]$}\nomeqref {0}|nompageref}{xiv}
-\nomenclatureentry{U$\rho = 1 + e\cos\theta$@[{$\rho = 1 + e\cos\theta$}]\begingroup \nomunit{$\left[ --- \right]$}\nomeqref {0}|nompageref}{xiv}
-\nomenclatureentry{U$\eta = \sqrt{1-e^2}$@[{$\eta = \sqrt{1-e^2}$}]\begingroup \nomunit{$\left[ --- \right]$}\nomeqref {0}|nompageref}{xiv}
-\nomenclatureentry{U$h$@[{$h$}]\begingroup Orbit altitude or orbit momentum\nomunit{$\left[ m \right] \text{or} \left[ \dfrac{m^2}{s} \right]$}\nomeqref {0}|nompageref}{xiv}
-\nomenclatureentry{U$\phi, \lambda$@[{$\phi, \lambda$}]\begingroup Geodetic latitude and longitude \nomunit{$\left[ rad \right], \left[ \deg \right]$}\nomeqref {0}|nompageref}{xiv}
-\nomenclatureentry{M$\underline{u}, \underline{y}$@[{$\underline{u}, \underline{y}$}]\begingroup State vector of a system of ODEs\nomeqref {0}|nompageref}{xiv}
-\nomenclatureentry{M$\bm A$@[{$\bm A$}]\begingroup System's matrix of a system of ODEs\nomeqref {0}|nompageref}{xiv}
-\nomenclatureentry{M$\underline{f}$@[{$\underline{f}$}]\begingroup Dynamics function of a system \nomeqref {0}|nompageref}{xiv}
-\nomenclatureentry{M$ \mathbb{I}$@[{$ \mathbb{I}$}]\begingroup Identity matrix\nomeqref {0}|nompageref}{xiv}
-\nomenclatureentry{M$ V $@[{$ V $}]\begingroup Real or complex eigenvector matrix\nomeqref {0}|nompageref}{xiv}
-\nomenclatureentry{M$ \Lambda $@[{$ \Lambda $}]\begingroup Real or complex eigenvalue matrix\nomeqref {0}|nompageref}{xiv}
-\nomenclatureentry{M$ J $@[{$ J $}]\begingroup Jordan form\nomeqref {0}|nompageref}{xiv}
-\nomenclatureentry{M$ \Phi (t, t_0) $@[{$ \Phi (t, t_0) $}]\begingroup State Transition Matrix\nomeqref {0}|nompageref}{xiv}
-\nomenclatureentry{M$ \delta \bullet$@[{$ \delta \bullet$}]\begingroup Relative quantity (deputy's minus chief's value)\nomeqref {0}|nompageref}{xiv}
-\nomenclatureentry{M$ \Delta \bullet$@[{$ \Delta \bullet$}]\begingroup Variation or increment of a quantity\nomeqref {0}|nompageref}{xiv}
-\nomenclatureentry{G$\mu $@[{$\mu $}]\begingroup Gravitational parameter of a celestial body \nomunit{$\left[ \dfrac{m^3}{s^2} \right]$}\nomeqref {0}|nompageref}{xiv}
-\nomenclatureentry{G$a_e $@[{$a_e $}]\begingroup Equatorial radius of a celestial body  \nomunit{$\left[ m \right]$}\nomeqref {0}|nompageref}{xiv}
-\nomenclatureentry{G$\underline{F}_i$@[{$\underline{F}_i$}]\begingroup Force on body $i$  \nomunit{$\left[ N \right]$}\nomeqref {0}|nompageref}{xiv}
-\nomenclatureentry{G$\underline{a}_i$@[{$\underline{a}_i$}]\begingroup Acceleration on body $i$  \nomunit{$\left[ \dfrac{m}{s^2} \right]$}\nomeqref {0}|nompageref}{xiv}
-\nomenclatureentry{G$m_i$@[{$m_i$}]\begingroup Mass off body $i$  \nomunit{$\left[ kg \right]$}\nomeqref {0}|nompageref}{xiv}
+\nomenclatureentry{AECI@[{ECI}]\begingroup Earth-Centered Inertial frame \nomeqref {0}|nompageref}{viii}
+\nomenclatureentry{AECEF@[{ECEF}]\begingroup Earth-Centered Earth-Fixed frame\nomeqref {0}|nompageref}{viii}
+\nomenclatureentry{ATOD@[{TOD}]\begingroup True-of-Date frame\nomeqref {0}|nompageref}{viii}
+\nomenclatureentry{AMOD@[{MOD}]\begingroup Mean-of-Date frame\nomeqref {0}|nompageref}{viii}
+\nomenclatureentry{ABF@[{BF}]\begingroup Body-Fixed frame\nomeqref {0}|nompageref}{viii}
+\nomenclatureentry{APBF@[{PBF}]\begingroup Pseudo-Body-Fixed frame\nomeqref {0}|nompageref}{viii}
+\nomenclatureentry{ARTN@[{RTN}]\begingroup Radial-Transverse-Normal frame\nomeqref {0}|nompageref}{viii}
+\nomenclatureentry{ALVLH@[{LVLH}]\begingroup Local-Vertical, Local-Horizontal frame\nomeqref {0}|nompageref}{viii}
+\nomenclatureentry{AIP@[{IP}]\begingroup In-plane\nomeqref {0}|nompageref}{viii}
+\nomenclatureentry{AOOP@[{OOP}]\begingroup Out-of-plane\nomeqref {0}|nompageref}{viii}
+\nomenclatureentry{ANSG@[{NSG}]\begingroup Non-spherical gravity\nomeqref {0}|nompageref}{viii}
+\nomenclatureentry{ASRP@[{SRP}]\begingroup Solar Radiation Pressure\nomeqref {0}|nompageref}{viii}
+\nomenclatureentry{ASTM@[{STM}]\begingroup State Transition Matrix\nomeqref {0}|nompageref}{viii}
+\nomenclatureentry{AICs@[{ICs}]\begingroup Initial Conditions\nomeqref {0}|nompageref}{viii}
+\nomenclatureentry{ALEO@[{LEO}]\begingroup Low Earth Orbit\nomeqref {0}|nompageref}{viii}
+\nomenclatureentry{ACR3BP@[{CR3BP}]\begingroup Circular Restricted Three Body Problem\nomeqref {0}|nompageref}{viii}
+\nomenclatureentry{AOEs@[{OEs}]\begingroup Orbital Elements\nomeqref {0}|nompageref}{viii}
+\nomenclatureentry{AKOE@[{KOE}]\begingroup Keplerian OEs vector\nomeqref {0}|nompageref}{viii}
+\nomenclatureentry{AYA@[{YA}]\begingroup Yamanaka-Ankersen\nomeqref {0}|nompageref}{viii}
+\nomenclatureentry{AGA@[{GA}]\begingroup Gim-Alfriend\nomeqref {0}|nompageref}{viii}
+\nomenclatureentry{ACW@[{CW}]\begingroup Clohessy-Wiltshire\nomeqref {0}|nompageref}{viii}
+\nomenclatureentry{AHCW@[{HCW}]\begingroup Hill/Clohessy-Wiltshire\nomeqref {0}|nompageref}{viii}
+\nomenclatureentry{AHi-Fi@[{Hi-Fi}]\begingroup High-Fidelity\nomeqref {0}|nompageref}{viii}
+\nomenclatureentry{AODE@[{ODE}]\begingroup Ordinary Differential Equation\nomeqref {0}|nompageref}{viii}
+\nomenclatureentry{AIVP@[{IVP}]\begingroup Initial Value Problem\nomeqref {0}|nompageref}{viii}
+\nomenclatureentry{P$q_i, Q_i$@[{$q_i, Q_i$}]\begingroup Generalized coordinate (original or transformed)\nomeqref {0}|nompageref}{viii}
+\nomenclatureentry{P$p_i, P_i$@[{$p_i, P_i$}]\begingroup Generalized momentum (original or transformed)\nomeqref {0}|nompageref}{viii}
+\nomenclatureentry{P$H$@[{$H$}]\begingroup Hamiltonian of the system \nomeqref {0}|nompageref}{viii}
+\nomenclatureentry{P$K$@[{$K$}]\begingroup Modified Hamiltonian of the system \nomeqref {0}|nompageref}{viii}
+\nomenclatureentry{P$\varepsilon$@[{$\varepsilon$}]\begingroup Small parameter \nomunit{$[---]$}\nomeqref {0}|nompageref}{viii}
+\nomenclatureentry{P$S, W$@[{$S, W$}]\begingroup Generating function of the transformation \nomeqref {0}|nompageref}{viii}
+\nomenclatureentry{P$R$@[{$R$}]\begingroup Disturbing function \nomunit{$?$}\nomeqref {0}|nompageref}{viii}
+\nomenclatureentry{P$\underline{OE}$@[{$\underline{OE}$}]\begingroup Osculating orbital element vector \nomeqref {0}|nompageref}{viii}
+\nomenclatureentry{P$\underline{\overline{OE}}$@[{$\underline{\overline{OE}}$}]\begingroup Mean orbital element vector \nomeqref {0}|nompageref}{viii}
+\nomenclatureentry{S$\left. \right\rvert_{i}$@[{$\left. \right\rvert_{i}$}]\begingroup Expressed in frame $i$\nomeqref {0}|nompageref}{viii}
+\nomenclatureentry{S$\bullet_C$@[{$\bullet_C$}]\begingroup Variable from the chief spacecraft\nomeqref {0}|nompageref}{viii}
+\nomenclatureentry{S$\bullet_D$@[{$\bullet_D$}]\begingroup Variable from the deputy spacecraft\nomeqref {0}|nompageref}{viii}
+\nomenclatureentry{S$\bullet_0$@[{$\bullet_0$}]\begingroup Variable at $t = t_0$\nomeqref {0}|nompageref}{viii}
+\nomenclatureentry{O$a$@[{$a$}]\begingroup Semimajor axis \nomunit{$\left[ m \right]$}\nomeqref {0}|nompageref}{viii}
+\nomenclatureentry{O$e$@[{$e$}]\begingroup Eccentricity \nomunit{$\left[ --- \right]$}\nomeqref {0}|nompageref}{viii}
+\nomenclatureentry{O$i$@[{$i$}]\begingroup Inclination \nomunit{$\left[ rad \right], \left[ \deg \right]$}\nomeqref {0}|nompageref}{viii}
+\nomenclatureentry{O$\Omega$@[{$\Omega$}]\begingroup Right Ascension of Ascending Node \nomunit{$\left[ rad \right], \left[ \deg \right]$}\nomeqref {0}|nompageref}{viii}
+\nomenclatureentry{O$\omega$@[{$\omega$}]\begingroup Argument of periapsis \nomunit{$\left[ rad \right], \left[ \deg \right]$}\nomeqref {0}|nompageref}{viii}
+\nomenclatureentry{O$M$@[{$M$}]\begingroup Mean anomaly\nomunit{$\left[ rad \right]$}\nomeqref {0}|nompageref}{viii}
+\nomenclatureentry{O$E$@[{$E$}]\begingroup Eccentric anomaly\nomunit{$\left[ rad \right]$}\nomeqref {0}|nompageref}{viii}
+\nomenclatureentry{O$\theta$@[{$\theta$}]\begingroup True anomaly\nomunit{$\left[ rad \right], \left[ \deg \right]$}\nomeqref {0}|nompageref}{viii}
+\nomenclatureentry{O$u$@[{$u$}]\begingroup True argument of latitude \nomunit{$\left[ rad \right], \left[ \deg \right]$}\nomeqref {0}|nompageref}{viii}
+\nomenclatureentry{O$\lambda$@[{$\lambda$}]\begingroup Mean argument of latitude \nomunit{$\left[ rad \right]$}\nomeqref {0}|nompageref}{viii}
+\nomenclatureentry{O$F$@[{$F$}]\begingroup Eccentric argument of latitude \nomunit{$\left[ rad \right]$}\nomeqref {0}|nompageref}{viii}
+\nomenclatureentry{U$\rho = 1 + e\cos\theta$@[{$\rho = 1 + e\cos\theta$}]\begingroup \nomunit{$\left[ --- \right]$}\nomeqref {0}|nompageref}{viii}
+\nomenclatureentry{U$\eta = \sqrt{1-e^2}$@[{$\eta = \sqrt{1-e^2}$}]\begingroup \nomunit{$\left[ --- \right]$}\nomeqref {0}|nompageref}{viii}
+\nomenclatureentry{U$h$@[{$h$}]\begingroup Orbit altitude or orbit momentum\nomunit{$\left[ m \right] \text{or} \left[ \dfrac{m^2}{s} \right]$}\nomeqref {0}|nompageref}{viii}
+\nomenclatureentry{U$\phi, \lambda$@[{$\phi, \lambda$}]\begingroup Geodetic latitude and longitude \nomunit{$\left[ rad \right], \left[ \deg \right]$}\nomeqref {0}|nompageref}{viii}
+\nomenclatureentry{M$\underline{u}, \underline{y}$@[{$\underline{u}, \underline{y}$}]\begingroup State vector of a system of ODEs\nomeqref {0}|nompageref}{viii}
+\nomenclatureentry{M$\bm A$@[{$\bm A$}]\begingroup System's matrix of a system of ODEs\nomeqref {0}|nompageref}{viii}
+\nomenclatureentry{M$\underline{f}$@[{$\underline{f}$}]\begingroup Dynamics function of a system \nomeqref {0}|nompageref}{viii}
+\nomenclatureentry{M$ \mathbb{I}$@[{$ \mathbb{I}$}]\begingroup Identity matrix\nomeqref {0}|nompageref}{viii}
+\nomenclatureentry{M$ V $@[{$ V $}]\begingroup Real or complex eigenvector matrix\nomeqref {0}|nompageref}{viii}
+\nomenclatureentry{M$ \Lambda $@[{$ \Lambda $}]\begingroup Real or complex eigenvalue matrix\nomeqref {0}|nompageref}{viii}
+\nomenclatureentry{M$ J $@[{$ J $}]\begingroup Jordan form\nomeqref {0}|nompageref}{viii}
+\nomenclatureentry{M$ \Phi (t, t_0) $@[{$ \Phi (t, t_0) $}]\begingroup State Transition Matrix\nomeqref {0}|nompageref}{viii}
+\nomenclatureentry{M$ \delta \bullet$@[{$ \delta \bullet$}]\begingroup Relative quantity (deputy's minus chief's value)\nomeqref {0}|nompageref}{viii}
+\nomenclatureentry{M$ \Delta \bullet$@[{$ \Delta \bullet$}]\begingroup Variation or increment of a quantity\nomeqref {0}|nompageref}{viii}
+\nomenclatureentry{G$\mu $@[{$\mu $}]\begingroup Gravitational parameter of a celestial body \nomunit{$\left[ \dfrac{m^3}{s^2} \right]$}\nomeqref {0}|nompageref}{viii}
+\nomenclatureentry{G$a_e $@[{$a_e $}]\begingroup Equatorial radius of a celestial body  \nomunit{$\left[ m \right]$}\nomeqref {0}|nompageref}{viii}
+\nomenclatureentry{G$\underline{F}_i$@[{$\underline{F}_i$}]\begingroup Force on body $i$  \nomunit{$\left[ N \right]$}\nomeqref {0}|nompageref}{viii}
+\nomenclatureentry{G$\underline{a}_i$@[{$\underline{a}_i$}]\begingroup Acceleration on body $i$  \nomunit{$\left[ \dfrac{m}{s^2} \right]$}\nomeqref {0}|nompageref}{viii}
+\nomenclatureentry{G$m_i$@[{$m_i$}]\begingroup Mass of body $i$  \nomunit{$\left[ kg \right]$}\nomeqref {0}|nompageref}{viii}

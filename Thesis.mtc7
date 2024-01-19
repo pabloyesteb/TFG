@@ -1,23 +1,20 @@
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {3.1}Introduction.}{\reset@font\mtcSfont 43}{section.3.1}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {3.2}Motion model and STM.}{\reset@font\mtcSfont 44}{section.3.2}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.2.1}Simplification of equations of motion: Yamanaka-Ankersen solution.}{\reset@font\mtcSSfont 44}{subsection.3.2.1}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Solution of the simplified set of equations. \\}{\reset@font\mtcPfont 45}{AMS.102}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.2.2}Yamanaka-Ankersen STM and integration constants.}{\reset@font\mtcSSfont 47}{subsection.3.2.2}}
-{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {3.2.2.1}In-plane motion.}{\reset@font\mtcSSSfont 48}{subsubsection.3.2.2.1}}
-{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {3.2.2.2}Out-of-plane motion.}{\reset@font\mtcSSSfont 48}{subsubsection.3.2.2.2}}
-{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {3.2.2.3}Full matrices.}{\reset@font\mtcSSSfont 49}{subsubsection.3.2.2.3}}
-{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {3.2.2.4}Pseudo-initial state vector.}{\reset@font\mtcSSSfont 49}{subsubsection.3.2.2.4}}
-{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {3.2.2.5}Solution scheme.}{\reset@font\mtcSSSfont 51}{subsubsection.3.2.2.5}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.2.3}Results: Comparison with HCW and Hi-Fi propagation.}{\reset@font\mtcSSfont 51}{subsection.3.2.3}}
-{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {3.2.3.1}Scenario 1: $\mbox {\boldmath {${e = 0.1}$}}$.}{\reset@font\mtcSSSfont 52}{subsubsection.3.2.3.1}}
-{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {3.2.3.2}Scenario 2: $\mbox {\boldmath {${e = 0.7}$}}$.}{\reset@font\mtcSSSfont 54}{subsubsection.3.2.3.2}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {3.3}Orbit safety in eccentric, unperturbed orbits.}{\reset@font\mtcSfont 56}{section.3.3}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.3.1}Relative motion description in TAN frame.}{\reset@font\mtcSSfont 56}{subsection.3.3.1}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode \textcolor {GMVred}{I.} \myul [GMVred]{Parameter reformulation.} \\}{\reset@font\mtcPfont 57}{table.caption.125}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode \textcolor {GMVred}{II.} \myul [GMVred]{Radial and cross-track coordinates.}\\}{\reset@font\mtcPfont 58}{AMS.129}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.3.2}General trajectories and safe orbits.}{\reset@font\mtcSSfont 58}{subsection.3.3.2}}
-{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {3.3.2.1}Orbit families.}{\reset@font\mtcSSSfont 58}{subsubsection.3.3.2.1}}
-{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {3.3.2.2}Eccentricity/inclination vector separation in eccentric orbits.}{\reset@font\mtcSSSfont 59}{subsubsection.3.3.2.2}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode \textcolor {GMVred}{I.} \myul [GMVred]{Scenario definition.}\\}{\reset@font\mtcPfont 59}{AMS.133}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode \textcolor {GMVred}{II. A.} \myul [GMVred]{Bounded trajectory case ($\mbox {\boldmath {${C_1 = 0}$}}$).} \\}{\reset@font\mtcPfont 60}{table.caption.134}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode \textcolor {GMVred}{II. B.} \myul [GMVred]{Unbounded trajectory case ($\mbox {\boldmath {${C_1 \neq 0}$}}$).} \\}{\reset@font\mtcPfont 61}{figure.caption.137}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {A.1}Introduction.}{\reset@font\mtcSfont 11}{section.A.1}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {A.2}Absolute element sets.}{\reset@font\mtcSfont 11}{section.A.2}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {A.2.1}Workflow for transformations between absolute element sets.}{\reset@font\mtcSSfont 11}{subsection.A.2.1}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {A.2.2}Element sets.}{\reset@font\mtcSSfont 12}{subsection.A.2.2}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {A.2.2.1}Keplerian orbital elements (KOE).}{\reset@font\mtcSSSfont 12}{subsubsection.A.2.2.1}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {A.2.2.2}Eccentricity/inclination vectors orbital elements (EIOE).}{\reset@font\mtcSSSfont 13}{subsubsection.A.2.2.2}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode \leavevmode {\color {GMVred}I.}\myul [GMVred]{Eccentricity vector.}\\}{\reset@font\mtcPfont 13}{subsubsection.A.2.2.2}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode \leavevmode {\color {GMVred}II.} \myul [GMVred]{Inclination vector.}\\}{\reset@font\mtcPfont 14}{AMS.21}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode \leavevmode {\color {GMVred}III.}\myul [GMVred]{Element set.}\\}{\reset@font\mtcPfont 14}{AMS.21}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {A.2.2.3}Quasi-nonsingular orbital elements (QNSOE).}{\reset@font\mtcSSSfont 14}{subsubsection.A.2.2.3}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {A.2.2.4}Equinoctial orbital elements (EOE).}{\reset@font\mtcSSSfont 15}{subsubsection.A.2.2.4}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {A.2.2.5}Delaunay orbital elements (DOE).}{\reset@font\mtcSSSfont 15}{subsubsection.A.2.2.5}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {A.3}Relative sets.}{\reset@font\mtcSfont 16}{section.A.3}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {A.3.1}Workflow for transformations between ROEs. }{\reset@font\mtcSSfont 16}{subsection.A.3.1}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode \leavevmode {\color {GMVred}A)} From any ROE set to RKOE\\}{\reset@font\mtcPfont 16}{subsection.A.3.1}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode \leavevmode {\color {GMVred}B)} From RKOE to any ROE set\\}{\reset@font\mtcPfont 18}{figure.caption.30}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {A.3.2}Element sets.}{\reset@font\mtcSSfont 19}{subsection.A.3.2}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {A.3.2.1}Relative eccentricity/inclination vectors orbital elements (REIOE).}{\reset@font\mtcSSSfont 19}{subsubsection.A.3.2.1}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Concept \& meaning\\}{\reset@font\mtcPfont 20}{figure.caption.35}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {A.3.2.2}C set of relative orbital elements (CROE).}{\reset@font\mtcSSSfont 22}{subsubsection.A.3.2.2}}

@@ -1,71 +1,19 @@
 \babel@toc {english}{}\relax 
 \addvspace {10\p@ }
-\contentsline {xchapter}{Resumen.}{v}{chapter*.4}%
+\contentsline {xchapter}{Resumen.}{iii}{chapter*.2}%
 \addvspace {10\p@ }
-\contentsline {xchapter}{Abstract.}{vii}{chapter*.5}%
+\contentsline {xchapter}{Abstract.}{v}{chapter*.3}%
 \addvspace {10\p@ }
-\contentsline {xchapter}{Introduction.}{xxi}{chapter*.10}%
+\contentsline {xchapter}{Introduction.}{xv}{chapter*.8}%
 \addvspace {10\p@ }
-\contentsline {xchapter}{General concepts on spacecraft relative dynamics and STMs.}{1}{chapter.1}%
-\contentsline {figure}{\numberline {1.1}{\ignorespaces Distributed space systems classification.\relax }}{2}{figure.caption.11}%
-\contentsline {figure}{\numberline {1.2}{\ignorespaces Docking and berthing \blx@tocontentsinit {0}\cite {Fehse}.\relax }}{3}{figure.caption.12}%
-\contentsline {figure}{\numberline {1.3}{\ignorespaces Covariance ellipsoid evolution along a radial hop.\relax }}{8}{figure.caption.19}%
+\contentsline {xchapter}{The Validation Loop}{1}{chapter.1}%
+\contentsline {figure}{\numberline {1.1}{\ignorespaces Covariance ellipsoid evolution along a radial hop.\relax }}{8}{figure.caption.16}%
 \addvspace {10\p@ }
-\contentsline {xchapter}{Relative dynamics around a near-circular unperturbed reference orbit.}{11}{chapter.2}%
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Difference in relative distance between HCW methods and Hi-Fi (V-bar approach).\relax }}{30}{figure.caption.71}%
-\contentsline {figure}{\numberline {2.2}{\ignorespaces x-z trajectory comparison between STM propagation (HCW) and High-Fidelity.\relax }}{31}{figure.caption.73}%
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Difference in relative distance between HCW methods and Hi-Fi (R-bar approach).\relax }}{32}{figure.caption.75}%
-\contentsline {figure}{\numberline {2.4}{\ignorespaces x-z trajectory comparison between STM propagation (HCW) and High-Fidelity (R-bar approach).\relax }}{33}{figure.caption.77}%
-\contentsline {figure}{\numberline {2.5}{\ignorespaces Effect of $\delta r$ and $\delta u$ in radial and along-track distances.\relax }}{35}{figure.caption.80}%
-\contentsline {figure}{\numberline {2.6}{\ignorespaces Inclination vector and cross-track distance.\relax }}{37}{figure.caption.87}%
-\contentsline {figure}{\numberline {2.7}{\ignorespaces Relative motion in RTN frame for $\delta a = 0$ and a general $\delta \underline {e}$ - $\delta \underline {i}$ alignment.\relax }}{40}{figure.caption.93}%
-\contentsline {figure}{\numberline {2.8}{\ignorespaces Relative motion for parallel and antiparallel $\delta \underline {e}/\delta \underline {i}$ vectors.\relax }}{41}{figure.caption.96}%
+\contentsline {xchapter}{Conclusions and research outlook.}{9}{chapter.2}%
 \addvspace {10\p@ }
-\contentsline {xchapter}{Relative dynamics around elliptic reference orbits.}{43}{chapter.3}%
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Workflow of the propagation with YA STM.\relax }}{51}{figure.caption.119}%
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Scenario 1($e= 0.1$): Comparison between Hi-Fi, HCW and YA. \relax }}{53}{figure.caption.123}%
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Scenario 2 ($e= 0.7$): Comparison between Hi-Fi, HCW and YA. \relax }}{55}{figure.caption.124}%
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Safe orbit family: Scenario 1 ($C_1 = 0$).\relax }}{61}{figure.caption.137}%
-\contentsline {figure}{\numberline {3.5}{\ignorespaces Safe orbit family: Scenario 2 ($C_1 = C_m$).\relax }}{62}{figure.caption.138}%
-\contentsline {figure}{\numberline {3.6}{\ignorespaces Comparison between Peters-Noomen approach and High-Fidelity propagation.\relax }}{63}{figure.caption.139}%
-\addvspace {10\p@ }
-\contentsline {xchapter}{Perturbations: Non-spherical gravity.}{65}{chapter.4}%
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Order of magnitude of various perturbations of a satellite orbit. \blx@tocontentsinit {0}\cite {Montenbruck}\relax }}{67}{figure.caption.140}%
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Mean to osculating theory versus High-Fidelity propagation.\relax }}{84}{figure.caption.176}%
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Workflow of the computation of $V_{lm}$.\relax }}{98}{figure.caption.218}%
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Workflow of the computation of $F_{lmp}$.\relax }}{99}{figure.caption.220}%
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Workflow of the computation of $G_{lpq}$ through Kaula's approach.\relax }}{100}{figure.caption.222}%
-\contentsline {figure}{\numberline {4.6}{\ignorespaces Results of Kaula's conversion for scenario 1 ($e = 0.1)$.\relax }}{110}{figure.caption.243}%
-\contentsline {figure}{\numberline {4.7}{\ignorespaces Results of Kaula's conversion for scenario 2 ($e = 0.01)$.\relax }}{112}{figure.caption.245}%
-\contentsline {figure}{\numberline {4.8}{\ignorespaces Results of Kaula's conversion for scenario 3 ($e = 0.001)$.\relax }}{114}{figure.caption.247}%
-\addvspace {10\p@ }
-\contentsline {xchapter}{Perturbed relative motion.}{115}{chapter.5}%
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Workflow of mean element propagation from and to cartesian states.\relax }}{116}{figure.caption.248}%
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Workflows of the conversions from cartesian states to mean elements and vice versa.\relax }}{116}{figure.caption.249}%
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Workflow of iterative osculating-to-mean transformation.\relax }}{120}{figure.caption.262}%
-\contentsline {figure}{\numberline {5.4}{\ignorespaces $J_2$ effect on the relative eccentricity and inclination vectors.\relax }}{130}{figure.caption.283}%
-\addvspace {10\p@ }
-\contentsline {xchapter}{Conclusions and research outlook.}{131}{chapter.6}%
-\addvspace {10\p@ }
-\contentsline {xchapter}{Absolute and relative orbital element sets.}{133}{appendix.A}%
-\contentsline {figure}{\numberline {A.1}{\ignorespaces Workflow for transforming between two arbitary absolute element sets.\relax }}{134}{figure.caption.285}%
-\contentsline {figure}{\numberline {A.2}{\ignorespaces Frame rotation from inertial to perifocal frame.\relax }}{135}{figure.caption.287}%
-\contentsline {figure}{\numberline {A.3}{\ignorespaces Workflow for transforming any relative set into KOE.\relax }}{140}{figure.caption.297}%
-\contentsline {figure}{\numberline {A.4}{\ignorespaces Workflow for transforming RKOE into any other set.\relax }}{141}{figure.caption.299}%
-\contentsline {figure}{\numberline {A.5}{\ignorespaces Relative ccentricity \& inclination vectors. \relax }}{142}{figure.caption.302}%
-\addvspace {10\p@ }
-\contentsline {xchapter}{Cartesian reference systems.}{145}{appendix.B}%
-\contentsline {figure}{\numberline {B.1}{\ignorespaces Absolute and relative frames.\relax }}{146}{figure.caption.307}%
-\contentsline {figure}{\numberline {B.2}{\ignorespaces ECI and ECEF reference frames.\relax }}{151}{figure.caption.319}%
-\contentsline {figure}{\numberline {B.3}{\ignorespaces Nutation and precession motion \blx@tocontentsinit {0}\cite {DinVu}.\relax }}{153}{figure.caption.321}%
-\contentsline {figure}{\numberline {B.4}{\ignorespaces RTN frame \blx@tocontentsinit {0}\cite {dAmicoDLR}.\relax }}{158}{figure.caption.326}%
-\contentsline {figure}{\numberline {B.5}{\ignorespaces Relative reference frames.\relax }}{163}{figure.caption.329}%
-\addvspace {10\p@ }
-\contentsline {xchapter}{Analytical mechanics applied to the two-body problem.}{169}{appendix.C}%
-\addvspace {10\p@ }
-\contentsline {xchapter}{Software \& simulator.}{175}{appendix.D}%
-\contentsline {figure}{\numberline {D.1}{\ignorespaces Workflow of the High-Fidelity propagator.\relax }}{179}{figure.caption.353}%
-\contentsline {figure}{\numberline {D.2}{\ignorespaces Workflow of the relative dynamics computation through the Hi-Fi simulator.\relax }}{180}{figure.caption.354}%
-\addvspace {10\p@ }
-\contentsline {xchapter}{Miscellaneous}{181}{appendix.E}%
-\contentsline {figure}{\numberline {E.1}{\ignorespaces Workflow of the relative anomaly transformation (eccentric to mean).\relax }}{190}{figure.caption.379}%
+\contentsline {xchapter}{Absolute and relative orbital element sets.}{11}{appendix.A}%
+\contentsline {figure}{\numberline {A.1}{\ignorespaces Workflow for transforming between two arbitary absolute element sets.\relax }}{12}{figure.caption.18}%
+\contentsline {figure}{\numberline {A.2}{\ignorespaces Frame rotation from inertial to perifocal frame.\relax }}{13}{figure.caption.20}%
+\contentsline {figure}{\numberline {A.3}{\ignorespaces Workflow for transforming any relative set into KOE.\relax }}{18}{figure.caption.30}%
+\contentsline {figure}{\numberline {A.4}{\ignorespaces Workflow for transforming RKOE into any other set.\relax }}{19}{figure.caption.32}%
+\contentsline {figure}{\numberline {A.5}{\ignorespaces Relative ccentricity \& inclination vectors. \relax }}{20}{figure.caption.35}%

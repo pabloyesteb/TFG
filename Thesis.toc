@@ -1,293 +1,40 @@
 \babel@toc {english}{}\relax 
-\contentsline {chapter}{Resumen.}{v}{chapter*.4}%
-\contentsline {chapter}{Abstract.}{vii}{chapter*.5}%
-\contentsline {chapter}{\nonumberline Nomenclature}{xv}{chapter*.7}%
-\contentsline {chapter}{Introduction.}{xxi}{chapter*.10}%
-\contentsline {chapter}{\numberline {1}General concepts on spacecraft relative dynamics and STMs.}{1}{chapter.1}%
-\contentsline {section}{\numberline {1.1}Spacecraft relative dynamics.}{1}{section.1.1}%
-\contentsline {subsection}{\numberline {1.1.1}Rendez-vous.}{2}{subsection.1.1.1}%
-\contentsline {subsection}{\numberline {1.1.2}Formation flying.}{3}{subsection.1.1.2}%
-\contentsline {section}{\numberline {1.2}State transition matrices.}{4}{section.1.2}%
-\contentsline {subsection}{\numberline {1.2.1}Concept: System dynamics.}{4}{subsection.1.2.1}%
-\contentsline {subsection}{\numberline {1.2.2}Applications of STMs in celestial mechanics.}{6}{subsection.1.2.2}%
-\contentsline {paragraph}{\textcolor {GMVred}{A.} \myul [GMVred]{Precise Orbit Determination.}\\}{6}{subsection.1.2.2}%
-\contentsline {paragraph}{\textcolor {GMVred}{B.} \myul [GMVred]{Guidance, Navigation and Control (GNC).} \\}{6}{subsection.1.2.2}%
-\contentsline {paragraph}{\textcolor {GMVred}{C.} \myul [GMVred]{Orbit design.} \\}{7}{subsection.1.2.2}%
-\contentsline {paragraph}{\textcolor {GMVred}{D.} \myul [GMVred]{Covariance matrix propagation.} \\}{7}{subsection.1.2.2}%
-\contentsline {chapter}{\numberline {2}Relative dynamics around a near-circular unperturbed reference orbit.}{11}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Introduction.}{11}{section.2.1}%
-\contentsline {section}{\numberline {2.2}Motion model: Hill equations.}{11}{section.2.2}%
-\contentsline {subsection}{\numberline {2.2.1}Equations of motion of a spacecraft.}{11}{subsection.2.2.1}%
-\contentsline {subsection}{\numberline {2.2.2}Forces in the spacecraft motion problem.}{12}{subsection.2.2.2}%
-\contentsline {paragraph}{\textcolor {GMVred}{{I.} }\myul [GMVred]{Gravitational forces}\\}{12}{subsection.2.2.2}%
-\contentsline {paragraph}{\textcolor {GMVred}{{II.} }\myul [GMVred]{Thrust}\\}{13}{subsection.2.2.2}%
-\contentsline {paragraph}{\textcolor {GMVred}{{III.} }\myul [GMVred]{Other forces}\\}{13}{subsection.2.2.2}%
-\contentsline {subsection}{\numberline {2.2.3}Two-body problem.}{13}{subsection.2.2.3}%
-\contentsline {subsubsection}{\numberline {2.2.3.1}Perturbed two-body problem.}{14}{subsubsection.2.2.3.1}%
-\contentsline {subsection}{\numberline {2.2.4}Three-body problem.}{15}{subsection.2.2.4}%
-\contentsline {subsubsection}{\numberline {2.2.4.1}Reduced three-body problem.}{15}{subsubsection.2.2.4.1}%
-\contentsline {subsection}{\numberline {2.2.5}Differential equations of proximity relative motion.}{15}{subsection.2.2.5}%
-\contentsline {subsection}{\numberline {2.2.6}Hill equations.}{17}{subsection.2.2.6}%
-\contentsline {section}{\numberline {2.3}Solutions of Hill equations.}{18}{section.2.3}%
-\contentsline {subsection}{\numberline {2.3.1}Direct numerical integration.}{19}{subsection.2.3.1}%
-\contentsline {subsection}{\numberline {2.3.2}Clohessy-Wiltshire solution and STM.}{19}{subsection.2.3.2}%
-\contentsline {subsubsection}{\numberline {2.3.2.1}Clohessy-Wiltshire STM.}{20}{subsubsection.2.3.2.1}%
-\contentsline {subsection}{\numberline {2.3.3}State transition matrix propagation.}{21}{subsection.2.3.3}%
-\contentsline {subsection}{\numberline {2.3.4}Jordan canonical decomposition.}{22}{subsection.2.3.4}%
-\contentsline {subsubsection}{\numberline {2.3.4.1}Jordan canonical forms of $\mbox {\boldmath {${A}$}}$.}{22}{subsubsection.2.3.4.1}%
-\contentsline {paragraph}{\textcolor {GMVred}{A.} \myul [GMVred]{Complex Jordan form}. \\}{22}{subsubsection.2.3.4.1}%
-\contentsline {paragraph}{\textcolor {GMVred}{B.} \myul [GMVred]{Real Jordan form.} \\}{24}{AMS.47}%
-\contentsline {subsubsection}{\numberline {2.3.4.2}Exponential of the Jordan matrix.}{25}{subsubsection.2.3.4.2}%
-\contentsline {paragraph}{\textcolor {GMVred}{III.} \myul [GMVred]{Final expression of the in-plane motion STM.} \\}{27}{AMS.59}%
-\contentsline {paragraph}{\textcolor {GMVred}{IV.} \myul [GMVred]{Out-of-plane motion STM.}\\}{27}{AMS.62}%
-\contentsline {subsection}{\numberline {2.3.5}Results: Comparison against High-Fidelity.}{28}{subsection.2.3.5}%
-\contentsline {subsubsection}{\numberline {2.3.5.1}Scenario 1: V-Bar approach. }{29}{subsubsection.2.3.5.1}%
-\contentsline {subsubsection}{\numberline {2.3.5.2}Scenario 2: R-Bar approach. }{31}{subsubsection.2.3.5.2}%
-\contentsline {section}{\numberline {2.4}Orbit safety in near-circular orbits.}{33}{section.2.4}%
-\contentsline {subsection}{\numberline {2.4.1}Orbit safety concept.}{33}{subsection.2.4.1}%
-\contentsline {subsection}{\numberline {2.4.2}Eccentricity-inclination vector separation strategy.}{34}{subsection.2.4.2}%
-\contentsline {subsubsection}{\numberline {2.4.2.1}Eccentricity and inclination vectors.}{34}{subsubsection.2.4.2.1}%
-\contentsline {subsubsection}{\numberline {2.4.2.2}Linearized equations of relative motion in terms of $\delta \underline {e}$ and $\delta \underline {i}$.}{34}{subsubsection.2.4.2.2}%
-\contentsline {paragraph}{\textcolor {GMVred}{I.} \myul [GMVred]{Effect of relative eccentricity vector $\mbox {\boldmath {${\delta \underline {e}}$}}$}. \\}{34}{subsubsection.2.4.2.2}%
-\contentsline {subparagraph}{\textcolor {GMVred}{I.A.} \myul [GMVred]{Effect of $\mbox {\boldmath {${\delta \underline {e}}$}}$ in $\mbox {\boldmath {${\delta r_R}$}}$}. \\}{36}{AMS.81}%
-\contentsline {subparagraph}{\textcolor {GMVred}{I.B.}\myul [GMVred]{ Effect of $\mbox {\boldmath {${\delta \underline {e}}$}}$ in $\mbox {\boldmath {${\delta r_T}$}}$.} \\}{36}{AMS.82}%
-\contentsline {paragraph}{\textcolor {GMVred}{II.} \myul [GMVred]{Effect of relative inclination vector $\mbox {\boldmath {${\delta \underline {i}}$}}$.} \\}{36}{AMS.83}%
-\contentsline {paragraph}{\textcolor {GMVred}{III.} \myul [GMVred]{Effect of relative semimajor axis and mean argument of latitude $\mbox {\boldmath {${\delta a}$}}$, $\mbox {\boldmath {${\delta \lambda }$}}$.} \\}{38}{figure.caption.87}%
-\contentsline {subparagraph}{\textcolor {GMVred}{III.A.} \myul [GMVred]{Effect of $\mbox {\boldmath {${\delta \underline {a}, \tmspace +\thickmuskip {.2777em} \delta \lambda }$}}$ in $\mbox {\boldmath {${\delta r_R}$}}$.} \\}{38}{AMS.88}%
-\contentsline {subparagraph}{\textcolor {GMVred}{III.B.}\myul [GMVred]{ Effect of $\mbox {\boldmath {${\delta \underline {a}, \tmspace +\thickmuskip {.2777em} \delta \lambda }$}}$ in $\mbox {\boldmath {${\delta r_T}$}}$.} \\}{38}{AMS.89}%
-\contentsline {paragraph}{\textcolor {GMVred}{IV.} \myul [GMVred]{Final set of linearized equations.} \\}{38}{AMS.90}%
-\contentsline {subsubsection}{\numberline {2.4.2.3}Collision avoidance for bounded trajectories: $\mbox {\boldmath {${\delta }$}}{\underline {e}} / \mbox {\boldmath {${\delta }$}}{\underline {i}}$ separation.}{39}{subsubsection.2.4.2.3}%
-\contentsline {paragraph}{\textcolor {GMVred}{A.} \myul [GMVred]{Parallel configuration.} \\}{40}{figure.caption.93}%
-\contentsline {paragraph}{\textcolor {GMVred}{B.}\myul [GMVred]{Antiparallel configuration.} \\}{40}{AMS.94}%
-\contentsline {chapter}{\numberline {3}Relative dynamics around elliptic reference orbits.}{43}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Introduction.}{43}{section.3.1}%
-\contentsline {section}{\numberline {3.2}Motion model and STM.}{44}{section.3.2}%
-\contentsline {subsection}{\numberline {3.2.1}Simplification of equations of motion: Yamanaka-Ankersen solution.}{44}{subsection.3.2.1}%
-\contentsline {paragraph}{Solution of the simplified set of equations. \\}{45}{AMS.102}%
-\contentsline {subsection}{\numberline {3.2.2}Yamanaka-Ankersen STM and integration constants.}{47}{subsection.3.2.2}%
-\contentsline {subsubsection}{\numberline {3.2.2.1}In-plane motion.}{48}{subsubsection.3.2.2.1}%
-\contentsline {subsubsection}{\numberline {3.2.2.2}Out-of-plane motion.}{48}{subsubsection.3.2.2.2}%
-\contentsline {subsubsection}{\numberline {3.2.2.3}Full matrices.}{49}{subsubsection.3.2.2.3}%
-\contentsline {subsubsection}{\numberline {3.2.2.4}Pseudo-initial state vector.}{49}{subsubsection.3.2.2.4}%
-\contentsline {subsubsection}{\numberline {3.2.2.5}Solution scheme.}{51}{subsubsection.3.2.2.5}%
-\contentsline {subsection}{\numberline {3.2.3}Results: Comparison with HCW and Hi-Fi propagation.}{51}{subsection.3.2.3}%
-\contentsline {subsubsection}{\numberline {3.2.3.1}Scenario 1: $\mbox {\boldmath {${e = 0.1}$}}$.}{52}{subsubsection.3.2.3.1}%
-\contentsline {subsubsection}{\numberline {3.2.3.2}Scenario 2: $\mbox {\boldmath {${e = 0.7}$}}$.}{54}{subsubsection.3.2.3.2}%
-\contentsline {section}{\numberline {3.3}Orbit safety in eccentric, unperturbed orbits.}{56}{section.3.3}%
-\contentsline {subsection}{\numberline {3.3.1}Relative motion description in TAN frame.}{56}{subsection.3.3.1}%
-\contentsline {paragraph}{\textcolor {GMVred}{I.} \myul [GMVred]{Parameter reformulation.} \\}{57}{table.caption.125}%
-\contentsline {paragraph}{\textcolor {GMVred}{II.} \myul [GMVred]{Radial and cross-track coordinates.}\\}{58}{AMS.129}%
-\contentsline {subsection}{\numberline {3.3.2}General trajectories and safe orbits.}{58}{subsection.3.3.2}%
-\contentsline {subsubsection}{\numberline {3.3.2.1}Orbit families.}{58}{subsubsection.3.3.2.1}%
-\contentsline {subsubsection}{\numberline {3.3.2.2}Eccentricity/inclination vector separation in eccentric orbits.}{59}{subsubsection.3.3.2.2}%
-\contentsline {paragraph}{\textcolor {GMVred}{I.} \myul [GMVred]{Scenario definition.}\\}{59}{AMS.133}%
-\contentsline {paragraph}{\textcolor {GMVred}{II. A.} \myul [GMVred]{Bounded trajectory case ($\mbox {\boldmath {${C_1 = 0}$}}$).} \\}{60}{table.caption.134}%
-\contentsline {paragraph}{\textcolor {GMVred}{II. B.} \myul [GMVred]{Unbounded trajectory case ($\mbox {\boldmath {${C_1 \neq 0}$}}$).} \\}{61}{figure.caption.137}%
-\contentsline {chapter}{\numberline {4}Perturbations: Non-spherical gravity.}{65}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Introduction.}{65}{section.4.1}%
-\contentsline {subsection}{\numberline {4.1.1}Relevant perturbations in spacecraft motion.}{66}{subsection.4.1.1}%
-\contentsline {subsection}{\numberline {4.1.2}Variational formulation of perturbed motion: Averaging methods.}{68}{subsection.4.1.2}%
-\contentsline {subsubsection}{\numberline {4.1.2.1}Von Zeipel's method.}{69}{subsubsection.4.1.2.1}%
-\contentsline {paragraph}{\textcolor {GMVred}{I.} \myul [GMVred]{Problem statement.} \\}{69}{subsubsection.4.1.2.1}%
-\contentsline {paragraph}{\textcolor {GMVred}{II.} \myul [GMVred]{Transformation.} \\}{69}{AMS.143}%
-\contentsline {paragraph}{\textcolor {GMVred}{III.} \myul [GMVred]{Substitution in Hamilton-Jacobi equation.} \\}{71}{AMS.150}%
-\contentsline {paragraph}{Remarks. \\}{71}{AMS.151}%
-\contentsline {subsubsection}{\numberline {4.1.2.2}Lie series method.}{71}{subsubsection.4.1.2.2}%
-\contentsline {paragraph}{Hori's method. \\}{72}{subsubsection.4.1.2.2}%
-\contentsline {section}{\numberline {4.2}Non-spherical gravity: General concepts.}{73}{section.4.2}%
-\contentsline {section}{\numberline {4.3}$J_2$ effect analysis.}{74}{section.4.3}%
-\contentsline {subsection}{\numberline {4.3.1}Mean and osculating elements}{74}{subsection.4.3.1}%
-\contentsline {subsection}{\numberline {4.3.2}Brouwer's theory.}{74}{subsection.4.3.2}%
-\contentsline {subsubsection}{\numberline {4.3.2.1}Grounds: Brouwer's theory outline.}{74}{subsubsection.4.3.2.1}%
-\contentsline {paragraph}{\textcolor {GMVred}{I.} \myul [GMVred]{Modification of the Hamiltonian $\mbox {\boldmath {${F}$}}$.} \\}{74}{subsubsection.4.3.2.1}%
-\contentsline {paragraph}{\textcolor {GMVred}{II.} \myul [GMVred]{Von Zeipel's method application.} \\}{75}{AMS.160}%
-\contentsline {subparagraph}{\textcolor {GMVred}{II.A.} \myul [GMVred]{Short-period effects removal.} \\}{76}{AMS.160}%
-\contentsline {subparagraph}{\textcolor {GMVred}{II.B.} \myul [GMVred]{Long-period effects removal.} \\}{78}{AMS.168}%
-\contentsline {paragraph}{\textcolor {GMVred}{III.} \myul [GMVred]{Variational equations for mean element set.} \\}{79}{AMS.170}%
-\contentsline {paragraph}{\textcolor {GMVred}{IV.} \myul [GMVred]{Final mean to osculating relations. } \\}{79}{AMS.171}%
-\contentsline {subsubsection}{\numberline {4.3.2.2}Lyddane approximation.}{79}{subsubsection.4.3.2.2}%
-\contentsline {subsubsection}{\numberline {4.3.2.3}Results: Transformations.}{79}{subsubsection.4.3.2.3}%
-\contentsline {subsection}{\numberline {4.3.3}STM approach.}{80}{subsection.4.3.3}%
-\contentsline {subsection}{\numberline {4.3.4}Validation.}{80}{subsection.4.3.4}%
-\contentsline {subsubsection}{\numberline {4.3.4.1}Mean to osculating functions: Brouwer-Lyddane and GA vs truth.}{81}{subsubsection.4.3.4.1}%
-\contentsline {subsubsection}{\numberline {4.3.4.2}Comparison against High-Fidelity propagation.}{81}{subsubsection.4.3.4.2}%
-\contentsline {paragraph}{Final comments. \\}{85}{figure.caption.176}%
-\contentsline {section}{\numberline {4.4}Kaula's theory.}{85}{section.4.4}%
-\contentsline {subsection}{\numberline {4.4.1}Approach: $\mbox {\boldmath {${V_{lm}}$}}$ function rearrangement.}{86}{subsection.4.4.1}%
-\contentsline {subsection}{\numberline {4.4.2}Subfunctions $\mbox {\boldmath {${F_{lmp}}$}}$, $\mbox {\boldmath {${ G_{lpq}}$}}$ and $\mbox {\boldmath {${ S_{lmpq}}$}}$.}{87}{subsection.4.4.2}%
-\contentsline {subsubsection}{\numberline {4.4.2.1}Subfunction $\mbox {\boldmath {${F_{lmp}}$}}$.}{87}{subsubsection.4.4.2.1}%
-\contentsline {paragraph}{Example: Calculation of $\mbox {\boldmath {${F_{321}}$}}$\\}{88}{AMS.184}%
-\contentsline {subsubsection}{\numberline {4.4.2.2}Subfunction $\mbox {\boldmath {${G_{lpq}}$}}$.}{91}{subsubsection.4.4.2.2}%
-\contentsline {paragraph}{$P_{lpqk}$ and $Q_{lpqk}$ functions.\\}{92}{AMS.199}%
-\contentsline {paragraph}{Example: Calculation of $\mbox {\boldmath {${G_{201}}$}}$\\}{92}{AMS.203}%
-\contentsline {subsubsection}{\numberline {4.4.2.3}Subfunction $\mbox {\boldmath {${S_{lmpq}}$}}$.}{96}{subsubsection.4.4.2.3}%
-\contentsline {subsection}{\numberline {4.4.3}Implementation.}{97}{subsection.4.4.3}%
-\contentsline {subsubsection}{\numberline {4.4.3.1}Computation of $\mbox {\boldmath {${V_{lm}}$}}$}{97}{subsubsection.4.4.3.1}%
-\contentsline {paragraph}{\textcolor {GMVred}{I.} \myul [GMVred]{Subfunction $\mbox {\boldmath {${F_{lmp}}$}}$.} \\}{97}{figure.caption.218}%
-\contentsline {paragraph}{\textcolor {GMVred}{II.} \myul [GMVred]{Subfunction $\mbox {\boldmath {${ G_{lpq}}$}}$.}\\ }{98}{figure.caption.220}%
-\contentsline {paragraph}{\textcolor {GMVred}{III.} \myul [GMVred]{Subfunction $\mbox {\boldmath {${ S_{lmpq}}$}}$.} \\}{100}{figure.caption.222}%
-\contentsline {subsection}{\numberline {4.4.4}Validation.}{101}{subsection.4.4.4}%
-\contentsline {subsubsection}{\numberline {4.4.4.1}Target and approach.}{101}{subsubsection.4.4.4.1}%
-\contentsline {subsubsection}{\numberline {4.4.4.2}Validation of disturbing function.}{101}{subsubsection.4.4.4.2}%
-\contentsline {subsubsection}{\numberline {4.4.4.3}High-Fidelity propagation vs. Kaula's LPEs.}{103}{subsubsection.4.4.4.3}%
-\contentsline {paragraph}{\textcolor {GMVred}{I.} \myul [GMVred]{Kaula's LPEs for $V_{lmpq}$.}\\ }{103}{subsubsection.4.4.4.3}%
-\contentsline {subparagraph}{\textcolor {GMVred}{I.A. } \myul [GMVred]{Derivative of $\mbox {\boldmath {${F_{lmp}}$}}$.} \\ }{104}{AMS.231}%
-\contentsline {subparagraph}{\textcolor {GMVred}{I.B. }\myul [GMVred]{Derivative of $\mbox {\boldmath {${G_{lpq}}$}}$.}\\}{104}{AMS.232}%
-\contentsline {subparagraph}{\textcolor {GMVred}{I.C. }\myul [GMVred]{Derivative of $\mbox {\boldmath {${S_{lmpq}}$}}$.}\\}{105}{AMS.233}%
-\contentsline {paragraph}{\textcolor {GMVred}{II.} \myul [GMVred]{Effect of $\mbox {\boldmath {${V_{lm}}$}}$ in the Keplerian OEs.} \\}{105}{AMS.234}%
-\contentsline {paragraph}{\textcolor {GMVred}{III.} \myul [GMVred]{Periodic effects.} \\}{105}{AMS.235}%
-\contentsline {paragraph}{\textcolor {GMVred}{IV.}\myul [GMVred]{Results: Kaula vs Brouwer-Lyddane and High-Fidelity.} \\}{108}{AMS.240}%
-\contentsline {subparagraph}{\textcolor {GMVred}{IV.A.} \myul [GMVred]{Scenario 1: $\mbox {\boldmath {${e = 0.1}$}}$.} \\}{109}{table.caption.241}%
-\contentsline {subparagraph}{\textcolor {GMVred}{IV.B.} \myul [GMVred]{Scenario 2: $\mbox {\boldmath {${e = 0.01}$}}$.} \\}{110}{figure.caption.243}%
-\contentsline {subparagraph}{\textcolor {GMVred}{IV.C.} \myul [GMVred]{Scenario 3: $\mbox {\boldmath {${e = 0.001}$}}$ }\\}{113}{figure.caption.245}%
-\contentsline {subsubsection}{\numberline {4.4.4.4}Conclusions.}{114}{subsubsection.4.4.4.4}%
-\contentsline {chapter}{\numberline {5}Perturbed relative motion.}{115}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Introduction.}{115}{section.5.1}%
-\contentsline {subsection}{\numberline {5.1.1}Relative orbit propagation in perturbed relative motion.}{115}{subsection.5.1.1}%
-\contentsline {section}{\numberline {5.2}Gim-Alfriend STM.}{117}{section.5.2}%
-\contentsline {subsection}{\numberline {5.2.1}Gim-Alfriend STM structure.}{117}{subsection.5.2.1}%
-\contentsline {subsection}{\numberline {5.2.2}Linearised mean to osculating transformation.}{118}{subsection.5.2.2}%
-\contentsline {subsection}{\numberline {5.2.3}Inverse transformation.}{119}{subsection.5.2.3}%
-\contentsline {section}{\numberline {5.3}State-of-the art perturbed STMs.}{120}{section.5.3}%
-\contentsline {section}{\numberline {5.4}Orbit safety in perturbed motion.}{122}{section.5.4}%
-\contentsline {subsection}{\numberline {5.4.1}Equivalence of cartesian coordinates and relative OEs.}{122}{subsection.5.4.1}%
-\contentsline {subsubsection}{\numberline {5.4.1.1}Cartesian formulation: HCW equations.}{122}{subsubsection.5.4.1.1}%
-\contentsline {subsubsection}{\numberline {5.4.1.2}Relative OE formulation: GVEs.}{123}{subsubsection.5.4.1.2}%
-\contentsline {subsubsection}{\numberline {5.4.1.3}Equivalence.}{125}{subsubsection.5.4.1.3}%
-\contentsline {subsubsection}{\numberline {5.4.1.4}Conclusion: HCW solution in terms of orbital elements.}{125}{subsubsection.5.4.1.4}%
-\contentsline {subsection}{\numberline {5.4.2}Effect of non-spherical gravity field: $J_2$.}{126}{subsection.5.4.2}%
-\contentsline {paragraph}{Effect on the eccentricity and inclination vectors \\}{129}{AMS.281}%
-\contentsline {chapter}{\numberline {6}Conclusions and research outlook.}{131}{chapter.6}%
-\contentsline {paragraph}{\indent Research outlook and future work. \\}{131}{chapter.6}%
-\contentsline {chapter}{\numberline {A}Absolute and relative orbital element sets.}{133}{appendix.A}%
-\contentsline {section}{\numberline {A.1}Introduction.}{133}{section.A.1}%
-\contentsline {section}{\numberline {A.2}Absolute element sets.}{133}{section.A.2}%
-\contentsline {subsection}{\numberline {A.2.1}Workflow for transformations between absolute element sets.}{133}{subsection.A.2.1}%
-\contentsline {subsection}{\numberline {A.2.2}Element sets.}{134}{subsection.A.2.2}%
-\contentsline {subsubsection}{\numberline {A.2.2.1}Keplerian orbital elements (KOE).}{134}{subsubsection.A.2.2.1}%
-\contentsline {subsubsection}{\numberline {A.2.2.2}Eccentricity/inclination vectors orbital elements (EIOE).}{135}{subsubsection.A.2.2.2}%
-\contentsline {paragraph}{\textcolor {GMVred}{I.}\myul [GMVred]{Eccentricity vector.}\\}{135}{subsubsection.A.2.2.2}%
-\contentsline {paragraph}{\textcolor {GMVred}{II.} \myul [GMVred]{Inclination vector.}\\}{136}{AMS.288}%
-\contentsline {paragraph}{\textcolor {GMVred}{III.}\myul [GMVred]{Element set.}\\}{136}{AMS.288}%
-\contentsline {subsubsection}{\numberline {A.2.2.3}Quasi-nonsingular orbital elements (QNSOE).}{136}{subsubsection.A.2.2.3}%
-\contentsline {subsubsection}{\numberline {A.2.2.4}Equinoctial orbital elements (EOE).}{137}{subsubsection.A.2.2.4}%
-\contentsline {subsubsection}{\numberline {A.2.2.5}Delaunay orbital elements (DOE).}{137}{subsubsection.A.2.2.5}%
-\contentsline {section}{\numberline {A.3}Relative sets.}{138}{section.A.3}%
-\contentsline {subsection}{\numberline {A.3.1}Workflow for transformations between ROEs. }{138}{subsection.A.3.1}%
-\contentsline {paragraph}{\textcolor {GMVred}{A)} From any ROE set to RKOE\\}{138}{subsection.A.3.1}%
-\contentsline {paragraph}{\textcolor {GMVred}{B)} From RKOE to any ROE set\\}{140}{figure.caption.297}%
-\contentsline {subsection}{\numberline {A.3.2}Element sets.}{141}{subsection.A.3.2}%
-\contentsline {subsubsection}{\numberline {A.3.2.1}Relative eccentricity/inclination vectors orbital elements (REIOE).}{141}{subsubsection.A.3.2.1}%
-\contentsline {paragraph}{Concept \& meaning\\}{142}{figure.caption.302}%
-\contentsline {subsubsection}{\numberline {A.3.2.2}C set of relative orbital elements (CROE).}{144}{subsubsection.A.3.2.2}%
-\contentsline {chapter}{\numberline {B}Cartesian reference systems.}{145}{appendix.B}%
-\contentsline {section}{\numberline {B.1}Introduction.}{145}{section.B.1}%
-\contentsline {subsection}{\numberline {B.1.1}Inertial and rotating reference frames.}{145}{subsection.B.1.1}%
-\contentsline {subsection}{\numberline {B.1.2}Absolute and relative frames.}{145}{subsection.B.1.2}%
-\contentsline {section}{\numberline {B.2}Transformations between reference systems.}{145}{section.B.2}%
-\contentsline {subsection}{\numberline {B.2.1}Direct analytical differentiation.}{147}{subsection.B.2.1}%
-\contentsline {subsection}{\numberline {B.2.2}Classical motion composition.}{148}{subsection.B.2.2}%
-\contentsline {section}{\numberline {B.3}Absolute reference systems.}{150}{section.B.3}%
-\contentsline {subsection}{\numberline {B.3.1}Earth-Centered-Inertial reference system (ECI).}{150}{subsection.B.3.1}%
-\contentsline {subsection}{\numberline {B.3.2}Earth-Centered, Earth-Fixed reference system (ECEF).}{151}{subsection.B.3.2}%
-\contentsline {subsubsection}{\numberline {B.3.2.1}Conversion from ECI to ECEF.}{151}{subsubsection.B.3.2.1}%
-\contentsline {paragraph}{Decomposition of the conversion. \\}{151}{figure.caption.319}%
-\contentsline {paragraph}{\textcolor {GMVred}{I.} \myul [GMVred]{Involved intermediate frames \& rotations.}}{152}{figure.caption.319}%
-\contentsline {subparagraph}{\textcolor {GMVred}{I.A.} \myul [GMVred]{ECI(J2000) to Mean of Date. }\\}{152}{figure.caption.319}%
-\contentsline {subparagraph}{\textcolor {GMVred}{I.B.} \myul [GMVred]{Mean of Date to True of Date.}\\}{153}{figure.caption.321}%
-\contentsline {subparagraph}{\textcolor {GMVred}{I.C.}\myul [GMVred]{True of Date to Pseudo-Body-Fixed.}\\}{154}{AMS.322}%
-\contentsline {subparagraph}{\textcolor {GMVred}{I.D.}\myul [GMVred]{Pseudo-Body-Fixed to Body-Fixed (ECEF).}\\}{154}{AMS.323}%
-\contentsline {paragraph}{\textcolor {GMVred}{II.} \myul [GMVred]{Full rotation matrix $\mbox {\boldmath {${R_{ECI\rightarrow ECEF}}$}}$. }\\}{154}{AMS.324}%
-\contentsline {subsection}{\numberline {B.3.3}Perifocal (PQW) reference frame.}{155}{subsection.B.3.3}%
-\contentsline {subsubsection}{\numberline {B.3.3.1}Definition.}{155}{subsubsection.B.3.3.1}%
-\contentsline {subsubsection}{\numberline {B.3.3.2}State vector transformation.}{155}{subsubsection.B.3.3.2}%
-\contentsline {paragraph}{\textcolor {GMVred}{I.} \myul [GMVred]{Rotation matrix from \& to ECI.} \\}{155}{subsubsection.B.3.3.2}%
-\contentsline {paragraph}{\textcolor {GMVred}{II.} \myul [GMVred]{Angular velocity. }\\}{156}{subsubsection.B.3.3.2}%
-\contentsline {paragraph}{\textcolor {GMVred}{III.}\myul [GMVred]{Transformation matrices $\mbox {\boldmath {${T_{PQW\rightarrow ECI}}$}}$, $\mbox {\boldmath {${T_{ECI\rightarrow PQW}}$}}$. }\\}{157}{subsubsection.B.3.3.2}%
-\contentsline {section}{\numberline {B.4}Relative reference systems.}{158}{section.B.4}%
-\contentsline {subsection}{\numberline {B.4.1}RTN reference frame.}{158}{subsection.B.4.1}%
-\contentsline {subsubsection}{\numberline {B.4.1.1}Definition.}{158}{subsubsection.B.4.1.1}%
-\contentsline {subsubsection}{\numberline {B.4.1.2}State vector transformation.}{158}{subsubsection.B.4.1.2}%
-\contentsline {paragraph}{\textcolor {GMVred}{I.}\myul [GMVred]{Rotation matrix from ECI. }\\}{158}{subsubsection.B.4.1.2}%
-\contentsline {paragraph}{\textcolor {GMVred}{II.} \myul [GMVred]{Angular velocity. }\\}{159}{subsubsection.B.4.1.2}%
-\contentsline {paragraph}{\textcolor {GMVred}{III.}\myul [GMVred]{Transformation matrices $\mbox {\boldmath {${T_{RTN\rightarrow ECI}}$}}$, $\mbox {\boldmath {${T_{ECI\rightarrow RTN}}$}}$.} \\}{159}{subsubsection.B.4.1.2}%
-\contentsline {subsection}{\numberline {B.4.2}LVLH reference frame.}{160}{subsection.B.4.2}%
-\contentsline {subsubsection}{\numberline {B.4.2.1}Definition.}{160}{subsubsection.B.4.2.1}%
-\contentsline {subsubsection}{\numberline {B.4.2.2}State vector transformation.}{160}{subsubsection.B.4.2.2}%
-\contentsline {paragraph}{\textcolor {GMVred}{A)} Using reference orbit's Keplerian OEs. \\}{160}{subsubsection.B.4.2.2}%
-\contentsline {subparagraph}{\textcolor {GMVred}{I.} \myul [GMVred]{Rotation matrix from ECI.} \\}{160}{subsubsection.B.4.2.2}%
-\contentsline {subparagraph}{\textcolor {GMVred}{II.} \myul [GMVred]{Angular velocity. }\\}{160}{subsubsection.B.4.2.2}%
-\contentsline {paragraph}{\textcolor {GMVred}{B)} Using reference ECI state vector. \\}{161}{subsubsection.B.4.2.2}%
-\contentsline {subparagraph}{\textcolor {GMVred}{I.} \myul [GMVred]{Rotation matrix from ECI. }\\}{161}{AMS.328}%
-\contentsline {subparagraph}{\textcolor {GMVred}{II.} \myul [GMVred]{Rotation matrix derivative. }\\}{161}{AMS.328}%
-\contentsline {subsection}{\numberline {B.4.3}TAN reference frame.}{162}{subsection.B.4.3}%
-\contentsline {subsubsection}{\numberline {B.4.3.1}Definition.}{163}{subsubsection.B.4.3.1}%
-\contentsline {subsubsection}{\numberline {B.4.3.2}State vector transformation.}{163}{subsubsection.B.4.3.2}%
-\contentsline {paragraph}{\textcolor {GMVred}{I.} \myul [GMVred]{Rotation matrix from LVLH. }\\}{163}{subsubsection.B.4.3.2}%
-\contentsline {paragraph}{\textcolor {GMVred}{II.} \myul [GMVred]{Angular velocity.} \\}{163}{subsubsection.B.4.3.2}%
-\contentsline {section}{\numberline {B.5}Conversions from OEs to cartesian coordinates.}{164}{section.B.5}%
-\contentsline {subsection}{\numberline {B.5.1}Keplerian OEs to ECI and vice versa.}{164}{subsection.B.5.1}%
-\contentsline {subsubsection}{\numberline {B.5.1.1}KOE to ECI transformation.}{164}{subsubsection.B.5.1.1}%
-\contentsline {subsubsection}{\numberline {B.5.1.2}ECI to KOE transformation.}{165}{subsubsection.B.5.1.2}%
-\contentsline {subparagraph}{\textcolor {GMVred}{Case A)} Non-singular eccentricity or inclination.\\}{165}{subsubsection.B.5.1.2}%
-\contentsline {subparagraph}{\textcolor {GMVred}{Case B)} Null inclination, non-singular eccentricity. \\}{166}{subsubsection.B.5.1.2}%
-\contentsline {subparagraph}{\textcolor {GMVred}{Case C)} Null eccentricity, non-singular inclination. \\}{166}{subsubsection.B.5.1.2}%
-\contentsline {subparagraph}{\textcolor {GMVred}{Case D)} Null eccentricity and inclination. \\}{166}{subsubsection.B.5.1.2}%
-\contentsline {subsection}{\numberline {B.5.2}Relative Keplerian OEs to RTN.}{166}{subsection.B.5.2}%
-\contentsline {chapter}{\numberline {C}Analytical mechanics applied to the two-body problem.}{169}{appendix.C}%
-\contentsline {section}{\numberline {C.1}Introduction.}{169}{section.C.1}%
-\contentsline {section}{\numberline {C.2}Lagrangian formulation.}{169}{section.C.2}%
-\contentsline {subsection}{\numberline {C.2.1}Generalized coordinates \& energy of a dynamical system.}{169}{subsection.C.2.1}%
-\contentsline {subsection}{\numberline {C.2.2}Lagrangian function.}{169}{subsection.C.2.2}%
-\contentsline {subsection}{\numberline {C.2.3}Lagrange equations.}{170}{subsection.C.2.3}%
-\contentsline {section}{\numberline {C.3}Hamiltonian formulation.}{170}{section.C.3}%
-\contentsline {subsection}{\numberline {C.3.1}Hamiltonian function.}{170}{subsection.C.3.1}%
-\contentsline {subsection}{\numberline {C.3.2}Hamilton equations.}{170}{subsection.C.3.2}%
-\contentsline {subsection}{\numberline {C.3.3}Canonical transformations.}{170}{subsection.C.3.3}%
-\contentsline {subsection}{\numberline {C.3.4}Hamilton-Jacobi theory.}{172}{subsection.C.3.4}%
-\contentsline {section}{\numberline {C.4}Application to the two-body problem.}{173}{section.C.4}%
-\contentsline {chapter}{\numberline {D}Software \& simulator.}{175}{appendix.D}%
-\contentsline {section}{\numberline {D.1}Software tool: \textsc {Matlab}}{175}{section.D.1}%
-\contentsline {section}{\numberline {D.2}Code repository.}{175}{section.D.2}%
-\contentsline {subsection}{\numberline {D.2.1}Purpose and approach.}{175}{subsection.D.2.1}%
-\contentsline {subsection}{\numberline {D.2.2}General structure.}{176}{subsection.D.2.2}%
-\contentsline {subsubsection}{\numberline {D.2.2.1}Relative dynamics models.}{176}{subsubsection.D.2.2.1}%
-\contentsline {subsubsection}{\numberline {D.2.2.2}Perturbation models.}{176}{subsubsection.D.2.2.2}%
-\contentsline {subsubsection}{\numberline {D.2.2.3}Input.}{176}{subsubsection.D.2.2.3}%
-\contentsline {subsubsection}{\numberline {D.2.2.4}Utilities.}{177}{subsubsection.D.2.2.4}%
-\contentsline {subsection}{\numberline {D.2.3}General orbit propagation workflow.}{178}{subsection.D.2.3}%
-\contentsline {paragraph}{\textcolor {GMVred}{I.} \myul [GMVred]{Parameter load and scenario preprocessing} \\}{178}{subsection.D.2.3}%
-\contentsline {paragraph}{\textcolor {GMVred}{II.} \myul [GMVred]{Trajectory propagation} \\}{179}{subsection.D.2.3}%
-\contentsline {paragraph}{\textcolor {GMVred}{III.} \myul [GMVred]{Graphical representation} \\}{179}{subsection.D.2.3}%
-\contentsline {subsection}{\numberline {D.2.4}High-Fidelity simulator.}{179}{subsection.D.2.4}%
-\contentsline {subsubsection}{\numberline {D.2.4.1}Single orbit propagation.}{179}{subsubsection.D.2.4.1}%
-\contentsline {paragraph}{\textcolor {GMVred}{I.}\myul [GMVred]{Main function:} \texttt {propRK4\_HiFi}\\}{179}{subsubsection.D.2.4.1}%
-\contentsline {paragraph}{\textcolor {GMVred}{II.} \myul [GMVred]{Dynamics function:} \texttt {SCDynamicsMatlab}\\}{180}{figure.caption.353}%
-\contentsline {subsubsection}{\numberline {D.2.4.2}Relative dynamics propagation.}{180}{subsubsection.D.2.4.2}%
-\contentsline {subsection}{\numberline {D.2.5}\textsc {Matlab} Exchange libraries.}{180}{subsection.D.2.5}%
-\contentsline {chapter}{\numberline {E}Miscellaneous}{181}{appendix.E}%
-\contentsline {section}{\numberline {E.1}State Transition Matrices.}{181}{section.E.1}%
-\contentsline {subsection}{\numberline {E.1.1}STM for circular, unperturbed reference orbit.}{181}{subsection.E.1.1}%
-\contentsline {subsection}{\numberline {E.1.2}STM for elliptic, unperturbed reference orbit.}{181}{subsection.E.1.2}%
-\contentsline {subsection}{\numberline {E.1.3}STM for elliptic, J2-perturbed orbit.}{182}{subsection.E.1.3}%
-\contentsline {section}{\numberline {E.2}Variational equations.}{182}{section.E.2}%
-\contentsline {subsection}{\numberline {E.2.1}Lagrange Planetary Equations.}{183}{subsection.E.2.1}%
-\contentsline {subsubsection}{\numberline {E.2.1.1}Delaunay elements from the LPEs.}{185}{subsubsection.E.2.1.1}%
-\contentsline {subsection}{\numberline {E.2.2}Gauss Variational Equations.}{186}{subsection.E.2.2}%
-\contentsline {section}{\numberline {E.3}Elliptic anomaly mapping.}{187}{section.E.3}%
-\contentsline {subsection}{\numberline {E.3.1}Angles.}{187}{subsection.E.3.1}%
-\contentsline {subsubsection}{\numberline {E.3.1.1}Eccentric to mean and viceversa.}{187}{subsubsection.E.3.1.1}%
-\contentsline {subsubsection}{\numberline {E.3.1.2}True to eccentric and viceversa.}{188}{subsubsection.E.3.1.2}%
-\contentsline {subsubsection}{\numberline {E.3.1.3}True to mean and viceversa.}{189}{subsubsection.E.3.1.3}%
-\contentsline {subsection}{\numberline {E.3.2}Angle rates.}{189}{subsection.E.3.2}%
-\contentsline {subsection}{\numberline {E.3.3}Relative anomalies.}{189}{subsection.E.3.3}%
-\contentsline {section}{\numberline {E.4}Kaula's functions.}{190}{section.E.4}%
-\contentsline {section}{\numberline {E.5}Series expansions for $\beta $ and $e/\beta $.}{195}{section.E.5}%
-\contentsline {subsection}{\numberline {E.5.1}$\mbox {\boldmath {${\beta }$}}$ series expansion.}{195}{subsection.E.5.1}%
-\contentsline {subsection}{\numberline {E.5.2}$\mbox {\boldmath {${e}$}}/ \mbox {\boldmath {${\beta }$}}$ series expansion.}{195}{subsection.E.5.2}%
-\contentsline {chapter}{Bibliography}{197}{appendix*.386}%
-\contentsline {section}{General}{197}{section*.387}%
-\contentsline {section}{Eccentric Dynamics}{198}{section*.387}%
-\contentsline {section}{Perturbations}{199}{section*.387}%
-\contentsline {section}{\textsc {Matlab} Exchange libraries}{200}{section*.387}%
-\contentsline {section}{Websites \& others}{201}{section*.387}%
+\contentsline {chapter}{Resumen.}{iii}{chapter*.2}%
+\contentsline {chapter}{Abstract.}{v}{chapter*.3}%
+\contentsline {chapter}{\nonumberline Nomenclature}{ix}{chapter*.5}%
+\contentsline {chapter}{Introduction.}{xv}{chapter*.8}%
+\contentsline {chapter}{\numberline {1}The Validation Loop}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Introduccion}{1}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Train-test split}{1}{section.1.2}%
+\contentsline {subsection}{\numberline {1.2.1}Preliminaries}{1}{subsection.1.2.1}%
+\contentsline {subsection}{\numberline {1.2.2}The train-test split problem in supervised learning}{2}{subsection.1.2.2}%
+\contentsline {section}{\numberline {1.3}Las movidas de Rodrigo}{3}{section.1.3}%
+\contentsline {subsection}{\numberline {1.3.1}Concept: System dynamics.}{4}{subsection.1.3.1}%
+\contentsline {subsection}{\numberline {1.3.2}Applications of STMs in celestial mechanics.}{5}{subsection.1.3.2}%
+\contentsline {paragraph}{\leavevmode {\color {GMVred}A.} \myul [GMVred]{Precise Orbit Determination.}\\}{5}{subsection.1.3.2}%
+\contentsline {paragraph}{\leavevmode {\color {GMVred}B.} \myul [GMVred]{Guidance, Navigation and Control (GNC).} \\}{5}{subsection.1.3.2}%
+\contentsline {paragraph}{\leavevmode {\color {GMVred}C.} \myul [GMVred]{Orbit design.} \\}{6}{subsection.1.3.2}%
+\contentsline {paragraph}{\leavevmode {\color {GMVred}D.} \myul [GMVred]{Covariance matrix propagation.} \\}{6}{subsection.1.3.2}%
+\contentsline {chapter}{\numberline {2}Conclusions and research outlook.}{9}{chapter.2}%
+\contentsline {paragraph}{\indent Research outlook and future work. \\}{9}{chapter.2}%
+\contentsline {chapter}{\numberline {A}Absolute and relative orbital element sets.}{11}{appendix.A}%
+\contentsline {section}{\numberline {A.1}Introduction.}{11}{section.A.1}%
+\contentsline {section}{\numberline {A.2}Absolute element sets.}{11}{section.A.2}%
+\contentsline {subsection}{\numberline {A.2.1}Workflow for transformations between absolute element sets.}{11}{subsection.A.2.1}%
+\contentsline {subsection}{\numberline {A.2.2}Element sets.}{12}{subsection.A.2.2}%
+\contentsline {subsubsection}{\numberline {A.2.2.1}Keplerian orbital elements (KOE).}{12}{subsubsection.A.2.2.1}%
+\contentsline {subsubsection}{\numberline {A.2.2.2}Eccentricity/inclination vectors orbital elements (EIOE).}{13}{subsubsection.A.2.2.2}%
+\contentsline {paragraph}{\leavevmode {\color {GMVred}I.}\myul [GMVred]{Eccentricity vector.}\\}{13}{subsubsection.A.2.2.2}%
+\contentsline {paragraph}{\leavevmode {\color {GMVred}II.} \myul [GMVred]{Inclination vector.}\\}{14}{AMS.21}%
+\contentsline {paragraph}{\leavevmode {\color {GMVred}III.}\myul [GMVred]{Element set.}\\}{14}{AMS.21}%
+\contentsline {subsubsection}{\numberline {A.2.2.3}Quasi-nonsingular orbital elements (QNSOE).}{14}{subsubsection.A.2.2.3}%
+\contentsline {subsubsection}{\numberline {A.2.2.4}Equinoctial orbital elements (EOE).}{15}{subsubsection.A.2.2.4}%
+\contentsline {subsubsection}{\numberline {A.2.2.5}Delaunay orbital elements (DOE).}{15}{subsubsection.A.2.2.5}%
+\contentsline {section}{\numberline {A.3}Relative sets.}{16}{section.A.3}%
+\contentsline {subsection}{\numberline {A.3.1}Workflow for transformations between ROEs. }{16}{subsection.A.3.1}%
+\contentsline {paragraph}{\leavevmode {\color {GMVred}A)} From any ROE set to RKOE\\}{16}{subsection.A.3.1}%
+\contentsline {paragraph}{\leavevmode {\color {GMVred}B)} From RKOE to any ROE set\\}{18}{figure.caption.30}%
+\contentsline {subsection}{\numberline {A.3.2}Element sets.}{19}{subsection.A.3.2}%
+\contentsline {subsubsection}{\numberline {A.3.2.1}Relative eccentricity/inclination vectors orbital elements (REIOE).}{19}{subsubsection.A.3.2.1}%
+\contentsline {paragraph}{Concept \& meaning\\}{20}{figure.caption.35}%
+\contentsline {subsubsection}{\numberline {A.3.2.2}C set of relative orbital elements (CROE).}{22}{subsubsection.A.3.2.2}%

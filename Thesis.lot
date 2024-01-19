@@ -1,43 +1,13 @@
 \babel@toc {english}{}\relax 
 \addvspace {10\p@ }
-\contentsline {xchapter}{Resumen.}{v}{chapter*.4}%
+\contentsline {xchapter}{Resumen.}{iii}{chapter*.2}%
 \addvspace {10\p@ }
-\contentsline {xchapter}{Abstract.}{vii}{chapter*.5}%
+\contentsline {xchapter}{Abstract.}{v}{chapter*.3}%
 \addvspace {10\p@ }
-\contentsline {xchapter}{Introduction.}{xxi}{chapter*.10}%
+\contentsline {xchapter}{Introduction.}{xv}{chapter*.8}%
 \addvspace {10\p@ }
-\contentsline {xchapter}{General concepts on spacecraft relative dynamics and STMs.}{1}{chapter.1}%
+\contentsline {xchapter}{The Validation Loop}{1}{chapter.1}%
 \addvspace {10\p@ }
-\contentsline {xchapter}{Relative dynamics around a near-circular unperturbed reference orbit.}{11}{chapter.2}%
-\contentsline {table}{\numberline {2.1}{\ignorespaces Testing scenarios for Hill equations validation \blx@tocontentsinit {0}\cite {Wakker}.\relax }}{29}{table.caption.69}%
-\contentsline {table}{\numberline {2.2}{\ignorespaces Elapsed time for the computation of V-bar scenario through each HCW method.\relax }}{31}{table.caption.72}%
-\contentsline {table}{\numberline {2.3}{\ignorespaces Elapsed time for the computation of R-bar scenario through each HCW method.\relax }}{33}{table.caption.76}%
+\contentsline {xchapter}{Conclusions and research outlook.}{9}{chapter.2}%
 \addvspace {10\p@ }
-\contentsline {xchapter}{Relative dynamics around elliptic reference orbits.}{43}{chapter.3}%
-\contentsline {table}{\numberline {3.1}{\ignorespaces Testing scenarios for YA STM \blx@tocontentsinit {0}\cite {Yamanaka_Ankersen}.\relax }}{52}{table.caption.120}%
-\contentsline {table}{\numberline {3.2}{\ignorespaces Correspondence between QNS and C ROEs.\relax }}{57}{table.caption.125}%
-\contentsline {table}{\numberline {3.3}{\ignorespaces Parameters of an orbit family.\relax }}{59}{table.caption.132}%
-\contentsline {table}{\numberline {3.4}{\ignorespaces Testing scenarios for safe orbit implementation \blx@tocontentsinit {0}\cite {Peters_Noomen}.\relax }}{60}{table.caption.134}%
-\addvspace {10\p@ }
-\contentsline {xchapter}{Perturbations: Non-spherical gravity.}{65}{chapter.4}%
-\contentsline {table}{\numberline {4.1}{\ignorespaces Results of the mean to osculating transformation for both surveyed methods.\relax }}{81}{table.caption.173}%
-\contentsline {table}{\numberline {4.2}{\ignorespaces Approximations of the $J_2$ term of the geopotential expansion.\relax }}{103}{table.caption.229}%
-\contentsline {table}{\numberline {4.3}{\ignorespaces Scenarios for testing Kaula's theory.\relax }}{108}{table.caption.241}%
-\addvspace {10\p@ }
-\contentsline {xchapter}{Perturbed relative motion.}{115}{chapter.5}%
-\addvspace {10\p@ }
-\contentsline {xchapter}{Conclusions and research outlook.}{131}{chapter.6}%
-\addvspace {10\p@ }
-\contentsline {xchapter}{Absolute and relative orbital element sets.}{133}{appendix.A}%
-\addvspace {10\p@ }
-\contentsline {xchapter}{Cartesian reference systems.}{145}{appendix.B}%
-\addvspace {10\p@ }
-\contentsline {xchapter}{Analytical mechanics applied to the two-body problem.}{169}{appendix.C}%
-\contentsline {table}{\numberline {C.1}{\ignorespaces Canonical transformation relations \blx@tocontentsinit {0}\cite {Wiesel}.\relax }}{171}{table.caption.340}%
-\addvspace {10\p@ }
-\contentsline {xchapter}{Software \& simulator.}{175}{appendix.D}%
-\addvspace {10\p@ }
-\contentsline {xchapter}{Miscellaneous}{181}{appendix.E}%
-\contentsline {table}{\numberline {E.1}{\ignorespaces Inclination functions $F_{lmp} (i)$\relax }}{191}{table.caption.380}%
-\contentsline {table}{\numberline {E.2}{\ignorespaces Derivatives of the inclination functions $dF_{lmp}/di (i)$\relax }}{192}{table.caption.381}%
-\contentsline {table}{\numberline {E.3}{\ignorespaces Eccentricity functions and its derivatives $G_{lpq} (e)$\relax }}{194}{table.caption.383}%
+\contentsline {xchapter}{Absolute and relative orbital element sets.}{11}{appendix.A}%
