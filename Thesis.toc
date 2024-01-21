@@ -8,13 +8,13 @@
 \contentsline {section}{\numberline {1.2}Train-test split}{1}{section.1.2}%
 \contentsline {subsection}{\numberline {1.2.1}Preliminaries}{1}{subsection.1.2.1}%
 \contentsline {subsection}{\numberline {1.2.2}The train-test split problem in supervised learning}{2}{subsection.1.2.2}%
-\contentsline {section}{\numberline {1.3}Las movidas de Rodrigo}{3}{section.1.3}%
+\contentsline {section}{\numberline {1.3}Las movidas de Rodrigo}{4}{section.1.3}%
 \contentsline {subsection}{\numberline {1.3.1}Concept: System dynamics.}{4}{subsection.1.3.1}%
-\contentsline {subsection}{\numberline {1.3.2}Applications of STMs in celestial mechanics.}{5}{subsection.1.3.2}%
-\contentsline {paragraph}{\leavevmode {\color {GMVred}A.} \myul [GMVred]{Precise Orbit Determination.}\\}{5}{subsection.1.3.2}%
-\contentsline {paragraph}{\leavevmode {\color {GMVred}B.} \myul [GMVred]{Guidance, Navigation and Control (GNC).} \\}{5}{subsection.1.3.2}%
+\contentsline {subsection}{\numberline {1.3.2}Applications of STMs in celestial mechanics.}{6}{subsection.1.3.2}%
+\contentsline {paragraph}{\leavevmode {\color {GMVred}A.} \myul [GMVred]{Precise Orbit Determination.}\\}{6}{subsection.1.3.2}%
+\contentsline {paragraph}{\leavevmode {\color {GMVred}B.} \myul [GMVred]{Guidance, Navigation and Control (GNC).} \\}{6}{subsection.1.3.2}%
 \contentsline {paragraph}{\leavevmode {\color {GMVred}C.} \myul [GMVred]{Orbit design.} \\}{6}{subsection.1.3.2}%
-\contentsline {paragraph}{\leavevmode {\color {GMVred}D.} \myul [GMVred]{Covariance matrix propagation.} \\}{6}{subsection.1.3.2}%
+\contentsline {paragraph}{\leavevmode {\color {GMVred}D.} \myul [GMVred]{Covariance matrix propagation.} \\}{7}{subsection.1.3.2}%
 \contentsline {chapter}{\numberline {2}Conclusions and research outlook.}{9}{chapter.2}%
 \contentsline {paragraph}{\indent Research outlook and future work. \\}{9}{chapter.2}%
 \contentsline {chapter}{\numberline {A}Absolute and relative orbital element sets.}{11}{appendix.A}%
