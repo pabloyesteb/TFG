@@ -1,20 +1,20 @@
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {A.1}Introduction.}{\reset@font\mtcSfont 11}{section.A.1}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {A.2}Absolute element sets.}{\reset@font\mtcSfont 11}{section.A.2}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {A.2.1}Workflow for transformations between absolute element sets.}{\reset@font\mtcSSfont 11}{subsection.A.2.1}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {A.2.2}Element sets.}{\reset@font\mtcSSfont 12}{subsection.A.2.2}}
-{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {A.2.2.1}Keplerian orbital elements (KOE).}{\reset@font\mtcSSSfont 12}{subsubsection.A.2.2.1}}
-{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {A.2.2.2}Eccentricity/inclination vectors orbital elements (EIOE).}{\reset@font\mtcSSSfont 13}{subsubsection.A.2.2.2}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode \leavevmode {\color {GMVred}I.}\myul [GMVred]{Eccentricity vector.}\\}{\reset@font\mtcPfont 13}{subsubsection.A.2.2.2}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode \leavevmode {\color {GMVred}II.} \myul [GMVred]{Inclination vector.}\\}{\reset@font\mtcPfont 14}{AMS.21}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode \leavevmode {\color {GMVred}III.}\myul [GMVred]{Element set.}\\}{\reset@font\mtcPfont 14}{AMS.21}}
-{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {A.2.2.3}Quasi-nonsingular orbital elements (QNSOE).}{\reset@font\mtcSSSfont 14}{subsubsection.A.2.2.3}}
-{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {A.2.2.4}Equinoctial orbital elements (EOE).}{\reset@font\mtcSSSfont 15}{subsubsection.A.2.2.4}}
-{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {A.2.2.5}Delaunay orbital elements (DOE).}{\reset@font\mtcSSSfont 15}{subsubsection.A.2.2.5}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {A.3}Relative sets.}{\reset@font\mtcSfont 16}{section.A.3}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {A.3.1}Workflow for transformations between ROEs. }{\reset@font\mtcSSfont 16}{subsection.A.3.1}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode \leavevmode {\color {GMVred}A)} From any ROE set to RKOE\\}{\reset@font\mtcPfont 16}{subsection.A.3.1}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode \leavevmode {\color {GMVred}B)} From RKOE to any ROE set\\}{\reset@font\mtcPfont 18}{figure.caption.30}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {A.3.2}Element sets.}{\reset@font\mtcSSfont 19}{subsection.A.3.2}}
-{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {A.3.2.1}Relative eccentricity/inclination vectors orbital elements (REIOE).}{\reset@font\mtcSSSfont 19}{subsubsection.A.3.2.1}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Concept \& meaning\\}{\reset@font\mtcPfont 20}{figure.caption.35}}
-{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {A.3.2.2}C set of relative orbital elements (CROE).}{\reset@font\mtcSSSfont 22}{subsubsection.A.3.2.2}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {A.1}Introduction.}{\reset@font\mtcSfont 13}{section.A.1}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {A.2}Absolute element sets.}{\reset@font\mtcSfont 13}{section.A.2}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {A.2.1}Workflow for transformations between absolute element sets.}{\reset@font\mtcSSfont 13}{subsection.A.2.1}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {A.2.2}Element sets.}{\reset@font\mtcSSfont 14}{subsection.A.2.2}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {A.2.2.1}Keplerian orbital elements (KOE).}{\reset@font\mtcSSSfont 14}{subsubsection.A.2.2.1}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {A.2.2.2}Eccentricity/inclination vectors orbital elements (EIOE).}{\reset@font\mtcSSSfont 15}{subsubsection.A.2.2.2}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode \leavevmode {\color {GMVred}I.}\myul [GMVred]{Eccentricity vector.}\\}{\reset@font\mtcPfont 15}{subsubsection.A.2.2.2}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode \leavevmode {\color {GMVred}II.} \myul [GMVred]{Inclination vector.}\\}{\reset@font\mtcPfont 16}{AMS.22}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode \leavevmode {\color {GMVred}III.}\myul [GMVred]{Element set.}\\}{\reset@font\mtcPfont 16}{AMS.22}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {A.2.2.3}Quasi-nonsingular orbital elements (QNSOE).}{\reset@font\mtcSSSfont 16}{subsubsection.A.2.2.3}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {A.2.2.4}Equinoctial orbital elements (EOE).}{\reset@font\mtcSSSfont 17}{subsubsection.A.2.2.4}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {A.2.2.5}Delaunay orbital elements (DOE).}{\reset@font\mtcSSSfont 17}{subsubsection.A.2.2.5}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {A.3}Relative sets.}{\reset@font\mtcSfont 18}{section.A.3}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {A.3.1}Workflow for transformations between ROEs. }{\reset@font\mtcSSfont 18}{subsection.A.3.1}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode \leavevmode {\color {GMVred}A)} From any ROE set to RKOE\\}{\reset@font\mtcPfont 18}{subsection.A.3.1}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode \leavevmode {\color {GMVred}B)} From RKOE to any ROE set\\}{\reset@font\mtcPfont 20}{figure.caption.31}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {A.3.2}Element sets.}{\reset@font\mtcSSfont 21}{subsection.A.3.2}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {A.3.2.1}Relative eccentricity/inclination vectors orbital elements (REIOE).}{\reset@font\mtcSSSfont 21}{subsubsection.A.3.2.1}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Concept \& meaning\\}{\reset@font\mtcPfont 22}{figure.caption.36}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {A.3.2.2}C set of relative orbital elements (CROE).}{\reset@font\mtcSSSfont 24}{subsubsection.A.3.2.2}}

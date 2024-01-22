@@ -14,7 +14,7 @@
 %
 \indent Training and evaluating the NN on the same dataset would result in the phenomenon called overfitting\cite[pp. 19-20]{Marsland2015Machine}, which basically consists of the NN fitting the noise in the training data and thus losing performance on unseen data (inference ability).\\
 %
-\indent With the dataset split into the train, evaluation, and test sets, the training and validation loop is as follows: the model is trained to ''fit'' the data in the training set. After a certain amount of training, its performance is measured on the evaluation set. The test set is used to compare the performance of different hyperparameter configurations. Note that the NN is always evaluated with data not previously ''seen'' during training, and as such cannot develop any bias for the training set (although bias for the validation or test sets may exist).\\
+\indent With the dataset split into the train, evaluation, and test sets, the standard training and validation loop is as follows: the model is trained to ''fit'' the data in the training set. After a certain amount of training, its performance is measured on the evaluation set. The test set is used to compare the performance of different hyperparameter configurations. Note that the NN is always evaluated with data not previously ''seen'' during training, and as such cannot develop any bias for the training set (although bias for the validation or test sets may exist).\\
 %
 \indent In the model validation loop, the first question that should be asked, even before training the model, is whether the dataset split is appropriate for training.\\
 %
@@ -26,14 +26,14 @@ and a test set
 
 $${\cal S}_{\text{test}}=\{({\bf X^{te}},{\bf Y^{te}})_i\}_{i=1}^{N_{test}},$$
 
-where ${\bf X}=(X_1,X_2,\dots,X_m)$ is the vector of input variables (also called feature vector), $m$ is the dimensionality of the input parameter space, and ${\bf Y}=(Y_1,Y_2,\dots,Y_q)$ is the vector of output variables, with dimensionality $q$. Individual variables $X_k$ can be numerical or categorical. For instance, for stress problems such as MSP-S18, we have a combination of numerical  (eg external loads) and categorical (eg discrete geometrical variables such as ''Frame'' or ''Stringer'', and purely categorical such as ''dp''). Individual variables $Y_k$ describe the prediction and these are typically numerical (for stress problems such as MSP-S18, $q=6$ and these are so-called reserve factors, quantifying the failure likelihood of different failure modes).
+where ${\bf X}=(X_1,X_2,\dots,X_m)$ is the vector of input variables (also called feature vector), $m$ is the dimensionality of the input parameter space, and ${\bf Y}=(Y_1,Y_2,\dots,Y_q)$ is the vector of output variables, with dimensionality $q$. Individual variables $X_k$ can be numerical or categorical. For instance, for stress problems such as MSP-S18, we have a combination of numerical  (\eg external loads) and categorical (eg discrete geometrical variables such as ''Frame'' or ''Stringer'', and purely categorical such as ''dp''). Individual variables $Y_k$ describe the prediction and these are typically numerical (for stress problems such as MSP-S18, $q=6$ and these are so-called reserve factors, quantifying the failure likelihood of different failure modes).
 
 The aim of this section is to propose a set of tests to evaluate to which extent splitting fulfils the necessary conditions for the subsequent surrogate model ${\bf \hat{Y}}=\hat{F}({\bf X})$ to be appropriately trained on ${\cal S}_{\text{train}}$ and tested on ${\cal S}_{\text{test}}$.\\
 %
  
 \subsection{The train-test split problem in supervised learning}
 \indent For evaluation purposes, the idea should be kept in mind that the surrogate model is just a parameterized nonlinear approximator of a function ${\bf{Y}}=F({\bf X})$. Let $\cal D$ be the dominium of the function $F$, of which only a fraction is available for training and evaluating purposes, \ie ${\cal S}_{train},{\cal S}_{test} \subseteq \cal D$. Logically, it is desirable that  
-${\cal S}_{train}$ and ${\cal S}_{test}$ be statistically as close as posible to $\cal D$ and to each other. Nonetheless, the statistical similarity with $\cal D$ is an off-design problem, meaning once ${\cal S}_{train}$ and ${\cal S}_{test}$ are set a surrogate model $\hat F$ can be developed accordingly to perform well at least over a dominium which is said to be in the interpolating region of ${\cal S}_{train}$. The concept of interpolating regime is of great importance for surrogate models and shall be further discussed later. On the other hand, the statistical similarity of ${\cal S}_{train}$ and ${\cal S}_{test}$ is a design problem, meaning if ${\cal S}_{test}$ is not a statistically accurate representation of ${\cal S}_{train}$ then the surrogate model $\hat F$'s performance over a dominium in the interpolation region of ${\cal S}_{train}$ is not guaranteed. In other words, no trustworthy evaluation of the model can be carried out. It is this in-design problem of statistical accordance between ${\cal S}_{train}$ and ${\cal S}_{test}$ the one addressed here.\\
+${\cal S}_{train}$ and ${\cal S}_{test}$ be statistically as close as posible to $\cal D$ and to each other in order for the training and validation of the model to be coherent. Nonetheless, the statistical similarity with $\cal D$ is an off-design problem, meaning once ${\cal S}_{train}$ and ${\cal S}_{test}$ are set a surrogate model $\hat F$ can be developed accordingly to perform well at least over a dominium which is said to be in the interpolating region of ${\cal S}_{train}$. The concept of interpolating regime is of great importance for surrogate models and shall be further discussed later. On the other hand, the statistical similarity of ${\cal S}_{train}$ and ${\cal S}_{test}$ is a design problem, meaning if ${\cal S}_{test}$ is not in the interpolating region of ${\cal S}_{train}$ then the surrogate model $\hat F$'s performance over a dominium in the interpolation region of ${\cal S}_{train}$ is not guaranteed. In other words, no trustworthy evaluation of the model can be carried out. It is this in-design problem of statistical accordance between ${\cal S}_{train}$ and ${\cal S}_{test}$ the one addressed here.\\
 A proper definition of statistical accordance between two sets in the context of ${\cal S}_{train}$ and ${\cal S}_{test}$ is therefore needed, which will in the end take us to the concept of interpolation. An evidently conservative condition for assuring statistical equivalence can be expressed by the equation \eqref{eqC1:TT1}:
 
 \begin{equation} \label{eqC1:TT1}
@@ -41,21 +41,40 @@ A proper definition of statistical accordance between two sets in the context of
 \end{equation}
 where $\mathbf{x}=(x_1, x_2, x_3,...,x_m)$ is the vector of input variables.\\
 %
-\indent In fact, the condition given by \eqref{eqC1:TT1} indeed assures statistical equivalence between the two sets, nonetheless is impossible to fulfil given that ${\cal S}_{train} \cap {\cal S}_{test} = \emptyset$ by definition. Instead, we will see that the goodness of the train-test split is closely related to the idea of interpolation. We now of NN that they perform well when working in interpolation regime. There is a subtle nuance here that our knowledge of NNs suggests not only NNs perform well at interpolating, but that they perform well \textit {because} they interpolate, \ie they cannot perform well at non-interpolating tasks, or at least it is not possible to statistically assure their performance. This is a matter of discussion highly debated in the literature (see v. gr. \cite{pmlr-v80-barrett18a,DBLP:journals/corr/abs-1711-00350,DBLP:journals/corr/abs-1904-01557}).\\ 
+\indent In fact, the condition given by \eqref{eqC1:TT1} indeed assures statistical equivalence between the two sets, nonetheless is impossible to fulfil given that ${\cal S}_{train} \cap {\cal S}_{test} = \emptyset$ by definition. Instead, we will see that the goodness of the train-test split is closely related to the idea of interpolation. We now of NN that they perform well they work in interpolation regime. There is a subtle nuance here that our knowledge of NNs suggests not only NNs perform well at interpolating, but that they perform well \textit {because} they interpolate, \ie they cannot perform well at non-interpolating tasks, or at least it is not possible to statistically assure their performance. This is a matter of discussion highly debated in the literature (see \eg \cite{pmlr-v80-barrett18a,DBLP:journals/corr/abs-1711-00350,DBLP:journals/corr/abs-1904-01557}).\\ 
 %
 \indent Subsequently, we want to be sure that our surrogate model is indeed interpolating when evaluating its performance. This idea of interpolation constitutes a basis for the proposed train-test split validation analysis, \ie the train-test split is sufficiently good whenever ${\cal S}_{test}$ falls in the interpolation region of ${\cal S}_{train}$.\\
 %
 \indent There are plenty of definitions for the interpolating region of a given dataset. Some authors define it as the smallest hypercube enclosing the data\cite{ebert2014interpolation} although this might lead to points well far-away from the training set being considered to fall inside the interpolation region. Many authors (see v. gr. \cite{loh2007extrapolation,4505337}) define the interpolation region as the \textit{convex hull} of the training data, \ie:
 
-\begin{definition}\label{def:interpolacion}
-	Interpolation occurs for a sample $\mathbf{x}$ whenever this sample belongs to the convex hull of a set of samples $\mathbf{X}\triangleq \left\{\mathbf{x}_1,...,\mathbf{x}_N\right\}$.
+\begin{definition}\cite{balestriero2021learning}\label{def:interpolacion}
+	Standard interpolation occurs for a sample $\mathbf{x}$ whenever this sample belongs to the convex hull of a set of samples $\mathbf{X}\triangleq \left\{\mathbf{x}_1,...,\mathbf{x}_N\right\}$.
 \end{definition}
 
-\indent The convex hull can be simply defined as the smallest convex set containing the data\cite{Preparata1985}.\\
+The convex hull can be simply defined as the smallest convex set containing the data\cite{Preparata1985}.\\
 %
-\indent It is therefore 
-%
+\indent Recently, \cite{balestriero2021learning} have pointed out that, due to the so-called curse of dimensionality, extrapolation outside the training convex hull always ends up taking place if the input dimension is sufficiently high. The curse of dimensionality\cite[pp. 17-18]{Marsland2015Machine} can be illustrated by the fact that the unitary n-hypersphere's volume asymptotically diminishes to $0$ as $n$ increases. In the end, the effect is that, as the number of dimensions increase, more data is needed in order for the model to work in interpolating regime, as shows :\\
 
+\begin{theorem}\cite{barany1988shape}
+	Given a $d$-dimensional dataset $\mathbf X \triangleq {\mathbf{x}_1,...,\mathbf{x}_N}$ with i.i.d. samples uniformly drawn from a hyperball, the probability that a new sample $\mathbf{x}$ is in interpolation regime (recall \autoref{def:interpolacion}) has the following asymptotic behavior:\\
+	
+	\begin{equation}
+		\lim_{d \to \infty}p(\mathbf{x}\in Hull(\mathbf{X}))=
+		\begin{cases}
+			1 \iff N>d^{-1}2^{\frac{d}{2}}\\
+			0 \iff N<d^{-1}2^{\frac{d}{2}}
+		\end{cases}	
+	\end{equation}
+\end{theorem}
+	
+\indent Studies from \cite{balestriero2021learning} seemed to contradict previous knowledge on the importance of interpolation in NNs performance.\\
+%
+\indent The main answer arosen to the argument of \cite{balestriero2021learning} is that interpolation does not occur in the ambient space, but in a latent, low-dimensional space of the input data\cite{bonnasse2022interpolation}. This leads to a new definition of interpolation alternative to \autoref{def:interpolacion}.\\
+%
+\indent What's more, the authors in \cite{bonnasse2022interpolation} not only show that interpolation indeed occurs (at least in a latent representation of the ambient space), but that more important conditions to the model's performance are that unseen and training data follows the same cumulative distribution (or the same tail distribution when the former cannot be fulfiled) and that the average distance from a given point to the nearest training point is similar to the average closest-distance in the training set.\\
+%
+\subsection{Proposed validation loop for the train-test}
+\indent The validation loop here proposed comprises different tests which 
 %
 
 

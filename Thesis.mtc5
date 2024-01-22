@@ -2,10 +2,11 @@
 {\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {1.2}Train-test split}{\reset@font\mtcSfont 1}{section.1.2}}
 {\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {1.2.1}Preliminaries}{\reset@font\mtcSSfont 1}{subsection.1.2.1}}
 {\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {1.2.2}The train-test split problem in supervised learning}{\reset@font\mtcSSfont 2}{subsection.1.2.2}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {1.2.3}Proposed validation loop for the train-test}{\reset@font\mtcSSfont 4}{subsection.1.2.3}}
 {\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {1.3}Las movidas de Rodrigo}{\reset@font\mtcSfont 4}{section.1.3}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {1.3.1}Concept: System dynamics.}{\reset@font\mtcSSfont 4}{subsection.1.3.1}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {1.3.1}Concept: System dynamics.}{\reset@font\mtcSSfont 5}{subsection.1.3.1}}
 {\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {1.3.2}Applications of STMs in celestial mechanics.}{\reset@font\mtcSSfont 6}{subsection.1.3.2}}
 {\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode \leavevmode {\color {GMVred}A.} \myul [GMVred]{Precise Orbit Determination.}\\}{\reset@font\mtcPfont 6}{subsection.1.3.2}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode \leavevmode {\color {GMVred}B.} \myul [GMVred]{Guidance, Navigation and Control (GNC).} \\}{\reset@font\mtcPfont 6}{subsection.1.3.2}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode \leavevmode {\color {GMVred}C.} \myul [GMVred]{Orbit design.} \\}{\reset@font\mtcPfont 6}{subsection.1.3.2}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode \leavevmode {\color {GMVred}B.} \myul [GMVred]{Guidance, Navigation and Control (GNC).} \\}{\reset@font\mtcPfont 7}{subsection.1.3.2}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode \leavevmode {\color {GMVred}C.} \myul [GMVred]{Orbit design.} \\}{\reset@font\mtcPfont 7}{subsection.1.3.2}}
 {\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode \leavevmode {\color {GMVred}D.} \myul [GMVred]{Covariance matrix propagation.} \\}{\reset@font\mtcPfont 7}{subsection.1.3.2}}
