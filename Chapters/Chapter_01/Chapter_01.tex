@@ -71,10 +71,20 @@ The convex hull can be simply defined as the smallest convex set containing the 
 %
 \indent The main answer arosen to the argument of \cite{balestriero2021learning} is that interpolation does not occur in the ambient space, but in a latent, low-dimensional space of the input data\cite{bonnasse2022interpolation}. This leads to a new definition of interpolation alternative to \autoref{def:interpolacion}.\\
 %
-\indent What's more, the authors in \cite{bonnasse2022interpolation} not only show that interpolation indeed occurs (at least in a latent representation of the ambient space), but that more important conditions to the model's performance are that unseen and training data follows the same cumulative distribution (or the same tail distribution when the former cannot be fulfiled) and that the average distance from a given point to the nearest training point is similar to the average closest-distance in the training set.\\
+\indent What's more, the authors in \cite{bonnasse2022interpolation} not only show that interpolation indeed occurs (at least in a latent representation of the ambient space), but that more important conditions to the model's performance are that unseen and training data follows the same cumulative distribution (or the same tail distribution when the former cannot be fulfiled) and that the average distance between training points is similar to the average distance between training and testing points.\\
 %
 \subsection{Proposed validation loop for the train-test}
-\indent The validation loop here proposed comprises different tests which 
+A validation loop for the train-test split is given in the form of a flux diagram whose nodes are different tests aimed at checking statistical properties which characterize the split as has been discussed in the previous section. The diagram derives the results of the tests to apropriate recommendations given to the data engineer. Before showing the complete loop, it is convenient to state the nomenclature conventions used in the diagram for the sake of clarity:\\
+
+\begin{definition}\label{def:orden1}
+	Let $\mathbf{X}$ represent some dataset, which has been split in $\mathbf{X}^{TRAIN}$ and $\mathbf{X}^{TEST}$. $\mathbf{X}$ is said to be order 1 [O(1)] well-split if and only if $\mathbf{X}^{TEST} \subseteq Hull[\mathbf{X}^{TRAIN}]$.\\
+	
+	Where we denote the convex hull of $\mathbf{X}^{TRAIN}$ by $Hull[\mathbf{X}^{TRAIN}]$.
+\end{definition}
+
+\begin{definition}
+	Let $\mathbf{X}$ represent the dataset defined in \autoref{def:orden1}. $\mathbf{X}$ is said to be order 2 well-split if and only if 
+\end{definition}
 %
 
 
