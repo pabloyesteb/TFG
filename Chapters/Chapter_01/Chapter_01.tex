@@ -4,17 +4,140 @@
 %
 %\indent This thesis is developed over a particular method of describing 
 %
-\section{Introduccion}
+\section{Introduction}
+\subsection{Case of applicability}
+\indent For illustration of the proposed validation loop, a case of study has been used alongside the theoretical rationale of the loop to generate explanatory figures and tables and to give proof of the real operation of the loop.\\
 %
-\indent Spacecraft relative dynamics is a vast, very relevant and ever-increasing branch of celestial mechanics. It tries to analyse, rather than the motion around a central body, that of a secondary body (or set of bodies) around a primary, assuming that neither of them generate a gravitational effect on each other. This discipline hence focuses on analysing how a certain force field -- which may include different influences -- differentially affects two or more different spacecrafts in a mostly common orbit.\\
+\indent The case of study is an application of NN in aircraft stress engineering. For typical aircraft fuselage panel design, the dominant form of stiffened post buckling failure under shear loading is forced crippling\cite{bijlaard1955buckling}. This occurs when the shear buckles in the panel skin force the attached stiffener flanges to deform out-of-plane. There are other failure modes related to buckling, tension, and compression.\\
+%
+\indent The case of study used for illustration purposes consists of a NN model whose task is to predict Reserve Factors ($RF$) that quantify failure likelihood for regions of the aircraft subject to different loads happening in flight maneuvers. The possible failure modes are Forced Crippling, Column Buckling, In Plane, Net Tension, Pure Compression, and Shear Panel Failure.\\
+%
+\indent Input data consists of 26 features (loads applied to a specific region of the aircraft and different maneuver specs). Output data consists of 6 reserve factors that quantify the stress failure likelihood ($RF_1$, $RF_2$, $RF_3$, $RF_4$, $RF_5$, and $RF_6$), where $RF_i\in [0,5]$,where $0$ means extreme risk and $5$ means risk extremely low (in a logarithmic scale).\\
+%
+\indent The NN architecture and further features are irrelevant for this study and therefore the model treatment alongside this work remains the concept of a ''black box'' whose inputs are the 26 features aforementioned and whose output are the 6 reserve factors corresponding to 6 different failure modes.\\
+%
+\indent For typical aircraft fuselage panel design, the dominant form of stiffened post buckling failure under shear loading is forced crippling. This occurs when the shear buckles in the panel skin force the attached stiffener flanges to deform out-of-plane.\\
+%
+\begin{figure}
+	\centering
+	\begin{tikzpicture}
+		% Caja 1
+		\node[draw, minimum width=2cm, minimum height=3cm, font=\scriptsize] (box1) at (0,0) {
+			\begin{tabular}{c}
+				\textbf{INPUT $X$}\\
+				Loads + Geometry +\\
+				other specs\\
+				(quantitative + qualitative)
+			\end{tabular}
+		};
+		\node[below=0.1cm of box1] {$\mathbf{X}=(x_1,x_2,...,x_n)$};
+		
+		% Caja 2
+		\node[draw, minimum width=2cm, minimum height=3cm, right=0.5cm of box1, font=\scriptsize] (box2) {
+			\begin{tabular}{c}
+				\textbf{SURROGATE MODEL}\\
+				Stress learning model\\
+				trained by splitting cases into\\
+				train/test set and minimize loss\\
+				function (Deep Neural Network)
+			\end{tabular}
+		};
+		\node[below=0.1cm of box2] {$\cal{F}:\mathbf{X} \rightarrow \mathbf{Y}$};
+		
+		% Caja 3
+		\node[draw, minimum width=2cm, minimum height=3cm, right=0.5cm of box2, font=\scriptsize] (box3) {
+			\begin{tabular}{c}
+				\textbf{PREDICTION (OUTPUT) Y}\\
+				A set of Rserve Factors ($RF$)\\
+				which characterize the likelihood\\
+				of different failure modes.
+			\end{tabular}
+		};
+		\node[below=0.1cm of box3] {$\mathbf{Y}=(y_1,y_2,...,y_m)$};
+		
+		% Flechas
+		\draw[->, >=Stealth] (box1.east) -- (box2.west);
+		\draw[->, >=Stealth] (box2.east) -- (box3.west);
+	\end{tikzpicture}
+	\caption{Surrogate model pipeline}
+	\label{fig:diagrama_cajas}
+\end{figure}
+
+
+\subsection{Applicability}
+\indent The applicability region can be intuitively defined as the set of the input and output values for which the model's prediction can be trusted. Applicability region is a refined idea of the \textit{Operational Design Domain} of a model.\\
+\indent For a model $F$ to be applicable to a certain new point $x$:
+\begin{itemize}
+	\item $x$ needs to be inside the \textit{input} applicability region of $F$.
+	\item The prediction $Y=F(x)$ needs to be inside the \textit{output} applicability region of $F$.
+\end{itemize}
+
+\indent Knowing whether a new point is either inside or outside applicability is a binary decision problem which can be addressed \textit{a priori} (filtering) or be learned \textit{a posteriori} (model boosting). In other words, the binary classification can be addressed from an unsupervised (geometric) learning approach, or a supervised learning approach. Supervised applicability classifiers are based on exogenous criteria. Examples of them include:
+\begin{itemize}
+	\item \textbf{Error-filtered convex hull.} Initially the whole set under testing is in applicability range. After filtering those test cases whose prediction error exceeds a tolerance, the applicability region is defined as the convex hull of the remaining subset. The convex hull can be simply defined as the smallest convex set containing the data\cite{Preparata1985}.
+	\item \textbf{Error-labelled classifiers.} Initially a whole subset of the dataset (namely, the test set) is in applicability range. After labelling those test cases whose prediction error exceeds a tolerance as outside applicability, different binary classifiers are trained on the full dataset.\\
+\end{itemize}
+
+On the other hand, geometrical applicability classifiers are based on the premise of NN interpolation capabilities. It has been widely discussed (see \eg \cite{pmlr-v80-barrett18a,DBLP:journals/corr/abs-1711-00350,DBLP:journals/corr/abs-1904-01557}) that NN's performance relies on their interpolation capabilities, and that no extrapolation capabilities outside their applicability region should be assumed.\\
+%
+\indent Subsequently, from a geometrical approach to the applicability classification problem, we shall define the input applicability region as the geometrical region in the input space where the model is known to work in interpolating regime.\\
+%
+\indent There are plenty of definitions for the interpolating region of a given dataset. Some authors define it as the smallest hypercube enclosing the data\cite{ebert2014interpolation} although this may seriously challenge interpolation due to isolated points falling into the interpolation region under this definition. Many authors (see v. gr. \cite{loh2007extrapolation,4505337}) define the interpolation region as the \textit{convex hull} of the training data, \ie:
+
+\begin{definition}\cite{balestriero2021learning}\label{def:interpolacion}
+	Standard interpolation occurs for a sample $\mathbf{x}$ whenever this sample belongs to the convex hull of a set of samples $\mathbf{X}\triangleq \left\{\mathbf{x}_1,...,\mathbf{x}_N\right\}$.
+\end{definition}
+
+In the above definition, $\mathbf{X}$ is the training set which has been used for training the model.\\
+%
+\indent Recently, \cite{balestriero2021learning} have pointed out that, due to the so-called curse of dimensionality, extrapolation outside the training convex hull always ends up taking place if the input dimension is sufficiently large. The curse of dimensionality\cite[pp. 17-18]{Marsland2015Machine} can be illustrated by the fact that the unitary $n$-sphere's volume asymptotically diminishes to $0$ as $n$ increases. In the end, the effect is that, as the number of dimensions increase, more data is needed in order for the model to work in interpolating regime, as is showed by the following theorem:\\
+
+\begin{theorem}\cite{barany1988shape}\label{dparadoxa}
+	Given a $d$-dimensional dataset $\mathbf X \triangleq {\mathbf{x}_1,...,\mathbf{x}_N}$ with i.i.d. samples uniformly drawn from a hyperball, the probability that a new sample $\mathbf{x}$ is in interpolation regime (recall \autoref{def:interpolacion}) has the following asymptotic behaviour:\\
+	
+	\begin{equation}
+		\lim_{d \to \infty}p(\mathbf{x}\in Hull(\mathbf{X}))=
+		\begin{cases}
+			1 \iff N>d^{-1}2^{\frac{d}{2}}\\
+			0 \iff N<d^{-1}2^{\frac{d}{2}}
+		\end{cases}	
+	\end{equation}
+\end{theorem}
+
+\indent The main answer to the argument of \cite{balestriero2021learning} is that interpolation does not occur in the ambient space, but in a latent, low-dimensional space of the input data\cite{bonnasse2022interpolation}. This leads to a new definition of interpolation alternative to \autoref{def:interpolacion}.\\
+%
+\indent What's more, the authors in \cite{bonnasse2022interpolation} not only show that interpolation indeed occurs (at least in a latent representation of the ambient space), but that more important conditions to the model's performance are that testing and training data follow the same cumulative distribution (or the same tail distribution whenever the former cannot be fulfilled) and that testing points be not isolated in the dataset.\\
+%
+Examples of unsupervised applicability classifiers include:
+\begin{itemize}
+	\item \textbf{Operational design domains.} Based on engineer/scientist expertise, only certain combinations and range of features make physical sense.
+	\item \textbf{Input space range classifier.} The applicability region is defined as the boundary of the hypercube whose edges are the ranges $[min, max]$ of each input variable in the training set. In practice, this amounts to checking if each numerical feature $X_i$ of the test point lies inside the range spanned by the training subset.
+	\item \textbf{Input space convex hull classifier.} The applicability region is defined as the boundary of the convex hull of the training set.
+	\item \textbf{Input space isolated region detector.} Even if a point is inside the convex hull of the training set, it can be very far away from other points, thus interpolation can be challenged. Isolated region detectors address this by checking the statistical vicinity of train points and comparing it to the distance of a given test point to the closest training point.
+\end{itemize}
+
+\begin{figure}[!htb]
+	\begin{minipage}[t]{0.4\linewidth}
+		\raggedright
+		\includegraphics[width=\linewidth]{Figures/hipercubo.png}
+		\caption{Smallest cube enclosing a set of 20 randomly generated points in a 3-dimensional euclidean space.}
+		\label{fig:hipercuboex}
+	\end{minipage}\hfill
+	\begin{minipage}[t]{0.4\linewidth}
+		\raggedleft
+		\includegraphics[width=\linewidth]{Figures/policon.png}
+		\caption{Convex hull enclosing the set of \autoref{fig:hipercuboex}. The convex hull's volume is always smaller than or equal to the volume of the hypercube.}
+		\label{fig:policonex}
+	\end{minipage}
+\end{figure}
 %
 \section{Train-test split}
 \subsection{Preliminaries}
-\indent In supervised learning applications, the dataset is typically divided into the training, the validation, and the test set. Each set is used for different tasks, namely: training, model validation and hyperparameter tuning. Keeping different sets for each task is fundamental in order to prevent model bias. Typical figures for the train-validation-test split are 60\%-20\%-20\%\cite[pp. 20-21]{Marsland2015Machine}.\\
+\indent In supervised learning applications, the dataset is typically divided into the training and the testing sets. Keeping different sets for each task is fundamental in order to prevent model bias. Typical figures for the train-test split ratio are 80\%-20\%. When the model being trained is very large, a third dataset (the validation set) may be needed for comparing different hyperparameter configurations, in which case the split is typically done at 60\%-20\%-20\% for the train, test, and vaidation sets, resectively\cite[pp. 20-21]{Marsland2015Machine}.\\
 %
-\indent Training and evaluating the NN on the same dataset would result in the phenomenon called overfitting\cite[pp. 19-20]{Marsland2015Machine}, which basically consists of the NN fitting the noise in the training data and thus losing performance on unseen data (inference ability).\\
+\indent Training and evaluating the NN on the same dataset would result in the phenomenon called overfitting\cite[pp. 19-20]{Marsland2015Machine}, which basically consists of the NN fitting the noise in the training data and thus losing generalization capabilities.\\
 %
-\indent With the dataset split into the train, evaluation, and test sets, the standard training and validation loop is as follows: the model is trained to ''fit'' the data in the training set. After a certain amount of training, its performance is measured on the evaluation set. The test set is used to compare the performance of different hyperparameter configurations. Note that the NN is always evaluated with data not previously ''seen'' during training, and as such cannot develop any bias for the training set (although bias for the validation or test sets may exist).\\
+\indent With the dataset split into the train, evaluation, and test sets, the standard training and validation loop is as follows: the model is trained to ''fit'' the data in the training set. After a certain amount of training, its performance is measured in the evaluation set. The test set is used to compare the performance of different hyperparameter configurations. Note that the NN is always evaluated with data not previously ''seen'' during training, and as such cannot develop any bias for the training set (although bias for the validation or test sets may exist).\\
 %
 \indent In the model validation loop, the first question that should be asked, even before training the model, is whether the dataset split is appropriate for training.\\
 %
@@ -26,55 +149,70 @@ and a test set
 
 $${\cal S}_{\text{test}}=\{({\bf X^{te}},{\bf Y^{te}})_i\}_{i=1}^{N_{test}},$$
 
-where ${\bf X}=(X_1,X_2,\dots,X_m)$ is the vector of input variables (also called feature vector), $m$ is the dimensionality of the input parameter space, and ${\bf Y}=(Y_1,Y_2,\dots,Y_q)$ is the vector of output variables, with dimensionality $q$. Individual variables $X_k$ can be numerical or categorical. For instance, for stress problems such as MSP-S18, we have a combination of numerical  (\eg external loads) and categorical (eg discrete geometrical variables such as ''Frame'' or ''Stringer'', and purely categorical such as ''dp''). Individual variables $Y_k$ describe the prediction and these are typically numerical (for stress problems such as MSP-S18, $q=6$ and these are so-called reserve factors, quantifying the failure likelihood of different failure modes).
-
-The aim of this section is to propose a set of tests to evaluate to which extent splitting fulfils the necessary conditions for the subsequent surrogate model ${\bf \hat{Y}}=\hat{F}({\bf X})$ to be appropriately trained on ${\cal S}_{\text{train}}$ and tested on ${\cal S}_{\text{test}}$.\\
+where ${\bf X}=(X_1,X_2,\dots,X_m)$ is the vector of input variables (also called feature vector), $m$ is the dimensionality of the input parameter space, and ${\bf Y}=(Y_1,Y_2,\dots,Y_q)$ is the vector of output variables, with dimensionality $q$. Individual variables $X_k$ can be numerical or categorical. For instance, for stress problems such as MSP-S18, we have a combination of numerical  (\eg external loads) and categorical (eg discrete geometrical variables such as ''Frame'' or ''Stringer'', and purely categorical such as ''dp''). Individual variables $Y_k$ describe the prediction and these are typically numerical (for stress problems such as MSP-S18, $q=6$ and these are so-called reserve factors, quantifying the failure likelihood of different failure modes).\\
 %
- 
-\subsection{The train-test split problem in supervised learning}
-\indent For evaluation purposes, the idea should be kept in mind that the surrogate model is just a parameterized nonlinear approximator of a function ${\bf{Y}}=F({\bf X})$. Let $\cal D$ be the dominium of the function $F$, of which only a fraction is available for training and evaluating purposes, \ie ${\cal S}_{train},{\cal S}_{test} \subseteq \cal D$. Logically, it is desirable that  
-${\cal S}_{train}$ and ${\cal S}_{test}$ be statistically as close as posible to $\cal D$ and to each other in order for the training and validation of the model to be coherent. Nonetheless, the statistical similarity with $\cal D$ is an off-design problem, meaning once ${\cal S}_{train}$ and ${\cal S}_{test}$ are set a surrogate model $\hat F$ can be developed accordingly to perform well at least over a dominium which is said to be in the interpolating region of ${\cal S}_{train}$. The concept of interpolating regime is of great importance for surrogate models and shall be further discussed later. On the other hand, the statistical similarity of ${\cal S}_{train}$ and ${\cal S}_{test}$ is a design problem, meaning if ${\cal S}_{test}$ is not in the interpolating region of ${\cal S}_{train}$ then the surrogate model $\hat F$'s performance over a dominium in the interpolation region of ${\cal S}_{train}$ is not guaranteed. In other words, no trustworthy evaluation of the model can be carried out. It is this in-design problem of statistical accordance between ${\cal S}_{train}$ and ${\cal S}_{test}$ the one addressed here.\\
-A proper definition of statistical accordance between two sets in the context of ${\cal S}_{train}$ and ${\cal S}_{test}$ is therefore needed, which will in the end take us to the concept of interpolation. An evidently conservative condition for assuring statistical equivalence can be expressed by the equation \eqref{eqC1:TT1}:
-
-\begin{equation} \label{eqC1:TT1}
-	P_{training}(\mathbf{x})=P_{test}(\mathbf{x})
-\end{equation}
-where $\mathbf{x}=(x_1, x_2, x_3,...,x_m)$ is the vector of input variables.\\
+\indent The aim of this section is to propose a set of tests to evaluate to which extent splitting fulfils the necessary conditions for the subsequent surrogate model ${\bf {Y}}={F}({\bf X})$ to be appropriately trained on ${\cal S}_{\text{train}}$ and tested on ${\cal S}_{\text{test}}$. This basically means the latter be in the applicability region of a model trained on the former, in order for the training-validation loop of the model to be coherent.\\
 %
-\indent In fact, the condition given by \eqref{eqC1:TT1} indeed assures statistical equivalence between the two sets, nonetheless is impossible to fulfil given that ${\cal S}_{train} \cap {\cal S}_{test} = \emptyset$ by definition. Instead, we will see that the goodness of the train-test split is closely related to the idea of interpolation. We now of NN that they perform well they work in interpolation regime. There is a subtle nuance here that our knowledge of NNs suggests not only NNs perform well at interpolating, but that they perform well \textit {because} they interpolate, \ie they cannot perform well at non-interpolating tasks, or at least it is not possible to statistically assure their performance. This is a matter of discussion highly debated in the literature (see \eg \cite{pmlr-v80-barrett18a,DBLP:journals/corr/abs-1711-00350,DBLP:journals/corr/abs-1904-01557}).\\ 
+\subsection{Validation loop for the train-test split}
+\indent To address the applicability classification problem, points in the test set extremely far away from the training set (effectively outside applicability) need to be detected. If found, that would mean the train-test split is incorrect.\\
 %
-\indent Subsequently, we want to be sure that our surrogate model is indeed interpolating when evaluating its performance. This idea of interpolation constitutes a basis for the proposed train-test split validation analysis, \ie the train-test split is sufficiently good whenever ${\cal S}_{test}$ falls in the interpolation region of ${\cal S}_{train}$.\\
+\indent There is a wide range of criteria for classifying a point inside or outside applicability. The proposed validation loop analyses this following a hierarchical flow. For each point in the test set a decision is made based on where that test set point lies with respect to the training set.\\
 %
-\indent There are plenty of definitions for the interpolating region of a given dataset. Some authors define it as the smallest hypercube enclosing the data\cite{ebert2014interpolation} although this might lead to points well far-away from the training set being considered to fall inside the interpolation region. Many authors (see v. gr. \cite{loh2007extrapolation,4505337}) define the interpolation region as the \textit{convex hull} of the training data, \ie:
-
-\begin{definition}\cite{balestriero2021learning}\label{def:interpolacion}
-	Standard interpolation occurs for a sample $\mathbf{x}$ whenever this sample belongs to the convex hull of a set of samples $\mathbf{X}\triangleq \left\{\mathbf{x}_1,...,\mathbf{x}_N\right\}$.
-\end{definition}
-
-The convex hull can be simply defined as the smallest convex set containing the data\cite{Preparata1985}.\\
+\indent Because categorical variables are usually related to different physical conditions, the first step is to condition the analysis of each test point only with respect the training subset of points whose categorical variables have exactly the same values than the test point under analysis. This conditioning on categorical variables defines, for each test point, a \textit{voxel}, \ie a region in input space defined by the precise values of each categorical variable. At this point the first requirement comes into play: the number of training samples inside such voxel needs to be large enough (\eg larger than zero).\\
 %
-\indent Recently, \cite{balestriero2021learning} have pointed out that, due to the so-called curse of dimensionality, extrapolation outside the training convex hull always ends up taking place if the input dimension is sufficiently high. The curse of dimensionality\cite[pp. 17-18]{Marsland2015Machine} can be illustrated by the fact that the unitary n-hypersphere's volume asymptotically diminishes to $0$ as $n$ increases. In the end, the effect is that, as the number of dimensions increase, more data is needed in order for the model to work in interpolating regime, as shows :\\
-
-\begin{theorem}\cite{barany1988shape}
-	Given a $d$-dimensional dataset $\mathbf X \triangleq {\mathbf{x}_1,...,\mathbf{x}_N}$ with i.i.d. samples uniformly drawn from a hyperball, the probability that a new sample $\mathbf{x}$ is in interpolation regime (recall \autoref{def:interpolacion}) has the following asymptotic behavior:\\
-	
-	\begin{equation}
-		\lim_{d \to \infty}p(\mathbf{x}\in Hull(\mathbf{X}))=
-		\begin{cases}
-			1 \iff N>d^{-1}2^{\frac{d}{2}}\\
-			0 \iff N<d^{-1}2^{\frac{d}{2}}
-		\end{cases}	
-	\end{equation}
-\end{theorem}
-	
-\indent Studies from \cite{balestriero2021learning} seemed to contradict previous knowledge on the importance of interpolation in NNs performance.\\
+\indent Then, inside the voxel the ranges of each feature $X_i$ of the training subset are computed, and then the maximum ranges are checked and defined. Their cartesian product defines the voxel's hypercuboid volume associated to the numerical features. In practice, this amounts to checking if each numerical feature $X_i$ of the test point lies inside the range spanned by the training subset. If all numerical features fall inside these ranges, the test set falls inside the training subset hypercuboid, otherwise, it falls outside. The points lying outside such hypercuboid are outside applicability and are flagged. The ''hypercube requirement'' is that such percentage of points outside applicability is zero, or very close to it.\\
 %
-\indent The main answer arosen to the argument of \cite{balestriero2021learning} is that interpolation does not occur in the ambient space, but in a latent, low-dimensional space of the input data\cite{bonnasse2022interpolation}. This leads to a new definition of interpolation alternative to \autoref{def:interpolacion}.\\
+\indent If the test point under analysis is found to be outside the hypercuboid, the analysis finishes and the loop moves to the next point. Otherwise, the second step is to check whether this point not only lies inside hypercuboid, but further, whether it also lies inside the convex hull spanned by the training subset in a PCA99\footnote{A truncated PCA\cite{hotelling1933analysis} projection in which the selected components explain at least 99\% of the whole variance of the data.} projection. This hull has a smaller volume than the hypercuboid. If the test point under analysis is found to be outside the convex hull in the PCA99 projection, the analysis finishes and the loop moves to the next point.\\
+% 
+\indent Otherwise, then the third step is to check whether this point (not only lies inside hypercuboid and CH-PCA99, but also) lies inside the convex hull spanned by the training subset in ambient space. The volume of this hull is typically smaller than the one of the PCA99 projection by virtue of \autoref{dparadoxa}, and if the test point lies inside this hull, interpolating properties of the surrogate model will suggest that the model is not require to generalize outside the region where it cannot generalize.\\
 %
-\indent What's more, the authors in \cite{bonnasse2022interpolation} not only show that interpolation indeed occurs (at least in a latent representation of the ambient space), but that more important conditions to the model's performance are that unseen and training data follows the same cumulative distribution (or the same tail distribution when the former cannot be fulfiled) and that the average distance between training points is similar to the average distance between training and testing points.\\
+The step of the PCA projection is motivated by the curse of dimensionality, which makes every test point be in extrapolating regime with respect to the training data when the convex hull of the raw, unprocessed training data is used in a high-dimensional input space, as pointed out by \cite{balestriero2021learning}. The work of \cite{bonnasse2022interpolation} effectively shows how in such cases, a low-dimensional space is more useful for applicability classification.\\
 %
-\subsection{Proposed validation loop for the train-test}
-A validation loop for the train-test split is given in the form of a flux diagram whose nodes are different tests aimed at checking statistical properties which characterize the split as has been discussed in the previous section. The diagram derives the results of the tests to apropriate recommendations given to the data engineer. Before showing the complete loop, it is convenient to state the nomenclature conventions used in the diagram for the sake of clarity:\\
+\indent Each step provides different level of evidence of whether the point under analysis was adequately located, where the best is that it lies inside the CH-ambient, and the worst is that it lies outside the hypercuboid.\\
+%
+\indent An additional check is to analyse whether p-hacking is happening, \ie in this case whether the test set point is ''too close'' to an actual training point (or indeed equal to a training point), what would falsely induce low test error of the model. For this, we measure the distance of the test point to the closest point of the training subset. This information is latter used to assess different aspects of potential p-hacking and its impact on the decision of train-test split correctness.\\
+%
+\begin{lstlisting}[style=pseudocode]
+	For every test point X=(X_{numerical},X_{categorical}) in Test_set:
+	Compute Filtered_Training_Set (FTS) by imposing X_{categorical}
+	Compute nearest neighbor distance d(X,FTS) and annotate
+	Compute average nearest neighbor distance between X_{training} and FTS and annotate
+	if (|FTS| not OK):
+	annotate and print
+	else:
+	if (X not in CHMP_PCA99):
+	annotate and print
+	else:
+	check if X is in CHMP_ambient and annotate
+\end{lstlisting}
+%
+The following is a list of specific parameters and requirements needed for the analysis:\\
+\begin{itemize}
+	\item The code checks if there are enough training samples inside each training subset (\texttt{voxel\_size\_req}).
+	\item The code checks if the test point is inside the ranges of the training samples. The percentage of points outside is to be compared with (\texttt{hypercube\_req}).
+	\item The number of points inside the hypercube but outside \texttt{CH\_PCA99} is to be compared with \texttt{CHMP\_PCA99\_negative\_req}.
+	\item The number of points inside the hypercube and \texttt{CH\_PCA99} but outside \texttt{CH\_ambient} is to be compared to the requirement \texttt{CHMP\_ambient\_negative\_req}.
+	\item The total number of points inside \texttt{CH\_ambient} is to be compared to \texttt{CHMP\_ambient\_positive\_req}.
+	\item The code stores all these requirements in a table.
+\end{itemize}
+%
+\begin{table}[h]
+	\centering
+	\begin{tabular}{|l|l|}
+		\hline
+		\rowcolor[HTML]{EFEFEF} 
+		\textbf{Parameter/Requirement} & \textbf{Comparison Requirement} \\ \hline
+		Voxel Size (\texttt{voxel\_size\_req}) & To be determined \\ \hline
+		Hypercube Percentage (\texttt{hypercube\_req}) & To be determined \\ \hline
+		Points Outside \texttt{CH\_PCA99} (\texttt{CHMP\_PCA99\_negative\_req}) & To be determined \\ \hline
+		Points Outside \texttt{CH\_ambient} (\texttt{CHMP\_ambient\_negative\_req}) & To be determined \\ \hline
+		Points Inside \texttt{CH\_ambient} (\texttt{CHMP\_ambient\_positive\_req}) & To be determined \\ \hline
+	\end{tabular}
+	\caption{Comparison Requirements}
+	\label{tab:requirements}
+\end{table}
+%
+\indent The first step is check whether the train and test datasets follow the same empirical distributions. If test data is found to not follow the same distribution as the train data, the evaluation of the model would be biased or the test data would be outside input applicability. Take, for instance, the extreme case in which the statistical distribution for some input numerical variable follows a uniform distribution $x_{train} \sim U(a_1,a_2)$ whereas the same input variable in the test dataset follows another distribution $x_{test} \sim U(b_1,b_2)$ where $b_1 \leq a_2$. Clearly, $x_{test}$ is outside the hypercube spanned by $x_{train}$ and is outside the applicability region as a consequence.
 
 \begin{definition}\label{def:orden1}
 	Let $\mathbf{X}$ represent some dataset, which has been split in $\mathbf{X}^{TRAIN}$ and $\mathbf{X}^{TEST}$. $\mathbf{X}$ is said to be order 1 [O(1)] well-split if and only if $\mathbf{X}^{TEST} \subseteq Hull[\mathbf{X}^{TRAIN}]$.\\

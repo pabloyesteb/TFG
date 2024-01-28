@@ -6,38 +6,48 @@
 \@writefile{lof}{\contentsline {xchapter}{The Validation Loop}{1}{chapter.1}\protected@file@percent }
 \@writefile{lot}{\contentsline {xchapter}{The Validation Loop}{1}{chapter.1}\protected@file@percent }
 \newlabel{chap:Chap_1}{{1}{1}{The Validation Loop}{chapter.1}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {1.1}Introduccion}{1}{section.1.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {1.2}Train-test split}{1}{section.1.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {1.2.1}Preliminaries}{1}{subsection.1.2.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {1.2.2}The train-test split problem in supervised learning}{2}{subsection.1.2.2}\protected@file@percent }
-\newlabel{eqC1:TT1}{{1.1}{3}{The train-test split problem in supervised learning}{equation.1.2.1}{}}
-\newlabel{def:interpolacion}{{1}{3}{}{definition.1}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {1.2.3}Proposed validation loop for the train-test}{4}{subsection.1.2.3}\protected@file@percent }
-\newlabel{def:orden1}{{2}{4}{}{definition.2}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {1.3}Las movidas de Rodrigo}{5}{section.1.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {1.3.1}Concept: System dynamics.}{5}{subsection.1.3.1}\protected@file@percent }
-\newlabel{eqCh1:Problem_def}{{1.3}{5}{Concept: System dynamics}{equation.1.3.3}{}}
-\newlabel{eqCh1:STM_1}{{1.4}{5}{Concept: System dynamics}{equation.1.3.4}{}}
-\newlabel{eqCh1:STM_2}{{1.5}{6}{Concept: System dynamics}{equation.1.3.5}{}}
-\newlabel{eqCh1:STM_decomp}{{1.6}{6}{Concept: System dynamics}{equation.1.3.6}{}}
-\newlabel{eqCh1:STM_prop}{{1.7}{7}{Concept: System dynamics}{equation.1.3.7}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {1.3.2}Applications of STMs in celestial mechanics.}{7}{subsection.1.3.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{\leavevmode {\color  {GMVred}A.} \myul [GMVred]{Precise Orbit Determination.}\\}{7}{subsection.1.3.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{\leavevmode {\color  {GMVred}B.} \myul [GMVred]{Guidance, Navigation and Control (GNC).} \\}{7}{subsection.1.3.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{\leavevmode {\color  {GMVred}C.} \myul [GMVred]{Orbit design.} \\}{7}{subsection.1.3.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{\leavevmode {\color  {GMVred}D.} \myul [GMVred]{Covariance matrix propagation.} \\}{8}{subsection.1.3.2}\protected@file@percent }
-\newlabel{eqCh1:P_est}{{1.8}{9}{\GMVred {D.} \myul [GMVred]{Covariance matrix propagation.} \\}{equation.1.3.8}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {1.1}{\ignorespaces Covariance ellipsoid evolution along a radial hop.\relax }}{9}{figure.caption.17}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {1.1}Introduction}{1}{section.1.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.1.1}Case of applicability}{1}{subsection.1.1.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {1.1}{\ignorespaces Surrogate model pipeline\relax }}{2}{figure.caption.9}\protected@file@percent }
 \providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
-\newlabel{figCh1:Covariance_segment}{{1.1}{9}{Covariance ellipsoid evolution along a radial hop.\relax }{figure.caption.17}{}}
+\newlabel{fig:diagrama_cajas}{{1.1}{2}{Surrogate model pipeline\relax }{figure.caption.9}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.1.2}Applicability}{2}{subsection.1.1.2}\protected@file@percent }
+\newlabel{def:interpolacion}{{1}{3}{}{definition.1}{}}
+\newlabel{dparadoxa}{{1.1.1}{3}{}{theorem.1.1.1}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1.2}{\ignorespaces Smallest cube enclosing a set of 20 randomly generated points in a 3-dimensional euclidean space.\relax }}{4}{figure.caption.11}\protected@file@percent }
+\newlabel{fig:hipercuboex}{{1.2}{4}{Smallest cube enclosing a set of 20 randomly generated points in a 3-dimensional euclidean space.\relax }{figure.caption.11}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1.3}{\ignorespaces Convex hull enclosing the set of \autoref  {fig:hipercuboex}. The convex hull's volume is always smaller than or equal to the volume of the hypercube.\relax }}{4}{figure.caption.11}\protected@file@percent }
+\newlabel{fig:policonex}{{1.3}{4}{Convex hull enclosing the set of \autoref {fig:hipercuboex}. The convex hull's volume is always smaller than or equal to the volume of the hypercube.\relax }{figure.caption.11}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {1.2}Train-test split}{5}{section.1.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.2.1}Preliminaries}{5}{subsection.1.2.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.2.2}Validation loop for the train-test split}{6}{subsection.1.2.2}\protected@file@percent }
+\pp@spagectr{FN@totalid}{1}{1}{7}
+\@writefile{lot}{\contentsline {table}{\numberline {1.1}{\ignorespaces Comparison Requirements\relax }}{8}{table.caption.12}\protected@file@percent }
+\newlabel{tab:requirements}{{1.1}{8}{Comparison Requirements\relax }{table.caption.12}{}}
+\newlabel{def:orden1}{{2}{9}{}{definition.2}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {1.3}Las movidas de Rodrigo}{9}{section.1.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.3.1}Concept: System dynamics.}{9}{subsection.1.3.1}\protected@file@percent }
+\newlabel{eqCh1:Problem_def}{{1.2}{9}{Concept: System dynamics}{equation.1.3.2}{}}
+\newlabel{eqCh1:STM_1}{{1.3}{10}{Concept: System dynamics}{equation.1.3.3}{}}
+\newlabel{eqCh1:STM_2}{{1.4}{10}{Concept: System dynamics}{equation.1.3.4}{}}
+\newlabel{eqCh1:STM_decomp}{{1.5}{10}{Concept: System dynamics}{equation.1.3.5}{}}
+\newlabel{eqCh1:STM_prop}{{1.6}{11}{Concept: System dynamics}{equation.1.3.6}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.3.2}Applications of STMs in celestial mechanics.}{11}{subsection.1.3.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{\leavevmode {\color  {GMVred}A.} \myul [GMVred]{Precise Orbit Determination.}\\}{11}{subsection.1.3.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{\leavevmode {\color  {GMVred}B.} \myul [GMVred]{Guidance, Navigation and Control (GNC).} \\}{11}{subsection.1.3.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{\leavevmode {\color  {GMVred}C.} \myul [GMVred]{Orbit design.} \\}{12}{subsection.1.3.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{\leavevmode {\color  {GMVred}D.} \myul [GMVred]{Covariance matrix propagation.} \\}{12}{subsection.1.3.2}\protected@file@percent }
+\newlabel{eqCh1:P_est}{{1.7}{13}{\GMVred {D.} \myul [GMVred]{Covariance matrix propagation.} \\}{equation.1.3.7}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1.4}{\ignorespaces Covariance ellipsoid evolution along a radial hop.\relax }}{13}{figure.caption.19}\protected@file@percent }
+\newlabel{figCh1:Covariance_segment}{{1.4}{13}{Covariance ellipsoid evolution along a radial hop.\relax }{figure.caption.19}{}}
 \@setckpt{Chapters/Chapter_01/Chapter_01}{
-\setcounter{page}{11}
-\setcounter{equation}{8}
+\setcounter{page}{15}
+\setcounter{equation}{7}
 \setcounter{enumi}{0}
 \setcounter{enumii}{0}
 \setcounter{enumiii}{0}
 \setcounter{enumiv}{0}
-\setcounter{footnote}{0}
+\setcounter{footnote}{1}
 \setcounter{mpfootnote}{0}
 \setcounter{part}{0}
 \setcounter{chapter}{1}
@@ -46,8 +56,8 @@
 \setcounter{subsubsection}{0}
 \setcounter{paragraph}{0}
 \setcounter{subparagraph}{0}
-\setcounter{figure}{1}
-\setcounter{table}{0}
+\setcounter{figure}{4}
+\setcounter{table}{1}
 \setcounter{LT@tables}{0}
 \setcounter{LT@chunks}{0}
 \setcounter{theorem}{0}
@@ -58,9 +68,9 @@
 \setcounter{tcbbreakpart}{0}
 \setcounter{tcblayer}{0}
 \setcounter{tcolorbox@number}{0}
-\setcounter{lstnumber}{1}
-\setcounter{FN@totalid}{0}
-\setcounter{pp@a@FN@totalid}{0}
+\setcounter{lstnumber}{12}
+\setcounter{FN@totalid}{1}
+\setcounter{pp@a@FN@totalid}{1}
 \setcounter{tabx@nest}{0}
 \setcounter{listtotal}{0}
 \setcounter{listcount}{0}
@@ -70,7 +80,7 @@
 \setcounter{citetotal}{0}
 \setcounter{multicitecount}{0}
 \setcounter{multicitetotal}{0}
-\setcounter{instcount}{22}
+\setcounter{instcount}{24}
 \setcounter{maxnames}{3}
 \setcounter{minnames}{1}
 \setcounter{maxitems}{3}
@@ -94,7 +104,7 @@
 \setcounter{parenlevel}{0}
 \setcounter{blx@maxsection}{0}
 \setcounter{blx@maxsegment@0}{0}
-\setcounter{blx@sectionciteorder@0}{18}
+\setcounter{blx@sectionciteorder@0}{21}
 \setcounter{mincomprange}{10}
 \setcounter{maxcomprange}{100000}
 \setcounter{mincompwidth}{1}
@@ -178,11 +188,11 @@
 \setcounter{bbx:relatedcount}{0}
 \setcounter{bbx:relatedtotal}{0}
 \setcounter{cbx@tempcnta}{0}
-\setcounter{cbx@tempcntb}{16}
+\setcounter{cbx@tempcntb}{17}
 \setcounter{cbx@tempcntc}{0}
 \setcounter{cbx@tempcntd}{-1}
 \setcounter{Item}{0}
-\setcounter{bookmark@seq@number}{13}
+\setcounter{bookmark@seq@number}{14}
 \setcounter{caption@flags}{0}
 \setcounter{continuedfloat}{0}
 \setcounter{subfigure}{0}
