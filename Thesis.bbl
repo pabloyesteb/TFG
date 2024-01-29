@@ -19,6 +19,32 @@
 
 \refsection{0}
   \datalist[entry]{none/global//global/global}
+    \entry{bijlaard1955buckling}{article}{}
+      \name{author}{1}{}{%
+        {{hash=3cbf1a25c755f9e3fb27ddf227d6ef88}{%
+           family={Bijlaard},
+           familyi={B\bibinitperiod},
+           given={PP},
+           giveni={P\bibinitperiod}}}%
+      }
+      \strng{namehash}{3cbf1a25c755f9e3fb27ddf227d6ef88}
+      \strng{fullhash}{3cbf1a25c755f9e3fb27ddf227d6ef88}
+      \strng{bibnamehash}{3cbf1a25c755f9e3fb27ddf227d6ef88}
+      \strng{authorbibnamehash}{3cbf1a25c755f9e3fb27ddf227d6ef88}
+      \strng{authornamehash}{3cbf1a25c755f9e3fb27ddf227d6ef88}
+      \strng{authorfullhash}{3cbf1a25c755f9e3fb27ddf227d6ef88}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of the Aeronautical Sciences}
+      \field{number}{7}
+      \field{title}{On the Buckling of Stringer Panels Including Forced Crippling}
+      \field{volume}{22}
+      \field{year}{1955}
+      \field{pages}{491\bibrangedash 501}
+      \range{pages}{11}
+    \endentry
     \entry{Preparata1985}{inbook}{}
       \name{author}{2}{}{%
         {{hash=dbd0bd246635f1acebcff7d0e3651815}{%
@@ -44,8 +70,8 @@
       \strng{authorbibnamehash}{dd196855e0693645251fa5bc57a16c00}
       \strng{authornamehash}{dd196855e0693645251fa5bc57a16c00}
       \strng{authorfullhash}{dd196855e0693645251fa5bc57a16c00}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{The problem of computing a convex hull is not only central to practical applications, but is also a vehicle for the solution of a number of apparently unrelated questions arising in computational geometry. The computation of the convex hull of a finite set of points, particularly in the plane, has been studied extensively and has applications, for example, in pattern recognition [Akl--CToussaint (1978); Duda--CHart (1973)], image processing [Rosenfeld (1969)] and stock cutting and allocation [Freeman (1974);Sklansky (1972); Freeman--CShapira (1975)].}
@@ -117,8 +143,8 @@
       \strng{editorbibnamehash}{83be554d58af5be1788b5c3616f0e92a}
       \strng{editornamehash}{83be554d58af5be1788b5c3616f0e92a}
       \strng{editorfullhash}{83be554d58af5be1788b5c3616f0e92a}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{Whether neural networks can learn abstract reasoning or whether they merely rely on superficial statistics is a topic of recent debate. Here, we propose a dataset and challenge designed to probe abstract reasoning, inspired by a well-known human IQ test. To succeed at this challenge, models must cope with various generalisation ’regimes’ in which the training data and test questions differ in clearly-defined ways. We show that popular models such as ResNets perform poorly, even when the training and test sets differ only minimally, and we present a novel architecture, with structure designed to encourage reasoning, that does significantly better. When we vary the way in which the test questions and training data differ, we find that our model is notably proficient at certain forms of generalisation, but notably weak at others. We further show that the model’s ability to generalise improves markedly if it is trained to predict symbolic explanations for its answers. Altogether, we introduce and explore ways to both measure and induce stronger abstract reasoning in neural networks. Our freely-available dataset should motivate further progress in this direction.}
@@ -159,8 +185,8 @@
       \strng{authorbibnamehash}{aa36293cebba3c7ebb1c52eab68079f6}
       \strng{authornamehash}{aa36293cebba3c7ebb1c52eab68079f6}
       \strng{authorfullhash}{aa36293cebba3c7ebb1c52eab68079f6}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{eprinttype}{arXiv}
@@ -207,8 +233,8 @@
       \strng{authorbibnamehash}{1d188bd9b332df78ac288045fda49718}
       \strng{authornamehash}{1d188bd9b332df78ac288045fda49718}
       \strng{authorfullhash}{54fab41fa6c4d75b5d5fa86517341ad0}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{eprinttype}{arXiv}
@@ -253,8 +279,8 @@
       \strng{authorbibnamehash}{77a476f8aeee6fc4b732c98911d88004}
       \strng{authornamehash}{77a476f8aeee6fc4b732c98911d88004}
       \strng{authorfullhash}{77a476f8aeee6fc4b732c98911d88004}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{booktitle}{2014 IEEE Symposium on Computational Intelligence and Data Mining (CIDM)}
@@ -290,8 +316,8 @@
       \strng{authorbibnamehash}{c36c137baff5582f7ec435e402ea9122}
       \strng{authornamehash}{c36c137baff5582f7ec435e402ea9122}
       \strng{authorfullhash}{c36c137baff5582f7ec435e402ea9122}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{ACM Transactions on Knowledge Discovery from Data (TKDD)}
@@ -316,8 +342,8 @@
       \strng{authorbibnamehash}{5362760bf096207c79967925fec57b50}
       \strng{authornamehash}{5362760bf096207c79967925fec57b50}
       \strng{authorfullhash}{5362760bf096207c79967925fec57b50}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{IEEE Transactions on Fuzzy Systems}
@@ -355,8 +381,8 @@
       \strng{authorbibnamehash}{a1572522e3a245b5a757eab800bf7807}
       \strng{authornamehash}{a1572522e3a245b5a757eab800bf7807}
       \strng{authorfullhash}{a1572522e3a245b5a757eab800bf7807}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{arXiv preprint arXiv:2110.09485}
@@ -383,8 +409,8 @@
       \strng{authorbibnamehash}{f16d5e4c04b4b4bc85402a8d3e3d2725}
       \strng{authornamehash}{f16d5e4c04b4b4bc85402a8d3e3d2725}
       \strng{authorfullhash}{f16d5e4c04b4b4bc85402a8d3e3d2725}
-      \field{sortinit}{7}
-      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{edition}{2}
@@ -414,8 +440,8 @@
       \strng{authorbibnamehash}{262416cda6fd391b4ad023c5b7e86363}
       \strng{authornamehash}{262416cda6fd391b4ad023c5b7e86363}
       \strng{authorfullhash}{262416cda6fd391b4ad023c5b7e86363}
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Probability theory and related fields}
@@ -599,8 +625,8 @@
       \strng{authorbibnamehash}{38534a6d9d1da31660770afc8438c9ee}
       \strng{authornamehash}{38534a6d9d1da31660770afc8438c9ee}
       \strng{authorfullhash}{38534a6d9d1da31660770afc8438c9ee}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{Practical Uses of an STM}
@@ -842,8 +868,8 @@
       \strng{authorbibnamehash}{b7057a298bccb39982474a51a2ccd39c}
       \strng{authornamehash}{b7057a298bccb39982474a51a2ccd39c}
       \strng{authorfullhash}{b7057a298bccb39982474a51a2ccd39c}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{number}{TN 05-08}
@@ -1185,8 +1211,8 @@
       \strng{authorbibnamehash}{7aae3c76356e6c2d8205ca8f584a1b93}
       \strng{authornamehash}{7aae3c76356e6c2d8205ca8f584a1b93}
       \strng{authorfullhash}{7aae3c76356e6c2d8205ca8f584a1b93}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{isbn}{3527407804; 9783527407804}
@@ -1209,8 +1235,8 @@
       \strng{authorbibnamehash}{9f67f7e163f525368297b347baa02ce6}
       \strng{authornamehash}{9f67f7e163f525368297b347baa02ce6}
       \strng{authorfullhash}{9f67f7e163f525368297b347baa02ce6}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{isbn}{978-94-6186-419-2}
@@ -1442,8 +1468,8 @@
       \strng{authorbibnamehash}{44b11b044d204e0404ccad8f7a324667}
       \strng{authornamehash}{44b11b044d204e0404ccad8f7a324667}
       \strng{authorfullhash}{44b11b044d204e0404ccad8f7a324667}
-      \field{sortinit}{6}
-      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{number}{21}
@@ -1466,8 +1492,8 @@
       \strng{authorbibnamehash}{2f9ea127a38aa7b9bb961325b1251dd3}
       \strng{authornamehash}{2f9ea127a38aa7b9bb961325b1251dd3}
       \strng{authorfullhash}{2f9ea127a38aa7b9bb961325b1251dd3}
-      \field{sortinit}{6}
-      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{note}{\url{https://degenerateconic.com/uploads/2015/03/lvlh.pdf}}
@@ -1624,8 +1650,8 @@
       \strng{authorbibnamehash}{9963bf91b0036a70fc09e6341b78fa64}
       \strng{authornamehash}{9963bf91b0036a70fc09e6341b78fa64}
       \strng{authorfullhash}{9963bf91b0036a70fc09e6341b78fa64}
-      \field{sortinit}{7}
-      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Astronautica Acta}
@@ -1651,8 +1677,8 @@
       \strng{authorbibnamehash}{613679091e8ca1cb3632ce9fbbd24789}
       \strng{authornamehash}{613679091e8ca1cb3632ce9fbbd24789}
       \strng{authorfullhash}{613679091e8ca1cb3632ce9fbbd24789}
-      \field{sortinit}{7}
-      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Journal of Guidance Control and Dynamics}
@@ -1838,8 +1864,8 @@
       \strng{authorbibnamehash}{178bf8558061a59c8080dcb73e950720}
       \strng{authornamehash}{178bf8558061a59c8080dcb73e950720}
       \strng{authorfullhash}{178bf8558061a59c8080dcb73e950720}
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Astronomical Journal}
@@ -1870,8 +1896,8 @@
       \strng{authornamehash}{35a361a71ca45d501e1f001b9d959b22}
       \strng{authorfullhash}{35a361a71ca45d501e1f001b9d959b22}
       \field{extraname}{1}
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Celestial Mechanics}

@@ -10,13 +10,13 @@
 \contentsline {figure}{\numberline {1.1}{\ignorespaces Surrogate model pipeline\relax }}{2}{figure.caption.9}%
 \contentsline {figure}{\numberline {1.2}{\ignorespaces Smallest cube enclosing a set of 20 randomly generated points in a 3-dimensional euclidean space.\relax }}{4}{figure.caption.11}%
 \contentsline {figure}{\numberline {1.3}{\ignorespaces Convex hull enclosing the set of \autoref {fig:hipercuboex}. The convex hull's volume is always smaller than or equal to the volume of the hypercube.\relax }}{4}{figure.caption.11}%
-\contentsline {figure}{\numberline {1.4}{\ignorespaces Covariance ellipsoid evolution along a radial hop.\relax }}{13}{figure.caption.19}%
+\contentsline {figure}{\numberline {1.4}{\ignorespaces Covariance ellipsoid evolution along a radial hop.\relax }}{16}{figure.caption.22}%
 \addvspace {10\p@ }
-\contentsline {xchapter}{Conclusions and research outlook.}{15}{chapter.2}%
+\contentsline {xchapter}{Conclusions and research outlook.}{17}{chapter.2}%
 \addvspace {10\p@ }
-\contentsline {xchapter}{Absolute and relative orbital element sets.}{17}{appendix.A}%
-\contentsline {figure}{\numberline {A.1}{\ignorespaces Workflow for transforming between two arbitary absolute element sets.\relax }}{18}{figure.caption.21}%
-\contentsline {figure}{\numberline {A.2}{\ignorespaces Frame rotation from inertial to perifocal frame.\relax }}{19}{figure.caption.23}%
-\contentsline {figure}{\numberline {A.3}{\ignorespaces Workflow for transforming any relative set into KOE.\relax }}{24}{figure.caption.33}%
-\contentsline {figure}{\numberline {A.4}{\ignorespaces Workflow for transforming RKOE into any other set.\relax }}{25}{figure.caption.35}%
-\contentsline {figure}{\numberline {A.5}{\ignorespaces Relative ccentricity \& inclination vectors. \relax }}{26}{figure.caption.38}%
+\contentsline {xchapter}{Absolute and relative orbital element sets.}{19}{appendix.A}%
+\contentsline {figure}{\numberline {A.1}{\ignorespaces Workflow for transforming between two arbitary absolute element sets.\relax }}{20}{figure.caption.24}%
+\contentsline {figure}{\numberline {A.2}{\ignorespaces Frame rotation from inertial to perifocal frame.\relax }}{21}{figure.caption.26}%
+\contentsline {figure}{\numberline {A.3}{\ignorespaces Workflow for transforming any relative set into KOE.\relax }}{26}{figure.caption.36}%
+\contentsline {figure}{\numberline {A.4}{\ignorespaces Workflow for transforming RKOE into any other set.\relax }}{27}{figure.caption.38}%
+\contentsline {figure}{\numberline {A.5}{\ignorespaces Relative ccentricity \& inclination vectors. \relax }}{28}{figure.caption.41}%

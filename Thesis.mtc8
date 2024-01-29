@@ -1,57 +1,20 @@
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {4.1}Introduction.}{\reset@font\mtcSfont 65}{section.4.1}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {4.1.1}Relevant perturbations in spacecraft motion.}{\reset@font\mtcSSfont 66}{subsection.4.1.1}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {4.1.2}Variational formulation of perturbed motion: Averaging methods.}{\reset@font\mtcSSfont 68}{subsection.4.1.2}}
-{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {4.1.2.1}Von Zeipel's method.}{\reset@font\mtcSSSfont 69}{subsubsection.4.1.2.1}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode \textcolor {GMVred}{I.} \myul [GMVred]{Problem statement.} \\}{\reset@font\mtcPfont 69}{subsubsection.4.1.2.1}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode \textcolor {GMVred}{II.} \myul [GMVred]{Transformation.} \\}{\reset@font\mtcPfont 69}{AMS.143}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode \textcolor {GMVred}{III.} \myul [GMVred]{Substitution in Hamilton-Jacobi equation.} \\}{\reset@font\mtcPfont 71}{AMS.150}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Remarks. \\}{\reset@font\mtcPfont 71}{AMS.151}}
-{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {4.1.2.2}Lie series method.}{\reset@font\mtcSSSfont 71}{subsubsection.4.1.2.2}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Hori's method. \\}{\reset@font\mtcPfont 72}{subsubsection.4.1.2.2}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {4.2}Non-spherical gravity: General concepts.}{\reset@font\mtcSfont 73}{section.4.2}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {4.3}$J_2$ effect analysis.}{\reset@font\mtcSfont 74}{section.4.3}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {4.3.1}Mean and osculating elements}{\reset@font\mtcSSfont 74}{subsection.4.3.1}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {4.3.2}Brouwer's theory.}{\reset@font\mtcSSfont 74}{subsection.4.3.2}}
-{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {4.3.2.1}Grounds: Brouwer's theory outline.}{\reset@font\mtcSSSfont 74}{subsubsection.4.3.2.1}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode \textcolor {GMVred}{I.} \myul [GMVred]{Modification of the Hamiltonian $\mbox {\boldmath {${F}$}}$.} \\}{\reset@font\mtcPfont 74}{subsubsection.4.3.2.1}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode \textcolor {GMVred}{II.} \myul [GMVred]{Von Zeipel's method application.} \\}{\reset@font\mtcPfont 75}{AMS.160}}
-{\reset@font\mtcSPfont\mtc@string\contentsline{subparagraph}{\noexpand \leavevmode \textcolor {GMVred}{II.A.} \myul [GMVred]{Short-period effects removal.} \\}{\reset@font\mtcSPfont 76}{AMS.160}}
-{\reset@font\mtcSPfont\mtc@string\contentsline{subparagraph}{\noexpand \leavevmode \textcolor {GMVred}{II.B.} \myul [GMVred]{Long-period effects removal.} \\}{\reset@font\mtcSPfont 78}{AMS.168}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode \textcolor {GMVred}{III.} \myul [GMVred]{Variational equations for mean element set.} \\}{\reset@font\mtcPfont 79}{AMS.170}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode \textcolor {GMVred}{IV.} \myul [GMVred]{Final mean to osculating relations. } \\}{\reset@font\mtcPfont 79}{AMS.171}}
-{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {4.3.2.2}Lyddane approximation.}{\reset@font\mtcSSSfont 79}{subsubsection.4.3.2.2}}
-{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {4.3.2.3}Results: Transformations.}{\reset@font\mtcSSSfont 79}{subsubsection.4.3.2.3}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {4.3.3}STM approach.}{\reset@font\mtcSSfont 80}{subsection.4.3.3}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {4.3.4}Validation.}{\reset@font\mtcSSfont 80}{subsection.4.3.4}}
-{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {4.3.4.1}Mean to osculating functions: Brouwer-Lyddane and GA vs truth.}{\reset@font\mtcSSSfont 81}{subsubsection.4.3.4.1}}
-{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {4.3.4.2}Comparison against High-Fidelity propagation.}{\reset@font\mtcSSSfont 81}{subsubsection.4.3.4.2}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Final comments. \\}{\reset@font\mtcPfont 85}{figure.caption.176}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {4.4}Kaula's theory.}{\reset@font\mtcSfont 85}{section.4.4}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {4.4.1}Approach: $\mbox {\boldmath {${V_{lm}}$}}$ function rearrangement.}{\reset@font\mtcSSfont 86}{subsection.4.4.1}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {4.4.2}Subfunctions $\mbox {\boldmath {${F_{lmp}}$}}$, $\mbox {\boldmath {${ G_{lpq}}$}}$ and $\mbox {\boldmath {${ S_{lmpq}}$}}$.}{\reset@font\mtcSSfont 87}{subsection.4.4.2}}
-{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {4.4.2.1}Subfunction $\mbox {\boldmath {${F_{lmp}}$}}$.}{\reset@font\mtcSSSfont 87}{subsubsection.4.4.2.1}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Example: Calculation of $\mbox {\boldmath {${F_{321}}$}}$\\}{\reset@font\mtcPfont 88}{AMS.184}}
-{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {4.4.2.2}Subfunction $\mbox {\boldmath {${G_{lpq}}$}}$.}{\reset@font\mtcSSSfont 91}{subsubsection.4.4.2.2}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode $P_{lpqk}$ and $Q_{lpqk}$ functions.\\}{\reset@font\mtcPfont 92}{AMS.199}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Example: Calculation of $\mbox {\boldmath {${G_{201}}$}}$\\}{\reset@font\mtcPfont 92}{AMS.203}}
-{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {4.4.2.3}Subfunction $\mbox {\boldmath {${S_{lmpq}}$}}$.}{\reset@font\mtcSSSfont 96}{subsubsection.4.4.2.3}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {4.4.3}Implementation.}{\reset@font\mtcSSfont 97}{subsection.4.4.3}}
-{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {4.4.3.1}Computation of $\mbox {\boldmath {${V_{lm}}$}}$}{\reset@font\mtcSSSfont 97}{subsubsection.4.4.3.1}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode \textcolor {GMVred}{I.} \myul [GMVred]{Subfunction $\mbox {\boldmath {${F_{lmp}}$}}$.} \\}{\reset@font\mtcPfont 97}{figure.caption.218}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode \textcolor {GMVred}{II.} \myul [GMVred]{Subfunction $\mbox {\boldmath {${ G_{lpq}}$}}$.}\\ }{\reset@font\mtcPfont 98}{figure.caption.220}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode \textcolor {GMVred}{III.} \myul [GMVred]{Subfunction $\mbox {\boldmath {${ S_{lmpq}}$}}$.} \\}{\reset@font\mtcPfont 100}{figure.caption.222}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {4.4.4}Validation.}{\reset@font\mtcSSfont 101}{subsection.4.4.4}}
-{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {4.4.4.1}Target and approach.}{\reset@font\mtcSSSfont 101}{subsubsection.4.4.4.1}}
-{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {4.4.4.2}Validation of disturbing function.}{\reset@font\mtcSSSfont 101}{subsubsection.4.4.4.2}}
-{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {4.4.4.3}High-Fidelity propagation vs. Kaula's LPEs.}{\reset@font\mtcSSSfont 103}{subsubsection.4.4.4.3}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode \textcolor {GMVred}{I.} \myul [GMVred]{Kaula's LPEs for $V_{lmpq}$.}\\ }{\reset@font\mtcPfont 103}{subsubsection.4.4.4.3}}
-{\reset@font\mtcSPfont\mtc@string\contentsline{subparagraph}{\noexpand \leavevmode \textcolor {GMVred}{I.A. } \myul [GMVred]{Derivative of $\mbox {\boldmath {${F_{lmp}}$}}$.} \\ }{\reset@font\mtcSPfont 104}{AMS.231}}
-{\reset@font\mtcSPfont\mtc@string\contentsline{subparagraph}{\noexpand \leavevmode \textcolor {GMVred}{I.B. }\myul [GMVred]{Derivative of $\mbox {\boldmath {${G_{lpq}}$}}$.}\\}{\reset@font\mtcSPfont 104}{AMS.232}}
-{\reset@font\mtcSPfont\mtc@string\contentsline{subparagraph}{\noexpand \leavevmode \textcolor {GMVred}{I.C. }\myul [GMVred]{Derivative of $\mbox {\boldmath {${S_{lmpq}}$}}$.}\\}{\reset@font\mtcSPfont 105}{AMS.233}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode \textcolor {GMVred}{II.} \myul [GMVred]{Effect of $\mbox {\boldmath {${V_{lm}}$}}$ in the Keplerian OEs.} \\}{\reset@font\mtcPfont 105}{AMS.234}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode \textcolor {GMVred}{III.} \myul [GMVred]{Periodic effects.} \\}{\reset@font\mtcPfont 105}{AMS.235}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode \textcolor {GMVred}{IV.}\myul [GMVred]{Results: Kaula vs Brouwer-Lyddane and High-Fidelity.} \\}{\reset@font\mtcPfont 108}{AMS.240}}
-{\reset@font\mtcSPfont\mtc@string\contentsline{subparagraph}{\noexpand \leavevmode \textcolor {GMVred}{IV.A.} \myul [GMVred]{Scenario 1: $\mbox {\boldmath {${e = 0.1}$}}$.} \\}{\reset@font\mtcSPfont 109}{table.caption.241}}
-{\reset@font\mtcSPfont\mtc@string\contentsline{subparagraph}{\noexpand \leavevmode \textcolor {GMVred}{IV.B.} \myul [GMVred]{Scenario 2: $\mbox {\boldmath {${e = 0.01}$}}$.} \\}{\reset@font\mtcSPfont 110}{figure.caption.243}}
-{\reset@font\mtcSPfont\mtc@string\contentsline{subparagraph}{\noexpand \leavevmode \textcolor {GMVred}{IV.C.} \myul [GMVred]{Scenario 3: $\mbox {\boldmath {${e = 0.001}$}}$ }\\}{\reset@font\mtcSPfont 113}{figure.caption.245}}
-{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {4.4.4.4}Conclusions.}{\reset@font\mtcSSSfont 114}{subsubsection.4.4.4.4}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {A.1}Introduction.}{\reset@font\mtcSfont 31}{section.A.1}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {A.2}Absolute element sets.}{\reset@font\mtcSfont 31}{section.A.2}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {A.2.1}Workflow for transformations between absolute element sets.}{\reset@font\mtcSSfont 31}{subsection.A.2.1}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {A.2.2}Element sets.}{\reset@font\mtcSSfont 32}{subsection.A.2.2}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {A.2.2.1}Keplerian orbital elements (KOE).}{\reset@font\mtcSSSfont 32}{subsubsection.A.2.2.1}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {A.2.2.2}Eccentricity/inclination vectors orbital elements (EIOE).}{\reset@font\mtcSSSfont 33}{subsubsection.A.2.2.2}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode \leavevmode {\color {GMVred}I.}\myul [GMVred]{Eccentricity vector.}\\}{\reset@font\mtcPfont 33}{subsubsection.A.2.2.2}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode \leavevmode {\color {GMVred}II.} \myul [GMVred]{Inclination vector.}\\}{\reset@font\mtcPfont 34}{AMS.35}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode \leavevmode {\color {GMVred}III.}\myul [GMVred]{Element set.}\\}{\reset@font\mtcPfont 34}{AMS.35}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {A.2.2.3}Quasi-nonsingular orbital elements (QNSOE).}{\reset@font\mtcSSSfont 34}{subsubsection.A.2.2.3}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {A.2.2.4}Equinoctial orbital elements (EOE).}{\reset@font\mtcSSSfont 35}{subsubsection.A.2.2.4}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {A.2.2.5}Delaunay orbital elements (DOE).}{\reset@font\mtcSSSfont 35}{subsubsection.A.2.2.5}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {A.3}Relative sets.}{\reset@font\mtcSfont 36}{section.A.3}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {A.3.1}Workflow for transformations between ROEs. }{\reset@font\mtcSSfont 36}{subsection.A.3.1}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode \leavevmode {\color {GMVred}A)} From any ROE set to RKOE\\}{\reset@font\mtcPfont 36}{subsection.A.3.1}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode \leavevmode {\color {GMVred}B)} From RKOE to any ROE set\\}{\reset@font\mtcPfont 38}{figure.caption.44}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {A.3.2}Element sets.}{\reset@font\mtcSSfont 39}{subsection.A.3.2}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {A.3.2.1}Relative eccentricity/inclination vectors orbital elements (REIOE).}{\reset@font\mtcSSSfont 39}{subsubsection.A.3.2.1}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Concept \& meaning\\}{\reset@font\mtcPfont 40}{figure.caption.49}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {A.3.2.2}C set of relative orbital elements (CROE).}{\reset@font\mtcSSSfont 42}{subsubsection.A.3.2.2}}
