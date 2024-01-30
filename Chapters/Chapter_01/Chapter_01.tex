@@ -158,161 +158,81 @@ where ${\bf X}=(X_1,X_2,\dots,X_m)$ is the vector of input variables (also calle
 \subsection{Validation loop for the train-test split}
 \indent To address the applicability classification problem, points in the test set extremely far away from the training set (effectively outside applicability) need to be detected. If found, that would mean the train-test split is incorrect.\\
 %
-\indent There is a wide range of criteria for classifying a point inside or outside applicability. The proposed validation loop analyses this following a hierarchical flow. For each point in the test set a decision is made based on where that test set point lies with respect to the training set.\\
+\indent There is a wide range of criteria for classifying a point inside or outside applicability. The proposed validation loop makes such analysis following a hierarchical flow. For each point in the test set a decision is made based on where that test set point lies with respect to the training set.\\
 %
-\indent Because categorical variables are usually related to different physical conditions, the first step is to condition the analysis of each test point only with respect the training subset of points whose categorical variables have exactly the same values than the test point under analysis. This conditioning on categorical variables defines, for each test point, a \textit{voxel}, \ie a region in input space defined by the precise values of each categorical variable. At this point the first requirement comes into play: the number of training samples inside such voxel needs to be large enough (\eg larger than zero).\\
+\indent Because categorical variables are usually related to different physical conditions, the first step is to condition the analysis of each test point only with respect to the training subset of points whose categorical variables have exactly the same values than the test point under analysis. This conditioning on categorical variables defines, for each test point, a \textit{voxel}, \ie a region in the input space defined by the precise values of each categorical variable. At this point the first requirement comes into play: the number of training samples inside such voxel needs to be large enough (\eg larger than zero).\\
 %
-\indent Then, inside the voxel the ranges of each feature $X_i$ of the training subset are computed, and then the maximum ranges are checked and defined. Their cartesian product defines the voxel's hypercuboid volume associated to the numerical features. In practice, this amounts to checking if each numerical feature $X_i$ of the test point lies inside the range spanned by the training subset. If all numerical features fall inside these ranges, the test set falls inside the training subset hypercuboid, otherwise, it falls outside. The points lying outside such hypercuboid are outside applicability and are flagged. The ''hypercube requirement'' is that such percentage of points outside applicability is zero, or very close to it.\\
+\indent Then, inside the voxel the ranges of each feature $X_i$ of the training subset are computed, and then the maximum ranges are checked and defined. Their cartesian product defines the voxel's hypercuboid volume associated to the numerical features. It is checked whether the test point is inside or outside the hypercube. In practice, this amounts to checking if each numerical feature $X_i$ of the test point lies inside the range spanned by the training subset. If all numerical features fall inside these ranges, the test set falls inside the training subset hypercuboid, otherwise, it falls outside. The points lying outside such hypercuboid are outside applicability and are flagged. The ''hypercube requirement'' is that such percentage of points outside applicability is zero, or very close to it.\\
 %
 \indent If the test point under analysis is found to be outside the hypercuboid, the analysis finishes and the loop moves to the next point. Otherwise, the second step is to check whether this point not only lies inside hypercuboid, but further, whether it also lies inside the convex hull spanned by the training subset in a PCA99\footnote{A truncated PCA\cite{hotelling1933analysis} projection in which the selected components explain at least 99\% of the whole variance of the data.} projection. This hull has a smaller volume than the hypercuboid. If the test point under analysis is found to be outside the convex hull in the PCA99 projection, the analysis finishes and the loop moves to the next point.\\
 % 
-\indent Otherwise, then the third step is to check whether this point (not only lies inside hypercuboid and CH-PCA99, but also) lies inside the convex hull spanned by the training subset in ambient space. The volume of this hull is typically smaller than the one of the PCA99 projection by virtue of \autoref{dparadoxa}, and if the test point lies inside this hull, interpolating properties of the surrogate model will suggest that the model is not require to generalize outside the region where it cannot generalize.\\
+\indent Otherwise, then the third step is to check whether this point (not only lies inside hypercuboid and CH-PCA99, but also) lies inside the convex hull spanned by the training subset in ambient space. The volume of this hull is typically smaller than the one of the PCA99 projection by virtue of the curse of dimensionality, and if the test point lies inside this hull, interpolating properties of the surrogate model will suggest that the model is not require to generalize outside the region where it cannot generalize.\\
 %
 The step of the PCA projection is motivated by the curse of dimensionality, which makes every test point be in extrapolating regime with respect to the training data when the convex hull of the raw, unprocessed training data is used in a high-dimensional input space, as pointed out by \cite{balestriero2021learning}. The work of \cite{bonnasse2022interpolation} effectively shows how in such cases, a low-dimensional space is more useful for applicability classification.\\
 %
-\indent Each step provides different level of evidence of whether the point under analysis was adequately located, where the best is that it lies inside the CH-ambient, and the worst is that it lies outside the hypercuboid.\\
+\indent Each step provides different level of evidence of whether the point under analysis was adequately located, where the best is that it lies inside the convex hull of the corresponding voxel in ambient space, and the worst is that it lies outside the hypercuboid.\\
 %
-\indent An additional check is to analyse whether p-hacking is happening, \ie in this case whether the test set point is ''too close'' to an actual training point (or indeed equal to a training point), what would falsely induce low test error of the model. For this, we measure the distance of the test point to the closest point of the training subset. This information is latter used to assess different aspects of potential p-hacking and its impact on the decision of train-test split correctness.\\
+\indent An additional check is to analyse whether p-hacking is happening, \ie whether the test set point is ''too close'' to an actual training point (or indeed equal to a training point), what would falsely induce low test error of the model. For this, we measure the distance of the test point to the closest point of the training subset. This information is later used to assess different aspects of potential p-hacking and its impact on the decision of train-test split correctness.\\
 
-\noindent $A=[\mathbf{u_1,u_2},\ldots \mathbf{u_{d}}]$\\
-$A\in \mathcal{M}^{n\times d}$
-
-\begin{figure}[!htb]
-\noindent \textbf{Pseudocode:}
-\begin{lstlisting}[style=pseudocode]
-For every point x =  ({x_numerical}, {x_categorical}) in Test_Set:
-Compute test_voxel by imposing x_categorical
-For every point x =  (x_numerical, x_categorical) in Train_Set:
-Compute train_voxel by imposing x_categorical
-
-For every voxel in test_voxel:
-Get train_voxel by imposing x_categorical
-if size(train_voxel) < voxel_size_req:
-annotate and break
-else:
-Compute main nearest neighbour distance inside train_voxel <d>=d(train_voxel, train_voxel) and annotate
-for every point x in test_voxel:
-Compute minimum nearest neighbour distance d(x, train_voxel) and annotate
-if x not in train_voxel hypercube:
-annotate and break
-else:
-if x not in CHMP_PCA99:
-annotate and break
-else:
-check if X is in CHMP_ambient and annotate
-\end{lstlisting}
-\end{figure}
-
-%\begin{algorithm}
-%	\caption{TT-split geometrical analysis}
-%	\KwData{${\cal S}_{\text{train}},{\cal S}_{\text{test}}$}
-%	\KwResult{reqs\_results table}
-%	
-%	$\text{test\_voxels}=[]$;\\
-%	$\text{train\_voxels}=[]$;\\
-%	
-%	$
-%	\text{inside\_hypercube, inside\_PCA99, inside\_ambient} \leftarrow [\text{False},\ldots,\text{False}]_{1\times len({\cal S}_{\text{test}})};
-%	$
-%	
-%	$\text{avg\_train\_dist, min\_test\_dist} \leftarrow [0, \ldots, 0]_{1 \times \text{len}({\cal S}_{\text{test}})}$;
-%	
-%	\ForEach{$\mathbf{X}=(\mathbf{X_{\text{numerical}},X_{\text{categorical}}})$ in ${\cal S}_{\text{test}}$}{
-%	Compute test\_voxel by imposing $\mathbf{X_{\text{categorical}}}$\;
-%	append test\_voxel to test\_voxels;
-%	}
-%
-%	\ForEach{$\mathbf{X}=(\mathbf{X_{\text{numerical}},X_{\text{categorical}}})$ in ${\cal S}_{\text{train}}$}{
-%	Compute train\_voxel by imposing $\mathbf{X_{\text{categorical}}}$\;
-%	append train\_voxel to train\_voxels;
-%	}
-%	$i\leftarrow 0$\\
-%	\ForEach{test\_voxel in test\_voxels}{
-%	Get train\_voxel by imposing $\mathbf{X_{\text{categorical}}}$\;
-%	\If{$\text{size(train\_voxel)} < \text{voxel\_size\_req}$}{
-%		\textbf{break};
-%	}
-%	\Else{
-%	Compute main nearest neighbour distance inside train\_voxel $\overline{d}_{train}(\text{train\_voxel},\text{train\_voxel})$;\\
-%	}		
-%	\ForEach{$\mathbf{X}$ in test\_voxel}{
-%	$\text{avg\_train\_dist}[i]\leftarrow \overline{d}_{train}$;\\
-%	Compute minimum nearest neighbout distance $d_{test}(\mathbf{X},\text{train\_voxel})$;\\
-%	\If{$\mathbf{X} \text{is not in hypercube$}{
-%	\textbf{break};
-%	}
-%	\Else{
-%	hola
-%	}
-%	}
-%		
-%		
-%
-%\end{algorithm}
 
 \begin{algorithm}
-	\caption{TT-split geometrical analysis}
-	\KwData{${\cal S}_{\text{train}},{\cal S}_{\text{test}}$}
-	\KwResult{reqs\_results table}
+	\caption{Train-test split geometrical analysis}
+	\label{algo:train_test_split}
+	\KwData{${\cal S}_{\text{train}},{\cal S}_{\text{test}}$, voxel\_size\_req}
+	\KwResult{inside\_hypercube, inside\_PCA99, inside\_ambient, avg\_train\_dist, min\_test\_dist}
 	
-	$\text{test\_voxels}=[]$;\\
-	$\text{train\_voxels}=[]$;\\
+	Initialize empty lists: $\text{test\_voxels, train\_voxels}\leftarrow[]$\;
 	
-	$\text{inside\_hypercube, inside\_PCA99, inside\_ambient} \leftarrow [\text{False},\ldots,\text{False}]_{1\times \text{len}({\cal S}_{\text{test}})}$;
+	Initialize boolean arrays: $\text{inside\_hypercube}, \text{inside\_PCA99}, \text{inside\_ambient} \leftarrow [\text{False}, \ldots, \text{False}]_{1\times \text{len}({\cal S}_{\text{test}})}$\;
 	
-	$\text{avg\_train\_dist, min\_test\_dist} \leftarrow [0, \ldots, 0]_{1 \times \text{len}({\cal S}_{\text{test}})}$;
+	Initialize arrays for distances: $\text{avg\_train\_dist}, \text{min\_test\_dist} \leftarrow [\text{NaN}, \ldots, \text{NaN}]_{1 \times \text{len}({\cal S}_{\text{test}})}$\;
 	
 	\ForEach{$\mathbf{X}=(\mathbf{X_{\text{numerical}},X_{\text{categorical}}})$ in ${\cal S}_{\text{test}}$}{
 		Compute test\_voxel by imposing $\mathbf{X_{\text{categorical}}}$\;
-		Append test\_voxel to test\_voxels\;
+		Append test\_voxel to $\text{test\_voxels}$\;
 	}
 	
 	\ForEach{$\mathbf{X}=(\mathbf{X_{\text{numerical}},X_{\text{categorical}}})$ in ${\cal S}_{\text{train}}$}{
 		Compute train\_voxel by imposing $\mathbf{X_{\text{categorical}}}$\;
-		Append train\_voxel to train\_voxels\;
+		Append train\_voxel to $\text{train\_voxels}$\;
 	}
 	
-	$i\leftarrow 0$\\
-	\ForEach{test\_voxel in test\_voxels}{
+	$i\leftarrow 0$\;
+	
+	\ForEach{test\_voxel in $\text{test\_voxels}$}{
 		Get train\_voxel by imposing $\mathbf{X_{\text{categorical}}}$\;
-		\If{$\text{size(train\_voxel)} < \text{voxel\_size\_req}$}{
-			\textbf{break}\;
-		}
-		\Else{
-			Compute main nearest neighbour distance inside train\_voxel $\overline{d}_{\text{train}}(\text{train\_voxel},\text{train\_voxel})$\;
-		}		
-		\ForEach{$\mathbf{X}$ in test\_voxel}{
-			$\text{avg\_train\_dist}[i]\leftarrow \overline{d}_{\text{train}}$\;
-			Compute minimum nearest neighbor distance $d_{\text{test}}(\mathbf{X},\text{train\_voxel})$\;
-			\If{$\mathbf{X}$ is not in hypercube}{
-				\textbf{break}\;
-			}
-			\Else{
-				hola\;
+		Compute main nearest neighbour distance inside train\_voxel: $\overline{d}_{\text{train}}(\text{train\_voxel},\text{train\_voxel})$\;
+		$\text{avg\_train\_dist}[i]\leftarrow \overline{d}_{\text{train}}$\;
+		\If{$\text{size(train\_voxel)} \geq \text{voxel\_size\_req}$}{			
+			\ForEach{$\mathbf{X}$ in test\_voxel}{
+				Compute minimum nearest neighbour distance: $d_{\text{test}}(\mathbf{X},\text{train\_voxel})$\;
+				$\text{min\_test\_dist}[i]\leftarrow d_{\text{test}}$\;
+				
+				\uIf{$\mathbf{X}$ not in hypercube}{
+					\textbf{break}\;
+				}
+				\Else{
+					$\text{inside\_hypercube}[i]\leftarrow \text{True}$\;
+					
+					\uIf{$\mathbf{X}$ not in CH\_PCA99}{
+						\textbf{break}\;
+					}
+					\Else{
+						$\text{inside\_PCA99}[i]\leftarrow \text{True}$\;
+						
+						\uIf{$\mathbf{X}$ in ambient\_hull}{
+							$\text{inside\_ambient}[i]\leftarrow \text{True}$\;
+						}
+					}
+				}
+				$i\leftarrow i+1$\;
 			}
 		}
 	}
 \end{algorithm}
 
-\begin{algorithm}
-	\caption{Ejemplo de bloque \texttt{if-else}}
-	\KwData{$Condicion booleana$}
-	\KwResult{$Resultado$}
-	
-	\If{\text{condicion}}{
-		Realiza acciones si la condicion es verdadera\;
-	}
-	\ElseIf{\text{otraCondicion}}{
-		Realiza acciones si otraCondicion es verdadera\;
-	}
-	\Else{
-		Realiza acciones si la condicion y otraCondicion son falsas\;
-	}
-	
-\end{algorithm}
 
-
-\noindent The previous pseudocode:
+The following is a list of specific parameters and requirements the :
 \begin{itemize}
 	\item Checks if there are enough training samples inside each training subset (\texttt{voxel\_size\_req}).
 	\item Checks if the test point is inside the ranges of the training samples. The percentage of points outside is to be compared with (\texttt{hypercube\_req}).

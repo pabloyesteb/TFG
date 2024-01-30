@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.10.19)  29 JAN 2024 20:14
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.10.19)  30 JAN 2024 17:45
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2405,9 +2405,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [7]
 
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
 (fancyhdr)                \setlength{\headheight}{13.59999pt}.
@@ -2416,12 +2413,12 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [8]
-Underfull \hbox (badness 10000) in paragraph at lines 344--345
+Underfull \hbox (badness 10000) in paragraph at lines 264--265
 
  []
 
 
-Package hyperref Warning: No autoref name for `definition' on input line 350.
+Package hyperref Warning: No autoref name for `definition' on input line 270.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2442,6 +2439,14 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [10]
 
+LaTeX Warning: Reference `secCh2:CW_STM' on page 11 undefined on input line 314
+.
+
+
+LaTeX Warning: Reference `secApp2:STM_prop' on page 11 undefined on input line 
+342.
+
+
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
 (fancyhdr)                \setlength{\headheight}{13.59999pt}.
@@ -2458,36 +2463,8 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[12
-
-]
-
-LaTeX Warning: Reference `secCh2:CW_STM' on page 13 undefined on input line 394
-.
-
-
-LaTeX Warning: Reference `secApp2:STM_prop' on page 13 undefined on input line 
-422.
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 13.59999pt, for example:
-(fancyhdr)                \setlength{\headheight}{13.59999pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
-
-[13]
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 13.59999pt, for example:
-(fancyhdr)                \setlength{\headheight}{13.59999pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
-
-[14]
-Underfull \hbox (badness 10000) in paragraph at lines 467--483
+[12]
+Underfull \hbox (badness 10000) in paragraph at lines 387--403
 
  []
 
@@ -2503,13 +2480,13 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[15]
-<Chapters/Chapter_01/Covariance_segment.png, id=460, 7593.36874pt x 4607.2125pt
+[13]
+<Chapters/Chapter_01/Covariance_segment.png, id=418, 7593.36874pt x 4607.2125pt
 >
 File: Chapters/Chapter_01/Covariance_segment.png Graphic file (type png)
 <use Chapters/Chapter_01/Covariance_segment.png>
 Package pdftex.def Info: Chapters/Chapter_01/Covariance_segment.png  used on in
-put line 500.
+put line 420.
 (pdftex.def)             Requested size: 435.32419pt x 264.11827pt.
 )
 
@@ -2520,13 +2497,13 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[16 <./Chapters/Chapter_01/Covariance_segment.png (PNG copy)>]
+[14 <./Chapters/Chapter_01/Covariance_segment.png (PNG copy)>]
 \openout2 = `Afterword/Conclusions.aux'.
 
 
 (./Afterword/Conclusions.tex
 Chapter 2.
-) [17
+) [15
 
 
 
@@ -2541,18 +2518,18 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[18]
+[16]
 \openout2 = `Appendices/Appendix_A/Appendix_A.aux'.
 
  (./Appendices/Appendix_A/Appendix_A.tex
 Appendix A.
-[19
+[17
 
 
 
 
 ]
-<Appendices/Appendix_A/orbit_angles.png, id=490, 796.47563pt x 581.17125pt>
+<Appendices/Appendix_A/orbit_angles.png, id=450, 796.47563pt x 581.17125pt>
 File: Appendices/Appendix_A/orbit_angles.png Graphic file (type png)
 <use Appendices/Appendix_A/orbit_angles.png>
 Package pdftex.def Info: Appendices/Appendix_A/orbit_angles.png  used on input 
@@ -2567,7 +2544,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[20]
+[18]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -2576,7 +2553,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[21 <./Appendices/Appendix_A/orbit_angles.png>]
+[19 <./Appendices/Appendix_A/orbit_angles.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 160--173
 
  []
@@ -2589,13 +2566,13 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[22]
+[20]
 
-LaTeX Warning: Reference `secAppE:Delaunay' on page 23 undefined on input line 
+LaTeX Warning: Reference `secAppE:Delaunay' on page 21 undefined on input line 
 198.
 
 
-LaTeX Warning: Reference `app:App_C' on page 23 undefined on input line 198.
+LaTeX Warning: Reference `app:App_C' on page 21 undefined on input line 198.
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -2609,9 +2586,9 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[23]
+[21]
 
-LaTeX Warning: Reference `secAppE:Delaunay' on page 24 undefined on input line 
+LaTeX Warning: Reference `secAppE:Delaunay' on page 22 undefined on input line 
 213.
 
 
@@ -2627,7 +2604,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[24]
+[22]
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
@@ -2644,7 +2621,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[25]
+[23]
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 
@@ -2655,14 +2632,14 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[26]
-<Appendices/Appendix_A/ECC_vector.png, id=582, 700.86844pt x 420.06938pt>
+[24]
+<Appendices/Appendix_A/ECC_vector.png, id=541, 700.86844pt x 420.06938pt>
 File: Appendices/Appendix_A/ECC_vector.png Graphic file (type png)
 <use Appendices/Appendix_A/ECC_vector.png>
 Package pdftex.def Info: Appendices/Appendix_A/ECC_vector.png  used on input li
 ne 434.
 (pdftex.def)             Requested size: 251.52441pt x 150.75053pt.
-<Appendices/Appendix_A/inc_vector.png, id=583, 529.98pt x 398.23781pt>
+<Appendices/Appendix_A/inc_vector.png, id=542, 529.98pt x 398.23781pt>
 File: Appendices/Appendix_A/inc_vector.png Graphic file (type png)
 <use Appendices/Appendix_A/inc_vector.png>
 Package pdftex.def Info: Appendices/Appendix_A/inc_vector.png  used on input li
@@ -2677,7 +2654,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[27]
+[25]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
@@ -2689,7 +2666,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[28 <./Appendices/Appendix_A/ECC_vector.png> <./Appendices/Appendix_A/inc_vecto
+[26 <./Appendices/Appendix_A/ECC_vector.png> <./Appendices/Appendix_A/inc_vecto
 r.png>]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
@@ -2702,7 +2679,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[29])
+[27])
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -2711,11 +2688,29 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[30] [31
+[28] [29
 
 
 
 ]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[30]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[31]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -2734,24 +2729,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [33]
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 13.59999pt, for example:
-(fancyhdr)                \setlength{\headheight}{13.59999pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
-
-[34]
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 13.59999pt, for example:
-(fancyhdr)                \setlength{\headheight}{13.59999pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
-
-[35]
 Package minitoc Info: I0009
 (minitoc)             Listing minitoc auxiliary files. 
 (minitoc)             Creating the Thesis.maf file.
@@ -2776,7 +2753,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[36] (./Thesis.aux (./Foreword/Portada.aux) (./Foreword/Abstract.aux)
+[34] (./Thesis.aux (./Foreword/Portada.aux) (./Foreword/Abstract.aux)
 (./Foreword/Symbols.aux) (./Foreword/Introduction.aux)
 (./Chapters/Chapter_01/Chapter_01.aux) (./Afterword/Conclusions.aux)
 (./Appendices/Appendix_A/Appendix_A.aux))
@@ -2795,13 +2772,13 @@ Package logreq Info: Writing requests to 'Thesis.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 62132 strings out of 480171
- 1406039 string characters out of 5894488
- 2415860 words of memory out of 5000000
- 78551 multiletter control sequences out of 15000+600000
+ 61764 strings out of 480171
+ 1402769 string characters out of 5894488
+ 2302921 words of memory out of 5000000
+ 78215 multiletter control sequences out of 15000+600000
  486935 words of font info for 96 fonts, out of 8000000 for 9000
  59 hyphenation exceptions out of 8191
- 117i,21n,136p,1294b,2035s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 117i,29n,136p,1294b,2035s stack positions out of 5000i,500n,10000p,200000b,80000s
  </home/pablo/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1095.600
 pk></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmbsy8.pf
 b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
@@ -2825,10 +2802,10 @@ ist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/share/texlive/texmf-dist/fon
 ts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/typ
 e1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type
 1/public/amsfonts/symbols/msbm10.pfb>
-Output written on Thesis.pdf (52 pages, 1270658 bytes).
+Output written on Thesis.pdf (50 pages, 1264498 bytes).
 PDF statistics:
- 961 PDF objects out of 1000 (max. 8388607)
- 830 compressed objects within 9 object streams
- 289 named destinations out of 1000 (max. 500000)
+ 913 PDF objects out of 1000 (max. 8388607)
+ 785 compressed objects within 8 object streams
+ 257 named destinations out of 1000 (max. 500000)
  269 words of extra memory for PDF output out of 10000 (max. 10000000)
 
