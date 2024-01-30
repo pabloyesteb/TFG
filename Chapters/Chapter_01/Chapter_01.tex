@@ -173,11 +173,12 @@ The step of the PCA projection is motivated by the curse of dimensionality, whic
 \indent Each step provides different level of evidence of whether the point under analysis was adequately located, where the best is that it lies inside the convex hull of the corresponding voxel in ambient space, and the worst is that it lies outside the hypercuboid.\\
 %
 \indent An additional check is to analyse whether p-hacking is happening, \ie whether the test set point is ''too close'' to an actual training point (or indeed equal to a training point), what would falsely induce low test error of the model. For this, we measure the distance of the test point to the closest point of the training subset. This information is later used to assess different aspects of potential p-hacking and its impact on the decision of train-test split correctness.\\
-
+%
+\indent The former procedure for classifying the applicability of test points is summarised in \autoref{algo:tt-split}.
 
 \begin{algorithm}
 	\caption{Train-test split geometrical analysis}
-	\label{algo:train_test_split}
+	\label{algo:tt-split}
 	\KwData{${\cal S}_{\text{train}},{\cal S}_{\text{test}}$, voxel\_size\_req}
 	\KwResult{inside\_hypercube, inside\_PCA99, inside\_ambient, avg\_train\_dist, min\_test\_dist}
 	
@@ -232,14 +233,14 @@ The step of the PCA projection is motivated by the curse of dimensionality, whic
 \end{algorithm}
 
 
-The following is a list of specific parameters and requirements the :
+After completing the geometrical analysis for every point, the following specific parameters and requirements are to be checked and stored in a subsequent table:
 \begin{itemize}
-	\item Checks if there are enough training samples inside each training subset (\texttt{voxel\_size\_req}).
-	\item Checks if the test point is inside the ranges of the training samples. The percentage of points outside is to be compared with (\texttt{hypercube\_req}).
+	\item Whether there are enough training samples inside each training subset is compared with \texttt{voxel\_size\_req}.
+	\item The percentage of test points inside the ranges of the training samples is to be compared with \texttt{hypercube\_req}.
 	\item The number of points inside the hypercube but outside \texttt{CH\_PCA99} is to be compared with \texttt{CHMP\_PCA99\_negative\_req}.
 	\item The number of points inside the hypercube and \texttt{CH\_PCA99} but outside \texttt{CH\_ambient} is to be compared to the requirement \texttt{CHMP\_ambient\_negative\_req}.
 	\item The total number of points inside \texttt{CH\_ambient} is to be compared to \texttt{CHMP\_ambient\_positive\_req}.
-	\item Stores all these requirements in a table.
+	\item All these requirements are stored in the \texttt{reqs\_results\_table}.
 \end{itemize}
 %
 \begin{table}[h]
@@ -248,16 +249,26 @@ The following is a list of specific parameters and requirements the :
 		\hline
 		\rowcolor[HTML]{EFEFEF} 
 		\textbf{Parameter/Requirement} & \textbf{Comparison Requirement} \\ \hline
-		Voxel Size (\texttt{voxel\_size\_req}) & To be determined \\ \hline
 		Hypercube Percentage (\texttt{hypercube\_req}) & To be determined \\ \hline
 		Points Outside \texttt{CH\_PCA99} (\texttt{CHMP\_PCA99\_negative\_req}) & To be determined \\ \hline
 		Points Outside \texttt{CH\_ambient} (\texttt{CHMP\_ambient\_negative\_req}) & To be determined \\ \hline
 		Points Inside \texttt{CH\_ambient} (\texttt{CHMP\_ambient\_positive\_req}) & To be determined \\ \hline
 	\end{tabular}
-	\caption{Comparison Requirements}
+	\caption{\texttt{reqs\_results\_table}}
 	\label{tab:requirements}
 \end{table}
 %
+
+\begin{table}[htbp]
+	\centering
+	\begin{minipage}{1\textwidth}
+		\centering
+		\caption{Output of \autoref{algo:tt-split}: \texttt{reqs\_results} table}
+		\includegraphics[width=\linewidth]{/home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/geo.png}
+		\label{fig:tabla_imagen}
+	\end{minipage}
+\end{table}
+
 \indent The first step is check whether the train and test datasets follow the same empirical distributions. If test data is found to not follow the same distribution as the train data, the evaluation of the model would be biased or the test data would be outside input applicability. Take, for instance, the extreme case in which the statistical distribution for some input numerical variable follows a uniform distribution $x_{train} \sim U(a_1,a_2)$ whereas the same input variable in the test dataset follows another distribution $x_{test} \sim U(b_1,b_2)$ where $b_1 \leq a_2$. Clearly, $x_{test}$ is outside the hypercube spanned by $x_{train}$ and is outside the applicability region as a consequence.
 
 \begin{definition}\label{def:orden1}

@@ -7,8 +7,9 @@
 \contentsline {xchapter}{Introduction.}{xv}{chapter*.8}%
 \addvspace {10\p@ }
 \contentsline {xchapter}{The Validation Loop}{1}{chapter.1}%
-\contentsline {table}{\numberline {1.1}{\ignorespaces Comparison Requirements\relax }}{9}{table.caption.13}%
+\contentsline {table}{\numberline {1.1}{\ignorespaces \texttt {reqs\_results\_table}\relax }}{9}{table.caption.13}%
+\contentsline {table}{\numberline {1.2}{\ignorespaces Output of \autoref {algo:tt-split}: \texttt {reqs\_results} table\relax }}{10}{table.caption.14}%
 \addvspace {10\p@ }
-\contentsline {xchapter}{Conclusions and research outlook.}{15}{chapter.2}%
+\contentsline {xchapter}{Conclusions and research outlook.}{17}{chapter.2}%
 \addvspace {10\p@ }
-\contentsline {xchapter}{Absolute and relative orbital element sets.}{17}{appendix.A}%
+\contentsline {xchapter}{Absolute and relative orbital element sets.}{19}{appendix.A}%

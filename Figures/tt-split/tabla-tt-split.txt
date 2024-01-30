@@ -1,0 +1,13 @@
+Test point  Vox. exists	Voxel ID	Voxel size	Min voxel size	Min test to training voxel distance	Min training to voxel distance	Avg training to training distance in voxel	Inside voxel hypercube	Inside voxel CHMP_PCA99	Inside voxel CHMP_ambient
+0	True	495	10	True	4.222221	2.310324	4.953522	False	NaN	NaN
+1	True	669	10	True	6.816122	3.506804	6.215066	True	False	NaN
+2	True	394	10	True	3.295541	1.681883	4.476254	False	NaN	NaN
+3	True	598	8	True	3.424203	2.146255	5.010019	True	False	NaN
+4	True	270	6	True	1.025987	2.456668	3.721737	True	True	False
+...	...	...	...	...	...	...	...	...	...	...
+1995	True	149	8	True	1.518341	1.913489	6.218184	True	False	NaN
+1996	True	281	11	True	3.315739	2.855142	4.476542	True	False	NaN
+1997	True	7	6	True	2.815775	3.214316	5.06403	True	False	NaN
+1998	True	756	10	True	1.191135	1.877471	5.074487	True	False	NaN
+1999	True	494	10	True	4.802132	3.114953	5.687446	True	False	NaN
+
