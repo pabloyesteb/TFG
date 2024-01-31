@@ -166,7 +166,7 @@ where ${\bf X}=(X_1,X_2,\dots,X_m)$ is the vector of input variables (also calle
 %
 \indent If the test point under analysis is found to be outside the hypercuboid, the analysis finishes and the loop moves to the next point. Otherwise, the second step is to check whether this point not only lies inside hypercuboid, but further, whether it also lies inside the convex hull spanned by the training subset in a PCA99\footnote{A truncated PCA\cite{hotelling1933analysis} projection in which the selected components explain at least 99\% of the whole variance of the data.} projection. This hull has a smaller volume than the hypercuboid. If the test point under analysis is found to be outside the convex hull in the PCA99 projection, the analysis finishes and the loop moves to the next point.\\
 % 
-\indent Otherwise, then the third step is to check whether this point (not only lies inside hypercuboid and CH-PCA99, but also) lies inside the convex hull spanned by the training subset in ambient space. The volume of this hull is typically smaller than the one of the PCA99 projection by virtue of the curse of dimensionality, and if the test point lies inside this hull, interpolating properties of the surrogate model will suggest that the model is not require to generalize outside the region where it cannot generalize.\\
+\indent Otherwise, then the third step is to check whether this point (not only lies inside hypercuboid and $\text{CH}_\text{PCA99}$, but also) lies inside the convex hull spanned by the training subset in ambient space. The volume of this hull is typically smaller than the one of the PCA99 projection by virtue of the curse of dimensionality, and if the test point lies inside this hull, interpolating properties of the surrogate model will suggest that the model is not require to generalize outside the region where it cannot generalize.\\
 %
 The step of the PCA projection is motivated by the curse of dimensionality, which makes every test point be in extrapolating regime with respect to the training data when the convex hull of the raw, unprocessed training data is used in a high-dimensional input space, as pointed out by \cite{balestriero2021learning}. The work of \cite{bonnasse2022interpolation} effectively shows how in such cases, a low-dimensional space is more useful for applicability classification.\\
 %
@@ -255,16 +255,28 @@ After completing the geometrical analysis for every point, the following specifi
 		Points Inside \texttt{CH\_ambient} (\texttt{CHMP\_ambient\_positive\_req}) & To be determined \\ \hline
 	\end{tabular}
 	\caption{\texttt{reqs\_results\_table}}
-	\label{tab:requirements}
+	\label{tab:tt-split-requirements}
 \end{table}
 %
-
+\indent Output of \autoref{algo:tt-split} is depicted in \autoref{tab:geo_out}. This information has to be processed to complete \autoref{tab:tt-split-requirements}. The first column identifies the test point inside the test set. The first seven columns show information of the voxel to which test point at column 1 belongs: voxel existence (determined by \texttt{min\_voxel\_size\_req}) and test-to-training, as well as training-to-training distances inside such voxel. The last three columns show the \textit{isolation level} of the test point inside its voxel using the aforementioned criteria. In this scale, if the test point is found to be outside the hypercube ($\text{CH}_{\text{PCA99}}$), then its position with respect to $\text{CH}_{\text{PCA99}}$ and $\text{CH}_{\text{ambient}}$ ($\text{CH}_{\text{ambient}}$) is not computed in the sake of computational efficiency.\\
+%
+Ancho del texto: \the\textwidth
 \begin{table}[htbp]
 	\centering
 	\begin{minipage}{1\textwidth}
 		\centering
 		\caption{Output of \autoref{algo:tt-split}: \texttt{reqs\_results} table}
 		\includegraphics[width=\linewidth]{/home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/geo.png}
+		\label{tab:geo_out}
+	\end{minipage}
+\end{table}
+%
+\begin{table}[htbp]
+	\
+	\begin{minipage}{0.3\textwidth}
+%		\centering
+		\caption{Output of \autoref{algo:tt-split}: \texttt{reqs\_results} table}
+		\includegraphics[scale=\tabscale]{/home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/ref_table_vox.png}
 		\label{fig:tabla_imagen}
 	\end{minipage}
 \end{table}

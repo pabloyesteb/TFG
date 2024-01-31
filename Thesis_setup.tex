@@ -36,6 +36,7 @@
 \usepackage{setspace}
 \usepackage{makeidx}
 \usepackage{textpos}
+\usepackage{xfp}
 \usepackage{pgfplotstable,booktabs,siunitx,array}
 \usepackage{import}
 \usepackage{rotating}    % Sideways of figures & tables
@@ -404,7 +405,7 @@ decoration={snake,amplitude=.8mm,segment length=2mm,post length=1mm}}
 
 %% === === === === === === A4 SIZE  === === === === === ===
 
-\def\psnormal{\textwidth=17cm\textheight=23cm
+\def\psnormal{\textwidth=16cm\textheight=23cm
           \oddsidemargin=0cm\evensidemargin=0.2cm
           \parindent=1cm\topmargin=-1cm}
 \psnormal
@@ -472,6 +473,13 @@ decoration={snake,amplitude=.8mm,segment length=2mm,post length=1mm}}
                 keywords={numero,estructura,componente}
                 }
 
+%% === === === === === === SCALING SETUP   === === === === === ===
+% Measure the width of a reference image
+\newlength{\imagenwidth}
+\settowidth{\imagenwidth}{\includegraphics{/home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/geo.png}}
+
+% The former image is considered to be in the document adjusted to the textwidth.
+\edef\tabscale{\fpeval{\textwidth/\imagenwidth}}
 %% === === === === === === HYPERREF SETUP  === === === === === ===
 
 \usepackage{hyperref}
@@ -479,9 +487,9 @@ decoration={snake,amplitude=.8mm,segment length=2mm,post length=1mm}}
 \hypersetup
 {
 bookmarksopen=true,
-pdftitle=Advanced STM computation methods,
-pdfauthor="Rodrigo_Fdez",
-pdfsubject="a subject", 		% subject of the document
+pdftitle=Validation methods for industrial ML models,
+pdfauthor="P. Yeste Blesa",
+pdfsubject="ML validation", 	% subject of the document
 %pdftoolbar=false, 				% toolbar hidden
 pdfmenubar=true, 				% menubar shown
 pdfhighlight=/O,           		% effect of clicking on a link
