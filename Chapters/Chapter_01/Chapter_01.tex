@@ -274,15 +274,36 @@ After completing the geometrical analysis for every point, the following specifi
 %	\centering
 	\label{tab:voxref}
 	\newlength{\voxrefw}
-	\settowidth{\voxrefw}{\includegraphics{/home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/ref_table_vox.png}}
+	\settowidth{\voxrefw}{\includegraphics{/home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/refTableVox.png}}
 	\edef\tabvoxrefw{\fpeval{\voxrefw*\tabscale}}
 %	Hola \the\tabvoxrefw
 	\begin{minipage}{\dimexpr\tabvoxrefw pt\relax}
 		\centering
 		\caption{Output of \autoref{algo:tt-split}: \texttt{reqs\_results} table}
-		\includegraphics[scale=\tabscale]{/home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/ref_table_vox.png}
+		\includegraphics[scale=\tabscale]{/home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/refTableVox.png}
 	\end{minipage}
 \end{table}
+
+\begin{table}[htbp]
+	\centering	
+	\mytable{/home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/refTableVox.png}{Voxel reference table. Lorem ipsum dolor sit amet, consectetuer adisciping elit.}
+\end{table}
+
+\begin{table}
+	\centering
+	\captionof{table}{lo que sea}
+	\includegraphics[scale=\tabscale]{/home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/refTableVox2.png}
+\end{table}
+\begin{minipage}[t]{0.4\linewidth}
+	\raggedright
+	\includegraphics[scale=\tabscale]{/home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/refTableVox2.png}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.4\linewidth}
+	\raggedleft
+	\includegraphics[scale=\tabscale]{/home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/refTableVox.png}
+\end{minipage}
+
+
 
 \indent The first step is check whether the train and test datasets follow the same empirical distributions. If test data is found to not follow the same distribution as the train data, the evaluation of the model would be biased or the test data would be outside input applicability. Take, for instance, the extreme case in which the statistical distribution for some input numerical variable follows a uniform distribution $x_{train} \sim U(a_1,a_2)$ whereas the same input variable in the test dataset follows another distribution $x_{test} \sim U(b_1,b_2)$ where $b_1 \leq a_2$. Clearly, $x_{test}$ is outside the hypercube spanned by $x_{train}$ and is outside the applicability region as a consequence.
 

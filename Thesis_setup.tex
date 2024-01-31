@@ -480,6 +480,18 @@ decoration={snake,amplitude=.8mm,segment length=2mm,post length=1mm}}
 
 % The former image is considered to be in the document adjusted to the textwidth.
 \edef\tabscale{\fpeval{\textwidth/\imagewidth}}
+
+\newcommand{\mytable}[2]{%
+	\newlength{\orgWidth}%
+	\settowidth{\orgWidth}{\includegraphics{#1}}%
+	\edef\scaledWidth{\fpeval{\orgWidth*\tabscale}}%
+	%
+	\begin{minipage}{\dimexpr\scaledWidth pt\relax}%
+		\centering%
+		\caption{#2}%
+		\includegraphics[scale=\tabscale]{#1}%
+	\end{minipage}%
+}
 %% === === === === === === HYPERREF SETUP  === === === === === ===
 
 \usepackage{hyperref}
