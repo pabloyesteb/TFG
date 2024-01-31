@@ -475,11 +475,11 @@ decoration={snake,amplitude=.8mm,segment length=2mm,post length=1mm}}
 
 %% === === === === === === SCALING SETUP   === === === === === ===
 % Measure the width of a reference image
-\newlength{\imagenwidth}
-\settowidth{\imagenwidth}{\includegraphics{/home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/geo.png}}
+\newlength{\imagewidth}
+\settowidth{\imagewidth}{\includegraphics{/home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/geo.png}}
 
 % The former image is considered to be in the document adjusted to the textwidth.
-\edef\tabscale{\fpeval{\textwidth/\imagenwidth}}
+\edef\tabscale{\fpeval{\textwidth/\imagewidth}}
 %% === === === === === === HYPERREF SETUP  === === === === === ===
 
 \usepackage{hyperref}

@@ -260,24 +260,27 @@ After completing the geometrical analysis for every point, the following specifi
 %
 \indent Output of \autoref{algo:tt-split} is depicted in \autoref{tab:geo_out}. This information has to be processed to complete \autoref{tab:tt-split-requirements}. The first column identifies the test point inside the test set. The first seven columns show information of the voxel to which test point at column 1 belongs: voxel existence (determined by \texttt{min\_voxel\_size\_req}) and test-to-training, as well as training-to-training distances inside such voxel. The last three columns show the \textit{isolation level} of the test point inside its voxel using the aforementioned criteria. In this scale, if the test point is found to be outside the hypercube ($\text{CH}_{\text{PCA99}}$), then its position with respect to $\text{CH}_{\text{PCA99}}$ and $\text{CH}_{\text{ambient}}$ ($\text{CH}_{\text{ambient}}$) is not computed in the sake of computational efficiency.\\
 %
-Ancho del texto: \the\textwidth
 \begin{table}[htbp]
 	\centering
+	\label{tab:geo_out}
 	\begin{minipage}{1\textwidth}
 		\centering
 		\caption{Output of \autoref{algo:tt-split}: \texttt{reqs\_results} table}
 		\includegraphics[width=\linewidth]{/home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/geo.png}
-		\label{tab:geo_out}
 	\end{minipage}
 \end{table}
 %
 \begin{table}[htbp]
-	\
-	\begin{minipage}{0.3\textwidth}
-%		\centering
+%	\centering
+	\label{tab:voxref}
+	\newlength{\voxrefw}
+	\settowidth{\voxrefw}{\includegraphics{/home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/ref_table_vox.png}}
+	\edef\tabvoxrefw{\fpeval{\voxrefw*\tabscale}}
+%	Hola \the\tabvoxrefw
+	\begin{minipage}{\dimexpr\tabvoxrefw pt\relax}
+		\centering
 		\caption{Output of \autoref{algo:tt-split}: \texttt{reqs\_results} table}
 		\includegraphics[scale=\tabscale]{/home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/ref_table_vox.png}
-		\label{fig:tabla_imagen}
 	\end{minipage}
 \end{table}
 
