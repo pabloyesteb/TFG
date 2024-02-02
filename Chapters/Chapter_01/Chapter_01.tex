@@ -260,6 +260,8 @@ After completing the geometrical analysis for every point, the following specifi
 %
 \indent Output of \autoref{algo:tt-split} is depicted in \autoref{tab:geo_out}. This information has to be processed to complete \autoref{tab:tt-split-requirements}. The first column identifies the test point inside the test set. The first seven columns show information of the voxel to which test point at column 1 belongs: voxel existence (determined by \texttt{min\_voxel\_size\_req}) and test-to-training, as well as training-to-training distances inside such voxel. The last three columns show the \textit{isolation level} of the test point inside its voxel using the aforementioned criteria. In this scale, if the test point is found to be outside the hypercube ($\text{CH}_{\text{PCA99}}$), then its position with respect to $\text{CH}_{\text{PCA99}}$ and $\text{CH}_{\text{ambient}}$ ($\text{CH}_{\text{ambient}}$) is not computed in the sake of computational efficiency.\\
 %
+\indent To better understand the voxel classification system, a reference of their categorical variables is given in \autoref{tab:voxref}. Points inside each voxel all have the same categorical values, which effectively acts as an identifyer for the voxel. We see each voxels represents a different stringer section between two frames, plus a categorical variable named ''np'' which can take the values either 0 or 0.9.\\
+%
 \begin{table}[htbp]
 	\centering
 	\label{tab:geo_out}
@@ -270,9 +272,27 @@ After completing the geometrical analysis for every point, the following specifi
 	\end{minipage}
 \end{table}
 %
+\begin{table}[!htb]
+	\centering
+	\captionof{table}{Voxel reference table}
+	\label{tab:voxref}
+	\includegraphics[scale=\tabscale]{/home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/refTableVox.png}
+\end{table}
+%
+\begin{table}[!htb]
+	\centering
+	\captionof{table}{Voxel outside hypercube}
+	\label{tab:outhypercube}
+	\includegraphics[width=1\textwidth]{/home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/outside_hypercube.png}
+\end{table}
+
+
+
+
+
+\clearpage
 \begin{table}[htbp]
 %	\centering
-	\label{tab:voxref}
 	\newlength{\voxrefw}
 	\settowidth{\voxrefw}{\includegraphics{/home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/refTableVox.png}}
 	\edef\tabvoxrefw{\fpeval{\voxrefw*\tabscale}}
@@ -285,15 +305,11 @@ After completing the geometrical analysis for every point, the following specifi
 \end{table}
 
 \begin{table}[htbp]
-	\centering	
+	\centering
 	\mytable{/home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/refTableVox.png}{Voxel reference table. Lorem ipsum dolor sit amet, consectetuer adisciping elit.}
 \end{table}
 
-\begin{table}
-	\centering
-	\captionof{table}{lo que sea}
-	\includegraphics[scale=\tabscale]{/home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/refTableVox2.png}
-\end{table}
+
 \begin{minipage}[t]{0.4\linewidth}
 	\raggedright
 	\includegraphics[scale=\tabscale]{/home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/refTableVox2.png}
@@ -302,7 +318,6 @@ After completing the geometrical analysis for every point, the following specifi
 	\raggedleft
 	\includegraphics[scale=\tabscale]{/home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/refTableVox.png}
 \end{minipage}
-
 
 
 \indent The first step is check whether the train and test datasets follow the same empirical distributions. If test data is found to not follow the same distribution as the train data, the evaluation of the model would be biased or the test data would be outside input applicability. Take, for instance, the extreme case in which the statistical distribution for some input numerical variable follows a uniform distribution $x_{train} \sim U(a_1,a_2)$ whereas the same input variable in the test dataset follows another distribution $x_{test} \sim U(b_1,b_2)$ where $b_1 \leq a_2$. Clearly, $x_{test}$ is outside the hypercube spanned by $x_{train}$ and is outside the applicability region as a consequence.
@@ -320,7 +335,7 @@ After completing the geometrical analysis for every point, the following specifi
 
 
 
-
+\clearpage
 \section{Las movidas de Rodrigo}
 %
 \indent Orbit propagation is a very wide and varied field. It comprises many different approaches and methods to obtain more or less accurate results, with a higher or lower computational cost. Some examples are the numerical integration of the equations of motion in cartesian coordinates, the numerical integration of the variational equations (\ie equations of motion expressed in OEs) and the development of closed-form solutions by simplifying the problem. Within this last group, State Transition Matrices arise.\\
