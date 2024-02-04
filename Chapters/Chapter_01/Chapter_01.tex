@@ -255,22 +255,22 @@ After completing the geometrical analysis for every point, the following specifi
 		Points Inside \texttt{CH\_ambient} (\texttt{CHMP\_ambient\_positive\_req}) & To be determined \\ \hline
 	\end{tabular}
 	\caption{\texttt{reqs\_results\_table}}
-	\label{tab:tt-split-requirements}
+	\label{tab:reqs_results_table}
 \end{table}
 %
-\indent Output of \autoref{algo:tt-split} is depicted in \autoref{tab:geo_out}. This information has to be processed to complete \autoref{tab:tt-split-requirements}. The first column identifies the test point inside the test set. The first seven columns show information of the voxel to which test point at column 1 belongs: voxel existence (determined by \texttt{min\_voxel\_size\_req}) and test-to-training, as well as training-to-training distances inside such voxel. The last three columns show the \textit{isolation level} of the test point inside its voxel using the aforementioned criteria. In this scale, if the test point is found to be outside the hypercube ($\text{CH}_{\text{PCA99}}$), then its position with respect to $\text{CH}_{\text{PCA99}}$ and $\text{CH}_{\text{ambient}}$ ($\text{CH}_{\text{ambient}}$) is not computed in the sake of computational efficiency.\\
-%
-\indent To better understand the voxel classification system, a reference of their categorical variables is given in \autoref{tab:voxref}. Points inside each voxel all have the same categorical values, which effectively acts as an identifyer for the voxel. We see each voxels represents a different stringer section between two frames, plus a categorical variable named ''np'' which can take the values either 0 or 0.9.\\
+\indent Output of \autoref{algo:tt-split} is depicted in \autoref{tab:geo_out}. This information has to be processed to complete \autoref{tab:reqs_results_table}. The first column identifies the test point inside the test set. The first seven columns show information of the voxel to which test point at column 1 belongs: voxel existence (determined by \texttt{min\_voxel\_size\_req}) and test-to-training, as well as training-to-training distances inside such voxel. The last three columns show the \textit{isolation level} of the test point inside its voxel using the aforementioned criteria. In this scale, if the test point is found to be outside the hypercube ($\text{CH}_{\text{PCA99}}$), then its position with respect to $\text{CH}_{\text{PCA99}}$ and $\text{CH}_{\text{ambient}}$ ($\text{CH}_{\text{ambient}}$) is not computed in the sake of computational efficiency.\\
 %
 \begin{table}[htbp]
 	\centering
+	\captionof{table}{Output of \autoref{algo:tt-split}: \texttt{reqs\_results} table}
 	\label{tab:geo_out}
 	\begin{minipage}{1\textwidth}
 		\centering
-		\caption{Output of \autoref{algo:tt-split}: \texttt{reqs\_results} table}
 		\includegraphics[width=\linewidth]{/home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/geo.png}
 	\end{minipage}
 \end{table}
+%
+\indent To better understand the voxel classification system, a reference of their categorical variables is given in \autoref{tab:voxref}. Points inside each voxel all have the same categorical values, which effectively acts as an identifyer for the voxel. We see each voxels represents a different stringer section between two frames, plus the categorical variable ''np'' which can take the values either 0 or 0.9.\\
 %
 \begin{table}[!htb]
 	\centering
@@ -279,14 +279,36 @@ After completing the geometrical analysis for every point, the following specifi
 	\includegraphics[scale=\tabscale]{/home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/refTableVox.png}
 \end{table}
 %
+\indent Column data ''inside vox. hypercube'' of \autoref{tab:geo_out} have been rearranged for the sake of interpretability in \autoref{tab:outhypercube}. This table shows, for every voxel in which such points exits, the points which lie outside the training voxel hypercube. Similarly, \autoref{tab:outch} and \autoref{tab:outambient} show points lying inside hypercube but outside the voxel's convex hull in the PCA99 projection, and points lying outside the voxel's convex hull in ambient space but inside the convex hull in the PCA99 projection, respectively.\\
 \begin{table}[!htb]
 	\centering
-	\captionof{table}{Voxel outside hypercube}
+	\captionof{table}{Points outside voxel hypercube}
 	\label{tab:outhypercube}
-	\includegraphics[width=1\textwidth]{/home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/outside_hypercube.png}
+	\includegraphics[scale=\tabscale]{/home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/outside_hypercube_c.png}
 \end{table}
-
-
+%
+\begin{table}[!htb]
+	\centering
+	\captionof{table}{Points outside voxel's PCA99 convex hull but inside hypercube}
+	\label{tab:outch}
+	\includegraphics[scale=\tabscale]{/home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/outside_CH_c.png}
+\end{table}
+%
+\begin{table}[!htb]
+	\centering
+	\captionof{table}{Points outside ambient space voxel's convex hull but inside PCA99 convex hull}
+	\label{tab:outambient}
+	\includegraphics[scale=\tabscale]{/home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/outside_ambient_c.png}
+\end{table}
+%
+\indent The information in \crefrange{tab:outhypercube}{tab:outambient} is used to complete \autoref{tab:reqs_results_table}. The\\
+% 
+\begin{figure}
+	\centering
+	\includegraphics[scale=\tabscale]{/home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/coloreqs_c.png}
+	\caption{Output messages. Names of the requisites and their descriptions.}
+	\label{coloreqs}
+\end{figure}
 
 
 

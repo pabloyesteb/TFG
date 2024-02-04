@@ -10,13 +10,14 @@
 \contentsline {figure}{\numberline {1.1}{\ignorespaces Surrogate model pipeline\relax }}{2}{figure.caption.9}%
 \contentsline {figure}{\numberline {1.2}{\ignorespaces Smallest cube enclosing a set of 20 randomly generated points in a 3-dimensional euclidean space.\relax }}{5}{figure.caption.11}%
 \contentsline {figure}{\numberline {1.3}{\ignorespaces Convex hull enclosing the set of \autoref {fig:hipercuboex}. The convex hull's volume is always smaller than or equal to the volume of the hypercube.\relax }}{5}{figure.caption.11}%
-\contentsline {figure}{\numberline {1.4}{\ignorespaces Covariance ellipsoid evolution along a radial hop.\relax }}{18}{figure.caption.25}%
+\contentsline {figure}{\numberline {1.4}{\ignorespaces Output messages. Names of the requisites and their descriptions.\relax }}{15}{figure.caption.19}%
+\contentsline {figure}{\numberline {1.5}{\ignorespaces Covariance ellipsoid evolution along a radial hop.\relax }}{22}{figure.caption.28}%
 \addvspace {10\p@ }
-\contentsline {xchapter}{Conclusions and research outlook.}{21}{chapter.2}%
+\contentsline {xchapter}{Conclusions and research outlook.}{25}{chapter.2}%
 \addvspace {10\p@ }
-\contentsline {xchapter}{Absolute and relative orbital element sets.}{23}{appendix.A}%
-\contentsline {figure}{\numberline {A.1}{\ignorespaces Workflow for transforming between two arbitary absolute element sets.\relax }}{24}{figure.caption.27}%
-\contentsline {figure}{\numberline {A.2}{\ignorespaces Frame rotation from inertial to perifocal frame.\relax }}{25}{figure.caption.29}%
-\contentsline {figure}{\numberline {A.3}{\ignorespaces Workflow for transforming any relative set into KOE.\relax }}{30}{figure.caption.39}%
-\contentsline {figure}{\numberline {A.4}{\ignorespaces Workflow for transforming RKOE into any other set.\relax }}{31}{figure.caption.41}%
-\contentsline {figure}{\numberline {A.5}{\ignorespaces Relative ccentricity \& inclination vectors. \relax }}{32}{figure.caption.44}%
+\contentsline {xchapter}{Absolute and relative orbital element sets.}{27}{appendix.A}%
+\contentsline {figure}{\numberline {A.1}{\ignorespaces Workflow for transforming between two arbitary absolute element sets.\relax }}{28}{figure.caption.30}%
+\contentsline {figure}{\numberline {A.2}{\ignorespaces Frame rotation from inertial to perifocal frame.\relax }}{29}{figure.caption.32}%
+\contentsline {figure}{\numberline {A.3}{\ignorespaces Workflow for transforming any relative set into KOE.\relax }}{34}{figure.caption.42}%
+\contentsline {figure}{\numberline {A.4}{\ignorespaces Workflow for transforming RKOE into any other set.\relax }}{35}{figure.caption.44}%
+\contentsline {figure}{\numberline {A.5}{\ignorespaces Relative ccentricity \& inclination vectors. \relax }}{36}{figure.caption.47}%
