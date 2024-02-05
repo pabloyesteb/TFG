@@ -7,15 +7,13 @@
 \contentsline {xchapter}{Introduction.}{xv}{chapter*.8}%
 \addvspace {10\p@ }
 \contentsline {xchapter}{The Validation Loop}{1}{chapter.1}%
-\contentsline {table}{\numberline {1.1}{\ignorespaces \texttt {reqs\_results\_table}\relax }}{10}{table.caption.13}%
-\contentsline {table}{\numberline {1.2}{\ignorespaces Output of \autoref {algo:tt-split}: \texttt {reqs\_results} table\relax }}{10}{table.caption.14}%
-\contentsline {table}{\numberline {1.3}{\ignorespaces Voxel reference table\relax }}{11}{table.caption.15}%
-\contentsline {table}{\numberline {1.4}{\ignorespaces Points outside voxel hypercube\relax }}{12}{table.caption.16}%
-\contentsline {table}{\numberline {1.5}{\ignorespaces Points outside voxel's PCA99 convex hull but inside hypercube\relax }}{13}{table.caption.17}%
-\contentsline {table}{\numberline {1.6}{\ignorespaces Points outside ambient space voxel's convex hull but inside PCA99 convex hull\relax }}{14}{table.caption.18}%
-\contentsline {table}{\numberline {1.7}{\ignorespaces Output of \autoref {algo:tt-split}: \texttt {reqs\_results} table\relax }}{16}{table.caption.20}%
-\contentsline {table}{\numberline {1.8}{\ignorespaces Voxel reference table. Lorem ipsum dolor sit amet, consectetuer adisciping elit.\relax }}{17}{table.caption.21}%
+\contentsline {table}{\numberline {1.1}{\ignorespaces Output of \autoref {algo:tt-split}.\relax }}{10}{table.caption.13}%
+\contentsline {table}{\numberline {1.2}{\ignorespaces Voxel reference table\relax }}{10}{table.caption.14}%
+\contentsline {table}{\numberline {1.3}{\ignorespaces Points outside voxel hypercube\relax }}{12}{table.caption.16}%
+\contentsline {table}{\numberline {1.4}{\ignorespaces \texttt {reqs\_results\_table}. The first and the last requirements compare absolute figures of points at some isolation level with the overall number of points. Whereas the second and third requirements compare the difference in number of points between two consecutive levels with the total number of points.\relax }}{12}{table.caption.17}%
+\contentsline {table}{\numberline {1.5}{\ignorespaces Output of \autoref {algo:tt-split}: \texttt {reqs\_results} table\relax }}{14}{table.caption.18}%
+\contentsline {table}{\numberline {1.6}{\ignorespaces Voxel reference table. Lorem ipsum dolor sit amet, consectetuer adisciping elit.\relax }}{15}{table.caption.19}%
 \addvspace {10\p@ }
-\contentsline {xchapter}{Conclusions and research outlook.}{25}{chapter.2}%
+\contentsline {xchapter}{Conclusions and research outlook.}{23}{chapter.2}%
 \addvspace {10\p@ }
-\contentsline {xchapter}{Absolute and relative orbital element sets.}{27}{appendix.A}%
+\contentsline {xchapter}{Absolute and relative orbital element sets.}{25}{appendix.A}%

@@ -502,6 +502,40 @@
       \field{pages}{417}
       \range{pages}{1}
     \endentry
+    \entry{rosner1999use}{article}{}
+      \name{author}{2}{}{%
+        {{hash=2321228a4a8fa9ca757793343f575ade}{%
+           family={Rosner},
+           familyi={R\bibinitperiod},
+           given={B},
+           giveni={B\bibinitperiod}}}%
+        {{hash=d02fb168bac692c7a27791af518ff013}{%
+           family={Grove},
+           familyi={G\bibinitperiod},
+           given={D},
+           giveni={D\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Wiley Online Library}%
+      }
+      \strng{namehash}{8d723a09b743d9adca83a28ab576cdcc}
+      \strng{fullhash}{8d723a09b743d9adca83a28ab576cdcc}
+      \strng{bibnamehash}{8d723a09b743d9adca83a28ab576cdcc}
+      \strng{authorbibnamehash}{8d723a09b743d9adca83a28ab576cdcc}
+      \strng{authornamehash}{8d723a09b743d9adca83a28ab576cdcc}
+      \strng{authorfullhash}{8d723a09b743d9adca83a28ab576cdcc}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Statistics in medicine}
+      \field{number}{11}
+      \field{title}{Use of the Mann--Whitney U-test for clustered data}
+      \field{volume}{18}
+      \field{year}{1999}
+      \field{pages}{1387\bibrangedash 1400}
+      \range{pages}{14}
+    \endentry
     \entry{Montenbruck}{book}{}
       \name{author}{2}{}{%
         {{hash=80a8be6ff5184fbb0119b6701e40cfb1}{%
@@ -559,8 +593,8 @@
       \strng{authorbibnamehash}{0d76214d0bd5bead32ede905b151fc58}
       \strng{authornamehash}{0d76214d0bd5bead32ede905b151fc58}
       \strng{authorfullhash}{0d76214d0bd5bead32ede905b151fc58}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{{Journal of Guidance, Control \& Dynamics}}
@@ -595,8 +629,8 @@
       \strng{authornamehash}{b7a6b44ea9ddd80bc79f16cd6eeb9e11}
       \strng{authorfullhash}{b7a6b44ea9ddd80bc79f16cd6eeb9e11}
       \field{extraname}{1}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Journal of Guidance Control and Dynamics}
@@ -832,8 +866,8 @@
       \strng{authornamehash}{816dec555b2f8907b7602caf61908a57}
       \strng{authorfullhash}{816dec555b2f8907b7602caf61908a57}
       \field{extraname}{2}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{{Celestial Mechanics and Dynamical Astronomy}}
@@ -1148,8 +1182,8 @@
       \strng{authorbibnamehash}{1d7a171a58363aa8bf04eece48bbe6dd}
       \strng{authornamehash}{1d7a171a58363aa8bf04eece48bbe6dd}
       \strng{authorfullhash}{1d7a171a58363aa8bf04eece48bbe6dd}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{month}{10}
@@ -1181,8 +1215,8 @@
       \strng{authorbibnamehash}{5ecb95438e87e12b20e8c9e9c27d0db7}
       \strng{authornamehash}{5ecb95438e87e12b20e8c9e9c27d0db7}
       \strng{authorfullhash}{5ecb95438e87e12b20e8c9e9c27d0db7}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{series}{Cambridge Aerospace Series}
@@ -1398,8 +1432,8 @@
       \strng{authorbibnamehash}{e23d7330a9965df903edb002671404f9}
       \strng{authornamehash}{e23d7330a9965df903edb002671404f9}
       \strng{authorfullhash}{e23d7330a9965df903edb002671404f9}
-      \field{sortinit}{6}
-      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{{Journal of Guidance, Control \& Dynamics}}
@@ -1435,8 +1469,8 @@
       \strng{authorbibnamehash}{45fe7bb07bbd30a3d42415b140a16574}
       \strng{authornamehash}{45fe7bb07bbd30a3d42415b140a16574}
       \strng{authorfullhash}{45fe7bb07bbd30a3d42415b140a16574}
-      \field{sortinit}{6}
-      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{{Celestial Mechanics and Dynamical Astronomy}}
@@ -1801,8 +1835,8 @@
       \strng{authornamehash}{36f88b66e2a1d70933657395bca8d775}
       \strng{authorfullhash}{36f88b66e2a1d70933657395bca8d775}
       \field{extraname}{2}
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Journal of Guidance, Control, and Dynamics}
@@ -1832,8 +1866,8 @@
       \strng{authorbibnamehash}{0a6bbc521dde2c5fbba62c2b627ffcf6}
       \strng{authornamehash}{0a6bbc521dde2c5fbba62c2b627ffcf6}
       \strng{authorfullhash}{0a6bbc521dde2c5fbba62c2b627ffcf6}
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Astronomical Journal}
@@ -2126,8 +2160,8 @@
       \strng{authorbibnamehash}{d98120d706d2d01a9782fee9f834de36}
       \strng{authornamehash}{d98120d706d2d01a9782fee9f834de36}
       \strng{authorfullhash}{d98120d706d2d01a9782fee9f834de36}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Proceedings of the International Formation Flying Conference: Missions and Technologies}
@@ -2149,8 +2183,8 @@
       \strng{authorbibnamehash}{8f631b769d4710fba49eafd295c9d96d}
       \strng{authornamehash}{8f631b769d4710fba49eafd295c9d96d}
       \strng{authorfullhash}{8f631b769d4710fba49eafd295c9d96d}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{Convert complex diagonal form into real diagonal form}

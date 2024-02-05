@@ -233,36 +233,36 @@ The step of the PCA projection is motivated by the curse of dimensionality, whic
 \end{algorithm}
 
 
-After completing the geometrical analysis for every point, the following specific parameters and requirements are to be checked and stored in a subsequent table:
-\begin{itemize}
-	\item Whether there are enough training samples inside each training subset is compared with \texttt{voxel\_size\_req}.
-	\item The percentage of test points inside the ranges of the training samples is to be compared with \texttt{hypercube\_req}.
-	\item The number of points inside the hypercube but outside \texttt{CH\_PCA99} is to be compared with \texttt{CHMP\_PCA99\_negative\_req}.
-	\item The number of points inside the hypercube and \texttt{CH\_PCA99} but outside \texttt{CH\_ambient} is to be compared to the requirement \texttt{CHMP\_ambient\_negative\_req}.
-	\item The total number of points inside \texttt{CH\_ambient} is to be compared to \texttt{CHMP\_ambient\_positive\_req}.
-	\item All these requirements are stored in the \texttt{reqs\_results\_table}.
-\end{itemize}
+%After completing the geometrical analysis for every point, the following specific parameters and requirements are to be checked and stored in a subsequent table:
+%\begin{itemize}
+%	\item Whether there are enough training samples inside each training subset is compared with \texttt{voxel\_size\_req}.
+%	\item The percentage of test points inside the ranges of the training samples is to be compared with \texttt{hypercube\_req}.
+%	\item The number of points inside the hypercube but outside \texttt{CH\_PCA99} is to be compared with \texttt{CHMP\_PCA99\_negative\_req}.
+%	\item The number of points inside the hypercube and \texttt{CH\_PCA99} but outside \texttt{CH\_ambient} is to be compared to the requirement \texttt{CHMP\_ambient\_negative\_req}.
+%	\item The total number of points inside \texttt{CH\_ambient} is to be compared to \texttt{CHMP\_ambient\_positive\_req}.
+%	\item All these requirements are stored in the \texttt{reqs\_results\_table}.
+%\end{itemize}
+%%
+%\begin{table}[h]
+%	\centering
+%	\begin{tabular}{|l|l|}
+%		\hline
+%		\rowcolor[HTML]{EFEFEF} 
+%		\textbf{Parameter/Requirement} & \textbf{Comparison Requirement} \\ \hline
+%		Hypercube Percentage (\texttt{hypercube\_req}) & To be determined \\ \hline
+%		Points Outside \texttt{CH\_PCA99} (\texttt{CHMP\_PCA99\_negative\_req}) & To be determined \\ \hline
+%		Points Outside \texttt{CH\_ambient} (\texttt{CHMP\_ambient\_negative\_req}) & To be determined \\ \hline
+%		Points Inside \texttt{CH\_ambient} (\texttt{CHMP\_ambient\_positive\_req}) & To be determined \\ \hline
+%	\end{tabular}
+%	\caption{\texttt{reqs\_results\_table}}
+%	\label{tab:reqs_results_table}
+%\end{table}
 %
-\begin{table}[h]
-	\centering
-	\begin{tabular}{|l|l|}
-		\hline
-		\rowcolor[HTML]{EFEFEF} 
-		\textbf{Parameter/Requirement} & \textbf{Comparison Requirement} \\ \hline
-		Hypercube Percentage (\texttt{hypercube\_req}) & To be determined \\ \hline
-		Points Outside \texttt{CH\_PCA99} (\texttt{CHMP\_PCA99\_negative\_req}) & To be determined \\ \hline
-		Points Outside \texttt{CH\_ambient} (\texttt{CHMP\_ambient\_negative\_req}) & To be determined \\ \hline
-		Points Inside \texttt{CH\_ambient} (\texttt{CHMP\_ambient\_positive\_req}) & To be determined \\ \hline
-	\end{tabular}
-	\caption{\texttt{reqs\_results\_table}}
-	\label{tab:reqs_results_table}
-\end{table}
-%
-\indent Output of \autoref{algo:tt-split} is depicted in \autoref{tab:geo_out}. This information has to be processed to complete \autoref{tab:reqs_results_table}. The first column identifies the test point inside the test set. The first seven columns show information of the voxel to which test point at column 1 belongs: voxel existence (determined by \texttt{min\_voxel\_size\_req}) and test-to-training, as well as training-to-training distances inside such voxel. The last three columns show the \textit{isolation level} of the test point inside its voxel using the aforementioned criteria. In this scale, if the test point is found to be outside the hypercube ($\text{CH}_{\text{PCA99}}$), then its position with respect to $\text{CH}_{\text{PCA99}}$ and $\text{CH}_{\text{ambient}}$ ($\text{CH}_{\text{ambient}}$) is not computed in the sake of computational efficiency.\\
+\indent Output of \autoref{algo:tt-split} is depicted in \autoref{tab:geo_out}. This information has to be processed to complete \autoref{tab:reqsresults}. The first column identifies the test point inside the test set. The first seven columns show information of the voxel to which test point at column 1 belongs: voxel existence (determined by \texttt{min\_voxel\_size\_req}) and test-to-training, as well as training-to-training distances inside such voxel. The last three columns show the \textit{isolation level} of the test point inside its voxel using the aforementioned criteria. In this scale, if the test point is found to be outside the hypercube ($\text{CH}_{\text{PCA99}}$), then its position with respect to $\text{CH}_{\text{PCA99}}$ and $\text{CH}_{\text{ambient}}$ ($\text{CH}_{\text{ambient}}$) is not computed in the sake of computational efficiency.\\
 %
 \begin{table}[htbp]
 	\centering
-	\captionof{table}{Output of \autoref{algo:tt-split}: \texttt{reqs\_results} table}
+	\captionof{table}{Output of \autoref{algo:tt-split}.}
 	\label{tab:geo_out}
 	\begin{minipage}{1\textwidth}
 		\centering
@@ -279,38 +279,45 @@ After completing the geometrical analysis for every point, the following specifi
 	\includegraphics[scale=\tabscale]{/home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/refTableVox.png}
 \end{table}
 %
-\indent Column data ''inside vox. hypercube'' of \autoref{tab:geo_out} have been rearranged for the sake of interpretability in \autoref{tab:outhypercube}. This table shows, for every voxel in which such points exits, the points which lie outside the training voxel hypercube. Similarly, \autoref{tab:outch} and \autoref{tab:outambient} show points lying inside hypercube but outside the voxel's convex hull in the PCA99 projection, and points lying outside the voxel's convex hull in ambient space but inside the convex hull in the PCA99 projection, respectively.\\
+\indent The first comparative study of train and test distributions is showed in \autoref{fig:histvoxels}. In this figure, a double histogram depicting both training and test voxel-size distributions is depicted.\\
+%
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=\textwidth]{/home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/vox_sizes_hist.png}
+	\caption{Double histogram of voxel sizes, for training and test sets}
+	\label{fig:histvoxels}
+\end{figure}
+%
+\indent Column data ''inside vox. hypercube'' of \autoref{tab:geo_out} have been rearranged for the sake of interpretability in \autoref{tab:outhypercube}. This table shows, for every voxel in which such points exits, the points which lie outside the training voxel hypercube. Similar tables could be made with the number of points belonging to the hypercube but not to the convex hull in a PCA99 projection, or with those points belonging to the convex hull in a PCA99 projection but not in ambient space.\\
+%
+\indent This information is used to check the following parameters and requqirements, which are stored in \autoref{tab:reqsresults}:
+%
+\begin{itemize}
+	\item Whether there are enough training samples inside each training subset is compared with \texttt{voxel\_size\_req}.
+	\item The percentage of test points inside the ranges of the training samples is to be compared with \texttt{hypercube\_req}.
+	\item The number of points inside the hypercube but outside \texttt{CH\_PCA99} is to be compared with \texttt{CHMP\_PCA99\_negative\_req}.
+	\item The number of points inside the hypercube and \texttt{CH\_PCA99} but outside \texttt{CH\_ambient} is to be compared to the requirement \texttt{CHMP\_ambient\_negative\_req}.
+	\item The total number of points inside \texttt{CH\_ambient} is to be compared to \texttt{CHMP\_ambient\_abs\_req}.
+	\item All these requirements are stored in \autoref{tab:reqsresults}.
+\end{itemize}
+%
 \begin{table}[!htb]
 	\centering
 	\captionof{table}{Points outside voxel hypercube}
 	\label{tab:outhypercube}
 	\includegraphics[scale=\tabscale]{/home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/outside_hypercube_c.png}
 \end{table}
-%
-\begin{table}[!htb]
-	\centering
-	\captionof{table}{Points outside voxel's PCA99 convex hull but inside hypercube}
-	\label{tab:outch}
-	\includegraphics[scale=\tabscale]{/home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/outside_CH_c.png}
-\end{table}
-%
-\begin{table}[!htb]
-	\centering
-	\captionof{table}{Points outside ambient space voxel's convex hull but inside PCA99 convex hull}
-	\label{tab:outambient}
-	\includegraphics[scale=\tabscale]{/home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/outside_ambient_c.png}
-\end{table}
-%
-\indent The information in \crefrange{tab:outhypercube}{tab:outambient} is used to complete \autoref{tab:reqs_results_table}. The\\
 % 
-\begin{figure}
+\begin{table}[!htb]
 	\centering
-	\includegraphics[scale=\tabscale]{/home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/coloreqs_c.png}
-	\caption{Output messages. Names of the requisites and their descriptions.}
-	\label{coloreqs}
-\end{figure}
-
-
+	\captionof{table}{\texttt{reqs\_results\_table}. The first and the last requirements compare absolute figures of points at some isolation level with the overall number of points. Whereas the second and third requirements compare the difference in number of points between two consecutive levels with the total number of points.}
+	\label{tab:reqsresults}
+	\includegraphics[scale=\tabscale]{/home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/reqs_table.png}
+\end{table}
+%
+\indent With the isolation level of test points analised, it is necessary to check wheter p-hacking is takin place. That is, whether test points are unrealistically close to train points, thus making the model evaluation flawed. This is measured using the Mann-Whitney U test\cite{rosner1999use}. In this test, the initial hypothesis H0 is that both distributions are the same. H1 is that the distribution underlying test-training distances is stochastically less than distribution underlying training-training distances, which would involve risk of p-hacking. H0 is rejected with a 95\% confidence. For the dataset of MSP-18, the resulting p-value is $p=0.9793$, thus the null hypothesis is not rejected and the dataset can be assumed to be free of p-hacking.\\
+%
+\indent To help (the engineer in charge) make a decission about the dataset split, another approach is developed, complementary to the geometrical analysis carried out so far. This approach is to focus on the statistical distributions of the train and the test datasets. 
 
 \clearpage
 \begin{table}[htbp]
