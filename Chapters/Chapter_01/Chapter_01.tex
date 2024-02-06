@@ -5,7 +5,7 @@
 %\indent This thesis is developed over a particular method of describing 
 %
 \section{Introduction}
-\subsection{Case of applicability}
+\subsection{Case of study}
 \indent For illustration of the proposed validation loop, a case of study has been used alongside the theoretical rationale of the loop to generate explanatory figures and tables and to give proof of the real operation of the loop.\\
 %
 \indent The case of study is an application of NN in aircraft stress engineering. For typical aircraft fuselage panel design, the dominant form of stiffened post buckling failure under shear loading is forced crippling\cite{bijlaard1955buckling}. This occurs when the shear buckles in the panel skin force the attached stiffener flanges to deform out-of-plane. There are other failure modes related to buckling, tension, and compression.\\
@@ -132,9 +132,15 @@ Examples of unsupervised applicability classifiers include:
 \end{figure}
 %
 \subsection{Overview}
-(Sin acentos) Recorrido sumario por las distintas partes del analisis estadistico (plantillas) centrandose en su funcion en vez de su funcionamiento tecnico. Explicacion de la arquitectura general de la validacion.  
+(Sin acentos) Recorrido sumario por las distintas partes del analisis estadistico (plantillas) centrandose en su funcion en vez de su funcionamiento tecnico. Explicacion de la arquitectura general de la validacion.\\ 
 \section{Train-test split}
 \subsection{Preliminaries}
+\begin{figure}[!b]
+	\centering
+	\includegraphics[width=0.8\textwidth]{/home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/tt_split_overview.png}
+	\caption{Location of the train-test split assessment in the overall validation pipeline}
+	\label{fig:esquemattsplit}
+\end{figure}
 \indent In supervised learning applications, the dataset is typically divided into the training and the testing sets. Keeping different sets for each task is fundamental in order to prevent model bias. Typical figures for the train-test split ratio are 80\%-20\%. When the model being trained is very large, a third dataset (the validation set) may be needed for comparing different hyperparameter configurations, in which case the split is typically done at 60\%-20\%-20\% for the train, test, and vaidation sets, resectively\cite[pp. 20-21]{Marsland2015Machine}.\\
 %
 \indent Training and evaluating the NN on the same dataset would result in the phenomenon called overfitting\cite[pp. 19-20]{Marsland2015Machine}, which basically consists of the NN fitting the noise in the training data and thus losing generalization capabilities.\\
@@ -144,18 +150,15 @@ Examples of unsupervised applicability classifiers include:
 \indent In the model validation loop, the first question that should be asked, even before training the model, is whether the dataset split is appropriate for training.\\
 %
 \indent For our case of applicability (MSP18, explicar en otra seccion), we suppose we have a dataset which has been split into a training set
-
 $${\cal S}_{\text{train}}=\{({\bf X^{tr}},{\bf Y^{tr}})_i\}_{i=1}^{N_{training}}$$
-
 and a test set
-
 $${\cal S}_{\text{test}}=\{({\bf X^{te}},{\bf Y^{te}})_i\}_{i=1}^{N_{test}},$$
-
 where ${\bf X}=(X_1,X_2,\dots,X_m)$ is the vector of input variables (also called feature vector), $m$ is the dimensionality of the input parameter space, and ${\bf Y}=(Y_1,Y_2,\dots,Y_q)$ is the vector of output variables, with dimensionality $q$. Individual variables $X_k$ can be numerical or categorical. For instance, for stress problems such as MSP-S18, we have a combination of numerical  (\eg external loads) and categorical (eg discrete geometrical variables such as ''Frame'' or ''Stringer'', and purely categorical such as ''dp''). Individual variables $Y_k$ describe the prediction and these are typically numerical (for stress problems such as MSP-S18, $q=6$ and these are so-called reserve factors, quantifying the failure likelihood of different failure modes).\\
 %
 \indent The aim of this section is to propose a set of tests to evaluate to which extent splitting fulfils the necessary conditions for the subsequent surrogate model ${\bf {Y}}={F}({\bf X})$ to be appropriately trained on ${\cal S}_{\text{train}}$ and tested on ${\cal S}_{\text{test}}$. This basically means the latter be in the applicability region of a model trained on the former, in order for the training-validation loop of the model to be coherent.\\
 %
 \subsection{Validation loop for the train-test split}
+\subsubsection{Geometrical analysis}
 \indent To address the applicability classification problem, points in the test set extremely far away from the training set (effectively outside applicability) need to be detected. If found, that would mean the train-test split is incorrect.\\
 %
 \indent There is a wide range of criteria for classifying a point inside or outside applicability. The proposed validation loop makes such analysis following a hierarchical flow. For each point in the test set a decision is made based on where that test set point lies with respect to the training set.\\
@@ -174,8 +177,7 @@ The step of the PCA projection is motivated by the curse of dimensionality, whic
 %
 \indent An additional check is to analyse whether p-hacking is happening, \ie whether the test set point is ''too close'' to an actual training point (or indeed equal to a training point), what would falsely induce low test error of the model. For this, we measure the distance of the test point to the closest point of the training subset. This information is later used to assess different aspects of potential p-hacking and its impact on the decision of train-test split correctness.\\
 %
-\indent The former procedure for classifying the applicability of test points is summarised in \autoref{algo:tt-split}.
-
+\indent The former procedure for classifying the applicability of test points is summarised in \autoref{algo:tt-split}.\\
 \begin{algorithm}
 	\caption{Train-test split geometrical analysis}
 	\label{algo:tt-split}
@@ -231,8 +233,6 @@ The step of the PCA projection is motivated by the curse of dimensionality, whic
 		}
 	}
 \end{algorithm}
-
-
 %After completing the geometrical analysis for every point, the following specific parameters and requirements are to be checked and stored in a subsequent table:
 %\begin{itemize}
 %	\item Whether there are enough training samples inside each training subset is compared with \texttt{voxel\_size\_req}.
@@ -258,7 +258,7 @@ The step of the PCA projection is motivated by the curse of dimensionality, whic
 %	\label{tab:reqs_results_table}
 %\end{table}
 %
-\indent Output of \autoref{algo:tt-split} is depicted in \autoref{tab:geo_out}. This information has to be processed to complete \autoref{tab:reqsresults}. The first column identifies the test point inside the test set. The first seven columns show information of the voxel to which test point at column 1 belongs: voxel existence (determined by \texttt{min\_voxel\_size\_req}) and test-to-training, as well as training-to-training distances inside such voxel. The last three columns show the \textit{isolation level} of the test point inside its voxel using the aforementioned criteria. In this scale, if the test point is found to be outside the hypercube ($\text{CH}_{\text{PCA99}}$), then its position with respect to $\text{CH}_{\text{PCA99}}$ and $\text{CH}_{\text{ambient}}$ ($\text{CH}_{\text{ambient}}$) is not computed in the sake of computational efficiency.\\
+\indent Output of \autoref{algo:tt-split} is depicted in \autoref{tab:geo_out}. This information has to be processed to complete \autoref{tab:reqsresults}. The first column identifies the test point inside the test set. The next three columns show information about the corresponding voxel: existance, identification and size. Columns 5 to 7 show information related to pointwise distances inside the voxel. The last three columns show the relative position of the test point inside the voxel (inside the hypercube/convex hull in PCA99/convex hull in ambient space). In this algorithm, if the test point is found to be outside the hypercube ($\text{CH}_{\text{PCA99}}$), then its position with respect to $\text{CH}_{\text{PCA99}}$ and $\text{CH}_{\text{ambient}}$ ($\text{CH}_{\text{ambient}}$) is not computed in the sake of computational efficiency.\\
 %
 \begin{table}[htbp]
 	\centering
@@ -270,7 +270,7 @@ The step of the PCA projection is motivated by the curse of dimensionality, whic
 	\end{minipage}
 \end{table}
 %
-\indent To better understand the voxel classification system, a reference of their categorical variables is given in \autoref{tab:voxref}. Points inside each voxel all have the same categorical values, which effectively acts as an identifyer for the voxel. We see each voxels represents a different stringer section between two frames, plus the categorical variable ''np'' which can take the values either 0 or 0.9.\\
+\indent To better understand how the voxels are computed, a reference of their categorical variables is given in \autoref{tab:voxref}. Points inside each voxel all have the same categorical values, which effectively act as a unique identifyer for the voxel. We see each voxel represents a different stringer section between two concrete frames, plus the categorical variable ''np'' which can take the values either $0$ or $0.9$.\\
 %
 \begin{table}[!htb]
 	\centering
@@ -279,25 +279,16 @@ The step of the PCA projection is motivated by the curse of dimensionality, whic
 	\includegraphics[scale=\tabscale]{/home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/refTableVox.png}
 \end{table}
 %
-\indent The first comparative study of train and test distributions is showed in \autoref{fig:histvoxels}. In this figure, a double histogram depicting both training and test voxel-size distributions is depicted.\\
+\indent Data in the column ''inside vox. hypercube'' of \autoref{tab:geo_out} has been rearranged for the sake of interpretability in \autoref{tab:outhypercube}. This table shows the points which lie outside the training voxel hypercube for every voxel where such points exist. Similar tables could be arranged with the number of points belonging to the hypercube but not to the convex hull in a PCA99 projection, or with those points belonging to the convex hull in a PCA99 projection but not in ambient space.\\
 %
-\begin{figure}[!htb]
-	\centering
-	\includegraphics[width=\textwidth]{/home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/vox_sizes_hist.png}
-	\caption{Double histogram of voxel sizes, for training and test sets}
-	\label{fig:histvoxels}
-\end{figure}
-%
-\indent Column data ''inside vox. hypercube'' of \autoref{tab:geo_out} have been rearranged for the sake of interpretability in \autoref{tab:outhypercube}. This table shows, for every voxel in which such points exits, the points which lie outside the training voxel hypercube. Similar tables could be made with the number of points belonging to the hypercube but not to the convex hull in a PCA99 projection, or with those points belonging to the convex hull in a PCA99 projection but not in ambient space.\\
-%
-\indent This information is used to check the following parameters and requqirements, which are stored in \autoref{tab:reqsresults}:
+\indent This information is used to check the following parameters and requirements, which are stored in \autoref{tab:reqsresults}:
 %
 \begin{itemize}
 	\item Whether there are enough training samples inside each training subset is compared with \texttt{voxel\_size\_req}.
-	\item The percentage of test points inside the ranges of the training samples is to be compared with \texttt{hypercube\_req}.
-	\item The number of points inside the hypercube but outside \texttt{CH\_PCA99} is to be compared with \texttt{CHMP\_PCA99\_negative\_req}.
-	\item The number of points inside the hypercube and \texttt{CH\_PCA99} but outside \texttt{CH\_ambient} is to be compared to the requirement \texttt{CHMP\_ambient\_negative\_req}.
-	\item The total number of points inside \texttt{CH\_ambient} is to be compared to \texttt{CHMP\_ambient\_abs\_req}.
+	\item The percentage of test points inside the ranges of the training samples is compared with \texttt{hypercube\_req}.
+	\item The number of points inside the hypercube but outside \texttt{CH\_PCA99} is compared with \texttt{CHMP\_PCA99\_negative\_req}.
+	\item The number of points inside the hypercube and \texttt{CH\_PCA99} but outside \texttt{CH\_ambient} is compared to the requirement \texttt{CHMP\_ambient\_negative\_req}.
+	\item The total number of points inside \texttt{CH\_ambient} is compared to \texttt{CHMP\_ambient\_abs\_req}.
 	\item All these requirements are stored in \autoref{tab:reqsresults}.
 \end{itemize}
 %
@@ -315,9 +306,81 @@ The step of the PCA projection is motivated by the curse of dimensionality, whic
 	\includegraphics[scale=\tabscale]{/home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/reqs_table.png}
 \end{table}
 %
-\indent With the isolation level of test points analised, it is necessary to check wheter p-hacking is takin place. That is, whether test points are unrealistically close to train points, thus making the model evaluation flawed. This is measured using the Mann-Whitney U test\cite{rosner1999use}. In this test, the initial hypothesis H0 is that both distributions are the same. H1 is that the distribution underlying test-training distances is stochastically less than distribution underlying training-training distances, which would involve risk of p-hacking. H0 is rejected with a 95\% confidence. For the dataset of MSP-18, the resulting p-value is $p=0.9793$, thus the null hypothesis is not rejected and the dataset can be assumed to be free of p-hacking.\\
+\indent Having analised the isolation level of test points, it is necessary to check wheter p-hacking is taking place. That is, whether test points are unrealistically close to train points, thus making the model evaluation flawed. This is measured using the Mann-Whitney U test\cite{rosner1999use}. In this test, the initial hypothesis H0 is that both distributions are the same. H1 is that the distribution underlying test-training distances is stochastically less than distribution underlying training-training distances, which would involve risk of p-hacking. H0 is rejected only with a 95\% confidence. For instance, for the dataset of MSP-18, the resulting p-value is $p=0.9793$, thus the null hypothesis is not rejected and the dataset can be assumed to be free of p-hacking.\\
 %
-\indent To help (the engineer in charge) make a decission about the dataset split, another approach is developed, complementary to the geometrical analysis carried out so far. This approach is to focus on the statistical distributions of the train and the test datasets. 
+\subsubsection{Non-geometrical analysis}
+\indent To help (the engineer in charge) make a decission about the dataset split, another approach is developed, complementary to the geometrical analysis carried out so far. This approach consists of focusing on the statistical distributions of the train and the test datasets. A proper train-test split is characterised by similar statistical distributions of both sets (test and training)\cite{bonnasse2022interpolation}. When this cannot be achieved, a softer requirement is that each of the feature variables $X_i$ need to have reasonably similar marginal distributions in the training and the test set.\\
+%
+\indent The following analysis checks whether, for each individual input feature, the distribution of the training and test set is reasonably similar. This is also checked for the output variables (the ground true ones, thus this is independent from the surrogate model). Finally, the splitting can be done locally, \ie region by region, by binning each numerical variable. The implementation of this analysis tackles each input variable $X_i$ independently and for each input variable, it compares the training and the test set such that:\\
+\begin{itemize}
+	\item If the variable $X_i$ is `categorical`: both (train and test) categorical frequency distributions are plotted (\autoref{fig:inputscatdhist}), a 2-sample $\chi^2$ test\cite[p. 431]{velez1994calculo} is performed, and the p-value of such test is introduced in \autoref{tab:pvalin}.
+	\item If the variable $X_i$ is numerical: both (train and test) numerical frequency distributions are plotted (\autoref{fig:inputsdhist}), a 2-sample Kolmogorov-Smirnov test\cite[p. 454]{velez1994calculo} is carried out, and the p-value of such test is introduced in the same table.
+\end{itemize}
+%
+\indent The null hypothesis for both tests is that both train and test distributions are the same. H0 is only rejected with a 95\% confidence.\\
+%
+\begin{table}[!htb]
+	\centering
+	\captionof{table}{P-values of the input variables. The test performed is a 2-sample Kolmogorov-Smirnov or a 2-sample $\chi^2$ test, depending on the data being numerical (first 19 rows) or categorical (''dp'', ''Frame'' and ''Stringer'').}
+	\label{tab:pvalin}
+	\includegraphics[scale=\tabscale]{/home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/pvalues_input.png}
+\end{table}
+%
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=\textwidth]{/home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/inputs_dhist.png}
+	\caption{Input [numeric] variables distributions double histogram. Only the first four input variables have been plotted.}
+	\label{fig:inputsdhist}
+\end{figure}
+%
+\begin{figure}[!htb]
+	\centering
+	\begin{subfigure}{\textwidth}
+		\centering
+		\includegraphics[width=0.8\textwidth]{/home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/inputs_cat_dhist.png}
+	\end{subfigure}
+	
+%	\vspace{1cm} % Espacio vertical entre las subfiguras
+	
+	\begin{subfigure}{\textwidth}
+		\centering
+		\includegraphics[width=0.8\textwidth]{/home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/inputs_str_dhist.png}
+	\end{subfigure}
+	\caption{Input categorical variables distributions double histograms}
+	\label{fig:inputscatdhist}
+\end{figure}
+%
+\indent As stated earlier, applicability is not only a matter of the \textit{input} space, but also of the \textit{output} space. The 2-sample Kolmogorov-Smirnov test has been performed again on each of the six output variables. The p-values and their statistical distributions are depicted in \autoref{tab:pvalout} and \autoref{fig:outputsdhist}, respectively.\\
+%
+\begin{table}[!htb]
+	\centering
+	\captionof{table}{P-values of the output variables distributions}
+	\label{tab:pvalout}
+	\includegraphics[scale=\tabscale]{/home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/pvalues_outputs.png}
+\end{table}
+%
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=\textwidth]{/home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/outputs_num_dhist.png}
+	\caption{Output variables distributions double histograms}
+	\label{fig:outputsdhist}
+\end{figure}
+%
+\subsubsection{Train-test split. Conclusions}
+\indent The proposed validation loop for the train-test split focuses, on the one hand, on the applicability classification problem, which makes use of a geometrical analysis which classifies test points at different levels of isolation. A series of requirements are defined based on the proportions of such isolated points. Plus, p-hacking is checked. The output of this analysis is showed in \autoref{fig:coloreqs_table}.\\
+%
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[scale=\tabscale]{/home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/colorequirements.png}
+	\caption{Requirements of the geometrical analysis}
+	\label{fig:coloreqs_table}
+\end{figure}
+\indent On the other hand, the distributions of both input and output variables in the training set are checked to be reasonably similar to that of the test set. The main outputs are the p-values shown at \autoref{tab:pvalin} and \autoref{tab:pvalout}.\\
+%
+\indent Of course, any given dataset may meet some of the requirements, but not all (as is the case with the MSP-18 dataset). The engineer in charge should evaluate the ensemble output and decide whether it is necessary to redo the split completely or partially, depending on data availability.
+
+
+
 
 \clearpage
 \begin{table}[htbp]
@@ -339,14 +402,14 @@ The step of the PCA projection is motivated by the curse of dimensionality, whic
 \end{table}
 
 
-\begin{minipage}[t]{0.4\linewidth}
-	\raggedright
-	\includegraphics[scale=\tabscale]{/home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/refTableVox2.png}
-\end{minipage}\hfill
-\begin{minipage}[t]{0.4\linewidth}
-	\raggedleft
-	\includegraphics[scale=\tabscale]{/home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/refTableVox.png}
-\end{minipage}
+%\begin{minipage}[t]{0.4\linewidth}
+%	\raggedright
+%	\includegraphics[scale=\tabscale]{/home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/refTableVox2.png}
+%\end{minipage}\hfill
+%\begin{minipage}[t]{0.4\linewidth}
+%	\raggedleft
+%	\includegraphics[scale=\tabscale]{/home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/refTableVox.png}
+%\end{minipage}
 
 
 \indent The first step is check whether the train and test datasets follow the same empirical distributions. If test data is found to not follow the same distribution as the train data, the evaluation of the model would be biased or the test data would be outside input applicability. Take, for instance, the extreme case in which the statistical distribution for some input numerical variable follows a uniform distribution $x_{train} \sim U(a_1,a_2)$ whereas the same input variable in the test dataset follows another distribution $x_{test} \sim U(b_1,b_2)$ where $b_1 \leq a_2$. Clearly, $x_{test}$ is outside the hypercube spanned by $x_{train}$ and is outside the applicability region as a consequence.

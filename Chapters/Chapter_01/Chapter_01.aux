@@ -9,7 +9,7 @@
 \newlabel{chap:Chap_1}{{1}{1}{The Validation Loop}{chapter.1}{}}
 \newlabel{chap:Chap_1@cref}{{[chapter][1][]1}{[1][1][]1}}
 \@writefile{toc}{\contentsline {section}{\numberline {1.1}Introduction}{1}{section.1.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {1.1.1}Case of applicability}{1}{subsection.1.1.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.1.1}Case of study}{1}{subsection.1.1.1}\protected@file@percent }
 \@writefile{lof}{\contentsline {figure}{\numberline {1.1}{\ignorespaces Surrogate model pipeline\relax }}{2}{figure.caption.9}\protected@file@percent }
 \providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
 \newlabel{fig:diagrama_cajas}{{1.1}{2}{Surrogate model pipeline\relax }{figure.caption.9}{}}
@@ -28,54 +28,75 @@
 \newlabel{fig:policonex@cref}{{[figure][3][1]1.3}{[1][4][]5}}
 \@writefile{toc}{\contentsline {section}{\numberline {1.2}Train-test split}{5}{section.1.2}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {1.2.1}Preliminaries}{5}{subsection.1.2.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {1.2.2}Validation loop for the train-test split}{6}{subsection.1.2.2}\protected@file@percent }
-\pp@spagectr{FN@totalid}{1}{1}{7}
+\@writefile{lof}{\contentsline {figure}{\numberline {1.4}{\ignorespaces Location of the train-test split assessment in the overall validation pipeline\relax }}{5}{figure.caption.12}\protected@file@percent }
+\newlabel{fig:esquemattsplit}{{1.4}{5}{Location of the train-test split assessment in the overall validation pipeline\relax }{figure.caption.12}{}}
+\newlabel{fig:esquemattsplit@cref}{{[figure][4][1]1.4}{[1][5][]5}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.2.2}Validation loop for the train-test split}{7}{subsection.1.2.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {1.2.2.1}Geometrical analysis}{7}{subsubsection.1.2.2.1}\protected@file@percent }
+\pp@spagectr{FN@totalid}{1}{1}{8}
 \@writefile{loa}{\contentsline {algocf}{\numberline {1}{\ignorespaces Train-test split geometrical analysis\relax }}{9}{algocf.1}\protected@file@percent }
-\newlabel{algo:tt-split}{{1}{9}{Validation loop for the train-test split}{algocf.1}{}}
-\newlabel{algo:tt-split@cref}{{[algorithm][1][]1}{[1][8][]9}}
-\@writefile{lot}{\contentsline {table}{\numberline {1.1}{\ignorespaces Output of \autoref  {algo:tt-split}.\relax }}{10}{table.caption.13}\protected@file@percent }
-\newlabel{tab:geo_out}{{1.1}{10}{Output of \autoref {algo:tt-split}.\relax }{table.caption.13}{}}
-\newlabel{tab:geo_out@cref}{{[table][1][1]1.1}{[1][8][]10}}
-\@writefile{lot}{\contentsline {table}{\numberline {1.2}{\ignorespaces Voxel reference table\relax }}{10}{table.caption.14}\protected@file@percent }
-\newlabel{tab:voxref}{{1.2}{10}{Voxel reference table\relax }{table.caption.14}{}}
-\newlabel{tab:voxref@cref}{{[table][2][1]1.2}{[1][8][]10}}
-\@writefile{lof}{\contentsline {figure}{\numberline {1.4}{\ignorespaces Double histogram of voxel sizes, for training and test sets\relax }}{11}{figure.caption.15}\protected@file@percent }
-\newlabel{fig:histvoxels}{{1.4}{11}{Double histogram of voxel sizes, for training and test sets\relax }{figure.caption.15}{}}
-\newlabel{fig:histvoxels@cref}{{[figure][4][1]1.4}{[1][8][]11}}
+\newlabel{algo:tt-split}{{1}{9}{Geometrical analysis}{algocf.1}{}}
+\newlabel{algo:tt-split@cref}{{[algorithm][1][]1}{[1][7][]9}}
+\@writefile{lot}{\contentsline {table}{\numberline {1.1}{\ignorespaces Output of \autoref  {algo:tt-split}.\relax }}{10}{table.caption.14}\protected@file@percent }
+\newlabel{tab:geo_out}{{1.1}{10}{Output of \autoref {algo:tt-split}.\relax }{table.caption.14}{}}
+\newlabel{tab:geo_out@cref}{{[table][1][1]1.1}{[1][7][]10}}
+\@writefile{lot}{\contentsline {table}{\numberline {1.2}{\ignorespaces Voxel reference table\relax }}{11}{table.caption.15}\protected@file@percent }
+\newlabel{tab:voxref}{{1.2}{11}{Voxel reference table\relax }{table.caption.15}{}}
+\newlabel{tab:voxref@cref}{{[table][2][1]1.2}{[1][7][]11}}
 \@writefile{lot}{\contentsline {table}{\numberline {1.3}{\ignorespaces Points outside voxel hypercube\relax }}{12}{table.caption.16}\protected@file@percent }
 \newlabel{tab:outhypercube}{{1.3}{12}{Points outside voxel hypercube\relax }{table.caption.16}{}}
 \newlabel{tab:outhypercube@cref}{{[table][3][1]1.3}{[1][11][]12}}
 \@writefile{lot}{\contentsline {table}{\numberline {1.4}{\ignorespaces \texttt  {reqs\_results\_table}. The first and the last requirements compare absolute figures of points at some isolation level with the overall number of points. Whereas the second and third requirements compare the difference in number of points between two consecutive levels with the total number of points.\relax }}{12}{table.caption.17}\protected@file@percent }
 \newlabel{tab:reqsresults}{{1.4}{12}{\texttt {reqs\_results\_table}. The first and the last requirements compare absolute figures of points at some isolation level with the overall number of points. Whereas the second and third requirements compare the difference in number of points between two consecutive levels with the total number of points.\relax }{table.caption.17}{}}
 \newlabel{tab:reqsresults@cref}{{[table][4][1]1.4}{[1][11][]12}}
-\@writefile{lot}{\contentsline {table}{\numberline {1.5}{\ignorespaces Output of \autoref  {algo:tt-split}: \texttt  {reqs\_results} table\relax }}{14}{table.caption.18}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {1.6}{\ignorespaces Voxel reference table. Lorem ipsum dolor sit amet, consectetuer adisciping elit.\relax }}{15}{table.caption.19}\protected@file@percent }
-\newlabel{def:orden1}{{2}{15}{}{definition.2}{}}
-\newlabel{def:orden1@cref}{{[definition][2][]2}{[1][15][]15}}
-\@writefile{toc}{\contentsline {section}{\numberline {1.3}Las movidas de Rodrigo}{16}{section.1.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {1.3.1}Concept: System dynamics.}{16}{subsection.1.3.1}\protected@file@percent }
-\newlabel{eqCh1:Problem_def}{{1.2}{16}{Concept: System dynamics}{equation.1.3.2}{}}
-\newlabel{eqCh1:Problem_def@cref}{{[equation][2][1]1.2}{[1][16][]16}}
-\newlabel{eqCh1:STM_1}{{1.3}{16}{Concept: System dynamics}{equation.1.3.3}{}}
-\newlabel{eqCh1:STM_1@cref}{{[equation][3][1]1.3}{[1][16][]16}}
-\newlabel{eqCh1:STM_2}{{1.4}{17}{Concept: System dynamics}{equation.1.3.4}{}}
-\newlabel{eqCh1:STM_2@cref}{{[equation][4][1]1.4}{[1][16][]17}}
-\newlabel{eqCh1:STM_decomp}{{1.5}{17}{Concept: System dynamics}{equation.1.3.5}{}}
-\newlabel{eqCh1:STM_decomp@cref}{{[equation][5][1]1.5}{[1][17][]17}}
-\newlabel{eqCh1:STM_prop}{{1.6}{17}{Concept: System dynamics}{equation.1.3.6}{}}
-\newlabel{eqCh1:STM_prop@cref}{{[equation][6][1]1.6}{[1][17][]17}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {1.3.2}Applications of STMs in celestial mechanics.}{18}{subsection.1.3.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{\leavevmode {\color  {GMVred}A.} \myul [GMVred]{Precise Orbit Determination.}\\}{18}{subsection.1.3.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{\leavevmode {\color  {GMVred}B.} \myul [GMVred]{Guidance, Navigation and Control (GNC).} \\}{18}{subsection.1.3.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{\leavevmode {\color  {GMVred}C.} \myul [GMVred]{Orbit design.} \\}{18}{subsection.1.3.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{\leavevmode {\color  {GMVred}D.} \myul [GMVred]{Covariance matrix propagation.} \\}{19}{subsection.1.3.2}\protected@file@percent }
-\newlabel{eqCh1:P_est}{{1.7}{20}{\GMVred {D.} \myul [GMVred]{Covariance matrix propagation.} \\}{equation.1.3.7}{}}
-\newlabel{eqCh1:P_est@cref}{{[equation][7][1]1.7}{[1][19][]20}}
-\@writefile{lof}{\contentsline {figure}{\numberline {1.5}{\ignorespaces Covariance ellipsoid evolution along a radial hop.\relax }}{20}{figure.caption.26}\protected@file@percent }
-\newlabel{figCh1:Covariance_segment}{{1.5}{20}{Covariance ellipsoid evolution along a radial hop.\relax }{figure.caption.26}{}}
-\newlabel{figCh1:Covariance_segment@cref}{{[figure][5][1]1.5}{[1][20][]20}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {1.2.2.2}Non-geometrical analysis}{13}{subsubsection.1.2.2.2}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {1.5}{\ignorespaces P-values of the input variables. The test performed is a 2-sample Kolmogorov-Smirnov or a 2-sample $\chi ^2$ test, depending on the data being numerical (first 19 rows) or categorical (''dp'', ''Frame'' and ''Stringer'').\relax }}{14}{table.caption.18}\protected@file@percent }
+\newlabel{tab:pvalin}{{1.5}{14}{P-values of the input variables. The test performed is a 2-sample Kolmogorov-Smirnov or a 2-sample $\chi ^2$ test, depending on the data being numerical (first 19 rows) or categorical (''dp'', ''Frame'' and ''Stringer'').\relax }{table.caption.18}{}}
+\newlabel{tab:pvalin@cref}{{[table][5][1]1.5}{[1][13][]14}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {1.2.2.3}Train-test split. Conclusions}{14}{subsubsection.1.2.2.3}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {1.5}{\ignorespaces Input [numeric] variables distributions double histogram. Only the first four input variables have been plotted.\relax }}{15}{figure.caption.19}\protected@file@percent }
+\newlabel{fig:inputsdhist}{{1.5}{15}{Input [numeric] variables distributions double histogram. Only the first four input variables have been plotted.\relax }{figure.caption.19}{}}
+\newlabel{fig:inputsdhist@cref}{{[figure][5][1]1.5}{[1][13][]15}}
+\@writefile{lot}{\contentsline {table}{\numberline {1.6}{\ignorespaces P-values of the output variables distributions\relax }}{15}{table.caption.21}\protected@file@percent }
+\newlabel{tab:pvalout}{{1.6}{15}{P-values of the output variables distributions\relax }{table.caption.21}{}}
+\newlabel{tab:pvalout@cref}{{[table][6][1]1.6}{[1][13][]15}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1.6}{\ignorespaces Input categorical variables distributions double histograms\relax }}{16}{figure.caption.20}\protected@file@percent }
+\newlabel{fig:inputscatdhist}{{1.6}{16}{Input categorical variables distributions double histograms\relax }{figure.caption.20}{}}
+\newlabel{fig:inputscatdhist@cref}{{[figure][6][1]1.6}{[1][13][]16}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1.7}{\ignorespaces Output variables distributions double histograms\relax }}{16}{figure.caption.22}\protected@file@percent }
+\newlabel{fig:outputsdhist}{{1.7}{16}{Output variables distributions double histograms\relax }{figure.caption.22}{}}
+\newlabel{fig:outputsdhist@cref}{{[figure][7][1]1.7}{[1][13][]16}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1.8}{\ignorespaces Requirements of the geometrical analysis\relax }}{17}{figure.caption.23}\protected@file@percent }
+\newlabel{fig:coloreqs_table}{{1.8}{17}{Requirements of the geometrical analysis\relax }{figure.caption.23}{}}
+\newlabel{fig:coloreqs_table@cref}{{[figure][8][1]1.8}{[1][13][]17}}
+\@writefile{lot}{\contentsline {table}{\numberline {1.7}{\ignorespaces Output of \autoref  {algo:tt-split}: \texttt  {reqs\_results} table\relax }}{18}{table.caption.24}\protected@file@percent }
+\newlabel{def:orden1}{{2}{18}{}{definition.2}{}}
+\newlabel{def:orden1@cref}{{[definition][2][]2}{[1][18][]18}}
+\@writefile{lot}{\contentsline {table}{\numberline {1.8}{\ignorespaces Voxel reference table. Lorem ipsum dolor sit amet, consectetuer adisciping elit.\relax }}{19}{table.caption.25}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {1.3}Las movidas de Rodrigo}{20}{section.1.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.3.1}Concept: System dynamics.}{20}{subsection.1.3.1}\protected@file@percent }
+\newlabel{eqCh1:Problem_def}{{1.2}{20}{Concept: System dynamics}{equation.1.3.2}{}}
+\newlabel{eqCh1:Problem_def@cref}{{[equation][2][1]1.2}{[1][20][]20}}
+\newlabel{eqCh1:STM_1}{{1.3}{20}{Concept: System dynamics}{equation.1.3.3}{}}
+\newlabel{eqCh1:STM_1@cref}{{[equation][3][1]1.3}{[1][20][]20}}
+\newlabel{eqCh1:STM_2}{{1.4}{21}{Concept: System dynamics}{equation.1.3.4}{}}
+\newlabel{eqCh1:STM_2@cref}{{[equation][4][1]1.4}{[1][20][]21}}
+\newlabel{eqCh1:STM_decomp}{{1.5}{21}{Concept: System dynamics}{equation.1.3.5}{}}
+\newlabel{eqCh1:STM_decomp@cref}{{[equation][5][1]1.5}{[1][21][]21}}
+\newlabel{eqCh1:STM_prop}{{1.6}{21}{Concept: System dynamics}{equation.1.3.6}{}}
+\newlabel{eqCh1:STM_prop@cref}{{[equation][6][1]1.6}{[1][21][]21}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.3.2}Applications of STMs in celestial mechanics.}{22}{subsection.1.3.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{\leavevmode {\color  {GMVred}A.} \myul [GMVred]{Precise Orbit Determination.}\\}{22}{subsection.1.3.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{\leavevmode {\color  {GMVred}B.} \myul [GMVred]{Guidance, Navigation and Control (GNC).} \\}{22}{subsection.1.3.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{\leavevmode {\color  {GMVred}C.} \myul [GMVred]{Orbit design.} \\}{22}{subsection.1.3.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{\leavevmode {\color  {GMVred}D.} \myul [GMVred]{Covariance matrix propagation.} \\}{23}{subsection.1.3.2}\protected@file@percent }
+\newlabel{eqCh1:P_est}{{1.7}{24}{\GMVred {D.} \myul [GMVred]{Covariance matrix propagation.} \\}{equation.1.3.7}{}}
+\newlabel{eqCh1:P_est@cref}{{[equation][7][1]1.7}{[1][23][]24}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1.9}{\ignorespaces Covariance ellipsoid evolution along a radial hop.\relax }}{24}{figure.caption.32}\protected@file@percent }
+\newlabel{figCh1:Covariance_segment}{{1.9}{24}{Covariance ellipsoid evolution along a radial hop.\relax }{figure.caption.32}{}}
+\newlabel{figCh1:Covariance_segment@cref}{{[figure][9][1]1.9}{[1][24][]24}}
 \@setckpt{Chapters/Chapter_01/Chapter_01}{
-\setcounter{page}{22}
+\setcounter{page}{26}
 \setcounter{equation}{7}
 \setcounter{enumi}{0}
 \setcounter{enumii}{0}
@@ -90,8 +111,8 @@
 \setcounter{subsubsection}{0}
 \setcounter{paragraph}{0}
 \setcounter{subparagraph}{0}
-\setcounter{figure}{5}
-\setcounter{table}{6}
+\setcounter{figure}{9}
+\setcounter{table}{8}
 \setcounter{LT@tables}{0}
 \setcounter{LT@chunks}{0}
 \setcounter{theorem}{0}
@@ -118,7 +139,7 @@
 \setcounter{citetotal}{0}
 \setcounter{multicitecount}{0}
 \setcounter{multicitetotal}{0}
-\setcounter{instcount}{26}
+\setcounter{instcount}{29}
 \setcounter{maxnames}{3}
 \setcounter{minnames}{1}
 \setcounter{maxitems}{3}
@@ -142,7 +163,7 @@
 \setcounter{parenlevel}{0}
 \setcounter{blx@maxsection}{0}
 \setcounter{blx@maxsegment@0}{0}
-\setcounter{blx@sectionciteorder@0}{22}
+\setcounter{blx@sectionciteorder@0}{25}
 \setcounter{mincomprange}{10}
 \setcounter{maxcomprange}{100000}
 \setcounter{mincompwidth}{1}
