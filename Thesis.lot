@@ -7,7 +7,7 @@
 \contentsline {xchapter}{Introduction.}{xv}{chapter*.8}%
 \addvspace {10\p@ }
 \contentsline {xchapter}{The Validation Loop}{1}{chapter.1}%
-\contentsline {table}{\numberline {1.1}{\ignorespaces Output of \autoref {algo:tt-split}.\relax }}{10}{table.caption.14}%
+\contentsline {table}{\numberline {1.1}{\ignorespaces Output of \autoref {algo:tt-split}.\relax }}{11}{table.caption.14}%
 \contentsline {table}{\numberline {1.2}{\ignorespaces Voxel reference table\relax }}{11}{table.caption.15}%
 \contentsline {table}{\numberline {1.3}{\ignorespaces Points outside voxel hypercube\relax }}{12}{table.caption.16}%
 \contentsline {table}{\numberline {1.4}{\ignorespaces \texttt {reqs\_results\_table}. The first and the last requirements compare absolute figures of points at some isolation level with the overall number of points. Whereas the second and third requirements compare the difference in number of points between two consecutive levels with the total number of points.\relax }}{12}{table.caption.17}%

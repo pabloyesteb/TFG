@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.10.19)  6 FEB 2024 20:36
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.10.19)  8 FEB 2024 15:53
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2352,7 +2352,12 @@ Chapter 1.
 
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 78--79
+Underfull \hbox (badness 10000) in paragraph at lines 70--71
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 79--80
 
  []
 
@@ -2365,20 +2370,17 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [2]
-Underfull \hbox (badness 10000) in paragraph at lines 91--94
+Underfull \hbox (badness 10000) in paragraph at lines 93--96
 
  []
 
 
-Package hyperref Warning: No autoref name for `definition' on input line 96.
+Package hyperref Warning: No autoref name for `definition' on input line 98.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 95--97
+Underfull \hbox (badness 10000) in paragraph at lines 97--99
 
  []
-
-
-Package hyperref Warning: No autoref name for `definition' on input line 107.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2389,18 +2391,31 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [3]
-<Figures/hipercubo.png, id=334, 286.9119pt x 299.9205pt>
+
+Package hyperref Warning: No autoref name for `definition' on input line 109.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 115--116
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 122--123
+
+ []
+
+<Figures/hipercubo.png, id=333, 286.9119pt x 299.9205pt>
 File: Figures/hipercubo.png Graphic file (type png)
 <use Figures/hipercubo.png>
-Package pdftex.def Info: Figures/hipercubo.png  used on input line 122.
+Package pdftex.def Info: Figures/hipercubo.png  used on input line 128.
 (pdftex.def)             Requested size: 182.09485pt x 190.35129pt.
-<Figures/policon.png, id=335, 286.1892pt x 299.1978pt>
+<Figures/policon.png, id=334, 286.1892pt x 299.1978pt>
 File: Figures/policon.png Graphic file (type png)
 <use Figures/policon.png>
-Package pdftex.def Info: Figures/policon.png  used on input line 128.
+Package pdftex.def Info: Figures/policon.png  used on input line 134.
 (pdftex.def)             Requested size: 182.09485pt x 190.37196pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 135--136
+Underfull \hbox (badness 10000) in paragraph at lines 141--142
 
  []
 
@@ -2414,17 +2429,14 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [4]
 </home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/tt_split_overview.png, id=
-342, 843.15pt x 632.3625pt>
+345, 843.15pt x 632.3625pt>
 File: /home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/tt_split_overview.png
  Graphic file (type png)
 <use /home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/tt_split_overview.png>
 
 Package pdftex.def Info: /home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/tt
-_split_overview.png  used on input line 140.
+_split_overview.png  used on input line 146.
 (pdftex.def)             Requested size: 364.19664pt x 273.14566pt.
-
-Overfull \vbox (10.73337pt too high) has occurred while \output is active []
-
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2434,9 +2446,8 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[5 <./Figures/hipercubo.png> <./Figures/policon.png> </home/pablo/Documentos/TF
-GP/Thesis/Figures/tt-split/tt_split_overview.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 155--160
+[5 <./Figures/hipercubo.png> <./Figures/policon.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 161--166
 
  []
 
@@ -2452,22 +2463,21 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[6]
+[6 </home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/tt_split_overview.png>]
 File: /home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/geo.png Graphic file 
 (type png)
 <use /home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/geo.png>
 Package pdftex.def Info: /home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/ge
-o.png  used on input line 269.
+o.png  used on input line 275.
 (pdftex.def)             Requested size: 455.24408pt x 281.17464pt.
-</home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/refTableVox.png, id=366, 3
+</home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/refTableVox.png, id=370, 3
 65.365pt x 691.58376pt>
 File: /home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/refTableVox.png Graph
 ic file (type png)
 <use /home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/refTableVox.png>
 Package pdftex.def Info: /home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/re
-fTableVox.png  used on input line 279.
+fTableVox.png  used on input line 285.
 (pdftex.def)             Requested size: 147.69325pt x 279.56224pt.
-
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -2486,6 +2496,34 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [8]
+Overfull \hbox (89.16176pt too wide) in paragraph at lines 295--296
+[]\OT1/cmr/m/n/10.95 The num-ber of points in-side the hy-per-cube but out-side
+ \OT1/cmtt/m/n/10.95 CH[]PCA99 \OT1/cmr/m/n/10.95 is com-pared with \OT1/cmtt/m
+/n/10.95 CHMP[]PCA99[]negative[]req\OT1/cmr/m/n/10.95 . 
+ []
+
+</home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/outside_hypercube_c.png, i
+d=388, 960.58875pt x 1004.75375pt>
+File: /home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/outside_hypercube_c.p
+ng Graphic file (type png)
+<use /home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/outside_hypercube_c.pn
+g>
+Package pdftex.def Info: /home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/ou
+tside_hypercube_c.png  used on input line 305.
+(pdftex.def)             Requested size: 388.30344pt x 406.15648pt.
+</home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/reqs_table.png, id=389, 80
+8.01875pt x 242.9075pt>
+File: /home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/reqs_table.png Graphi
+c file (type png)
+<use /home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/reqs_table.png>
+Package pdftex.def Info: /home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/re
+qs_table.png  used on input line 312.
+(pdftex.def)             Requested size: 326.62933pt x 98.19167pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 315--317
+
+ []
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -2503,34 +2541,9 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[10 </home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/geo.png>]
-Overfull \hbox (89.16176pt too wide) in paragraph at lines 289--290
-[]\OT1/cmr/m/n/10.95 The num-ber of points in-side the hy-per-cube but out-side
- \OT1/cmtt/m/n/10.95 CH[]PCA99 \OT1/cmr/m/n/10.95 is com-pared with \OT1/cmtt/m
-/n/10.95 CHMP[]PCA99[]negative[]req\OT1/cmr/m/n/10.95 . 
- []
+[10]
 
-</home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/outside_hypercube_c.png, i
-d=432, 960.58875pt x 1004.75375pt>
-File: /home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/outside_hypercube_c.p
-ng Graphic file (type png)
-<use /home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/outside_hypercube_c.pn
-g>
-Package pdftex.def Info: /home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/ou
-tside_hypercube_c.png  used on input line 299.
-(pdftex.def)             Requested size: 388.30344pt x 406.15648pt.
-</home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/reqs_table.png, id=433, 80
-8.01875pt x 242.9075pt>
-File: /home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/reqs_table.png Graphi
-c file (type png)
-<use /home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/reqs_table.png>
-Package pdftex.def Info: /home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/re
-qs_table.png  used on input line 306.
-(pdftex.def)             Requested size: 326.62933pt x 98.19167pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 309--311
-
- []
+LaTeX Warning: Text page 11 contains only floats.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2540,7 +2553,8 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[11 </home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/refTableVox.png>]
+[11 </home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/geo.png> </home/pablo/
+Documentos/TFGP/Thesis/Figures/tt-split/refTableVox.png>]
 
 LaTeX Warning: Text page 12 contains only floats.
 
@@ -2558,67 +2572,59 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [12 </home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/outside_hypercube_c.pn
 g> </home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/reqs_table.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 312--316
+Underfull \hbox (badness 10000) in paragraph at lines 318--322
 
  []
 
-</home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/pvalues_input.png, id=454,
+</home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/pvalues_input.png, id=457,
  239.89626pt x 1150.2975pt>
 File: /home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/pvalues_input.png Gra
 phic file (type png)
 <use /home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/pvalues_input.png>
 Package pdftex.def Info: /home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/pv
-alues_input.png  used on input line 326.
+alues_input.png  used on input line 332.
 (pdftex.def)             Requested size: 96.97441pt x 464.99034pt.
-</home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/inputs_dhist.png, id=455, 
+</home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/inputs_dhist.png, id=458, 
 848.16875pt x 645.41125pt>
 File: /home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/inputs_dhist.png Grap
 hic file (type png)
 <use /home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/inputs_dhist.png>
 Package pdftex.def Info: /home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/in
-puts_dhist.png  used on input line 331.
+puts_dhist.png  used on input line 337.
 (pdftex.def)             Requested size: 455.24408pt x 346.41924pt.
 </home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/inputs_cat_dhist.png, id=4
-56, 1294.8375pt x 330.23375pt>
+59, 1294.8375pt x 330.23375pt>
 File: /home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/inputs_cat_dhist.png 
 Graphic file (type png)
 <use /home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/inputs_cat_dhist.png>
 Package pdftex.def Info: /home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/in
-puts_cat_dhist.png  used on input line 340.
+puts_cat_dhist.png  used on input line 346.
 (pdftex.def)             Requested size: 364.19664pt x 92.88304pt.
 </home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/inputs_str_dhist.png, id=4
-57, 1294.8375pt x 443.6575pt>
+60, 1294.8375pt x 443.6575pt>
 File: /home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/inputs_str_dhist.png 
 Graphic file (type png)
 <use /home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/inputs_str_dhist.png>
 Package pdftex.def Info: /home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/in
-puts_str_dhist.png  used on input line 347.
+puts_str_dhist.png  used on input line 353.
 (pdftex.def)             Requested size: 364.19664pt x 124.78513pt.
 </home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/pvalues_outputs.png, id=46
-0, 365.365pt x 386.44376pt>
+3, 365.365pt x 386.44376pt>
 File: /home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/pvalues_outputs.png G
 raphic file (type png)
 <use /home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/pvalues_outputs.png>
 Package pdftex.def Info: /home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/pv
-alues_outputs.png  used on input line 359.
+alues_outputs.png  used on input line 365.
 (pdftex.def)             Requested size: 147.69325pt x 156.21402pt.
 </home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/outputs_num_dhist.png, id=
-461, 1294.8375pt x 654.445pt>
+464, 1294.8375pt x 654.445pt>
 File: /home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/outputs_num_dhist.png
  Graphic file (type png)
 <use /home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/outputs_num_dhist.png>
 
 Package pdftex.def Info: /home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/ou
-tputs_num_dhist.png  used on input line 364.
+tputs_num_dhist.png  used on input line 370.
 (pdftex.def)             Requested size: 455.24408pt x 230.08774pt.
-</home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/colorequirements.png, id=4
-63, 541.02126pt x 412.54124pt>
-File: /home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/colorequirements.png 
-Graphic file (type png)
-<use /home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/colorequirements.png>
-Package pdftex.def Info: /home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/co
-lorequirements.png  used on input line 374.
-(pdftex.def)             Requested size: 218.69963pt x 166.76353pt.
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -2628,6 +2634,18 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [13]
+</home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/colorequirements.png, id=4
+74, 541.02126pt x 412.54124pt>
+File: /home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/colorequirements.png 
+Graphic file (type png)
+<use /home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/colorequirements.png>
+Package pdftex.def Info: /home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/co
+lorequirements.png  used on input line 380.
+(pdftex.def)             Requested size: 218.69963pt x 166.76353pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -2647,6 +2665,9 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [15 </home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/inputs_dhist.png> </ho
 me/pablo/Documentos/TFGP/Thesis/Figures/tt-split/pvalues_outputs.png>]
+Underfull \vbox (badness 3803) has occurred while \output is active []
+
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -2672,10 +2693,10 @@ File: /home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/refTableVox.png Graph
 ic file (type png)
 <use /home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/refTableVox.png>
 Package pdftex.def Info: /home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/re
-fTableVox.png  used on input line 389.
+fTableVox.png  used on input line 395.
 (pdftex.def)             Requested size: 365.3641pt x 691.58206pt.
 
-Underfull \hbox (badness 1242) in paragraph at lines 394--394
+Underfull \hbox (badness 1242) in paragraph at lines 400--400
 []\OT1/cmr/m/n/10.95 Table 1.7: |Out-put of [][]al-go-
  []
 
@@ -2683,28 +2704,28 @@ File: /home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/refTableVox.png Graph
 ic file (type png)
 <use /home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/refTableVox.png>
 Package pdftex.def Info: /home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/re
-fTableVox.png  used on input line 395.
+fTableVox.png  used on input line 401.
 (pdftex.def)             Requested size: 147.69325pt x 279.56224pt.
 \orgWidth=\skip162
 File: /home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/refTableVox.png Graph
 ic file (type png)
 <use /home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/refTableVox.png>
 Package pdftex.def Info: /home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/re
-fTableVox.png  used on input line 401.
+fTableVox.png  used on input line 407.
 (pdftex.def)             Requested size: 365.3641pt x 691.58206pt.
 File: /home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/refTableVox.png Graph
 ic file (type png)
 <use /home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/refTableVox.png>
 Package pdftex.def Info: /home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/re
-fTableVox.png  used on input line 401.
+fTableVox.png  used on input line 407.
 (pdftex.def)             Requested size: 147.69325pt x 279.56224pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 418--419
+Underfull \hbox (badness 10000) in paragraph at lines 424--425
 
  []
 
 
-Package hyperref Warning: No autoref name for `definition' on input line 424.
+Package hyperref Warning: No autoref name for `definition' on input line 430.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2741,12 +2762,12 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 ]
 
-LaTeX Warning: Reference `secCh2:CW_STM' on page 21 undefined on input line 468
+LaTeX Warning: Reference `secCh2:CW_STM' on page 21 undefined on input line 474
 .
 
 
 LaTeX Warning: Reference `secApp2:STM_prop' on page 21 undefined on input line 
-496.
+502.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2766,7 +2787,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [22]
-Underfull \hbox (badness 10000) in paragraph at lines 541--557
+Underfull \hbox (badness 10000) in paragraph at lines 547--563
 
  []
 
@@ -2783,12 +2804,12 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [23]
-<Chapters/Chapter_01/Covariance_segment.png, id=555, 7593.36874pt x 4607.2125pt
+<Chapters/Chapter_01/Covariance_segment.png, id=559, 7593.36874pt x 4607.2125pt
 >
 File: Chapters/Chapter_01/Covariance_segment.png Graphic file (type png)
 <use Chapters/Chapter_01/Covariance_segment.png>
 Package pdftex.def Info: Chapters/Chapter_01/Covariance_segment.png  used on in
-put line 574.
+put line 580.
 (pdftex.def)             Requested size: 409.71689pt x 248.5819pt.
 )
 Underfull \vbox (badness 2443) has occurred while \output is active []
@@ -2854,7 +2875,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 ]
-<Appendices/Appendix_A/orbit_angles.png, id=595, 796.47563pt x 581.17125pt>
+<Appendices/Appendix_A/orbit_angles.png, id=599, 796.47563pt x 581.17125pt>
 File: Appendices/Appendix_A/orbit_angles.png Graphic file (type png)
 <use Appendices/Appendix_A/orbit_angles.png>
 Package pdftex.def Info: Appendices/Appendix_A/orbit_angles.png  used on input 
@@ -2969,13 +2990,13 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [37]
-<Appendices/Appendix_A/ECC_vector.png, id=695, 700.86844pt x 420.06938pt>
+<Appendices/Appendix_A/ECC_vector.png, id=700, 700.86844pt x 420.06938pt>
 File: Appendices/Appendix_A/ECC_vector.png Graphic file (type png)
 <use Appendices/Appendix_A/ECC_vector.png>
 Package pdftex.def Info: Appendices/Appendix_A/ECC_vector.png  used on input li
 ne 434.
 (pdftex.def)             Requested size: 236.72885pt x 141.88588pt.
-<Appendices/Appendix_A/inc_vector.png, id=696, 529.98pt x 398.23781pt>
+<Appendices/Appendix_A/inc_vector.png, id=701, 529.98pt x 398.23781pt>
 File: Appendices/Appendix_A/inc_vector.png Graphic file (type png)
 <use Appendices/Appendix_A/inc_vector.png>
 Package pdftex.def Info: Appendices/Appendix_A/inc_vector.png  used on input li
@@ -3157,10 +3178,10 @@ ist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/share/texlive/texmf-dist/fon
 ts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/typ
 e1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type
 1/public/amsfonts/symbols/msbm10.pfb>
-Output written on Thesis.pdf (66 pages, 1899468 bytes).
+Output written on Thesis.pdf (66 pages, 1901141 bytes).
 PDF statistics:
- 1081 PDF objects out of 1200 (max. 8388607)
- 909 compressed objects within 10 object streams
+ 1085 PDF objects out of 1200 (max. 8388607)
+ 913 compressed objects within 10 object streams
  291 named destinations out of 1000 (max. 500000)
  329 words of extra memory for PDF output out of 10000 (max. 10000000)
 

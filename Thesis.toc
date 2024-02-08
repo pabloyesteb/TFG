@@ -7,13 +7,15 @@
 \contentsline {section}{\numberline {1.1}Introduction}{1}{section.1.1}%
 \contentsline {subsection}{\numberline {1.1.1}Case of study}{1}{subsection.1.1.1}%
 \contentsline {subsection}{\numberline {1.1.2}Applicability}{2}{subsection.1.1.2}%
-\contentsline {subsection}{\numberline {1.1.3}Overview}{4}{subsection.1.1.3}%
+\contentsline {paragraph}{\leavevmode {\color {GMVred}A.} \myul [GMVred]{Supervised applicability classifyers}\\}{2}{subsection.1.1.2}%
+\contentsline {paragraph}{\leavevmode {\color {GMVred}B.} \myul [GMVred]{Unsupervised applicability classifyers}\\}{3}{subsection.1.1.2}%
+\contentsline {subsection}{\numberline {1.1.3}Overview}{5}{subsection.1.1.3}%
 \contentsline {section}{\numberline {1.2}Train-test split}{5}{section.1.2}%
 \contentsline {subsection}{\numberline {1.2.1}Preliminaries}{5}{subsection.1.2.1}%
 \contentsline {subsection}{\numberline {1.2.2}Validation loop for the train-test split}{7}{subsection.1.2.2}%
 \contentsline {subsubsection}{\numberline {1.2.2.1}Geometrical analysis}{7}{subsubsection.1.2.2.1}%
 \contentsline {subsubsection}{\numberline {1.2.2.2}Non-geometrical analysis}{13}{subsubsection.1.2.2.2}%
-\contentsline {subsubsection}{\numberline {1.2.2.3}Train-test split. Conclusions}{14}{subsubsection.1.2.2.3}%
+\contentsline {subsubsection}{\numberline {1.2.2.3}Train-test split. Conclusions}{15}{subsubsection.1.2.2.3}%
 \contentsline {section}{\numberline {1.3}Las movidas de Rodrigo}{20}{section.1.3}%
 \contentsline {subsection}{\numberline {1.3.1}Concept: System dynamics.}{20}{subsection.1.3.1}%
 \contentsline {subsection}{\numberline {1.3.2}Applications of STMs in celestial mechanics.}{22}{subsection.1.3.2}%

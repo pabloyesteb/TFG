@@ -6,17 +6,15 @@
 %
 \section{Introduction}
 \subsection{Case of study}
-\indent For illustration of the proposed validation loop, a case of study has been used alongside the theoretical rationale of the loop to generate explanatory figures and tables and to give proof of the real operation of the loop.\\
+\indent For illustration of the proposed validation loop, a case of study has been used alongside the theoretical rationale of the loop to generate explanatory figures and tables, demonstrating the loop's effectiveness in real operations.\\
 %
-\indent The case of study is an application of NN in aircraft stress engineering. For typical aircraft fuselage panel design, the dominant form of stiffened post buckling failure under shear loading is forced crippling\cite{bijlaard1955buckling}. This occurs when the shear buckles in the panel skin force the attached stiffener flanges to deform out-of-plane. There are other failure modes related to buckling, tension, and compression.\\
+\indent The case of study is an application of neural networks (NN) in aircraft stress engineering. For typical aircraft fuselage panel design, the dominant form of stiffened post buckling failure under shear loading is forced crippling\cite{bijlaard1955buckling}. This occurs when the shear buckles in the panel skin force the attached stiffener flanges to deform out-of-plane. There are other failure modes related to buckling, tension, and compression.\\
 %
-\indent The case of study used for illustration purposes consists of a NN model whose task is to predict Reserve Factors ($RF$) that quantify failure likelihood for regions of the aircraft subject to different loads happening in flight maneuvers. The possible failure modes are Forced Crippling, Column Buckling, In Plane, Net Tension, Pure Compression, and Shear Panel Failure.\\
+\indent The aim of the NN model is to predict Reserve Factors ($RF$) that quantify failure likelihood for regions of the aircraft subject to different loads happening in flight maneuvers (vid. \autoref{fig:diagrama_cajas}). The possible failure modes are Forced Crippling, Column Buckling, In Plane, Net Tension, Pure Compression, and Shear Panel Failure.\\
 %
 \indent Input data consists of 26 features (loads applied to a specific region of the aircraft and different maneuver specs). Output data consists of 6 reserve factors that quantify the stress failure likelihood ($RF_1$, $RF_2$, $RF_3$, $RF_4$, $RF_5$, and $RF_6$), where $RF_i\in [0,5]$,where $0$ means extreme risk and $5$ means risk extremely low (in a logarithmic scale).\\
 %
-\indent The NN architecture and further features are irrelevant for this study and therefore the model treatment alongside this work remains the concept of a ''black box'' whose inputs are the 26 features aforementioned and whose output are the 6 reserve factors corresponding to 6 different failure modes.\\
-%
-\indent For typical aircraft fuselage panel design, the dominant form of stiffened post buckling failure under shear loading is forced crippling. This occurs when the shear buckles in the panel skin force the attached stiffener flanges to deform out-of-plane.\\
+\indent This study prioritizes assessing the efficacy of the developed validation tool, not optimizing the neural network model itself. Therefore, the specific architecture and additional features of the NN are intentionally treated as a black box. Our focus remains solely on its inputs --the 26 aforementioned features-- and its outputs --the 6 reserve factors representing 6 distinct failure modes--. This simplification allows us to isolate and evaluate the performance of the validation tool without introducing confounding variables related to the specific neural network design.\\
 %
 \begin{figure}
 	\centering
@@ -69,20 +67,24 @@
 \indent For a model $F$ to be applicable to a certain new point $x$:
 \begin{itemize}
 	\item $x$ needs to be inside the \textit{input} applicability region of $F$.
-	\item The prediction $Y=F(x)$ needs to be inside the \textit{output} applicability region of $F$.
+	\item The prediction $Y=F(x)$ needs to be inside the \textit{output} applicability region of $F$.\\
 \end{itemize}
-
-\indent Knowing whether a new point is either inside or outside applicability is a binary decision problem which can be addressed \textit{a priori} (filtering) or be learned \textit{a posteriori} (model boosting). In other words, the binary classification can be addressed from an unsupervised (geometric) learning approach, or a supervised learning approach. Supervised applicability classifiers are based on exogenous criteria. Examples of them include:
+%
+\indent Knowing whether a new point is either inside or outside applicability is a binary decision problem which can be addressed \textit{a priori} (filtering) or be learned \textit{a posteriori} (model boosting). In other words, the binary classification can be addressed from an unsupervised (geometric) learning approach, or a supervised learning approach:
+\paragraph{\GMVred{A.} \myul[GMVred]{Supervised applicability classifyers}\\}
+Supervised applicability classifiers are based on exogenous criteria. Examples of them include:
 \begin{itemize}
-	\item \textbf{Error-filtered convex hull.} Initially the whole set under testing is in applicability range. After filtering those test cases whose prediction error exceeds a tolerance, the applicability region is defined as the convex hull of the remaining subset. The convex hull can be simply defined as the smallest convex set containing the data\cite{Preparata1985}.
+	\item \textbf{Operational design domains.} Based on engineer/scientist expertise, only certain combinations and range of features make physical sense. These combinations are used to define a (geometrical) applicability region.
+	\item \textbf{Error-filtered convex hull.} Initially the whole set under testing is in applicability range. After filtering those test cases whose prediction error exceeds a tolerance, the applicability region is defined as the convex hull of the remaining subset. The convex hull can be simply defined as the smallest convex set containing the data\cite{Preparata1985} (vid. \autoref{fig:policonex}).
 	\item \textbf{Error-labelled classifiers.} Initially a whole subset of the dataset (namely, the test set) is in applicability range. After labelling those test cases whose prediction error exceeds a tolerance as outside applicability, different binary classifiers are trained on the full dataset.\\
 \end{itemize}
 
+\paragraph{\GMVred{B.} \myul[GMVred]{Unsupervised applicability classifyers}\\}
 On the other hand, geometrical applicability classifiers are based on the premise of NN interpolation capabilities. It has been widely discussed (see \eg \cite{pmlr-v80-barrett18a,DBLP:journals/corr/abs-1711-00350,DBLP:journals/corr/abs-1904-01557}) that NN's performance relies on their interpolation capabilities, and that no extrapolation capabilities outside their applicability region should be assumed.\\
 %
 \indent Subsequently, from a geometrical approach to the applicability classification problem, we shall define the input applicability region as the geometrical region in the input space where the model is known to work in interpolating regime.\\
 %
-\indent There are plenty of definitions for the interpolating region of a given dataset. Some authors define it as the smallest hypercube enclosing the data\cite{ebert2014interpolation} although this may seriously challenge interpolation due to isolated points falling into the interpolation region under this definition. Many authors (see v. gr. \cite{loh2007extrapolation,4505337}) define the interpolation region as the \textit{convex hull} of the training data, \ie:
+\indent There are plenty of definitions for the interpolating region of a given dataset. Some authors define it as the smallest hypercube enclosing the data\cite{ebert2014interpolation} (vid. \autoref{fig:hipercuboex}) although this may seriously challenge interpolation due to isolated points falling into the interpolation region under this definition. Many authors (see v. gr. \cite{loh2007extrapolation,4505337}) define the interpolation region as the \textit{convex hull} of the training data, \ie:
 
 \begin{definition}\cite{balestriero2021learning}\label{def:interpolacion}
 	Standard interpolation occurs for a sample $\mathbf{x}$ whenever this sample belongs to the convex hull of a set of samples $\mathbf{X}\triangleq \left\{\mathbf{x}_1,...,\mathbf{x}_N\right\}$.
@@ -93,7 +95,7 @@ In the above definition, $\mathbf{X}$ is the training set which has been used fo
 \indent Recently, \cite{balestriero2021learning} have pointed out that, due to the so-called curse of dimensionality, extrapolation outside the training convex hull always ends up taking place if the input dimension is sufficiently large. The curse of dimensionality\cite[pp. 17-18]{Marsland2015Machine} can be illustrated by the fact that the unitary $n$-sphere's volume asymptotically diminishes to $0$ as $n$ increases. In the end, the effect is that, as the number of dimensions increase, more data is needed in order for the model to work in interpolating regime, as is showed by the following theorem:\\
 
 \begin{theorem}\cite{barany1988shape}\label{dparadoxa}
-	Given a $d$-dimensional dataset $\mathbf X \triangleq {\mathbf{x}_1,...,\mathbf{x}_N}$ with i.i.d. samples uniformly drawn from a hyperball, the probability that a new sample $\mathbf{x}$ is in interpolation regime (recall \autoref{def:interpolacion}) has the following asymptotic behaviour:\\
+	Given a $d$-dimensional dataset $\mathbf X \triangleq \left\{\mathbf{x}_1,...,\mathbf{x}_N\right\}$ with i.i.d. samples uniformly drawn from a hyperball, the probability that a new sample $\mathbf{x}$ is in interpolation regime (recall \autoref{def:interpolacion}) has the following asymptotic behaviour:\\
 	
 	\begin{equation}
 		\lim_{d \to \infty}p(\mathbf{x}\in Hull(\mathbf{X}))=
@@ -106,14 +108,18 @@ In the above definition, $\mathbf{X}$ is the training set which has been used fo
 
 \indent The main answer to the argument of \cite{balestriero2021learning} is that interpolation does not occur in the ambient space, but in a latent, low-dimensional space of the input data\cite{bonnasse2022interpolation}. This leads to a new definition of interpolation alternative to \autoref{def:interpolacion}.\\
 %
-\indent What's more, the authors in \cite{bonnasse2022interpolation} not only show that interpolation indeed occurs (at least in a latent representation of the ambient space), but that more important conditions to the model's performance are that testing and training data follow the same cumulative distribution (or the same tail distribution whenever the former cannot be fulfilled) and that testing points be not isolated in the dataset.\\
+\indent Interestingly, the authors in \cite{bonnasse2022interpolation} go beyond demonstrating that interpolation occurs (at least in a latent representation of the ambient space). They unveil two more crucial conditions for optimal model performance:
+%
+\begin{itemize}
+	\item The training and testing data should share the same cumulative distribution. In situations where this is impossible, matching the tail distribution becomes essential.
+	\item The testing points should not be isolated within the dataset. This means they should have similar characteristics to other data points and not represent extreme outliers that testing and training data follow the same cumulative distribution (or the same tail distribution whenever the former cannot be fulfilled) and that testing points be not isolated in the dataset.\\
+\end{itemize}
 %
 Examples of unsupervised applicability classifiers include:
 \begin{itemize}
-	\item \textbf{Operational design domains.} Based on engineer/scientist expertise, only certain combinations and range of features make physical sense.
 	\item \textbf{Input space range classifier.} The applicability region is defined as the boundary of the hypercube whose edges are the ranges $[min, max]$ of each input variable in the training set. In practice, this amounts to checking if each numerical feature $X_i$ of the test point lies inside the range spanned by the training subset.
 	\item \textbf{Input space convex hull classifier.} The applicability region is defined as the boundary of the convex hull of the training set.
-	\item \textbf{Input space isolated region detector.} Even if a point is inside the convex hull of the training set, it can be very far away from other points, thus interpolation can be challenged. Isolated region detectors address this by checking the statistical vicinity of train points and comparing it to the distance of a given test point to the closest training point.
+	\item \textbf{Input space isolated region detector.} Even if a point is inside the convex hull of the training set, it can be very far away from other points, thus interpolation can be challenged. Isolated region detectors address this by checking the statistical vicinity of train points and comparing it to the distance of a given test point to the closest training point.\\
 \end{itemize}
 
 \begin{figure}[!htb]
@@ -147,7 +153,7 @@ Examples of unsupervised applicability classifiers include:
 %
 \indent With the dataset split into the train, evaluation, and test sets, the standard training and validation loop is as follows: the model is trained to ''fit'' the data in the training set. After a certain amount of training, its performance is measured in the evaluation set. The test set is used to compare the performance of different hyperparameter configurations. Note that the NN is always evaluated with data not previously ''seen'' during training, and as such cannot develop any bias for the training set (although bias for the validation or test sets may exist).\\
 %
-\indent In the model validation loop, the first question that should be asked, even before training the model, is whether the dataset split is appropriate for training.\\
+\indent In the model validation loop, the first question that should be asked, even before training the model, is whether the dataset split is appropriate for training (vid \autoref{fig:esquemattsplit}).\\
 %
 \indent For our case of applicability (MSP18, explicar en otra seccion), we suppose we have a dataset which has been split into a training set
 $${\cal S}_{\text{train}}=\{({\bf X^{tr}},{\bf Y^{tr}})_i\}_{i=1}^{N_{training}}$$

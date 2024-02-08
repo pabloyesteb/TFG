@@ -10,7 +10,7 @@
 \contentsline {figure}{\numberline {1.1}{\ignorespaces Surrogate model pipeline\relax }}{2}{figure.caption.9}%
 \contentsline {figure}{\numberline {1.2}{\ignorespaces Smallest cube enclosing a set of 20 randomly generated points in a 3-dimensional euclidean space.\relax }}{5}{figure.caption.11}%
 \contentsline {figure}{\numberline {1.3}{\ignorespaces Convex hull enclosing the set of \autoref {fig:hipercuboex}. The convex hull's volume is always smaller than or equal to the volume of the hypercube.\relax }}{5}{figure.caption.11}%
-\contentsline {figure}{\numberline {1.4}{\ignorespaces Location of the train-test split assessment in the overall validation pipeline\relax }}{5}{figure.caption.12}%
+\contentsline {figure}{\numberline {1.4}{\ignorespaces Location of the train-test split assessment in the overall validation pipeline\relax }}{6}{figure.caption.12}%
 \contentsline {figure}{\numberline {1.5}{\ignorespaces Input [numeric] variables distributions double histogram. Only the first four input variables have been plotted.\relax }}{15}{figure.caption.19}%
 \contentsline {figure}{\numberline {1.6}{\ignorespaces Input categorical variables distributions double histograms\relax }}{16}{figure.caption.20}%
 \contentsline {figure}{\numberline {1.7}{\ignorespaces Output variables distributions double histograms\relax }}{16}{figure.caption.22}%
