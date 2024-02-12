@@ -18,13 +18,16 @@
 \contentsline {subsubsection}{\numberline {1.2.2.3}Train-test split. Conclusions}{15}{subsubsection.1.2.2.3}%
 \contentsline {section}{\numberline {1.3}Global error quantification}{18}{section.1.3}%
 \contentsline {section}{\numberline {1.4}Distributed error quantification}{19}{section.1.4}%
-\contentsline {section}{\numberline {1.5}Las movidas de Rodrigo}{22}{section.1.5}%
-\contentsline {subsection}{\numberline {1.5.1}Concept: System dynamics.}{22}{subsection.1.5.1}%
-\contentsline {subsection}{\numberline {1.5.2}Applications of STMs in celestial mechanics.}{24}{subsection.1.5.2}%
-\contentsline {paragraph}{\leavevmode {\color {GMVred}A.} \myul [GMVred]{Precise Orbit Determination.}\\}{24}{subsection.1.5.2}%
-\contentsline {paragraph}{\leavevmode {\color {GMVred}B.} \myul [GMVred]{Guidance, Navigation and Control (GNC).} \\}{24}{subsection.1.5.2}%
-\contentsline {paragraph}{\leavevmode {\color {GMVred}C.} \myul [GMVred]{Orbit design.} \\}{24}{subsection.1.5.2}%
-\contentsline {paragraph}{\leavevmode {\color {GMVred}D.} \myul [GMVred]{Covariance matrix propagation.} \\}{25}{subsection.1.5.2}%
+\contentsline {paragraph}{\leavevmode {\color {GMVred}A.} \myul [GMVred]{Non gaussian error distribution}\\}{19}{section.1.4}%
+\contentsline {paragraph}{\leavevmode {\color {GMVred}A.} \myul [GMVred]{Uncertainty measuring}\\}{20}{section.1.4}%
+\contentsline {section}{\numberline {1.5}Uncertainty model estimation}{20}{section.1.5}%
+\contentsline {section}{\numberline {1.6}Las movidas de Rodrigo}{23}{section.1.6}%
+\contentsline {subsection}{\numberline {1.6.1}Concept: System dynamics.}{23}{subsection.1.6.1}%
+\contentsline {subsection}{\numberline {1.6.2}Applications of STMs in celestial mechanics.}{25}{subsection.1.6.2}%
+\contentsline {paragraph}{\leavevmode {\color {GMVred}A.} \myul [GMVred]{Precise Orbit Determination.}\\}{25}{subsection.1.6.2}%
+\contentsline {paragraph}{\leavevmode {\color {GMVred}B.} \myul [GMVred]{Guidance, Navigation and Control (GNC).} \\}{25}{subsection.1.6.2}%
+\contentsline {paragraph}{\leavevmode {\color {GMVred}C.} \myul [GMVred]{Orbit design.} \\}{25}{subsection.1.6.2}%
+\contentsline {paragraph}{\leavevmode {\color {GMVred}D.} \myul [GMVred]{Covariance matrix propagation.} \\}{26}{subsection.1.6.2}%
 \contentsline {chapter}{\numberline {2}Conclusions and research outlook.}{29}{chapter.2}%
 \contentsline {paragraph}{\indent Research outlook and future work. \\}{29}{chapter.2}%
 \contentsline {chapter}{\numberline {A}Absolute and relative orbital element sets.}{31}{appendix.A}%
