@@ -10,18 +10,20 @@
 \contentsline {figure}{\numberline {1.1}{\ignorespaces Surrogate model pipeline\relax }}{2}{figure.caption.9}%
 \contentsline {figure}{\numberline {1.2}{\ignorespaces Smallest cube enclosing a set of 20 randomly generated points in a 3-dimensional euclidean space.\relax }}{5}{figure.caption.11}%
 \contentsline {figure}{\numberline {1.3}{\ignorespaces Convex hull enclosing the set of \autoref {fig:hipercuboex}. The convex hull's volume is always smaller than or equal to the volume of the hypercube.\relax }}{5}{figure.caption.11}%
-\contentsline {figure}{\numberline {1.4}{\ignorespaces Location of the train-test split assessment in the overall validation pipeline\relax }}{6}{figure.caption.12}%
-\contentsline {figure}{\numberline {1.5}{\ignorespaces Input [numeric] variables distributions double histogram. Only the first four input variables have been plotted.\relax }}{15}{figure.caption.19}%
-\contentsline {figure}{\numberline {1.6}{\ignorespaces Input categorical variables distributions double histograms\relax }}{16}{figure.caption.20}%
-\contentsline {figure}{\numberline {1.7}{\ignorespaces Output variables distributions double histograms\relax }}{16}{figure.caption.22}%
-\contentsline {figure}{\numberline {1.8}{\ignorespaces Requirements of the geometrical analysis\relax }}{17}{figure.caption.23}%
-\contentsline {figure}{\numberline {1.9}{\ignorespaces Covariance ellipsoid evolution along a radial hop.\relax }}{24}{figure.caption.32}%
+\contentsline {figure}{\numberline {1.4}{\ignorespaces Validation pipeline\relax }}{6}{figure.caption.12}%
+\contentsline {figure}{\numberline {1.5}{\ignorespaces Location of the train-test split assessment in the overall validation pipeline\relax }}{7}{figure.caption.13}%
+\contentsline {figure}{\numberline {1.6}{\ignorespaces Input [numeric] variables distributions double histogram. Only the first four input variables have been plotted.\relax }}{16}{figure.caption.20}%
+\contentsline {figure}{\numberline {1.7}{\ignorespaces Input categorical variables distributions double histograms\relax }}{17}{figure.caption.21}%
+\contentsline {figure}{\numberline {1.8}{\ignorespaces Output variables distributions double histograms\relax }}{17}{figure.caption.23}%
+\contentsline {figure}{\numberline {1.9}{\ignorespaces Requirements of the geometrical analysis\relax }}{18}{figure.caption.24}%
+\contentsline {figure}{\numberline {1.10}{\ignorespaces Scatter plot of ground true ($x$ axis) against predicted values ($y$ axis) and $R^2$ coefficient. In this case, $R^2=1,000$ indicates a perfect fit of predicted to ground true values. Mismatches due to underestimating failure risk are labelled in red, while those due to overestimating failure risk are labelled in blue.\relax }}{19}{figure.caption.26}%
+\contentsline {figure}{\numberline {1.11}{\ignorespaces Covariance ellipsoid evolution along a radial hop.\relax }}{26}{figure.caption.35}%
 \addvspace {10\p@ }
-\contentsline {xchapter}{Conclusions and research outlook.}{27}{chapter.2}%
+\contentsline {xchapter}{Conclusions and research outlook.}{29}{chapter.2}%
 \addvspace {10\p@ }
-\contentsline {xchapter}{Absolute and relative orbital element sets.}{29}{appendix.A}%
-\contentsline {figure}{\numberline {A.1}{\ignorespaces Workflow for transforming between two arbitary absolute element sets.\relax }}{30}{figure.caption.34}%
-\contentsline {figure}{\numberline {A.2}{\ignorespaces Frame rotation from inertial to perifocal frame.\relax }}{31}{figure.caption.36}%
-\contentsline {figure}{\numberline {A.3}{\ignorespaces Workflow for transforming any relative set into KOE.\relax }}{36}{figure.caption.46}%
-\contentsline {figure}{\numberline {A.4}{\ignorespaces Workflow for transforming RKOE into any other set.\relax }}{37}{figure.caption.48}%
-\contentsline {figure}{\numberline {A.5}{\ignorespaces Relative ccentricity \& inclination vectors. \relax }}{38}{figure.caption.51}%
+\contentsline {xchapter}{Absolute and relative orbital element sets.}{31}{appendix.A}%
+\contentsline {figure}{\numberline {A.1}{\ignorespaces Workflow for transforming between two arbitary absolute element sets.\relax }}{32}{figure.caption.37}%
+\contentsline {figure}{\numberline {A.2}{\ignorespaces Frame rotation from inertial to perifocal frame.\relax }}{33}{figure.caption.39}%
+\contentsline {figure}{\numberline {A.3}{\ignorespaces Workflow for transforming any relative set into KOE.\relax }}{38}{figure.caption.49}%
+\contentsline {figure}{\numberline {A.4}{\ignorespaces Workflow for transforming RKOE into any other set.\relax }}{39}{figure.caption.51}%
+\contentsline {figure}{\numberline {A.5}{\ignorespaces Relative ccentricity \& inclination vectors. \relax }}{40}{figure.caption.54}%

@@ -536,6 +536,68 @@
       \field{pages}{1387\bibrangedash 1400}
       \range{pages}{14}
     \endentry
+    \entry{velez1994calculo}{book}{}
+      \name{author}{2}{}{%
+        {{hash=dcb199c23f3387e9c793d2d15216c8d4}{%
+           family={Velez\bibnamedelima Ibarrola},
+           familyi={V\bibinitperiod\bibinitdelim I\bibinitperiod},
+           given={Ricardo},
+           giveni={R\bibinitperiod}}}%
+        {{hash=e5d0bd59799a3a37d427ce50d666ef77}{%
+           family={Garcia\bibnamedelima Perez},
+           familyi={G\bibinitperiod\bibinitdelim P\bibinitperiod},
+           given={Alfonso},
+           giveni={A\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Madrid, Spain}%
+      }
+      \list{publisher}{1}{%
+        {Universidad Nacional de Educacion a Distancia}%
+      }
+      \strng{namehash}{11a9eab1d1ac73c2827b435661dc70e1}
+      \strng{fullhash}{11a9eab1d1ac73c2827b435661dc70e1}
+      \strng{bibnamehash}{11a9eab1d1ac73c2827b435661dc70e1}
+      \strng{authorbibnamehash}{11a9eab1d1ac73c2827b435661dc70e1}
+      \strng{authornamehash}{11a9eab1d1ac73c2827b435661dc70e1}
+      \strng{authorfullhash}{11a9eab1d1ac73c2827b435661dc70e1}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{1}
+      \field{title}{Calculo de probabilidades y Estadistica Matematica}
+      \field{year}{1994}
+    \endentry
+    \entry{zhang2017coefficient}{article}{}
+      \name{author}{1}{}{%
+        {{hash=2694646d02ab4ee907c5d4458cf33c71}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Dabao},
+           giveni={D\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Taylor \& Francis}%
+      }
+      \strng{namehash}{2694646d02ab4ee907c5d4458cf33c71}
+      \strng{fullhash}{2694646d02ab4ee907c5d4458cf33c71}
+      \strng{bibnamehash}{2694646d02ab4ee907c5d4458cf33c71}
+      \strng{authorbibnamehash}{2694646d02ab4ee907c5d4458cf33c71}
+      \strng{authornamehash}{2694646d02ab4ee907c5d4458cf33c71}
+      \strng{authorfullhash}{2694646d02ab4ee907c5d4458cf33c71}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{The American Statistician}
+      \field{number}{4}
+      \field{title}{A coefficient of determination for generalized linear models}
+      \field{volume}{71}
+      \field{year}{2017}
+      \field{pages}{310\bibrangedash 316}
+      \range{pages}{7}
+    \endentry
     \entry{Montenbruck}{book}{}
       \name{author}{2}{}{%
         {{hash=80a8be6ff5184fbb0119b6701e40cfb1}{%
@@ -790,8 +852,8 @@
       \strng{authorbibnamehash}{258eaa64bb7c65774ba6b4486f00f719}
       \strng{authornamehash}{258eaa64bb7c65774ba6b4486f00f719}
       \strng{authorfullhash}{258eaa64bb7c65774ba6b4486f00f719}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{booktitle}{CNES International Symposium on Space Dynamics}
@@ -826,8 +888,8 @@
       \strng{authorbibnamehash}{99cc30d684c858bf3c9d85f06f523323}
       \strng{authornamehash}{99cc30d684c858bf3c9d85f06f523323}
       \strng{authorfullhash}{99cc30d684c858bf3c9d85f06f523323}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{{Journal of Guidance, Control \& Dynamics}}
@@ -1054,40 +1116,6 @@
       \field{year}{2007}
       \true{nocite}
     \endentry
-    \entry{velez1994calculo}{book}{}
-      \name{author}{2}{}{%
-        {{hash=dcb199c23f3387e9c793d2d15216c8d4}{%
-           family={Velez\bibnamedelima Ibarrola},
-           familyi={V\bibinitperiod\bibinitdelim I\bibinitperiod},
-           given={Ricardo},
-           giveni={R\bibinitperiod}}}%
-        {{hash=e5d0bd59799a3a37d427ce50d666ef77}{%
-           family={Garcia\bibnamedelima Perez},
-           familyi={G\bibinitperiod\bibinitdelim P\bibinitperiod},
-           given={Alfonso},
-           giveni={A\bibinitperiod}}}%
-      }
-      \list{location}{1}{%
-        {Madrid, Spain}%
-      }
-      \list{publisher}{1}{%
-        {Universidad Nacional de Educacion a Distancia}%
-      }
-      \strng{namehash}{11a9eab1d1ac73c2827b435661dc70e1}
-      \strng{fullhash}{11a9eab1d1ac73c2827b435661dc70e1}
-      \strng{bibnamehash}{11a9eab1d1ac73c2827b435661dc70e1}
-      \strng{authorbibnamehash}{11a9eab1d1ac73c2827b435661dc70e1}
-      \strng{authornamehash}{11a9eab1d1ac73c2827b435661dc70e1}
-      \strng{authorfullhash}{11a9eab1d1ac73c2827b435661dc70e1}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{edition}{1}
-      \field{title}{Calculo de probabilidades y Estadistica Matematica}
-      \field{year}{1994}
-      \true{nocite}
-    \endentry
     \entry{Tapley}{book}{}
       \name{author}{3}{}{%
         {{hash=d2322cd60717b84a9b357c3478d16037}{%
@@ -1118,8 +1146,8 @@
       \strng{authorbibnamehash}{415a0bba2e2e7f3ff2d6d29311617685}
       \strng{authornamehash}{415a0bba2e2e7f3ff2d6d29311617685}
       \strng{authorfullhash}{415a0bba2e2e7f3ff2d6d29311617685}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{edition}{1}
@@ -1151,8 +1179,8 @@
       \strng{authorbibnamehash}{9586fc2f84f6bb67f3a559b1a9a8d898}
       \strng{authornamehash}{9586fc2f84f6bb67f3a559b1a9a8d898}
       \strng{authorfullhash}{9586fc2f84f6bb67f3a559b1a9a8d898}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{edition}{1}
@@ -1338,8 +1366,8 @@
       \strng{authorbibnamehash}{9f67f7e163f525368297b347baa02ce6}
       \strng{authornamehash}{9f67f7e163f525368297b347baa02ce6}
       \strng{authorfullhash}{9f67f7e163f525368297b347baa02ce6}
-      \field{sortinit}{6}
-      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{isbn}{978-94-6186-419-2}
@@ -1368,8 +1396,8 @@
       \strng{authorbibnamehash}{aded628cfb77b62db19cb3243f425b8b}
       \strng{authornamehash}{aded628cfb77b62db19cb3243f425b8b}
       \strng{authorfullhash}{aded628cfb77b62db19cb3243f425b8b}
-      \field{sortinit}{6}
-      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{{Perturbation Methods}}
@@ -1397,8 +1425,8 @@
       \strng{authorbibnamehash}{a5d8ee096fc8780081f9d4403188d626}
       \strng{authornamehash}{a5d8ee096fc8780081f9d4403188d626}
       \strng{authorfullhash}{a5d8ee096fc8780081f9d4403188d626}
-      \field{sortinit}{6}
-      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{{Theory of Satellite Geodesy}}
@@ -1423,8 +1451,8 @@
       \strng{authorbibnamehash}{fe825ec9d3bdbaa3aaac4903b15ce75c}
       \strng{authornamehash}{fe825ec9d3bdbaa3aaac4903b15ce75c}
       \strng{authorfullhash}{fe825ec9d3bdbaa3aaac4903b15ce75c}
-      \field{sortinit}{6}
-      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{{Traité de Mécanique Céleste}}
@@ -1595,8 +1623,8 @@
       \strng{authorbibnamehash}{2f9ea127a38aa7b9bb961325b1251dd3}
       \strng{authornamehash}{2f9ea127a38aa7b9bb961325b1251dd3}
       \strng{authorfullhash}{2f9ea127a38aa7b9bb961325b1251dd3}
-      \field{sortinit}{7}
-      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{note}{\url{https://degenerateconic.com/uploads/2015/03/lvlh.pdf}}
@@ -1625,8 +1653,8 @@
       \strng{authorbibnamehash}{593d5a57309b860955c3e776f8866639}
       \strng{authornamehash}{593d5a57309b860955c3e776f8866639}
       \strng{authorfullhash}{593d5a57309b860955c3e776f8866639}
-      \field{sortinit}{7}
-      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{month}{11}
@@ -1653,8 +1681,8 @@
       \strng{authorbibnamehash}{6e114c910e5898d17f0977859d8ab5f7}
       \strng{authornamehash}{6e114c910e5898d17f0977859d8ab5f7}
       \strng{authorfullhash}{6e114c910e5898d17f0977859d8ab5f7}
-      \field{sortinit}{7}
-      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{American Journal of Mathematics}
@@ -1689,8 +1717,8 @@
       \strng{authorbibnamehash}{5c6fa172cc7a1ba23637337caf329441}
       \strng{authornamehash}{5c6fa172cc7a1ba23637337caf329441}
       \strng{authorfullhash}{5c6fa172cc7a1ba23637337caf329441}
-      \field{sortinit}{7}
-      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Journal of the Aerospace Sciences}
@@ -1780,8 +1808,8 @@
       \strng{authorbibnamehash}{613679091e8ca1cb3632ce9fbbd24789}
       \strng{authornamehash}{613679091e8ca1cb3632ce9fbbd24789}
       \strng{authorfullhash}{613679091e8ca1cb3632ce9fbbd24789}
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Journal of Guidance Control and Dynamics}
@@ -1821,8 +1849,8 @@
       \strng{authorbibnamehash}{326a1dd1cf23b55ae8b56ddc8609dcb6}
       \strng{authornamehash}{326a1dd1cf23b55ae8b56ddc8609dcb6}
       \strng{authorfullhash}{326a1dd1cf23b55ae8b56ddc8609dcb6}
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Aerospace Science and Technology}
@@ -1999,8 +2027,8 @@
       \strng{authornamehash}{35a361a71ca45d501e1f001b9d959b22}
       \strng{authorfullhash}{35a361a71ca45d501e1f001b9d959b22}
       \field{extraname}{1}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Celestial Mechanics}
@@ -2031,8 +2059,8 @@
       \strng{authornamehash}{dc5303060c2ccb5f93410de582fc5eed}
       \strng{authorfullhash}{dc5303060c2ccb5f93410de582fc5eed}
       \field{extraname}{2}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Celestial Mechanics}
@@ -2063,8 +2091,8 @@
       \strng{authorbibnamehash}{db002c27a377557f68cdbe60ff9e79a7}
       \strng{authornamehash}{db002c27a377557f68cdbe60ff9e79a7}
       \strng{authorfullhash}{db002c27a377557f68cdbe60ff9e79a7}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Publications of the Astronomical Society of Japan}
@@ -2095,8 +2123,8 @@
       \strng{authorbibnamehash}{0e9028c6ad0d2ddb7cf1a456871db776}
       \strng{authornamehash}{0e9028c6ad0d2ddb7cf1a456871db776}
       \strng{authorfullhash}{0e9028c6ad0d2ddb7cf1a456871db776}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{month}{01}

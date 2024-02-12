@@ -138,7 +138,15 @@ Examples of unsupervised applicability classifiers include:
 \end{figure}
 %
 \subsection{Overview}
-(Sin acentos) Recorrido sumario por las distintas partes del analisis estadistico (plantillas) centrandose en su funcion en vez de su funcionamiento tecnico. Explicacion de la arquitectura general de la validacion.\\ 
+(Sin acentos) Recorrido sumario por las distintas partes del analisis estadistico (plantillas) centrandose en su funcion en vez de su funcionamiento tecnico. Explicacion de la arquitectura general de la validacion.\\
+%
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=0.8\textwidth]{/home/pablo/Documentos/TFGP/Thesis/Figures/pipeline.png}
+	\caption{Validation pipeline}
+	\label{fig:pipeline}
+\end{figure}
+%
 \section{Train-test split}
 \subsection{Preliminaries}
 \begin{figure}[!b]
@@ -317,10 +325,10 @@ The step of the PCA projection is motivated by the curse of dimensionality, whic
 \subsubsection{Non-geometrical analysis}
 \indent To help (the engineer in charge) make a decission about the dataset split, another approach is developed, complementary to the geometrical analysis carried out so far. This approach consists of focusing on the statistical distributions of the train and the test datasets. A proper train-test split is characterised by similar statistical distributions of both sets (test and training)\cite{bonnasse2022interpolation}. When this cannot be achieved, a softer requirement is that each of the feature variables $X_i$ need to have reasonably similar marginal distributions in the training and the test set.\\
 %
-\indent The following analysis checks whether, for each individual input feature, the distribution of the training and test set is reasonably similar. This is also checked for the output variables (the ground true ones, thus this is independent from the surrogate model). Finally, the splitting can be done locally, \ie region by region, by binning each numerical variable. The implementation of this analysis tackles each input variable $X_i$ independently and for each input variable, it compares the training and the test set such that:\\
+\indent The following analysis checks whether, for each individual input feature, the distribution of the training and test set is reasonably similar. This is also checked for the output variables (the ground true ones, thus this is independent from the surrogate model). Finally, the splitting can be done locally, \ie region by region, by binning each numerical variable. The implementation of this analysis tackles each input variable $X_i$ independently and for each input variable, it compares the training and the test set such that:
 \begin{itemize}
 	\item If the variable $X_i$ is `categorical`: both (train and test) categorical frequency distributions are plotted (\autoref{fig:inputscatdhist}), a 2-sample $\chi^2$ test\cite[p. 431]{velez1994calculo} is performed, and the p-value of such test is introduced in \autoref{tab:pvalin}.
-	\item If the variable $X_i$ is numerical: both (train and test) numerical frequency distributions are plotted (\autoref{fig:inputsdhist}), a 2-sample Kolmogorov-Smirnov test\cite[p. 454]{velez1994calculo} is carried out, and the p-value of such test is introduced in the same table.
+	\item If the variable $X_i$ is numerical: both (train and test) numerical frequency distributions are plotted (\autoref{fig:inputsdhist}), a 2-sample Kolmogorov-Smirnov test\cite[p. 454]{velez1994calculo} is carried out, and the p-value of such test is introduced in the same table.\\
 \end{itemize}
 %
 \indent The null hypothesis for both tests is that both train and test distributions are the same. H0 is only rejected with a 95\% confidence.\\
@@ -383,7 +391,32 @@ The step of the PCA projection is motivated by the curse of dimensionality, whic
 \end{figure}
 \indent On the other hand, the distributions of both input and output variables in the training set are checked to be reasonably similar to that of the test set. The main outputs are the p-values shown at \autoref{tab:pvalin} and \autoref{tab:pvalout}.\\
 %
-\indent Of course, any given dataset may meet some of the requirements, but not all (as is the case with the MSP-18 dataset). The engineer in charge should evaluate the ensemble output and decide whether it is necessary to redo the split completely or partially, depending on data availability.
+\indent Of course, any given dataset may meet some of the requirements, but not all (as is the case with the MSP-18 dataset). The engineer in charge should evaluate the ensemble output and decide whether it is necessary to redo the split completely or partially, depending on data availability.\\
+%
+\section{Global error quantification}
+\noindent This section corresponds to box labelled ''Error quantification'' in \autoref{fig:pipeline}.\\
+%
+\indent After running the model, the simplest analysis of its performance consists of measuring the aggregated error of predictions against ground true values over the whole test set. Different metrics and criteria can be adopted for this task. Common error measures are the Mean Absolute Error (MAE) and the Root Mean Square Error (RMSE). These metrics account for the distance between points representing ground true values ($\mathbf{Y}$) and model's predictions ($\mathbf{\tilde{Y}}$), taken as the $L1$ norm (MAE) or the square of the $L2$ norm (RMSE). In many industrial applications of machine learning, difference between ground true and predicted values can be more or less important depending on whether that difference is due to \textit{overestimating} or \textit{underestimating}. Take, for instance, the case of MS-S18 model, whose predictions are a measure of the probability of failure of aeronautical structural components. Clearly, underestimating the risk is much more dangerous than overestimating it. For cases such as this one, a useful measure of the error is the \textbf{residue}. The residual error of a given point $i$ is measured as
+\begin{equation}\label{eq:residue}
+	\mathbf{e}(i)=\mathbf{Y}(i)-\mathbf{\tilde{Y}}(i)
+\end{equation}
+The drawback of the residual error is that, when using it as an aggregated indicator for the whole test set, residues can cancel out. A null MAE or RMSE account for a perfectly fitted model (ground true values and predictions are equal). That is not the case for the residual error.\\
+%
+\indent An interesting scalar metric for the global performance of the model is the coefficient of determination $R^2$ \cite{zhang2017coefficient} of the scatter distribution of $\mathbf{Y}$ vs $\mathbf{\tilde{Y}}$. $R^2$ is a measure of the goodness of fit of predicted to ground true values. Illustration of this is provided in \autoref{fig:truevspredscatter}.\\
+%
+\begin{figure}
+	\centering
+	\includegraphics[width=0.8\textwidth]{/home/pablo/Documentos/TFGP/Thesis/Figures/global_stats/yvsyscatter.png}
+	\caption{Scatter plot of ground true ($x$ axis) against predicted values ($y$ axis) and $R^2$ coefficient. In this case, $R^2=1,000$ indicates a perfect fit of predicted to ground true values. Mismatches due to underestimating failure risk are labelled in red, while those due to overestimating failure risk are labelled in blue.}
+	\label{fig:truevspredscatter}
+\end{figure}
+%
+\section{Distributed error quantification}
+This section corresponds to box labelled ''$P(E)$'' in \autoref{fig:pipeline}.
+
+
+
+
 
 
 
