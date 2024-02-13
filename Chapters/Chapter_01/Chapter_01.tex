@@ -147,6 +147,7 @@ Examples of unsupervised applicability classifiers include:
 	\label{fig:pipeline}
 \end{figure}
 %
+\clearpage
 \section{Train-test split}
 \subsection{Preliminaries}
 \begin{figure}[!b]
@@ -393,6 +394,7 @@ The step of the PCA projection is motivated by the curse of dimensionality, whic
 %
 \indent Of course, any given dataset may meet some of the requirements, but not all (as is the case with the MSP-18 dataset). The engineer in charge should evaluate the ensemble output and decide whether it is necessary to redo the split completely or partially, depending on data availability.\\
 %
+\clearpage
 \section{Global error quantification}
 \noindent This section corresponds to box labelled ''Error quantification'' in \autoref{fig:pipeline}.\\
 %
@@ -411,17 +413,65 @@ The drawback of the residual error is that, when using it as an aggregated indic
 	\label{fig:truevspredscatter}
 \end{figure}
 %
-\section{Distributed error quantification}
-This section corresponds to box labelled ''$P(E)$'' in \autoref{fig:pipeline}.\\
+\clearpage
+\section{Distributed error quantification}\label{sec:globalerr}
+\noindent This section corresponds to box labelled ''$P(E)$'' in \autoref{fig:globalerrpipeline}. From now on, the terms ''error'' and ''residue'' (as defined in the previous section) will be used as synonyms.\\
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=0.8\textwidth]{/home/pablo/Documentos/TFGP/Thesis/Figures/boxpdeE.png}
+	\caption{Location of \autoref{sec:globalerr} in the validation pipeline.}
+	\label{fig:globalerrpipeline}
+\end{figure}
 %
 \indent Beyond global error statistics, the error distribution can be analysed instead. There are two main reasons for doing this:\\
 \paragraph{\GMVred{A.} \myul[GMVred]{Non gaussian error distribution}\\}
-It is common in industry-applied problems to find situations in which the model's performance is not Gaussian at all (see \eg \cite{chen2003non,pernot2020impact,smyl2021learning,chai2019using}). Amongst the reasons for this, the most frequent are non-homogeneous data sampling in the train set (isolated regions, etc.) which can cause poor model performance due to interpolation region issues, and the inherent difficulty of predicting outputs for specific input configurations due to strongly non-linear physics (high gradients). When the error is non-Gaussian, outliers in the error distribution can differ from global error indicators such as MASE or RMSE. In such case, analysing the whole error distribution is needed.\\
+It is common in industry-applied problems to find situations in which the model's performance leads to non-Gaussian error distributions (see \eg \cite{chen2003non,pernot2020impact,smyl2021learning,chai2019using}). Amongst the reasons for this, the most frequent are, on the one hand, non-homogeneous data sampling in the train set (which leads to uncovered regions and isolated points) which can cause poor model performance due to out-of-interpolation-regime operation, and on the other hand, the inherent difficulty encountered at predicting outputs for specific input configurations due to strongly non-linear physics or governing equations (high gradients). When the error is non-Gaussian, outliers in the error distribution are not represented by concentration statistics such as MAE or RMSE. In such case, a comprehensive analysis over (not only global error measures, but) the whole error distribution is more adequate.\\
 %
 \paragraph{\GMVred{A.} \myul[GMVred]{Uncertainty measuring}\\}
-Measures on the error's distribution are the first step in the journey towards building an uncertainty model. This model provides confidence intervals inside which the NN can be trusted to predict results with an accuracy level defined by some error boundary. This is the main point treated in \autoref{sec:uncertainty}.\\
+Statistics of the error's distribution are the first step in the journey towards building an \textbf{uncertainty model}. This is the ultimate milestone of the whole validation pipeline, since it provides precise information about \textit{how much} and \textit{when} the model's predictions are trustworthy. Such model provides confidence intervals inside which the NN can be trusted to predict results inside some error boundary. This is the whole point of \autoref{sec:uncertainty}.\\
 %
+\indent A simple plot can help us have an intuition for the cause of subsequent results presented in this section. In \autoref{fig:yvsydoublehist} ground true values and model's predictions are represented in a double histogram for MS-18.\\
+\begin{figure}
+	\centering
+	\includegraphics[width=1\textwidth]{/home/pablo/Documentos/TFGP/Thesis/Figures/global_stats/yvsydoublehist.png}
+	\caption{Double histogram depicting ground true values and model's predictions for the six output variables of MS-18.}
+	\label{fig:yvsydoublehist}
+\end{figure}
+%
+\indent A first indicator of the error distribution over the output variable range can be computing by measuring the goodness of fit of the predicted to the true output distribution, as is illustrated in \autoref{fig:yvsydoublehist}, where ground true values and model's predictions are represented in a double histogram for MS-18. If the model accurately predicts results along the whole output variable range, we would expect both the true and the predicted results to come from the same (unknown) distribution ($H0$). Once again, the null hypothesis is rejected only at a 95\% confidence level. The corresponding p-values of the K-S test are depicted in \autoref{tab:yvsyKS}.\\
+\begin{table}
+	\centering
+	\caption{p-value results for the Kolmogorov-Smirnov test performed on distributions showed in \autoref{fig:yvsydoublehist}.}
+	\includegraphics[scale=\tabscale]{/home/pablo/Documentos/TFGP/Thesis/Figures/global_stats/yvsyks.png}
+	\label{tab:yvsyKS}
+\end{table}
+%
+\indent In \autoref{tab:yvsyKS} we can see how the K-S test rejects the null hypothesis in some cases despite distributions in \autoref{fig:yvsydoublehist} looking very similar. This is due to the K-S test sensitivity to the size of datasets.\\
+%
+\indent The next step in the error distribution analysis is given in \autoref{tab:errorstats}, where some informative statistics are given. The statistics are computed as plain figures and as confidence intervals using bootstrapping \cite{efron1992bootstrap}. For this last case, the 95\% CI is given for each magnitude.\\
+%
+\indent Moreover, in \autoref{tab:basicuncertainty} a basic uncertainty model is given in the form of bootstrapped quantiles of the error distribution. If the uncertainty model is trusted (this issue will be addressed in \autoref{sec:uncertainty}, then any prediction whose input features lie inside the range spanned by the test set can be assumed to be true with a maximum uncertainty defined by the quantiles given in \autoref{tab:basicuncertainty}. For illustration, consider for instance that we want to estimate the model's uncertainty with a 95\% CI. In \autoref{tab:basicuncertainty} we can see that the \ordinalnum{5} and the \ordinalnum{95} percentiles of the error distribution for the output variable ''RF Forced Crippling'' correspond to the intervals given by $[-0.0548,-0.0353]$ and $[0.0379.0.0586]$. Then, if (again) the uncertainty model is trusted, we can assume that for new predictions (whose input features are inside the hypercube defined by the test set) 90\% of the error will belong to the interval $[-0.0548, 0.0586]$. Further discussion of this powerful estimation of the error is provided in \autoref{sec:uncertainty}.\\
+\begin{sidewaystable}
+		\centering
+		\caption{Summary of error statistics.}
+		\includegraphics[scale=\tabscale]{/home/pablo/Documentos/TFGP/Thesis/Figures/global_stats/errorstats.png}
+		\label{tab:errorstats}
+\end{sidewaystable}
+\begin{sidewaystable}
+		\centering
+		\caption{Basic uncertainty model: Bootstrapped percentiles (1, 5, 10, 90, 95 and 99) of the residue distribution, calculated with a 95\% CI using Wilson score \cite{wilson1927probable}.}
+		\includegraphics[scale=\tabscale]{/home/pablo/Documentos/TFGP/Thesis/Figures/global_stats/basic_uncertainty.png}
+		\label{tab:basicuncertainty}
+\end{sidewaystable}
+\clearpage
+\section{Bias: input space}
+%
+\clearpage
+\section{Bias: output space}
+%
+\clearpage
 \section{Uncertainty model estimation}\label{sec:uncertainty}
+%
 
 
 

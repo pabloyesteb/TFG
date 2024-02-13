@@ -598,37 +598,131 @@
       \field{pages}{310\bibrangedash 316}
       \range{pages}{7}
     \endentry
-    \entry{schoups2010formal}{article}{}
-      \name{author}{2}{}{%
-        {{hash=46c166a06baaddcfd7089e9044207a8a}{%
-           family={Schoups},
-           familyi={S\bibinitperiod},
-           given={Gerrit},
+    \entry{chen2003non}{article}{}
+      \name{author}{3}{}{%
+        {{hash=293c31f46eb012efc4b2449215c92484}{%
+           family={Chen},
+           familyi={C\bibinitperiod},
+           given={Gang},
            giveni={G\bibinitperiod}}}%
-        {{hash=420a42f0ecdb7e097171e011e30f55b5}{%
-           family={Vrugt},
-           familyi={V\bibinitperiod},
-           given={Jasper\bibnamedelima A},
-           giveni={J\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=2c74062679102b9738ddc10c19fb3af9}{%
+           family={Gott},
+           familyi={G\bibinitperiod},
+           given={J\bibnamedelima Richard},
+           giveni={J\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+        {{hash=c2c28677221c419a631087e73697b496}{%
+           family={Ratra},
+           familyi={R\bibinitperiod},
+           given={Bharat},
+           giveni={B\bibinitperiod}}}%
       }
       \list{publisher}{1}{%
-        {Wiley Online Library}%
+        {IOP Publishing}%
       }
-      \strng{namehash}{a81e53563497eadd429cbea760b8fa62}
-      \strng{fullhash}{a81e53563497eadd429cbea760b8fa62}
-      \strng{bibnamehash}{a81e53563497eadd429cbea760b8fa62}
-      \strng{authorbibnamehash}{a81e53563497eadd429cbea760b8fa62}
-      \strng{authornamehash}{a81e53563497eadd429cbea760b8fa62}
-      \strng{authorfullhash}{a81e53563497eadd429cbea760b8fa62}
+      \strng{namehash}{0c8f1e1a737c1fbb8c806e2c43949097}
+      \strng{fullhash}{0c8f1e1a737c1fbb8c806e2c43949097}
+      \strng{bibnamehash}{0c8f1e1a737c1fbb8c806e2c43949097}
+      \strng{authorbibnamehash}{0c8f1e1a737c1fbb8c806e2c43949097}
+      \strng{authornamehash}{0c8f1e1a737c1fbb8c806e2c43949097}
+      \strng{authorfullhash}{0c8f1e1a737c1fbb8c806e2c43949097}
       \field{sortinit}{2}
       \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{journaltitle}{Water Resources Research}
-      \field{number}{10}
-      \field{title}{A formal likelihood function for parameter and predictive inference of hydrologic models with correlated, heteroscedastic, and non-Gaussian errors}
-      \field{volume}{46}
-      \field{year}{2010}
+      \field{journaltitle}{Publications of the Astronomical Society of the Pacific}
+      \field{number}{813}
+      \field{title}{Non-Gaussian Error Distribution of Hubble Constant Measurements}
+      \field{volume}{115}
+      \field{year}{2003}
+      \field{pages}{1269}
+      \range{pages}{1}
+    \endentry
+    \entry{pernot2020impact}{article}{}
+      \name{author}{3}{}{%
+        {{hash=668109956f7fc4d62fd1f6522bf07fe5}{%
+           family={Pernot},
+           familyi={P\bibinitperiod},
+           given={Pascal},
+           giveni={P\bibinitperiod}}}%
+        {{hash=4b70c8b00dc5057e34fb4f7579e11ea2}{%
+           family={Huang},
+           familyi={H\bibinitperiod},
+           given={Bing},
+           giveni={B\bibinitperiod}}}%
+        {{hash=ec7a93259596281a7c7e413899d3c988}{%
+           family={Savin},
+           familyi={S\bibinitperiod},
+           given={Andreas},
+           giveni={A\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {IOP Publishing}%
+      }
+      \strng{namehash}{c171fd66faf63f473f8ee883e46e2668}
+      \strng{fullhash}{c171fd66faf63f473f8ee883e46e2668}
+      \strng{bibnamehash}{c171fd66faf63f473f8ee883e46e2668}
+      \strng{authorbibnamehash}{c171fd66faf63f473f8ee883e46e2668}
+      \strng{authornamehash}{c171fd66faf63f473f8ee883e46e2668}
+      \strng{authorfullhash}{c171fd66faf63f473f8ee883e46e2668}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Machine Learning: Science and Technology}
+      \field{number}{3}
+      \field{title}{Impact of non-normal error distributions on the benchmarking and ranking of Quantum Machine Learning models}
+      \field{volume}{1}
+      \field{year}{2020}
+      \field{pages}{035011}
+      \range{pages}{1}
+    \endentry
+    \entry{smyl2021learning}{article}{}
+      \name{author}{5}{}{%
+        {{hash=98c5db972d14d64f8559cfb7ee7c32a9}{%
+           family={Smyl},
+           familyi={S\bibinitperiod},
+           given={Danny},
+           giveni={D\bibinitperiod}}}%
+        {{hash=09c5243b8ffeb07789385b44f3f9d934}{%
+           family={Tallman},
+           familyi={T\bibinitperiod},
+           given={Tyler\bibnamedelima N},
+           giveni={T\bibinitperiod\bibinitdelim N\bibinitperiod}}}%
+        {{hash=2c770a4341c86a3a751507d40542fbb0}{%
+           family={Black},
+           familyi={B\bibinitperiod},
+           given={Jonathan\bibnamedelima A},
+           giveni={J\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=b9081d3a5902d68428cf90eb085a5906}{%
+           family={Hauptmann},
+           familyi={H\bibinitperiod},
+           given={Andreas},
+           giveni={A\bibinitperiod}}}%
+        {{hash=7c3e7a7d9816c833c4d11cce8583b2cf}{%
+           family={Liu},
+           familyi={L\bibinitperiod},
+           given={Dong},
+           giveni={D\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Elsevier}%
+      }
+      \strng{namehash}{62777d6015aa80c4cc7ae187b166f5ee}
+      \strng{fullhash}{b8d7d42963d795238572427da7863faa}
+      \strng{bibnamehash}{62777d6015aa80c4cc7ae187b166f5ee}
+      \strng{authorbibnamehash}{62777d6015aa80c4cc7ae187b166f5ee}
+      \strng{authornamehash}{62777d6015aa80c4cc7ae187b166f5ee}
+      \strng{authorfullhash}{b8d7d42963d795238572427da7863faa}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Computational Physics}
+      \field{title}{Learning and correcting non-Gaussian model errors}
+      \field{volume}{432}
+      \field{year}{2021}
+      \field{pages}{110152}
+      \range{pages}{1}
     \endentry
     \entry{chai2019using}{article}{}
       \name{author}{4}{}{%
@@ -673,6 +767,62 @@
       \field{year}{2019}
       \field{pages}{1919\bibrangedash 1931}
       \range{pages}{13}
+    \endentry
+    \entry{efron1992bootstrap}{incollection}{}
+      \name{author}{1}{}{%
+        {{hash=5470455fc7dceb3ccf6db38cb22a113d}{%
+           family={Efron},
+           familyi={E\bibinitperiod},
+           given={Bradley},
+           giveni={B\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{5470455fc7dceb3ccf6db38cb22a113d}
+      \strng{fullhash}{5470455fc7dceb3ccf6db38cb22a113d}
+      \strng{bibnamehash}{5470455fc7dceb3ccf6db38cb22a113d}
+      \strng{authorbibnamehash}{5470455fc7dceb3ccf6db38cb22a113d}
+      \strng{authornamehash}{5470455fc7dceb3ccf6db38cb22a113d}
+      \strng{authorfullhash}{5470455fc7dceb3ccf6db38cb22a113d}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Breakthroughs in statistics: Methodology and distribution}
+      \field{title}{Bootstrap methods: another look at the jackknife}
+      \field{year}{1992}
+      \field{pages}{569\bibrangedash 593}
+      \range{pages}{25}
+    \endentry
+    \entry{wilson1927probable}{article}{}
+      \name{author}{1}{}{%
+        {{hash=97c17720b08538db4ed8190a1c7bee58}{%
+           family={Wilson},
+           familyi={W\bibinitperiod},
+           given={Edwin\bibnamedelima B},
+           giveni={E\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Taylor \& Francis}%
+      }
+      \strng{namehash}{97c17720b08538db4ed8190a1c7bee58}
+      \strng{fullhash}{97c17720b08538db4ed8190a1c7bee58}
+      \strng{bibnamehash}{97c17720b08538db4ed8190a1c7bee58}
+      \strng{authorbibnamehash}{97c17720b08538db4ed8190a1c7bee58}
+      \strng{authornamehash}{97c17720b08538db4ed8190a1c7bee58}
+      \strng{authorfullhash}{97c17720b08538db4ed8190a1c7bee58}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of the American Statistical Association}
+      \field{number}{158}
+      \field{title}{Probable inference, the law of succession, and statistical inference}
+      \field{volume}{22}
+      \field{year}{1927}
+      \field{pages}{209\bibrangedash 212}
+      \range{pages}{4}
     \endentry
     \entry{Montenbruck}{book}{}
       \name{author}{2}{}{%
@@ -824,8 +974,8 @@
       \strng{authorbibnamehash}{afafc7a086f96baed3f76650e4fcdc5d}
       \strng{authornamehash}{afafc7a086f96baed3f76650e4fcdc5d}
       \strng{authorfullhash}{afafc7a086f96baed3f76650e4fcdc5d}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{Precise Orbit Determination}
@@ -861,8 +1011,8 @@
       \strng{authorbibnamehash}{79b1fac74380a15000d09e05aabd73ac}
       \strng{authornamehash}{79b1fac74380a15000d09e05aabd73ac}
       \strng{authorfullhash}{79b1fac74380a15000d09e05aabd73ac}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{isbn}{9781523123346}
@@ -1067,8 +1217,8 @@
       \strng{authorbibnamehash}{5d9753c98d823c83966f248dbe18f6fd}
       \strng{authornamehash}{5d9753c98d823c83966f248dbe18f6fd}
       \strng{authorfullhash}{5d9753c98d823c83966f248dbe18f6fd}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{{Journal of Guidance, Control \& Dynamics}}
@@ -1192,134 +1342,38 @@
       \field{year}{2007}
       \true{nocite}
     \endentry
-    \entry{chen2003non}{article}{}
-      \name{author}{3}{}{%
-        {{hash=293c31f46eb012efc4b2449215c92484}{%
-           family={Chen},
-           familyi={C\bibinitperiod},
-           given={Gang},
+    \entry{schoups2010formal}{article}{}
+      \name{author}{2}{}{%
+        {{hash=46c166a06baaddcfd7089e9044207a8a}{%
+           family={Schoups},
+           familyi={S\bibinitperiod},
+           given={Gerrit},
            giveni={G\bibinitperiod}}}%
-        {{hash=2c74062679102b9738ddc10c19fb3af9}{%
-           family={Gott},
-           familyi={G\bibinitperiod},
-           given={J\bibnamedelima Richard},
-           giveni={J\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
-        {{hash=c2c28677221c419a631087e73697b496}{%
-           family={Ratra},
-           familyi={R\bibinitperiod},
-           given={Bharat},
-           giveni={B\bibinitperiod}}}%
-      }
-      \list{publisher}{1}{%
-        {IOP Publishing}%
-      }
-      \strng{namehash}{0c8f1e1a737c1fbb8c806e2c43949097}
-      \strng{fullhash}{0c8f1e1a737c1fbb8c806e2c43949097}
-      \strng{bibnamehash}{0c8f1e1a737c1fbb8c806e2c43949097}
-      \strng{authorbibnamehash}{0c8f1e1a737c1fbb8c806e2c43949097}
-      \strng{authornamehash}{0c8f1e1a737c1fbb8c806e2c43949097}
-      \strng{authorfullhash}{0c8f1e1a737c1fbb8c806e2c43949097}
-      \field{sortinit}{6}
-      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Publications of the Astronomical Society of the Pacific}
-      \field{number}{813}
-      \field{title}{Non-Gaussian Error Distribution of Hubble Constant Measurements}
-      \field{volume}{115}
-      \field{year}{2003}
-      \true{nocite}
-      \field{pages}{1269}
-      \range{pages}{1}
-    \endentry
-    \entry{pernot2020impact}{article}{}
-      \name{author}{3}{}{%
-        {{hash=668109956f7fc4d62fd1f6522bf07fe5}{%
-           family={Pernot},
-           familyi={P\bibinitperiod},
-           given={Pascal},
-           giveni={P\bibinitperiod}}}%
-        {{hash=4b70c8b00dc5057e34fb4f7579e11ea2}{%
-           family={Huang},
-           familyi={H\bibinitperiod},
-           given={Bing},
-           giveni={B\bibinitperiod}}}%
-        {{hash=ec7a93259596281a7c7e413899d3c988}{%
-           family={Savin},
-           familyi={S\bibinitperiod},
-           given={Andreas},
-           giveni={A\bibinitperiod}}}%
-      }
-      \list{publisher}{1}{%
-        {IOP Publishing}%
-      }
-      \strng{namehash}{c171fd66faf63f473f8ee883e46e2668}
-      \strng{fullhash}{c171fd66faf63f473f8ee883e46e2668}
-      \strng{bibnamehash}{c171fd66faf63f473f8ee883e46e2668}
-      \strng{authorbibnamehash}{c171fd66faf63f473f8ee883e46e2668}
-      \strng{authornamehash}{c171fd66faf63f473f8ee883e46e2668}
-      \strng{authorfullhash}{c171fd66faf63f473f8ee883e46e2668}
-      \field{sortinit}{6}
-      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Machine Learning: Science and Technology}
-      \field{number}{3}
-      \field{title}{Impact of non-normal error distributions on the benchmarking and ranking of Quantum Machine Learning models}
-      \field{volume}{1}
-      \field{year}{2020}
-      \true{nocite}
-      \field{pages}{035011}
-      \range{pages}{1}
-    \endentry
-    \entry{smyl2021learning}{article}{}
-      \name{author}{5}{}{%
-        {{hash=98c5db972d14d64f8559cfb7ee7c32a9}{%
-           family={Smyl},
-           familyi={S\bibinitperiod},
-           given={Danny},
-           giveni={D\bibinitperiod}}}%
-        {{hash=09c5243b8ffeb07789385b44f3f9d934}{%
-           family={Tallman},
-           familyi={T\bibinitperiod},
-           given={Tyler\bibnamedelima N},
-           giveni={T\bibinitperiod\bibinitdelim N\bibinitperiod}}}%
-        {{hash=2c770a4341c86a3a751507d40542fbb0}{%
-           family={Black},
-           familyi={B\bibinitperiod},
-           given={Jonathan\bibnamedelima A},
+        {{hash=420a42f0ecdb7e097171e011e30f55b5}{%
+           family={Vrugt},
+           familyi={V\bibinitperiod},
+           given={Jasper\bibnamedelima A},
            giveni={J\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
-        {{hash=b9081d3a5902d68428cf90eb085a5906}{%
-           family={Hauptmann},
-           familyi={H\bibinitperiod},
-           given={Andreas},
-           giveni={A\bibinitperiod}}}%
-        {{hash=7c3e7a7d9816c833c4d11cce8583b2cf}{%
-           family={Liu},
-           familyi={L\bibinitperiod},
-           given={Dong},
-           giveni={D\bibinitperiod}}}%
       }
       \list{publisher}{1}{%
-        {Elsevier}%
+        {Wiley Online Library}%
       }
-      \strng{namehash}{62777d6015aa80c4cc7ae187b166f5ee}
-      \strng{fullhash}{b8d7d42963d795238572427da7863faa}
-      \strng{bibnamehash}{62777d6015aa80c4cc7ae187b166f5ee}
-      \strng{authorbibnamehash}{62777d6015aa80c4cc7ae187b166f5ee}
-      \strng{authornamehash}{62777d6015aa80c4cc7ae187b166f5ee}
-      \strng{authorfullhash}{b8d7d42963d795238572427da7863faa}
+      \strng{namehash}{a81e53563497eadd429cbea760b8fa62}
+      \strng{fullhash}{a81e53563497eadd429cbea760b8fa62}
+      \strng{bibnamehash}{a81e53563497eadd429cbea760b8fa62}
+      \strng{authorbibnamehash}{a81e53563497eadd429cbea760b8fa62}
+      \strng{authornamehash}{a81e53563497eadd429cbea760b8fa62}
+      \strng{authorfullhash}{a81e53563497eadd429cbea760b8fa62}
       \field{sortinit}{6}
       \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{journaltitle}{Journal of Computational Physics}
-      \field{title}{Learning and correcting non-Gaussian model errors}
-      \field{volume}{432}
-      \field{year}{2021}
+      \field{journaltitle}{Water Resources Research}
+      \field{number}{10}
+      \field{title}{A formal likelihood function for parameter and predictive inference of hydrologic models with correlated, heteroscedastic, and non-Gaussian errors}
+      \field{volume}{46}
+      \field{year}{2010}
       \true{nocite}
-      \field{pages}{110152}
-      \range{pages}{1}
     \endentry
     \entry{Tapley}{book}{}
       \name{author}{3}{}{%
@@ -1351,8 +1405,8 @@
       \strng{authorbibnamehash}{415a0bba2e2e7f3ff2d6d29311617685}
       \strng{authornamehash}{415a0bba2e2e7f3ff2d6d29311617685}
       \strng{authorfullhash}{415a0bba2e2e7f3ff2d6d29311617685}
-      \field{sortinit}{6}
-      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{edition}{1}
@@ -1547,8 +1601,8 @@
       \strng{authorbibnamehash}{7aae3c76356e6c2d8205ca8f584a1b93}
       \strng{authornamehash}{7aae3c76356e6c2d8205ca8f584a1b93}
       \strng{authorfullhash}{7aae3c76356e6c2d8205ca8f584a1b93}
-      \field{sortinit}{7}
-      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{isbn}{3527407804; 9783527407804}
@@ -1571,8 +1625,8 @@
       \strng{authorbibnamehash}{9f67f7e163f525368297b347baa02ce6}
       \strng{authornamehash}{9f67f7e163f525368297b347baa02ce6}
       \strng{authorfullhash}{9f67f7e163f525368297b347baa02ce6}
-      \field{sortinit}{7}
-      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{isbn}{978-94-6186-419-2}
@@ -1601,8 +1655,8 @@
       \strng{authorbibnamehash}{aded628cfb77b62db19cb3243f425b8b}
       \strng{authornamehash}{aded628cfb77b62db19cb3243f425b8b}
       \strng{authorfullhash}{aded628cfb77b62db19cb3243f425b8b}
-      \field{sortinit}{7}
-      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{{Perturbation Methods}}
@@ -1630,8 +1684,8 @@
       \strng{authorbibnamehash}{a5d8ee096fc8780081f9d4403188d626}
       \strng{authornamehash}{a5d8ee096fc8780081f9d4403188d626}
       \strng{authorfullhash}{a5d8ee096fc8780081f9d4403188d626}
-      \field{sortinit}{7}
-      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{{Theory of Satellite Geodesy}}
@@ -1804,8 +1858,8 @@
       \strng{authorbibnamehash}{44b11b044d204e0404ccad8f7a324667}
       \strng{authornamehash}{44b11b044d204e0404ccad8f7a324667}
       \strng{authorfullhash}{44b11b044d204e0404ccad8f7a324667}
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{number}{21}
@@ -1828,8 +1882,8 @@
       \strng{authorbibnamehash}{2f9ea127a38aa7b9bb961325b1251dd3}
       \strng{authornamehash}{2f9ea127a38aa7b9bb961325b1251dd3}
       \strng{authorfullhash}{2f9ea127a38aa7b9bb961325b1251dd3}
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{note}{\url{https://degenerateconic.com/uploads/2015/03/lvlh.pdf}}
@@ -1858,8 +1912,8 @@
       \strng{authorbibnamehash}{593d5a57309b860955c3e776f8866639}
       \strng{authornamehash}{593d5a57309b860955c3e776f8866639}
       \strng{authorfullhash}{593d5a57309b860955c3e776f8866639}
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{month}{11}
@@ -1886,8 +1940,8 @@
       \strng{authorbibnamehash}{6e114c910e5898d17f0977859d8ab5f7}
       \strng{authornamehash}{6e114c910e5898d17f0977859d8ab5f7}
       \strng{authorfullhash}{6e114c910e5898d17f0977859d8ab5f7}
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{American Journal of Mathematics}
@@ -1986,8 +2040,8 @@
       \strng{authorbibnamehash}{9963bf91b0036a70fc09e6341b78fa64}
       \strng{authornamehash}{9963bf91b0036a70fc09e6341b78fa64}
       \strng{authorfullhash}{9963bf91b0036a70fc09e6341b78fa64}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Astronautica Acta}
@@ -2013,8 +2067,8 @@
       \strng{authorbibnamehash}{613679091e8ca1cb3632ce9fbbd24789}
       \strng{authornamehash}{613679091e8ca1cb3632ce9fbbd24789}
       \strng{authorfullhash}{613679091e8ca1cb3632ce9fbbd24789}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Journal of Guidance Control and Dynamics}
@@ -2054,8 +2108,8 @@
       \strng{authorbibnamehash}{326a1dd1cf23b55ae8b56ddc8609dcb6}
       \strng{authornamehash}{326a1dd1cf23b55ae8b56ddc8609dcb6}
       \strng{authorfullhash}{326a1dd1cf23b55ae8b56ddc8609dcb6}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Aerospace Science and Technology}
