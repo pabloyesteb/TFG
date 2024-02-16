@@ -423,17 +423,17 @@ The drawback of the residual error is that, when using it as an aggregated indic
 	\label{fig:globalerrpipeline}
 \end{figure}
 %
-\indent Beyond global error statistics, the PDF of the residue, $P(e)$, can be analysed. There are two main reasons for doing this:\\
+\indent Beyond global error statistics, the PDF of the residue, $P(e)$, is of great importance for validation purposes. The main goal of this section is finding the analytic expression of $P(e)$ and computing important statistics of it, and, when the first is not possible, computing the important statistics from the empirical distribution of the residue (sampled from the test set) with the method of bootstrapping\cite{efron1992bootstrap}. There are three main reasons for studying $P(e)$:\\
 \paragraph{\GMVred{A.} \myul[GMVred]{Non gaussian error distribution}\\}
-It is common in industry-applied problems to find situations in which the model's performance leads to non-Gaussian error distributions (see \eg \cite{chen2003non,pernot2020impact,smyl2021learning,chai2019using}). Amongst the reasons for this, the most frequent are, on the one hand, non-homogeneous data sampling in the train set (which leads to uncovered regions and isolated points) which can cause poor model performance due to out-of-interpolation-regime operation, and on the other hand, the inherent difficulty encountered at predicting outputs for specific input configurations due to strongly non-linear physics or governing equations (high gradients). When the error is non-Gaussian, concentration statistics such as MAE or RMSE stop being informative. In such case, a comprehensive analysis on $P(e)$ is more adequate.\\
+It is common in industry-applied problems to find situations in which the error between ground-true values and predictions coming from a regression model (let it be a surrogate ANN, some parametric regressor, etc.) which is supposed to fit any function describing a complex system follows absolutely non-Gaussian distributions (see \eg \cite{chen2003non,pernot2020impact,smyl2021learning,chai2019using}). Amongst the reasons for this, the most frequent are, on the one hand, non-homogeneous data sampling in the training set (leading to uncovered regions and isolated points) which can cause poor model performance due to non-interpolation-regime operation, and on the other hand, the inherent difficulty encountered at predicting outputs for specific input configurations due to strongly non-linear physics or governing equations (mathematically this is manifests in high gradients). When the error is non-Gaussian, concentration statistics such as MAE or RMSE stop being informative. In such case, a comprehensive analysis on $P(e)$ is more adequate.\\
 %
 \paragraph{\GMVred{B.} \myul[GMVred]{Outlier detection}\\}
-Outliers are strange events in a population sampled from a known PDF, in the sense that it is not expected to find them, or their position is far from expected. Outlier detection helps identifying strange phenomena which the engineer in charge could decide to investigate. Imagine, for instance, that certain residue was systematically sampled with an unusual frequency, compared with similar residues. In this case, it would be necessary to assess whether this high frequency is statistically expectable or not. If it was found to be an outlier, the underlying reason triggering such residue would help with model boosting.\\
+Outliers are strange events in a population sampled from a known PDF, in the sense that it is not expected to find them, or that their position is far away from expected. Outlier detection helps identifying strange phenomena which the engineer in charge could decide to investigate. Imagine, for instance, that certain residue $e_x$ was systematically sampled from the test set with an unusual frequency, compared with similar values. In this case, it would be necessary to assess whether this high frequency is statistically expectable from the residue's PDF or not. If $e_x$  was found to be an outlier, determining the underlying reason triggering such high frequency would help with model boosting.\\
 \indent Outlier detection relies on knowing $P(e)$. The probability of finding a residue larger than a given magnitude $x$ is measured as $p_{>x}=\int_{x}^{\infty} P(e) \, de$. If we find some $x$ for which $p_{>x}<<1$, all samples of the residue $e>x$ would be classified as outliers.
 \paragraph{\GMVred{C.} \myul[GMVred]{Uncertainty measuring}\\}
-The marginalised distribution of $P(e)$ is the first step in the journey towards building an \textbf{uncertainty model}. This is the ultimate milestone of the whole validation pipeline, since it provides precise information about \textit{how much} and \textit{when} the model's predictions are trustworthy. This is the whole point of \autoref{sec:uncertainty}.\\
+The marginalised distribution of $P(e)$ is the first step in the journey towards building an \textbf{uncertainty model}. This is the ultimate milestone of the whole validation pipeline, since it provides precise information about \textit{how much} and \textit{when} the model's predictions are trustworthy. This is the whole point of \autoref{sec:uncertainty}. The uncertainty model relies on the marginalised distribution of the residue for building confidence intervals which embed the model's error with a given statistical confidence level (coverage).\\
 %
-\indent A simple plot can help us have an intuition for the cause of subsequent results presented in this section. In \autoref{fig:yvsydoublehist} ground true values and model's predictions are represented in a double histogram for MS-18.\\
+\indent A simple plot can help us have a first intuition for the cause of subsequent results presented in this section. In \autoref{fig:yvsydoublehist} ground true values and model's predictions are represented in a double histogram for MS-18.\\
 \begin{figure}
 	\centering
 	\includegraphics[width=1\textwidth]{/home/pablo/Documentos/TFGP/Thesis/Figures/global_stats/yvsydoublehist.png}
@@ -441,7 +441,7 @@ The marginalised distribution of $P(e)$ is the first step in the journey towards
 	\label{fig:yvsydoublehist}
 \end{figure}
 %
-\indent A first indicator of the error distribution can be computed by measuring the goodness of fit of the predicted to the true output distribution, as is illustrated in \autoref{fig:yvsydoublehist}, where ground true values and model's predictions are represented in a double histogram for MS-18's variables. If the model accurately predicts results along the whole output variable range, we would expect both the true and the predicted results to come from the same (unknown) distribution ($H0$). We can test this with a (2 sample) goodness-of-fit test like the Kolmogorov-Smirnov. Once again, the null hypothesis is rejected only at a 95\% confidence level (\ie if the p-value derived from the K-S test is lower than $0.05$). The corresponding p-values of the K-S test for the MS-18 are depicted in \autoref{tab:yvsyKS}.\\
+\indent If the model accurately predicts results along the whole output variables range (or equivalently it is not heteroscedastic \cite[p. 374]{jobson2012applied}), we would expect both the true and the predicted results to come from the same (unknown) distribution ($H0$). We can test this with a (2 sample) goodness-of-fit test like the Kolmogorov-Smirnov. Once again, the null hypothesis is rejected only at a 95\% confidence level (\ie if the p-value derived from the K-S test is lower than $0.05$). The corresponding p-values of the K-S test for the six output variables are depicted in \autoref{tab:yvsyKS}.\\
 \begin{table}
 	\centering
 	\caption{p-value results for the Kolmogorov-Smirnov test performed on distributions showed in \autoref{fig:yvsydoublehist}.}
@@ -451,7 +451,39 @@ The marginalised distribution of $P(e)$ is the first step in the journey towards
 %
 \indent In \autoref{tab:yvsyKS} we can see how the K-S test rejects the null hypothesis in some cases despite distributions in \autoref{fig:yvsydoublehist} looking very similar. This is due to the K-S test sensitivity to the size of datasets.\\
 %
-\indent Some informative statistics of the error distribution are given in \autoref{tab:errorstats}. The statistics are computed twice, once in $\mathbf{S}^\text{test}$ and the other one using bootstrapping \cite{efron1992bootstrap}. Bootstrapping allows for calculation of any distribution statistic (take, for instance, the mean, any given quantile, the median, etc.) of an unknown distribution PDF $P(x)$ given a population of $N$ elements sampled from $P(x)$. The bootstrapping method is described in \autoref{algo:bootstrap}. This algorithm:
+\indent As it has been previously mentioned, outlier detection and uncertainty models both rely on the PDF of the residue, $P(e)$. The main goal of this section is finding the analytical definition of $P(e)$ if possible, and measuring important statistics of it. This is addressed with a focus similar to that followed in \autoref{fig:yvsydoublehist} and \autoref{tab:yvsyKS}, but instead of assessing the fitness of the predictions ($\hat{y}$) distribution to the ground true values ($y$) distribution, we try to assess the goodness of fit of the empirical residue distribution to some well-known distributions. For reference, the (empirical) error distribution of the six output variables is depicted in \autoref{fig:pdferror}, as well as the corresponding cumulative distributions, given in \autoref{fig:errorcumulative}.\\
+\begin{figure}
+	\centering
+	\includegraphics[width=1\textwidth]{/home/pablo/Documentos/TFGP/Thesis/Figures/global_stats/pdferror.png}
+	\caption{Empirical residue distribution sampled from the test set, for each of the six output variables of MS-S18. $x$-axis limits have been truncated to $\mu \pm 3 \sigma$, where the most part of the error lies. Histograms have been appropriately binned for a correct visualization.}
+	\label{fig:pdferror}
+\end{figure}
+\begin{figure}
+	\centering
+	\includegraphics[width=1\textwidth]{/home/pablo/Documentos/TFGP/Thesis/Figures/global_stats/cumulativeerror.png}
+	\caption{Cumulative error distributions corresponding to the PDFs showed in \autoref{fig:errorpdf}.}
+	\label{fig:errorcumulative}
+\end{figure}
+%
+\indent Under the assumption that $P(e)$ can be described by some well-known parametric distribution, we use the K-S test to compare distributions of \autoref{fig:pdferror} to the following distributions:
+\begin{itemize}
+	\item Normal
+	\item Laplace
+	\item Cauchy\\
+\end{itemize}
+%
+\indent P-values from the corresponding K-S tests are given in\\
+\begin{table}
+	\centering
+	\caption{P-values of the K-S test comparing the empirical sample of $P(e)$ to each of the indicated distributions. The null hypothesis $H0$ (the empirical distribution has been sampled from the one figuring in a given column) is rejected when $p-\text{value}<0.05$.}
+	\includegraphics[scale=\tabscale]{/home/pablo/Documentos/TFGP/Thesis/Figures/global_stats/errorKS.png}
+\end{table}
+%\indent Each of the former distribution is defined by a set of parameters (\eg, the normal distribution is defined by its mean and its standard deviation, as described by \autoref{eq:normaldist}. In other words, each of the former distributions is in fact a family of distributions. In order to find the set of parameters which best fits the empirical error distribution, an optimisation algorithm which finds the optimum set of parameters 
+%\begin{equation}\label{eq:normaldist}
+%	f(x) = \frac{1}{\sigma \sqrt{2\pi}} \exp \left( -\frac{(x - \mu)^2}{2\sigma^2} \right)\sim N(0,1)
+%\end{equation}
+%
+\indent Some informative statistics of the error distribution are given in \autoref{tab:errorstats}. The statistics are computed twice, once in the empirical distribution of $P(e)$ sampled from $\cal{S}^\text{test}$, and the other one using bootstrapping. Bootstrapping allows for calculation of any distribution statistic (take, for instance, the mean, any given quantile, the median, etc.) of an unknown distribution PDF $P(x)$ given a population of $N$ elements sampled from $P(x)$. The bootstrapping method is described in \autoref{algo:bootstrap}. This algorithm:
 \begin{enumerate}
 	\item Samples $N$ points with replacement from the original population $S$. N.B. replacement makes the new and the original populations (possibly) different.
 	\item Statistic $x$ is calculated in the new population.
@@ -464,7 +496,7 @@ The marginalised distribution of $P(e)$ is the first step in the journey towards
 	\KwData{Population $S=\left\{S_1,S_2,\ldots,S_N\right\}$ with unknown PDF.}
 	\KwResult{Statistic $x$'s CI}
 	
-	Initialize list: $CI=[0]_{1\times 2}$;\\
+	Initial ize list: $CI=[0]_{1\times 2}$;\\
 	Initialize list: $X=[0]_{1\times M}$;\\
 	\For{$i=1,\ldots,M>>1$}{
 			$S_i\leftarrow C_S(N,N)$;\\
@@ -488,7 +520,7 @@ The marginalised distribution of $P(e)$ is the first step in the journey towards
 		\label{tab:basicuncertainty}
 \end{sidewaystable}
 %
-\indent Of course, the uncertainty model described in the last paragraph can be fine-tuned using additional information about the error distribution. If we found $P(e)$ to be heteroscedastic \cite[p. 374]{jobson2012applied}, we could benefit from conditioning our uncertainty model to certain regions of the input (or the output) space. This is the main motivation for \autoref{sec:biasinput}, \autoref{sec:biasoutput} and \autoref{sec:uncertainty}.\\
+\indent Of course, the uncertainty model described in the last paragraph can be fine-tuned using additional information about the error distribution. If we found $P(e)$ to be heteroscedastic, we could benefit from conditioning our uncertainty model to certain regions of the input (or the output) space. This is the main motivation for \autoref{sec:biasinput}, \autoref{sec:biasoutput} and \autoref{sec:uncertainty}.\\
 %
 \indent The non-parametric bootstrapping method described above is useful for when the parametrised PDF of the residue, $P(e)$, is unknown. But we can try to fit $P(E)$ to any (known) probability density function. If a match was found, bootstrapping would not be needed and the matching PDF's statistics could be directly used for uncertainty estimation. With this aim, we 
 

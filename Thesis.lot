@@ -13,12 +13,13 @@
 \contentsline {table}{\numberline {1.4}{\ignorespaces \texttt {reqs\_results\_table}. The first and the last requirements compare absolute figures of points at some isolation level with the overall number of points. Whereas the second and third requirements compare the difference in number of points between two consecutive levels with the total number of points.\relax }}{14}{table.caption.18}%
 \contentsline {table}{\numberline {1.5}{\ignorespaces P-values of the input variables. The test performed is a 2-sample Kolmogorov-Smirnov or a 2-sample $\chi ^2$ test, depending on the data being numerical (first 19 rows) or categorical (''dp'', ''Frame'' and ''Stringer'').\relax }}{16}{table.caption.19}%
 \contentsline {table}{\numberline {1.6}{\ignorespaces P-values of the output variables distributions\relax }}{17}{table.caption.22}%
-\contentsline {table}{\numberline {1.7}{\ignorespaces p-value results for the Kolmogorov-Smirnov test performed on distributions showed in \autoref {fig:yvsydoublehist}.\relax }}{25}{table.caption.29}%
-\contentsline {table}{\numberline {1.8}{\ignorespaces Summary of error statistics.\relax }}{26}{table.caption.31}%
-\contentsline {table}{\numberline {1.9}{\ignorespaces Bootstrapped percentiles (1, 5, 10, 90, 95 and 99) of the residue distribution, calculated with a 95\% CI using Wilson score \blx@tocontentsinit {0}\cite {wilson1927probable}.\relax }}{27}{table.caption.32}%
-\contentsline {table}{\numberline {1.10}{\ignorespaces Output of \autoref {algo:tt-split}: \texttt {reqs\_results} table\relax }}{32}{table.caption.33}%
-\contentsline {table}{\numberline {1.11}{\ignorespaces Voxel reference table. Lorem ipsum dolor sit amet, consectetuer adisciping elit.\relax }}{33}{table.caption.34}%
+\contentsline {table}{\numberline {1.7}{\ignorespaces p-value results for the Kolmogorov-Smirnov test performed on distributions showed in \autoref {fig:yvsydoublehist}.\relax }}{26}{table.caption.29}%
+\contentsline {table}{\numberline {1.8}{\ignorespaces P-values of the K-S test comparing the empirical sample of $P(e)$ to each of the indicated distributions. The null hypothesis $H0$ (the empirical distribution has been sampled from the one figuring in a given column) is rejected when $p-\text {value}<0.05$.\relax }}{26}{table.caption.32}%
+\contentsline {table}{\numberline {1.9}{\ignorespaces Summary of error statistics.\relax }}{28}{table.caption.34}%
+\contentsline {table}{\numberline {1.10}{\ignorespaces Bootstrapped percentiles (1, 5, 10, 90, 95 and 99) of the residue distribution, calculated with a 95\% CI using Wilson score \blx@tocontentsinit {0}\cite {wilson1927probable}.\relax }}{29}{table.caption.35}%
+\contentsline {table}{\numberline {1.11}{\ignorespaces Output of \autoref {algo:tt-split}: \texttt {reqs\_results} table\relax }}{34}{table.caption.36}%
+\contentsline {table}{\numberline {1.12}{\ignorespaces Voxel reference table. Lorem ipsum dolor sit amet, consectetuer adisciping elit.\relax }}{35}{table.caption.37}%
 \addvspace {10\p@ }
-\contentsline {xchapter}{Conclusions and research outlook.}{41}{chapter.2}%
+\contentsline {xchapter}{Conclusions and research outlook.}{43}{chapter.2}%
 \addvspace {10\p@ }
-\contentsline {xchapter}{Absolute and relative orbital element sets.}{43}{appendix.A}%
+\contentsline {xchapter}{Absolute and relative orbital element sets.}{45}{appendix.A}%
