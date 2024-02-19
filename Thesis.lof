@@ -19,15 +19,17 @@
 \contentsline {figure}{\numberline {1.10}{\ignorespaces Scatter plot of ground true ($x$ axis) against predicted values ($y$ axis) and $R^2$ coefficient. In this case, $R^2=1,000$ indicates a perfect fit of predicted to ground true values. Mismatches due to underestimating failure risk are labelled in red, while those due to overestimating failure risk are labelled in blue. Similar graphs can be computed for every pair $\left \{y_j,\hat {y}_j\right \}$ of features in the output variables $\mathbf {Y}=\left \{y_1,y_2,\ldots ,y_m\right \}$.\relax }}{21}{figure.caption.26}%
 \contentsline {figure}{\numberline {1.11}{\ignorespaces Location of \autoref {sec:globalerr} in the validation pipeline.\relax }}{22}{figure.caption.27}%
 \contentsline {figure}{\numberline {1.12}{\ignorespaces Double histogram depicting ground true values and model's predictions for the six output variables of MS-18.\relax }}{24}{figure.caption.28}%
-\contentsline {figure}{\numberline {1.13}{\ignorespaces Empirical residue distribution sampled from the test set, for each of the six output variables of MS-S18. $x$-axis limits have been truncated to $\mu \pm 3 \sigma $, where the most part of the error lies. Histograms have been appropriately binned for a correct visualization.\relax }}{25}{figure.caption.30}%
-\contentsline {figure}{\numberline {1.14}{\ignorespaces Cumulative error distributions corresponding to the PDFs showed in \autoref {fig:errorpdf}.\relax }}{25}{figure.caption.31}%
-\contentsline {figure}{\numberline {1.15}{\ignorespaces Covariance ellipsoid evolution along a radial hop.\relax }}{40}{figure.caption.44}%
+\contentsline {figure}{\numberline {1.13}{\ignorespaces Empirical residue distribution sampled from the test set, for each of the six output variables of MS-S18. $x$-axis limits have been truncated to $\mu \pm 3 \sigma $, where the most part of the error lies. Histograms have been appropriately binned for a correct visualization.\relax }}{26}{figure.caption.30}%
+\contentsline {figure}{\numberline {1.14}{\ignorespaces Cumulative error distributions corresponding to the PDFs showed (as binned histograms) in \autoref {fig:pdferror}.\relax }}{26}{figure.caption.31}%
+\contentsline {figure}{\numberline {1.15}{\ignorespaces Graphical comparison of the p-values resulting from the K-S test for the MS-18 data.\relax }}{28}{figure.caption.33}%
+\contentsline {figure}{\numberline {1.16}{\ignorespaces (Binned) histograms depicting the distribution of the variable $z=\gamma +\qopname \relax o{sinh}{\frac {e-\xi }{\lambda }}$, where $e\sim JohnsonSU(\gamma ,\delta ,\xi ,\lambda )$ is the sampled residue. It can be shown that $z$ converges to a normal distribution\blx@tocontentsinit {0}\cite {jones2009sinh}.\relax }}{29}{figure.caption.34}%
+\contentsline {figure}{\numberline {1.17}{\ignorespaces Covariance ellipsoid evolution along a radial hop.\relax }}{42}{figure.caption.47}%
 \addvspace {10\p@ }
-\contentsline {xchapter}{Conclusions and research outlook.}{43}{chapter.2}%
+\contentsline {xchapter}{Conclusions and research outlook.}{45}{chapter.2}%
 \addvspace {10\p@ }
-\contentsline {xchapter}{Absolute and relative orbital element sets.}{45}{appendix.A}%
-\contentsline {figure}{\numberline {A.1}{\ignorespaces Workflow for transforming between two arbitary absolute element sets.\relax }}{46}{figure.caption.46}%
-\contentsline {figure}{\numberline {A.2}{\ignorespaces Frame rotation from inertial to perifocal frame.\relax }}{47}{figure.caption.48}%
-\contentsline {figure}{\numberline {A.3}{\ignorespaces Workflow for transforming any relative set into KOE.\relax }}{52}{figure.caption.58}%
-\contentsline {figure}{\numberline {A.4}{\ignorespaces Workflow for transforming RKOE into any other set.\relax }}{53}{figure.caption.60}%
-\contentsline {figure}{\numberline {A.5}{\ignorespaces Relative ccentricity \& inclination vectors. \relax }}{54}{figure.caption.63}%
+\contentsline {xchapter}{Absolute and relative orbital element sets.}{47}{appendix.A}%
+\contentsline {figure}{\numberline {A.1}{\ignorespaces Workflow for transforming between two arbitary absolute element sets.\relax }}{48}{figure.caption.49}%
+\contentsline {figure}{\numberline {A.2}{\ignorespaces Frame rotation from inertial to perifocal frame.\relax }}{49}{figure.caption.51}%
+\contentsline {figure}{\numberline {A.3}{\ignorespaces Workflow for transforming any relative set into KOE.\relax }}{54}{figure.caption.61}%
+\contentsline {figure}{\numberline {A.4}{\ignorespaces Workflow for transforming RKOE into any other set.\relax }}{55}{figure.caption.63}%
+\contentsline {figure}{\numberline {A.5}{\ignorespaces Relative ccentricity \& inclination vectors. \relax }}{56}{figure.caption.66}%

@@ -1,30 +1,30 @@
 [0] Config.pm:307> INFO - This is Biber 2.17
 [0] Config.pm:310> INFO - Logfile is 'Thesis.blg'
-[57] biber:340> INFO - === jue feb 15, 2024, 20:01:57
-[69] Biber.pm:418> INFO - Reading 'Thesis.bcf'
-[124] Biber.pm:969> INFO - Using all citekeys in bib section 0
-[134] Biber.pm:4383> INFO - Processing section 0
-[142] Biber.pm:4574> INFO - Looking for bibtex file 'Afterword/Bibliography/refs.bib' for section 0
-[145] bibtex.pm:1713> INFO - LaTeX decoding ...
-[216] bibtex.pm:1518> INFO - Found BibTeX data source 'Afterword/Bibliography/refs.bib'
-[549] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[549] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[549] Biber.pm:4203> INFO - Sorting list 'none/global//global/global' of type 'entry' with template 'none' and locale 'en-US'
-[549] Biber.pm:4209> INFO - No sort tailoring available for locale 'en-US'
-[585] bbl.pm:654> INFO - Writing 'Thesis.bbl' with encoding 'latin1'
-[617] bbl.pm:757> INFO - Output to Thesis.bbl
-[617] Biber.pm:130> WARN - ISBN '3527407804; 9783527407804' in entry 'Time_handbook' is invalid - run biber with '--validate_datamodel' for details.
-[618] Biber.pm:130> WARN - legacy month field 'nov' in entry 'Brouwer_paper' is not an integer - this will probably not sort properly.
-[618] Biber.pm:130> WARN - legacy month field 'April' in entry 'DinVu' is not an integer - this will probably not sort properly.
-[618] Biber.pm:130> WARN - legacy month field 'October' in entry 'Schaub_Junkins' is not an integer - this will probably not sort properly.
-[618] Biber.pm:130> WARN - legacy month field 'Nov.' in entry 'Eckstein' is not an integer - this will probably not sort properly.
-[618] Biber.pm:130> WARN - legacy month field 'November' in entry 'Terrasar' is not an integer - this will probably not sort properly.
-[618] Biber.pm:130> WARN - legacy month field '10--15 Jul' in entry 'pmlr-v80-barrett18a' is not an integer - this will probably not sort properly.
-[618] Biber.pm:130> WARN - BibTeX subsystem: /tmp/biber_tmp_p921/8fe4c9854184545302f21ebf0d47516c_27552.utf8, line 3, warning: 32 characters of junk seen at toplevel
-[618] Biber.pm:130> WARN - BibTeX subsystem: /tmp/biber_tmp_p921/8fe4c9854184545302f21ebf0d47516c_27552.utf8, line 343, warning: 17 characters of junk seen at toplevel
-[618] Biber.pm:130> WARN - BibTeX subsystem: /tmp/biber_tmp_p921/8fe4c9854184545302f21ebf0d47516c_27552.utf8, line 377, warning: 22 characters of junk seen at toplevel
-[618] Biber.pm:130> WARN - BibTeX subsystem: /tmp/biber_tmp_p921/8fe4c9854184545302f21ebf0d47516c_27552.utf8, line 476, warning: 13 characters of junk seen at toplevel
-[618] Biber.pm:130> WARN - BibTeX subsystem: /tmp/biber_tmp_p921/8fe4c9854184545302f21ebf0d47516c_27552.utf8, line 567, warning: 17 characters of junk seen at toplevel
-[618] Biber.pm:130> WARN - BibTeX subsystem: /tmp/biber_tmp_p921/8fe4c9854184545302f21ebf0d47516c_27552.utf8, line 729, warning: 10 characters of junk seen at toplevel
-[618] Biber.pm:130> WARN - BibTeX subsystem: /tmp/biber_tmp_p921/8fe4c9854184545302f21ebf0d47516c_27552.utf8, line 762, warning: 25 characters of junk seen at toplevel
-[618] Biber.pm:132> INFO - WARNINGS: 14
+[60] biber:340> INFO - === lun feb 19, 2024, 17:09:59
+[72] Biber.pm:418> INFO - Reading 'Thesis.bcf'
+[127] Biber.pm:969> INFO - Using all citekeys in bib section 0
+[136] Biber.pm:4383> INFO - Processing section 0
+[145] Biber.pm:4574> INFO - Looking for bibtex file 'Afterword/Bibliography/refs.bib' for section 0
+[148] bibtex.pm:1713> INFO - LaTeX decoding ...
+[221] bibtex.pm:1518> INFO - Found BibTeX data source 'Afterword/Bibliography/refs.bib'
+[562] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[562] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[562] Biber.pm:4203> INFO - Sorting list 'none/global//global/global' of type 'entry' with template 'none' and locale 'en-US'
+[562] Biber.pm:4209> INFO - No sort tailoring available for locale 'en-US'
+[597] bbl.pm:654> INFO - Writing 'Thesis.bbl' with encoding 'latin1'
+[634] bbl.pm:757> INFO - Output to Thesis.bbl
+[634] Biber.pm:130> WARN - ISBN '3527407804; 9783527407804' in entry 'Time_handbook' is invalid - run biber with '--validate_datamodel' for details.
+[634] Biber.pm:130> WARN - legacy month field 'October' in entry 'Schaub_Junkins' is not an integer - this will probably not sort properly.
+[634] Biber.pm:130> WARN - legacy month field 'November' in entry 'Terrasar' is not an integer - this will probably not sort properly.
+[635] Biber.pm:130> WARN - legacy month field 'nov' in entry 'Brouwer_paper' is not an integer - this will probably not sort properly.
+[635] Biber.pm:130> WARN - legacy month field '10--15 Jul' in entry 'pmlr-v80-barrett18a' is not an integer - this will probably not sort properly.
+[635] Biber.pm:130> WARN - legacy month field 'April' in entry 'DinVu' is not an integer - this will probably not sort properly.
+[635] Biber.pm:130> WARN - legacy month field 'Nov.' in entry 'Eckstein' is not an integer - this will probably not sort properly.
+[635] Biber.pm:130> WARN - BibTeX subsystem: /tmp/biber_tmp_1HAi/8fe4c9854184545302f21ebf0d47516c_18559.utf8, line 3, warning: 32 characters of junk seen at toplevel
+[635] Biber.pm:130> WARN - BibTeX subsystem: /tmp/biber_tmp_1HAi/8fe4c9854184545302f21ebf0d47516c_18559.utf8, line 363, warning: 17 characters of junk seen at toplevel
+[635] Biber.pm:130> WARN - BibTeX subsystem: /tmp/biber_tmp_1HAi/8fe4c9854184545302f21ebf0d47516c_18559.utf8, line 397, warning: 22 characters of junk seen at toplevel
+[635] Biber.pm:130> WARN - BibTeX subsystem: /tmp/biber_tmp_1HAi/8fe4c9854184545302f21ebf0d47516c_18559.utf8, line 496, warning: 13 characters of junk seen at toplevel
+[635] Biber.pm:130> WARN - BibTeX subsystem: /tmp/biber_tmp_1HAi/8fe4c9854184545302f21ebf0d47516c_18559.utf8, line 587, warning: 17 characters of junk seen at toplevel
+[635] Biber.pm:130> WARN - BibTeX subsystem: /tmp/biber_tmp_1HAi/8fe4c9854184545302f21ebf0d47516c_18559.utf8, line 749, warning: 10 characters of junk seen at toplevel
+[635] Biber.pm:130> WARN - BibTeX subsystem: /tmp/biber_tmp_1HAi/8fe4c9854184545302f21ebf0d47516c_18559.utf8, line 782, warning: 25 characters of junk seen at toplevel
+[635] Biber.pm:132> INFO - WARNINGS: 14

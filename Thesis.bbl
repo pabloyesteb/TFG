@@ -598,6 +598,33 @@
       \field{pages}{310\bibrangedash 316}
       \range{pages}{7}
     \endentry
+    \entry{efron1992bootstrap}{incollection}{}
+      \name{author}{1}{}{%
+        {{hash=5470455fc7dceb3ccf6db38cb22a113d}{%
+           family={Efron},
+           familyi={E\bibinitperiod},
+           given={Bradley},
+           giveni={B\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{5470455fc7dceb3ccf6db38cb22a113d}
+      \strng{fullhash}{5470455fc7dceb3ccf6db38cb22a113d}
+      \strng{bibnamehash}{5470455fc7dceb3ccf6db38cb22a113d}
+      \strng{authorbibnamehash}{5470455fc7dceb3ccf6db38cb22a113d}
+      \strng{authornamehash}{5470455fc7dceb3ccf6db38cb22a113d}
+      \strng{authorfullhash}{5470455fc7dceb3ccf6db38cb22a113d}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Breakthroughs in statistics: Methodology and distribution}
+      \field{title}{Bootstrap methods: another look at the jackknife}
+      \field{year}{1992}
+      \field{pages}{569\bibrangedash 593}
+      \range{pages}{25}
+    \endentry
     \entry{chen2003non}{article}{}
       \name{author}{3}{}{%
         {{hash=293c31f46eb012efc4b2449215c92484}{%
@@ -768,62 +795,6 @@
       \field{pages}{1919\bibrangedash 1931}
       \range{pages}{13}
     \endentry
-    \entry{efron1992bootstrap}{incollection}{}
-      \name{author}{1}{}{%
-        {{hash=5470455fc7dceb3ccf6db38cb22a113d}{%
-           family={Efron},
-           familyi={E\bibinitperiod},
-           given={Bradley},
-           giveni={B\bibinitperiod}}}%
-      }
-      \list{publisher}{1}{%
-        {Springer}%
-      }
-      \strng{namehash}{5470455fc7dceb3ccf6db38cb22a113d}
-      \strng{fullhash}{5470455fc7dceb3ccf6db38cb22a113d}
-      \strng{bibnamehash}{5470455fc7dceb3ccf6db38cb22a113d}
-      \strng{authorbibnamehash}{5470455fc7dceb3ccf6db38cb22a113d}
-      \strng{authornamehash}{5470455fc7dceb3ccf6db38cb22a113d}
-      \strng{authorfullhash}{5470455fc7dceb3ccf6db38cb22a113d}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{booktitle}{Breakthroughs in statistics: Methodology and distribution}
-      \field{title}{Bootstrap methods: another look at the jackknife}
-      \field{year}{1992}
-      \field{pages}{569\bibrangedash 593}
-      \range{pages}{25}
-    \endentry
-    \entry{wilson1927probable}{article}{}
-      \name{author}{1}{}{%
-        {{hash=97c17720b08538db4ed8190a1c7bee58}{%
-           family={Wilson},
-           familyi={W\bibinitperiod},
-           given={Edwin\bibnamedelima B},
-           giveni={E\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
-      }
-      \list{publisher}{1}{%
-        {Taylor \& Francis}%
-      }
-      \strng{namehash}{97c17720b08538db4ed8190a1c7bee58}
-      \strng{fullhash}{97c17720b08538db4ed8190a1c7bee58}
-      \strng{bibnamehash}{97c17720b08538db4ed8190a1c7bee58}
-      \strng{authorbibnamehash}{97c17720b08538db4ed8190a1c7bee58}
-      \strng{authornamehash}{97c17720b08538db4ed8190a1c7bee58}
-      \strng{authorfullhash}{97c17720b08538db4ed8190a1c7bee58}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Journal of the American Statistical Association}
-      \field{number}{158}
-      \field{title}{Probable inference, the law of succession, and statistical inference}
-      \field{volume}{22}
-      \field{year}{1927}
-      \field{pages}{209\bibrangedash 212}
-      \range{pages}{4}
-    \endentry
     \entry{jobson2012applied}{book}{}
       \name{author}{1}{}{%
         {{hash=5a6b19c047426c4c2d4a50b395bf450b}{%
@@ -847,6 +818,98 @@
       \field{labeltitlesource}{title}
       \field{title}{Applied multivariate data analysis: regression and experimental design}
       \field{year}{2012}
+    \endentry
+    \entry{jones2009sinh}{article}{}
+      \name{author}{2}{}{%
+        {{hash=ef23cafd1e8a2f7a3374d387633a69af}{%
+           family={Jones},
+           familyi={J\bibinitperiod},
+           given={M\bibnamedelima Chris},
+           giveni={M\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+        {{hash=688eb8c070c209011a91413ac9dcea7b}{%
+           family={Pewsey},
+           familyi={P\bibinitperiod},
+           given={Arthur},
+           giveni={A\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Oxford University Press}%
+      }
+      \strng{namehash}{138cc2fdedace672a538594b02e44b63}
+      \strng{fullhash}{138cc2fdedace672a538594b02e44b63}
+      \strng{bibnamehash}{138cc2fdedace672a538594b02e44b63}
+      \strng{authorbibnamehash}{138cc2fdedace672a538594b02e44b63}
+      \strng{authornamehash}{138cc2fdedace672a538594b02e44b63}
+      \strng{authorfullhash}{138cc2fdedace672a538594b02e44b63}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Biometrika}
+      \field{number}{4}
+      \field{title}{Sinh-arcsinh distributions}
+      \field{volume}{96}
+      \field{year}{2009}
+      \field{pages}{761\bibrangedash 780}
+      \range{pages}{20}
+    \endentry
+    \entry{rosner1983percentage}{article}{}
+      \name{author}{1}{}{%
+        {{hash=8c723a6746d052a9a51f090f576a5139}{%
+           family={Rosner},
+           familyi={R\bibinitperiod},
+           given={Bernard},
+           giveni={B\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Taylor \& Francis}%
+      }
+      \strng{namehash}{8c723a6746d052a9a51f090f576a5139}
+      \strng{fullhash}{8c723a6746d052a9a51f090f576a5139}
+      \strng{bibnamehash}{8c723a6746d052a9a51f090f576a5139}
+      \strng{authorbibnamehash}{8c723a6746d052a9a51f090f576a5139}
+      \strng{authornamehash}{8c723a6746d052a9a51f090f576a5139}
+      \strng{authorfullhash}{8c723a6746d052a9a51f090f576a5139}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Technometrics}
+      \field{number}{2}
+      \field{title}{Percentage points for a generalized ESD many-outlier procedure}
+      \field{volume}{25}
+      \field{year}{1983}
+      \field{pages}{165\bibrangedash 172}
+      \range{pages}{8}
+    \endentry
+    \entry{wilson1927probable}{article}{}
+      \name{author}{1}{}{%
+        {{hash=97c17720b08538db4ed8190a1c7bee58}{%
+           family={Wilson},
+           familyi={W\bibinitperiod},
+           given={Edwin\bibnamedelima B},
+           giveni={E\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Taylor \& Francis}%
+      }
+      \strng{namehash}{97c17720b08538db4ed8190a1c7bee58}
+      \strng{fullhash}{97c17720b08538db4ed8190a1c7bee58}
+      \strng{bibnamehash}{97c17720b08538db4ed8190a1c7bee58}
+      \strng{authorbibnamehash}{97c17720b08538db4ed8190a1c7bee58}
+      \strng{authornamehash}{97c17720b08538db4ed8190a1c7bee58}
+      \strng{authorfullhash}{97c17720b08538db4ed8190a1c7bee58}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of the American Statistical Association}
+      \field{number}{158}
+      \field{title}{Probable inference, the law of succession, and statistical inference}
+      \field{volume}{22}
+      \field{year}{1927}
+      \field{pages}{209\bibrangedash 212}
+      \range{pages}{4}
     \endentry
     \entry{Montenbruck}{book}{}
       \name{author}{2}{}{%
@@ -873,8 +936,8 @@
       \strng{authorbibnamehash}{a5288bde8e80165675c3d89505c99a96}
       \strng{authornamehash}{a5288bde8e80165675c3d89505c99a96}
       \strng{authorfullhash}{a5288bde8e80165675c3d89505c99a96}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{edition}{1}
@@ -1138,8 +1201,8 @@
       \strng{authorbibnamehash}{99cc30d684c858bf3c9d85f06f523323}
       \strng{authornamehash}{99cc30d684c858bf3c9d85f06f523323}
       \strng{authorfullhash}{99cc30d684c858bf3c9d85f06f523323}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{{Journal of Guidance, Control \& Dynamics}}
@@ -1315,8 +1378,8 @@
       \strng{authorbibnamehash}{3c958361e46617021179d780e75bc2c9}
       \strng{authornamehash}{3c958361e46617021179d780e75bc2c9}
       \strng{authorfullhash}{3c958361e46617021179d780e75bc2c9}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{{Journal of Guidance, Control \& Dynamics}}
@@ -1388,8 +1451,8 @@
       \strng{authorbibnamehash}{a81e53563497eadd429cbea760b8fa62}
       \strng{authornamehash}{a81e53563497eadd429cbea760b8fa62}
       \strng{authorfullhash}{a81e53563497eadd429cbea760b8fa62}
-      \field{sortinit}{6}
-      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Water Resources Research}
@@ -1429,8 +1492,8 @@
       \strng{authorbibnamehash}{415a0bba2e2e7f3ff2d6d29311617685}
       \strng{authornamehash}{415a0bba2e2e7f3ff2d6d29311617685}
       \strng{authorfullhash}{415a0bba2e2e7f3ff2d6d29311617685}
-      \field{sortinit}{7}
-      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{edition}{1}
@@ -1462,8 +1525,8 @@
       \strng{authorbibnamehash}{9586fc2f84f6bb67f3a559b1a9a8d898}
       \strng{authornamehash}{9586fc2f84f6bb67f3a559b1a9a8d898}
       \strng{authorfullhash}{9586fc2f84f6bb67f3a559b1a9a8d898}
-      \field{sortinit}{7}
-      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{edition}{1}
@@ -1493,8 +1556,8 @@
       \strng{authorbibnamehash}{e8fb45d024eae4bc9b2bf3a208797691}
       \strng{authornamehash}{e8fb45d024eae4bc9b2bf3a208797691}
       \strng{authorfullhash}{e8fb45d024eae4bc9b2bf3a208797691}
-      \field{sortinit}{7}
-      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{edition}{1}
@@ -1679,8 +1742,8 @@
       \strng{authorbibnamehash}{aded628cfb77b62db19cb3243f425b8b}
       \strng{authornamehash}{aded628cfb77b62db19cb3243f425b8b}
       \strng{authorfullhash}{aded628cfb77b62db19cb3243f425b8b}
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{{Perturbation Methods}}
@@ -1708,8 +1771,8 @@
       \strng{authorbibnamehash}{a5d8ee096fc8780081f9d4403188d626}
       \strng{authornamehash}{a5d8ee096fc8780081f9d4403188d626}
       \strng{authorfullhash}{a5d8ee096fc8780081f9d4403188d626}
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{{Theory of Satellite Geodesy}}
@@ -1734,8 +1797,8 @@
       \strng{authorbibnamehash}{fe825ec9d3bdbaa3aaac4903b15ce75c}
       \strng{authornamehash}{fe825ec9d3bdbaa3aaac4903b15ce75c}
       \strng{authorfullhash}{fe825ec9d3bdbaa3aaac4903b15ce75c}
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{{Traité de Mécanique Céleste}}
@@ -1772,8 +1835,8 @@
       \strng{authorbibnamehash}{0aef3d40e01252a4fc361ae338296c02}
       \strng{authornamehash}{0aef3d40e01252a4fc361ae338296c02}
       \strng{authorfullhash}{0aef3d40e01252a4fc361ae338296c02}
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{{Journal of Guidance, Control \& Dynamics}}
@@ -1936,8 +1999,8 @@
       \strng{authorbibnamehash}{593d5a57309b860955c3e776f8866639}
       \strng{authornamehash}{593d5a57309b860955c3e776f8866639}
       \strng{authorfullhash}{593d5a57309b860955c3e776f8866639}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{month}{11}
@@ -1964,8 +2027,8 @@
       \strng{authorbibnamehash}{6e114c910e5898d17f0977859d8ab5f7}
       \strng{authornamehash}{6e114c910e5898d17f0977859d8ab5f7}
       \strng{authorfullhash}{6e114c910e5898d17f0977859d8ab5f7}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{American Journal of Mathematics}
@@ -2000,8 +2063,8 @@
       \strng{authorbibnamehash}{5c6fa172cc7a1ba23637337caf329441}
       \strng{authornamehash}{5c6fa172cc7a1ba23637337caf329441}
       \strng{authorfullhash}{5c6fa172cc7a1ba23637337caf329441}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Journal of the Aerospace Sciences}

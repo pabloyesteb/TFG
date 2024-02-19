@@ -398,13 +398,13 @@ The step of the PCA projection is motivated by the curse of dimensionality, whic
 \section{Global error quantification}
 \noindent This section corresponds to box labelled ''Error quantification'' in \autoref{fig:pipeline}.\\
 %
-\indent After running the model, the simplest analysis of its performance consists of measuring the aggregated error of predictions against ground true values over the whole test set. Different metrics and criteria can be adopted for this task. Common error measures are the Mean Absolute Error (MAE) and the Root Mean Square Error (RMSE). These metrics account for the distance between points representing ground true values ($\mathbf{Y}$) and model's predictions ($\mathbf{\tilde{Y}}$), taken as the $L1$ norm (MAE) or the square of the $L2$ norm (RMSE). In many industrial applications of machine learning, difference between ground true and predicted values can be more or less important depending on whether that difference is due to \textit{overestimating} or \textit{underestimating}. Take, for instance, the case of MS-S18 model, whose predictions are a measure of the probability of failure of aeronautical structural components. Clearly, underestimating the risk is much more dangerous than overestimating it. For cases such as this one, a useful measure of the error is the \textbf{residue}. The residual error of a given point $i$ is measured as
+\indent After running the model, the simplest analysis of its performance consists of measuring the aggregated error of predictions against ground true values over the whole test set. Different metrics and criteria can be adopted for this task. Common error measures are the Mean Absolute Error (MAE) and the Root Mean Square Error (RMSE). These metrics account for the distance between points representing ground true values ($\mathbf{Y}$) and model's predictions ($\mathbf{\tilde{Y}}$), taken as the $L1$ norm (MAE) or the square of the $L2$ norm (RMSE) of the distances. In many industrial applications of machine learning, difference between ground true and predicted values can be more or less important depending on whether that difference is due to \textit{overestimating} or \textit{underestimating}. Take, for instance, the case of MS-S18 model, whose predictions are a measure of the probability of failure of aeronautical structural components. Clearly, underestimating the risk is much more dangerous than overestimating it. For cases such as this one, a useful measure of the error is the \textbf{residue}. The residual error of a given point $i$ is measured as
 \begin{equation}\label{eq:residue}
 	\mathbf{e}(i)=\mathbf{Y}(i)-\mathbf{\tilde{Y}}(i)
 \end{equation}
 The drawback of the residual error is that, when using it as an aggregated indicator for the whole test set, residues can cancel out. A null MAE or RMSE account for a perfectly fitted model (ground true values and predictions are equal). That is not the case for the residual error.\\
 %
-\indent An interesting scalar metric for the global performance of the model is the coefficient of determination $R^2$ \cite{zhang2017coefficient} of the scatter distribution of $\mathbf{Y}$ vs $\mathbf{\tilde{Y}}$. $R^2$ is a measure of the goodness of fit of predicted to ground true values. Illustration of this is provided in \autoref{fig:truevspredscatter}.\\
+\indent An interesting scalar metric for the global performance of the model is the coefficient of determination $R^2$ \cite{zhang2017coefficient} of the scatter distribution of $\mathbf{Y}$ vs $\mathbf{\tilde{Y}}$. $R^2$ is a measure of the goodness of fit of predicted to ground true values. Illustration of this is provided in \autoref{fig:truevspredscatter}. The most important conclusion of \autoref{fig:truevspredscatter} is that the error shows to be heteroscedastic{\protect\footnote{This means the variance of the error is not constant along some variable range (in this case, that variable is the output variable named ''RF Net Tension''). In \autoref{fig:truevspredscatter} we can clearly see that dispersion grows with the output value. Cfr.\cite[p. 374]{jobson2012applied}.}}. This property makes it necessary to study the error distribution, as well as the error distribution conditioned on input and output space ($P(e)$, $P(e|\mathbf{X})$ and $P(e|\mathbf{Y})$, resp.) as is discussed in the following sections.\\
 %
 \begin{figure}
 	\centering
@@ -423,15 +423,15 @@ The drawback of the residual error is that, when using it as an aggregated indic
 	\label{fig:globalerrpipeline}
 \end{figure}
 %
-\indent Beyond global error statistics, the PDF of the residue, $P(e)$, is of great importance for validation purposes. The main goal of this section is finding the analytic expression of $P(e)$ and computing important statistics of it, and, when the first is not possible, computing the important statistics from the empirical distribution of the residue (sampled from the test set) with the method of bootstrapping\cite{efron1992bootstrap}. There are three main reasons for studying $P(e)$:\\
+\indent Beyond global error statistics, the PDF of the residue, $P(e)$, is of great importance for validation purposes. The main goal of this section is finding the analytic expression of $P(e)$ and computing important statistics of it, and, when the first is not possible, computing the important statistics from the empirical distribution of the residue (sampled from test set points) with the method of bootstrapping\footnote{Vid. following paragraphs}. There are three main reasons for studying $P(e)$:\\
 \paragraph{\GMVred{A.} \myul[GMVred]{Non gaussian error distribution}\\}
-It is common in industry-applied problems to find situations in which the error between ground-true values and predictions coming from a regression model (let it be a surrogate ANN, some parametric regressor, etc.) which is supposed to fit any function describing a complex system follows absolutely non-Gaussian distributions (see \eg \cite{chen2003non,pernot2020impact,smyl2021learning,chai2019using}). Amongst the reasons for this, the most frequent are, on the one hand, non-homogeneous data sampling in the training set (leading to uncovered regions and isolated points) which can cause poor model performance due to non-interpolation-regime operation, and on the other hand, the inherent difficulty encountered at predicting outputs for specific input configurations due to strongly non-linear physics or governing equations (mathematically this is manifests in high gradients). When the error is non-Gaussian, concentration statistics such as MAE or RMSE stop being informative. In such case, a comprehensive analysis on $P(e)$ is more adequate.\\
+It is common in industry-applied problems to find situations in which the error between ground-true values and predictions coming from a regression model (let it be a surrogate ANN, some parametric regressor, etc.) which is supposed to fit any function describing a complex system follows absolutely non-Gaussian distributions (see \eg \cite{chen2003non,pernot2020impact,smyl2021learning,chai2019using}). Amongst the reasons for this, the most frequent are, on the one hand, non-homogeneous data sampling in the training set (leading to uncovered regions and isolated points) which can cause poor model performance due to non-interpolation-regime operation, and on the other hand, the inherent difficulty encountered at predicting outputs for specific input configurations due to strongly non-linear physics or governing equations (mathematically this manifests in the form of high gradients). When the error is non-Gaussian, concentration statistics such as MAE or RMSE stop being informative. In such case, a comprehensive analysis on $P(e)$ is more adequate.\\
 %
-\paragraph{\GMVred{B.} \myul[GMVred]{Outlier detection}\\}
+\paragraph{\GMVred{B.} \myul[GMVred]{Outlier detection}\label{par:outliers}\\}
 Outliers are strange events in a population sampled from a known PDF, in the sense that it is not expected to find them, or that their position is far away from expected. Outlier detection helps identifying strange phenomena which the engineer in charge could decide to investigate. Imagine, for instance, that certain residue $e_x$ was systematically sampled from the test set with an unusual frequency, compared with similar values. In this case, it would be necessary to assess whether this high frequency is statistically expectable from the residue's PDF or not. If $e_x$  was found to be an outlier, determining the underlying reason triggering such high frequency would help with model boosting.\\
-\indent Outlier detection relies on knowing $P(e)$. The probability of finding a residue larger than a given magnitude $x$ is measured as $p_{>x}=\int_{x}^{\infty} P(e) \, de$. If we find some $x$ for which $p_{>x}<<1$, all samples of the residue $e>x$ would be classified as outliers.
+\indent Outlier detection relies on knowing $P(e)$. The probability of finding a residue larger than a given magnitude $x$ is measured as $p_{>x}=\int_{x}^{\infty} P(e) \, de$. If we find some $x$ for which $p_{>x}<<1$, all samples of the residue $e>x$ would be classified as outliers. This simple idea lies behind standard outlier-detection methods such as the z-score and the gESD (which are later discussed).
 \paragraph{\GMVred{C.} \myul[GMVred]{Uncertainty measuring}\\}
-The marginalised distribution of $P(e)$ is the first step in the journey towards building an \textbf{uncertainty model}. This is the ultimate milestone of the whole validation pipeline, since it provides precise information about \textit{how much} and \textit{when} the model's predictions are trustworthy. This is the whole point of \autoref{sec:uncertainty}. The uncertainty model relies on the marginalised distribution of the residue for building confidence intervals which embed the model's error with a given statistical confidence level (coverage).\\
+The marginalised distribution of $P(e)$ is the first step in the journey towards building an \textbf{uncertainty model}. This is the ultimate milestone of the whole validation pipeline, since it provides precise information about \textit{how much} and \textit{when} the model's predictions are trustworthy. This is the whole point of \autoref{sec:uncertainty}. The uncertainty model relies on the marginalised distribution of the residue for building confidence intervals which embed the model's error with a given statistical confidence level.\\
 %
 \indent A simple plot can help us have a first intuition for the cause of subsequent results presented in this section. In \autoref{fig:yvsydoublehist} ground true values and model's predictions are represented in a double histogram for MS-18.\\
 \begin{figure}
@@ -441,17 +441,17 @@ The marginalised distribution of $P(e)$ is the first step in the journey towards
 	\label{fig:yvsydoublehist}
 \end{figure}
 %
-\indent If the model accurately predicts results along the whole output variables range (or equivalently it is not heteroscedastic \cite[p. 374]{jobson2012applied}), we would expect both the true and the predicted results to come from the same (unknown) distribution ($H0$). We can test this with a (2 sample) goodness-of-fit test like the Kolmogorov-Smirnov. Once again, the null hypothesis is rejected only at a 95\% confidence level (\ie if the p-value derived from the K-S test is lower than $0.05$). The corresponding p-values of the K-S test for the six output variables are depicted in \autoref{tab:yvsyKS}.\\
+\indent If the model accurately predicts results along the whole output variables range (or equivalently it is not heteroscedastic), we would expect both the true and the predicted results to come from the same (unknown) distribution (this hypothesis is taken as $H0$). We can test this with a (2 sample) goodness-of-fit test like the Kolmogorov-Smirnov. Once again, the null hypothesis is rejected only at a 95\% confidence level (\ie if the p-value derived from the K-S test is lower than $0.05$). The corresponding p-values of the K-S test for the six output variables of MS-18 are depicted in \autoref{tab:yvsyKS}.\\
 \begin{table}
 	\centering
-	\caption{p-value results for the Kolmogorov-Smirnov test performed on distributions showed in \autoref{fig:yvsydoublehist}.}
+	\caption{p-value results for the 2-sample Kolmogorov-Smirnov test performed on distributions showed in \autoref{fig:yvsydoublehist}. Hypothesis $H0$ is that ground true and predicted values both come from the same (unknown) distribution.}
 	\includegraphics[scale=\tabscale]{/home/pablo/Documentos/TFGP/Thesis/Figures/global_stats/yvsyks.png}
 	\label{tab:yvsyKS}
 \end{table}
 %
 \indent In \autoref{tab:yvsyKS} we can see how the K-S test rejects the null hypothesis in some cases despite distributions in \autoref{fig:yvsydoublehist} looking very similar. This is due to the K-S test sensitivity to the size of datasets.\\
 %
-\indent As it has been previously mentioned, outlier detection and uncertainty models both rely on the PDF of the residue, $P(e)$. The main goal of this section is finding the analytical definition of $P(e)$ if possible, and measuring important statistics of it. This is addressed with a focus similar to that followed in \autoref{fig:yvsydoublehist} and \autoref{tab:yvsyKS}, but instead of assessing the fitness of the predictions ($\hat{y}$) distribution to the ground true values ($y$) distribution, we try to assess the goodness of fit of the empirical residue distribution to some well-known distributions. For reference, the (empirical) error distribution of the six output variables is depicted in \autoref{fig:pdferror}, as well as the corresponding cumulative distributions, given in \autoref{fig:errorcumulative}.\\
+\indent As it has been previously mentioned, outlier detection and uncertainty models both rely on the PDF of the residue, $P(e)$. The main goal of this section is finding the analytical definition of $P(e)$\footnote{This might not always be possible. When it is not, non-parametrical bootstrapping is given as an alternate solution (vid. next paragraphs).}, and measuring important statistics of it. This is addressed with a focus similar to that followed in \autoref{fig:yvsydoublehist} and \autoref{tab:yvsyKS}, but instead of assessing the fitness of the predictions ($\hat{y}$) distribution to the ground true values ($y$) distribution, we try to assess the goodness of fit of the empirical residue distribution to some well-known distributions. For reference, the (empirical) error distribution of the six output variables is depicted in \autoref{fig:pdferror}, as well as the corresponding cumulative distributions, given in \autoref{fig:errorcumulative}.\\
 \begin{figure}
 	\centering
 	\includegraphics[width=1\textwidth]{/home/pablo/Documentos/TFGP/Thesis/Figures/global_stats/pdferror.png}
@@ -461,68 +461,90 @@ The marginalised distribution of $P(e)$ is the first step in the journey towards
 \begin{figure}
 	\centering
 	\includegraphics[width=1\textwidth]{/home/pablo/Documentos/TFGP/Thesis/Figures/global_stats/cumulativeerror.png}
-	\caption{Cumulative error distributions corresponding to the PDFs showed in \autoref{fig:errorpdf}.}
+	\caption{Cumulative error distributions corresponding to the PDFs showed (as binned histograms) in \autoref{fig:pdferror}.}
 	\label{fig:errorcumulative}
 \end{figure}
 %
-\indent Under the assumption that $P(e)$ can be described by some well-known parametric distribution, we use the K-S test to compare distributions of \autoref{fig:pdferror} to the following distributions:
+\indent Under the assumption that $P(e)$ can be described by some well-known parametric distribution, we use the 1-sample K-S test (coupled with a minimal-squares based optimizer to find the optimal set of parameters for each distribution) to compare distributions of \autoref{fig:pdferror} to the following distributions:
 \begin{itemize}
 	\item Normal
 	\item Laplace
-	\item Cauchy\\
+	\item Cauchy
+	\item JohnsonSU\\
 \end{itemize}
 %
-\indent P-values from the corresponding K-S tests are given in\\
+\indent P-values from the K-S test are given in \autoref{tab:KSerror}. As we can see, the normal distribution does not fit any of the output variables' error. While Laplace and Cauchy distributions' p-values from the K-S test are above the $0.05$ threshold in five of the six output variables, they are well below the obtained p-values for the JohnsonSU\cite{jones2009sinh} distribution (vid. \autoref{fig:errorpvalues}). In fact, when augmenting the dataset size from the illustrative-sized employed here (10,000 items) to a more realistic $800,000$ items, neither of Laplace and Cauchy distributions pass the test (their p-values drop to near-zero orders of magnitude). This happens due to the K-S sensibility to the size of data, which makes the test more strict when the datasets are large (as would be expected). We conclude that the Laplace and Cauchy distributions just pass the K-S anecdotally for the unrealistically small dataset size which has been used for illustrative purposes, and we also conclude that the only theoretical distribution (of the list which has been checked) that fits the MS-18's error distribution is the JohnsonSU.\\
+%
+\indent Provided that there exists a simple transformation of the JohnsonSU distribution's random variable (vid. \autoref{fig:ztransform}) that converges to a normal distribution, one can, with the information obtained from the K-S test (that is, assuming the error data comes from a JohnsonSU distribution) apply standard outlier detection methods to a transformed variable $z\sim {\cal{N}}(0,1)$, like the z-score (every point located outside $\mu\pm 3\sigma$ is considered to be an outlier) and the generalised Extreme Studentized Deviate\cite{rosner1983percentage} (gESD), thus fulfilling the aims described at the beginning of this section concerning outlier detection (vid. \autoref{tab:outliers}).\\
 \begin{table}
 	\centering
-	\caption{P-values of the K-S test comparing the empirical sample of $P(e)$ to each of the indicated distributions. The null hypothesis $H0$ (the empirical distribution has been sampled from the one figuring in a given column) is rejected when $p-\text{value}<0.05$.}
+	\caption{P-values of the K-S test comparing the empirical sample of $P(e)$ to the theoretical distributions indicated in each column. The null hypothesis $H0$ (the empirical distribution has been sampled from the one figuring in a given column) is rejected when $p-\text{value}<0.05$.}
 	\includegraphics[scale=\tabscale]{/home/pablo/Documentos/TFGP/Thesis/Figures/global_stats/errorKS.png}
+	\label{tab:KSerror}
 \end{table}
-%\indent Each of the former distribution is defined by a set of parameters (\eg, the normal distribution is defined by its mean and its standard deviation, as described by \autoref{eq:normaldist}. In other words, each of the former distributions is in fact a family of distributions. In order to find the set of parameters which best fits the empirical error distribution, an optimisation algorithm which finds the optimum set of parameters 
-%\begin{equation}\label{eq:normaldist}
-%	f(x) = \frac{1}{\sigma \sqrt{2\pi}} \exp \left( -\frac{(x - \mu)^2}{2\sigma^2} \right)\sim N(0,1)
-%\end{equation}
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=1\textwidth]{/home/pablo/Documentos/TFGP/Thesis/Figures/global_stats/errorpvalues.png}
+	\caption{Graphical comparison of the p-values resulting from the K-S test for the MS-18 data.}
+	\label{fig:errorpvalues}
+\end{figure}
+\begin{figure}
+	\centering
+	\includegraphics[width=1\textwidth]{/home/pablo/Documentos/TFGP/Thesis/Figures/global_stats/ztransform.png}
+	\caption{(Binned) histograms depicting the distribution of the variable $z=\gamma+\sinh{\frac{e-\xi}{\lambda}}$, where $e\sim JohnsonSU(\gamma,\delta,\xi,\lambda)$ is the sampled residue. It can be shown that $z$ converges to a normal distribution\cite{jones2009sinh}.}
+	\label{fig:ztransform}
+\end{figure}
 %
-\indent Some informative statistics of the error distribution are given in \autoref{tab:errorstats}. The statistics are computed twice, once in the empirical distribution of $P(e)$ sampled from $\cal{S}^\text{test}$, and the other one using bootstrapping. Bootstrapping allows for calculation of any distribution statistic (take, for instance, the mean, any given quantile, the median, etc.) of an unknown distribution PDF $P(x)$ given a population of $N$ elements sampled from $P(x)$. The bootstrapping method is described in \autoref{algo:bootstrap}. This algorithm:
+\begin{table}
+	\centering
+	\caption{Outlier detection taking $e\sim JohnsonSU$ as $H0$. N.B. for this table the usual requirements for classifying a point as an outlier ($z\in\sigma\pm3\mu$ for the z-score and significance $1-a\geq95\%$ for the gESD) have been softened here for illustration purposes to $z\in\sigma\pm1.2\mu$ and $a=0.45$ for both tests, respectively.}
+	\includegraphics[scale=\tabscale]{/home/pablo/Documentos/TFGP/Thesis/Figures/global_stats/outliers.png}
+	\label{tab:outliers}
+\end{table}
+\indent Results shown in \autoref{tab:yvsyKS} rise some concerns about the method followed until now. The immediate concern that arises is what would happen if we were unable to find a theoretical distribution that fits some variable's error distribution with a statistically significant confidence level. In fact, the most common statistical distributions (normal, Laplace, Cauchy) do not properly fit the MS-18 error distribution (when using an industrial-sized dataset, not the one employed for illustration here), and we've had to rely on the (rather exotic) JohnsonSU distribution. Without a parametrized distribution that properly fits the error, an uncertainty model cannot be computed. Recall building an accurate uncertainty model is the main motivation for this section. Computing empirical statistics of the empirical distribution of the residue (obtained from test set points) is possible, but assuming the empirical statistics are the same than the true, theoretical ones is not possible. To solve this obstacle, an alternative method for calculating informative statistics of the error's distribution that do not rely on knowing the parametrized analytic expression of it is therefore needed. The method provided here is known as non-parametric bootstrapping\cite{efron1992bootstrap} and the main concept behind it is showed in \autoref{algo:bootstrapping}. This algorithm:
 \begin{enumerate}
 	\item Samples $N$ points with replacement from the original population $S$. N.B. replacement makes the new and the original populations (possibly) different.
 	\item Statistic $x$ is calculated in the new population.
-	\item Steps 1 and 2 are repeated $M>>1$ times, giving a collection of $x$'s ($X$).
+	\item Steps 1 and 2 are repeated $M>>1$ times, giving a collection of $x$'s (called $X$).
 	\item If $M$ is sufficiently large, $X$ converges to a Gaussian population. The bootstrapped CI for the statistic $x$ with a 95\% confidence is bounded by the percentiles 2.5\% and 97.5\% of $X$.\\
 \end{enumerate}
+%
 \begin{algorithm}[!htb]
 	\caption{Non-parametric bootstrapping}
-	\label{algo:bootstrap}
+	\label{algo:bootstrapping}
 	\KwData{Population $S=\left\{S_1,S_2,\ldots,S_N\right\}$ with unknown PDF.}
 	\KwResult{Statistic $x$'s CI}
 	
 	Initial ize list: $CI=[0]_{1\times 2}$;\\
 	Initialize list: $X=[0]_{1\times M}$;\\
 	\For{$i=1,\ldots,M>>1$}{
-			$S_i\leftarrow C_S(N,N)$;\\
-			$X(i)\leftarrow x_{S_i}$;\\
-		}
+		$S_i\leftarrow C_S(N,N)$;\\
+		$X(i)\leftarrow x_{S_i}$;\\
+	}
 	$CI(1)\leftarrow P_{X}^{2.5\%}$;\\
 	$CI(2)\leftarrow P_{X}^{97.5\%}$;\\
 \end{algorithm}
 %
-\indent A basic uncertainty model can be derived from \autoref{tab:basicuncertainty}, where informative percentiles of the error distribution are given as statistics calculated in $\mathbf{\cal{S}}^\text{test}$ and as CI computed with the bootstrapping method. If this uncertainty model is trusted (validation of it is discussed in \autoref{sec:uncertainty}), we can use this percentiles for bounding the error of new points which are not present in $\mathbf{\cal{S}}^\text{test}$. Take, for instance, the \ordinalnum{5} and the \ordinalnum{95} percentiles of the error distribution. Looking into \autoref{tab:basicuncertainty}, we see that, for the output variable ''RF Forced Crippling'', they correspond to $-0.0432$ and $0.0448$, resp. If our uncertainty model is correct, this means that, for new samples, 90\% of the times the residue will be bounded by the interval $[-0.0432, 0.0448]$. If we wanted to calculate this bounds as confidence intervals, we would take the bootstrapped percentiles' instead. In such way, with a 95\% confidence we would assume that 90\% of the times the sampled error is in the interval $[-0.0353,0.0586]$ (the lower and upper boundaries of the bootstrapped CIs for the \ordinalnum{5} and the \ordinalnum{95} percentiles, resp.).\\
+\indent Some informative statistics of the error distribution are given in \autoref{tab:errorstats}. The statistics are computed twice, once in the empirical distribution of $P(e)$ sampled from the outputs of $\cal{S}^\text{test}$, and the other one in the form of bootstrapped CIs.\\
+%
+\indent To better understand the utility of $P(e)$ for building an uncertainty model, the simple idea behind these models is presented here, although it is further discussed in \autoref{sec:uncertainty}.\\
+\indent In \autoref{tab:basicuncertainty}, some quantiles of the error distribution are presented. For reference, they are computed as empirical statistics of the empirical error distribution, and using bootstrapping (in this case their confidence intervals are given instead). The simplest uncertainty model which can be built with this information assumes that, for future samples of the residue, the quantiles of \autoref{tab:basicuncertainty} will still hold true (\ie, the empirical and the theoretical quantiles coincide). For instance, we would assume that, according to \autoref{tab:basicuncertainty}, for future samples the error of variable ''RF Forced Crippling'' will belong to the interval $[-0.0432,0.0448]$ (defined by percentiles \ordinalnum{5} and \ordinalnum{95}) with a frequency equal to 90\%. If we wanted to soften the assumption that the empirical and the theoretical quantiles are the same, we could use the bootstrapped quantiles instead. That way, with a 95\% confidence we could claim that the error of ''RF Forced Crippling'' variable will belong to $[-0.0548.,0.0586]$ with a frequency of 90\% as a minimum, given that we now from bootstrapping that, with a 95\% confidence, the true \ordinalnum{5} quantile belongs to the range $[-0.0548,-0.0353]$ and the true \ordinalnum{95} quantile belongs to $[0.0379,0.0586]$.\\
+%
 \begin{sidewaystable}
 		\centering
-		\caption{Summary of error statistics.}
+		\caption{Summary of bootstrapped error statistics. For the median, the Wilson-score\cite{wilson1927probable} is used for computing the confidence interval.}
 		\includegraphics[scale=\tabscale]{/home/pablo/Documentos/TFGP/Thesis/Figures/global_stats/errorstats.png}
 		\label{tab:errorstats}
 \end{sidewaystable}
 \begin{sidewaystable}
 		\centering
-		\caption{Bootstrapped percentiles (1, 5, 10, 90, 95 and 99) of the residue distribution, calculated with a 95\% CI using Wilson score \cite{wilson1927probable}.}
+		\caption{Bootstrapped percentiles (\ordinalnum{1}, \ordinalnum{5}, \ordinalnum{10}, \ordinalnum{90}, \ordinalnum{95} and \ordinalnum{99}) of the residue distribution, calculated with a 95\% confidence interval using Wilson-score.}
 		\includegraphics[scale=\tabscale]{/home/pablo/Documentos/TFGP/Thesis/Figures/global_stats/basic_uncertainty.png}
 		\label{tab:basicuncertainty}
 \end{sidewaystable}
 %
 \indent Of course, the uncertainty model described in the last paragraph can be fine-tuned using additional information about the error distribution. If we found $P(e)$ to be heteroscedastic, we could benefit from conditioning our uncertainty model to certain regions of the input (or the output) space. This is the main motivation for \autoref{sec:biasinput}, \autoref{sec:biasoutput} and \autoref{sec:uncertainty}.\\
 %
-\indent The non-parametric bootstrapping method described above is useful for when the parametrised PDF of the residue, $P(e)$, is unknown. But we can try to fit $P(E)$ to any (known) probability density function. If a match was found, bootstrapping would not be needed and the matching PDF's statistics could be directly used for uncertainty estimation. With this aim, we 
 
 \clearpage
 \section{Distributed error quantification: conditioning the error distribution on the input and the output space}\label{sec:biasinput}
