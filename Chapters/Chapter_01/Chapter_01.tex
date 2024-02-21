@@ -404,7 +404,7 @@ The step of the PCA projection is motivated by the curse of dimensionality, whic
 \end{equation}
 The drawback of the residual error is that, when using it as an aggregated indicator for the whole test set, residues can cancel out. A null MAE or RMSE account for a perfectly fitted model (ground true values and predictions are equal). That is not the case for the residual error.\\
 %
-\indent An interesting scalar metric for the global performance of the model is the coefficient of determination $R^2$ \cite{zhang2017coefficient} of the scatter distribution of $\mathbf{Y}$ vs $\mathbf{\tilde{Y}}$. $R^2$ is a measure of the goodness of fit of predicted to ground true values. Illustration of this is provided in \autoref{fig:truevspredscatter}. The most important conclusion of \autoref{fig:truevspredscatter} is that the error shows to be heteroscedastic{\protect\footnote{This means the variance of the error is not constant along some variable range (in this case, that variable is the output variable named ''RF Net Tension''). In \autoref{fig:truevspredscatter} we can clearly see that dispersion grows with the output value. Cfr.\cite[p. 374]{jobson2012applied}.}}. This property makes it necessary to study the error distribution, as well as the error distribution conditioned on input and output space ($P(e)$, $P(e|\mathbf{X})$ and $P(e|\mathbf{Y})$, resp.) as is discussed in the following sections.\\
+\indent An interesting scalar metric for the global performance of the model is the coefficient of determination $R^2$ \cite{zhang2017coefficient} of the scatter distribution of $\mathbf{Y}$ vs $\mathbf{\tilde{Y}}$. $R^2$ is a measure of the goodness of fit of predicted to ground true values. Illustration of this is provided in \autoref{fig:truevspredscatter}. The most important conclusion of \autoref{fig:truevspredscatter} is that the error shows to be heteroscedastic{\protect\footnote{This means the variance of the error is not constant along some variable range (in this case, that variable is the output variable named ''RF Net Tension''). In \autoref{fig:truevspredscatter} we can clearly see that dispersion grows with the output value. Cfr.\cite[p. 374]{jobson2012applied}.}}, as demonstrates the fact that dispersion is higher for higher Reserve Factors (interestingly, this is the desired behaviour, as lower Reserve Factors implicate higher failure risk, and thus precision is more important in the region of low Reserve Factors). This property makes it necessary to study the error distribution, as well as the error distribution conditioned on input and output space ($P(e)$, $P(e|\mathbf{X})$ and $P(e|\mathbf{Y})$, resp.) as is discussed in the following sections.\\
 %
 \begin{figure}
 	\centering
@@ -414,7 +414,7 @@ The drawback of the residual error is that, when using it as an aggregated indic
 \end{figure}
 %
 \clearpage
-\section{Distributed error quantification.}\label{sec:globalerr}
+\section{Distributed error quantification.}\label{sec:disterr}
 \noindent This section corresponds to box labelled ''$P(E)$'' in \autoref{fig:globalerrpipeline}. From now on, the terms ''error'' and ''residue'' (as defined in the previous section) will be used as synonyms.\\
 \begin{figure}[!htb]
 	\centering
@@ -476,7 +476,7 @@ The marginalised distribution of $P(e)$ is the first step in the journey towards
 \indent P-values from the K-S test are given in \autoref{tab:KSerror}. As we can see, the normal distribution does not fit any of the output variables' error. While Laplace and Cauchy distributions' p-values from the K-S test are above the $0.05$ threshold in five of the six output variables, they are well below the obtained p-values for the JohnsonSU\cite{jones2009sinh} distribution (vid. \autoref{fig:errorpvalues}). In fact, when augmenting the dataset size from the illustrative-sized employed here (10,000 items) to a more realistic $800,000$ items, neither of Laplace and Cauchy distributions pass the test (their p-values drop to near-zero orders of magnitude). This happens due to the K-S sensibility to the size of data, which makes the test more strict when the datasets are large (as would be expected). We conclude that the Laplace and Cauchy distributions just pass the K-S anecdotally for the unrealistically small dataset size which has been used for illustrative purposes, and we also conclude that the only theoretical distribution (of the list which has been checked) that fits the MS-18's error distribution is the JohnsonSU.\\
 %
 \indent Provided that there exists a simple transformation of the JohnsonSU distribution's random variable (vid. \autoref{fig:ztransform}) that converges to a normal distribution, one can, with the information obtained from the K-S test (that is, assuming the error data comes from a JohnsonSU distribution) apply standard outlier detection methods to a transformed variable $z\sim {\cal{N}}(0,1)$, like the z-score (every point located outside $\mu\pm 3\sigma$ is considered to be an outlier) and the generalised Extreme Studentized Deviate\cite{rosner1983percentage} (gESD), thus fulfilling the aims described at the beginning of this section concerning outlier detection (vid. \autoref{tab:outliers}).\\
-\begin{table}
+\begin{table}[!htb]
 	\centering
 	\caption{P-values of the K-S test comparing the empirical sample of $P(e)$ to the theoretical distributions indicated in each column. The null hypothesis $H0$ (the empirical distribution has been sampled from the one figuring in a given column) is rejected when $p-\text{value}<0.05$.}
 	\includegraphics[scale=\tabscale]{/home/pablo/Documentos/TFGP/Thesis/Figures/global_stats/errorKS.png}
@@ -488,14 +488,14 @@ The marginalised distribution of $P(e)$ is the first step in the journey towards
 	\caption{Graphical comparison of the p-values resulting from the K-S test for the MS-18 data.}
 	\label{fig:errorpvalues}
 \end{figure}
-\begin{figure}
+\begin{figure}[!htb]
 	\centering
 	\includegraphics[width=1\textwidth]{/home/pablo/Documentos/TFGP/Thesis/Figures/global_stats/ztransform.png}
 	\caption{(Binned) histograms depicting the distribution of the variable $z=\gamma+\sinh{\frac{e-\xi}{\lambda}}$, where $e\sim JohnsonSU(\gamma,\delta,\xi,\lambda)$ is the sampled residue. It can be shown that $z$ converges to a normal distribution\cite{jones2009sinh}.}
 	\label{fig:ztransform}
 \end{figure}
 %
-\begin{table}
+\begin{table}[!htb]
 	\centering
 	\caption{Outlier detection taking $e\sim JohnsonSU$ as $H0$. N.B. for this table the usual requirements for classifying a point as an outlier ($z\in\sigma\pm3\mu$ for the z-score and significance $1-a\geq95\%$ for the gESD) have been softened here for illustration purposes to $z\in\sigma\pm1.2\mu$ and $a=0.45$ for both tests, respectively.}
 	\includegraphics[scale=\tabscale]{/home/pablo/Documentos/TFGP/Thesis/Figures/global_stats/outliers.png}
@@ -545,10 +545,127 @@ The marginalised distribution of $P(e)$ is the first step in the journey towards
 %
 \indent Of course, the uncertainty model described in the last paragraph can be fine-tuned using additional information about the error distribution. If we found $P(e)$ to be heteroscedastic, we could benefit from conditioning our uncertainty model to certain regions of the input (or the output) space. This is the main motivation for \autoref{sec:biasinput}, \autoref{sec:biasoutput} and \autoref{sec:uncertainty}.\\
 %
-
 \clearpage
-\section{Distributed error quantification: conditioning the error distribution on the input and the output space}\label{sec:biasinput}
+\mbox{}
+\clearpage
+\section{Distributed error quantification: conditioning the error distribution on the input space}\label{sec:biasinput}
+This section corresponds to box labelled ''P(E\textbar{}X)'' in \autoref{fig:biasinputbox}. In \autoref{sec:disterr}, the marginalised distribution of the residue $P(e)$ was discussed. This section aims at extracting useful information by conditioning the error distribution to the input variables space, which mathematically can be denoted as $P(e|X)$. Amongst the motivations for this, we count in the first place that this section will help building our uncertainty model (vid. \autoref{sec:uncertainty}) by refining the methods described in the previous section for uncertainty prediction with new information from $P(e|X)$. Furthermore, model and data boosting (vid. \autoref{fig:biasinputbox}) can both benefit from the analysis performed in this section. Knowledge of the error distribution conditioned to the input features space can help identify those regions where either:
+\begin{itemize}
+	\item The dataset is properly representing the region, but model training is deficient.
+	\item Dataset quality is not sufficient for proper training according to the specified requirements.
+\end{itemize}
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=0.8\textwidth]{/home/pablo/Documentos/TFGP/Thesis/Figures/biasinput/boxdiagram.png}
+	\caption{Box diagram showing the relative position of \autoref{sec:biasinput} in the complete validation pipeline.}
+	\label{fig:biasinputbox} 
+\end{figure}
+\indent In the first case, training of the model can be reinforced by several means (longer training, hyperparameter tuning, transfer learning, etc.) In the second case, resampling data in deficient regions, or artificial data enhancing techniques such as data augmentation\cite{taylor2018improving}.\\
 %
+\indent The task of recomposing $P(e|X)$ needs to be addressed in a computationally efficient way, given the input space dimensionality $m$ [recall the input features vector is ${\bf X}=(X_1,X_2,\dots,X_m)$] can be very large. For the case of MS-S18, for instance, the input features space's dimensionality is $m=31$ (28 numerical inputs plus 3 categorical). With industrial sized datasets (typically amounting to up to millions of data points), recomposing $P(e|X)$ becomes unaffordable. The easiest way of overcoming this issue is by binning the input space according to a certain criteria. If we denote the binned input space by $X^B=\{X^B_1,X^B_2,X^B_3\ldots X^B_r\}$ where $X^B_j$ represents a certain bin, and there are a total of $r$ bins, then we can substitute the task of recomposing $P(e|X)$ by that of recomposing $P(e|X^B)$. Although simple, this idea allows for an effective computational cost reduction.\\
+%
+\subsection{Visualization of error as a function of categorical (discrete) input variables}
+The immediate criteria for binning the input space is using categorical variables. These variables do in essence bin the input space as they can only take certain (or rather discrete) values. As previously mentioned, for MS-S18 there are three categorical variables enclosing geometrical information: ''Frame'', ''Stringer'', and ''dp''. \autoref{fig:boxwhisker} plots, for each categorical input variable, a box plot of the error as a function of the category.\\
+\indent The box plot layout reports the median, Inter-quantile Range and possibly whiskers. Outliers showing anomalous dispersion of the residue could indicate geometrical configurations (\eg the one defined by frames no. 69-70 and stringer no. 26) where training has been inefficient. The engineer in charge could inspect this zone and conclude, for instance, that the physics at play in that region involve exploding gradients which induce strong non-linearities.\\
+\begin{figure}
+	\centering
+	\begin{subfigure}[b]{\textwidth}
+		\centering
+		\includegraphics[width=0.8\textwidth]{/home/pablo/Documentos/TFGP/Thesis/Figures/biasinput/boxwhisker1.png}
+		\caption{Error conditioned to the categorical variable ''Frame''}
+		\label{fig:boxwhisker1}
+	\end{subfigure}
+	
+	\vspace{1cm} % Espacio vertical entre las imágenes
+	
+	\begin{subfigure}[b]{\textwidth}
+		\centering
+		\includegraphics[width=0.8\textwidth]{/home/pablo/Documentos/TFGP/Thesis/Figures/biasinput/boxwhisker2.png}
+		\caption{Error conditioned to the categorical variable ''Stringer''}
+		\label{fig:boxwhisker2}
+	\end{subfigure}
+	
+	\caption{Box and whisker plots depicting the residue conditioned to two different categorical variables. \autoref{fig:boxwhisker1}: ''Frame''. \autoref{fig:boxwhisker2}: ''Stringer''. Clearly, outliers can be appreciated in both cases (''Fr69-Fr70'' in \autoref{fig:boxwhisker1}, and various stringers in \autoref{fig:boxwhisker2}).}
+	\label{fig:boxwhisker}
+\end{figure}
+%
+\subsection{Bias detection and quantification (1D)}
+After the visual inspection carried out in \autoref{fig:boxwhisker}, a statistical test is needed to actually check whether the observed residue for some frames or stringers is unexpected enough to be considered an ''outlier''. This is, we need to check whether anomalies shown in \autoref{fig:boxwhisker} actually are statistically significant or not. To this end, the following procedure is proposed:\\
+
+\paragraph{\GMVred{A.} \myul[GMVred]{Detection of error bias in single categories (ANOVA)}\\}
+The initial method of choice to detect whether a given input categorical variable shows any bias is the one-way ANOVA test\cite{kim2017understanding}. This method consists on the following steps\footnote{N.B. ANOVA in principle requires data in each category to be normally distributed and homoscedasticity (variances in different categories are similar, cfr.\cite[p. 374]{jobson2012applied}). It is important to remark these conditions are sometimes not met.}:
+\begin{itemize}
+	\item We fix a categorical variable $i$ under analysis.
+	\item The method scatter-plots the residual error versus the category of $x^i$, for all $n$ samples of the test set (or for the filtered subset)NNNNNNNNNNNNNNNNNNNNN.
+	\item ANOVA makes then an hypothesis test, where the null hypothesis $H0$ is that the mean of the (theoretical distribution) error for each of the categories is the same. The ANOVA test rejects $H0$ with a certain confidence if the $p-$value of the test is smaller than a certain level.
+	\item The output of the method is just the $p-$value, if this is smaller than $0.05$,  then $H0$ is rejected at 95\% confidence and we say that the categorical variable $x^i$ shows bias.\\
+\end{itemize}
+%
+\indent In \autoref{tab:1anova}, results of the ANOVA test from MS-S18 are shown. The test shows bias in all the three categorical input variables, but for different output variables each one.\\
+\begin{table}
+	\centering
+	\caption{P-values results from the one-way ANOVA test. The red labelled cells show that bias is found in output variable ''RF Net Tension'' for the input categorical variable ''dp'', as well as in output variable ''RF Forced Crippling'' for the input variable ''Stringer'' and in the output variables ''RF Net Tension'' and ''RF Pure Compression''. For the rest of the table's combinations, p-values greater than 0.05 indicate that $H0$ cannot be rejected with a statistical confidence of at least 95\%.}
+	\includegraphics[scale=\tabscale]{/home/pablo/Documentos/TFGP/Thesis/Figures/biasinput/1wayanova.png}
+	\label{tab:1anova}
+\end{table}
+%
+\paragraph{\GMVred{B.} \myul[GMVred]{Quantification of error bias in single categories test no. 1: based on error mean outlier}\\}
+This analysis is to be done only if results from the one-way ANOVA test show bias is found in at least one categorical variable. Under this assumption, the former test has identified a number of categorical variables that show bias. Here we quantify such bias by checking whether there are certain categories which are ''outliers'', \ie categories where the error mean is substantially different than for the rest of categories. We check this using z-score\cite{kirkwood2010essential}, which consists on the following steps: we initially construct the mean error $e$ in each category. If the categorical variable has $s$ categories, then we have a vector $(e_1,e_2,...,e_s)$. We then z-score this vector to build
+$$\bigg(\frac{e_1-\langle e \rangle}{\sigma(e)},\frac{e_2-\langle e \rangle}{\sigma(e)},...,\frac{e_s-\langle e \rangle}{\sigma(e)}\bigg),$$
+where 
+$$\langle e \rangle = \frac{1}{s}\sum_{i=1}^s e_i; \ \sigma(e)=\sqrt{\frac{1}{s}\sum_{i=1}^s (e_i-\langle e\rangle)^2}$$
+
+We make use of the rule of thumb that category $i$ shows ${\bf weak\ bias}$ if
+
+$$1<\frac{|e_i-\langle e \rangle|}{\sigma(e)}\leq3,$$
+
+whereas category $i$ shows ${\bf strong\ bias}$ if 
+
+$$\frac{|e_i-\langle e \rangle|}{\sigma(e)}>3.$$
+
+
+The analysis outputs, for each categorical variable that was previously identified as having bias, a table showing \textbf{only} the specific categories that either show weak or strong bias (vid. \autoref{tab:zscore}).
+
+\begin{table}[!htb]
+	\centering
+	\caption{Z-score results for biased categorical variables. One table is generated for each pair biased categorical input variable-output variable. Row labelled ''N'' shows the number of test points belonging to the specified input-output variable combination. Clearly, the bias is found for combinations where the number of test points is extremely low (\eg 1). This suggests performing a revision of the dataset in order to find uncovered regions and isolated points, refilling those regions as needed, and re-training the model.}
+	\begin{tabular}{c c}
+		\includegraphics[scale=\tabscale]{/home/pablo/Documentos/TFGP/Thesis/Figures/biasinput/zscore1.png} & \includegraphics[scale=\tabscale]{/home/pablo/Documentos/TFGP/Thesis/Figures/biasinput/zscore2.png} \\
+		% Espacio vertical para simular la disposición de cruz
+		\\[3ex] % Ajusta 1ex al espacio que necesites
+		\includegraphics[scale=\tabscale]{/home/pablo/Documentos/TFGP/Thesis/Figures/biasinput/zscore3.png} & \includegraphics[scale=\tabscale]{/home/pablo/Documentos/TFGP/Thesis/Figures/biasinput/zscore4.png} \\
+	\end{tabular}
+	\label{tab:zscore}
+\end{table}
+%
+\paragraph{\GMVred{C.} \myul[GMVred]{Quantification of error bias in single categories test no. 2: based on error variance outlier}\\}
+This analysis is to be done only if results from the one-way ANOVA test show bias is found in at least one categorical variable.\\
+\indent The procedure is similar as before, but here we investigate whether for certain categories the dispersion (not the mean) of the samples in a given category is substantially different than for the rest of categories. For instance, experience in MSP-S18 suggests that the main source of error bias in categorical variables comes from the fact that different categories have different variance. This is quantified by doing a z-score analysis on category variances: if the categorical variable under analysis has $s$ categories, then we have a vector of variances $(v_1,v_2,...,v_s)$, where $v_i$ is the variance of the error for all samples in category $i$. We then z-score this vector to build 
+
+$$\bigg(\frac{v_1-\langle v \rangle}{\sigma(v)},\frac{v_2-\langle v \rangle}{\sigma(v)},...,\frac{v_s-\langle v \rangle}{\sigma(v)}\bigg),$$
+
+where 
+$$\langle v \rangle = \frac{1}{s}\sum_{i=1}^s v_i; \ \sigma(v)=\sqrt{\frac{1}{s}\sum_{i=1}^s (v_i-\langle v\rangle)^2}$$
+
+We make use of the rule of thumb that category $i$ shows \textit{\textbf{weak variance bias}} if 
+
+$$1<\frac{|v_i-\langle v \rangle|}{\sigma(v)}\leq3,$$
+whereas category $i$ shows \textit{\textbf{strong variance bias}} if 
+
+$$\frac{|v_i-\langle v \rangle|}{\sigma(v)}>3$$
+
+The analysis outputs, for each categorical variable that was previously identified as having bias, a table showing only the specific categories that either show weak or strong bias according to this second method.
+
+\paragraph{\GMVred{D.} \myul[GMVred]{Quantification of error bias in single categories test no. 3: based on identification of  linear trend}\\}
+This test is only applicable to categorical variables for which specific categories have a natural ordering (mathematically, we say there is a canonical geometric embedding for the categorical variable). Such identification needs to be done ''by hand'' by the engineer in charge.\\
+\indent Such embedding exists when the categorical variable is related for instance to a geometrical location in the plane (for instance the Frames and Stringers are categorical --in so far they are discrete-- but they correspond to regions of the plane along a Cartesian and a radial axis, so there is a natural ordering). In those cases, it makes sense to investigate linear trends as these are interpretable.\\
+\indent The method just proceeds to fit a linear model (with just one explanatory variable). If the slope is above a certain threshold and if the fit is good, then we can be confident the linear trend is genuine, and the slope can be used to quantify the linear bias and as a source for uncertainty.\\
+\indent For each categorical variable that has a natural ordering and was previously detected as having bias, the test fits a linear model and outputs the result of this model.\\
+\indent If such model has a slope (statistically) significantly different from zero, then this categorical variable is flagged as having a linear trend.\\
+
+\paragraph{\GMVred{E.} \myul[GMVred]{Summary}\\}
+\clearpage
+\mbox{}
 \clearpage
 \section{Distributed error quantification: conditioning the error distribution on the output space}\label{sec:biasoutput}
 %

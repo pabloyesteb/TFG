@@ -82,8 +82,8 @@
 \newlabel{fig:truevspredscatter}{{1.10}{21}{Scatter plot of ground true ($x$ axis) against predicted values ($y$ axis) and $R^2$ coefficient. In this case, $R^2=1,000$ indicates a perfect fit of predicted to ground true values. Mismatches due to underestimating failure risk are labelled in red, while those due to overestimating failure risk are labelled in blue. Similar graphs can be computed for every pair $\left \{y_j,\hat {y}_j\right \}$ of features in the output variables $\mathbf {Y}=\left \{y_1,y_2,\ldots ,y_m\right \}$.\relax }{figure.caption.26}{}}
 \newlabel{fig:truevspredscatter@cref}{{[figure][10][1]1.10}{[1][20][]21}}
 \@writefile{toc}{\contentsline {section}{\numberline {1.4}Distributed error quantification.}{22}{section.1.4}\protected@file@percent }
-\newlabel{sec:globalerr}{{1.4}{22}{Distributed error quantification}{section.1.4}{}}
-\newlabel{sec:globalerr@cref}{{[section][4][1]1.4}{[1][22][]22}}
+\newlabel{sec:disterr}{{1.4}{22}{Distributed error quantification}{section.1.4}{}}
+\newlabel{sec:disterr@cref}{{[section][4][1]1.4}{[1][22][]22}}
 \@writefile{lof}{\contentsline {figure}{\numberline {1.11}{\ignorespaces Location of \autoref  {sec:globalerr} in the validation pipeline.\relax }}{22}{figure.caption.27}\protected@file@percent }
 \newlabel{fig:globalerrpipeline}{{1.11}{22}{Location of \autoref {sec:globalerr} in the validation pipeline.\relax }{figure.caption.27}{}}
 \newlabel{fig:globalerrpipeline@cref}{{[figure][11][1]1.11}{[1][22][]22}}
@@ -112,66 +112,94 @@
 \@writefile{lof}{\contentsline {figure}{\numberline {1.15}{\ignorespaces Graphical comparison of the p-values resulting from the K-S test for the MS-18 data.\relax }}{28}{figure.caption.33}\protected@file@percent }
 \newlabel{fig:errorpvalues}{{1.15}{28}{Graphical comparison of the p-values resulting from the K-S test for the MS-18 data.\relax }{figure.caption.33}{}}
 \newlabel{fig:errorpvalues@cref}{{[figure][15][1]1.15}{[1][25][]28}}
-\@writefile{lof}{\contentsline {figure}{\numberline {1.16}{\ignorespaces (Binned) histograms depicting the distribution of the variable $z=\gamma +\qopname  \relax o{sinh}{\frac  {e-\xi }{\lambda }}$, where $e\sim JohnsonSU(\gamma ,\delta ,\xi ,\lambda )$ is the sampled residue. It can be shown that $z$ converges to a normal distribution\blx@tocontentsinit {0}\cite {jones2009sinh}.\relax }}{29}{figure.caption.34}\protected@file@percent }
-\newlabel{fig:ztransform}{{1.16}{29}{(Binned) histograms depicting the distribution of the variable $z=\gamma +\sinh {\frac {e-\xi }{\lambda }}$, where $e\sim JohnsonSU(\gamma ,\delta ,\xi ,\lambda )$ is the sampled residue. It can be shown that $z$ converges to a normal distribution\cite {jones2009sinh}.\relax }{figure.caption.34}{}}
-\newlabel{fig:ztransform@cref}{{[figure][16][1]1.16}{[1][25][]29}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1.16}{\ignorespaces (Binned) histograms depicting the distribution of the variable $z=\gamma +\qopname  \relax o{sinh}{\frac  {e-\xi }{\lambda }}$, where $e\sim JohnsonSU(\gamma ,\delta ,\xi ,\lambda )$ is the sampled residue. It can be shown that $z$ converges to a normal distribution\blx@tocontentsinit {0}\cite {jones2009sinh}.\relax }}{28}{figure.caption.34}\protected@file@percent }
+\newlabel{fig:ztransform}{{1.16}{28}{(Binned) histograms depicting the distribution of the variable $z=\gamma +\sinh {\frac {e-\xi }{\lambda }}$, where $e\sim JohnsonSU(\gamma ,\delta ,\xi ,\lambda )$ is the sampled residue. It can be shown that $z$ converges to a normal distribution\cite {jones2009sinh}.\relax }{figure.caption.34}{}}
+\newlabel{fig:ztransform@cref}{{[figure][16][1]1.16}{[1][25][]28}}
 \@writefile{lot}{\contentsline {table}{\numberline {1.9}{\ignorespaces Outlier detection taking $e\sim JohnsonSU$ as $H0$. N.B. for this table the usual requirements for classifying a point as an outlier ($z\in \sigma \pm 3\mu $ for the z-score and significance $1-a\geq 95\%$ for the gESD) have been softened here for illustration purposes to $z\in \sigma \pm 1.2\mu $ and $a=0.45$ for both tests, respectively.\relax }}{29}{table.caption.35}\protected@file@percent }
 \newlabel{tab:outliers}{{1.9}{29}{Outlier detection taking $e\sim JohnsonSU$ as $H0$. N.B. for this table the usual requirements for classifying a point as an outlier ($z\in \sigma \pm 3\mu $ for the z-score and significance $1-a\geq 95\%$ for the gESD) have been softened here for illustration purposes to $z\in \sigma \pm 1.2\mu $ and $a=0.45$ for both tests, respectively.\relax }{table.caption.35}{}}
 \newlabel{tab:outliers@cref}{{[table][9][1]1.9}{[1][25][]29}}
 \@writefile{loa}{\contentsline {algocf}{\numberline {2}{\ignorespaces Non-parametric bootstrapping\relax }}{30}{algocf.2}\protected@file@percent }
 \newlabel{algo:bootstrapping}{{2}{30}{\GMVred {C.} \myul [GMVred]{Uncertainty measuring}\\}{algocf.2}{}}
-\newlabel{algo:bootstrapping@cref}{{[algorithm][2][]2}{[1][28][]30}}
+\newlabel{algo:bootstrapping@cref}{{[algorithm][2][]2}{[1][29][]30}}
 \newlabel{RF1}{31}
 \@writefile{lot}{\contentsline {table}{\numberline {1.10}{\ignorespaces Summary of bootstrapped error statistics. For the median, the Wilson-score\blx@tocontentsinit {0}\cite {wilson1927probable} is used for computing the confidence interval.\relax }}{31}{table.caption.37}\protected@file@percent }
 \newlabel{tab:errorstats}{{1.10}{31}{Summary of bootstrapped error statistics. For the median, the Wilson-score\cite {wilson1927probable} is used for computing the confidence interval.\relax }{table.caption.37}{}}
-\newlabel{tab:errorstats@cref}{{[table][10][1]1.10}{[1][28][]31}}
+\newlabel{tab:errorstats@cref}{{[table][10][1]1.10}{[1][29][]31}}
 \newlabel{RF2}{32}
 \@writefile{lot}{\contentsline {table}{\numberline {1.11}{\ignorespaces Bootstrapped percentiles (\ordinalnum {1}, \ordinalnum {5}, \ordinalnum {10}, \ordinalnum {90}, \ordinalnum {95} and \ordinalnum {99}) of the residue distribution, calculated with a 95\% confidence interval using Wilson-score.\relax }}{32}{table.caption.38}\protected@file@percent }
 \newlabel{tab:basicuncertainty}{{1.11}{32}{Bootstrapped percentiles (\ordinalnum {1}, \ordinalnum {5}, \ordinalnum {10}, \ordinalnum {90}, \ordinalnum {95} and \ordinalnum {99}) of the residue distribution, calculated with a 95\% confidence interval using Wilson-score.\relax }{table.caption.38}{}}
-\newlabel{tab:basicuncertainty@cref}{{[table][11][1]1.11}{[1][28][]32}}
-\@writefile{toc}{\contentsline {section}{\numberline {1.5}Distributed error quantification: conditioning the error distribution on the input and the output space}{33}{section.1.5}\protected@file@percent }
-\newlabel{sec:biasinput}{{1.5}{33}{Distributed error quantification: conditioning the error distribution on the input and the output space}{section.1.5}{}}
-\newlabel{sec:biasinput@cref}{{[section][5][1]1.5}{[1][33][]33}}
-\@writefile{toc}{\contentsline {section}{\numberline {1.6}Distributed error quantification: conditioning the error distribution on the output space}{34}{section.1.6}\protected@file@percent }
-\newlabel{sec:biasoutput}{{1.6}{34}{Distributed error quantification: conditioning the error distribution on the output space}{section.1.6}{}}
-\newlabel{sec:biasoutput@cref}{{[section][6][1]1.6}{[1][34][]34}}
-\@writefile{toc}{\contentsline {section}{\numberline {1.7}Uncertainty model estimation}{35}{section.1.7}\protected@file@percent }
-\newlabel{sec:uncertainty}{{1.7}{35}{Uncertainty model estimation}{section.1.7}{}}
-\newlabel{sec:uncertainty@cref}{{[section][7][1]1.7}{[1][35][]35}}
-\@writefile{lot}{\contentsline {table}{\numberline {1.12}{\ignorespaces Output of \autoref  {algo:tt-split}: \texttt  {reqs\_results} table\relax }}{36}{table.caption.39}\protected@file@percent }
-\newlabel{def:orden1}{{2}{36}{}{definition.2}{}}
-\newlabel{def:orden1@cref}{{[definition][2][]2}{[1][36][]36}}
-\@writefile{lot}{\contentsline {table}{\numberline {1.13}{\ignorespaces Voxel reference table. Lorem ipsum dolor sit amet, consectetuer adisciping elit.\relax }}{37}{table.caption.40}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {1.8}Las movidas de Rodrigo}{38}{section.1.8}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {1.8.1}Concept: System dynamics.}{38}{subsection.1.8.1}\protected@file@percent }
-\newlabel{eqCh1:Problem_def}{{1.3}{38}{Concept: System dynamics}{equation.1.8.3}{}}
-\newlabel{eqCh1:Problem_def@cref}{{[equation][3][1]1.3}{[1][38][]38}}
-\newlabel{eqCh1:STM_1}{{1.4}{38}{Concept: System dynamics}{equation.1.8.4}{}}
-\newlabel{eqCh1:STM_1@cref}{{[equation][4][1]1.4}{[1][38][]38}}
-\newlabel{eqCh1:STM_2}{{1.5}{39}{Concept: System dynamics}{equation.1.8.5}{}}
-\newlabel{eqCh1:STM_2@cref}{{[equation][5][1]1.5}{[1][38][]39}}
-\newlabel{eqCh1:STM_decomp}{{1.6}{39}{Concept: System dynamics}{equation.1.8.6}{}}
-\newlabel{eqCh1:STM_decomp@cref}{{[equation][6][1]1.6}{[1][39][]39}}
-\newlabel{eqCh1:STM_prop}{{1.7}{39}{Concept: System dynamics}{equation.1.8.7}{}}
-\newlabel{eqCh1:STM_prop@cref}{{[equation][7][1]1.7}{[1][39][]39}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {1.8.2}Applications of STMs in celestial mechanics.}{40}{subsection.1.8.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{\leavevmode {\color  {GMVred}A.} \myul [GMVred]{Precise Orbit Determination.}\\}{40}{subsection.1.8.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{\leavevmode {\color  {GMVred}B.} \myul [GMVred]{Guidance, Navigation and Control (GNC).} \\}{40}{subsection.1.8.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{\leavevmode {\color  {GMVred}C.} \myul [GMVred]{Orbit design.} \\}{40}{subsection.1.8.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{\leavevmode {\color  {GMVred}D.} \myul [GMVred]{Covariance matrix propagation.} \\}{41}{subsection.1.8.2}\protected@file@percent }
-\newlabel{eqCh1:P_est}{{1.8}{42}{\GMVred {D.} \myul [GMVred]{Covariance matrix propagation.} \\}{equation.1.8.8}{}}
-\newlabel{eqCh1:P_est@cref}{{[equation][8][1]1.8}{[1][41][]42}}
-\@writefile{lof}{\contentsline {figure}{\numberline {1.17}{\ignorespaces Covariance ellipsoid evolution along a radial hop.\relax }}{42}{figure.caption.47}\protected@file@percent }
-\newlabel{figCh1:Covariance_segment}{{1.17}{42}{Covariance ellipsoid evolution along a radial hop.\relax }{figure.caption.47}{}}
-\newlabel{figCh1:Covariance_segment@cref}{{[figure][17][1]1.17}{[1][42][]42}}
+\newlabel{tab:basicuncertainty@cref}{{[table][11][1]1.11}{[1][29][]32}}
+\@writefile{toc}{\contentsline {section}{\numberline {1.5}Distributed error quantification: conditioning the error distribution on the input space}{34}{section.1.5}\protected@file@percent }
+\newlabel{sec:biasinput}{{1.5}{34}{Distributed error quantification: conditioning the error distribution on the input space}{section.1.5}{}}
+\newlabel{sec:biasinput@cref}{{[section][5][1]1.5}{[1][34][]34}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1.17}{\ignorespaces Box diagram showing the relative position of \autoref  {sec:biasinput} in the complete validation pipeline.\relax }}{34}{figure.caption.39}\protected@file@percent }
+\newlabel{fig:biasinputbox}{{1.17}{34}{Box diagram showing the relative position of \autoref {sec:biasinput} in the complete validation pipeline.\relax }{figure.caption.39}{}}
+\newlabel{fig:biasinputbox@cref}{{[figure][17][1]1.17}{[1][34][]34}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.5.1}Visualization of error as a function of categorical (discrete) input variables}{35}{subsection.1.5.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.5.2}Bias detection and quantification (1D)}{35}{subsection.1.5.2}\protected@file@percent }
+\newlabel{fig:boxwhisker1}{{1.18(a)}{36}{Error conditioned to the categorical variable ''Frame''\relax }{figure.caption.40}{}}
+\newlabel{fig:boxwhisker1@cref}{{[subfigure][1][1,18]1.18(a)}{[1][35][]36}}
+\newlabel{sub@fig:boxwhisker1}{{(a)}{36}{Error conditioned to the categorical variable ''Frame''\relax }{figure.caption.40}{}}
+\newlabel{sub@fig:boxwhisker1@cref}{{[subfigure][1][1,18]1.18(a)}{[1][35][]36}}
+\newlabel{fig:boxwhisker2}{{1.18(b)}{36}{Error conditioned to the categorical variable ''Stringer''\relax }{figure.caption.40}{}}
+\newlabel{fig:boxwhisker2@cref}{{[subfigure][2][1,18]1.18(b)}{[1][35][]36}}
+\newlabel{sub@fig:boxwhisker2}{{(b)}{36}{Error conditioned to the categorical variable ''Stringer''\relax }{figure.caption.40}{}}
+\newlabel{sub@fig:boxwhisker2@cref}{{[subfigure][2][1,18]1.18(b)}{[1][35][]36}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1.18}{\ignorespaces Box and whisker plots depicting the residue conditioned to two different categorical variables. \autoref  {fig:boxwhisker1}: ''Frame''. \autoref  {fig:boxwhisker2}: ''Stringer''. Clearly, outliers can be appreciated in both cases (''Fr69-Fr70'' in \autoref  {fig:boxwhisker1}, and various stringers in \autoref  {fig:boxwhisker2}).\relax }}{36}{figure.caption.40}\protected@file@percent }
+\newlabel{fig:boxwhisker}{{1.18}{36}{Box and whisker plots depicting the residue conditioned to two different categorical variables. \autoref {fig:boxwhisker1}: ''Frame''. \autoref {fig:boxwhisker2}: ''Stringer''. Clearly, outliers can be appreciated in both cases (''Fr69-Fr70'' in \autoref {fig:boxwhisker1}, and various stringers in \autoref {fig:boxwhisker2}).\relax }{figure.caption.40}{}}
+\newlabel{fig:boxwhisker@cref}{{[figure][18][1]1.18}{[1][35][]36}}
+\@writefile{toc}{\contentsline {paragraph}{\leavevmode {\color  {GMVred}A.} \myul [GMVred]{Detection of error bias in single categories (ANOVA)}\\}{37}{subsection.1.5.2}\protected@file@percent }
+\pp@spagectr{FN@totalid}{5}{1}{37}
+\@writefile{toc}{\contentsline {paragraph}{\leavevmode {\color  {GMVred}B.} \myul [GMVred]{Quantification of error bias in single categories test no. 1: based on error mean outlier}\\}{37}{table.caption.41}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {1.12}{\ignorespaces P-values results from the one-way ANOVA test. The red labelled cells show that bias is found in output variable ''RF Net Tension'' for the input categorical variable ''dp'', as well as in output variable ''RF Forced Crippling'' for the input variable ''Stringer'' and in the output variables ''RF Net Tension'' and ''RF Pure Compression''. For the rest of the table's combinations, p-values greater than 0.05 indicate that $H0$ cannot be rejected with a statistical confidence of at least 95\%.\relax }}{38}{table.caption.41}\protected@file@percent }
+\newlabel{tab:1anova}{{1.12}{38}{P-values results from the one-way ANOVA test. The red labelled cells show that bias is found in output variable ''RF Net Tension'' for the input categorical variable ''dp'', as well as in output variable ''RF Forced Crippling'' for the input variable ''Stringer'' and in the output variables ''RF Net Tension'' and ''RF Pure Compression''. For the rest of the table's combinations, p-values greater than 0.05 indicate that $H0$ cannot be rejected with a statistical confidence of at least 95\%.\relax }{table.caption.41}{}}
+\newlabel{tab:1anova@cref}{{[table][12][1]1.12}{[1][37][]38}}
+\@writefile{toc}{\contentsline {paragraph}{\leavevmode {\color  {GMVred}C.} \myul [GMVred]{Quantification of error bias in single categories test no. 2: based on error variance outlier}\\}{38}{table.caption.42}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {1.13}{\ignorespaces Z-score results for biased categorical variables. One table is generated for each pair biased categorical input variable-output variable. Row labelled ''N'' shows the number of test points belonging to the specified input-output variable combination. Clearly, the bias is found for combinations where the number of test points is extremely low ({\it  e.g.}\ 1). This suggests performing a revision of the dataset in order to find uncovered regions and isolated points, refilling those regions as needed, and re-training the model.\relax }}{39}{table.caption.42}\protected@file@percent }
+\newlabel{tab:zscore}{{1.13}{39}{Z-score results for biased categorical variables. One table is generated for each pair biased categorical input variable-output variable. Row labelled ''N'' shows the number of test points belonging to the specified input-output variable combination. Clearly, the bias is found for combinations where the number of test points is extremely low (\eg 1). This suggests performing a revision of the dataset in order to find uncovered regions and isolated points, refilling those regions as needed, and re-training the model.\relax }{table.caption.42}{}}
+\newlabel{tab:zscore@cref}{{[table][13][1]1.13}{[1][38][]39}}
+\@writefile{toc}{\contentsline {paragraph}{\leavevmode {\color  {GMVred}D.} \myul [GMVred]{Quantification of error bias in single categories test no. 3: based on identification of linear trend}\\}{40}{table.caption.42}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{\leavevmode {\color  {GMVred}E.} \myul [GMVred]{Summary}\\}{40}{table.caption.42}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {1.6}Distributed error quantification: conditioning the error distribution on the output space}{42}{section.1.6}\protected@file@percent }
+\newlabel{sec:biasoutput}{{1.6}{42}{Distributed error quantification: conditioning the error distribution on the output space}{section.1.6}{}}
+\newlabel{sec:biasoutput@cref}{{[section][6][1]1.6}{[1][42][]42}}
+\@writefile{toc}{\contentsline {section}{\numberline {1.7}Uncertainty model estimation}{43}{section.1.7}\protected@file@percent }
+\newlabel{sec:uncertainty}{{1.7}{43}{Uncertainty model estimation}{section.1.7}{}}
+\newlabel{sec:uncertainty@cref}{{[section][7][1]1.7}{[1][43][]43}}
+\@writefile{lot}{\contentsline {table}{\numberline {1.14}{\ignorespaces Output of \autoref  {algo:tt-split}: \texttt  {reqs\_results} table\relax }}{44}{table.caption.43}\protected@file@percent }
+\newlabel{def:orden1}{{2}{44}{}{definition.2}{}}
+\newlabel{def:orden1@cref}{{[definition][2][]2}{[1][44][]44}}
+\@writefile{lot}{\contentsline {table}{\numberline {1.15}{\ignorespaces Voxel reference table. Lorem ipsum dolor sit amet, consectetuer adisciping elit.\relax }}{45}{table.caption.44}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {1.8}Las movidas de Rodrigo}{46}{section.1.8}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.8.1}Concept: System dynamics.}{46}{subsection.1.8.1}\protected@file@percent }
+\newlabel{eqCh1:Problem_def}{{1.3}{46}{Concept: System dynamics}{equation.1.8.3}{}}
+\newlabel{eqCh1:Problem_def@cref}{{[equation][3][1]1.3}{[1][46][]46}}
+\newlabel{eqCh1:STM_1}{{1.4}{46}{Concept: System dynamics}{equation.1.8.4}{}}
+\newlabel{eqCh1:STM_1@cref}{{[equation][4][1]1.4}{[1][46][]46}}
+\newlabel{eqCh1:STM_2}{{1.5}{47}{Concept: System dynamics}{equation.1.8.5}{}}
+\newlabel{eqCh1:STM_2@cref}{{[equation][5][1]1.5}{[1][46][]47}}
+\newlabel{eqCh1:STM_decomp}{{1.6}{47}{Concept: System dynamics}{equation.1.8.6}{}}
+\newlabel{eqCh1:STM_decomp@cref}{{[equation][6][1]1.6}{[1][47][]47}}
+\newlabel{eqCh1:STM_prop}{{1.7}{47}{Concept: System dynamics}{equation.1.8.7}{}}
+\newlabel{eqCh1:STM_prop@cref}{{[equation][7][1]1.7}{[1][47][]47}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.8.2}Applications of STMs in celestial mechanics.}{48}{subsection.1.8.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{\leavevmode {\color  {GMVred}A.} \myul [GMVred]{Precise Orbit Determination.}\\}{48}{subsection.1.8.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{\leavevmode {\color  {GMVred}B.} \myul [GMVred]{Guidance, Navigation and Control (GNC).} \\}{48}{subsection.1.8.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{\leavevmode {\color  {GMVred}C.} \myul [GMVred]{Orbit design.} \\}{48}{subsection.1.8.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{\leavevmode {\color  {GMVred}D.} \myul [GMVred]{Covariance matrix propagation.} \\}{49}{subsection.1.8.2}\protected@file@percent }
+\newlabel{eqCh1:P_est}{{1.8}{50}{\GMVred {D.} \myul [GMVred]{Covariance matrix propagation.} \\}{equation.1.8.8}{}}
+\newlabel{eqCh1:P_est@cref}{{[equation][8][1]1.8}{[1][49][]50}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1.19}{\ignorespaces Covariance ellipsoid evolution along a radial hop.\relax }}{50}{figure.caption.51}\protected@file@percent }
+\newlabel{figCh1:Covariance_segment}{{1.19}{50}{Covariance ellipsoid evolution along a radial hop.\relax }{figure.caption.51}{}}
+\newlabel{figCh1:Covariance_segment@cref}{{[figure][19][1]1.19}{[1][50][]50}}
 \@setckpt{Chapters/Chapter_01/Chapter_01}{
-\setcounter{page}{44}
+\setcounter{page}{52}
 \setcounter{equation}{8}
 \setcounter{enumi}{4}
 \setcounter{enumii}{0}
 \setcounter{enumiii}{0}
 \setcounter{enumiv}{0}
-\setcounter{footnote}{4}
+\setcounter{footnote}{5}
 \setcounter{mpfootnote}{0}
 \setcounter{part}{0}
 \setcounter{chapter}{1}
@@ -180,8 +208,8 @@
 \setcounter{subsubsection}{0}
 \setcounter{paragraph}{0}
 \setcounter{subparagraph}{0}
-\setcounter{figure}{17}
-\setcounter{table}{13}
+\setcounter{figure}{19}
+\setcounter{table}{15}
 \setcounter{LT@tables}{0}
 \setcounter{LT@chunks}{0}
 \setcounter{theorem}{0}
@@ -197,8 +225,8 @@
 \setcounter{tcblayer}{0}
 \setcounter{tcolorbox@number}{0}
 \setcounter{lstnumber}{1}
-\setcounter{FN@totalid}{4}
-\setcounter{pp@a@FN@totalid}{4}
+\setcounter{FN@totalid}{5}
+\setcounter{pp@a@FN@totalid}{5}
 \setcounter{tabx@nest}{0}
 \setcounter{listtotal}{0}
 \setcounter{listcount}{0}
@@ -208,7 +236,7 @@
 \setcounter{citetotal}{0}
 \setcounter{multicitecount}{0}
 \setcounter{multicitetotal}{0}
-\setcounter{instcount}{44}
+\setcounter{instcount}{48}
 \setcounter{maxnames}{3}
 \setcounter{minnames}{1}
 \setcounter{maxitems}{3}
@@ -232,7 +260,7 @@
 \setcounter{parenlevel}{0}
 \setcounter{blx@maxsection}{0}
 \setcounter{blx@maxsegment@0}{0}
-\setcounter{blx@sectionciteorder@0}{37}
+\setcounter{blx@sectionciteorder@0}{41}
 \setcounter{mincomprange}{10}
 \setcounter{maxcomprange}{100000}
 \setcounter{mincompwidth}{1}
@@ -316,11 +344,11 @@
 \setcounter{bbx:relatedcount}{0}
 \setcounter{bbx:relatedtotal}{0}
 \setcounter{cbx@tempcnta}{0}
-\setcounter{cbx@tempcntb}{30}
+\setcounter{cbx@tempcntb}{33}
 \setcounter{cbx@tempcntc}{0}
 \setcounter{cbx@tempcntd}{-1}
 \setcounter{Item}{4}
-\setcounter{bookmark@seq@number}{20}
+\setcounter{bookmark@seq@number}{22}
 \setcounter{caption@flags}{0}
 \setcounter{continuedfloat}{0}
 \setcounter{subfigure}{0}

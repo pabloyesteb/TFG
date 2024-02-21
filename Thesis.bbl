@@ -33,8 +33,8 @@
       \strng{authorbibnamehash}{3cbf1a25c755f9e3fb27ddf227d6ef88}
       \strng{authornamehash}{3cbf1a25c755f9e3fb27ddf227d6ef88}
       \strng{authorfullhash}{3cbf1a25c755f9e3fb27ddf227d6ef88}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Journal of the Aeronautical Sciences}
@@ -70,8 +70,8 @@
       \strng{authorbibnamehash}{dd196855e0693645251fa5bc57a16c00}
       \strng{authornamehash}{dd196855e0693645251fa5bc57a16c00}
       \strng{authorfullhash}{dd196855e0693645251fa5bc57a16c00}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{The problem of computing a convex hull is not only central to practical applications, but is also a vehicle for the solution of a number of apparently unrelated questions arising in computational geometry. The computation of the convex hull of a finite set of points, particularly in the plane, has been studied extensively and has applications, for example, in pattern recognition [Akl--CToussaint (1978); Duda--CHart (1973)], image processing [Rosenfeld (1969)] and stock cutting and allocation [Freeman (1974);Sklansky (1972); Freeman--CShapira (1975)].}
@@ -143,8 +143,8 @@
       \strng{editorbibnamehash}{83be554d58af5be1788b5c3616f0e92a}
       \strng{editornamehash}{83be554d58af5be1788b5c3616f0e92a}
       \strng{editorfullhash}{83be554d58af5be1788b5c3616f0e92a}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{Whether neural networks can learn abstract reasoning or whether they merely rely on superficial statistics is a topic of recent debate. Here, we propose a dataset and challenge designed to probe abstract reasoning, inspired by a well-known human IQ test. To succeed at this challenge, models must cope with various generalisation â€™regimesâ€™ in which the training data and test questions differ in clearly-defined ways. We show that popular models such as ResNets perform poorly, even when the training and test sets differ only minimally, and we present a novel architecture, with structure designed to encourage reasoning, that does significantly better. When we vary the way in which the test questions and training data differ, we find that our model is notably proficient at certain forms of generalisation, but notably weak at others. We further show that the modelâ€™s ability to generalise improves markedly if it is trained to predict symbolic explanations for its answers. Altogether, we introduce and explore ways to both measure and induce stronger abstract reasoning in neural networks. Our freely-available dataset should motivate further progress in this direction.}
@@ -185,8 +185,8 @@
       \strng{authorbibnamehash}{aa36293cebba3c7ebb1c52eab68079f6}
       \strng{authornamehash}{aa36293cebba3c7ebb1c52eab68079f6}
       \strng{authorfullhash}{aa36293cebba3c7ebb1c52eab68079f6}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{eprinttype}{arXiv}
@@ -233,8 +233,8 @@
       \strng{authorbibnamehash}{1d188bd9b332df78ac288045fda49718}
       \strng{authornamehash}{1d188bd9b332df78ac288045fda49718}
       \strng{authorfullhash}{54fab41fa6c4d75b5d5fa86517341ad0}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{eprinttype}{arXiv}
@@ -279,8 +279,8 @@
       \strng{authorbibnamehash}{77a476f8aeee6fc4b732c98911d88004}
       \strng{authornamehash}{77a476f8aeee6fc4b732c98911d88004}
       \strng{authorfullhash}{77a476f8aeee6fc4b732c98911d88004}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{booktitle}{2014 IEEE Symposium on Computational Intelligence and Data Mining (CIDM)}
@@ -316,8 +316,8 @@
       \strng{authorbibnamehash}{c36c137baff5582f7ec435e402ea9122}
       \strng{authornamehash}{c36c137baff5582f7ec435e402ea9122}
       \strng{authorfullhash}{c36c137baff5582f7ec435e402ea9122}
-      \field{sortinit}{6}
-      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{ACM Transactions on Knowledge Discovery from Data (TKDD)}
@@ -342,8 +342,8 @@
       \strng{authorbibnamehash}{5362760bf096207c79967925fec57b50}
       \strng{authornamehash}{5362760bf096207c79967925fec57b50}
       \strng{authorfullhash}{5362760bf096207c79967925fec57b50}
-      \field{sortinit}{6}
-      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{IEEE Transactions on Fuzzy Systems}
@@ -381,8 +381,8 @@
       \strng{authorbibnamehash}{a1572522e3a245b5a757eab800bf7807}
       \strng{authornamehash}{a1572522e3a245b5a757eab800bf7807}
       \strng{authorfullhash}{a1572522e3a245b5a757eab800bf7807}
-      \field{sortinit}{7}
-      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{arXiv preprint arXiv:2110.09485}
@@ -409,8 +409,8 @@
       \strng{authorbibnamehash}{f16d5e4c04b4b4bc85402a8d3e3d2725}
       \strng{authornamehash}{f16d5e4c04b4b4bc85402a8d3e3d2725}
       \strng{authorfullhash}{f16d5e4c04b4b4bc85402a8d3e3d2725}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{edition}{2}
@@ -524,8 +524,8 @@
       \strng{authorbibnamehash}{8d723a09b743d9adca83a28ab576cdcc}
       \strng{authornamehash}{8d723a09b743d9adca83a28ab576cdcc}
       \strng{authorfullhash}{8d723a09b743d9adca83a28ab576cdcc}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Statistics in medicine}
@@ -598,32 +598,29 @@
       \field{pages}{310\bibrangedash 316}
       \range{pages}{7}
     \endentry
-    \entry{efron1992bootstrap}{incollection}{}
+    \entry{jobson2012applied}{book}{}
       \name{author}{1}{}{%
-        {{hash=5470455fc7dceb3ccf6db38cb22a113d}{%
-           family={Efron},
-           familyi={E\bibinitperiod},
-           given={Bradley},
-           giveni={B\bibinitperiod}}}%
+        {{hash=5a6b19c047426c4c2d4a50b395bf450b}{%
+           family={Jobson},
+           familyi={J\bibinitperiod},
+           given={J\bibnamedelima Dave},
+           giveni={J\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
       }
       \list{publisher}{1}{%
-        {Springer}%
+        {Springer Science \& Business Media}%
       }
-      \strng{namehash}{5470455fc7dceb3ccf6db38cb22a113d}
-      \strng{fullhash}{5470455fc7dceb3ccf6db38cb22a113d}
-      \strng{bibnamehash}{5470455fc7dceb3ccf6db38cb22a113d}
-      \strng{authorbibnamehash}{5470455fc7dceb3ccf6db38cb22a113d}
-      \strng{authornamehash}{5470455fc7dceb3ccf6db38cb22a113d}
-      \strng{authorfullhash}{5470455fc7dceb3ccf6db38cb22a113d}
+      \strng{namehash}{5a6b19c047426c4c2d4a50b395bf450b}
+      \strng{fullhash}{5a6b19c047426c4c2d4a50b395bf450b}
+      \strng{bibnamehash}{5a6b19c047426c4c2d4a50b395bf450b}
+      \strng{authorbibnamehash}{5a6b19c047426c4c2d4a50b395bf450b}
+      \strng{authornamehash}{5a6b19c047426c4c2d4a50b395bf450b}
+      \strng{authorfullhash}{5a6b19c047426c4c2d4a50b395bf450b}
       \field{sortinit}{2}
       \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{booktitle}{Breakthroughs in statistics: Methodology and distribution}
-      \field{title}{Bootstrap methods: another look at the jackknife}
-      \field{year}{1992}
-      \field{pages}{569\bibrangedash 593}
-      \range{pages}{25}
+      \field{title}{Applied multivariate data analysis: regression and experimental design}
+      \field{year}{2012}
     \endentry
     \entry{chen2003non}{article}{}
       \name{author}{3}{}{%
@@ -795,30 +792,6 @@
       \field{pages}{1919\bibrangedash 1931}
       \range{pages}{13}
     \endentry
-    \entry{jobson2012applied}{book}{}
-      \name{author}{1}{}{%
-        {{hash=5a6b19c047426c4c2d4a50b395bf450b}{%
-           family={Jobson},
-           familyi={J\bibinitperiod},
-           given={J\bibnamedelima Dave},
-           giveni={J\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
-      }
-      \list{publisher}{1}{%
-        {Springer Science \& Business Media}%
-      }
-      \strng{namehash}{5a6b19c047426c4c2d4a50b395bf450b}
-      \strng{fullhash}{5a6b19c047426c4c2d4a50b395bf450b}
-      \strng{bibnamehash}{5a6b19c047426c4c2d4a50b395bf450b}
-      \strng{authorbibnamehash}{5a6b19c047426c4c2d4a50b395bf450b}
-      \strng{authornamehash}{5a6b19c047426c4c2d4a50b395bf450b}
-      \strng{authorfullhash}{5a6b19c047426c4c2d4a50b395bf450b}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{title}{Applied multivariate data analysis: regression and experimental design}
-      \field{year}{2012}
-    \endentry
     \entry{jones2009sinh}{article}{}
       \name{author}{2}{}{%
         {{hash=ef23cafd1e8a2f7a3374d387633a69af}{%
@@ -882,6 +855,33 @@
       \field{pages}{165\bibrangedash 172}
       \range{pages}{8}
     \endentry
+    \entry{efron1992bootstrap}{incollection}{}
+      \name{author}{1}{}{%
+        {{hash=5470455fc7dceb3ccf6db38cb22a113d}{%
+           family={Efron},
+           familyi={E\bibinitperiod},
+           given={Bradley},
+           giveni={B\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{5470455fc7dceb3ccf6db38cb22a113d}
+      \strng{fullhash}{5470455fc7dceb3ccf6db38cb22a113d}
+      \strng{bibnamehash}{5470455fc7dceb3ccf6db38cb22a113d}
+      \strng{authorbibnamehash}{5470455fc7dceb3ccf6db38cb22a113d}
+      \strng{authornamehash}{5470455fc7dceb3ccf6db38cb22a113d}
+      \strng{authorfullhash}{5470455fc7dceb3ccf6db38cb22a113d}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Breakthroughs in statistics: Methodology and distribution}
+      \field{title}{Bootstrap methods: another look at the jackknife}
+      \field{year}{1992}
+      \field{pages}{569\bibrangedash 593}
+      \range{pages}{25}
+    \endentry
     \entry{wilson1927probable}{article}{}
       \name{author}{1}{}{%
         {{hash=97c17720b08538db4ed8190a1c7bee58}{%
@@ -910,6 +910,96 @@
       \field{year}{1927}
       \field{pages}{209\bibrangedash 212}
       \range{pages}{4}
+    \endentry
+    \entry{taylor2018improving}{inproceedings}{}
+      \name{author}{2}{}{%
+        {{hash=d4b02d07e3f367eede1cf2675de2193a}{%
+           family={Taylor},
+           familyi={T\bibinitperiod},
+           given={Luke},
+           giveni={L\bibinitperiod}}}%
+        {{hash=2613d476038cbac3efc37eb4c3f67156}{%
+           family={Nitschke},
+           familyi={N\bibinitperiod},
+           given={Geoff},
+           giveni={G\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{4aa5334e0df79eba939131f75dec8fae}
+      \strng{fullhash}{4aa5334e0df79eba939131f75dec8fae}
+      \strng{bibnamehash}{4aa5334e0df79eba939131f75dec8fae}
+      \strng{authorbibnamehash}{4aa5334e0df79eba939131f75dec8fae}
+      \strng{authornamehash}{4aa5334e0df79eba939131f75dec8fae}
+      \strng{authorfullhash}{4aa5334e0df79eba939131f75dec8fae}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{2018 IEEE symposium series on computational intelligence (SSCI)}
+      \field{title}{Improving deep learning with generic data augmentation}
+      \field{year}{2018}
+      \field{pages}{1542\bibrangedash 1547}
+      \range{pages}{6}
+    \endentry
+    \entry{kim2017understanding}{article}{}
+      \name{author}{1}{}{%
+        {{hash=5e8b3c364784d3f8acec9469c96be92c}{%
+           family={Kim},
+           familyi={K\bibinitperiod},
+           given={Tae\bibnamedelima Kyun},
+           giveni={T\bibinitperiod\bibinitdelim K\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {The Korean Society of Anesthesiologists}%
+      }
+      \strng{namehash}{5e8b3c364784d3f8acec9469c96be92c}
+      \strng{fullhash}{5e8b3c364784d3f8acec9469c96be92c}
+      \strng{bibnamehash}{5e8b3c364784d3f8acec9469c96be92c}
+      \strng{authorbibnamehash}{5e8b3c364784d3f8acec9469c96be92c}
+      \strng{authornamehash}{5e8b3c364784d3f8acec9469c96be92c}
+      \strng{authorfullhash}{5e8b3c364784d3f8acec9469c96be92c}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Korean journal of anesthesiology}
+      \field{number}{1}
+      \field{title}{Understanding one-way ANOVA using conceptual figures}
+      \field{volume}{70}
+      \field{year}{2017}
+      \field{pages}{22\bibrangedash 26}
+      \range{pages}{5}
+    \endentry
+    \entry{kirkwood2010essential}{book}{}
+      \name{author}{2}{}{%
+        {{hash=4d3783984fd58dc5d4da4999703d8b44}{%
+           family={Kirkwood},
+           familyi={K\bibinitperiod},
+           given={Betty\bibnamedelima R},
+           giveni={B\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+        {{hash=44eae464723756680d789b1a193c3efc}{%
+           family={Sterne},
+           familyi={S\bibinitperiod},
+           given={Jonathan\bibnamedelima AC},
+           giveni={J\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {John Wiley \& Sons}%
+      }
+      \strng{namehash}{fb6cd20eff464f6bb9fc0a575052fe92}
+      \strng{fullhash}{fb6cd20eff464f6bb9fc0a575052fe92}
+      \strng{bibnamehash}{fb6cd20eff464f6bb9fc0a575052fe92}
+      \strng{authorbibnamehash}{fb6cd20eff464f6bb9fc0a575052fe92}
+      \strng{authornamehash}{fb6cd20eff464f6bb9fc0a575052fe92}
+      \strng{authorfullhash}{fb6cd20eff464f6bb9fc0a575052fe92}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Essential medical statistics}
+      \field{year}{2010}
     \endentry
     \entry{Montenbruck}{book}{}
       \name{author}{2}{}{%
@@ -1034,8 +1124,8 @@
       \strng{authorbibnamehash}{38534a6d9d1da31660770afc8438c9ee}
       \strng{authornamehash}{38534a6d9d1da31660770afc8438c9ee}
       \strng{authorfullhash}{38534a6d9d1da31660770afc8438c9ee}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{Practical Uses of an STM}
@@ -1061,8 +1151,8 @@
       \strng{authorbibnamehash}{afafc7a086f96baed3f76650e4fcdc5d}
       \strng{authornamehash}{afafc7a086f96baed3f76650e4fcdc5d}
       \strng{authorfullhash}{afafc7a086f96baed3f76650e4fcdc5d}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{Precise Orbit Determination}
@@ -1098,8 +1188,8 @@
       \strng{authorbibnamehash}{79b1fac74380a15000d09e05aabd73ac}
       \strng{authornamehash}{79b1fac74380a15000d09e05aabd73ac}
       \strng{authorfullhash}{79b1fac74380a15000d09e05aabd73ac}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{isbn}{9781523123346}
@@ -1126,8 +1216,8 @@
       \strng{authorbibnamehash}{3a9027659e19be37a91bbe17808f8077}
       \strng{authornamehash}{3a9027659e19be37a91bbe17808f8077}
       \strng{authorfullhash}{3a9027659e19be37a91bbe17808f8077}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{edition}{2}
@@ -1165,8 +1255,8 @@
       \strng{authorbibnamehash}{258eaa64bb7c65774ba6b4486f00f719}
       \strng{authornamehash}{258eaa64bb7c65774ba6b4486f00f719}
       \strng{authorfullhash}{258eaa64bb7c65774ba6b4486f00f719}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{booktitle}{CNES International Symposium on Space Dynamics}
@@ -1277,8 +1367,8 @@
       \strng{authorbibnamehash}{b7057a298bccb39982474a51a2ccd39c}
       \strng{authornamehash}{b7057a298bccb39982474a51a2ccd39c}
       \strng{authorfullhash}{b7057a298bccb39982474a51a2ccd39c}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{number}{TN 05-08}
@@ -1304,8 +1394,8 @@
       \strng{authorbibnamehash}{5d9753c98d823c83966f248dbe18f6fd}
       \strng{authornamehash}{5d9753c98d823c83966f248dbe18f6fd}
       \strng{authorfullhash}{5d9753c98d823c83966f248dbe18f6fd}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{{Journal of Guidance, Control \& Dynamics}}
@@ -1345,8 +1435,8 @@
       \strng{authornamehash}{36f88b66e2a1d70933657395bca8d775}
       \strng{authorfullhash}{36f88b66e2a1d70933657395bca8d775}
       \field{extraname}{1}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{month}{02}
@@ -1421,8 +1511,8 @@
       \strng{authorbibnamehash}{494dcc467956f14392ca4efe5e3f3e9f}
       \strng{authornamehash}{494dcc467956f14392ca4efe5e3f3e9f}
       \strng{authorfullhash}{494dcc467956f14392ca4efe5e3f3e9f}
-      \field{sortinit}{6}
-      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{The two-dimensional Kolmogorov-Smirnov test}
@@ -1492,8 +1582,8 @@
       \strng{authorbibnamehash}{415a0bba2e2e7f3ff2d6d29311617685}
       \strng{authornamehash}{415a0bba2e2e7f3ff2d6d29311617685}
       \strng{authorfullhash}{415a0bba2e2e7f3ff2d6d29311617685}
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{edition}{1}
@@ -1525,8 +1615,8 @@
       \strng{authorbibnamehash}{9586fc2f84f6bb67f3a559b1a9a8d898}
       \strng{authornamehash}{9586fc2f84f6bb67f3a559b1a9a8d898}
       \strng{authorfullhash}{9586fc2f84f6bb67f3a559b1a9a8d898}
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{edition}{1}
@@ -1556,8 +1646,8 @@
       \strng{authorbibnamehash}{e8fb45d024eae4bc9b2bf3a208797691}
       \strng{authornamehash}{e8fb45d024eae4bc9b2bf3a208797691}
       \strng{authorfullhash}{e8fb45d024eae4bc9b2bf3a208797691}
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{edition}{1}
@@ -1591,8 +1681,8 @@
       \strng{authorbibnamehash}{99c26c827c520050e600d7c2c0ee26eb}
       \strng{authornamehash}{99c26c827c520050e600d7c2c0ee26eb}
       \strng{authorfullhash}{99c26c827c520050e600d7c2c0ee26eb}
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{{Methods of Celestial Mechanics}}
@@ -1625,8 +1715,8 @@
       \strng{authorbibnamehash}{1d7a171a58363aa8bf04eece48bbe6dd}
       \strng{authornamehash}{1d7a171a58363aa8bf04eece48bbe6dd}
       \strng{authorfullhash}{1d7a171a58363aa8bf04eece48bbe6dd}
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{month}{10}
@@ -1658,8 +1748,8 @@
       \strng{authorbibnamehash}{5ecb95438e87e12b20e8c9e9c27d0db7}
       \strng{authornamehash}{5ecb95438e87e12b20e8c9e9c27d0db7}
       \strng{authorfullhash}{5ecb95438e87e12b20e8c9e9c27d0db7}
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{series}{Cambridge Aerospace Series}
@@ -1688,8 +1778,8 @@
       \strng{authorbibnamehash}{7aae3c76356e6c2d8205ca8f584a1b93}
       \strng{authornamehash}{7aae3c76356e6c2d8205ca8f584a1b93}
       \strng{authorfullhash}{7aae3c76356e6c2d8205ca8f584a1b93}
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{isbn}{3527407804; 9783527407804}
@@ -1712,8 +1802,8 @@
       \strng{authorbibnamehash}{9f67f7e163f525368297b347baa02ce6}
       \strng{authornamehash}{9f67f7e163f525368297b347baa02ce6}
       \strng{authorfullhash}{9f67f7e163f525368297b347baa02ce6}
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{isbn}{978-94-6186-419-2}
@@ -1771,8 +1861,8 @@
       \strng{authorbibnamehash}{a5d8ee096fc8780081f9d4403188d626}
       \strng{authornamehash}{a5d8ee096fc8780081f9d4403188d626}
       \strng{authorfullhash}{a5d8ee096fc8780081f9d4403188d626}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{{Theory of Satellite Geodesy}}
@@ -1797,8 +1887,8 @@
       \strng{authorbibnamehash}{fe825ec9d3bdbaa3aaac4903b15ce75c}
       \strng{authornamehash}{fe825ec9d3bdbaa3aaac4903b15ce75c}
       \strng{authorfullhash}{fe825ec9d3bdbaa3aaac4903b15ce75c}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{{Traité de Mécanique Céleste}}
@@ -1835,8 +1925,8 @@
       \strng{authorbibnamehash}{0aef3d40e01252a4fc361ae338296c02}
       \strng{authornamehash}{0aef3d40e01252a4fc361ae338296c02}
       \strng{authorfullhash}{0aef3d40e01252a4fc361ae338296c02}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{{Journal of Guidance, Control \& Dynamics}}
@@ -1875,8 +1965,8 @@
       \strng{authorbibnamehash}{e23d7330a9965df903edb002671404f9}
       \strng{authornamehash}{e23d7330a9965df903edb002671404f9}
       \strng{authorfullhash}{e23d7330a9965df903edb002671404f9}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{{Journal of Guidance, Control \& Dynamics}}
@@ -1912,8 +2002,8 @@
       \strng{authorbibnamehash}{45fe7bb07bbd30a3d42415b140a16574}
       \strng{authornamehash}{45fe7bb07bbd30a3d42415b140a16574}
       \strng{authorfullhash}{45fe7bb07bbd30a3d42415b140a16574}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{{Celestial Mechanics and Dynamical Astronomy}}
@@ -1945,8 +2035,8 @@
       \strng{authorbibnamehash}{44b11b044d204e0404ccad8f7a324667}
       \strng{authornamehash}{44b11b044d204e0404ccad8f7a324667}
       \strng{authorfullhash}{44b11b044d204e0404ccad8f7a324667}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{number}{21}
@@ -1969,8 +2059,8 @@
       \strng{authorbibnamehash}{2f9ea127a38aa7b9bb961325b1251dd3}
       \strng{authornamehash}{2f9ea127a38aa7b9bb961325b1251dd3}
       \strng{authorfullhash}{2f9ea127a38aa7b9bb961325b1251dd3}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{note}{\url{https://degenerateconic.com/uploads/2015/03/lvlh.pdf}}
