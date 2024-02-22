@@ -549,10 +549,10 @@ The marginalised distribution of $P(e)$ is the first step in the journey towards
 \mbox{}
 \clearpage
 \section{Distributed error quantification: conditioning the error distribution on the input space}\label{sec:biasinput}
-This section corresponds to box labelled ''P(E\textbar{}X)'' in \autoref{fig:biasinputbox}. In \autoref{sec:disterr}, the marginalised distribution of the residue $P(e)$ was discussed. This section aims at extracting useful information by conditioning the error distribution to the input variables space, which mathematically can be denoted as $P(e|X)$. Amongst the motivations for this, we count in the first place that this section will help building our uncertainty model (vid. \autoref{sec:uncertainty}) by refining the methods described in the previous section for uncertainty prediction with new information from $P(e|X)$. Furthermore, model and data boosting (vid. \autoref{fig:biasinputbox}) can both benefit from the analysis performed in this section. Knowledge of the error distribution conditioned to the input features space can help identify those regions where either:
+This section corresponds to box labelled ''P(E\textbar{}X)'' in \autoref{fig:biasinputbox}. In \autoref{sec:disterr}, the marginalised distribution of the residue $P(e)$ was discussed. This section aims at extracting useful information by conditioning the error distribution to the input variables' space, which mathematically can be denoted by $P(e|X)$. Amongst the motivations for this, we count in the first place that this section will help building our uncertainty model (vid. \autoref{sec:uncertainty}) by refining the methods described in the previous section for uncertainty prediction with new information from $P(e|X)$. Furthermore, model and data boosting (vid. \autoref{fig:biasinputbox}) can both benefit from the analysis performed in this section. Knowledge of the error distribution conditioned to the input space can help identify those regions where either:
 \begin{itemize}
 	\item The dataset is properly representing the region, but model training is deficient.
-	\item Dataset quality is not sufficient for proper training according to the specified requirements.
+	\item Dataset quality is not sufficient for proper training according to the specified performance requirements.
 \end{itemize}
 \begin{figure}[!htb]
 	\centering
@@ -560,13 +560,13 @@ This section corresponds to box labelled ''P(E\textbar{}X)'' in \autoref{fig:bia
 	\caption{Box diagram showing the relative position of \autoref{sec:biasinput} in the complete validation pipeline.}
 	\label{fig:biasinputbox} 
 \end{figure}
-\indent In the first case, training of the model can be reinforced by several means (longer training, hyperparameter tuning, transfer learning, etc.) In the second case, resampling data in deficient regions, or artificial data enhancing techniques such as data augmentation\cite{taylor2018improving}.\\
+\indent In the first case, training of the model can be reinforced by several means (longer training, hyperparameter tuning, transfer learning, etc.) In the second case, resampling data in deficient regions, or artificial data enhancing techniques such as data augmentation\cite{taylor2018improving} are recommended.\\
 %
-\indent The task of recomposing $P(e|X)$ needs to be addressed in a computationally efficient way, given the input space dimensionality $m$ [recall the input features vector is ${\bf X}=(X_1,X_2,\dots,X_m)$] can be very large. For the case of MS-S18, for instance, the input features space's dimensionality is $m=31$ (28 numerical inputs plus 3 categorical). With industrial sized datasets (typically amounting to up to millions of data points), recomposing $P(e|X)$ becomes unaffordable. The easiest way of overcoming this issue is by binning the input space according to a certain criteria. If we denote the binned input space by $X^B=\{X^B_1,X^B_2,X^B_3\ldots X^B_r\}$ where $X^B_j$ represents a certain bin, and there are a total of $r$ bins, then we can substitute the task of recomposing $P(e|X)$ by that of recomposing $P(e|X^B)$. Although simple, this idea allows for an effective computational cost reduction.\\
+\indent The task of recomposing $P(e|X)$ needs to be addressed in a computationally efficient way, given the input space dimensionality $m$ [recall the input features vector is ${\bf X}=(X_1,X_2,\dots,X_m)$] can be very large. For the case of MS-S18, for instance, the input space's dimensionality is $m=31$ (28 numerical inputs plus 3 categorical). With industrial sized datasets (typically reaching up to millions of data points), recomposing $P(e|X)$ becomes unaffordable. The easiest way of overcoming this issue is by binning the input space according to a certain criteria. If we denote the binned input space by $X^B=\{X^B_1,X^B_2,X^B_3\ldots X^B_r\}$ where $X^B_j$ represents a certain bin, and there are a total of $r$ bins, then we can substitute the task of recomposing $P(e|X)$ by that of recomposing $P(e|X^B)$. Although simple, this idea allows for an effective computational cost reduction.\\
 %
 \subsection{Visualization of error as a function of categorical (discrete) input variables}
 The immediate criteria for binning the input space is using categorical variables. These variables do in essence bin the input space as they can only take certain (or rather discrete) values. As previously mentioned, for MS-S18 there are three categorical variables enclosing geometrical information: ''Frame'', ''Stringer'', and ''dp''. \autoref{fig:boxwhisker} plots, for each categorical input variable, a box plot of the error as a function of the category.\\
-\indent The box plot layout reports the median, Inter-quantile Range and possibly whiskers. Outliers showing anomalous dispersion of the residue could indicate geometrical configurations (\eg the one defined by frames no. 69-70 and stringer no. 26) where training has been inefficient. The engineer in charge could inspect this zone and conclude, for instance, that the physics at play in that region involve exploding gradients which induce strong non-linearities.\\
+\indent The box plot layout reports the median, Inter-quantile Range and whiskers. Outliers showing anomalous dispersion of the residue could indicate geometrical configurations (\eg the one defined by frames no. 69-70 and stringer no. 26) where training has been inefficient. The engineer in charge could inspect this zone and conclude, for instance, that the physics at play in that region involve exploding gradients which induce strong non-linearities.\\
 \begin{figure}
 	\centering
 	\begin{subfigure}[b]{\textwidth}
@@ -597,7 +597,7 @@ After the visual inspection carried out in \autoref{fig:boxwhisker}, a statistic
 The initial method of choice to detect whether a given input categorical variable shows any bias is the one-way ANOVA test\cite{kim2017understanding}. This method consists on the following steps\footnote{N.B. ANOVA in principle requires data in each category to be normally distributed and homoscedasticity (variances in different categories are similar, cfr.\cite[p. 374]{jobson2012applied}). It is important to remark these conditions are sometimes not met.}:
 \begin{itemize}
 	\item We fix a categorical variable $i$ under analysis.
-	\item The method scatter-plots the residual error versus the category of $x^i$, for all $n$ samples of the test set (or for the filtered subset)NNNNNNNNNNNNNNNNNNNNN.
+	\item The method scatter-plots the residual error versus the category of $x^i$, for all $n$ samples of the test set.
 	\item ANOVA makes then an hypothesis test, where the null hypothesis $H0$ is that the mean of the (theoretical distribution) error for each of the categories is the same. The ANOVA test rejects $H0$ with a certain confidence if the $p-$value of the test is smaller than a certain level.
 	\item The output of the method is just the $p-$value, if this is smaller than $0.05$,  then $H0$ is rejected at 95\% confidence and we say that the categorical variable $x^i$ shows bias.\\
 \end{itemize}
@@ -605,14 +605,14 @@ The initial method of choice to detect whether a given input categorical variabl
 \indent In \autoref{tab:1anova}, results of the ANOVA test from MS-S18 are shown. The test shows bias in all the three categorical input variables, but for different output variables each one.\\
 \begin{table}
 	\centering
-	\caption{P-values results from the one-way ANOVA test. The red labelled cells show that bias is found in output variable ''RF Net Tension'' for the input categorical variable ''dp'', as well as in output variable ''RF Forced Crippling'' for the input variable ''Stringer'' and in the output variables ''RF Net Tension'' and ''RF Pure Compression''. For the rest of the table's combinations, p-values greater than 0.05 indicate that $H0$ cannot be rejected with a statistical confidence of at least 95\%.}
+	\caption{P-values results from the one-way ANOVA test. The red labelled cells show that variable ''dp'' shows bias for the residual distribution of ''RF Net Tension'', as well as variable ''Frame'' for the residual distribution of ''RF Forced Crippling'' and variable''Stringer'' for the residual distributions of ''RF Net Tension'' and ''RF Pure Compression''. For the rest of the table, p-values greater than 0.05 indicate that $H0$ cannot be rejected with a statistical confidence of at least 95\%.}
 	\includegraphics[scale=\tabscale]{/home/pablo/Documentos/TFGP/Thesis/Figures/biasinput/1wayanova.png}
 	\label{tab:1anova}
 \end{table}
 \FloatBarrier
 %
 \paragraph{\GMVred{B.} \myul[GMVred]{Quantification of error bias in single categories test no. 1: based on error mean outlier}\\}
-This analysis is to be done only if results from the one-way ANOVA test show bias is found in at least one categorical variable. Under this assumption, the former test has identified a number of categorical variables that show bias. Here we quantify such bias by checking whether there are certain categories which are ''outliers'', \ie categories where the error mean is substantially different than for the rest of categories. We check this using z-score\cite{kirkwood2010essential}, which consists on the following steps: we initially construct the mean error $e$ in each category. If the categorical variable has $s$ categories, then we have a vector $(e_1,e_2,...,e_s)$. We then z-score this vector to build
+This analysis is to be done only if results from the one-way ANOVA test show bias in at least one categorical variable. Under this assumption, the former test has identified a number of categorical variables that show bias. Here we quantify such bias by checking whether there are certain categories which are ''outliers'', \ie categories where the error mean is substantially different than for the rest of categories. We check this using z-score\cite{kirkwood2010essential}, which consists on the following steps: we initially construct the mean error $e$ in each category. If the categorical variable has $s$ categories, then we have a vector $(e_1,e_2,...,e_s)$. We then z-score this vector to build
 $$\bigg(\frac{e_1-\langle e \rangle}{\sigma(e)},\frac{e_2-\langle e \rangle}{\sigma(e)},...,\frac{e_s-\langle e \rangle}{\sigma(e)}\bigg),$$
 where 
 $$\langle e \rangle = \frac{1}{s}\sum_{i=1}^s e_i; \ \sigma(e)=\sqrt{\frac{1}{s}\sum_{i=1}^s (e_i-\langle e\rangle)^2}$$
@@ -630,7 +630,7 @@ The test output is shown in \autoref{tab:zscore}, where for each categorical var
 
 \begin{table}[!htb]
 	\centering
-	\caption{Z-score results for biased categorical variables. One table is generated for each pair biased categorical input variable-output variable. Row labelled ''N'' shows the number of test points belonging to the specified input-output variable combination. Clearly, the bias is found for combinations where the number of test points is extremely low (\eg 1). This suggests performing a revision of the dataset in order to find uncovered regions and isolated points, refilling those regions as needed, and re-training the model.}
+	\caption{Z-score results for biased categorical variables. One table is generated for each pair biased categorical input variable-output variable.}
 	\begin{tabular}{c c}
 		\includegraphics[scale=\tabscale]{/home/pablo/Documentos/TFGP/Thesis/Figures/biasinput/zscore1.png} & \includegraphics[scale=\tabscale]{/home/pablo/Documentos/TFGP/Thesis/Figures/biasinput/zscore2.png} \\
 		% Espacio vertical para simular la disposición de cruz
@@ -673,15 +673,88 @@ In general the method is not very informative except when the combination of inp
 For instance, in MSP-S18, the categorical variables \textbf{Frame} and \textbf{Stringer} are geometric locations and thus, together, provide a location of the specific region of the plane that the configuration analyses. One can thus perform a 2-way ANOVA to analyze the presence of bias accordingly. If such bias exists, then bias quantification tests described in \autoref{subsec:biasinput1d} can be applied.\\
 %
 \paragraph{\GMVred{A.} \myul[GMVred]{Bias detection (2D)}\\}
-For the pair of (previously chosen) categorical variables, the test performs 2-way ANOVA as described above and outputs the $p$-value. If this $p$-value is smaller than 0.05, we conclude that there exist bias at 95\% confidence.\\
+For the pair of (previously chosen) categorical variables, the test performs 2-way ANOVA as described above and outputs the $p$-value. If this $p$-value is smaller than 0.05, we conclude that there exists bias at 95\% confidence.\\
 
 \paragraph{\GMVred{B.} \myul[GMVred]{Bias quantification (2D)}\\}
 Suppose we have two categorical variables $A$ and $B$, where $A$ has $q$ categories $A=(A_1,A_2,\dots,A_q)$ and $B$ has $r$ categories $B=(B_1,B_2,\dots,B_r)$. Suppose also that a 2-way ANOVA concluded that the error is biased on the combined effect of $A$ and $B$. We then can build all the pairs $(A_i,B_j)$ and interpret each of them as a single category of this ''block categorical variable'', \ie we have now $q \times r$ categories. We can subsequently apply the bias quantification tests 1 and 2 described above, applied to the ''block categorical variable''.\\
 \begin{itemize}
-	\item If bias has been detected, the the ''block categorical variable'' with $qr$ categories is built and a table with $qr$ columns and 2 rows is defined (for test no. 1 and test no. 2 results).
+	\item If bias has been detected, the ''block categorical variable'' with $qr$ categories is built and a table with $qr$ columns and 2 rows is defined (for test no. 1 and test no. 2 results).
 	\item Bias quantification test no. 1 (error mean, see above) is performed on the block categorical variable, and fills up in the table the first row for those columns that show either weak or strong bias.
 	\item Bias quantification test no. 2 (error variance, see above) is performed on the block categorical variable, and fills up in the table the first row for those columns that show either weak or strong bias.
 \end{itemize}
+%
+\subsection{Visualization of error as a function of numerical (continuous) input variables}
+In this section the same basic analysis is performed as in \autoref{subsec:biasinput1d}, although conditioning the error on numerical instead of categorical input variables.\\
+%
+\indent In this section we plot, for each numerical input variable, a scatter plot of the error as a function of the input numerical variable at analysis. From the scatter plot and its linear fit, we expect to (with human intervention) identify bias in the variables which present it, and use visual information for model and data boosting. Illustrative results of two input variables are given in \autoref{fig:binputscatter}.\\
+\begin{figure}[!htb]
+	\centering
+	\begin{minipage}[b]{0.508\textwidth}
+		\centering
+		\includegraphics[width=\linewidth]{/home/pablo/Documentos/TFGP/Thesis/Figures/biasinput/scatter1.png}
+		\label{fig:imagen1}
+	\end{minipage}
+	\hfill
+	\begin{minipage}[b]{0.48\textwidth}
+		\centering
+		\includegraphics[width=\linewidth]{/home/pablo/Documentos/TFGP/Thesis/Figures/biasinput/scatter2.png}
+		\label{fig:imagen2}
+	\end{minipage}
+	\caption{Scatter plots of residue against a particular numerical input variable.  Left: Input var. FU.0420.26. A linear trend is appreciated, suggesting the model makes worse predictions as input load ''FU.0420.26'' is larger. Right: input var. FU.0420.25. No linear trend is appreciated, although severe heteroscedasticity can be observed. Note the vertical bar arrangement, showing particular input loads for which dispersion is unusually large. In view of the former results, the engineer may decide to investigate the underlying causes both for the linear trend in the left and for heteroscedasticity on the right. With the information, model and data boosting may be performed. More training data could be decided to be sampled in the range of $[20000,60000]$ of FU.0420.26, for instance, and some regularization technique could be tried for the loss function in order to penalise inputs triggering high variance observed in the right.}
+	\label{fig:binputscatter}
+\end{figure}
+%
+\subsection{Bias detection and quantification}
+The goal of this section is to flag statistically significant bias found in output variables, in order to provide mathematical assurance to engineers when interpreting results from \autoref{fig:binputscatter}. Similar to categorical variables, we use different tests for bias detection and for bias quantification. As the input variables are now numerical, instead of ANOVA and z-score we use:
+\paragraph{\GMVred{A.} \myul[GMVred]{Detection of linear trends for individual numerical variables}\\}
+For each input variable, the code fits a linear model that can identify a linear trend of the error as a function of the input variable.\\
+The test outputs (vid. \autoref{tab:lintrend}):
+\begin{itemize}
+	\item The $p$-value that accounts for whether such type of bias indeed exists.
+	\item The Pearson correlation coefficient.
+	\item The slope of the best linear model fit.
+\end{itemize}
+ 
+\begin{table}[!htb]
+	\centering
+	\caption{Bias detection and quantification on numerical input variables (the results for just five input variables are shown here -- in columns--): P-value (statistical significance of the hypothesis that the variable is biased), Pearson coefficient, and slope of the best linear fit are shown in the first three rows. The last row shows the message ''Biased'' in case the $p\text{-value}>0.05$, ''NO'' otherwise. Data from this table corresponds to residue of the output variable ''RF Column Buckling''. Analogous tables exist for the rest of the output variables.}
+	\includegraphics[scale=\tabscale]{/home/pablo/Documentos/TFGP/Thesis/Figures/biasinput/lineartrend.png}
+	\label{tab:lintrend}
+\end{table}
+
+\paragraph{\GMVred{B.} \myul[GMVred]{Discretizing continuous variables}\\}
+The process is to bin each input numerical variable and thus treat them as categorical, so that one can perform one-way ANOVA followed by bias quantification tests no. 1 (mean outlier) and test no. 2 (variance outlier) former discussed. By default the number of bins is equal to 10.
+
+For each input variable:
+\begin{itemize}
+	\item The input variable is binned.
+	\item The steps depicted in sections \autoref{subsec:biasinput1d} are applied.
+\end{itemize}
+
+\indent Results are shown in \autoref{tab:anovanum}, \autoref{tab:anovabins} and \autoref{tab:zscorenum1}.
+
+\begin{table}[!htb]
+	\centering
+	\caption{1-way ANOVA test results (p-values) for binned numerical input variables. For the output variable ''RF Forced Crippling'', bias is found in the input variables ''FU.0420.25'' and ''FU.0430.25''. Similarly, for the output variable ''RF Net Tension'', bias is found in the input variable ''FU.0430.15''. }
+	\includegraphics[scale=\tabscale]{/home/pablo/Documentos/TFGP/Thesis/Figures/biasinput/anovanum.png}
+	\label{tab:anovanum}
+\end{table}
+
+\begin{table}[!htb]
+	\centering
+	\caption{Bias quantification in binned FU.0430.15 input variable. Columns represents bins showing bias. The same quantification methods employed for categorical variables (z-score for mean and variance outlier detection) have been used.}
+	\includegraphics[scale=\tabscale]{/home/pablo/Documentos/TFGP/Thesis/Figures/biasinput/anovabins.png}
+	\label{tab:anovabins}
+\end{table}
+
+\begin{table}[!htb]
+	\centering
+	\caption{Summary of binned input variables bias quantification after binning the numerical variables and performing one-way ANOVA and z-score tests to every bin.}
+	\includegraphics[scale=\tabscale]{/home/pablo/Documentos/TFGP/Thesis/Figures/biasinput/zscorenum1.png}
+	\includegraphics[scale=\tabscale]{/home/pablo/Documentos/TFGP/Thesis/Figures/biasinput/zscorenum2.png}
+	\label{tab:zscorenum1}
+\end{table}
+
 \clearpage
 \mbox{}
 \clearpage

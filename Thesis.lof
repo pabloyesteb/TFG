@@ -25,13 +25,14 @@
 \contentsline {figure}{\numberline {1.16}{\ignorespaces (Binned) histograms depicting the distribution of the variable $z=\gamma +\qopname \relax o{sinh}{\frac {e-\xi }{\lambda }}$, where $e\sim JohnsonSU(\gamma ,\delta ,\xi ,\lambda )$ is the sampled residue. It can be shown that $z$ converges to a normal distribution\blx@tocontentsinit {0}\cite {jones2009sinh}.\relax }}{28}{figure.caption.34}%
 \contentsline {figure}{\numberline {1.17}{\ignorespaces Box diagram showing the relative position of \autoref {sec:biasinput} in the complete validation pipeline.\relax }}{34}{figure.caption.39}%
 \contentsline {figure}{\numberline {1.18}{\ignorespaces Box and whisker plots depicting the residue conditioned to two different categorical variables. \autoref {fig:boxwhisker1}: ''Frame''. \autoref {fig:boxwhisker2}: ''Stringer''. Clearly, outliers can be appreciated in both cases (''Fr69-Fr70'' in \autoref {fig:boxwhisker1}, and various stringers in \autoref {fig:boxwhisker2}).\relax }}{36}{figure.caption.40}%
-\contentsline {figure}{\numberline {1.19}{\ignorespaces Covariance ellipsoid evolution along a radial hop.\relax }}{52}{figure.caption.51}%
+\contentsline {figure}{\numberline {1.19}{\ignorespaces Scatter plots of residue against a particular numerical input variable. Left: Input var. FU.0420.26. A linear trend is appreciated, suggesting the model makes worse predictions as input load ''FU.0420.26'' is larger. Right: input var. FU.0420.25. No linear trend is appreciated, although severe heteroscedasticity can be observed. Note the vertical bar arrangement, showing particular input loads for which dispersion is unusually large. In view of the former results, the engineer may decide to investigate the underlying causes both for the linear trend in the left and for heteroscedasticity on the right. With the information, model and data boosting may be performed. More training data could be decided to be sampled in the range of $[20000,60000]$ of FU.0420.26, for instance, and some regularization technique could be tried for the loss function in order to penalise inputs triggering high variance observed in the right.\relax }}{43}{figure.caption.43}%
+\contentsline {figure}{\numberline {1.20}{\ignorespaces Covariance ellipsoid evolution along a radial hop.\relax }}{55}{figure.caption.56}%
 \addvspace {10\p@ }
-\contentsline {xchapter}{Conclusions and research outlook.}{55}{chapter.2}%
+\contentsline {xchapter}{Conclusions and research outlook.}{57}{chapter.2}%
 \addvspace {10\p@ }
-\contentsline {xchapter}{Absolute and relative orbital element sets.}{57}{appendix.A}%
-\contentsline {figure}{\numberline {A.1}{\ignorespaces Workflow for transforming between two arbitary absolute element sets.\relax }}{58}{figure.caption.53}%
-\contentsline {figure}{\numberline {A.2}{\ignorespaces Frame rotation from inertial to perifocal frame.\relax }}{59}{figure.caption.55}%
-\contentsline {figure}{\numberline {A.3}{\ignorespaces Workflow for transforming any relative set into KOE.\relax }}{64}{figure.caption.65}%
-\contentsline {figure}{\numberline {A.4}{\ignorespaces Workflow for transforming RKOE into any other set.\relax }}{65}{figure.caption.67}%
-\contentsline {figure}{\numberline {A.5}{\ignorespaces Relative ccentricity \& inclination vectors. \relax }}{66}{figure.caption.70}%
+\contentsline {xchapter}{Absolute and relative orbital element sets.}{59}{appendix.A}%
+\contentsline {figure}{\numberline {A.1}{\ignorespaces Workflow for transforming between two arbitary absolute element sets.\relax }}{60}{figure.caption.58}%
+\contentsline {figure}{\numberline {A.2}{\ignorespaces Frame rotation from inertial to perifocal frame.\relax }}{61}{figure.caption.60}%
+\contentsline {figure}{\numberline {A.3}{\ignorespaces Workflow for transforming any relative set into KOE.\relax }}{66}{figure.caption.70}%
+\contentsline {figure}{\numberline {A.4}{\ignorespaces Workflow for transforming RKOE into any other set.\relax }}{67}{figure.caption.72}%
+\contentsline {figure}{\numberline {A.5}{\ignorespaces Relative ccentricity \& inclination vectors. \relax }}{68}{figure.caption.75}%
