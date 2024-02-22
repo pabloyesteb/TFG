@@ -589,7 +589,8 @@ The immediate criteria for binning the input space is using categorical variable
 	\label{fig:boxwhisker}
 \end{figure}
 %
-\subsection{Bias detection and quantification (1D)}
+\FloatBarrier
+\subsection{Bias detection and quantification (1D)}\label{subsec:biasinput1d}
 After the visual inspection carried out in \autoref{fig:boxwhisker}, a statistical test is needed to actually check whether the observed residue for some frames or stringers is unexpected enough to be considered an ''outlier''. This is, we need to check whether anomalies shown in \autoref{fig:boxwhisker} actually are statistically significant or not. To this end, the following procedure is proposed:\\
 
 \paragraph{\GMVred{A.} \myul[GMVred]{Detection of error bias in single categories (ANOVA)}\\}
@@ -608,6 +609,7 @@ The initial method of choice to detect whether a given input categorical variabl
 	\includegraphics[scale=\tabscale]{/home/pablo/Documentos/TFGP/Thesis/Figures/biasinput/1wayanova.png}
 	\label{tab:1anova}
 \end{table}
+\FloatBarrier
 %
 \paragraph{\GMVred{B.} \myul[GMVred]{Quantification of error bias in single categories test no. 1: based on error mean outlier}\\}
 This analysis is to be done only if results from the one-way ANOVA test show bias is found in at least one categorical variable. Under this assumption, the former test has identified a number of categorical variables that show bias. Here we quantify such bias by checking whether there are certain categories which are ''outliers'', \ie categories where the error mean is substantially different than for the rest of categories. We check this using z-score\cite{kirkwood2010essential}, which consists on the following steps: we initially construct the mean error $e$ in each category. If the categorical variable has $s$ categories, then we have a vector $(e_1,e_2,...,e_s)$. We then z-score this vector to build
@@ -624,7 +626,7 @@ whereas category $i$ shows ${\bf strong\ bias}$ if
 $$\frac{|e_i-\langle e \rangle|}{\sigma(e)}>3.$$
 
 
-The analysis outputs, for each categorical variable that was previously identified as having bias, a table showing \textbf{only} the specific categories that either show weak or strong bias (vid. \autoref{tab:zscore}).
+The test output is shown in \autoref{tab:zscore}, where for each categorical variable that was previously identified as having bias, a sub-table showing \textbf{only} the specific categories that either show weak or strong bias is displayed.
 
 \begin{table}[!htb]
 	\centering
@@ -637,6 +639,7 @@ The analysis outputs, for each categorical variable that was previously identifi
 	\end{tabular}
 	\label{tab:zscore}
 \end{table}
+\FloatBarrier
 %
 \paragraph{\GMVred{C.} \myul[GMVred]{Quantification of error bias in single categories test no. 2: based on error variance outlier}\\}
 This analysis is to be done only if results from the one-way ANOVA test show bias is found in at least one categorical variable.\\
@@ -662,8 +665,23 @@ This test is only applicable to categorical variables for which specific categor
 \indent The method just proceeds to fit a linear model (with just one explanatory variable). If the slope is above a certain threshold and if the fit is good, then we can be confident the linear trend is genuine, and the slope can be used to quantify the linear bias and as a source for uncertainty.\\
 \indent For each categorical variable that has a natural ordering and was previously detected as having bias, the test fits a linear model and outputs the result of this model.\\
 \indent If such model has a slope (statistically) significantly different from zero, then this categorical variable is flagged as having a linear trend.\\
+%
+\subsection{Bias detection and quantification (2D)}
+In the previous section we considered the specific effect (bias) of individual input variables on the error. However, it can be the case that such bias is enhanced when groups of input variables are considered together. 
+The method of choice to analyze whether two independent (input) categorical variables have an effect on the error means is the 2-way ANOVA test\cite{fujikoshi1993two}.
+In general the method is not very informative except when the combination of input variables is itself interpretable. This usually requires the external feedback of the engineer. For instance, the engineer can know a priori that certain combination of input variables play a synergistic role, go together, etc.
+For instance, in MSP-S18, the categorical variables \textbf{Frame} and \textbf{Stringer} are geometric locations and thus, together, provide a location of the specific region of the plane that the configuration analyses. One can thus perform a 2-way ANOVA to analyze the presence of bias accordingly. If such bias exists, then bias quantification tests described in \autoref{subsec:biasinput1d} can be applied.\\
+%
+\paragraph{\GMVred{A.} \myul[GMVred]{Bias detection (2D)}\\}
+For the pair of (previously chosen) categorical variables, the test performs 2-way ANOVA as described above and outputs the $p$-value. If this $p$-value is smaller than 0.05, we conclude that there exist bias at 95\% confidence.\\
 
-\paragraph{\GMVred{E.} \myul[GMVred]{Summary}\\}
+\paragraph{\GMVred{B.} \myul[GMVred]{Bias quantification (2D)}\\}
+Suppose we have two categorical variables $A$ and $B$, where $A$ has $q$ categories $A=(A_1,A_2,\dots,A_q)$ and $B$ has $r$ categories $B=(B_1,B_2,\dots,B_r)$. Suppose also that a 2-way ANOVA concluded that the error is biased on the combined effect of $A$ and $B$. We then can build all the pairs $(A_i,B_j)$ and interpret each of them as a single category of this ''block categorical variable'', \ie we have now $q \times r$ categories. We can subsequently apply the bias quantification tests 1 and 2 described above, applied to the ''block categorical variable''.\\
+\begin{itemize}
+	\item If bias has been detected, the the ''block categorical variable'' with $qr$ categories is built and a table with $qr$ columns and 2 rows is defined (for test no. 1 and test no. 2 results).
+	\item Bias quantification test no. 1 (error mean, see above) is performed on the block categorical variable, and fills up in the table the first row for those columns that show either weak or strong bias.
+	\item Bias quantification test no. 2 (error variance, see above) is performed on the block categorical variable, and fills up in the table the first row for those columns that show either weak or strong bias.
+\end{itemize}
 \clearpage
 \mbox{}
 \clearpage
