@@ -785,13 +785,47 @@ This section corresponds to box labelled ''$P(E|Y)$'' in \autoref{fig:boutpipeli
 \end{figure}
 
 %
-\indent The first step in the reconstruction of $P(e|Y)$ is to try to fit the error distribution to some well known theoretical distribution. But instead of just repeating what was done in \autoref{sec:disterr}, now we add an extra variable to the equation: the prediction of the model $\hat{y}$. Instead of trying to fit the whole error distribution, we filter the test set by establishing $\hat{y}<\hat{y}_0$ and try to fit the filtered test set to one of the well known distributions discussed in \autoref{sec:disterr} (Normal, Laplace, Cauchy, JohnsonSU). In \autoref{fig:localfits} --for convenience-- four of the six output variables of MS-S18 are put under a 1-variable K-S test to assess the goodness of fit of the error to the mentioned distributions. For this figure, the absolute value of the residue has been used instead of the plain residue. We can observe that, while all distributions start fitting $P(e)$ when $y_0<1.5$, soon the p-value drops down indicating a mismatch between the empirical error and Cauchy, Laplace, and Normal distributions. Only the JohnsonSU remains a good fit, but finally diverges as well when $y_0\approx3$. The conclusion is that only the JohnsonSU distribution is found a good match for $P(e|Y)$, but only when filtering the test set up to moderate values of $y_0$. This suggests extreme phenomena happening in the error distribution, which in fact is in accordance with the heteroscedastic behaviour observed in \autoref{fig:truevspredscatter}, showing increasing dispersion with the output $\hat{y}$.
+\indent The first step in the reconstruction of $P(e|Y)$ is to try to fit the error distribution to some well known theoretical distribution. But instead of just repeating what was done in \autoref{sec:disterr}, now we add an extra variable to the equation: the prediction of the model $\hat{y}$. Instead of trying to fit the whole error distribution, we filter the test set by establishing $\hat{y}<\hat{y}_0$ and try to fit the filtered test set to one of the well known distributions discussed in \autoref{sec:disterr} (Normal, Laplace, Cauchy, JohnsonSU). In \autoref{fig:localfits} --for convenience-- four of the six output variables of MS-S18 are put under a 1-variable K-S test to assess the goodness of fit of the error to the mentioned distributions. For this figure, the absolute value of the residue has been used instead of the plain residue. We can observe that, while all distributions start fitting $P(e)$ when $y_0<1.5$, soon the p-value drops down indicating a mismatch between the empirical error and Cauchy, Laplace, and Normal distributions. Only the JohnsonSU remains a good fit, but finally diverges as well when $y_0\approx3$. The conclusion is that only the JohnsonSU distribution is found a good match for $P(e|Y)$, but only when filtering the test set up to moderate values of $y_0$. This suggests extreme phenomena happening in the error distribution, which in fact is in accordance with the heteroscedastic behaviour observed in \autoref{fig:truevspredscatter}, showing increasing dispersion with the output $\hat{y}$.\\
 
 \begin{figure}[!htb]
 	\centering
 	\includegraphics[width=1\textwidth]{/home/pablo/Documentos/TFGP/Thesis/Figures/biasoutput/localfits.png}
 	\caption{Goodness of fit of the error distribution (test set previously filtered) to some parametrised distributions. The test is performed individually for the output variables (Reserve Factors) displayed on top of each image. The goodness of fit is assessed with a 1-variable K-S test. The test set is filtered using the x axis, rejecting every point whose output $\hat{y}$ is larger than $x$. If the p-value resulting from the K-S test in the filtered test set is greater than $0.05$, the vertical slice at position $x$ is labelled green (red if $p\text{-value}<0.05$, grey if less than a threshold number of points --namely, 30-- are present in the filtered test set).}
 	\label{fig:localfits}
+\end{figure}
+
+\indent By filtering the test set using a maximum allowable value to the predictions, we have reached to interesting conclusions. The question now is, why filtering the test set just the particular way we have done it? The choose was motivated by the intuition from \autoref{fig:truevspredscatter} that dispersion increases with the prediction value. A logical way of filtering the test set in order to find local information of the error distribution is binning it. For the next part, we bin the test set in 10 bins, as described in \autoref{tab:ybins}.\\
+
+\begin{table}[!htb]
+	\centering
+	\caption{Binnarization of the test set.}
+	\includegraphics[scale=\tabscale]{/home/pablo/Documentos/TFGP/Thesis/Figures/biasoutput/ybins.png}
+	\label{tab:ybins}
+\end{table}
+
+\indent For each bin, a 2-sample K-S test comparing the true against the predicted distributions is performed. Such test is only performed if the number of points inside each bean is greater than a minimum threshold (set at 30 points). Results (only four output variables are displayed for convenience) are shown in \autoref{fig:binpvals}. There we can see a clear tendency: while for low output values the two distributions conform well, the p-value eventually drops for higher bins. This confirms the information of \autoref{fig:truevspredscatter} and \autoref{fig:localfits} that the model predicts very well when the output is in the low range, while it has more difficulties predicting higher Reserve Factors. This idea is reinforced by looking at \autoref{fig:violins}, where it can be clearly appreciated that the (absolute) residue dispersion is dependent with the model's prediction.\\
+
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=1\textwidth]{/home/pablo/Documentos/TFGP/Thesis/Figures/biasoutput/pvalsKS.png}
+	\caption{Line plot of the $p$-value from the true-predicted distributions under a 2 sample K-S test. Distribution similarity is rejected if $p\text{-value}<0.05$.}
+	\label{fig:binpvals}
+\end{figure}
+
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=1\textwidth]{/home/pablo/Documentos/TFGP/Thesis/Figures/biasoutput/violines.png}
+	\caption{Violin plots showing the absolute value residue for every bin.}
+	\label{fig:violins}
+\end{figure}
+
+\indent In \autoref{fig:binfits} the error distribution of each individual bin is put under a K-S test to assess the goodness of fit to one of the aforementioned theoretical distributions. Results show similar conclusions to \autoref{fig:localfits}: only the JohnsonSU makes a good match, even though the $p$-value drops to under $0.05$ for certain bins (note the last bin never passes the test). 
+
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=1\textwidth]{/home/pablo/Documentos/TFGP/Thesis/Figures/biasoutput/pvalsbins.png}
+	\caption{Sliced-bar with p-values from the binned error under a K-S test to assess the goodness of fit to several parametrised distributions.}
+	\label{fig:binfits}
 \end{figure}
 
 \clearpage

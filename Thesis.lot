@@ -24,9 +24,10 @@
 \contentsline {table}{\numberline {1.15}{\ignorespaces 1-way ANOVA test results (p-values) for binned numerical input variables. For the output variable ''RF Forced Crippling'', bias is found in the input variables ''FU.0420.25'' and ''FU.0430.25''. Similarly, for the output variable ''RF Net Tension'', bias is found in the input variable ''FU.0430.15''. \relax }}{45}{table.caption.45}%
 \contentsline {table}{\numberline {1.16}{\ignorespaces Bias quantification in binned FU.0430.15 input variable. Columns represents bins showing bias. The same quantification methods employed for categorical variables (z-score for mean and variance outlier detection) have been used.\relax }}{46}{table.caption.46}%
 \contentsline {table}{\numberline {1.17}{\ignorespaces Summary of binned input variables bias quantification after binning the numerical variables and performing one-way ANOVA and z-score tests to every bin.\relax }}{46}{table.caption.47}%
-\contentsline {table}{\numberline {1.18}{\ignorespaces Output of \autoref {algo:tt-split}: \texttt {reqs\_results} table\relax }}{52}{table.caption.50}%
-\contentsline {table}{\numberline {1.19}{\ignorespaces Voxel reference table. Lorem ipsum dolor sit amet, consectetuer adisciping elit.\relax }}{53}{table.caption.51}%
+\contentsline {table}{\numberline {1.18}{\ignorespaces Binnarization of the test set.\relax }}{49}{table.caption.50}%
+\contentsline {table}{\numberline {1.19}{\ignorespaces Output of \autoref {algo:tt-split}: \texttt {reqs\_results} table\relax }}{55}{table.caption.54}%
+\contentsline {table}{\numberline {1.20}{\ignorespaces Voxel reference table. Lorem ipsum dolor sit amet, consectetuer adisciping elit.\relax }}{56}{table.caption.55}%
 \addvspace {10\p@ }
-\contentsline {xchapter}{Conclusions and research outlook.}{61}{chapter.2}%
+\contentsline {xchapter}{Conclusions and research outlook.}{63}{chapter.2}%
 \addvspace {10\p@ }
-\contentsline {xchapter}{Absolute and relative orbital element sets.}{63}{appendix.A}%
+\contentsline {xchapter}{Absolute and relative orbital element sets.}{65}{appendix.A}%
