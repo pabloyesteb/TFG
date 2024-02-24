@@ -97,8 +97,8 @@
 \newlabel{fig:yvsydoublehist}{{1.12}{24}{Double histogram depicting ground true values and model's predictions for the six output variables of MS-18.\relax }{figure.caption.28}{}}
 \newlabel{fig:yvsydoublehist@cref}{{[figure][12][1]1.12}{[1][23][]24}}
 \pp@spagectr{FN@totalid}{4}{1}{24}
-\@writefile{lot}{\contentsline {table}{\numberline {1.7}{\ignorespaces p-value results for the 2-sample Kolmogorov-Smirnov test performed on distributions showed in \autoref  {fig:yvsydoublehist}. Hypothesis $H0$ is that ground true and predicted values both come from the same (unknown) distribution.\relax }}{25}{table.caption.29}\protected@file@percent }
-\newlabel{tab:yvsyKS}{{1.7}{25}{p-value results for the 2-sample Kolmogorov-Smirnov test performed on distributions showed in \autoref {fig:yvsydoublehist}. Hypothesis $H0$ is that ground true and predicted values both come from the same (unknown) distribution.\relax }{table.caption.29}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {1.7}{\ignorespaces Resulting $p$-values from the 2-sample K-S test of goodness of fit between ground true ($\mathbf  {Y}$) and predicted ($\mathbf  {\hat  {Y}}$) distributions. The null hypothesis $H0$ that both distributions conform is rejected if the $p$-value is smaller than $0.05$.\relax }}{25}{table.caption.29}\protected@file@percent }
+\newlabel{tab:yvsyKS}{{1.7}{25}{Resulting $p$-values from the 2-sample K-S test of goodness of fit between ground true ($\mathbf {Y}$) and predicted ($\mathbf {\hat {Y}}$) distributions. The null hypothesis $H0$ that both distributions conform is rejected if the $p$-value is smaller than $0.05$.\relax }{table.caption.29}{}}
 \newlabel{tab:yvsyKS@cref}{{[table][7][1]1.7}{[1][23][]25}}
 \@writefile{lof}{\contentsline {figure}{\numberline {1.13}{\ignorespaces Empirical residue distribution sampled from the test set, for each of the six output variables of MS-S18. $x$-axis limits have been truncated to $\mu \pm 3 \sigma $, where the most part of the error lies. Histograms have been appropriately binned for a correct visualization.\relax }}{26}{figure.caption.30}\protected@file@percent }
 \newlabel{fig:pdferror}{{1.13}{26}{Empirical residue distribution sampled from the test set, for each of the six output variables of MS-S18. $x$-axis limits have been truncated to $\mu \pm 3 \sigma $, where the most part of the error lies. Histograms have been appropriately binned for a correct visualization.\relax }{figure.caption.30}{}}
@@ -129,116 +129,122 @@
 \@writefile{lot}{\contentsline {table}{\numberline {1.11}{\ignorespaces Bootstrapped percentiles (\ordinalnum {1}, \ordinalnum {5}, \ordinalnum {10}, \ordinalnum {90}, \ordinalnum {95} and \ordinalnum {99}) of the residue distribution, calculated with a 95\% confidence interval using Wilson-score.\relax }}{33}{table.caption.38}\protected@file@percent }
 \newlabel{tab:basicuncertainty}{{1.11}{33}{Bootstrapped percentiles (\ordinalnum {1}, \ordinalnum {5}, \ordinalnum {10}, \ordinalnum {90}, \ordinalnum {95} and \ordinalnum {99}) of the residue distribution, calculated with a 95\% confidence interval using Wilson-score.\relax }{table.caption.38}{}}
 \newlabel{tab:basicuncertainty@cref}{{[table][11][1]1.11}{[1][30][]33}}
-\@writefile{toc}{\contentsline {section}{\numberline {1.5}Distributed error quantification: conditioning the error distribution on the input space}{35}{section.1.5}\protected@file@percent }
-\newlabel{sec:biasinput}{{1.5}{35}{Distributed error quantification: conditioning the error distribution on the input space}{section.1.5}{}}
-\newlabel{sec:biasinput@cref}{{[section][5][1]1.5}{[1][35][]35}}
-\@writefile{lof}{\contentsline {figure}{\numberline {1.17}{\ignorespaces Box diagram showing the relative position of \autoref  {sec:biasinput} in the complete validation pipeline.\relax }}{35}{figure.caption.39}\protected@file@percent }
-\newlabel{fig:biasinputbox}{{1.17}{35}{Box diagram showing the relative position of \autoref {sec:biasinput} in the complete validation pipeline.\relax }{figure.caption.39}{}}
-\newlabel{fig:biasinputbox@cref}{{[figure][17][1]1.17}{[1][35][]35}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {1.5.1}Visualization of error as a function of categorical (discrete) input variables}{36}{subsection.1.5.1}\protected@file@percent }
-\newlabel{fig:boxwhisker1}{{1.18(a)}{37}{Error conditioned to the categorical variable ''Frame''\relax }{figure.caption.40}{}}
-\newlabel{fig:boxwhisker1@cref}{{[subfigure][1][1,18]1.18(a)}{[1][36][]37}}
-\newlabel{sub@fig:boxwhisker1}{{(a)}{37}{Error conditioned to the categorical variable ''Frame''\relax }{figure.caption.40}{}}
-\newlabel{sub@fig:boxwhisker1@cref}{{[subfigure][1][1,18]1.18(a)}{[1][36][]37}}
-\newlabel{fig:boxwhisker2}{{1.18(b)}{37}{Error conditioned to the categorical variable ''Stringer''\relax }{figure.caption.40}{}}
-\newlabel{fig:boxwhisker2@cref}{{[subfigure][2][1,18]1.18(b)}{[1][36][]37}}
-\newlabel{sub@fig:boxwhisker2}{{(b)}{37}{Error conditioned to the categorical variable ''Stringer''\relax }{figure.caption.40}{}}
-\newlabel{sub@fig:boxwhisker2@cref}{{[subfigure][2][1,18]1.18(b)}{[1][36][]37}}
-\@writefile{lof}{\contentsline {figure}{\numberline {1.18}{\ignorespaces Box and whisker plots depicting the residue conditioned to two different categorical variables. \autoref  {fig:boxwhisker1}: ''Frame''. \autoref  {fig:boxwhisker2}: ''Stringer''. Clearly, outliers can be appreciated in both cases (''Fr69-Fr70'' in \autoref  {fig:boxwhisker1}, and various stringers in \autoref  {fig:boxwhisker2}).\relax }}{37}{figure.caption.40}\protected@file@percent }
-\newlabel{fig:boxwhisker}{{1.18}{37}{Box and whisker plots depicting the residue conditioned to two different categorical variables. \autoref {fig:boxwhisker1}: ''Frame''. \autoref {fig:boxwhisker2}: ''Stringer''. Clearly, outliers can be appreciated in both cases (''Fr69-Fr70'' in \autoref {fig:boxwhisker1}, and various stringers in \autoref {fig:boxwhisker2}).\relax }{figure.caption.40}{}}
-\newlabel{fig:boxwhisker@cref}{{[figure][18][1]1.18}{[1][36][]37}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {1.5.2}Bias detection and quantification (1D)}{38}{subsection.1.5.2}\protected@file@percent }
-\newlabel{subsec:biasinput1d}{{1.5.2}{38}{Bias detection and quantification (1D)}{subsection.1.5.2}{}}
-\newlabel{subsec:biasinput1d@cref}{{[subsection][2][1,5]1.5.2}{[1][38][]38}}
-\@writefile{toc}{\contentsline {paragraph}{\leavevmode {\color  {GMVred}A.} \myul [GMVred]{Detection of error bias in single categories (ANOVA)}\\}{38}{subsection.1.5.2}\protected@file@percent }
-\pp@spagectr{FN@totalid}{5}{1}{38}
-\@writefile{lot}{\contentsline {table}{\numberline {1.12}{\ignorespaces P-values results from the one-way ANOVA test. The red labelled cells show that variable ''dp'' shows bias for the residual distribution of ''RF Net Tension'', as well as variable ''Frame'' for the residual distribution of ''RF Forced Crippling'' and variable''Stringer'' for the residual distributions of ''RF Net Tension'' and ''RF Pure Compression''. For the rest of the table, p-values greater than 0.05 indicate that $H0$ cannot be rejected with a statistical confidence of at least 95\%.\relax }}{39}{table.caption.41}\protected@file@percent }
-\newlabel{tab:1anova}{{1.12}{39}{P-values results from the one-way ANOVA test. The red labelled cells show that variable ''dp'' shows bias for the residual distribution of ''RF Net Tension'', as well as variable ''Frame'' for the residual distribution of ''RF Forced Crippling'' and variable''Stringer'' for the residual distributions of ''RF Net Tension'' and ''RF Pure Compression''. For the rest of the table, p-values greater than 0.05 indicate that $H0$ cannot be rejected with a statistical confidence of at least 95\%.\relax }{table.caption.41}{}}
-\newlabel{tab:1anova@cref}{{[table][12][1]1.12}{[1][38][]39}}
-\@writefile{toc}{\contentsline {paragraph}{\leavevmode {\color  {GMVred}B.} \myul [GMVred]{Quantification of error bias in single categories test no. 1: based on error mean outlier}\\}{39}{table.caption.41}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {1.13}{\ignorespaces Z-score results for biased categorical variables. One table is generated for each pair biased categorical input variable-output variable.\relax }}{40}{table.caption.42}\protected@file@percent }
-\newlabel{tab:zscore}{{1.13}{40}{Z-score results for biased categorical variables. One table is generated for each pair biased categorical input variable-output variable.\relax }{table.caption.42}{}}
-\newlabel{tab:zscore@cref}{{[table][13][1]1.13}{[1][40][]40}}
-\@writefile{toc}{\contentsline {paragraph}{\leavevmode {\color  {GMVred}C.} \myul [GMVred]{Quantification of error bias in single categories test no. 2: based on error variance outlier}\\}{40}{table.caption.42}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{\leavevmode {\color  {GMVred}D.} \myul [GMVred]{Quantification of error bias in single categories test no. 3: based on identification of linear trend}\\}{41}{table.caption.42}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {1.5.3}Bias detection and quantification (2D)}{42}{subsection.1.5.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{\leavevmode {\color  {GMVred}A.} \myul [GMVred]{Bias detection (2D)}\\}{42}{subsection.1.5.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {1.5}Distributed error quantification: conditioning the error distribution on the input space}{34}{section.1.5}\protected@file@percent }
+\newlabel{sec:biasinput}{{1.5}{34}{Distributed error quantification: conditioning the error distribution on the input space}{section.1.5}{}}
+\newlabel{sec:biasinput@cref}{{[section][5][1]1.5}{[1][34][]34}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1.17}{\ignorespaces Box diagram showing the relative position of \autoref  {sec:biasinput} in the complete validation pipeline.\relax }}{34}{figure.caption.39}\protected@file@percent }
+\newlabel{fig:biasinputbox}{{1.17}{34}{Box diagram showing the relative position of \autoref {sec:biasinput} in the complete validation pipeline.\relax }{figure.caption.39}{}}
+\newlabel{fig:biasinputbox@cref}{{[figure][17][1]1.17}{[1][34][]34}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.5.1}Visualization of error as a function of categorical (discrete) input variables}{35}{subsection.1.5.1}\protected@file@percent }
+\newlabel{fig:boxwhisker1}{{1.18(a)}{36}{Error conditioned to the categorical variable ''Frame''\relax }{figure.caption.40}{}}
+\newlabel{fig:boxwhisker1@cref}{{[subfigure][1][1,18]1.18(a)}{[1][35][]36}}
+\newlabel{sub@fig:boxwhisker1}{{(a)}{36}{Error conditioned to the categorical variable ''Frame''\relax }{figure.caption.40}{}}
+\newlabel{sub@fig:boxwhisker1@cref}{{[subfigure][1][1,18]1.18(a)}{[1][35][]36}}
+\newlabel{fig:boxwhisker2}{{1.18(b)}{36}{Error conditioned to the categorical variable ''Stringer''\relax }{figure.caption.40}{}}
+\newlabel{fig:boxwhisker2@cref}{{[subfigure][2][1,18]1.18(b)}{[1][35][]36}}
+\newlabel{sub@fig:boxwhisker2}{{(b)}{36}{Error conditioned to the categorical variable ''Stringer''\relax }{figure.caption.40}{}}
+\newlabel{sub@fig:boxwhisker2@cref}{{[subfigure][2][1,18]1.18(b)}{[1][35][]36}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1.18}{\ignorespaces Box and whisker plots depicting the residue conditioned to two different categorical variables. \autoref  {fig:boxwhisker1}: ''Frame''. \autoref  {fig:boxwhisker2}: ''Stringer''. Clearly, outliers can be appreciated in both cases (''Fr69-Fr70'' in \autoref  {fig:boxwhisker1}, and various stringers in \autoref  {fig:boxwhisker2}).\relax }}{36}{figure.caption.40}\protected@file@percent }
+\newlabel{fig:boxwhisker}{{1.18}{36}{Box and whisker plots depicting the residue conditioned to two different categorical variables. \autoref {fig:boxwhisker1}: ''Frame''. \autoref {fig:boxwhisker2}: ''Stringer''. Clearly, outliers can be appreciated in both cases (''Fr69-Fr70'' in \autoref {fig:boxwhisker1}, and various stringers in \autoref {fig:boxwhisker2}).\relax }{figure.caption.40}{}}
+\newlabel{fig:boxwhisker@cref}{{[figure][18][1]1.18}{[1][35][]36}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.5.2}Bias detection and quantification (1D)}{37}{subsection.1.5.2}\protected@file@percent }
+\newlabel{subsec:biasinput1d}{{1.5.2}{37}{Bias detection and quantification (1D)}{subsection.1.5.2}{}}
+\newlabel{subsec:biasinput1d@cref}{{[subsection][2][1,5]1.5.2}{[1][37][]37}}
+\@writefile{toc}{\contentsline {paragraph}{\leavevmode {\color  {GMVred}A.} \myul [GMVred]{Detection of error bias in single categories (ANOVA)}\\}{37}{subsection.1.5.2}\protected@file@percent }
+\pp@spagectr{FN@totalid}{5}{1}{37}
+\@writefile{lot}{\contentsline {table}{\numberline {1.12}{\ignorespaces P-values results from the one-way ANOVA test. The red labelled cells show that variable ''dp'' shows bias for the residual distribution of ''RF Net Tension'', as well as variable ''Frame'' for the residual distribution of ''RF Forced Crippling'' and variable''Stringer'' for the residual distributions of ''RF Net Tension'' and ''RF Pure Compression''. For the rest of the table, p-values greater than 0.05 indicate that $H0$ cannot be rejected with a statistical confidence of at least 95\%.\relax }}{38}{table.caption.41}\protected@file@percent }
+\newlabel{tab:1anova}{{1.12}{38}{P-values results from the one-way ANOVA test. The red labelled cells show that variable ''dp'' shows bias for the residual distribution of ''RF Net Tension'', as well as variable ''Frame'' for the residual distribution of ''RF Forced Crippling'' and variable''Stringer'' for the residual distributions of ''RF Net Tension'' and ''RF Pure Compression''. For the rest of the table, p-values greater than 0.05 indicate that $H0$ cannot be rejected with a statistical confidence of at least 95\%.\relax }{table.caption.41}{}}
+\newlabel{tab:1anova@cref}{{[table][12][1]1.12}{[1][37][]38}}
+\@writefile{toc}{\contentsline {paragraph}{\leavevmode {\color  {GMVred}B.} \myul [GMVred]{Quantification of error bias in single categories test no. 1: based on error mean outlier}\\}{38}{table.caption.41}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {1.13}{\ignorespaces Z-score results for biased categorical variables. One table is generated for each pair biased categorical input variable-output variable.\relax }}{39}{table.caption.42}\protected@file@percent }
+\newlabel{tab:zscore}{{1.13}{39}{Z-score results for biased categorical variables. One table is generated for each pair biased categorical input variable-output variable.\relax }{table.caption.42}{}}
+\newlabel{tab:zscore@cref}{{[table][13][1]1.13}{[1][39][]39}}
+\@writefile{toc}{\contentsline {paragraph}{\leavevmode {\color  {GMVred}C.} \myul [GMVred]{Quantification of error bias in single categories test no. 2: based on error variance outlier}\\}{39}{table.caption.42}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{\leavevmode {\color  {GMVred}D.} \myul [GMVred]{Quantification of error bias in single categories test no. 3: based on identification of linear trend}\\}{40}{table.caption.42}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {1.19}{\ignorespaces Quantification of linear trend for input categorical variables ''Stringer'' (left) and ''Frame'' (right). Variables have been numerically encoded following a logical order ({\it  e.g.}\ in the right image, six integers in the $x$ axis represent the six possible values of variable Frame). The residue of output variable ''RF Net Tension'' has been plotted against the categorical variable ($y$ axis). In this case, no linear trend is appreciated in neither of the two input variables (no bias present).\relax }}{41}{figure.caption.43}\protected@file@percent }
+\newlabel{fig:linearcat}{{1.19}{41}{Quantification of linear trend for input categorical variables ''Stringer'' (left) and ''Frame'' (right). Variables have been numerically encoded following a logical order (\eg in the right image, six integers in the $x$ axis represent the six possible values of variable Frame). The residue of output variable ''RF Net Tension'' has been plotted against the categorical variable ($y$ axis). In this case, no linear trend is appreciated in neither of the two input variables (no bias present).\relax }{figure.caption.43}{}}
+\newlabel{fig:linearcat@cref}{{[figure][19][1]1.19}{[1][40][]41}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.5.3}Bias detection and quantification (2D)}{41}{subsection.1.5.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{\leavevmode {\color  {GMVred}A.} \myul [GMVred]{Bias detection (2D)}\\}{41}{subsection.1.5.3}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{\leavevmode {\color  {GMVred}B.} \myul [GMVred]{Bias quantification (2D)}\\}{42}{subsection.1.5.3}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {1.14}{\ignorespaces 2D bias quantification: Results from mean and variance $z$-score tests on biased Stringer-Frame input pairs (bias detection has been performed through 1-way ANOVA). For the input value combinations showed in the columns, either mean or variance (or both) show bias (weak: $z\text  {-score}<3$. Strong: $z\text  {-score}>3$). For the combination of Frame Fr67-Fr69 and Stringer Str07, there are not enough test points to compute the $z$-score variance test.\relax }}{42}{table.caption.44}\protected@file@percent }
+\newlabel{tab:2dbiascat}{{1.14}{42}{2D bias quantification: Results from mean and variance $z$-score tests on biased Stringer-Frame input pairs (bias detection has been performed through 1-way ANOVA). For the input value combinations showed in the columns, either mean or variance (or both) show bias (weak: $z\text {-score}<3$. Strong: $z\text {-score}>3$). For the combination of Frame Fr67-Fr69 and Stringer Str07, there are not enough test points to compute the $z$-score variance test.\relax }{table.caption.44}{}}
+\newlabel{tab:2dbiascat@cref}{{[table][14][1]1.14}{[1][42][]42}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {1.5.4}Visualization of error as a function of numerical (continuous) input variables}{43}{subsection.1.5.4}\protected@file@percent }
+\newlabel{fig:imagen1}{{\caption@xref {fig:imagen1}{ on input line 725}}{43}{Visualization of error as a function of numerical (continuous) input variables}{figure.caption.45}{}}
+\newlabel{fig:imagen1@cref}{{[subsection][4][1,5]1.5.4}{[1][42][]43}}
+\newlabel{fig:imagen2}{{\caption@xref {fig:imagen2}{ on input line 731}}{43}{Visualization of error as a function of numerical (continuous) input variables}{figure.caption.45}{}}
+\newlabel{fig:imagen2@cref}{{[subsection][4][1,5]1.5.4}{[1][42][]43}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1.20}{\ignorespaces Scatter plots of residue against a particular numerical input variable. Left: Input var. FU.0420.26. A linear trend is appreciated, suggesting the model makes worse predictions as input load ''FU.0420.26'' is larger. Right: input var. FU.0420.25. No linear trend is appreciated, although severe heteroscedasticity can be observed. Note the vertical bar arrangement, showing particular input loads for which dispersion is unusually large. In view of the former results, the engineer may decide to investigate the underlying causes both for the linear trend in the left and for heteroscedasticity on the right. With the information, model and data boosting may be performed. More training data could be decided to be sampled in the range of $[20000,60000]$ of FU.0420.26, for instance, and some regularization technique could be tried for the loss function in order to penalise inputs triggering high variance observed in the right.\relax }}{43}{figure.caption.45}\protected@file@percent }
+\newlabel{fig:binputscatter}{{1.20}{43}{Scatter plots of residue against a particular numerical input variable. Left: Input var. FU.0420.26. A linear trend is appreciated, suggesting the model makes worse predictions as input load ''FU.0420.26'' is larger. Right: input var. FU.0420.25. No linear trend is appreciated, although severe heteroscedasticity can be observed. Note the vertical bar arrangement, showing particular input loads for which dispersion is unusually large. In view of the former results, the engineer may decide to investigate the underlying causes both for the linear trend in the left and for heteroscedasticity on the right. With the information, model and data boosting may be performed. More training data could be decided to be sampled in the range of $[20000,60000]$ of FU.0420.26, for instance, and some regularization technique could be tried for the loss function in order to penalise inputs triggering high variance observed in the right.\relax }{figure.caption.45}{}}
+\newlabel{fig:binputscatter@cref}{{[figure][20][1]1.20}{[1][42][]43}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {1.5.5}Bias detection and quantification}{43}{subsection.1.5.5}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{\leavevmode {\color  {GMVred}A.} \myul [GMVred]{Detection of linear trends for individual numerical variables}\\}{43}{subsection.1.5.5}\protected@file@percent }
-\newlabel{fig:imagen1}{{\caption@xref {fig:imagen1}{ on input line 710}}{44}{Visualization of error as a function of numerical (continuous) input variables}{figure.caption.43}{}}
-\newlabel{fig:imagen1@cref}{{[subsection][4][1,5]1.5.4}{[1][43][]44}}
-\newlabel{fig:imagen2}{{\caption@xref {fig:imagen2}{ on input line 716}}{44}{Visualization of error as a function of numerical (continuous) input variables}{figure.caption.43}{}}
-\newlabel{fig:imagen2@cref}{{[subsection][4][1,5]1.5.4}{[1][43][]44}}
-\@writefile{lof}{\contentsline {figure}{\numberline {1.19}{\ignorespaces Scatter plots of residue against a particular numerical input variable. Left: Input var. FU.0420.26. A linear trend is appreciated, suggesting the model makes worse predictions as input load ''FU.0420.26'' is larger. Right: input var. FU.0420.25. No linear trend is appreciated, although severe heteroscedasticity can be observed. Note the vertical bar arrangement, showing particular input loads for which dispersion is unusually large. In view of the former results, the engineer may decide to investigate the underlying causes both for the linear trend in the left and for heteroscedasticity on the right. With the information, model and data boosting may be performed. More training data could be decided to be sampled in the range of $[20000,60000]$ of FU.0420.26, for instance, and some regularization technique could be tried for the loss function in order to penalise inputs triggering high variance observed in the right.\relax }}{44}{figure.caption.43}\protected@file@percent }
-\newlabel{fig:binputscatter}{{1.19}{44}{Scatter plots of residue against a particular numerical input variable. Left: Input var. FU.0420.26. A linear trend is appreciated, suggesting the model makes worse predictions as input load ''FU.0420.26'' is larger. Right: input var. FU.0420.25. No linear trend is appreciated, although severe heteroscedasticity can be observed. Note the vertical bar arrangement, showing particular input loads for which dispersion is unusually large. In view of the former results, the engineer may decide to investigate the underlying causes both for the linear trend in the left and for heteroscedasticity on the right. With the information, model and data boosting may be performed. More training data could be decided to be sampled in the range of $[20000,60000]$ of FU.0420.26, for instance, and some regularization technique could be tried for the loss function in order to penalise inputs triggering high variance observed in the right.\relax }{figure.caption.43}{}}
-\newlabel{fig:binputscatter@cref}{{[figure][19][1]1.19}{[1][43][]44}}
-\@writefile{lot}{\contentsline {table}{\numberline {1.14}{\ignorespaces Bias detection and quantification on numerical input variables (the results for just five input variables are shown here -- in columns--): P-value (statistical significance of the hypothesis that the variable is biased), Pearson coefficient, and slope of the best linear fit are shown in the first three rows. The last row shows the message ''Biased'' in case the $p\text  {-value}>0.05$, ''NO'' otherwise. Data from this table corresponds to residue of the output variable ''RF Column Buckling''. Analogous tables exist for the rest of the output variables.\relax }}{44}{table.caption.44}\protected@file@percent }
-\newlabel{tab:lintrend}{{1.14}{44}{Bias detection and quantification on numerical input variables (the results for just five input variables are shown here -- in columns--): P-value (statistical significance of the hypothesis that the variable is biased), Pearson coefficient, and slope of the best linear fit are shown in the first three rows. The last row shows the message ''Biased'' in case the $p\text {-value}>0.05$, ''NO'' otherwise. Data from this table corresponds to residue of the output variable ''RF Column Buckling''. Analogous tables exist for the rest of the output variables.\relax }{table.caption.44}{}}
-\newlabel{tab:lintrend@cref}{{[table][14][1]1.14}{[1][44][]44}}
-\@writefile{toc}{\contentsline {paragraph}{\leavevmode {\color  {GMVred}B.} \myul [GMVred]{Discretizing continuous variables}\\}{44}{table.caption.44}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {1.15}{\ignorespaces 1-way ANOVA test results (p-values) for binned numerical input variables. For the output variable ''RF Forced Crippling'', bias is found in the input variables ''FU.0420.25'' and ''FU.0430.25''. Similarly, for the output variable ''RF Net Tension'', bias is found in the input variable ''FU.0430.15''. \relax }}{45}{table.caption.45}\protected@file@percent }
-\newlabel{tab:anovanum}{{1.15}{45}{1-way ANOVA test results (p-values) for binned numerical input variables. For the output variable ''RF Forced Crippling'', bias is found in the input variables ''FU.0420.25'' and ''FU.0430.25''. Similarly, for the output variable ''RF Net Tension'', bias is found in the input variable ''FU.0430.15''. \relax }{table.caption.45}{}}
-\newlabel{tab:anovanum@cref}{{[table][15][1]1.15}{[1][45][]45}}
-\@writefile{lot}{\contentsline {table}{\numberline {1.16}{\ignorespaces Bias quantification in binned FU.0430.15 input variable. Columns represents bins showing bias. The same quantification methods employed for categorical variables (z-score for mean and variance outlier detection) have been used.\relax }}{46}{table.caption.46}\protected@file@percent }
-\newlabel{tab:anovabins}{{1.16}{46}{Bias quantification in binned FU.0430.15 input variable. Columns represents bins showing bias. The same quantification methods employed for categorical variables (z-score for mean and variance outlier detection) have been used.\relax }{table.caption.46}{}}
-\newlabel{tab:anovabins@cref}{{[table][16][1]1.16}{[1][45][]46}}
-\@writefile{lot}{\contentsline {table}{\numberline {1.17}{\ignorespaces Summary of binned input variables bias quantification after binning the numerical variables and performing one-way ANOVA and z-score tests to every bin.\relax }}{46}{table.caption.47}\protected@file@percent }
-\newlabel{tab:zscorenum1}{{1.17}{46}{Summary of binned input variables bias quantification after binning the numerical variables and performing one-way ANOVA and z-score tests to every bin.\relax }{table.caption.47}{}}
-\newlabel{tab:zscorenum1@cref}{{[table][17][1]1.17}{[1][45][]46}}
+\@writefile{toc}{\contentsline {paragraph}{\leavevmode {\color  {GMVred}A.} \myul [GMVred]{Detection of linear trends for individual numerical variables}\\}{44}{subsection.1.5.5}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {1.15}{\ignorespaces Bias detection and quantification on numerical input variables (the results for just five input variables are shown here -- in columns--): P-value (statistical significance of the hypothesis that the variable is biased), Pearson coefficient, and slope of the best linear fit are shown in the first three rows. The last row shows the message ''Biased'' in case the $p\text  {-value}>0.05$, ''NO'' otherwise. Data from this table corresponds to residue of the output variable ''RF Column Buckling''. Analogous tables exist for the rest of the output variables.\relax }}{44}{table.caption.46}\protected@file@percent }
+\newlabel{tab:lintrend}{{1.15}{44}{Bias detection and quantification on numerical input variables (the results for just five input variables are shown here -- in columns--): P-value (statistical significance of the hypothesis that the variable is biased), Pearson coefficient, and slope of the best linear fit are shown in the first three rows. The last row shows the message ''Biased'' in case the $p\text {-value}>0.05$, ''NO'' otherwise. Data from this table corresponds to residue of the output variable ''RF Column Buckling''. Analogous tables exist for the rest of the output variables.\relax }{table.caption.46}{}}
+\newlabel{tab:lintrend@cref}{{[table][15][1]1.15}{[1][44][]44}}
+\@writefile{toc}{\contentsline {paragraph}{\leavevmode {\color  {GMVred}B.} \myul [GMVred]{Discretizing continuous variables}\\}{44}{table.caption.46}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {1.16}{\ignorespaces 1-way ANOVA test results (p-values) for binned numerical input variables. For the output variable ''RF Forced Crippling'', bias is found in the input variables ''FU.0420.25'' and ''FU.0430.25''. Similarly, for the output variable ''RF Net Tension'', bias is found in the input variable ''FU.0430.15''. \relax }}{45}{table.caption.47}\protected@file@percent }
+\newlabel{tab:anovanum}{{1.16}{45}{1-way ANOVA test results (p-values) for binned numerical input variables. For the output variable ''RF Forced Crippling'', bias is found in the input variables ''FU.0420.25'' and ''FU.0430.25''. Similarly, for the output variable ''RF Net Tension'', bias is found in the input variable ''FU.0430.15''. \relax }{table.caption.47}{}}
+\newlabel{tab:anovanum@cref}{{[table][16][1]1.16}{[1][44][]45}}
+\@writefile{lot}{\contentsline {table}{\numberline {1.17}{\ignorespaces Bias quantification in binned FU.0430.15 input variable. Columns represents bins showing bias. The same quantification methods employed for categorical variables (z-score for mean and variance outlier detection) have been used.\relax }}{46}{table.caption.48}\protected@file@percent }
+\newlabel{tab:anovabins}{{1.17}{46}{Bias quantification in binned FU.0430.15 input variable. Columns represents bins showing bias. The same quantification methods employed for categorical variables (z-score for mean and variance outlier detection) have been used.\relax }{table.caption.48}{}}
+\newlabel{tab:anovabins@cref}{{[table][17][1]1.17}{[1][44][]46}}
+\@writefile{lot}{\contentsline {table}{\numberline {1.18}{\ignorespaces Summary of binned input variables bias quantification after binning the numerical variables and performing one-way ANOVA and z-score tests to every bin.\relax }}{46}{table.caption.49}\protected@file@percent }
+\newlabel{tab:zscorenum1}{{1.18}{46}{Summary of binned input variables bias quantification after binning the numerical variables and performing one-way ANOVA and z-score tests to every bin.\relax }{table.caption.49}{}}
+\newlabel{tab:zscorenum1@cref}{{[table][18][1]1.18}{[1][44][]46}}
 \@writefile{toc}{\contentsline {section}{\numberline {1.6}Distributed error quantification: conditioning the error distribution on the output space}{48}{section.1.6}\protected@file@percent }
 \newlabel{sec:biasoutput}{{1.6}{48}{Distributed error quantification: conditioning the error distribution on the output space}{section.1.6}{}}
 \newlabel{sec:biasoutput@cref}{{[section][6][1]1.6}{[1][48][]48}}
-\@writefile{lof}{\contentsline {figure}{\numberline {1.20}{\ignorespaces Relative position of \autoref  {sec:biasoutput} in the complete validation pipeline.\relax }}{48}{figure.caption.48}\protected@file@percent }
-\newlabel{fig:boutpipeline}{{1.20}{48}{Relative position of \autoref {sec:biasoutput} in the complete validation pipeline.\relax }{figure.caption.48}{}}
-\newlabel{fig:boutpipeline@cref}{{[figure][20][1]1.20}{[1][48][]48}}
-\@writefile{lot}{\contentsline {table}{\numberline {1.18}{\ignorespaces Binnarization of the test set.\relax }}{49}{table.caption.50}\protected@file@percent }
-\newlabel{tab:ybins}{{1.18}{49}{Binnarization of the test set.\relax }{table.caption.50}{}}
-\newlabel{tab:ybins@cref}{{[table][18][1]1.18}{[1][49][]49}}
-\@writefile{lof}{\contentsline {figure}{\numberline {1.21}{\ignorespaces Goodness of fit of the error distribution (test set previously filtered) to some parametrised distributions. The test is performed individually for the output variables (Reserve Factors) displayed on top of each image. The goodness of fit is assessed with a 1-variable K-S test. The test set is filtered using the x axis, rejecting every point whose output $\hat  {y}$ is larger than $x$. If the p-value resulting from the K-S test in the filtered test set is greater than $0.05$, the vertical slice at position $x$ is labelled green (red if $p\text  {-value}<0.05$, grey if less than a threshold number of points --namely, 30-- are present in the filtered test set).\relax }}{50}{figure.caption.49}\protected@file@percent }
-\newlabel{fig:localfits}{{1.21}{50}{Goodness of fit of the error distribution (test set previously filtered) to some parametrised distributions. The test is performed individually for the output variables (Reserve Factors) displayed on top of each image. The goodness of fit is assessed with a 1-variable K-S test. The test set is filtered using the x axis, rejecting every point whose output $\hat {y}$ is larger than $x$. If the p-value resulting from the K-S test in the filtered test set is greater than $0.05$, the vertical slice at position $x$ is labelled green (red if $p\text {-value}<0.05$, grey if less than a threshold number of points --namely, 30-- are present in the filtered test set).\relax }{figure.caption.49}{}}
-\newlabel{fig:localfits@cref}{{[figure][21][1]1.21}{[1][49][]50}}
-\@writefile{lof}{\contentsline {figure}{\numberline {1.22}{\ignorespaces Line plot of the $p$-value from the true-predicted distributions under a 2 sample K-S test. Distribution similarity is rejected if $p\text  {-value}<0.05$.\relax }}{51}{figure.caption.51}\protected@file@percent }
-\newlabel{fig:binpvals}{{1.22}{51}{Line plot of the $p$-value from the true-predicted distributions under a 2 sample K-S test. Distribution similarity is rejected if $p\text {-value}<0.05$.\relax }{figure.caption.51}{}}
-\newlabel{fig:binpvals@cref}{{[figure][22][1]1.22}{[1][50][]51}}
-\@writefile{lof}{\contentsline {figure}{\numberline {1.23}{\ignorespaces Violin plots showing the absolute value residue for every bin.\relax }}{52}{figure.caption.52}\protected@file@percent }
-\newlabel{fig:violins}{{1.23}{52}{Violin plots showing the absolute value residue for every bin.\relax }{figure.caption.52}{}}
-\newlabel{fig:violins@cref}{{[figure][23][1]1.23}{[1][51][]52}}
-\@writefile{lof}{\contentsline {figure}{\numberline {1.24}{\ignorespaces Sliced-bar with p-values from the binned error under a K-S test to assess the goodness of fit to several parametrised distributions.\relax }}{53}{figure.caption.53}\protected@file@percent }
-\newlabel{fig:binfits}{{1.24}{53}{Sliced-bar with p-values from the binned error under a K-S test to assess the goodness of fit to several parametrised distributions.\relax }{figure.caption.53}{}}
-\newlabel{fig:binfits@cref}{{[figure][24][1]1.24}{[1][51][]53}}
-\@writefile{toc}{\contentsline {section}{\numberline {1.7}Uncertainty model estimation}{54}{section.1.7}\protected@file@percent }
-\newlabel{sec:uncertainty}{{1.7}{54}{Uncertainty model estimation}{section.1.7}{}}
-\newlabel{sec:uncertainty@cref}{{[section][7][1]1.7}{[1][54][]54}}
-\@writefile{lot}{\contentsline {table}{\numberline {1.19}{\ignorespaces Output of \autoref  {algo:tt-split}: \texttt  {reqs\_results} table\relax }}{55}{table.caption.54}\protected@file@percent }
-\newlabel{def:orden1}{{2}{55}{}{definition.2}{}}
-\newlabel{def:orden1@cref}{{[definition][2][]2}{[1][55][]55}}
-\@writefile{lot}{\contentsline {table}{\numberline {1.20}{\ignorespaces Voxel reference table. Lorem ipsum dolor sit amet, consectetuer adisciping elit.\relax }}{56}{table.caption.55}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {1.8}Las movidas de Rodrigo}{57}{section.1.8}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {1.8.1}Concept: System dynamics.}{57}{subsection.1.8.1}\protected@file@percent }
-\newlabel{eqCh1:Problem_def}{{1.3}{57}{Concept: System dynamics}{equation.1.8.3}{}}
-\newlabel{eqCh1:Problem_def@cref}{{[equation][3][1]1.3}{[1][57][]57}}
-\newlabel{eqCh1:STM_1}{{1.4}{57}{Concept: System dynamics}{equation.1.8.4}{}}
-\newlabel{eqCh1:STM_1@cref}{{[equation][4][1]1.4}{[1][57][]57}}
-\newlabel{eqCh1:STM_2}{{1.5}{58}{Concept: System dynamics}{equation.1.8.5}{}}
-\newlabel{eqCh1:STM_2@cref}{{[equation][5][1]1.5}{[1][57][]58}}
-\newlabel{eqCh1:STM_decomp}{{1.6}{58}{Concept: System dynamics}{equation.1.8.6}{}}
-\newlabel{eqCh1:STM_decomp@cref}{{[equation][6][1]1.6}{[1][58][]58}}
-\newlabel{eqCh1:STM_prop}{{1.7}{58}{Concept: System dynamics}{equation.1.8.7}{}}
-\newlabel{eqCh1:STM_prop@cref}{{[equation][7][1]1.7}{[1][58][]58}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {1.8.2}Applications of STMs in celestial mechanics.}{59}{subsection.1.8.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{\leavevmode {\color  {GMVred}A.} \myul [GMVred]{Precise Orbit Determination.}\\}{59}{subsection.1.8.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{\leavevmode {\color  {GMVred}B.} \myul [GMVred]{Guidance, Navigation and Control (GNC).} \\}{59}{subsection.1.8.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{\leavevmode {\color  {GMVred}C.} \myul [GMVred]{Orbit design.} \\}{59}{subsection.1.8.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{\leavevmode {\color  {GMVred}D.} \myul [GMVred]{Covariance matrix propagation.} \\}{60}{subsection.1.8.2}\protected@file@percent }
-\newlabel{eqCh1:P_est}{{1.8}{61}{\GMVred {D.} \myul [GMVred]{Covariance matrix propagation.} \\}{equation.1.8.8}{}}
-\newlabel{eqCh1:P_est@cref}{{[equation][8][1]1.8}{[1][60][]61}}
-\@writefile{lof}{\contentsline {figure}{\numberline {1.25}{\ignorespaces Covariance ellipsoid evolution along a radial hop.\relax }}{61}{figure.caption.62}\protected@file@percent }
-\newlabel{figCh1:Covariance_segment}{{1.25}{61}{Covariance ellipsoid evolution along a radial hop.\relax }{figure.caption.62}{}}
-\newlabel{figCh1:Covariance_segment@cref}{{[figure][25][1]1.25}{[1][61][]61}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1.21}{\ignorespaces Relative position of \autoref  {sec:biasoutput} in the complete validation pipeline.\relax }}{48}{figure.caption.50}\protected@file@percent }
+\newlabel{fig:boutpipeline}{{1.21}{48}{Relative position of \autoref {sec:biasoutput} in the complete validation pipeline.\relax }{figure.caption.50}{}}
+\newlabel{fig:boutpipeline@cref}{{[figure][21][1]1.21}{[1][48][]48}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1.22}{\ignorespaces Goodness of fit of the error distribution (test set previously filtered) to some parametrised distributions. The test is performed individually for the output variables (Reserve Factors) displayed on top of each image. The goodness of fit is assessed with a 1-variable K-S test. The test set is filtered using the x axis, rejecting every point whose output $\hat  {y}$ is larger than $x$. If the p-value resulting from the K-S test in the filtered test set is greater than $0.05$, the vertical slice at position $x$ is labelled green (red if $p\text  {-value}<0.05$, grey if less than a threshold number of points --namely, 30-- are present in the filtered test set).\relax }}{50}{figure.caption.51}\protected@file@percent }
+\newlabel{fig:localfits}{{1.22}{50}{Goodness of fit of the error distribution (test set previously filtered) to some parametrised distributions. The test is performed individually for the output variables (Reserve Factors) displayed on top of each image. The goodness of fit is assessed with a 1-variable K-S test. The test set is filtered using the x axis, rejecting every point whose output $\hat {y}$ is larger than $x$. If the p-value resulting from the K-S test in the filtered test set is greater than $0.05$, the vertical slice at position $x$ is labelled green (red if $p\text {-value}<0.05$, grey if less than a threshold number of points --namely, 30-- are present in the filtered test set).\relax }{figure.caption.51}{}}
+\newlabel{fig:localfits@cref}{{[figure][22][1]1.22}{[1][48][]50}}
+\@writefile{lot}{\contentsline {table}{\numberline {1.19}{\ignorespaces Binnarization of the test set. The test set has been divided into ten bins according to output values. Extremes of the six intervals --one for each Reserve Factor-- defining the bins are shown below.\relax }}{51}{table.caption.52}\protected@file@percent }
+\newlabel{tab:ybins}{{1.19}{51}{Binnarization of the test set. The test set has been divided into ten bins according to output values. Extremes of the six intervals --one for each Reserve Factor-- defining the bins are shown below.\relax }{table.caption.52}{}}
+\newlabel{tab:ybins@cref}{{[table][19][1]1.19}{[1][48][]51}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1.23}{\ignorespaces Line plot of the $p$-value from the true-predicted distributions under a 2 sample K-S test. Distribution similarity is rejected if $p\text  {-value}<0.05$.\relax }}{52}{figure.caption.53}\protected@file@percent }
+\newlabel{fig:binpvals}{{1.23}{52}{Line plot of the $p$-value from the true-predicted distributions under a 2 sample K-S test. Distribution similarity is rejected if $p\text {-value}<0.05$.\relax }{figure.caption.53}{}}
+\newlabel{fig:binpvals@cref}{{[figure][23][1]1.23}{[1][48][]52}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1.24}{\ignorespaces Violin plots showing the absolute value residue for every bin.\relax }}{53}{figure.caption.54}\protected@file@percent }
+\newlabel{fig:violins}{{1.24}{53}{Violin plots showing the absolute value residue for every bin.\relax }{figure.caption.54}{}}
+\newlabel{fig:violins@cref}{{[figure][24][1]1.24}{[1][48][]53}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1.25}{\ignorespaces Sliced-bar with p-values from the binned error under a K-S test to assess the goodness of fit to several parametrised distributions.\relax }}{54}{figure.caption.55}\protected@file@percent }
+\newlabel{fig:binfits}{{1.25}{54}{Sliced-bar with p-values from the binned error under a K-S test to assess the goodness of fit to several parametrised distributions.\relax }{figure.caption.55}{}}
+\newlabel{fig:binfits@cref}{{[figure][25][1]1.25}{[1][50][]54}}
+\@writefile{toc}{\contentsline {section}{\numberline {1.7}Uncertainty model estimation}{56}{section.1.7}\protected@file@percent }
+\newlabel{sec:uncertainty}{{1.7}{56}{Uncertainty model estimation}{section.1.7}{}}
+\newlabel{sec:uncertainty@cref}{{[section][7][1]1.7}{[1][56][]56}}
+\@writefile{lot}{\contentsline {table}{\numberline {1.20}{\ignorespaces Output of \autoref  {algo:tt-split}: \texttt  {reqs\_results} table\relax }}{57}{table.caption.56}\protected@file@percent }
+\newlabel{def:orden1}{{2}{57}{}{definition.2}{}}
+\newlabel{def:orden1@cref}{{[definition][2][]2}{[1][57][]57}}
+\@writefile{lot}{\contentsline {table}{\numberline {1.21}{\ignorespaces Voxel reference table. Lorem ipsum dolor sit amet, consectetuer adisciping elit.\relax }}{58}{table.caption.57}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {1.8}Las movidas de Rodrigo}{59}{section.1.8}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.8.1}Concept: System dynamics.}{59}{subsection.1.8.1}\protected@file@percent }
+\newlabel{eqCh1:Problem_def}{{1.3}{59}{Concept: System dynamics}{equation.1.8.3}{}}
+\newlabel{eqCh1:Problem_def@cref}{{[equation][3][1]1.3}{[1][59][]59}}
+\newlabel{eqCh1:STM_1}{{1.4}{59}{Concept: System dynamics}{equation.1.8.4}{}}
+\newlabel{eqCh1:STM_1@cref}{{[equation][4][1]1.4}{[1][59][]59}}
+\newlabel{eqCh1:STM_2}{{1.5}{60}{Concept: System dynamics}{equation.1.8.5}{}}
+\newlabel{eqCh1:STM_2@cref}{{[equation][5][1]1.5}{[1][59][]60}}
+\newlabel{eqCh1:STM_decomp}{{1.6}{60}{Concept: System dynamics}{equation.1.8.6}{}}
+\newlabel{eqCh1:STM_decomp@cref}{{[equation][6][1]1.6}{[1][60][]60}}
+\newlabel{eqCh1:STM_prop}{{1.7}{60}{Concept: System dynamics}{equation.1.8.7}{}}
+\newlabel{eqCh1:STM_prop@cref}{{[equation][7][1]1.7}{[1][60][]60}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.8.2}Applications of STMs in celestial mechanics.}{61}{subsection.1.8.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{\leavevmode {\color  {GMVred}A.} \myul [GMVred]{Precise Orbit Determination.}\\}{61}{subsection.1.8.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{\leavevmode {\color  {GMVred}B.} \myul [GMVred]{Guidance, Navigation and Control (GNC).} \\}{61}{subsection.1.8.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{\leavevmode {\color  {GMVred}C.} \myul [GMVred]{Orbit design.} \\}{61}{subsection.1.8.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{\leavevmode {\color  {GMVred}D.} \myul [GMVred]{Covariance matrix propagation.} \\}{62}{subsection.1.8.2}\protected@file@percent }
+\newlabel{eqCh1:P_est}{{1.8}{63}{\GMVred {D.} \myul [GMVred]{Covariance matrix propagation.} \\}{equation.1.8.8}{}}
+\newlabel{eqCh1:P_est@cref}{{[equation][8][1]1.8}{[1][62][]63}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1.26}{\ignorespaces Covariance ellipsoid evolution along a radial hop.\relax }}{63}{figure.caption.64}\protected@file@percent }
+\newlabel{figCh1:Covariance_segment}{{1.26}{63}{Covariance ellipsoid evolution along a radial hop.\relax }{figure.caption.64}{}}
+\newlabel{figCh1:Covariance_segment@cref}{{[figure][26][1]1.26}{[1][63][]63}}
 \@setckpt{Chapters/Chapter_01/Chapter_01}{
-\setcounter{page}{63}
+\setcounter{page}{65}
 \setcounter{equation}{8}
 \setcounter{enumi}{4}
 \setcounter{enumii}{0}
@@ -253,8 +259,8 @@
 \setcounter{subsubsection}{0}
 \setcounter{paragraph}{0}
 \setcounter{subparagraph}{0}
-\setcounter{figure}{25}
-\setcounter{table}{20}
+\setcounter{figure}{26}
+\setcounter{table}{21}
 \setcounter{LT@tables}{0}
 \setcounter{LT@chunks}{0}
 \setcounter{theorem}{0}
