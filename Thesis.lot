@@ -26,9 +26,10 @@
 \contentsline {table}{\numberline {1.17}{\ignorespaces Bias quantification in binned FU.0430.15 input variable. Columns represents bins showing bias. The same quantification methods employed for categorical variables (z-score for mean and variance outlier detection) have been used.\relax }}{46}{table.caption.48}%
 \contentsline {table}{\numberline {1.18}{\ignorespaces Summary of binned input variables bias quantification after binning the numerical variables and performing one-way ANOVA and z-score tests to every bin.\relax }}{46}{table.caption.49}%
 \contentsline {table}{\numberline {1.19}{\ignorespaces Binnarization of the test set. The test set has been divided into ten bins according to output values. Extremes of the six intervals --one for each Reserve Factor-- defining the bins are shown below.\relax }}{51}{table.caption.52}%
-\contentsline {table}{\numberline {1.20}{\ignorespaces Output of \autoref {algo:tt-split}: \texttt {reqs\_results} table\relax }}{57}{table.caption.56}%
-\contentsline {table}{\numberline {1.21}{\ignorespaces Voxel reference table. Lorem ipsum dolor sit amet, consectetuer adisciping elit.\relax }}{58}{table.caption.57}%
+\contentsline {table}{\numberline {1.20}{\ignorespaces Global Uncertainty Model: Confidence Interval (mean and extremes) for output variables ''RF Forced Crippling'' (left) and ''RF Column Buckling'' (right). Header showing $[y_{min},y_{max}]$ in the calibration set.\relax }}{57}{table.caption.56}%
+\contentsline {table}{\numberline {1.21}{\ignorespaces Output of \autoref {algo:tt-split}: \texttt {reqs\_results} table\relax }}{59}{table.caption.57}%
+\contentsline {table}{\numberline {1.22}{\ignorespaces Voxel reference table. Lorem ipsum dolor sit amet, consectetuer adisciping elit.\relax }}{60}{table.caption.58}%
 \addvspace {10\p@ }
-\contentsline {xchapter}{Conclusions and research outlook.}{65}{chapter.2}%
+\contentsline {xchapter}{Conclusions and research outlook.}{67}{chapter.2}%
 \addvspace {10\p@ }
-\contentsline {xchapter}{Absolute and relative orbital element sets.}{67}{appendix.A}%
+\contentsline {xchapter}{Absolute and relative orbital element sets.}{69}{appendix.A}%

@@ -848,11 +848,64 @@ This section corresponds to box labelled ''$P(E|Y)$'' in \autoref{fig:boutpipeli
 \clearpage
 \mbox{}
 \clearpage
-\section{Uncertainty model estimation}\label{sec:uncertainty}
+\section{Uncertainty model}\label{sec:uncertainty}
+This section corresponds to box labelled ''Uncertainty model'' in \autoref{fig:pipeline}. It is envisioned with the following question in mind:
+\begin{quotation}
+	Given a new configuration with input parameters ${\bf X}=(X_1,X_2,\dots,X_m)$ and prediction ${\bf Y}=(Y_1,Y_2,\dots,Y_q)$, where ${\bf Y}=F({\bf X})$, what is the expected uncertainty (error) associated to the prediction $\bf Y$?
+\end{quotation}
+%
+To this aim, the main tasks are:
+\begin{itemize}
+	\item To build an \textbf{uncertainty model}.
+	\item To \textbf{validate} such model.\\
+\end{itemize}
+%
+\indent The expected uncertainty translates into (for instance) $q=6$ confidence intervals $(CI_{1},CI_{2},\dots,CI_{6})$, such that the $k$-th predicted reserve factor $Y_k$ has a confidence interval $CI_k=[Y_k^{min},Y_k^{max}]$. Other types of uncertainty quantifications are possible (standard deviation, credible interval, etc).\\
+%
+\indent Importantly, there are various sources of uncertainty that need to be combined:
+\begin{enumerate}
+	\item \textbf{Global error distribution} (cfr. \autoref{sec:disterr}). This is, the distribution of error in the test set, $P(E)$.\label{num:disterr}
+	\item \textbf{Local-output error distribution} (cfr. \autoref{sec:biasoutput}). This is, the distribution of the error in the test set, conditioned to a specific region of the prediction, $P(E|{\bf Y})$.\label{num:biasoutput}
+	\item \textbf{Local-input error distribution} (cfr. \autoref{sec:biasinput}). This is, the distribution of the error in the test set, conditioned to a specific region of the input space (error bias characterization), $P(E|{\bf X})$.\label{num:biasinput}\\
+\end{enumerate}
+%
+\indent Our uncertainty model will combine contributing factors (\ref{num:disterr}), (\ref{num:biasoutput}) and (\ref{num:biasinput}) into an effective uncertainty.\\
+%
+\indent Each part (\ref{num:disterr}-\ref{num:biasinput}) of the process will need to be \textbf{validated}. To this aim, we split the test set into a calibration and a test set (80/20 random split), estimate the uncertainty model on the calibration set and evaluate it by computing its \textbf{coverage} (\ie the percentage of configurations whose true output belongs to the confidence interval region) in the test set.\\
+\subsection{Global uncertainty model based on $P(E)$}
+After a sanity check that the dataset under analysis (here, the full calibration set) fulfils the minimum size requirements (threshold is set at 300 points for each output variable $\mathbf{Y}_i$) we proceed with:\\
+%
+\paragraph{\GMVred{A.} \myul[GMVred]{Global Uncertainty Model (GUM) computation}\\}
+The code estimates the $[P2.5, P97.5]$ (or in general, the interval $[a,b]$ if other percentiles are chosen) of $P(E)$ in the calibration set, where the lower bound P2.5 and the upper bound P97.5 are not raw estimates but the mean of a bootstrap analysis of the lower and upper percentiles respectively. The bootstrapping procedure is implemented such that
+\begin{enumerate}
+	\item A total of 100 resampled calibration sets are performed.
+	\item Each resampled calibration set is built by randomly sampling (with replacement) a total number of points equal to the size of the calibration set.
+	\item The lower and upper percentiles are computed in each resampled calibration set.
+	\item We extract the mean of the sequence of 100 lower and upper percentiles.
+\end{enumerate}
+%
+\begin{table}[!htb]
+	\caption{Global Uncertainty Model: Confidence Interval (mean and extremes) for output variables ''RF Forced Crippling'' (left) and ''RF Column Buckling'' (right). Header showing $[y_{min},y_{max}]$ in the calibration set.}
+	\centering
+	\begin{minipage}[t]{0.4\linewidth}
+		\raggedright
+		\includegraphics[scale=\tabscale]{Figures/uncertainty/gumtab1.png}
+		\label{fig:gumtab1}
+	\end{minipage}%\hfill
+	\begin{minipage}[t]{0.4\linewidth}
+		\raggedleft
+		\includegraphics[scale=\tabscale]{Figures/uncertainty/gumtab2.png}
+		\label{fig:gumtab2}
+	\end{minipage}
+\end{table}
 
 
 
 
+
+
+\clearpage
+\mbox{}
 \clearpage
 \begin{table}[htbp]
 %	\centering
