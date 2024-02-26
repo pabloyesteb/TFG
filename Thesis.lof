@@ -32,17 +32,21 @@
 \contentsline {figure}{\numberline {1.23}{\ignorespaces Line plot of the $p$-value from the true-predicted distributions under a 2 sample K-S test. Distribution similarity is rejected if $p\text {-value}<0.05$.\relax }}{52}{figure.caption.53}%
 \contentsline {figure}{\numberline {1.24}{\ignorespaces Violin plots showing the absolute value residue for every bin.\relax }}{53}{figure.caption.54}%
 \contentsline {figure}{\numberline {1.25}{\ignorespaces Sliced-bar with p-values from the binned error under a K-S test to assess the goodness of fit to several parametrised distributions.\relax }}{54}{figure.caption.55}%
-\contentsline {figure}{\numberline {1.26}{\ignorespaces Global Uncertainty Model: error coverage. The coverage is higher than 95\% for both output variables --for convenience just two output variables are depicted-- what means the calibration criteria is successfully met.\relax }}{59}{figure.caption.58}%
-\contentsline {figure}{\numberline {1.27}{\ignorespaces Local Uncertainty Model based on $P(E|\mathbf {Y})$: Scatter plot of the residue as a function of the predicted output $\hat {y}$, for output variables ''RF Pure Compression'' and ''RF Shear Panel Failure''.\relax }}{60}{figure.caption.59}%
-\contentsline {figure}{\numberline {1.28}{\ignorespaces Local Uncertainty Model based on $P(E|\mathbf {Y})$: Violin plots of the residue, for binned output variables ''RF Pure Compression'' and ''RF Shear Panel Failure''.\relax }}{60}{figure.caption.60}%
-\contentsline {figure}{\numberline {1.29}{\ignorespaces LOUM coverage in the validation set. For both output variables coverage is above the minimum 95\% threshold.\relax }}{62}{figure.caption.63}%
-\contentsline {figure}{\numberline {1.30}{\ignorespaces Covariance ellipsoid evolution along a radial hop.\relax }}{70}{figure.caption.72}%
+\contentsline {figure}{\numberline {1.26}{\ignorespaces Global Uncertainty Model: error coverage. The coverage is higher than 95\% for both output variables --for convenience just two output variables are depicted-- what means the calibration criteria is successfully met.\relax }}{59}{figure.caption.60}%
+\contentsline {figure}{\numberline {1.27}{\ignorespaces Local Uncertainty Model based on $P(E|\mathbf {Y})$: Scatter plot of the residue as a function of the predicted output $\hat {y}$, for output variables ''RF Pure Compression'' and ''RF Shear Panel Failure''.\relax }}{60}{figure.caption.61}%
+\contentsline {figure}{\numberline {1.28}{\ignorespaces Local Uncertainty Model based on $P(E|\mathbf {Y})$: Violin plots of the residue, for binned output variables ''RF Pure Compression'' and ''RF Shear Panel Failure''.\relax }}{60}{figure.caption.62}%
+\contentsline {figure}{\numberline {1.29}{\ignorespaces LOUM coverage in the validation set. For both output variables coverage is above the minimum 95\% threshold.\relax }}{62}{figure.caption.65}%
+\contentsline {figure}{\numberline {1.30}{\ignorespaces LIUM: Scatter plot of the residue of ''RF Forced Crippling'' as a function of the input $x$ (left: $x$ is ''FU.0410.16''. Right: $x$ is ''FU.0410.24'').\relax }}{63}{figure.caption.66}%
+\contentsline {figure}{\numberline {1.31}{\ignorespaces Violin plots showing the residue of output variable ''RF Forced Crippling''. (a): Numerical inputs (binned). (b) and (c): categorical inputs.\relax }}{64}{figure.caption.67}%
+\contentsline {figure}{\numberline {1.32}{\ignorespaces LIUM coverage on the evaluation set. Residue of the output variable ''RF Forced Crippling''. The grey area represents the uncertainty CI calculated by the LIUM for the corresponding bin.\relax }}{66}{figure.caption.70}%
+\contentsline {figure}{\numberline {1.33}{\ignorespaces Conceptual visualization of FUM as a conservative merge between GUM (whose bootstrap interval [P2.5,P97.5] is represented by the two straight horizontal lines), LOUM and LIUM (whose bootstrap intervals [P2.5,P97.5] are represented indistinctively by the red and blue curves).\relax }}{68}{figure.caption.71}%
+\contentsline {figure}{\numberline {1.34}{\ignorespaces Covariance ellipsoid evolution along a radial hop.\relax }}{76}{figure.caption.80}%
 \addvspace {10\p@ }
-\contentsline {xchapter}{Conclusions and research outlook.}{73}{chapter.2}%
+\contentsline {xchapter}{Conclusions and research outlook.}{79}{chapter.2}%
 \addvspace {10\p@ }
-\contentsline {xchapter}{Absolute and relative orbital element sets.}{75}{appendix.A}%
-\contentsline {figure}{\numberline {A.1}{\ignorespaces Workflow for transforming between two arbitary absolute element sets.\relax }}{76}{figure.caption.74}%
-\contentsline {figure}{\numberline {A.2}{\ignorespaces Frame rotation from inertial to perifocal frame.\relax }}{77}{figure.caption.76}%
-\contentsline {figure}{\numberline {A.3}{\ignorespaces Workflow for transforming any relative set into KOE.\relax }}{82}{figure.caption.86}%
-\contentsline {figure}{\numberline {A.4}{\ignorespaces Workflow for transforming RKOE into any other set.\relax }}{83}{figure.caption.88}%
-\contentsline {figure}{\numberline {A.5}{\ignorespaces Relative ccentricity \& inclination vectors. \relax }}{84}{figure.caption.91}%
+\contentsline {xchapter}{Absolute and relative orbital element sets.}{81}{appendix.A}%
+\contentsline {figure}{\numberline {A.1}{\ignorespaces Workflow for transforming between two arbitary absolute element sets.\relax }}{82}{figure.caption.82}%
+\contentsline {figure}{\numberline {A.2}{\ignorespaces Frame rotation from inertial to perifocal frame.\relax }}{83}{figure.caption.84}%
+\contentsline {figure}{\numberline {A.3}{\ignorespaces Workflow for transforming any relative set into KOE.\relax }}{88}{figure.caption.94}%
+\contentsline {figure}{\numberline {A.4}{\ignorespaces Workflow for transforming RKOE into any other set.\relax }}{89}{figure.caption.96}%
+\contentsline {figure}{\numberline {A.5}{\ignorespaces Relative ccentricity \& inclination vectors. \relax }}{90}{figure.caption.99}%
