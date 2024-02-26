@@ -27,9 +27,12 @@
 \contentsline {table}{\numberline {1.18}{\ignorespaces Summary of binned input variables bias quantification after binning the numerical variables and performing one-way ANOVA and z-score tests to every bin.\relax }}{46}{table.caption.49}%
 \contentsline {table}{\numberline {1.19}{\ignorespaces Binnarization of the test set. The test set has been divided into ten bins according to output values. Extremes of the six intervals --one for each Reserve Factor-- defining the bins are shown below.\relax }}{51}{table.caption.52}%
 \contentsline {table}{\numberline {1.20}{\ignorespaces Global Uncertainty Model: Confidence Interval (mean and extremes) for output variables ''RF Forced Crippling'' (left) and ''RF Column Buckling'' (right). Header showing $[y_{min},y_{max}]$ in the calibration set.\relax }}{57}{table.caption.56}%
-\contentsline {table}{\numberline {1.21}{\ignorespaces Output of \autoref {algo:tt-split}: \texttt {reqs\_results} table\relax }}{59}{table.caption.57}%
-\contentsline {table}{\numberline {1.22}{\ignorespaces Voxel reference table. Lorem ipsum dolor sit amet, consectetuer adisciping elit.\relax }}{60}{table.caption.58}%
+\contentsline {table}{\numberline {1.21}{\ignorespaces Global Uncertainty Model. The six confidence intervals (bootstrapped) defining the GUM alongside their coverage --in the calibration set-- are showed.\relax }}{58}{table.caption.57}%
+\contentsline {table}{\numberline {1.22}{\ignorespaces Local Output Uncertainty Model: Bootstrapped CIs for each of the ten bins into which the output variable ''RF Forced Crippling'' has been binned. The mean of each CI is also given, as well as $[\hat {y}_{min},\hat {y}_{max}]$ for every bin (in the first row).\relax }}{61}{table.caption.61}%
+\contentsline {table}{\numberline {1.23}{\ignorespaces LOUM coverage. Coverage in the validation set is displayed in the first row, whereas the coverage bootstrapped CIs are displayed in the second row.\relax }}{62}{table.caption.62}%
+\contentsline {table}{\numberline {1.24}{\ignorespaces Output of \autoref {algo:tt-split}: \texttt {reqs\_results} table\relax }}{64}{table.caption.64}%
+\contentsline {table}{\numberline {1.25}{\ignorespaces Voxel reference table. Lorem ipsum dolor sit amet, consectetuer adisciping elit.\relax }}{65}{table.caption.65}%
 \addvspace {10\p@ }
-\contentsline {xchapter}{Conclusions and research outlook.}{67}{chapter.2}%
+\contentsline {xchapter}{Conclusions and research outlook.}{73}{chapter.2}%
 \addvspace {10\p@ }
-\contentsline {xchapter}{Absolute and relative orbital element sets.}{69}{appendix.A}%
+\contentsline {xchapter}{Absolute and relative orbital element sets.}{75}{appendix.A}%

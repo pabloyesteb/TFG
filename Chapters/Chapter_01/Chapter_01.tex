@@ -872,16 +872,16 @@ To this aim, the main tasks are:
 \indent Our uncertainty model will combine contributing factors (\ref{num:disterr}), (\ref{num:biasoutput}) and (\ref{num:biasinput}) into an effective uncertainty.\\
 %
 \indent Each part (\ref{num:disterr}-\ref{num:biasinput}) of the process will need to be \textbf{validated}. To this aim, we split the test set into a calibration and a test set (80/20 random split), estimate the uncertainty model on the calibration set and evaluate it by computing its \textbf{coverage} (\ie the percentage of configurations whose true output belongs to the confidence interval region) in the test set.\\
-\subsection{Global uncertainty model based on $P(E)$}
+\subsection{Global uncertainty model based on $P(E)$}\label{subsec:GUM}
 After a sanity check that the dataset under analysis (here, the full calibration set) fulfils the minimum size requirements (threshold is set at 300 points for each output variable $\mathbf{Y}_i$) we proceed with:\\
 %
 \paragraph{\GMVred{A.} \myul[GMVred]{Global Uncertainty Model (GUM) computation}\\}
-The code estimates the $[P2.5, P97.5]$ (or in general, the interval $[a,b]$ if other percentiles are chosen) of $P(E)$ in the calibration set, where the lower bound P2.5 and the upper bound P97.5 are not raw estimates but the mean of a bootstrap analysis of the lower and upper percentiles respectively. The bootstrapping procedure is implemented such that
+The interval $[P2.5, P97.5]$ (or in general, the interval $[a,b]$ if other percentiles are chosen) of $P(E)$ is estimated in the calibration set, where the lower bound P2.5 and the upper bound P97.5 are not raw estimates but the mean of a bootstrap analysis of the lower and upper percentiles respectively. The bootstrapping procedure is implemented such that
 \begin{enumerate}
 	\item A total of 100 resampled calibration sets are performed.
 	\item Each resampled calibration set is built by randomly sampling (with replacement) a total number of points equal to the size of the calibration set.
 	\item The lower and upper percentiles are computed in each resampled calibration set.
-	\item We extract the mean of the sequence of 100 lower and upper percentiles.
+	\item We extract the mean of the sequence of 100 lower and upper percentiles.\\
 \end{enumerate}
 %
 \begin{table}[!htb]
@@ -899,8 +899,81 @@ The code estimates the $[P2.5, P97.5]$ (or in general, the interval $[a,b]$ if o
 	\end{minipage}
 \end{table}
 
+\paragraph{\GMVred{B.} \myul[GMVred]{Global Uncertainty Model (GUM) evaluation}\\}
+The (bootstrapped) error coverage is estimated in the test set. This is done by computing the percentage of points in the test set whose error lies inside the chose uncertainty model. The code performs a bootstrap procedure by:
+\begin{enumerate}
+	\item Building a total of 100 resampled test sets, where:
+	\item Each resampled test set is built by randomly sampling (with replacement) a total number of points equal to the size of the test set.
+	\item The error coverage is computed in each resampled test set.
+	\item We sort in increasing order the sequence of 100 error coverages.
+	\item We extract the mean of this sequence and the 2.5 and 97.5 percentiles (which represent the 95\% confidence interval of the bootstrap error coverage).\\
+\end{enumerate}
+%
+\indent The output is the bootstrap error coverage and its 95\% confidence interval. The criteria for a correctly calibrated error coverage is that it is correctly calibrated if (b-a)\% (by default, 95\%) lies inside the bootstrapped error coverage confidence interval. For a graphical interpretation of results, cfr. \autoref{fig:coverage1}. The six GUM's CIs are given in  \autoref{tab:coverage1}.\\
+%
+\begin{table}[!htb]
+	\centering
+	\caption{Global Uncertainty Model. The six confidence intervals (bootstrapped) defining the GUM alongside their coverage --in the calibration set-- are showed.}
+	\includegraphics[scale=\tabscale]{Figures/uncertainty/coveragetab1.png}
+	\label{tab:coverage1}
+\end{table}
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=\textwidth]{Figures/uncertainty/coverage1.png}
+	\caption{Global Uncertainty Model: error coverage. The coverage is higher than 95\% for both output variables --for convenience just two output variables are depicted-- what means the calibration criteria is successfully met.}
+	\label{fig:coverage1}
+\end{figure}
 
+\FloatBarrier
+\subsection{Local uncertainty model based on $P(E|\mathbf{Y})$}
+\paragraph{\GMVred{A.} \myul[GMVred]{Output variable binning}\\}
+In order to be able to computationally afford this analysis, the output space $\mathbf{Y}$ must be binned.\\
+\indent In the first place, a scatter plot of the error of each point in the calibration set is plotted for illustration as a function of the true output $y_t$ in \autoref{fig:scatter1}.\\
+\indent The calibration set is then partitioned into a total of equispaced $n_{bins}$ bins according to the range of the true output $y_t$.\\
+\indent For illustration, a total of $n_{bins}$ violin plots (one per bin, concatenated in a single plot where the "x axis" is the bin number) is plotted in \autoref{fig:violins1}, where each violin plot describes the error density of the points in the respective bin.\\
+%
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=\textwidth]{Figures/uncertainty/scatter1.png}
+	\caption{Local Uncertainty Model based on $P(E|\mathbf{Y})$: Scatter plot of the residue as a function of the predicted output $\hat{y}$, for output variables ''RF Pure Compression'' and ''RF Shear Panel Failure''.}
+	\label{fig:scatter1}
+\end{figure}
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=\textwidth]{Figures/uncertainty/violines1.png}
+	\caption{Local Uncertainty Model based on $P(E|\mathbf{Y})$: Violin plots of the residue, for binned output variables ''RF Pure Compression'' and ''RF Shear Panel Failure''.}
+	\label{fig:violins1}
+\end{figure}
 
+\paragraph{\GMVred{B.} \myul[GMVred]{Local Output Uncertainty Model (LOUM) computation}\\}
+First, a sanity check that the number of points in each bin is above a certain threshold (namely, 300 points) assures statistical robustness for this next part.\\
+\indent For those bins for which the minimum-size requirement is not met, the bin is given the Global Uncertainty Model (GUM).\\
+\indent For those bins for which the minimum-size requirement is met, the code computes an uncertainty model in terms of the bootstrap [P2.5, P97.5] (or a general [a,b]) as in \autoref{subsec:GUM}, and assigns to the bin the resulting local uncertainty model (vid. \autoref{tab:loumtab1}).\\
+%
+\begin{sidewaystable}
+	\centering
+	\caption{Local Output Uncertainty Model: Bootstrapped CIs for each of the ten bins into which the output variable ''RF Forced Crippling'' has been binned. The mean of each CI is also given, as well as $[\hat{y}_{min},\hat{y}_{max}]$ for every bin (in the first row).}
+	\includegraphics[scale=\tabscale]{/home/pablo/Documentos/TFGP/Thesis/Figures/uncertainty/loumtab1.png}
+	\label{tab:loumtab1}
+\end{sidewaystable}
+
+\paragraph{\GMVred{C.} \myul[GMVred]{Local Output Uncertainty Model (LOUM) evaluation}\\}
+The bootstrapped error coverage in the test set associated to the LOUM vector is computed in a similar way to \autoref{subsec:GUM}, with the nuance that for each point in the test set, we need to find, based on the point's error, to which bin of the output variable it belongs, and then check whether such error is within the corresponding bootstrapped interval [P2.5, P97.5].\\
+\indent The output is the bootstrap error coverage and its 95\% confidence interval. The criteria for a correctly calibrated error coverage is that it is correctly calibrated if (b-a)\% (by default, 95\%) lies inside the bootstrapped error coverage confidence interval.\\
+\indent A scatter plot of the error of each point in the calibration set is displayed in \autoref{fig:loum1}, along with the uncertainty model interval (the upper and lower percentiles emphasized in blue and red respectively). This LOUM shows up as a piece-wise constant upper curve and a piece-wise constant lower curve. LOUM coverage for all the six Reserve Factors can be found in \autoref{tab:loumtab2}.\\
+
+\begin{table}[!htb]
+	\centering
+	\caption{LOUM coverage. Coverage in the validation set is displayed in the first row, whereas the coverage bootstrapped CIs are displayed in the second row.}
+	\includegraphics[scale=\tabscale]{Figures/uncertainty/loumtab2.png}
+	\label{tab:loumtab2}
+\end{table}
+\begin{figure}
+	\centering
+	\includegraphics[width=\textwidth]{Figures/uncertainty/loumcoverage.png}
+	\caption{LOUM coverage in the validation set. For both output variables coverage is above the minimum 95\% threshold.}
+	\label{fig:loum1}
+\end{figure}
 
 
 

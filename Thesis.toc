@@ -39,33 +39,38 @@
 \contentsline {section}{\numberline {1.7}Uncertainty model}{56}{section.1.7}%
 \contentsline {subsection}{\numberline {1.7.1}Global uncertainty model based on $P(E)$}{57}{subsection.1.7.1}%
 \contentsline {paragraph}{\leavevmode {\color {GMVred}A.} \myul [GMVred]{Global Uncertainty Model (GUM) computation}\\}{57}{subsection.1.7.1}%
-\contentsline {section}{\numberline {1.8}Las movidas de Rodrigo}{61}{section.1.8}%
-\contentsline {subsection}{\numberline {1.8.1}Concept: System dynamics.}{61}{subsection.1.8.1}%
-\contentsline {subsection}{\numberline {1.8.2}Applications of STMs in celestial mechanics.}{63}{subsection.1.8.2}%
-\contentsline {paragraph}{\leavevmode {\color {GMVred}A.} \myul [GMVred]{Precise Orbit Determination.}\\}{63}{subsection.1.8.2}%
-\contentsline {paragraph}{\leavevmode {\color {GMVred}B.} \myul [GMVred]{Guidance, Navigation and Control (GNC).} \\}{63}{subsection.1.8.2}%
-\contentsline {paragraph}{\leavevmode {\color {GMVred}C.} \myul [GMVred]{Orbit design.} \\}{63}{subsection.1.8.2}%
-\contentsline {paragraph}{\leavevmode {\color {GMVred}D.} \myul [GMVred]{Covariance matrix propagation.} \\}{64}{subsection.1.8.2}%
-\contentsline {chapter}{\numberline {2}Conclusions and research outlook.}{67}{chapter.2}%
-\contentsline {paragraph}{\indent Research outlook and future work. \\}{67}{chapter.2}%
-\contentsline {chapter}{\numberline {A}Absolute and relative orbital element sets.}{69}{appendix.A}%
-\contentsline {section}{\numberline {A.1}Introduction.}{69}{section.A.1}%
-\contentsline {section}{\numberline {A.2}Absolute element sets.}{70}{section.A.2}%
-\contentsline {subsection}{\numberline {A.2.1}Workflow for transformations between absolute element sets.}{70}{subsection.A.2.1}%
-\contentsline {subsection}{\numberline {A.2.2}Element sets.}{70}{subsection.A.2.2}%
-\contentsline {subsubsection}{\numberline {A.2.2.1}Keplerian orbital elements (KOE).}{70}{subsubsection.A.2.2.1}%
-\contentsline {subsubsection}{\numberline {A.2.2.2}Eccentricity/inclination vectors orbital elements (EIOE).}{72}{subsubsection.A.2.2.2}%
-\contentsline {paragraph}{\leavevmode {\color {GMVred}I.}\myul [GMVred]{Eccentricity vector.}\\}{72}{subsubsection.A.2.2.2}%
-\contentsline {paragraph}{\leavevmode {\color {GMVred}II.} \myul [GMVred]{Inclination vector.}\\}{72}{AMS.70}%
-\contentsline {paragraph}{\leavevmode {\color {GMVred}III.}\myul [GMVred]{Element set.}\\}{72}{AMS.70}%
-\contentsline {subsubsection}{\numberline {A.2.2.3}Quasi-nonsingular orbital elements (QNSOE).}{73}{subsubsection.A.2.2.3}%
-\contentsline {subsubsection}{\numberline {A.2.2.4}Equinoctial orbital elements (EOE).}{73}{subsubsection.A.2.2.4}%
-\contentsline {subsubsection}{\numberline {A.2.2.5}Delaunay orbital elements (DOE).}{74}{subsubsection.A.2.2.5}%
-\contentsline {section}{\numberline {A.3}Relative sets.}{74}{section.A.3}%
-\contentsline {subsection}{\numberline {A.3.1}Workflow for transformations between ROEs. }{75}{subsection.A.3.1}%
-\contentsline {paragraph}{\leavevmode {\color {GMVred}A)} From any ROE set to RKOE\\}{75}{subsection.A.3.1}%
-\contentsline {paragraph}{\leavevmode {\color {GMVred}B)} From RKOE to any ROE set\\}{76}{figure.caption.79}%
-\contentsline {subsection}{\numberline {A.3.2}Element sets.}{77}{subsection.A.3.2}%
-\contentsline {subsubsection}{\numberline {A.3.2.1}Relative eccentricity/inclination vectors orbital elements (REIOE).}{78}{subsubsection.A.3.2.1}%
-\contentsline {paragraph}{Concept \& meaning\\}{78}{figure.caption.84}%
-\contentsline {subsubsection}{\numberline {A.3.2.2}C set of relative orbital elements (CROE).}{80}{subsubsection.A.3.2.2}%
+\contentsline {paragraph}{\leavevmode {\color {GMVred}B.} \myul [GMVred]{Global Uncertainty Model (GUM) evaluation}\\}{57}{table.caption.56}%
+\contentsline {subsection}{\numberline {1.7.2}Local uncertainty model based on $P(E|\mathbf {Y})$}{59}{subsection.1.7.2}%
+\contentsline {paragraph}{\leavevmode {\color {GMVred}A.} \myul [GMVred]{Output variable binning}\\}{59}{subsection.1.7.2}%
+\contentsline {paragraph}{\leavevmode {\color {GMVred}B.} \myul [GMVred]{Local Output Uncertainty Model (LOUM) computation}\\}{59}{figure.caption.60}%
+\contentsline {paragraph}{\leavevmode {\color {GMVred}C.} \myul [GMVred]{Local Output Uncertainty Model (LOUM) evaluation}\\}{60}{table.caption.61}%
+\contentsline {section}{\numberline {1.8}Las movidas de Rodrigo}{66}{section.1.8}%
+\contentsline {subsection}{\numberline {1.8.1}Concept: System dynamics.}{66}{subsection.1.8.1}%
+\contentsline {subsection}{\numberline {1.8.2}Applications of STMs in celestial mechanics.}{68}{subsection.1.8.2}%
+\contentsline {paragraph}{\leavevmode {\color {GMVred}A.} \myul [GMVred]{Precise Orbit Determination.}\\}{68}{subsection.1.8.2}%
+\contentsline {paragraph}{\leavevmode {\color {GMVred}B.} \myul [GMVred]{Guidance, Navigation and Control (GNC).} \\}{68}{subsection.1.8.2}%
+\contentsline {paragraph}{\leavevmode {\color {GMVred}C.} \myul [GMVred]{Orbit design.} \\}{68}{subsection.1.8.2}%
+\contentsline {paragraph}{\leavevmode {\color {GMVred}D.} \myul [GMVred]{Covariance matrix propagation.} \\}{69}{subsection.1.8.2}%
+\contentsline {chapter}{\numberline {2}Conclusions and research outlook.}{73}{chapter.2}%
+\contentsline {paragraph}{\indent Research outlook and future work. \\}{73}{chapter.2}%
+\contentsline {chapter}{\numberline {A}Absolute and relative orbital element sets.}{75}{appendix.A}%
+\contentsline {section}{\numberline {A.1}Introduction.}{75}{section.A.1}%
+\contentsline {section}{\numberline {A.2}Absolute element sets.}{76}{section.A.2}%
+\contentsline {subsection}{\numberline {A.2.1}Workflow for transformations between absolute element sets.}{76}{subsection.A.2.1}%
+\contentsline {subsection}{\numberline {A.2.2}Element sets.}{76}{subsection.A.2.2}%
+\contentsline {subsubsection}{\numberline {A.2.2.1}Keplerian orbital elements (KOE).}{76}{subsubsection.A.2.2.1}%
+\contentsline {subsubsection}{\numberline {A.2.2.2}Eccentricity/inclination vectors orbital elements (EIOE).}{78}{subsubsection.A.2.2.2}%
+\contentsline {paragraph}{\leavevmode {\color {GMVred}I.}\myul [GMVred]{Eccentricity vector.}\\}{78}{subsubsection.A.2.2.2}%
+\contentsline {paragraph}{\leavevmode {\color {GMVred}II.} \myul [GMVred]{Inclination vector.}\\}{78}{AMS.77}%
+\contentsline {paragraph}{\leavevmode {\color {GMVred}III.}\myul [GMVred]{Element set.}\\}{78}{AMS.77}%
+\contentsline {subsubsection}{\numberline {A.2.2.3}Quasi-nonsingular orbital elements (QNSOE).}{79}{subsubsection.A.2.2.3}%
+\contentsline {subsubsection}{\numberline {A.2.2.4}Equinoctial orbital elements (EOE).}{79}{subsubsection.A.2.2.4}%
+\contentsline {subsubsection}{\numberline {A.2.2.5}Delaunay orbital elements (DOE).}{80}{subsubsection.A.2.2.5}%
+\contentsline {section}{\numberline {A.3}Relative sets.}{80}{section.A.3}%
+\contentsline {subsection}{\numberline {A.3.1}Workflow for transformations between ROEs. }{81}{subsection.A.3.1}%
+\contentsline {paragraph}{\leavevmode {\color {GMVred}A)} From any ROE set to RKOE\\}{81}{subsection.A.3.1}%
+\contentsline {paragraph}{\leavevmode {\color {GMVred}B)} From RKOE to any ROE set\\}{82}{figure.caption.86}%
+\contentsline {subsection}{\numberline {A.3.2}Element sets.}{83}{subsection.A.3.2}%
+\contentsline {subsubsection}{\numberline {A.3.2.1}Relative eccentricity/inclination vectors orbital elements (REIOE).}{84}{subsubsection.A.3.2.1}%
+\contentsline {paragraph}{Concept \& meaning\\}{84}{figure.caption.91}%
+\contentsline {subsubsection}{\numberline {A.3.2.2}C set of relative orbital elements (CROE).}{86}{subsubsection.A.3.2.2}%
