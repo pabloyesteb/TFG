@@ -1,25 +1,30 @@
-\chapter{General concepts on supervised learning for industrial applications}
+\chapter{General concepts on supervised learning for industrial applications}\label{chap:3}
 In the dynamic landscape of industrial applications, the integration of supervised learning techniques has emerged as a pivotal force in addressing complex challenges, particularly within the aerospace industry. This chapter delves into the foundational concepts of industrial-oriented supervised learning, focusing on its profound implications for solving regression problems inherent in various aerospace endeavors. From optimizing fuel consumption\cite{hong2018data} to enhancing structural integrity\cite{pfingstl2023warped}, numerous industrial dilemmas can be effectively framed as regression tasks, where supervised learning algorithms offer unparalleled potential for both solvability and computational efficiency. Within the realm of industry-oriented supervised learning, understanding the mathematical background of these methodologies lays the groundwork for harnessing their transformative impact on real-world industrial challenges, particularly within aerospace domains.\\
 %
+\subsection{Mathematical description of ANNs}
 \indent Mathematically, the problems we refer to in this chapter consist of finding the explicit shape of a function
 \begin{equation}\label{eq:F}
 	\cal{F}:S_{\mathbf{X}}\rightarrow S_{\mathbf{Y}}
 \end{equation}
 with $S_{\mathbf{X}}\subset\mathbb{R}^n$ and $S_{\mathbf{Y}}\subset\mathbb{R}^m$; \ie the function $\cal{F}$ takes as input a vector $\mathbf{X}=\{x_1,x_2,\ldots,x_n\}$, and outputs a vector $\mathbf{Y}=\{y_1,y_2,\ldots,y_m\}$. The input vector could represent, for instance, a collection of loads applied to some part of the fuselage structure of an aeroplane, whereas the output vector may represent the probability of failure of that structure under the loads contained in $\mathbf{X}$. The problem at hand would therefore be finding the function $\cal{F}$ which maps load configurations to failure probabilities. By categorizing the task of finding such function $\cal{F}$ as a ''regression problem'', we mean usually $n>>m$. When speaking about regression problems, the input vector $\mathbf{X}$ is usually called the ''feature vector'', while the output vector $\mathbf{Y}$ is usually called --in a descriptive way-- the ''prediction vector''. Similarly, $n$ is called the ''feature'' or the ''input'' dimension, and $m$ is called the ''output'' or the ''prediction'' dimension. Note that finding the explicit shape of $\cal{F}$ might be a difficult task when $\cal{F}$ is a strongly non-linear function, especially if $n>>1$.\\
 %
-\indent Although regression problems can be tackled by several means, in this work we will focus on artificial neural networks or ANNs\cite{Marsland2015Machine}. From this approach, the starting point is a parametrized function with which we shall approximate $\mathcal{F}$, so that we have:
+\indent Although regression problems can be tackled by several means, in this work we will focus on artificial neural networks or ANNs\cite{Marsland2015Machine}\footnote{When using an ANN to solve a regression problem, we shall refer to it (the ANN) as a surrogate model as well}. From this approach, the starting point is a parametrized function with which we shall approximate $\mathcal{F}$, so that we have:
 
 \begin{align}
 	& \hat{\mathcal{F}} : S_{\mathbf{X}} \rightarrow S_{\mathbf{\hat{Y}}} \\
 	& \hat{\mathcal{F}}(\mathbf{X}; W) = \mathbf{\hat{Y}} \label{eq:Fhat}
 \end{align}
 
-Where $W$ is the set of parameters defining the explicit shape of $\mathcal{\hat{F}}$. In this equation, the hat on top of $\mathcal{\hat{F}}$ and $\mathbf{\hat{Y}}$ accounts for the difference between our parametrized function and the real function we are trying to find, the one from \autoref{eq:F}. The approach now is to define a distance $\mathcal{L}=\|\mathcal{F}-\mathcal{\hat{F}}\|$ and treat the regression problem as the task of minimizing $\mathcal{L}$:
+Where $W$ is the set of parameters defining the explicit shape of $\mathcal{\hat{F}}$. In this equation, the hat on top of $\mathcal{\hat{F}}$ and $\mathbf{\hat{Y}}$ accounts for the difference between our parametrized function and the real function we are trying to find, the one from \cref{eq:F}.\\
+%
+\indent We shall denote $\mathcal{\hat{F}}$'s dependence on $W$ with a subscript: $\mathcal{\hat{F}}_W$. Mathematically, the explicit shape of $\mathcal{\hat{F}}_W$ can adopt a wide variety of expressions. Perhaps the most common architecture is the so-called Multi Layer Perceptron (MLP)\cite{Marsland2015Machine}, which basically consists of a series of iterative affine transformations, the first of which is applied to the elements of $\mathbf{X}$ (defined by the parameters $W$) and non-linear functions (the rectified linear unit function or ReLU, the sigmoid function and the hyperbolic tangent being the most widely used) applied to each iteration's result.\\
+%
+\indent The approach now is to define a distance $\mathcal{L}=\|\mathcal{F}-\mathcal{\hat{F}}\|$ and treat the regression problem as the task of minimizing $\mathcal{L}$:
 \begin{equation}\label{eq:Fargmin}
 	\mathcal{\hat{F}}^*=argmin(\mathcal{L})
 \end{equation}\\
 %
-\indent From a practical point of view, the information available for defining $\mathcal{L}$ consists of a (large\footnote{By large, we mean $\left|\text{Full}\right|>>n$ (cfr. \autoref{eq:full}).}) set of duplets $(\mathbf{X},\mathbf{Y})$\footnote{N.B. the lack of hat here, meaning data has been sampled from the domain and codomain of $\mathcal{F}$,$S_\mathbf{X}$ and $S_\mathbf{Y}$, respectively.} representing empirical samples from the feature and the prediction space coming from experimental data, simulations, or any other source. Such set is called Full:
+\indent From a practical point of view, the information available for defining $\mathcal{L}$ consists of a (large\footnote{By large, we mean $\left|\text{Full}\right|>>n$ (cfr. \cref{eq:full}).}) set of duplets $(\mathbf{X},\mathbf{Y})$\footnote{N.B. the lack of hat here, meaning data has been sampled from the domain and codomain of $\mathcal{F}$,$S_\mathbf{X}$ and $S_\mathbf{Y}$, respectively.} representing empirical samples from the feature and the prediction space coming from experimental data, simulations, or any other source. Such set is called Full:
 \begin{equation}\label{eq:full}
 	\text{Full}=\{\mathbf{X}_i,\mathbf{Y}_i\}_{i=1}^N
 \end{equation}
@@ -43,33 +48,115 @@ and
 \begin{equation}\label{eq:regularization}
 	R(W) = \|W\|
 \end{equation}
-for any defined norm $\|\cdot\|$. In \autoref{eq:loss}, $\lambda$ is just an arbitrary scaling factor. For the explicit dependence of $E$ on $W$, recall \autoref{eq:Fhat}\footnote{N.B. $S^\text{Test}_{\mathbf{\hat{Y}}}$ is not available beforehand; it is generated by applying $\mathcal{\hat{F}}_W$ to $S^\text{Test}_{\mathbf{X}}$.}.\\
+for any defined norm $\|\cdot\|$. In \cref{eq:loss}, $\lambda$ is just an arbitrary scaling factor. For the explicit dependence of $E$ on $W$, recall \cref{eq:Fhat}\footnote{N.B. $S^\text{Test}_{\mathbf{\hat{Y}}}$ is not available beforehand; it is generated by applying $\mathcal{\hat{F}}_W$ to $S^\text{Test}_{\mathbf{X}}$.}.\\
 %
-\indent $\mathcal{L}$ is called the ''loss function''. We can see from \autoref{eq:loss} that it combines the effect of two terms: the error term (\autoref{eq:error}) accounts for the mismatch between actual data in $\mathcal{F}$'s codomain and our parametrized function's predictions, whereas the regularization term (\autoref{eq:regularization}) imposes a restriction on the set $W$ (which is done mainly for numerical stability reasons). The exact definition of $E(W)$ and $R(W)$ is an arbitrary choice. Common used error functions are:
+\indent $\mathcal{L}$ is called the ''loss function''. We can see from \cref{eq:loss} that it combines the effect of two terms: the error term (\cref{eq:error}) accounts for the mismatch between actual data in $\mathcal{F}$'s codomain and our parametrized function's predictions, whereas the regularization term (\cref{eq:regularization}) imposes a restriction on the set $W$ (which is done mainly for numerical stability reasons). The exact definition of $E(W)$ and $R(W)$ is an arbitrary choice. Common used error functions are:
 \begin{itemize}
 	\item The Mean Square Error (MSE):
-	\begin{equation}
+	\begin{equation}\label{eq:mse}
 		E(W) = \frac{1}{N_{\text{Train}}} \sum_{i=1}^{N_{\text{Train}}} (\mathbf{Y}_i - \mathbf{\hat{Y}}_i)^2
 	\end{equation}
 	\item The Mean Absolute Error (MAE):
-	\begin{equation}
+	\begin{equation}\label{eq:mae}
 		E(W) = \frac{1}{N_{\text{Train}}} \sum_{i=1}^{N_{\text{Train}}} \left|\mathbf{Y}_i - \mathbf{\hat{Y}}_i\right|
 	\end{equation}
 \end{itemize}
 
 For the regularization term, a common choice is the $L_2$ norm.\\
 %
-\indent Let us rewrite now the optimization problem defined in \autoref{eq:Fargmin} the following way:
+\indent Let us rewrite now the optimization problem defined in \cref{eq:Fargmin} the following way:
 \begin{equation}
 	W^* = argmin\{L(W))\}
 \end{equation}
 
 The algorithm commonly used to find $W^*$ is gradient descent:
-\begin{equation}
+\begin{equation}\label{eq:train}
 	W(k+1)=W(k)-\eta\nabla_W\mathcal{L}(W)
 \end{equation}
 
 Where, again, $\eta$ is an arbitrarily defined scaling factor which receives the name of ''learning rate''.\\
 %
-\indent A plethora of different algorithms have been tried for ANN training, but the majority of them shares the basic concept with gradient descent. Amongst common techniques, descending learning rates and stochastic gradient descent are perhaps the most widely used. Cfr. \cite{Marsland2015Machine} for further details on training algorithms.
+\indent A plethora of different algorithms have been tried for ANN training, but the majority of them shares the basic concept with gradient descent. Amongst common techniques, descending learning rates and stochastic gradient descent are perhaps the most widely used. Descending learning rate just means $\lambda$ decreases as successive loops of \cref{eq:train} are completed. Stochastic gradient descent (Cfr. \cite{Marsland2015Machine} for further details) applies the loss function, \cref{eq:loss} is applied to a batch randomly sampled from $S^\text{Train}$ instead of the whole set.
+%
+\subsection{Overfitting. Bias-variance tradeoff}
+\indent An important phenomenon to care about during training of ANNs is \textbf{overfitting}. When aiming to solve any regression problem with ANNs, one must decide on the architecture (by architecture we mean the explicit definition of $\mathcal{\hat{F}}_W$). One important aspect is the size of the set $W$. Intuitively, one can think of the function $\mathcal{\hat{F}}_W$ as a polynomial (although it might be well different to any polynomial) and think of the degree that polinomial would need to have. By training we aim to find the minimum of $\mathcal{L}$ defined as in \cref{eq:mse}. The minimum of this function 
+%
+\indent When training an ANN, it is crucial to be careful about a phenomenon called \textbf{overfitting}. 
+
+\subsection{Applicability}
+A concept which will be later used in \autoref{chap:3} is the applicability region of a surrogate model.\\
+\indent The applicability region can be intuitively defined as the set of the input and output values for which the model's prediction can be trusted. Applicability region is a refined idea of the \textit{Operational Design Domain} of a model.\\
+\indent For a model $F$ to be applicable to a certain new point $x$:
+\begin{itemize}
+	\item $x$ needs to be inside the \textit{input} applicability region of $F$.
+	\item The prediction $Y=F(x)$ needs to be inside the \textit{output} applicability region of $F$.\\
+\end{itemize}
+%
+\indent Knowing whether a new point is either inside or outside applicability is a binary decision problem which can be addressed \textit{a priori} (filtering) or be learned \textit{a posteriori} (model boosting). In other words, the binary classification can be addressed from an unsupervised (geometric) learning approach, or a supervised learning approach:
+\paragraph{\GMVred{A.} \myul[GMVred]{Supervised applicability classifyers}\\}
+Supervised applicability classifiers are based on exogenous criteria. Examples of them include:
+\begin{itemize}
+	\item \textbf{Operational design domains.} Based on engineer/scientist expertise, only certain combinations and range of features make physical sense. These combinations are used to define a (geometrical) applicability region.
+	\item \textbf{Error-filtered convex hull.} Initially the whole set under testing is in applicability range. After filtering those test cases whose prediction error exceeds a tolerance, the applicability region is defined as the convex hull of the remaining subset. The convex hull can be simply defined as the smallest convex set containing the data\cite{Preparata1985} (vid. \cref{fig:policonex}).
+	\item \textbf{Error-labelled classifiers.} Initially a whole subset of the dataset (namely, the test set) is in applicability range. After labelling those test cases whose prediction error exceeds a tolerance as outside applicability, different binary classifiers are trained on the full dataset.\\
+\end{itemize}
+
+\paragraph{\GMVred{B.} \myul[GMVred]{Unsupervised applicability classifyers}\\}
+On the other hand, geometrical applicability classifiers are based on the premise of NN interpolation capabilities. It has been widely discussed (see \eg \cite{pmlr-v80-barrett18a,DBLP:journals/corr/abs-1711-00350,DBLP:journals/corr/abs-1904-01557}) that NN's performance relies on their interpolation capabilities, and that no extrapolation capabilities outside their applicability region should be assumed.\\
+%
+\indent Subsequently, from a geometrical approach to the applicability classification problem, we shall define the input applicability region as the geometrical region in the input space where the model is known to work in interpolating regime.\\
+%
+\indent There are plenty of definitions for the interpolating region of a given dataset. Some authors define it as the smallest hypercube enclosing the data\cite{ebert2014interpolation} (vid. \cref{fig:hipercuboex}) although this may seriously challenge interpolation due to isolated points falling into the interpolation region under this definition. Many authors (see v. gr. \cite{loh2007extrapolation,4505337}) define the interpolation region as the \textit{convex hull} of the training data, \ie:
+
+\begin{definition}\cite{balestriero2021learning}\label{def:interpolacion}
+	Standard interpolation occurs for a sample $\mathbf{x}$ whenever this sample belongs to the convex hull of a set of samples $\mathbf{X}\triangleq \left\{\mathbf{x}_1,...,\mathbf{x}_N\right\}$.
+\end{definition}
+
+In the above definition, $\mathbf{X}$ is the training set which has been used for training the model.\\
+%
+\indent Recently, \cite{balestriero2021learning} have pointed out that, due to the so-called curse of dimensionality, extrapolation outside the training convex hull always ends up taking place if the input dimension is sufficiently large. The curse of dimensionality\cite[pp. 17-18]{Marsland2015Machine} can be illustrated by the fact that the unitary $n$-sphere's volume asymptotically diminishes to $0$ as $n$ increases. In the end, the effect is that, as the number of dimensions increase, more data is needed in order for the model to work in interpolating regime, as is showed by the following theorem:\\
+
+\begin{theorem}\cite{barany1988shape}\label{dparadoxa}
+	Given a $d$-dimensional dataset $\mathbf X \triangleq \left\{\mathbf{x}_1,...,\mathbf{x}_N\right\}$ with i.i.d. samples uniformly drawn from a hyperball, the probability that a new sample $\mathbf{x}$ is in interpolation regime (recall \cref{def:interpolacion}) has the following asymptotic behaviour:\\
+	
+	\begin{equation}
+		\lim_{d \to \infty}p(\mathbf{x}\in Hull(\mathbf{X}))=
+		\begin{cases}
+			1 \iff N>d^{-1}2^{\frac{d}{2}}\\
+			0 \iff N<d^{-1}2^{\frac{d}{2}}
+		\end{cases}	
+	\end{equation}
+\end{theorem}
+
+\indent The main answer to the argument of \cite{balestriero2021learning} is that interpolation does not occur in the ambient space, but in a latent, low-dimensional space of the input data\cite{bonnasse2022interpolation}. This leads to a new definition of interpolation alternative to \cref{def:interpolacion}.\\
+%
+\indent Interestingly, the authors in \cite{bonnasse2022interpolation} go beyond demonstrating that interpolation occurs (at least in a latent representation of the ambient space). They unveil two more crucial conditions for optimal model performance:
+%
+\begin{itemize}
+	\item The training and testing data should share the same cumulative distribution. In situations where this is impossible, matching the tail distribution becomes essential.
+	\item The testing points should not be isolated within the dataset. This means they should have similar characteristics to other data points and not represent extreme outliers that testing and training data follow the same cumulative distribution (or the same tail distribution whenever the former cannot be fulfilled) and that testing points be not isolated in the dataset.\\
+\end{itemize}
+%
+Examples of unsupervised applicability classifiers include:
+\begin{itemize}
+	\item \textbf{Input space range classifier.} The applicability region is defined as the boundary of the hypercube whose edges are the ranges $[min, max]$ of each input variable in the training set. In practice, this amounts to checking if each numerical feature $X_i$ of the test point lies inside the range spanned by the training subset.
+	\item \textbf{Input space convex hull classifier.} The applicability region is defined as the boundary of the convex hull of the training set.
+	\item \textbf{Input space isolated region detector.} Even if a point is inside the convex hull of the training set, it can be very far away from other points, thus interpolation can be challenged. Isolated region detectors address this by checking the statistical vicinity of train points and comparing it to the distance of a given test point to the closest training point.\\
+\end{itemize}
+
+\begin{figure}[!htb]
+	\begin{minipage}[t]{0.4\linewidth}
+		\raggedright
+		\includegraphics[width=\linewidth]{Figures/hipercubo.png}
+		\caption{Smallest cube enclosing a set of 20 randomly generated points in a 3-dimensional euclidean space.}
+		\label{fig:hipercuboex}
+	\end{minipage}\hfill
+	\begin{minipage}[t]{0.4\linewidth}
+		\raggedleft
+		\includegraphics[width=\linewidth]{Figures/policon.png}
+		\caption{Convex hull enclosing the set of \cref{fig:hipercuboex}. The convex hull's volume is always smaller than or equal to the volume of the hypercube.}
+		\label{fig:policonex}
+	\end{minipage}
+\end{figure}
+%
 

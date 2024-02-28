@@ -1,0 +1,5 @@
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {1.0.1}Mathematical description of ANNs}{\reset@font\mtcSSfont 1}{subsection.1.0.1}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {1.0.2}Overfitting. Bias-variance tradeoff}{\reset@font\mtcSSfont 4}{subsection.1.0.2}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {1.0.3}Applicability}{\reset@font\mtcSSfont 5}{subsection.1.0.3}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode \leavevmode {\color {GMVred}A.} \myul [GMVred]{Supervised applicability classifyers}\\}{\reset@font\mtcPfont 5}{subsection.1.0.3}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode \leavevmode {\color {GMVred}B.} \myul [GMVred]{Unsupervised applicability classifyers}\\}{\reset@font\mtcPfont 6}{subsection.1.0.3}}
