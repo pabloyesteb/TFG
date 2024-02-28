@@ -1,25 +1,19 @@
 [0] Config.pm:307> INFO - This is Biber 2.17
 [0] Config.pm:310> INFO - Logfile is 'Thesis.blg'
-[59] biber:340> INFO - === mié feb 28, 2024, 10:41:48
-[70] Biber.pm:418> INFO - Reading 'Thesis.bcf'
-[128] Biber.pm:972> INFO - Found 54 citekeys in bib section 0
-[139] Biber.pm:4383> INFO - Processing section 0
-[146] Biber.pm:4574> INFO - Looking for bibtex file 'Afterword/Bibliography/refs.bib' for section 0
-[150] bibtex.pm:1713> INFO - LaTeX decoding ...
-[234] bibtex.pm:1518> INFO - Found BibTeX data source 'Afterword/Bibliography/refs.bib'
-[492] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[492] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[492] Biber.pm:4203> INFO - Sorting list 'none/global//global/global' of type 'entry' with template 'none' and locale 'en-US'
-[492] Biber.pm:4209> INFO - No sort tailoring available for locale 'en-US'
-[516] bbl.pm:654> INFO - Writing 'Thesis.bbl' with encoding 'latin1'
-[542] bbl.pm:757> INFO - Output to Thesis.bbl
-[542] Biber.pm:130> WARN - legacy month field '10--15 Jul' in entry 'pmlr-v80-barrett18a' is not an integer - this will probably not sort properly.
-[542] Biber.pm:130> WARN - legacy month field 'Nov.' in entry 'Eckstein' is not an integer - this will probably not sort properly.
-[542] Biber.pm:130> WARN - BibTeX subsystem: /tmp/biber_tmp_nf1k/8fe4c9854184545302f21ebf0d47516c_7139.utf8, line 3, warning: 32 characters of junk seen at toplevel
-[542] Biber.pm:130> WARN - BibTeX subsystem: /tmp/biber_tmp_nf1k/8fe4c9854184545302f21ebf0d47516c_7139.utf8, line 478, warning: 17 characters of junk seen at toplevel
-[542] Biber.pm:130> WARN - BibTeX subsystem: /tmp/biber_tmp_nf1k/8fe4c9854184545302f21ebf0d47516c_7139.utf8, line 512, warning: 22 characters of junk seen at toplevel
-[542] Biber.pm:130> WARN - BibTeX subsystem: /tmp/biber_tmp_nf1k/8fe4c9854184545302f21ebf0d47516c_7139.utf8, line 611, warning: 13 characters of junk seen at toplevel
-[542] Biber.pm:130> WARN - BibTeX subsystem: /tmp/biber_tmp_nf1k/8fe4c9854184545302f21ebf0d47516c_7139.utf8, line 702, warning: 17 characters of junk seen at toplevel
-[542] Biber.pm:130> WARN - BibTeX subsystem: /tmp/biber_tmp_nf1k/8fe4c9854184545302f21ebf0d47516c_7139.utf8, line 864, warning: 10 characters of junk seen at toplevel
-[542] Biber.pm:130> WARN - BibTeX subsystem: /tmp/biber_tmp_nf1k/8fe4c9854184545302f21ebf0d47516c_7139.utf8, line 897, warning: 25 characters of junk seen at toplevel
-[542] Biber.pm:132> INFO - WARNINGS: 9
+[57] biber:340> INFO - === mié feb 28, 2024, 12:22:55
+[68] Biber.pm:418> INFO - Reading 'Thesis.bcf'
+[123] Biber.pm:972> INFO - Found 43 citekeys in bib section 0
+[133] Biber.pm:4383> INFO - Processing section 0
+[187] Biber.pm:4574> INFO - Looking for bibtex file 'Afterword/Bibliography/refs.bib' for section 0
+[190] bibtex.pm:1713> INFO - LaTeX decoding ...
+[228] bibtex.pm:1518> INFO - Found BibTeX data source 'Afterword/Bibliography/refs.bib'
+[436] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[436] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[436] Biber.pm:4203> INFO - Sorting list 'none/global//global/global' of type 'entry' with template 'none' and locale 'en-US'
+[436] Biber.pm:4209> INFO - No sort tailoring available for locale 'en-US'
+[456] bbl.pm:654> INFO - Writing 'Thesis.bbl' with encoding 'latin1'
+[475] bbl.pm:757> INFO - Output to Thesis.bbl
+[475] Biber.pm:130> WARN - legacy month field '10--15 Jul' in entry 'pmlr-v80-barrett18a' is not an integer - this will probably not sort properly.
+[476] Biber.pm:130> WARN - BibTeX subsystem: /tmp/biber_tmp_b091/8fe4c9854184545302f21ebf0d47516c_10982.utf8, line 3, warning: 32 characters of junk seen at toplevel
+[476] Biber.pm:130> WARN - I didn't find a database entry for 'Chao' (section 0)
+[476] Biber.pm:132> INFO - WARNINGS: 3

@@ -1,0 +1,1134 @@
+\chapter{The validation pipeline}
+%
+\label{chap:Chap_1}
+%
+%\indent This thesis is developed over a particular method of describing 
+%
+\section{Introduction2}
+\subsection{Case of study}
+\indent For illustration of the proposed validation loop, a case of study has been used alongside the theoretical rationale of the loop to generate explanatory figures and tables, demonstrating the loop's effectiveness in real operations.\\
+%
+\indent The case of study is an application of neural networks (NN) in aircraft stress engineering. For typical aircraft fuselage panel design, the dominant form of stiffened post buckling failure under shear loading is forced crippling\cite{bijlaard1955buckling}. This occurs when the shear buckles in the panel skin force the attached stiffener flanges to deform out-of-plane. There are other failure modes related to buckling, tension, and compression.\\
+%
+\indent The aim of the NN model is to predict Reserve Factors ($RF$) that quantify failure likelihood for regions of the aircraft subject to different loads happening in flight maneuvers (vid. \autoref{fig:diagrama_cajas}). The possible failure modes are Forced Crippling, Column Buckling, In Plane, Net Tension, Pure Compression, and Shear Panel Failure.\\
+%
+\indent Input data consists of 26 features (loads applied to a specific region of the aircraft and different maneuver specs). Output data consists of 6 reserve factors that quantify the stress failure likelihood ($RF_1$, $RF_2$, $RF_3$, $RF_4$, $RF_5$, and $RF_6$), where $RF_i\in [0,5]$,where $0$ means extreme risk and $5$ means risk extremely low (in a logarithmic scale).\\
+%
+\indent This study prioritizes assessing the efficacy of the developed validation tool, not optimizing the neural network model itself. Therefore, the specific architecture and additional features of the NN are intentionally treated as a black box. Our focus remains solely on its inputs --the 26 aforementioned features-- and its outputs --the 6 reserve factors representing 6 distinct failure modes--. This simplification allows us to isolate and evaluate the performance of the validation tool without introducing confounding variables related to the specific neural network design.\\
+%
+\begin{figure}
+	\centering
+	\begin{tikzpicture}
+		% Caja 1
+		\node[draw, minimum width=2cm, minimum height=3cm, font=\scriptsize] (box1) at (0,0) {
+			\begin{tabular}{c}
+				\textbf{INPUT $X$}\\
+				Loads + Geometry +\\
+				other specs\\
+				(quantitative + qualitative)
+			\end{tabular}
+		};
+		\node[below=0.1cm of box1] {$\mathbf{X}=(x_1,x_2,...,x_n)$};
+		
+		% Caja 2
+		\node[draw, minimum width=2cm, minimum height=3cm, right=0.5cm of box1, font=\scriptsize] (box2) {
+			\begin{tabular}{c}
+				\textbf{SURROGATE MODEL}\\
+				Stress learning model\\
+				trained by splitting cases into\\
+				train/test set and minimize loss\\
+				function (Deep Neural Network)
+			\end{tabular}
+		};
+		\node[below=0.1cm of box2] {$\cal{F}:\mathbf{X} \rightarrow \mathbf{Y}$};
+		
+		% Caja 3
+		\node[draw, minimum width=2cm, minimum height=3cm, right=0.5cm of box2, font=\scriptsize] (box3) {
+			\begin{tabular}{c}
+				\textbf{PREDICTION (OUTPUT) Y}\\
+				A set of Reserve Factors ($RF$)\\
+				which characterize the likelihood\\
+				of different failure modes.
+			\end{tabular}
+		};
+		\node[below=0.1cm of box3] {$\mathbf{Y}=(y_1,y_2,...,y_m)$};
+		
+		% Flechas
+		\draw[->, >=Stealth] (box1.east) -- (box2.west);
+		\draw[->, >=Stealth] (box2.east) -- (box3.west);
+	\end{tikzpicture}
+	\caption{Surrogate model pipeline}
+	\label{fig:diagrama_cajas}
+\end{figure}
+
+
+\subsection{Applicability}
+\indent The applicability region can be intuitively defined as the set of the input and output values for which the model's prediction can be trusted. Applicability region is a refined idea of the \textit{Operational Design Domain} of a model.\\
+\indent For a model $F$ to be applicable to a certain new point $x$:
+\begin{itemize}
+	\item $x$ needs to be inside the \textit{input} applicability region of $F$.
+	\item The prediction $Y=F(x)$ needs to be inside the \textit{output} applicability region of $F$.\\
+\end{itemize}
+%
+\indent Knowing whether a new point is either inside or outside applicability is a binary decision problem which can be addressed \textit{a priori} (filtering) or be learned \textit{a posteriori} (model boosting). In other words, the binary classification can be addressed from an unsupervised (geometric) learning approach, or a supervised learning approach:
+\paragraph{\GMVred{A.} \myul[GMVred]{Supervised applicability classifyers}\\}
+Supervised applicability classifiers are based on exogenous criteria. Examples of them include:
+\begin{itemize}
+	\item \textbf{Operational design domains.} Based on engineer/scientist expertise, only certain combinations and range of features make physical sense. These combinations are used to define a (geometrical) applicability region.
+	\item \textbf{Error-filtered convex hull.} Initially the whole set under testing is in applicability range. After filtering those test cases whose prediction error exceeds a tolerance, the applicability region is defined as the convex hull of the remaining subset. The convex hull can be simply defined as the smallest convex set containing the data\cite{Preparata1985} (vid. \autoref{fig:policonex}).
+	\item \textbf{Error-labelled classifiers.} Initially a whole subset of the dataset (namely, the test set) is in applicability range. After labelling those test cases whose prediction error exceeds a tolerance as outside applicability, different binary classifiers are trained on the full dataset.\\
+\end{itemize}
+
+\paragraph{\GMVred{B.} \myul[GMVred]{Unsupervised applicability classifyers}\\}
+On the other hand, geometrical applicability classifiers are based on the premise of NN interpolation capabilities. It has been widely discussed (see \eg \cite{pmlr-v80-barrett18a,DBLP:journals/corr/abs-1711-00350,DBLP:journals/corr/abs-1904-01557}) that NN's performance relies on their interpolation capabilities, and that no extrapolation capabilities outside their applicability region should be assumed.\\
+%
+\indent Subsequently, from a geometrical approach to the applicability classification problem, we shall define the input applicability region as the geometrical region in the input space where the model is known to work in interpolating regime.\\
+%
+\indent There are plenty of definitions for the interpolating region of a given dataset. Some authors define it as the smallest hypercube enclosing the data\cite{ebert2014interpolation} (vid. \autoref{fig:hipercuboex}) although this may seriously challenge interpolation due to isolated points falling into the interpolation region under this definition. Many authors (see v. gr. \cite{loh2007extrapolation,4505337}) define the interpolation region as the \textit{convex hull} of the training data, \ie:
+
+\begin{definition}\cite{balestriero2021learning}\label{def:interpolacion}
+	Standard interpolation occurs for a sample $\mathbf{x}$ whenever this sample belongs to the convex hull of a set of samples $\mathbf{X}\triangleq \left\{\mathbf{x}_1,...,\mathbf{x}_N\right\}$.
+\end{definition}
+
+In the above definition, $\mathbf{X}$ is the training set which has been used for training the model.\\
+%
+\indent Recently, \cite{balestriero2021learning} have pointed out that, due to the so-called curse of dimensionality, extrapolation outside the training convex hull always ends up taking place if the input dimension is sufficiently large. The curse of dimensionality\cite[pp. 17-18]{Marsland2015Machine} can be illustrated by the fact that the unitary $n$-sphere's volume asymptotically diminishes to $0$ as $n$ increases. In the end, the effect is that, as the number of dimensions increase, more data is needed in order for the model to work in interpolating regime, as is showed by the following theorem:\\
+
+\begin{theorem}\cite{barany1988shape}\label{dparadoxa}
+	Given a $d$-dimensional dataset $\mathbf X \triangleq \left\{\mathbf{x}_1,...,\mathbf{x}_N\right\}$ with i.i.d. samples uniformly drawn from a hyperball, the probability that a new sample $\mathbf{x}$ is in interpolation regime (recall \autoref{def:interpolacion}) has the following asymptotic behaviour:\\
+	
+	\begin{equation}
+		\lim_{d \to \infty}p(\mathbf{x}\in Hull(\mathbf{X}))=
+		\begin{cases}
+			1 \iff N>d^{-1}2^{\frac{d}{2}}\\
+			0 \iff N<d^{-1}2^{\frac{d}{2}}
+		\end{cases}	
+	\end{equation}
+\end{theorem}
+
+\indent The main answer to the argument of \cite{balestriero2021learning} is that interpolation does not occur in the ambient space, but in a latent, low-dimensional space of the input data\cite{bonnasse2022interpolation}. This leads to a new definition of interpolation alternative to \autoref{def:interpolacion}.\\
+%
+\indent Interestingly, the authors in \cite{bonnasse2022interpolation} go beyond demonstrating that interpolation occurs (at least in a latent representation of the ambient space). They unveil two more crucial conditions for optimal model performance:
+%
+\begin{itemize}
+	\item The training and testing data should share the same cumulative distribution. In situations where this is impossible, matching the tail distribution becomes essential.
+	\item The testing points should not be isolated within the dataset. This means they should have similar characteristics to other data points and not represent extreme outliers that testing and training data follow the same cumulative distribution (or the same tail distribution whenever the former cannot be fulfilled) and that testing points be not isolated in the dataset.\\
+\end{itemize}
+%
+Examples of unsupervised applicability classifiers include:
+\begin{itemize}
+	\item \textbf{Input space range classifier.} The applicability region is defined as the boundary of the hypercube whose edges are the ranges $[min, max]$ of each input variable in the training set. In practice, this amounts to checking if each numerical feature $X_i$ of the test point lies inside the range spanned by the training subset.
+	\item \textbf{Input space convex hull classifier.} The applicability region is defined as the boundary of the convex hull of the training set.
+	\item \textbf{Input space isolated region detector.} Even if a point is inside the convex hull of the training set, it can be very far away from other points, thus interpolation can be challenged. Isolated region detectors address this by checking the statistical vicinity of train points and comparing it to the distance of a given test point to the closest training point.\\
+\end{itemize}
+
+\begin{figure}[!htb]
+	\begin{minipage}[t]{0.4\linewidth}
+		\raggedright
+		\includegraphics[width=\linewidth]{Figures/hipercubo.png}
+		\caption{Smallest cube enclosing a set of 20 randomly generated points in a 3-dimensional euclidean space.}
+		\label{fig:hipercuboex}
+	\end{minipage}\hfill
+	\begin{minipage}[t]{0.4\linewidth}
+		\raggedleft
+		\includegraphics[width=\linewidth]{Figures/policon.png}
+		\caption{Convex hull enclosing the set of \autoref{fig:hipercuboex}. The convex hull's volume is always smaller than or equal to the volume of the hypercube.}
+		\label{fig:policonex}
+	\end{minipage}
+\end{figure}
+%
+\subsection{Overview}
+(Sin acentos) Recorrido sumario por las distintas partes del analisis estadistico (plantillas) centrandose en su funcion en vez de su funcionamiento tecnico. Explicacion de la arquitectura general de la validacion.\\
+%
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=0.8\textwidth]{/home/pablo/Documentos/TFGP/Thesis/Figures/pipeline.png}
+	\caption{Validation pipeline}
+	\label{fig:pipeline}
+\end{figure}
+%
+\clearpage
+\section{Train-test split}
+\subsection{Preliminaries}
+\begin{figure}[!b]
+	\centering
+	\includegraphics[width=0.8\textwidth]{/home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/tt_split_overview.png}
+	\caption{Location of the train-test split assessment in the overall validation pipeline}
+	\label{fig:esquemattsplit}
+\end{figure}
+\indent In supervised learning applications, the dataset is typically divided into the training and the testing sets. Keeping different sets for each task is fundamental in order to prevent model bias. Typical figures for the train-test split ratio are 80\%-20\%. When the model being trained is very large, a third dataset (the validation set) may be needed for comparing different hyperparameter configurations, in which case the split is typically done at 60\%-20\%-20\% for the train, test, and vaidation sets, resectively\cite[pp. 20-21]{Marsland2015Machine}.\\
+%
+\indent Training and evaluating the NN on the same dataset would result in the phenomenon called overfitting\cite[pp. 19-20]{Marsland2015Machine}, which basically consists of the NN fitting the noise in the training data and thus losing generalization capabilities.\\
+%
+\indent With the dataset split into the train, evaluation, and test sets, the standard training and validation loop is as follows: the model is trained to ''fit'' the data in the training set. After a certain amount of training, its performance is measured in the evaluation set. The test set is used to compare the performance of different hyperparameter configurations. Note that the NN is always evaluated with data not previously ''seen'' during training, and as such cannot develop any bias for the training set (although bias for the validation or test sets may exist).\\
+%
+\indent In the model validation loop, the first question that should be asked, even before training the model, is whether the dataset split is appropriate for training (vid \autoref{fig:esquemattsplit}).\\
+%
+\indent For our case of applicability (MSP18, explicar en otra seccion), we suppose we have a dataset which has been split into a training set
+$${\cal S}_{\text{train}}=\{({\bf X^{tr}},{\bf Y^{tr}})_i\}_{i=1}^{N_{training}}$$
+and a test set
+$${\cal S}_{\text{test}}=\{({\bf X^{te}},{\bf Y^{te}})_i\}_{i=1}^{N_{test}},$$
+where ${\bf X}=(X_1,X_2,\dots,X_m)$ is the vector of input variables (also called feature vector), $m$ is the dimensionality of the input parameter space, and ${\bf Y}=(Y_1,Y_2,\dots,Y_q)$ is the vector of output variables, with dimensionality $q$. Individual variables $X_k$ can be numerical or categorical. For instance, for stress problems such as MSP-S18, we have a combination of numerical  (\eg external loads) and categorical (eg discrete geometrical variables such as ''Frame'' or ''Stringer'', and purely categorical such as ''dp''). Individual variables $Y_k$ describe the prediction and these are typically numerical (for stress problems such as MSP-S18, $q=6$ and these are so-called reserve factors, quantifying the failure likelihood of different failure modes).\\
+%
+\indent The aim of this section is to propose a set of tests to evaluate to which extent splitting fulfils the necessary conditions for the subsequent surrogate model ${\bf {Y}}={F}({\bf X})$ to be appropriately trained on ${\cal S}_{\text{train}}$ and tested on ${\cal S}_{\text{test}}$. This basically means the latter be in the applicability region of a model trained on the former, in order for the training-validation loop of the model to be coherent.\\
+%
+\subsection{Validation loop for the train-test split}
+\subsubsection{Geometrical analysis}
+\indent To address the applicability classification problem, points in the test set extremely far away from the training set (effectively outside applicability) need to be detected. If found, that would mean the train-test split is incorrect.\\
+%
+\indent There is a wide range of criteria for classifying a point inside or outside applicability. The proposed validation loop makes such analysis following a hierarchical flow. For each point in the test set a decision is made based on where that test set point lies with respect to the training set.\\
+%
+\indent Because categorical variables are usually related to different physical conditions, the first step is to condition the analysis of each test point only with respect to the training subset of points whose categorical variables have exactly the same values than the test point under analysis. This conditioning on categorical variables defines, for each test point, a \textit{voxel}, \ie a region in the input space defined by the precise values of each categorical variable. At this point the first requirement comes into play: the number of training samples inside such voxel needs to be large enough (\eg larger than zero).\\
+%
+\indent Then, inside the voxel the ranges of each feature $X_i$ of the training subset are computed, and then the maximum ranges are checked and defined. Their cartesian product defines the voxel's hypercuboid volume associated to the numerical features. It is checked whether the test point is inside or outside the hypercube. In practice, this amounts to checking if each numerical feature $X_i$ of the test point lies inside the range spanned by the training subset. If all numerical features fall inside these ranges, the test set falls inside the training subset hypercuboid, otherwise, it falls outside. The points lying outside such hypercuboid are outside applicability and are flagged. The ''hypercube requirement'' is that such percentage of points outside applicability is zero, or very close to it.\\
+%
+\indent If the test point under analysis is found to be outside the hypercuboid, the analysis finishes and the loop moves to the next point. Otherwise, the second step is to check whether this point not only lies inside hypercuboid, but further, whether it also lies inside the convex hull spanned by the training subset in a PCA99\footnote{A truncated PCA\cite{hotelling1933analysis} projection in which the selected components explain at least 99\% of the whole variance of the data.} projection. This hull has a smaller volume than the hypercuboid. If the test point under analysis is found to be outside the convex hull in the PCA99 projection, the analysis finishes and the loop moves to the next point.\\
+% 
+\indent Otherwise, then the third step is to check whether this point (not only lies inside hypercuboid and $\text{CH}_\text{PCA99}$, but also) lies inside the convex hull spanned by the training subset in ambient space. The volume of this hull is typically smaller than the one of the PCA99 projection by virtue of the curse of dimensionality, and if the test point lies inside this hull, interpolating properties of the surrogate model will suggest that the model is not require to generalize outside the region where it cannot generalize.\\
+%
+The step of the PCA projection is motivated by the curse of dimensionality, which makes every test point be in extrapolating regime with respect to the training data when the convex hull of the raw, unprocessed training data is used in a high-dimensional input space, as pointed out by \cite{balestriero2021learning}. The work of \cite{bonnasse2022interpolation} effectively shows how in such cases, a low-dimensional space is more useful for applicability classification.\\
+%
+\indent Each step provides different level of evidence of whether the point under analysis was adequately located, where the best is that it lies inside the convex hull of the corresponding voxel in ambient space, and the worst is that it lies outside the hypercuboid.\\
+%
+\indent An additional check is to analyse whether p-hacking is happening, \ie whether the test set point is ''too close'' to an actual training point (or indeed equal to a training point), what would falsely induce low test error of the model. For this, we measure the distance of the test point to the closest point of the training subset. This information is later used to assess different aspects of potential p-hacking and its impact on the decision of train-test split correctness.\\
+%
+\indent The former procedure for classifying the applicability of test points is summarised in \autoref{algo:tt-split}.\\
+\begin{algorithm}
+	\caption{Train-test split geometrical analysis}
+	\label{algo:tt-split}
+	\KwData{${\cal S}_{\text{train}},{\cal S}_{\text{test}}$, voxel\_size\_req}
+	\KwResult{inside\_hypercube, inside\_PCA99, inside\_ambient, avg\_train\_dist, min\_test\_dist}
+	
+	Initialize empty lists: $\text{test\_voxels, train\_voxels}\leftarrow[]$\;
+	
+	Initialize boolean arrays: $\text{inside\_hypercube}, \text{inside\_PCA99}, \text{inside\_ambient} \leftarrow [\text{False}, \ldots, \text{False}]_{1\times \text{len}({\cal S}_{\text{test}})}$\;
+	
+	Initialize arrays for distances: $\text{avg\_train\_dist}, \text{min\_test\_dist} \leftarrow [\text{NaN}, \ldots, \text{NaN}]_{1 \times \text{len}({\cal S}_{\text{test}})}$\;
+	
+	\ForEach{$\mathbf{X}=(\mathbf{X_{\text{numerical}},X_{\text{categorical}}})$ in ${\cal S}_{\text{test}}$}{
+		Compute test\_voxel by imposing $\mathbf{X_{\text{categorical}}}$\;
+		Append test\_voxel to $\text{test\_voxels}$\;
+	}
+	
+	\ForEach{$\mathbf{X}=(\mathbf{X_{\text{numerical}},X_{\text{categorical}}})$ in ${\cal S}_{\text{train}}$}{
+		Compute train\_voxel by imposing $\mathbf{X_{\text{categorical}}}$\;
+		Append train\_voxel to $\text{train\_voxels}$\;
+	}
+	
+	$i\leftarrow 0$\;
+	
+	\ForEach{test\_voxel in $\text{test\_voxels}$}{
+		Get train\_voxel by imposing $\mathbf{X_{\text{categorical}}}$\;
+		Compute main nearest neighbour distance inside train\_voxel: $\overline{d}_{\text{train}}(\text{train\_voxel},\text{train\_voxel})$\;
+		$\text{avg\_train\_dist}[i]\leftarrow \overline{d}_{\text{train}}$\;
+		\If{$\text{size(train\_voxel)} \geq \text{voxel\_size\_req}$}{			
+			\ForEach{$\mathbf{X}$ in test\_voxel}{
+				Compute minimum nearest neighbour distance: $d_{\text{test}}(\mathbf{X},\text{train\_voxel})$\;
+				$\text{min\_test\_dist}[i]\leftarrow d_{\text{test}}$\;
+				
+				\uIf{$\mathbf{X}$ not in hypercube}{
+					\textbf{break}\;
+				}
+				\Else{
+					$\text{inside\_hypercube}[i]\leftarrow \text{True}$\;
+					
+					\uIf{$\mathbf{X}$ not in CH\_PCA99}{
+						\textbf{break}\;
+					}
+					\Else{
+						$\text{inside\_PCA99}[i]\leftarrow \text{True}$\;
+						
+						\uIf{$\mathbf{X}$ in ambient\_hull}{
+							$\text{inside\_ambient}[i]\leftarrow \text{True}$\;
+						}
+					}
+				}
+				$i\leftarrow i+1$\;
+			}
+		}
+	}
+\end{algorithm}
+%After completing the geometrical analysis for every point, the following specific parameters and requirements are to be checked and stored in a subsequent table:
+%\begin{itemize}
+%	\item Whether there are enough training samples inside each training subset is compared with \texttt{voxel\_size\_req}.
+%	\item The percentage of test points inside the ranges of the training samples is to be compared with \texttt{hypercube\_req}.
+%	\item The number of points inside the hypercube but outside \texttt{CH\_PCA99} is to be compared with \texttt{CHMP\_PCA99\_negative\_req}.
+%	\item The number of points inside the hypercube and \texttt{CH\_PCA99} but outside \texttt{CH\_ambient} is to be compared to the requirement \texttt{CHMP\_ambient\_negative\_req}.
+%	\item The total number of points inside \texttt{CH\_ambient} is to be compared to \texttt{CHMP\_ambient\_positive\_req}.
+%	\item All these requirements are stored in the \texttt{reqs\_results\_table}.
+%\end{itemize}
+%%
+%\begin{table}[h]
+%	\centering
+%	\begin{tabular}{|l|l|}
+%		\hline
+%		\rowcolor[HTML]{EFEFEF} 
+%		\textbf{Parameter/Requirement} & \textbf{Comparison Requirement} \\ \hline
+%		Hypercube Percentage (\texttt{hypercube\_req}) & To be determined \\ \hline
+%		Points Outside \texttt{CH\_PCA99} (\texttt{CHMP\_PCA99\_negative\_req}) & To be determined \\ \hline
+%		Points Outside \texttt{CH\_ambient} (\texttt{CHMP\_ambient\_negative\_req}) & To be determined \\ \hline
+%		Points Inside \texttt{CH\_ambient} (\texttt{CHMP\_ambient\_positive\_req}) & To be determined \\ \hline
+%	\end{tabular}
+%	\caption{\texttt{reqs\_results\_table}}
+%	\label{tab:reqs_results_table}
+%\end{table}
+%
+\indent Output of \autoref{algo:tt-split} is depicted in \autoref{tab:geo_out}. This information has to be processed to complete \autoref{tab:reqsresults}. The first column identifies the test point inside the test set. The next three columns show information about the corresponding voxel: existance, identification and size. Columns 5 to 7 show information related to pointwise distances inside the voxel. The last three columns show the relative position of the test point inside the voxel (inside the hypercube/convex hull in PCA99/convex hull in ambient space). In this algorithm, if the test point is found to be outside the hypercube ($\text{CH}_{\text{PCA99}}$), then its position with respect to $\text{CH}_{\text{PCA99}}$ and $\text{CH}_{\text{ambient}}$ ($\text{CH}_{\text{ambient}}$) is not computed in the sake of computational efficiency.\\
+%
+\begin{table}[htbp]
+	\centering
+	\captionof{table}{Output of \autoref{algo:tt-split}.}
+	\label{tab:geo_out}
+	\begin{minipage}{1\textwidth}
+		\centering
+		\includegraphics[width=\linewidth]{/home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/geo.png}
+	\end{minipage}
+\end{table}
+%
+\indent To better understand how the voxels are computed, a reference of their categorical variables is given in \autoref{tab:voxref}. Points inside each voxel all have the same categorical values, which effectively act as a unique identifyer for the voxel. We see each voxel represents a different stringer section between two concrete frames, plus the categorical variable ''np'' which can take the values either $0$ or $0.9$.\\
+%
+\begin{table}[!htb]
+	\centering
+	\captionof{table}{Voxel reference table}
+	\label{tab:voxref}
+	\includegraphics[scale=\tabscale]{/home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/refTableVox.png}
+\end{table}
+%
+\indent Data in the column ''inside vox. hypercube'' of \autoref{tab:geo_out} has been rearranged for the sake of interpretability in \autoref{tab:outhypercube}. This table shows the points which lie outside the training voxel hypercube for every voxel where such points exist. Similar tables could be arranged with the number of points belonging to the hypercube but not to the convex hull in a PCA99 projection, or with those points belonging to the convex hull in a PCA99 projection but not in ambient space.\\
+%
+\indent This information is used to check the following parameters and requirements, which are stored in \autoref{tab:reqsresults}:
+%
+\begin{itemize}
+	\item Whether there are enough training samples inside each training subset is compared with \texttt{voxel\_size\_req}.
+	\item The percentage of test points inside the ranges of the training samples is compared with \texttt{hypercube\_req}.
+	\item The number of points inside the hypercube but outside \texttt{CH\_PCA99} is compared with \texttt{CHMP\_PCA99\_negative\_req}.
+	\item The number of points inside the hypercube and \texttt{CH\_PCA99} but outside \texttt{CH\_ambient} is compared to the requirement \texttt{CHMP\_ambient\_negative\_req}.
+	\item The total number of points inside \texttt{CH\_ambient} is compared to \texttt{CHMP\_ambient\_abs\_req}.
+	\item All these requirements are stored in \autoref{tab:reqsresults}.
+\end{itemize}
+%
+\begin{table}[!htb]
+	\centering
+	\captionof{table}{Points outside voxel hypercube}
+	\label{tab:outhypercube}
+	\includegraphics[scale=\tabscale]{/home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/outside_hypercube_c.png}
+\end{table}
+% 
+\begin{table}[!htb]
+	\centering
+	\captionof{table}{\texttt{reqs\_results\_table}. The first and the last requirements compare absolute figures of points at some isolation level with the overall number of points. Whereas the second and third requirements compare the difference in number of points between two consecutive levels with the total number of points.}
+	\label{tab:reqsresults}
+	\includegraphics[scale=\tabscale]{/home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/reqs_table.png}
+\end{table}
+%
+\indent Having analised the isolation level of test points, it is necessary to check wheter p-hacking is taking place. That is, whether test points are unrealistically close to train points, thus making the model evaluation flawed. This is measured using the Mann-Whitney U test\cite{rosner1999use}. In this test, the initial hypothesis H0 is that both distributions are the same. H1 is that the distribution underlying test-training distances is stochastically less than distribution underlying training-training distances, which would involve risk of p-hacking. H0 is rejected only with a 95\% confidence. For instance, for the dataset of MSP-18, the resulting p-value is $p=0.9793$, thus the null hypothesis is not rejected and the dataset can be assumed to be free of p-hacking.\\
+%
+\subsubsection{Non-geometrical analysis}
+\indent To help (the engineer in charge) make a decission about the dataset split, another approach is developed, complementary to the geometrical analysis carried out so far. This approach consists of focusing on the statistical distributions of the train and the test datasets. A proper train-test split is characterised by similar statistical distributions of both sets (test and training)\cite{bonnasse2022interpolation}. When this cannot be achieved, a softer requirement is that each of the feature variables $X_i$ need to have reasonably similar marginal distributions in the training and the test set.\\
+%
+\indent The following analysis checks whether, for each individual input feature, the distribution of the training and test set is reasonably similar. This is also checked for the output variables (the ground true ones, thus this is independent from the surrogate model). Finally, the splitting can be done locally, \ie region by region, by binning each numerical variable. The implementation of this analysis tackles each input variable $X_i$ independently and for each input variable, it compares the training and the test set such that:
+\begin{itemize}
+	\item If the variable $X_i$ is `categorical`: both (train and test) categorical frequency distributions are plotted (\autoref{fig:inputscatdhist}), a 2-sample $\chi^2$ test\cite[p. 431]{velez1994calculo} is performed, and the p-value of such test is introduced in \autoref{tab:pvalin}.
+	\item If the variable $X_i$ is numerical: both (train and test) numerical frequency distributions are plotted (\autoref{fig:inputsdhist}), a 2-sample Kolmogorov-Smirnov test\cite[p. 454]{velez1994calculo} is carried out, and the p-value of such test is introduced in the same table.\\
+\end{itemize}
+%
+\indent The null hypothesis for both tests is that both train and test distributions are the same. H0 is only rejected with a 95\% confidence.\\
+%
+\begin{table}[!htb]
+	\centering
+	\captionof{table}{P-values of the input variables. The test performed is a 2-sample Kolmogorov-Smirnov or a 2-sample $\chi^2$ test, depending on the data being numerical (first 19 rows) or categorical (''dp'', ''Frame'' and ''Stringer'').}
+	\label{tab:pvalin}
+	\includegraphics[scale=\tabscale]{/home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/pvalues_input.png}
+\end{table}
+%
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=\textwidth]{/home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/inputs_dhist.png}
+	\caption{Input [numeric] variables distributions double histogram. Only the first four input variables have been plotted.}
+	\label{fig:inputsdhist}
+\end{figure}
+%
+\begin{figure}[!htb]
+	\centering
+	\begin{subfigure}{\textwidth}
+		\centering
+		\includegraphics[width=0.8\textwidth]{/home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/inputs_cat_dhist.png}
+	\end{subfigure}
+	
+%	\vspace{1cm} % Espacio vertical entre las subfiguras
+	
+	\begin{subfigure}{\textwidth}
+		\centering
+		\includegraphics[width=0.8\textwidth]{/home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/inputs_str_dhist.png}
+	\end{subfigure}
+	\caption{Input categorical variables distributions double histograms}
+	\label{fig:inputscatdhist}
+\end{figure}
+%
+\indent As stated earlier, applicability is not only a matter of the \textit{input} space, but also of the \textit{output} space. The 2-sample Kolmogorov-Smirnov test has been performed again on each of the six output variables. The p-values and their statistical distributions are depicted in \autoref{tab:pvalout} and \autoref{fig:outputsdhist}, respectively.\\
+%
+\begin{table}[!htb]
+	\centering
+	\captionof{table}{P-values of the output variables distributions}
+	\label{tab:pvalout}
+	\includegraphics[scale=\tabscale]{/home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/pvalues_outputs.png}
+\end{table}
+%
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=\textwidth]{/home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/outputs_num_dhist.png}
+	\caption{Output variables distributions double histograms}
+	\label{fig:outputsdhist}
+\end{figure}
+%
+\subsubsection{Train-test split. Conclusions}
+\indent The proposed validation loop for the train-test split focuses, on the one hand, on the applicability classification problem, which makes use of a geometrical analysis which classifies test points at different levels of isolation. A series of requirements are defined based on the proportions of such isolated points. Plus, p-hacking is checked. The output of this analysis is showed in \autoref{fig:coloreqs_table}.\\
+%
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[scale=\tabscale]{/home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/colorequirements.png}
+	\caption{Requirements of the geometrical analysis}
+	\label{fig:coloreqs_table}
+\end{figure}
+\indent On the other hand, the distributions of both input and output variables in the training set are checked to be reasonably similar to that of the test set. The main outputs are the p-values shown at \autoref{tab:pvalin} and \autoref{tab:pvalout}.\\
+%
+\indent Of course, any given dataset may meet some of the requirements, but not all (as is the case with the MSP-18 dataset). The engineer in charge should evaluate the ensemble output and decide whether it is necessary to redo the split completely or partially, depending on data availability.\\
+%
+\clearpage
+\section{Global error quantification}
+\noindent This section corresponds to box labelled ''Error quantification'' in \autoref{fig:pipeline}.\\
+%
+\indent After running the model, the simplest analysis of its performance consists of measuring the aggregated error of predictions against ground true values over the whole test set. Different metrics and criteria can be adopted for this task. Common error measures are the Mean Absolute Error (MAE) and the Root Mean Square Error (RMSE). These metrics account for the distance between points representing ground true values ($\mathbf{Y}$) and model's predictions ($\mathbf{\tilde{Y}}$), taken as the $L1$ norm (MAE) or the square of the $L2$ norm (RMSE) of the distances. In many industrial applications of machine learning, difference between ground true and predicted values can be more or less important depending on whether that difference is due to \textit{overestimating} or \textit{underestimating}. Take, for instance, the case of MS-S18 model, whose predictions are a measure of the probability of failure of aeronautical structural components. Clearly, underestimating the risk is much more dangerous than overestimating it. For cases such as this one, a useful measure of the error is the \textbf{residue}. The residual error of a given point $i$ is measured as
+\begin{equation}\label{eq:residue}
+	\mathbf{e}(i)=\mathbf{Y}(i)-\mathbf{\tilde{Y}}(i)
+\end{equation}
+The drawback of the residual error is that, when using it as an aggregated indicator for the whole test set, residues can cancel out. A null MAE or RMSE account for a perfectly fitted model (ground true values and predictions are equal). That is not the case for the residual error. In the following sections, unless specifically specified, the metric of choice for measuring the error is the residue (\autoref{eq:residue}), although different error metrics are also supported from an implementation point of view, one of the most common alternatives being the absolute value of the residue, $|\mathbf{e}|(i)=|\mathbf{Y}(i)-\mathbf{\tilde{Y}}(i)|$.\\
+%
+\indent An interesting scalar metric for the global performance of the model is the coefficient of determination $R^2$ \cite{zhang2017coefficient} of the scatter distribution of $\mathbf{Y}$ vs $\mathbf{\tilde{Y}}$. $R^2$ is a measure of the goodness of fit of predicted to ground true values. Illustration of this is provided in \autoref{fig:truevspredscatter}. The most important conclusion of \autoref{fig:truevspredscatter} is that the error shows to be heteroscedastic{\protect\footnote{This means the variance of the error is not constant along some variable range (in this case, that variable is the output variable named ''RF Net Tension''). In \autoref{fig:truevspredscatter} we can clearly see that dispersion grows with the output value. Cfr.\cite[p. 374]{jobson2012applied}.}}, as demonstrates the fact that dispersion is higher for higher Reserve Factors (interestingly, this is the desired behaviour, as lower Reserve Factors implicate higher failure risk, and thus precision is more important in the region of low Reserve Factors). This property makes it necessary to study the error distribution, as well as the error distribution conditioned on input and output space ($P(e)$, $P(e|\mathbf{X})$ and $P(e|\mathbf{Y})$, resp.) as is discussed in the following sections.\\
+%
+\begin{figure}
+	\centering
+	\includegraphics[width=0.8\textwidth]{/home/pablo/Documentos/TFGP/Thesis/Figures/global_stats/yvsyscatter.png}
+	\caption{Scatter plot of ground true ($x$ axis) against predicted values ($y$ axis) of output variable ''RF Net Tension'', with the correspondent $R^2$ coefficient. In this case, $R^2=1,000$ indicates a perfect fit of predicted to ground true values. Mismatches due to underestimating failure risk are labelled in red, while those due to overestimating failure risk are labelled in blue. Similar graphs can be computed for every pair $\left\{y_j,\hat{y}_j\right\}$ of features in the output variables $\mathbf{Y}=\left\{y_1,y_2,\ldots,y_m\right\}$. Plots for the rest of the six output variables of MS-S18 show analogous results.}
+	\label{fig:truevspredscatter}
+\end{figure}
+%
+\clearpage
+\section{Distributed error quantification.}\label{sec:disterr}
+\noindent This section corresponds to box labelled ''$P(E)$'' in \autoref{fig:globalerrpipeline}. From now on, the terms ''error'' and ''residue'' (as defined in the previous section) will be used as synonyms.\\
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=0.8\textwidth]{/home/pablo/Documentos/TFGP/Thesis/Figures/boxpdeE.png}
+	\caption{Location of \autoref{sec:globalerr} in the validation pipeline.}
+	\label{fig:globalerrpipeline}
+\end{figure}
+%
+\indent Beyond global error statistics, the PDF of the residue, $P(e)$, is of great importance for validation purposes. The main goal of this section is finding the analytic expression of $P(e)$ and computing important statistics of it, and, when the first is not possible, computing the important statistics from the empirical distribution of the residue (sampled from test set points) with the method of bootstrapping\footnote{Vid. following paragraphs}. There are three main reasons for studying $P(e)$:\\
+\paragraph{\GMVred{A.} \myul[GMVred]{Non gaussian error distribution}\\}
+It is common in industry-applied problems to find situations in which the error between ground-true values and predictions coming from a regression model (let it be a surrogate ANN, some parametric regressor, etc.) which is supposed to fit any function describing a complex system follows absolutely non-Gaussian distributions (see \eg \cite{chen2003non,pernot2020impact,smyl2021learning,chai2019using}). Amongst the reasons for this, the most frequent are, on the one hand, non-homogeneous data sampling in the training set (leading to uncovered regions and isolated points) which can cause poor model performance due to non-interpolation-regime operation, and on the other hand, the inherent difficulty encountered at predicting outputs for specific input configurations due to strongly non-linear physics or governing equations (mathematically this manifests in the form of high gradients). When the error is non-Gaussian, concentration statistics such as MAE or RMSE stop being informative. In such case, a comprehensive analysis on $P(e)$ is more adequate.\\
+%
+\paragraph{\GMVred{B.} \myul[GMVred]{Outlier detection}\label{par:outliers}\\}
+Outliers are strange events in a population sampled from a known PDF, in the sense that it is not expected to find them, or that their position is far away from expected. Outlier detection helps identifying strange phenomena which the engineer in charge could decide to investigate. Imagine, for instance, that certain residue $e_x$ was systematically sampled from the test set with an unusual frequency, compared with similar values. In this case, it would be necessary to assess whether this high frequency is statistically expectable from the residue's PDF or not. If $e_x$  was found to be an outlier, determining the underlying reason triggering such high frequency would help with model boosting.\\
+\indent Outlier detection relies on knowing $P(e)$. The probability of finding a residue larger than a given magnitude $x$ is measured as $p_{>x}=\int_{x}^{\infty} P(e) \, de$. If we find some $x$ for which $p_{>x}<<1$, all samples of the residue $e>x$ would be classified as outliers. This simple idea lies behind standard outlier-detection methods such as the z-score and the gESD (which are later discussed).
+\paragraph{\GMVred{C.} \myul[GMVred]{Uncertainty measuring}\\}
+The marginalised distribution of $P(e)$ is the first step in the journey towards building an \textbf{uncertainty model}. This is the ultimate milestone of the whole validation pipeline, since it provides precise information about \textit{how much} and \textit{when} the model's predictions are trustworthy. This is the whole point of \autoref{sec:uncertainty}. The uncertainty model relies on the marginalised distribution of the residue for building confidence intervals which embed the model's error with a given statistical confidence level.\\
+%
+\indent A simple plot can help us have a first intuition for the cause of subsequent results presented in this section. In \autoref{fig:yvsydoublehist} ground true values and model's predictions are represented in a double histogram for MS-18.\\
+\begin{figure}
+	\centering
+	\includegraphics[width=1\textwidth]{/home/pablo/Documentos/TFGP/Thesis/Figures/global_stats/yvsydoublehist.png}
+	\caption{Double histogram depicting ground true values and model's predictions for the six output variables of MS-18.}
+	\label{fig:yvsydoublehist}
+\end{figure}
+%
+\indent If the model accurately predicts results along the whole output variables range (or equivalently it is not heteroscedastic), we would expect both the true and the predicted results to come from the same (unknown) distribution (this hypothesis is taken as $H0$). We can test this with a (2 sample) goodness-of-fit test like the Kolmogorov-Smirnov. Once again, the null hypothesis is rejected only at a 95\% confidence level (\ie if the p-value derived from the K-S test is lower than $0.05$). The corresponding p-values of the K-S test for the six output variables of MS-18 are depicted in \autoref{tab:yvsyKS}.\\
+\begin{table}
+	\centering
+	\caption{Resulting $p$-values from the 2-sample K-S test of goodness of fit between ground true ($\mathbf{Y}$) and predicted ($\mathbf{\hat{Y}}$) distributions. The null hypothesis $H0$ that both distributions conform is rejected if the $p$-value is smaller than $0.05$.}
+	\includegraphics[scale=\tabscale]{/home/pablo/Documentos/TFGP/Thesis/Figures/global_stats/yvsyks.png}
+	\label{tab:yvsyKS}
+\end{table}
+%
+\indent In \autoref{tab:yvsyKS} we can see how the K-S test rejects the null hypothesis in some cases despite distributions in \autoref{fig:yvsydoublehist} looking very similar. This is due to the K-S test sensitivity to the size of datasets.\\
+%
+\indent As it has been previously mentioned, outlier detection and uncertainty models both rely on the PDF of the residue, $P(e)$. The main goal of this section is finding the analytical definition of $P(e)$\footnote{This might not always be possible. When it is not, non-parametrical bootstrapping is given as an alternate solution (vid. next paragraphs).}, and measuring important statistics of it. This is addressed with a focus similar to that followed in \autoref{fig:yvsydoublehist} and \autoref{tab:yvsyKS}, but instead of assessing the fitness of the predictions ($\hat{y}$) distribution to the ground true values ($y$) distribution, we try to assess the goodness of fit of the empirical residue distribution to some well-known distributions. For reference, the (empirical) error distribution of the six output variables is depicted in \autoref{fig:pdferror}, as well as the corresponding cumulative distributions, given in \autoref{fig:errorcumulative}.\\
+\begin{figure}
+	\centering
+	\includegraphics[width=1\textwidth]{/home/pablo/Documentos/TFGP/Thesis/Figures/global_stats/pdferror.png}
+	\caption{Empirical residue distribution sampled from the test set, for each of the six output variables of MS-S18. $x$-axis limits have been truncated to $\mu \pm 3 \sigma$, where the most part of the error lies. Histograms have been appropriately binned for a correct visualization.}
+	\label{fig:pdferror}
+\end{figure}
+\begin{figure}
+	\centering
+	\includegraphics[width=1\textwidth]{/home/pablo/Documentos/TFGP/Thesis/Figures/global_stats/cumulativeerror.png}
+	\caption{Cumulative error distributions corresponding to the PDFs showed (as binned histograms) in \autoref{fig:pdferror}.}
+	\label{fig:errorcumulative}
+\end{figure}
+%
+\indent Under the assumption that $P(e)$ can be described by some well-known parametric distribution, we use the 1-sample K-S test (coupled with a minimal-squares based optimizer to find the optimal set of parameters for each distribution) to compare distributions of \autoref{fig:pdferror} to the following distributions:
+\begin{itemize}
+	\item Normal:
+	\[
+	f(x|\mu,\sigma) = \frac{1}{\sigma \sqrt{2\pi}} \exp\left( -\frac{(x-\mu)^2}{2\sigma^2} \right)
+	\]
+	\item Laplace:
+	\[
+	f(x|\mu,b) = \frac{1}{2b} \exp\left( -\frac{|x-\mu|}{b} \right)
+	\]
+	
+	\item Cauchy:
+	\[
+	f(x|x_0,\gamma) = \frac{1}{\pi\gamma \left[1+\left(\frac{x-x_0}{\gamma}\right)^2\right]}
+	\]
+	
+	\item JohnsonSU:
+	\[
+	f(x|\gamma,\delta,\lambda,\xi) = \frac{\delta}{\gamma\sqrt{2\pi}}\frac{1}{x+\xi} \exp\left(-\frac{1}{2}(\gamma+\lambda \log(x+\xi))^2\right)
+	\]
+	
+\end{itemize}
+%
+\indent P-values from the K-S test are given in \autoref{tab:KSerror}. As we can see, the normal distribution does not fit any of the output variables' error. While Laplace and Cauchy distributions' p-values from the K-S test are above the $0.05$ threshold in five of the six output variables, they are well below the obtained p-values for the JohnsonSU\cite{jones2009sinh} distribution (vid. \autoref{fig:errorpvalues}). In fact, when augmenting the dataset size from the illustrative-sized employed here (10,000 items) to a more realistic $800,000$ items, neither of Laplace and Cauchy distributions pass the test (their p-values drop to near-zero orders of magnitude). This happens due to the K-S sensibility to the size of data, which makes the test more strict when the datasets are large (as would be expected). We conclude that the Laplace and Cauchy distributions just pass the K-S anecdotally for the unrealistically small dataset size which has been used for illustrative purposes, and we also conclude that the only theoretical distribution (of the list which has been checked) that fits the MS-18's error distribution is the JohnsonSU.\\
+%
+\indent Provided that there exists a simple transformation of the JohnsonSU distribution's random variable (vid. \autoref{fig:ztransform}) that converges to a normal distribution, one can, with the information obtained from the K-S test (that is, assuming the error data comes from a JohnsonSU distribution) apply standard outlier detection methods to a transformed variable $z\sim {\cal{N}}(0,1)$, like the z-score (every point located outside $\mu\pm 3\sigma$ is considered to be an outlier) and the generalised Extreme Studentized Deviate\cite{rosner1983percentage} (gESD), thus fulfilling the aims described at the beginning of this section concerning outlier detection (vid. \autoref{tab:outliers}).\\
+\begin{table}[!htb]
+	\centering
+	\caption{P-values of the K-S test comparing the empirical sample of $P(e)$ to the theoretical distributions indicated in each column. The null hypothesis $H0$ (the empirical distribution has been sampled from the one figuring in a given column) is rejected when $p-\text{value}<0.05$.}
+	\includegraphics[scale=\tabscale]{/home/pablo/Documentos/TFGP/Thesis/Figures/global_stats/errorKS.png}
+	\label{tab:KSerror}
+\end{table}
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=1\textwidth]{/home/pablo/Documentos/TFGP/Thesis/Figures/global_stats/errorpvalues.png}
+	\caption{Graphical comparison of the p-values resulting from the K-S test for the MS-18 data.}
+	\label{fig:errorpvalues}
+\end{figure}
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=1\textwidth]{/home/pablo/Documentos/TFGP/Thesis/Figures/global_stats/ztransform.png}
+	\caption{(Binned) histograms depicting the distribution of the variable $z=\gamma+\sinh{\frac{e-\xi}{\lambda}}$, where $e\sim JohnsonSU(\gamma,\delta,\xi,\lambda)$ is the sampled residue. It can be shown that $z$ converges to a normal distribution\cite{jones2009sinh}.}
+	\label{fig:ztransform}
+\end{figure}
+%
+\begin{table}[!htb]
+	\centering
+	\caption{Outlier detection taking $e\sim JohnsonSU$ as $H0$. N.B. for this table the usual requirements for classifying a point as an outlier ($z\in\sigma\pm3\mu$ for the z-score and significance $1-a\geq95\%$ for the gESD) have been softened here for illustration purposes to $z\in\sigma\pm1.2\mu$ and $a=0.45$ for both tests, respectively.}
+	\includegraphics[scale=\tabscale]{/home/pablo/Documentos/TFGP/Thesis/Figures/global_stats/outliers.png}
+	\label{tab:outliers}
+\end{table}
+\indent Results shown in \autoref{tab:yvsyKS} rise some concerns about the method followed until now. The immediate concern that arises is what would happen if we were unable to find a theoretical distribution that fits some variable's error distribution with a statistically significant confidence level. In fact, the most common statistical distributions (normal, Laplace, Cauchy) do not properly fit the MS-18 error distribution (when using an industrial-sized dataset, not the one employed for illustration here), and we've had to rely on the (rather exotic) JohnsonSU distribution. Without a parametrized distribution that properly fits the error, an uncertainty model cannot be computed. Recall building an accurate uncertainty model is the main motivation for this section. Computing empirical statistics of the empirical distribution of the residue (obtained from test set points) is possible, but assuming the empirical statistics are the same than the true, theoretical ones is not possible. To solve this obstacle, an alternative method for calculating informative statistics of the error's distribution that do not rely on knowing the parametrized analytic expression of it is therefore needed. The method provided here is known as non-parametric bootstrapping\cite{efron1992bootstrap} and the main concept behind it is showed in \autoref{algo:bootstrapping}. This algorithm:
+\begin{enumerate}
+	\item Samples $N$ points with replacement from the original population $S$. N.B. replacement makes the new and the original populations (possibly) different.
+	\item Statistic $x$ is calculated in the new population.
+	\item Steps 1 and 2 are repeated $M>>1$ times, giving a collection of $x$'s (called $X$).
+	\item If $M$ is sufficiently large, $X$ converges to a Gaussian population. The bootstrapped CI for the statistic $x$ with a 95\% confidence is bounded by the percentiles 2.5\% and 97.5\% of $X$.\\
+\end{enumerate}
+%
+\begin{algorithm}[!htb]
+	\caption{Non-parametric bootstrapping}
+	\label{algo:bootstrapping}
+	\KwData{Population $S=\left\{S_1,S_2,\ldots,S_N\right\}$ with unknown PDF.}
+	\KwResult{Statistic $x$'s CI}
+	
+	Initial ize list: $CI=[0]_{1\times 2}$;\\
+	Initialize list: $X=[0]_{1\times M}$;\\
+	\For{$i=1,\ldots,M>>1$}{
+		$S_i\leftarrow C_S(N,N)$;\\
+		$X(i)\leftarrow x_{S_i}$;\\
+	}
+	$CI(1)\leftarrow P_{X}^{2.5\%}$;\\
+	$CI(2)\leftarrow P_{X}^{97.5\%}$;\\
+\end{algorithm}
+%
+\indent Some informative statistics of the error distribution are given in \autoref{tab:errorstats}. The statistics are computed twice, once in the empirical distribution of $P(e)$ sampled from the outputs of $\cal{S}^\text{test}$, and the other one in the form of bootstrapped CIs.\\
+%
+\indent To better understand the utility of $P(e)$ for building an uncertainty model, the simple idea behind these models is presented here, although it is further discussed in \autoref{sec:uncertainty}.\\
+\indent In \autoref{tab:basicuncertainty}, some quantiles of the error distribution are presented. For reference, they are computed as empirical statistics of the empirical error distribution, and using bootstrapping (in this case their confidence intervals are given instead). The simplest uncertainty model which can be built with this information assumes that, for future samples of the residue, the quantiles of \autoref{tab:basicuncertainty} will still hold true (\ie, the empirical and the theoretical quantiles coincide). For instance, we would assume that, according to \autoref{tab:basicuncertainty}, for future samples the error of variable ''RF Forced Crippling'' will belong to the interval $[-0.0432,0.0448]$ (defined by percentiles \ordinalnum{5} and \ordinalnum{95}) with a frequency equal to 90\%. If we wanted to soften the assumption that the empirical and the theoretical quantiles are the same, we could use the bootstrapped quantiles instead. That way, with a 95\% confidence we could claim that the error of ''RF Forced Crippling'' variable will belong to $[-0.0548.,0.0586]$ with a frequency of 90\% as a minimum, given that we now from bootstrapping that, with a 95\% confidence, the true \ordinalnum{5} quantile belongs to the range $[-0.0548,-0.0353]$ and the true \ordinalnum{95} quantile belongs to $[0.0379,0.0586]$.\\
+%
+\begin{sidewaystable}
+		\centering
+		\caption{Summary of bootstrapped error statistics. For the median, the Wilson-score\cite{wilson1927probable} is used for computing the confidence interval.}
+		\includegraphics[scale=\tabscale]{/home/pablo/Documentos/TFGP/Thesis/Figures/global_stats/errorstats.png}
+		\label{tab:errorstats}
+\end{sidewaystable}
+\begin{sidewaystable}
+		\centering
+		\caption{Bootstrapped percentiles (\ordinalnum{1}, \ordinalnum{5}, \ordinalnum{10}, \ordinalnum{90}, \ordinalnum{95} and \ordinalnum{99}) of the residue distribution, calculated with a 95\% confidence interval using Wilson-score.}
+		\includegraphics[scale=\tabscale]{/home/pablo/Documentos/TFGP/Thesis/Figures/global_stats/basic_uncertainty.png}
+		\label{tab:basicuncertainty}
+\end{sidewaystable}
+%
+\indent Of course, the uncertainty model described in the last paragraph can be fine-tuned using additional information about the error distribution. If we found $P(e)$ to be heteroscedastic, we could benefit from conditioning our uncertainty model to certain regions of the input (or the output) space. This is the main motivation for \autoref{sec:biasinput}, \autoref{sec:biasoutput} and \autoref{sec:uncertainty}.\\
+%
+\clearpage
+%\mbox{}
+%\clearpage
+\section{Distributed error quantification: conditioning the error distribution on the input space}\label{sec:biasinput}
+This section corresponds to box labelled ''P(E\textbar{}X)'' in \autoref{fig:biasinputbox}. In \autoref{sec:disterr}, the marginalised distribution of the residue $P(e)$ was discussed. This section aims at extracting useful information by conditioning the error distribution to the input variables' space, which mathematically can be denoted by $P(e|X)$. Amongst the motivations for this, we count in the first place that this section will help building our uncertainty model (vid. \autoref{sec:uncertainty}) by refining the methods described in the previous section for uncertainty prediction with new information from $P(e|X)$. Furthermore, model and data boosting (vid. \autoref{fig:biasinputbox}) can both benefit from the analysis performed in this section. Knowledge of the error distribution conditioned to the input space can help identify those regions where either:
+\begin{itemize}
+	\item The dataset is properly representing the region, but model training is deficient.
+	\item Dataset quality is not sufficient for proper training according to the specified performance requirements.
+\end{itemize}
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=0.8\textwidth]{/home/pablo/Documentos/TFGP/Thesis/Figures/biasinput/boxdiagram.png}
+	\caption{Box diagram showing the relative position of \autoref{sec:biasinput} in the complete validation pipeline.}
+	\label{fig:biasinputbox} 
+\end{figure}
+\indent In the first case, training of the model can be reinforced by several means (longer training, hyperparameter tuning, transfer learning, etc.) In the second case, resampling data in deficient regions, or artificial data enhancing techniques such as data augmentation\cite{taylor2018improving} are recommended.\\
+%
+\indent The task of recomposing $P(e|X)$ needs to be addressed in a computationally efficient way, given the input space dimensionality $m$ [recall the input features vector is ${\bf X}=(X_1,X_2,\dots,X_m)$] can be very large. For the case of MS-S18, for instance, the input space's dimensionality is $m=31$ (28 numerical inputs plus 3 categorical). With industrial sized datasets (typically reaching up to millions of data points), recomposing $P(e|X)$ becomes unaffordable. The easiest way of overcoming this issue is by binning the input space according to a certain criteria. If we denote the binned input space by $X^B=\{X^B_1,X^B_2,X^B_3\ldots X^B_r\}$ where $X^B_j$ represents a certain bin, and there are a total of $r$ bins, then we can substitute the task of recomposing $P(e|X)$ by that of recomposing $P(e|X^B)$. Although simple, this idea allows for an effective computational cost reduction.\\
+%
+\subsection{Visualization of error as a function of categorical (discrete) input variables}
+The immediate criteria for binning the input space is using categorical variables. These variables do in essence bin the input space as they can only take certain (or rather discrete) values. As previously mentioned, for MS-S18 there are three categorical variables enclosing geometrical information: ''Frame'', ''Stringer'', and ''dp''. \autoref{fig:boxwhisker} plots, for each categorical input variable, a box plot of the error as a function of the category.\\
+\indent The box plot layout reports the median, Inter-quantile Range and whiskers. Outliers showing anomalous dispersion of the residue could indicate geometrical configurations (\eg the one defined by frames no. 69-70 and stringer no. 26) where training has been inefficient. The engineer in charge could inspect this zone and conclude, for instance, that the physics at play in that region involve exploding gradients which induce strong non-linearities.\\
+\begin{figure}
+	\centering
+	\begin{subfigure}[b]{\textwidth}
+		\centering
+		\includegraphics[width=0.8\textwidth]{/home/pablo/Documentos/TFGP/Thesis/Figures/biasinput/boxwhisker1.png}
+		\caption{Error conditioned to the categorical variable ''Frame''}
+		\label{fig:boxwhisker1}
+	\end{subfigure}
+	
+	\vspace{1cm} % Espacio vertical entre las imágenes
+	
+	\begin{subfigure}[b]{\textwidth}
+		\centering
+		\includegraphics[width=0.8\textwidth]{/home/pablo/Documentos/TFGP/Thesis/Figures/biasinput/boxwhisker2.png}
+		\caption{Error conditioned to the categorical variable ''Stringer''}
+		\label{fig:boxwhisker2}
+	\end{subfigure}
+	
+	\caption{Box and whisker plots depicting the residue conditioned to two different categorical variables. \autoref{fig:boxwhisker1}: ''Frame''. \autoref{fig:boxwhisker2}: ''Stringer''. Clearly, outliers can be appreciated in both cases (''Fr69-Fr70'' in \autoref{fig:boxwhisker1}, and various stringers in \autoref{fig:boxwhisker2}).}
+	\label{fig:boxwhisker}
+\end{figure}
+%
+\FloatBarrier
+\subsection{Bias detection and quantification (1D)}\label{subsec:biasinput1d}
+After the visual inspection carried out in \autoref{fig:boxwhisker}, a statistical test is needed to actually check whether the observed residue for some frames or stringers is unexpected enough to be considered an ''outlier''. This is, we need to check whether anomalies shown in \autoref{fig:boxwhisker} actually are statistically significant or not. To this end, the following procedure is proposed:\\
+
+\paragraph{\GMVred{A.} \myul[GMVred]{Detection of error bias in single categories (ANOVA)}\\}
+The initial method of choice to detect whether a given input categorical variable shows any bias is the one-way ANOVA test\cite{kim2017understanding}. This method consists on the following steps\footnote{N.B. ANOVA in principle requires data in each category to be normally distributed and homoscedasticity (variances in different categories are similar, cfr.\cite[p. 374]{jobson2012applied}). It is important to remark these conditions are sometimes not met.}:
+\begin{itemize}
+	\item We fix a categorical variable $i$ under analysis.
+	\item The method scatter-plots the residual error versus the category of $x^i$, for all $n$ samples of the test set.
+	\item ANOVA makes then an hypothesis test, where the null hypothesis $H0$ is that the mean of the (theoretical distribution) error for each of the categories is the same. The ANOVA test rejects $H0$ with a certain confidence if the $p-$value of the test is smaller than a certain level.
+	\item The output of the method is just the $p-$value, if this is smaller than $0.05$,  then $H0$ is rejected at 95\% confidence and we say that the categorical variable $x^i$ shows bias.\\
+\end{itemize}
+%
+\indent In \autoref{tab:1anova}, results of the ANOVA test from MS-S18 are shown. The test shows bias in all the three categorical input variables, but for different output variables each one.\\
+\begin{table}
+	\centering
+	\caption{P-values results from the one-way ANOVA test. The red labelled cells show that variable ''dp'' shows bias for the residual distribution of ''RF Net Tension'', as well as variable ''Frame'' for the residual distribution of ''RF Forced Crippling'' and variable''Stringer'' for the residual distributions of ''RF Net Tension'' and ''RF Pure Compression''. For the rest of the table, p-values greater than 0.05 indicate that $H0$ cannot be rejected with a statistical confidence of at least 95\%.}
+	\includegraphics[scale=\tabscale]{/home/pablo/Documentos/TFGP/Thesis/Figures/biasinput/1wayanova.png}
+	\label{tab:1anova}
+\end{table}
+\FloatBarrier
+%
+\paragraph{\GMVred{B.} \myul[GMVred]{Quantification of error bias in single categories test no. 1: based on error mean outlier}\\}
+This analysis is to be done only if results from the one-way ANOVA test show bias in at least one categorical variable. Under this assumption, the former test has identified a number of categorical variables that show bias. Here we quantify such bias by checking whether there are certain categories which are ''outliers'', \ie categories where the error mean is substantially different than for the rest of categories. We check this using z-score\cite{kirkwood2010essential}, which consists on the following steps: we initially construct the mean error $e$ in each category. If the categorical variable has $s$ categories, then we have a vector $(e_1,e_2,...,e_s)$. We then z-score this vector to build
+$$\bigg(\frac{e_1-\langle e \rangle}{\sigma(e)},\frac{e_2-\langle e \rangle}{\sigma(e)},...,\frac{e_s-\langle e \rangle}{\sigma(e)}\bigg),$$
+where 
+$$\langle e \rangle = \frac{1}{s}\sum_{i=1}^s e_i; \ \sigma(e)=\sqrt{\frac{1}{s}\sum_{i=1}^s (e_i-\langle e\rangle)^2}$$
+
+We make use of the rule of thumb that category $i$ shows ${\bf weak\ bias}$ if
+
+$$1<\frac{|e_i-\langle e \rangle|}{\sigma(e)}\leq3,$$
+
+whereas category $i$ shows ${\bf strong\ bias}$ if 
+
+$$\frac{|e_i-\langle e \rangle|}{\sigma(e)}>3.$$
+
+
+The test output is shown in \autoref{tab:zscore}, where for each categorical variable that was previously identified as having bias, a sub-table showing \textbf{only} the specific categories that either show weak or strong bias is displayed.
+
+\begin{table}[!htb]
+	\centering
+	\caption{Z-score results for biased categorical variables. One table is generated for each pair biased categorical input variable-output variable.}
+	\begin{tabular}{c c}
+		\includegraphics[scale=\tabscale]{/home/pablo/Documentos/TFGP/Thesis/Figures/biasinput/zscore1.png} & \includegraphics[scale=\tabscale]{/home/pablo/Documentos/TFGP/Thesis/Figures/biasinput/zscore2.png} \\
+		% Espacio vertical para simular la disposición de cruz
+		\\[3ex] % Ajusta 1ex al espacio que necesites
+		\includegraphics[scale=\tabscale]{/home/pablo/Documentos/TFGP/Thesis/Figures/biasinput/zscore3.png} & \includegraphics[scale=\tabscale]{/home/pablo/Documentos/TFGP/Thesis/Figures/biasinput/zscore4.png} \\
+	\end{tabular}
+	\label{tab:zscore}
+\end{table}
+\FloatBarrier
+%
+\paragraph{\GMVred{C.} \myul[GMVred]{Quantification of error bias in single categories test no. 2: based on error variance outlier}\\}
+This analysis is to be done only if results from the one-way ANOVA test show bias is found in at least one categorical variable.\\
+\indent The procedure is similar as before, but here we investigate whether for certain categories the dispersion (not the mean) of the samples in a given category is substantially different than for the rest of categories. For instance, experience in MSP-S18 suggests that the main source of error bias in categorical variables comes from the fact that different categories have different variance. This is quantified by doing a z-score analysis on category variances: if the categorical variable under analysis has $s$ categories, then we have a vector of variances $(v_1,v_2,...,v_s)$, where $v_i$ is the variance of the error for all samples in category $i$. We then z-score this vector to build 
+
+$$\bigg(\frac{v_1-\langle v \rangle}{\sigma(v)},\frac{v_2-\langle v \rangle}{\sigma(v)},...,\frac{v_s-\langle v \rangle}{\sigma(v)}\bigg),$$
+
+where 
+$$\langle v \rangle = \frac{1}{s}\sum_{i=1}^s v_i; \ \sigma(v)=\sqrt{\frac{1}{s}\sum_{i=1}^s (v_i-\langle v\rangle)^2}$$
+
+We make use of the rule of thumb that category $i$ shows \textit{\textbf{weak variance bias}} if 
+
+$$1<\frac{|v_i-\langle v \rangle|}{\sigma(v)}\leq3,$$
+whereas category $i$ shows \textit{\textbf{strong variance bias}} if 
+
+$$\frac{|v_i-\langle v \rangle|}{\sigma(v)}>3$$
+
+The analysis outputs, for each categorical variable that was previously identified as having bias, a table showing only the specific categories that either show weak or strong bias according to this second method.
+
+\paragraph{\GMVred{D.} \myul[GMVred]{Quantification of error bias in single categories test no. 3: based on identification of  linear trend}\\}
+This test is only applicable to categorical variables for which specific categories have a natural ordering (mathematically, we say there is a canonical geometric embedding for the categorical variable). Such identification needs to be done ''by hand'' by the engineer in charge.\\
+\indent Such embedding exists when the categorical variable is related for instance to a geometrical location in the plane (for instance the Frames and Stringers are categorical --in so far they are discrete-- but they correspond to regions of the plane along a Cartesian and a radial axis, so there is a natural ordering). In those cases, it makes sense to investigate linear trends as these are interpretable.\\
+\indent The method just proceeds to fit a linear model (with just one explanatory variable). If the slope is above a certain threshold and if the fit is good, then we can be confident the linear trend is genuine, and the slope can be used to quantify the linear bias and as a source for uncertainty.\\
+\indent For each categorical variable that has a natural ordering and was previously detected as having bias, the test fits a linear model and outputs the result of this model.\\
+\indent If such model has a slope (statistically) significantly different from zero, then this categorical variable is flagged as having a linear trend.\\
+%
+\indent Illustration of this test is provided in \autoref{fig:linearcat}.
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=\textwidth]{/home/pablo/Documentos/TFGP/Thesis/Figures/biasinput/linearcat.png}
+	\caption{Quantification of linear trend for input categorical variables ''Stringer'' (left) and ''Frame'' (right). Variables have been numerically encoded following a logical order (\eg in the right image, six integers in the $x$ axis represent the six possible values of variable  Frame). The residue of output variable ''RF Net Tension'' has been plotted against the categorical variable ($y$ axis). In this case, no linear trend is appreciated in neither of the two input variables (no bias present).}
+	\label{fig:linearcat}
+\end{figure}
+%
+\subsection{Bias detection and quantification (2D)}
+In the previous section we considered the specific effect (bias) of individual input variables on the error. However, it can be the case that such bias is enhanced when groups of input variables are considered together. 
+The method of choice to analyze whether two independent (input) categorical variables have an effect on the error means is the 2-way ANOVA test\cite{fujikoshi1993two}.
+In general the method is not very informative except when the combination of input variables is itself interpretable. This usually requires the external feedback of the engineer. For instance, the engineer can know a priori that certain combination of input variables play a synergistic role, go together, etc.
+For instance, in MSP-S18, the categorical variables \textbf{Frame} and \textbf{Stringer} are geometric locations and thus, together, provide a location of the specific region of the plane that the configuration analyses. One can thus perform a 2-way ANOVA to analyze the presence of bias accordingly. If such bias exists, then bias quantification tests described in \autoref{subsec:biasinput1d} can be applied.\\
+%
+\paragraph{\GMVred{A.} \myul[GMVred]{Bias detection (2D)}\\}
+For the pair of (previously chosen) categorical variables, the test performs 2-way ANOVA as described above and outputs the $p$-value. If this $p$-value is smaller than 0.05, we conclude that there exists bias at 95\% confidence.\\
+
+\paragraph{\GMVred{B.} \myul[GMVred]{Bias quantification (2D)}\\}
+Suppose we have two categorical variables $A$ and $B$, where $A$ has $q$ categories $A=(A_1,A_2,\dots,A_q)$ and $B$ has $r$ categories $B=(B_1,B_2,\dots,B_r)$. Suppose also that a 2-way ANOVA concluded that the error is biased on the combined effect of $A$ and $B$. We then can build all the pairs $(A_i,B_j)$ and interpret each of them as a single category of this ''block categorical variable'', \ie we have now $q \times r$ categories. We can subsequently apply the bias quantification tests 1 and 2 described above, applied to the ''block categorical variable''.\\
+\begin{itemize}
+	\item If bias has been detected, the ''block categorical variable'' with $qr$ categories is built and a table with $qr$ columns and 2 rows is defined (for test no. 1 and test no. 2 results).
+	\item Bias quantification test no. 1 (error mean, see above) is performed on the block categorical variable, and fills up in the table the first row for those columns that show either weak or strong bias.
+	\item Bias quantification test no. 2 (error variance, see above) is performed on the block categorical variable, and fills up in the table the first row for those columns that show either weak or strong bias.
+\end{itemize}
+%
+\indent Results from this tests are illustrated in \autoref{tab:2dbiascat}.
+\begin{table}[!htb]
+	\centering
+	\caption{2D bias quantification: Results from mean and variance $z$-score tests on biased Stringer-Frame input pairs (bias detection has been performed through 1-way ANOVA). For the input value combinations showed in the columns, either mean or variance (or both) show bias (weak: $z\text{-score}<3$. Strong: $z\text{-score}>3$). For the combination of Frame Fr67-Fr69 and Stringer Str07, there are not enough test points to compute the $z$-score variance test.}
+	\includegraphics[scale=\tabscale]{/home/pablo/Documentos/TFGP/Thesis/Figures/biasinput/2dbiascat.png}
+	\label{tab:2dbiascat}
+\end{table}
+\subsection{Visualization of error as a function of numerical (continuous) input variables}
+In this section the same basic analysis is performed as in \autoref{subsec:biasinput1d}, although conditioning the error on numerical instead of categorical input variables.\\
+%
+\indent In this section we plot, for each numerical input variable, a scatter plot of the error as a function of the input numerical variable at analysis. From the scatter plot and its linear fit, we expect to (with human intervention) identify bias in the variables which present it, and use visual information for model and data boosting. Illustrative results of two input variables are given in \autoref{fig:binputscatter}.\\
+\begin{figure}[!htb]
+	\centering
+	\begin{minipage}[b]{0.508\textwidth}
+		\centering
+		\includegraphics[width=\linewidth]{/home/pablo/Documentos/TFGP/Thesis/Figures/biasinput/scatter1.png}
+		\label{fig:imagen1}
+	\end{minipage}
+	\hfill
+	\begin{minipage}[b]{0.48\textwidth}
+		\centering
+		\includegraphics[width=\linewidth]{/home/pablo/Documentos/TFGP/Thesis/Figures/biasinput/scatter2.png}
+		\label{fig:imagen2}
+	\end{minipage}
+	\caption{Scatter plots of residue against a particular numerical input variable.  Left: Input var. FU.0420.26. A linear trend is appreciated, suggesting the model makes worse predictions as input load ''FU.0420.26'' is larger. Right: input var. FU.0420.25. No linear trend is appreciated, although severe heteroscedasticity can be observed. Note the vertical bar arrangement, showing particular input loads for which dispersion is unusually large. In view of the former results, the engineer may decide to investigate the underlying causes both for the linear trend in the left and for heteroscedasticity on the right. With the information, model and data boosting may be performed. More training data could be decided to be sampled in the range of $[20000,60000]$ of FU.0420.26, for instance, and some regularization technique could be tried for the loss function in order to penalise inputs triggering high variance observed in the right.}
+	\label{fig:binputscatter}
+\end{figure}
+%
+\subsection{Bias detection and quantification}
+The goal of this section is to flag statistically significant bias found in output variables, in order to provide mathematical assurance to engineers when interpreting results from \autoref{fig:binputscatter}. Similar to categorical variables, we use different tests for bias detection and for bias quantification. As the input variables are now numerical, instead of ANOVA and z-score we use:
+\paragraph{\GMVred{A.} \myul[GMVred]{Detection of linear trends for individual numerical variables}\\}
+For each input variable, the code fits a linear model that can identify a linear trend of the error as a function of the input variable.\\
+The test outputs (vid. \autoref{tab:lintrend}):
+\begin{itemize}
+	\item The $p$-value that accounts for whether such type of bias indeed exists.
+	\item The Pearson correlation coefficient.
+	\item The slope of the best linear model fit.
+\end{itemize}
+ 
+\begin{table}[!htb]
+	\centering
+	\caption{Bias detection and quantification on numerical input variables (the results for just five input variables are shown here -- in columns--): P-value (statistical significance of the hypothesis that the variable is biased), Pearson coefficient, and slope of the best linear fit are shown in the first three rows. The last row shows the message ''Biased'' in case the $p\text{-value}>0.05$, ''NO'' otherwise. Data from this table corresponds to residue of the output variable ''RF Column Buckling''. Analogous tables exist for the rest of the output variables.}
+	\includegraphics[scale=\tabscale]{/home/pablo/Documentos/TFGP/Thesis/Figures/biasinput/lineartrend.png}
+	\label{tab:lintrend}
+\end{table}
+
+\paragraph{\GMVred{B.} \myul[GMVred]{Discretizing continuous variables}\\}
+The process is to bin each input numerical variable and thus treat them as categorical, so that one can perform one-way ANOVA followed by bias quantification tests no. 1 (mean outlier) and test no. 2 (variance outlier) former discussed. By default the number of bins is equal to 10.
+
+For each input variable:
+\begin{itemize}
+	\item The input variable is binned.
+	\item The steps depicted in sections \autoref{subsec:biasinput1d} are applied.
+\end{itemize}
+
+\indent Results are shown in \autoref{tab:anovanum}, \autoref{tab:anovabins} and \autoref{tab:zscorenum1}.
+
+\begin{table}[!htb]
+	\centering
+	\caption{1-way ANOVA test results (p-values) for binned numerical input variables. For the output variable ''RF Forced Crippling'', bias is found in the input variables ''FU.0420.25'' and ''FU.0430.25''. Similarly, for the output variable ''RF Net Tension'', bias is found in the input variable ''FU.0430.15''. }
+	\includegraphics[scale=\tabscale]{/home/pablo/Documentos/TFGP/Thesis/Figures/biasinput/anovanum.png}
+	\label{tab:anovanum}
+\end{table}
+
+\begin{table}[!htb]
+	\centering
+	\caption{Bias quantification in binned FU.0430.15 input variable. Columns represents bins showing bias. The same quantification methods employed for categorical variables (z-score for mean and variance outlier detection) have been used.}
+	\includegraphics[scale=\tabscale]{/home/pablo/Documentos/TFGP/Thesis/Figures/biasinput/anovabins.png}
+	\label{tab:anovabins}
+\end{table}
+
+\begin{table}[!htb]
+	\centering
+	\caption{Summary of binned input variables bias quantification after binning the numerical variables and performing one-way ANOVA and z-score tests to every bin.}
+	\includegraphics[scale=\tabscale]{/home/pablo/Documentos/TFGP/Thesis/Figures/biasinput/zscorenum1.png}
+	\includegraphics[scale=\tabscale]{/home/pablo/Documentos/TFGP/Thesis/Figures/biasinput/zscorenum2.png}
+	\label{tab:zscorenum1}
+\end{table}
+
+\clearpage
+\mbox{}
+\clearpage
+\section{Distributed error quantification: conditioning the error distribution on the output space}\label{sec:biasoutput}
+This section corresponds to box labelled ''$P(E|Y)$'' in \autoref{fig:boutpipeline}.\\
+\autoref{fig:truevspredscatter} shows an important fact about the error distribution: dispersion is not homogeneous in the full range of the output variables --in the case of MS-S18, all the six Reserve Factors belong in the range $(1,5)$--, \ie error is heteroscedastic. This means that the residue is dependent on the prediction of the model, which has important implications in our validation approach. First, some statistical tests rely on the assumption of homoscedasticity. Second and most important, heteroscedasticity is a first indicator which tells us the need to carry out the analysis of the error distribution conditioned on the output space, $P(e|Y)$. Characterising the error in different regions of the output space is the final building block for our complete uncertainty model (vid. \autoref{sec:uncertainty}).
+
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=0.8\textwidth]{/home/pablo/Documentos/TFGP/Thesis/Figures/biasoutput/pipeline.png}
+	\caption{Relative position of \autoref{sec:biasoutput} in the complete validation pipeline.}
+	\label{fig:boutpipeline}
+\end{figure}
+
+%
+\indent The first step in the reconstruction of $P(e|Y)$ is to try to fit the error distribution to some well known theoretical distribution. But instead of just repeating what was done in \autoref{sec:disterr}, now we add an extra variable to the equation: the prediction of the model $\hat{y}$. Instead of trying to fit the whole error distribution, we filter the test set by establishing $\hat{y}<\hat{y}_0$ and try to fit the filtered test set to one of the well known distributions discussed in \autoref{sec:disterr} (Normal, Laplace, Cauchy, JohnsonSU). In \autoref{fig:localfits} four of the six output variables --for convenience-- of MS-S18 are put under a 1-variable K-S test to assess the goodness of fit of the error to the mentioned distributions. For this figure, the absolute value of the residue has been used instead of the plain residue. We can observe that, while all four theoretical distributions start fitting $P(e)$ when $\hat{y}_0<1.5$, soon the p-value drops down indicating a mismatch between the empirical error and Cauchy, Laplace, and Normal distributions. Only the JohnsonSU remains a good fit, but finally diverges as well when $\hat{y}_0\approx3$. The conclusion is that only the JohnsonSU distribution is found to be a good match for $P(e|Y)$, but only when filtering the test set up to moderate values of $\hat{y}_0$. This suggests presence of extreme phenomena in the error distribution, which in fact is in accordance with the heteroscedastic behaviour observed in \autoref{fig:truevspredscatter}, showing dispersion increases with the output $\hat{y}$.\\
+%
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=1\textwidth]{/home/pablo/Documentos/TFGP/Thesis/Figures/biasoutput/localfits.png}
+	\caption{Goodness of fit of the error distribution (test set previously filtered) to some parametrised distributions. The test is performed individually for the output variables (Reserve Factors) displayed on top of each image. The goodness of fit is assessed with a 1-variable K-S test. The test set is filtered using the x axis, rejecting every point whose output $\hat{y}$ is larger than $x$. If the p-value resulting from the K-S test in the filtered test set is greater than $0.05$, the vertical slice at position $x$ is labelled green (red if $p\text{-value}<0.05$, grey if less than a threshold number of points --namely, 30-- are present in the filtered test set).}
+	\label{fig:localfits}
+\end{figure}
+%
+\indent By filtering the test set using a maximum allowable value of predictions $\hat{y}_0$, we have reached to interesting conclusions. The question now is, why filtering the test set just the particular way we have done it? The choose was motivated by the intuition from \autoref{fig:truevspredscatter} that dispersion increases with the prediction value. A logical way of filtering the test set in order to find local information of the error distribution is binning it. For the next part, we bin the test set in 10 bins according to their output values, as described in \autoref{tab:ybins}.\\
+%
+\begin{table}[!htb]
+	\centering
+	\caption{Binnarization of the test set. The test set has been divided into ten bins according to output values. Extremes of the six intervals --one for each Reserve Factor-- defining the bins are shown below.}
+	\includegraphics[scale=\tabscale]{/home/pablo/Documentos/TFGP/Thesis/Figures/biasoutput/ybins.png}
+	\label{tab:ybins}
+\end{table}
+%
+\indent For each bin, a 2-sample K-S test comparing the true against the predicted distribution is performed. Such test is only performed if the number of points inside each bin is greater than a minimum threshold (set at 30 points). Results (only four output variables are displayed for convenience) are shown in \autoref{fig:binpvals}. There we can see a clear tendency: while for low output values the two distributions conform well, the p-value eventually drops for higher bins. This confirms the information of \autoref{fig:truevspredscatter} and \autoref{fig:localfits} that the model predicts very well when the output is in the low range, while it has more difficulties predicting higher Reserve Factors. This idea is reinforced by looking at \autoref{fig:violins}, where violin plots of the residue for every bin have been plotted. In this figure, it can be clearly appreciated that the (absolute) residue dispersion is dependent with the model's prediction, growing as $\hat{y}$ does so. As previously discussed, this is the desired behaviour, as low RF indicate high failure risk, whereas high reserve factors indicate low risks. It is therefore preferable to accumulate variance at the low RF extreme of the spectrum.\\
+%
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=1\textwidth]{/home/pablo/Documentos/TFGP/Thesis/Figures/biasoutput/pvalsKS.png}
+	\caption{Line plot of the $p$-value from the true-predicted distributions under a 2 sample K-S test. Distribution similarity is rejected if $p\text{-value}<0.05$.}
+	\label{fig:binpvals}
+\end{figure}
+%
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=1\textwidth]{/home/pablo/Documentos/TFGP/Thesis/Figures/biasoutput/violines.png}
+	\caption{Violin plots showing the absolute value residue for every bin.}
+	\label{fig:violins}
+\end{figure}
+%
+\indent In \autoref{fig:binfits} the error distribution of each individual bin is put under a K-S test to assess the goodness of fit to one of the aforementioned theoretical distributions. Results show similar conclusions to \autoref{fig:localfits}: only the JohnsonSU makes a good match, even though the $p$-value drops to under $0.05$ for certain bins (note the last bin never passes the test).\\
+%
+\indent Finally, we conclude by pointing out that the binned output space can be subject to the same bias detection and quantification tests (1-way ANOVA, $z$-score for median, $z$ score for variance, linear fit) which where discussed in \autoref{subsec:biasinput1d} for categorical input (and binned numerical) variables.\\
+
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=1\textwidth]{/home/pablo/Documentos/TFGP/Thesis/Figures/biasoutput/pvalsbins.png}
+	\caption{Sliced-bar with p-values from the binned error under a K-S test to assess the goodness of fit to several parametrised distributions.}
+	\label{fig:binfits}
+\end{figure}
+
+\clearpage
+\mbox{}
+\clearpage
+\section{Uncertainty model}\label{sec:uncertainty}
+This section corresponds to box labelled ''Uncertainty model'' in \autoref{fig:pipeline}. It is envisioned with the following question in mind:
+\begin{quotation}
+	Given a new configuration with input parameters ${\bf X}=(X_1,X_2,\dots,X_m)$ and prediction ${\bf Y}=(Y_1,Y_2,\dots,Y_q)$, where ${\bf Y}=F({\bf X})$, what is the expected uncertainty (error) associated to the prediction $\bf Y$?
+\end{quotation}
+%
+To the aim of answering this question, the main tasks are:
+\begin{itemize}
+	\item To build an \textbf{uncertainty model}.
+	\item To \textbf{validate} such model.\\
+\end{itemize}
+%
+\indent The expected uncertainty translates into (for instance) $q=6$ confidence intervals $(CI_{1},CI_{2},\dots,CI_{6})$, such that the $k$-th predicted reserve factor $Y_k$ has a confidence interval $CI_k=[Y_k^{min},Y_k^{max}]$. Other types of uncertainty quantifications are possible (standard deviation, credible interval, etc).\\
+%
+\indent Importantly, there are various sources of uncertainty that need to be combined:
+\begin{enumerate}
+	\item \textbf{Global error distribution} (cfr. \autoref{sec:disterr}). This is, the distribution of error in the test set, $P(E)$.\label{num:disterr}
+	\item \textbf{Local-output error distribution} (cfr. \autoref{sec:biasoutput}). This is, the distribution of the error in the test set, conditioned to a specific region of the prediction, $P(E|{\bf Y})$.\label{num:biasoutput}
+	\item \textbf{Local-input error distribution} (cfr. \autoref{sec:biasinput}). This is, the distribution of the error in the test set, conditioned to a specific region of the input space (error bias characterization), $P(E|{\bf X})$.\label{num:biasinput}\\
+\end{enumerate}
+%
+\indent Our uncertainty model will combine contributing factors (\ref{num:disterr}), (\ref{num:biasoutput}) and (\ref{num:biasinput}) into an effective uncertainty.\\
+%
+\indent Each part (\ref{num:disterr}-\ref{num:biasinput}) of the process will need to be \textbf{validated}. To this aim, we split the test set into a calibration set $\mathcal{E}^\text{cal}$ and a test set\footnote{Not to be confused with $\cal{S}^\text{test}$. Here we denote by ''test set'' the empirical error distribution sampled from the points belonging to $\cal{S}^\text{test}$.} $\mathcal{E}^\text{test}$ (80/20 random split), estimate the uncertainty model on the calibration set and evaluate it by computing its \textbf{coverage} (\ie the percentage of configurations whose true output belongs to the confidence interval region) in the test set.\\
+\subsection{Global uncertainty model based on $P(E)$}\label{subsec:GUM}
+After a sanity check that the dataset under analysis (here, the full calibration set) fulfils the minimum size requirements (threshold is set at 300 points for each output variable $\mathbf{Y}_i$) we proceed with:\\
+%
+\paragraph{\GMVred{A.} \myul[GMVred]{Global Uncertainty Model (GUM) computation}\\}
+The interval $[P2.5, P97.5]$ (or in general, the interval $[a,b]$ if other percentiles are chosen) of $P(E)$ is estimated in the calibration set, where the lower bound P2.5 and the upper bound P97.5 are not raw estimates but the mean of a bootstrap analysis of the lower and upper percentiles respectively. The bootstrapping procedure is implemented as described in \autoref{algo:uncertainty1}. This procedure is repeated for all $m$ output variables. Illustration of the GUM is provided in \autoref{tab:gum1}.
+\begin{algorithm}
+	\caption{Bootstrapped uncertainty CI}
+	\label{algo:uncertainty1}
+	\KwData{Calibration set $\mathcal{E}^\text{cal}$}
+	\KwResult{Bootstrapped 95\% CI [P2.5,P97.5]}
+	
+	Initialize empty arrays $P_{2.5}$ and $P_{97.5}$\;
+	
+	\For{$i=1$ \KwTo $100$}{
+		Build calibration set $i$ by randomly sampling (with replacement) a total number of points equal to the size of the calibration set\;
+		Compute lower ($P_{2.5}^{(i)}$) and upper ($P_{97.5}^{(i)}$) percentiles\;
+		Add $P_{2.5}^{(i)}$ to $P_{2.5}$\;
+		Add $P_{97.5}^{(i)}$ to $P_{97.5}$\;
+	}
+	
+	$P_{2.5\_mean}\leftarrow mean(P_{2.5})$\;
+	$P_{97.5\_mean}\leftarrow mean(P_{97.5})$\;
+	
+	\Return $P_{2.5\_mean}$ and $P_{97.5\_mean}$\;
+\end{algorithm}
+%
+\begin{table}[!htb]
+	\caption{Global Uncertainty Model: Confidence Interval (mean and extremes) for output variables ''RF Forced Crippling'' (left) and ''RF Column Buckling'' (right). Header showing $[y_{min},y_{max}]$ in the calibration set.}
+	\centering
+	\begin{minipage}[t]{0.4\linewidth}
+		\raggedright
+		\includegraphics[scale=\tabscale]{Figures/uncertainty/gumtab1.png}
+		\label{fig:gumtab1}
+	\end{minipage}%\hfill
+	\begin{minipage}[t]{0.4\linewidth}
+		\raggedleft
+		\includegraphics[scale=\tabscale]{Figures/uncertainty/gumtab2.png}
+		\label{fig:gumtab2}
+	\end{minipage}
+	\label{tab:gum1}
+\end{table}
+
+\paragraph{\GMVred{B.} \myul[GMVred]{Global Uncertainty Model (GUM) evaluation}\\}
+The (bootstrapped) error coverage is estimated in the test set. This is done by computing the percentage of points in the test set whose error lies inside the chosen uncertainty model. The bootstrap procedure is carried out as described in \autoref{algo:coverage}.
+
+\begin{algorithm}
+	\caption{Bootstrapped coverage}
+	\label{algo:coverage}
+	\KwData{Uncertainty model (CI), test set $\mathcal{E}^\text{test}$}
+	\KwResult{Mean and confidence interval of error coverage}
+	
+	Initialize empty array $error\_coverages$\;
+	
+	\For{$i=1$ \KwTo $100$}{
+		Build resampled test set $i$ by randomly sampling (with replacement) a total number of points equal to the size of the test set\;
+		Compute error coverage in resampled test set $i$\;
+		Add error coverage to $error\_coverages$\;
+	}
+	
+	Sort $error\_coverages$ in increasing order\;
+	Calculate mean, 2.5th percentile, and 97.5th percentile of $error\_coverages$\;
+	
+	\Return Mean, 2.5th percentile, and 97.5th percentile\;
+\end{algorithm}
+%
+\indent The output is the bootstrap error coverage and its 95\% confidence interval. The criteria for a correctly calibrated error coverage is that it is correctly calibrated if (b-a)\% (by default, 95\%) lies inside the bootstrapped error coverage confidence interval.\\
+\indent This procedure is repeated for all $m$ output variables. For a graphical interpretation of results, cfr. \autoref{fig:coverage1}. The six GUM's CIs are given in  \autoref{tab:coverage1}.\\
+%
+\begin{table}[!htb]
+	\centering
+	\caption{Global Uncertainty Model. The six confidence intervals (bootstrapped) defining the GUM alongside their coverage --in the calibration set-- are showed.}
+	\includegraphics[scale=\tabscale]{Figures/uncertainty/coveragetab1.png}
+	\label{tab:coverage1}
+\end{table}
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=\textwidth]{Figures/uncertainty/coverage1.png}
+	\caption{Global Uncertainty Model: error coverage. The coverage is higher than 95\% for both output variables --for convenience just two output variables are depicted-- what means the calibration criteria is successfully met.}
+	\label{fig:coverage1}
+\end{figure}
+
+\FloatBarrier
+\subsection{Local uncertainty model based on $P(E|\mathbf{Y})$}
+\paragraph{\GMVred{A.} \myul[GMVred]{Output variable binning}\\}
+In order to be able to computationally afford this analysis, the output space $\mathbf{Y}$ must be binned.\\
+\indent In the first place, a scatter plot of the error of each point in the calibration set is plotted for illustration as a function of the true output $y_t$ in \autoref{fig:scatter1}.\\
+\indent The calibration set is then partitioned into a total of equispaced $n_{bins}$ bins according to the range of the true output $y_t$.\\
+\indent For illustration, a total of $n_{bins}$ violin plots (one per bin, concatenated in a single plot where the ''x axis'' is the bin number) is plotted in \autoref{fig:violins1}, where each violin plot describes the error density of the points in the respective bin.\\
+%
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=\textwidth]{Figures/uncertainty/scatter1.png}
+	\caption{Local Uncertainty Model based on $P(E|\mathbf{Y})$: Scatter plot of the residue as a function of the predicted output $\hat{y}$, for output variables ''RF Pure Compression'' and ''RF Shear Panel Failure''.}
+	\label{fig:scatter1}
+\end{figure}
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=\textwidth]{Figures/uncertainty/violines1.png}
+	\caption{Local Uncertainty Model based on $P(E|\mathbf{Y})$: Violin plots of the residue, for binned output variables ''RF Pure Compression'' and ''RF Shear Panel Failure''.}
+	\label{fig:violins1}
+\end{figure}
+
+\paragraph{\GMVred{B.} \myul[GMVred]{Local Output Uncertainty Model (LOUM) computation}\\}
+First, a sanity check that the number of points in each bin is above a certain threshold (namely, 300 points) assures statistical robustness for this next part.\\
+\indent For those bins for which the minimum-size requirement is not met, the bin is given the Global Uncertainty Model (GUM).\\
+\indent For those bins for which the minimum-size requirement is met, the code computes an uncertainty model in terms of the bootstrap [P2.5, P97.5] (or a general [a,b]) using \autoref{algo:uncertainty1}, and assigns to the bin the resulting local uncertainty model (vid. \autoref{tab:loumtab1}).\\
+%
+\indent This procedure is repeated for all $m$ output variables.
+\begin{sidewaystable}
+	\centering
+	\caption{Local Output Uncertainty Model: Bootstrapped CIs for each of the ten bins into which the output variable ''RF Forced Crippling'' has been binned. The mean of each CI is also given, as well as the bin extrema $[\hat{y}_{min},\hat{y}_{max}]$ for every bin (in the first row).}
+	\includegraphics[scale=\tabscale]{/home/pablo/Documentos/TFGP/Thesis/Figures/uncertainty/loumtab1.png}
+	\label{tab:loumtab1}
+\end{sidewaystable}
+
+\paragraph{\GMVred{C.} \myul[GMVred]{Local Output Uncertainty Model (LOUM) evaluation}\\}
+The bootstrapped error coverage in the test set associated to the LOUM vector is computed with \autoref{algo:coverage}, with the nuance that for each point in the test set, we need to find, based on the point's error, to which bin of the output variable it belongs, and then it is checked whether such error is within the corresponding bootstrapped interval [P2.5, P97.5].\\
+\indent The output is the bootstrap error coverage and its 95\% confidence interval. The criteria for a correctly calibrated error coverage is that it is correctly calibrated if (b-a)\% (by default, 95\%) lies inside the bootstrapped error coverage confidence interval.\\
+\indent This procedure is repeated for all $m$ output variables.\\
+\indent A scatter plot of the error of each point in the calibration set is displayed in \autoref{fig:loum1}, along with the uncertainty model interval (the upper and lower percentiles emphasized in blue and red respectively). This LOUM shows up as a piece-wise constant upper curve and a piece-wise constant lower curve. LOUM coverage for all the six Reserve Factors can be found in \autoref{tab:loumtab2}.\\
+
+\begin{table}[!htb]
+	\centering
+	\caption{LOUM coverage. Coverage in the validation set is displayed in the first row, whereas the coverage bootstrapped CIs are displayed in the second row.}
+	\includegraphics[scale=\tabscale]{Figures/uncertainty/loumtab2.png}
+	\label{tab:loumtab2}
+\end{table}
+\begin{figure}
+	\centering
+	\includegraphics[width=\textwidth]{Figures/uncertainty/loumcoverage.png}
+	\caption{LOUM coverage in the validation set. For both output variables coverage is above the minimum 95\% threshold.}
+	\label{fig:loum1}
+\end{figure}
+
+\subsection{Local uncertainty model based on $P(E|\mathbf{X})$}
+\paragraph{\GMVred{A.} \myul[GMVred]{Input variable binnarization}\\}
+In order to be able to computationally afford LIUM calculation, it is needed to bin the input space in the first place.\\
+\indent For illustration, a scatter plot of the error of each point in the calibration set as a function of $x_i$ is displayed in \autoref{fig:scatter2} (just two input numerical and two categorical variables have been selected for convenience).\\
+\indent For each continuous input variable $x_i$ the calibration set is partitioned into a total of equispaced $n_{bins}$ bins according to the range of input variable $x_i$.\\
+\indent For illustration, in \autoref{fig:subviolins1} $n_{\text{bins}}$ number of violin plots (one per bin, concatenated in a single plot where the ''x axis'' is the bin number) are plotted, where each violin plot describes the error density of the points in the respective bin.\\
+\indent Binning is exclusive to continuous numerical variables. For illustration, in \autoref{fig:subviolins2} and \autoref{fig:subviolins3} $m_i$ violin plots (one per each possible value that the corresponding input variable $x_i$ can take) are plotted, where each violin plot describes the error density of the points whose input variable $x_i$ takes the same value.\\
+%
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=\textwidth]{Figures/uncertainty/scatter2.png}
+	\caption{LIUM: Scatter plot of the residue of ''RF Forced Crippling'' as a function of the input $x$ (left: $x$ is ''FU.0410.16''. Right: $x$ is ''FU.0410.24'').}
+	\label{fig:scatter2}
+\end{figure}
+
+\begin{figure}[!htb]
+	\centering
+	\begin{subfigure}[b]{1\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{Figures/uncertainty/violines2.png}
+		\caption{Input variables: ''FU.0410.16'' (left), ''FU.0410.24'' (right)}
+		\label{fig:subviolins1}
+	\end{subfigure}
+	\vskip\baselineskip
+	\begin{subfigure}[b]{0.4\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{Figures/uncertainty/violines3.png}
+		\caption{Input variable: ''Frame''}
+		\label{fig:subviolins2}
+	\end{subfigure}
+%	\hfill
+	\begin{subfigure}[b]{0.4\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{Figures/uncertainty/violines4.png}
+		\caption{Input variable: ''dp''}
+		\label{fig:subviolins3}
+	\end{subfigure}
+	\caption{Violin plots showing the residue of output variable ''RF Forced Crippling''. (a): Numerical inputs (binned). (b) and (c): categorical inputs.}
+	\label{fig:violins3}
+\end{figure}
+%
+\paragraph{\GMVred{B.} \myul[GMVred]{Local Input Uncertainty Model (LIUM) computation}\\}
+For each continuous input variable $x_i$ that has been discretized into $n_{\text{bins}}$ bins:
+\begin{itemize}
+	\item It is checked whether the number of points inside each bin fulfils the minimum bin size (set at 300 points) requirement.
+	\item For those bins for which the minimum bin size requirement is not met, the bin is given the Global Uncertainty Model (GUM).
+	\item For those bins for which the minimum bin size requirement is met, an uncertainty model is computed in terms of the bootstrapped interval [P2.5, P97.5] (or a general [a,b]) with \autoref{algo:uncertainty1}, and the resulting local uncertainty model is assigned to the bin.
+	\item The output (illustration of it is provided in \autoref{tab:lium1})is the resulting vector of bootstraps [P2.5, P97.5] associated to the input variable $x_i$.\\
+\end{itemize}
+
+\indent For each categorical input variable $x_i$:
+\begin{itemize}
+	\item The code checks whether the number of points inside each category fulfils the minimum bin size requirement (the minimum bin size requirement is just a name, note nevertheless that categorical variables have not been binned).
+	\item For those categories for which the minimum bin size requirement is not met, the category is given the Global Uncertainty Model (GUM).
+	\item For those categories for which the minimum bin size requirement is met, the code computes an uncertainty model in terms of the bootstrap [P2.5, P97.5] (or a general [a,b]) with \autoref{algo:uncertainty1}, and assigns to the category the resulting local uncertainty model.
+	\item The output (illustration of it is provided in \autoref{tab:lium2})is the resulting vector of bootstraps [P2.5, P97.5] (with length equal to the number of categories of the categorical variable $x_i$) associated to the input variable $x_i$.\\
+\end{itemize}
+
+\indent This procedure is repeated for all $m$ output variables.\\
+
+\begin{table}
+	\centering
+	\caption{LIUM: Bootstrapped CIs for binned input variable ''FU.0430.26'' (bins' extrema displayed as column names). Residue corresponds to output variable ''RF Shear Panel Failure''.}
+	\includegraphics[scale=\tabscale]{Figures/uncertainty/liumtab1.png}
+	\label{tab:lium1}
+\end{table}
+\begin{table}
+	\centering
+	\caption{LIUM: Bootstrapped CIs for categorical input variable ''dp'' (possible values that the variable can take are displayed as column names). Residue corresponds to ''RF Shear Panel Failure'' output variable.}
+	\includegraphics[scale=\tabscale]{Figures/uncertainty/liumtab2.png}
+	\label{tab:lium2}
+\end{table}
+
+\paragraph{\GMVred{C.} \myul[GMVred]{Local Input Uncertainty Model (LIUM) evaluation}\\}
+For each input variable:
+\begin{itemize}
+	\item The bootstrap error coverage in the test set associated to the LIUM vector is computed with \autoref{algo:coverage}, with the nuance that for each point in the test set, we need to find, based on the point's error, to which bin (or category) of the input variable it belongs, and then check whether such error is within the corresponding bootstrapped interval [P2.5, P97.5].
+	\item The output is the bootstrap error coverage and its 95\% confidence interval. The criteria for a correctly calibrated error coverage is that it is correctly calibrated if (b-a)\% (by default, 95\%) lies inside the bootstrapped error coverage confidence interval.\\
+\end{itemize}
+
+\indent This procedure is repeated for all $m$ output variables.\\
+%
+\indent For illustration, a scatter plot of the error of each point in the calibration set is displayed in \autoref{fig:liumcoverage}, along with the uncertainty model interval (the upper and lower percentiles emphasized in blue and red respectively). This LIUM shows up as a piece-wise constant upper curve and a piece-wise constant lower curve.\\
+
+\begin{figure}[!htb]
+	\centering
+	\begin{subfigure}[b]{1\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{Figures/uncertainty/liumcoverage.png}
+		\caption{Numerical inputs: ''FU.0410.14'' (left), ''FU.0410.15'' (right). White slices correspond to bins which have not fulfilled the minimum bin size requirements. For such bins, the GUM is used instead of LIUM.}
+		\label{fig:liumcoveragenum}
+	\end{subfigure}
+	\vskip\baselineskip
+	\begin{subfigure}[b]{\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{Figures/uncertainty/liumcoveragecat.png}
+		\caption{Categorical inputs: ''dp'' (left), ''Frame'' (right)}
+		\label{fig:liumcoveragecat}
+	\end{subfigure}
+	\caption{LIUM coverage on the evaluation set. Residue of the output variable ''RF Forced Crippling''. The grey area represents the uncertainty CI calculated by the LIUM for the corresponding bin.}
+	\label{fig:liumcoverage}
+\end{figure}
+
+\subsection{Full uncertainty model (FUM)}
+The FUM is a conservative uncertainty model that consistently takes, for a given point of the test set $({\bf X},y)$, the largest uncertainty
+
+$$\text{FUM}(({\bf X}, y)) = \max\{\text{GUM}, \text{LOUM}(y), \text{LIUM}(x_1), \text{LIUM}(x_2), ..., \text{LIUM}(x_n)\}$$
+
+Accordingly (vid. \autoref{fig:fumexplain}), 
+
+\begin{itemize}
+	\item For each point in the test set with input variables $(x_1,...,x_n)$ and output prediction $y$, the the larger out of all the intervals in the set
+	$$
+	\{\text{GUM}, \text{LOUM}(y), \text{LIUM}(x_1), \text{LIUM}(x_2), ..., \text{LIUM}(x_n)\}
+	$$
+	is selected and it is checked whether the error associated to this point lies inside the corresponding interval.
+	\item The error coverage is computed, accordingly.
+	\item The bootstrap error coverage is computed, as per previous sections, and the final output is the bootstrap error coverage and its 95\% confidence interval, along with a markdown message about whether the FUM is well calibrated.\\
+\end{itemize}
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.8\textwidth]{Figures/uncertainty/FUMexplanation.png}
+	\caption{Conceptual visualization of FUM as a conservative merge between GUM (whose bootstrap interval [P2.5,P97.5] is represented by the two straight horizontal lines), LOUM and LIUM (whose bootstrap intervals [P2.5,P97.5] are represented indistinctively by the red and blue curves).}
+	\label{fig:fumexplain}
+\end{figure}

@@ -1,0 +1,165 @@
+\chapter{General concepts on spacecraft relative dynamics and STMs.}
+%
+\label{chap:Chap_1}
+%
+%\indent This thesis is developed over a particular method of describing 
+%
+\section{Spacecraft relative dynamics.}
+%
+\indent Spacecraft relative dynamics is a vast, very relevant and ever-increasing branch of celestial mechanics. It tries to analyze, rather than the motion around a central body, that of a secondary body (or set of bodies) around a primary, assuming that neither of them generate a gravitational effect on each other. This discipline hence focuses on analyzing how a certain force field -- which may include different influences -- differentially affects two or more different spacecrafts in a generally similar orbit.\\
+%
+\indent Relative dynamics models are regularly reached through the manipulation of the absolute dynamics of each of the spacecrafts, although they come in all kinds of flavours. Some of them may be formulated through variational mechanics, while others are directly derived from Newton's equations of motion. Naturally, there is a variety also in the kind of variables they use, mainly being orbital elements or cartesian coordinates. When the spacecrafts are close enough together, the linearization of the equations becomes a common procedure, simplifying and increasing the efficiency of the formulation at the expense of accuracy. The trade-off between these two figures of merit will be a recurring topic along this thesis.\\
+%
+\indent Spacecraft relative dynamics is embedded in the Distributed Space Systems discipline. A Distributed Space System is a system composed of two or more satellites that work together to accomplish an objective, impossible using a single spacecraft. A diagram of the different sub-groups of missions is shown in figure \ref{figCh1:Dist_space_systems}. Along this thesis, only proximity motion is considered. Hence, only two branches will be analyzed: rendez-vous and formation flying. 
+%
+\begin{figure}[!htb]
+\centering\includegraphics[width = \linewidth]{Chapters/Chapter_01/Dist_space_systems}
+\caption{Distributed space systems classification.}
+\label{figCh1:Dist_space_systems}
+\end{figure}
+%
+\FloatBarrier
+%
+	\subsection{Rendez-vous.}
+	%
+	\indent A rendez-vous flight is basically an operation or a mission in which a spacecraft (chaser or deputy) approaches another one (target or chief) \cite{Fehse}. It is normally followed by a mating procedure, after which both spacecrafts are connected by a rigid link. The final goal of this kinds of missions may be ``simply'' meet the chief spacecraft (\eg reaching the International Space Station for research purposes), station keeping (\eg maintaining nominal conditions on the orbit of a passive spacecraft through impulses), on-orbit servicing or, lately, debris removal. \\
+	%
+	\indent In the context of the space race, rendez-vous symbolized one vital feat for the achievement of the Moon landing. A general rendez-vous mission generally consists of the following stages \cite{Fehse}:
+	%
+	\begin{itemize}
+	\item[\GMVred{\nth{1}}] \myul[GMVred]{Launch phase and injection}: This phase begins with the lift-off, greatly influenced by the launch window, and ends with the chaser vehicle in an injection orbit, considerably below and behind the target.
+	%
+	\item[\GMVred{\nth{2}}] \myul[GMVred]{Phasing}: The aim of this stage is to reduce the phase angle between the spacecrafts, which is achieved by exploiting the higher orbital rate of lower orbits. This phase ends with the acquisition of either an aim point or an entry gate, which marks the starting point of the rendez-vous procedure.
+	%
+	\item[\GMVred{\nth{3}}]\myul[GMVred]{Far-range rendez-vous}: The tasks of this phase are (a) the reduction of approach velocity (b) the synchronisation of the mission timeline and (c) lead the chaser to close proximity. It begins with said vehicle at the aim point and ends with it at the final approach hold point.
+	%
+	\item[\GMVred{\nth{4}}] \myul[GMVred]{Close-range rendez-vous}: This stage is subdivided into a preparation phase (\ie closing phase) and the final approach. The first one basically is devoted to a controlled range reduction (as well as obtaining the conditions for the final approach) while the latter is aimed to end with mating conditions (axis alignment, etc.). Depending on the kind of mating procedure (docking or berthing, see phase \nth{5}), these conditions differ.
+	%
+	\item[\GMVred{\nth{5}}] \myul[GMVred]{Mating}: This phase aims to achieve a certain connection between both spacecrafts. There are two main procedures for this purpose: Docking and berthing, which are shown in figure \ref{figCh1:Docking_berthing}. The connection, besides structural, usually involves power, data and possibly fluids. It is important to note that residual relative motion must be attenuated.
+	%
+	\end{itemize}
+	%
+	%
+	\begin{figure}[!htb]
+	\centering\includegraphics[width = 0.4\linewidth]{Chapters/Chapter_01/Docking_berthing}
+	\caption{Docking and berthing \cite{Fehse}.}
+	\label{figCh1:Docking_berthing}
+	\end{figure}
+	%
+	\FloatBarrier
+	%
+	\indent A comprehensive and thorough description of rendez-vous procedures is done by Fehse \cite{Fehse}. Now, it is time to give a bit of historic background on this topic. \\
+	%	
+	\indent The first successful attempt of a rendez-vous without docking was the Gemini VI-A mission, achieving a controlled distance of 0.3 meters in December, 1965. Months later, Gemini VIII mission achieved the docking between the Gemini VIII vehicle and the GATV (Gemini Agena Target Vehicle). The Gemini program -- whose principal goal was to achieve rendez-vous know-how, unsurprisingly -- continued to achieve more difficult rendez-vous and docking operations. It acted as a preliminary for the worldwide known Apollo program, which put the mankind on Moon's surfaces. \\
+	%
+	\indent In more recent times, US and Russian spacecrafts have routinely made rendez-vous and docking with the International Space Station. This accomplishment has also been repeatedly achieved during the last years, and in the future, many more similar missions will be flown.
+	%
+	\subsection{Formation flying.}
+	%
+	\indent Formation flying does not have a specially precise definition, varying from institution to institution. However, NASA's Goddard Space Flight Center provides a definition to which most of the space community would agree, defining it as the tracking or maintenance of a desired relative separation, orientation or position between or among spacecraft \cite{SCFormationFlying}. It involves longer-term planning and operations than rendez-vous, hence usually requiring or being further rewarded by the usage of more accurate models. Fuel consumption becomes an even more critical concern, depending on several factors such as mission requirements, initial conditions, drag or thrusting errors.\\
+	%
+	\indent Missions involving spacecraft formation flying are certainly infrequent. The required knowledge about control, measurement and modeling have turned some groundbreaking projects down due to their costs. Nonetheless, there are current missions such as CLUSTER and GRACE which feature concepts closely related to the discipline. Furthermore, missions like PRISMA or the upcoming Proba-3 and LISA are the main bids to develop the involved methodologies and technologies of formation flying.\\
+	%
+	\indent A very important concern about formation flying is orbit safety, being very tightly related to formation control. This will be a recurrent topic along the thesis, analyzing state-of-the-art methodologies and practical examples of greater or smaller complexities.
+%
+\section{State transition matrices.}
+%
+\indent Orbit propagation is a very wide and varied field. It comprises many different approaches and methods to obtain more or less accurate results, with a higher or lower computational cost. Some examples are the numerical integration of the equations of motion in cartesian coordinates, the numerical integration of the variational equations (\ie equations of motion expressed in OEs) and the development of closed-form solutions by simplifying the problem. Within this last group, State Transition Matrices arise.\\
+%
+\indent The State Transition Matrix is a linearization procedure of a nonlinear dynamical system. It is used to approximate the dynamics of said system over short periods of time, allowing for a lower computational cost while maintaining an acceptable accuracy. This concept is not restricted to orbital mechanics, although it is one of the main fields in which it is used \cite{Montenbruck}. \\
+%
+\indent This section intends to provide some background in (a) its mathematical formulation and (b) its applications in orbit theory.
+%
+	\subsection{Concept: System dynamics.}
+	%
+	\indent Consider the uncontrolled, nonlinear dynamic system that is characterized through the state vector $\underline{y} = \left[ y_1, y_2, \ldots, y_n \right]$. The Initial Value Problem (IVP) for this system may be expressed as:
+	%
+	\begin{equation}
+	[P] \equiv \left\{ \begin{array}{lll}
+	\text{Eq.}	 	& \dfrac{d \underline{y}}{dt} = \bm F(\underline{y}, t) \\
+	\text{ICs.} 	& \underline{y}(t_0) = \underline{y}_0
+	\end{array}\right.
+	\label{eqCh1:Problem_def}
+	\end{equation}
+	%
+	\noindent where $\underline{F}(\underline{y}, t)$ represents the nonlinear dynamics of the system. This problem is unsolvable in general, mainly due to its nonlinearity. In the context of orbit propagation, the state vector $\underline{y}$ might be the position and velocity (be it relative or absolute) of the celestial body, and the dynamics function $\underline{F}$ contains the considered force model. In order to arrive at a closed-form, solvable problem, it is assumed that the solution $\underline{y}(t)$ can be expressed as:
+	%
+	\begin{equation}
+	\underline{y}(t) = \Phi (t, t_0) \underline{y}(t_0)
+	\label{eqCh1:STM_1}
+	\end{equation}
+	%
+	\noindent where $\Phi (t, t_0)$ is the State Transition Matrix (STM) of the system. This matrix allows the state vector at a certain epoch $t$ to be calculated as the product of the matrix times the initial condition. This expression is obviously very favorable, but the question now is how does one compute it. Its actual definition can be easily derived from \eqref{eqCh1:STM_1} as:
+	%
+	\begin{equation}
+	\Phi (t, t_0) \equiv \dfrac{\partial \underline{y}}{\partial \underline{y}_0}
+	\label{eqCh1:STM_2}
+	\end{equation}
+	%
+	\indent Yet again, how to compute it is not clear at all. There are three main options, depending on the situation:
+	%
+	\begin{itemize}
+	\item[\GMVred{A.}] If the nonlinear solution as a function of the initial condition is known, then the expression \eqref{eqCh1:STM_2} is directly applied. This is an uncommon case, although simplified examples exist in the orbit propagation field. For example, the Keplerian motion equations expressed in Keplerian orbital elements (OEs) can be solved this way, due to the trivial remaining equations. Another example is the Clohessy-Wiltshire solution, from which the STM can be directly obtained. This process is detailed later on in section \ref{secCh2:CW_STM}.
+	%
+	\item[\GMVred{B.}] The nonlinear solution is unknown in the original state space, but can be calculated in a different space through a transformation. Mathematically, this can be written as:
+	%
+	\begin{equation}
+	\Phi_{y} (t, t_0) = \dfrac{\partial \underline{y}}{\partial \underline{y}_0} = \dfrac{\partial \underline{y}}{\partial \underline{u}} \dfrac{\partial \underline{u}}{\partial \underline{u}_0} \dfrac{\partial
+	\underline{u}_0}{\partial \underline{y}_0} \equiv W(t) \Phi_u(t, t_0) \left( W(t_0) \right)^{-1}
+	\label{eqCh1:STM_decomp}
+	\end{equation}
+	%
+	\noindent where $W(t)$ is the transformation matrix, where it is assumed that the transformation $\underline{y} = h(\underline{u})$ is known. An example of this kind of approach is the transformation of the Cartesian equations of motion into the Keplerian OEs, whose solution is known, as mentioned in \GMVred{A.}. This is a very commonly used method in relative orbit propagation, as in \cite{Yamanaka_Ankersen, GA_STM}.
+	%
+	\item[\GMVred{C.}] If none of the above can be performed, then the STM can be integrated itself, to be then used to calculate the state vector. This starts by differentiating \eqref{eqCh1:Problem_def} with respect to the initial condition $\underline{y}_0$, leading to:
+	\[
+	\begin{array}{ll}
+	\bullet & \dfrac{\partial}{{\partial \underline{y}(t_0)}} \dfrac{d\underline{y}(t)}{dt} = \dfrac{d}{dt}\dfrac{\partial \underline{y}(t)} {{\partial \underline{y}(t_0)}} = \dfrac{d}{dt} \bm \Phi (t, t_0) \\[1.2em]
+	\bullet & \dfrac{\partial \underline{f}(t, \underline{y})}{{\partial \underline{y}(t_0)}}  = \dfrac{\partial \underline{f}(t, \underline{y})}{{\partial \underline{y}(t)}} \dfrac{\partial \underline{y}}{{\partial \underline{y}(t_0)}} = \bm A \bm \Phi(t, t_0)
+	\end{array}
+	\]
+	%
+	\begin{equation}
+	\Rightarrow [P] \equiv \left\{ \begin{array}{lll}
+	\text{Eq.} 	& \dfrac{d}{dt} \Phi (t, t_0) = \bm A \Phi(t, t_0)\\
+	\text{IC} 	& \Phi(t_0, t_0) = \eye_{nxn}
+	\end{array}\right.
+	\label{eqCh1:STM_prop}
+	\end{equation}
+	%
+	\indent This last method is a bit unrewarding, as it forces one to integrate an IVP. However, the problem in terms of $\Phi(t, t_0)$ (eq. \eqref{eqCh1:STM_prop}) might be simpler or more efficient than the original (eq. \eqref{eqCh1:Problem_def}), although it is rare. An example of this approach is shown later in section \ref{secApp2:STM_prop}.
+	%
+	\end{itemize}
+	%
+	\subsection{Applications of STMs in celestial mechanics.}
+	%
+	\indent State Transition Matrices can be useful in a wide range of spacecraft dynamics applications. Some of the most important are \cite{STM_Apps}:
+	%
+	\paragraph{\GMVred{A.} \myul[GMVred]{Precise Orbit Determination.}\\}
+	%
+	\indent Precise Orbit Determination (POD) is a method through which the orbit of a flying spacecraft can be determined with a high accuracy \cite{POD}. This estimation is performed using general orbit determination algorithms, such as Kalman filtering or a batch least squares. It requires both high-precision geodetic receivers and high-precision dynamics models, where STMs comes to play. POD usually requires all typically important perturbations, such as non-spherical gravity, drag, tidal forces \ldots 
+	%
+	\paragraph{\GMVred{B.} \myul[GMVred]{Guidance, Navigation and Control (GNC).} \\}
+	%
+	\indent GNC deals with the design the systems to control the spacecraft. It involves the determination of the desired trajectory (guidance), the instantaneous determination of the spacecraft's position (navigation) and the manipulation of the controllers to execute guidance commands (control). STMs become very useful specially in situations in which the linearization error is small, such as in rendez-vous, station-keeping or formation flying operations. With respect to control purposes, STMs are extensively used for robust online optimal control.\\
+	%
+	\indent Unfavorable scenarios (\eg elliptic or perturbed orbit) may lead to greater linearization errors, unless an enhanced model is developed. This will be one recurring topic around the thesis.
+	%
+	\paragraph{\GMVred{C.} \myul[GMVred]{Orbit design.} \\}
+	%
+	\indent Alternatively, rather than propagating already defined orbits, it may be useful to solve the inverse problem: that is, find the orbit that satisfies a set of conditions (\eg optimality). This is specially relevant for the Circular Restricted Three Body Problem (CR3BP), or its particular case of Halo orbits (periodic 3D orbit near one of the Lagrange libration points). STMs are quite useful to determine an initial solution for said Halo orbits, and can also be used to evaluate the effect of a deviation in initial conditions or other parameters. 
+	%
+	\paragraph{\GMVred{D.} \myul[GMVred]{Covariance matrix propagation (Kalman filtering).} \\}
+	%
+	\indent Some degree of uncertainty will always be assumed in the knowledge of a spacecraft's position and velocity. This becomes really important in the context of collision avoidance, where ideally, said uncertainty would be calculated. That value of uncertainty can be translated into a range of initial conditions, which physically could be represented by a volume around the nominal initial position of the satellite. A Monte Carlo simulation could be performed for that range of ICs, although its computational cost is an important drawback.\\
+	%
+	\indent However, there is a more efficient approach. The usage of STMs allows for covariance matrix propagation, through the following expression:
+	%
+	\begin{equation}
+	P(t) = \Phi(t, t_0) P(t_0) \Phi(t, t_0)^T
+	\end{equation}
+	%
+	\noindent where $P(t)$ denotes the covariance matrix, representing the correlation between the deviations of the state variables. This method of propagation allows for a more efficient and even more accurate analysis of how uncertainty affects the spacecraft's possible trajectories. \\
+	%
+	\indent Most of these concepts lie out of the thesis' scope. However, it is important to know that the STMs developed or quoted throughout this thesis can be used in many different fields of celestial mechanics.
+	%
