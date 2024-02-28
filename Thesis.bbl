@@ -201,6 +201,253 @@
       \field{type}{phdthesis}
       \field{year}{2017}
     \endentry
+    \entry{force2021concepts}{incollection}{}
+      \name{author}{2}{}{%
+        {{hash=3d22edbd2279dc8fd3142f386a46c81d}{%
+           family={Force},
+           familyi={F\bibinitperiod},
+           given={EAT},
+           giveni={E\bibinitperiod}}}%
+        {{hash=bfb8840a243d41565e422356d32d881f}{%
+           family={Daedalean},
+           familyi={D\bibinitperiod},
+           given={A},
+           giveni={A\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {EASA}%
+      }
+      \strng{namehash}{ac335e7a293493eebaa44881d435224a}
+      \strng{fullhash}{ac335e7a293493eebaa44881d435224a}
+      \strng{bibnamehash}{ac335e7a293493eebaa44881d435224a}
+      \strng{authorbibnamehash}{ac335e7a293493eebaa44881d435224a}
+      \strng{authornamehash}{ac335e7a293493eebaa44881d435224a}
+      \strng{authorfullhash}{ac335e7a293493eebaa44881d435224a}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Concepts of Design Assurance for Neural Networks (CoDANN)}
+      \field{title}{Concepts of design assurance for neural networks (codann) ii}
+      \field{year}{2021}
+    \endentry
+    \entry{roadmap2021easa}{article}{}
+      \name{author}{1}{}{%
+        {{hash=f0186db0645e980f5a9a1a1d34fa8a65}{%
+           family={Roadmap},
+           familyi={R\bibinitperiod},
+           given={EASA\bibnamedelimb Artificial\bibnamedelima Intelligence},
+           giveni={E\bibinitperiod\bibinitdelim A\bibinitperiod\bibinitdelim I\bibinitperiod}}}%
+      }
+      \strng{namehash}{f0186db0645e980f5a9a1a1d34fa8a65}
+      \strng{fullhash}{f0186db0645e980f5a9a1a1d34fa8a65}
+      \strng{bibnamehash}{f0186db0645e980f5a9a1a1d34fa8a65}
+      \strng{authorbibnamehash}{f0186db0645e980f5a9a1a1d34fa8a65}
+      \strng{authornamehash}{f0186db0645e980f5a9a1a1d34fa8a65}
+      \strng{authorfullhash}{f0186db0645e980f5a9a1a1d34fa8a65}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{EASA Concept Paper: First usable guidance for Level 1 machine learning applications}
+      \field{year}{2021}
+    \endentry
+    \entry{henderson2022toward}{inproceedings}{}
+      \name{author}{3}{}{%
+        {{hash=9ce1641a4d6504e8bd8e577e5896a980}{%
+           family={Henderson},
+           familyi={H\bibinitperiod},
+           given={Alex},
+           giveni={A\bibinitperiod}}}%
+        {{hash=8ec7486fc5254d6e8cf6f90a4ef21e1c}{%
+           family={Harbour},
+           familyi={H\bibinitperiod},
+           given={Steven},
+           giveni={S\bibinitperiod}}}%
+        {{hash=7b12a098c03d7cfb243aa41402080ec9}{%
+           family={Cohen},
+           familyi={C\bibinitperiod},
+           given={Kelly},
+           giveni={K\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{fde4848cd5cb6475dc45f6934bdc84f2}
+      \strng{fullhash}{fde4848cd5cb6475dc45f6934bdc84f2}
+      \strng{bibnamehash}{fde4848cd5cb6475dc45f6934bdc84f2}
+      \strng{authorbibnamehash}{fde4848cd5cb6475dc45f6934bdc84f2}
+      \strng{authornamehash}{fde4848cd5cb6475dc45f6934bdc84f2}
+      \strng{authorfullhash}{fde4848cd5cb6475dc45f6934bdc84f2}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{2022 IEEE/AIAA 41st Digital Avionics Systems Conference (DASC)}
+      \field{title}{Toward Airworthiness Certification for Artificial Intelligence (AI) in Aerospace Systems}
+      \field{year}{2022}
+      \field{pages}{1\bibrangedash 10}
+      \range{pages}{10}
+    \endentry
+    \entry{durand2023formal}{inproceedings}{}
+      \name{author}{3}{}{%
+        {{hash=19432ea67f7c26dda09c49c120b0f85c}{%
+           family={Durand},
+           familyi={D\bibinitperiod},
+           given={Jean-Guillaume},
+           giveni={J\bibinithyphendelim G\bibinitperiod}}}%
+        {{hash=f2a6e23d1bc8e0558b7b950a7565c3ea}{%
+           family={Dubois},
+           familyi={D\bibinitperiod},
+           given={Arthur},
+           giveni={A\bibinitperiod}}}%
+        {{hash=ab12453a6ce16ffb86619f3413f3dfbe}{%
+           family={Moss},
+           familyi={M\bibinitperiod},
+           given={Robert\bibnamedelima J},
+           giveni={R\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{586c80d1854d2304bff375f7c02ce702}
+      \strng{fullhash}{586c80d1854d2304bff375f7c02ce702}
+      \strng{bibnamehash}{586c80d1854d2304bff375f7c02ce702}
+      \strng{authorbibnamehash}{586c80d1854d2304bff375f7c02ce702}
+      \strng{authornamehash}{586c80d1854d2304bff375f7c02ce702}
+      \strng{authorfullhash}{586c80d1854d2304bff375f7c02ce702}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{2023 IEEE/AIAA 42nd Digital Avionics Systems Conference (DASC)}
+      \field{title}{Formal and Practical Elements for the Certification of Machine Learning Systems}
+      \field{year}{2023}
+      \field{pages}{1\bibrangedash 10}
+      \range{pages}{10}
+    \endentry
+    \entry{dmitriev2021toward}{inproceedings}{}
+      \name{author}{3}{}{%
+        {{hash=c527eb5c49bbb7116d8796059bbdce2f}{%
+           family={Dmitriev},
+           familyi={D\bibinitperiod},
+           given={Konstantin},
+           giveni={K\bibinitperiod}}}%
+        {{hash=fd3b2c4c8d5c54b694205265a0e43f8b}{%
+           family={Schumann},
+           familyi={S\bibinitperiod},
+           given={Johann},
+           giveni={J\bibinitperiod}}}%
+        {{hash=0be9187a6606480819fc7791c865e755}{%
+           family={Holzapfel},
+           familyi={H\bibinitperiod},
+           given={Florian},
+           giveni={F\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{dcbe36c65dc83e2fe981a7a6c4dea9e5}
+      \strng{fullhash}{dcbe36c65dc83e2fe981a7a6c4dea9e5}
+      \strng{bibnamehash}{dcbe36c65dc83e2fe981a7a6c4dea9e5}
+      \strng{authorbibnamehash}{dcbe36c65dc83e2fe981a7a6c4dea9e5}
+      \strng{authornamehash}{dcbe36c65dc83e2fe981a7a6c4dea9e5}
+      \strng{authorfullhash}{dcbe36c65dc83e2fe981a7a6c4dea9e5}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{2021 IEEE/AIAA 40th Digital Avionics Systems Conference (DASC)}
+      \field{title}{Toward certification of machine-learning systems for low criticality airborne applications}
+      \field{year}{2021}
+      \field{pages}{1\bibrangedash 7}
+      \range{pages}{7}
+    \endentry
+    \entry{el2022certification}{article}{}
+      \name{author}{2}{}{%
+        {{hash=f3d2dd0b83a5898e6fc5994077c43854}{%
+           family={El\bibnamedelima Mir},
+           familyi={E\bibinitperiod\bibinitdelim M\bibinitperiod},
+           given={Haroun},
+           giveni={H\bibinitperiod}}}%
+        {{hash=1713e9bfe5b39d63af48fe90af1b9bc9}{%
+           family={Perinpanayagam},
+           familyi={P\bibinitperiod},
+           given={Suresh},
+           giveni={S\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Frontiers}%
+      }
+      \strng{namehash}{61a7f281bba432004642b928cc03aefa}
+      \strng{fullhash}{61a7f281bba432004642b928cc03aefa}
+      \strng{bibnamehash}{61a7f281bba432004642b928cc03aefa}
+      \strng{authorbibnamehash}{61a7f281bba432004642b928cc03aefa}
+      \strng{authornamehash}{61a7f281bba432004642b928cc03aefa}
+      \strng{authorfullhash}{61a7f281bba432004642b928cc03aefa}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Frontiers in Astronomy and Space Sciences}
+      \field{title}{Certification of machine learning algorithms for safe-life assessment of landing gear}
+      \field{volume}{9}
+      \field{year}{2022}
+      \field{pages}{896877}
+      \range{pages}{1}
+    \endentry
+    \entry{paul2023assurance}{report}{}
+      \true{moreauthor}
+      \true{morelabelname}
+      \name{author}{6}{}{%
+        {{hash=8923b8baa984bde5fc051946697047e7}{%
+           family={Paul},
+           familyi={P\bibinitperiod},
+           given={Saswata},
+           giveni={S\bibinitperiod}}}%
+        {{hash=614cc252a16c4bc1ff5825584a7910f0}{%
+           family={Prince},
+           familyi={P\bibinitperiod},
+           given={Dan},
+           giveni={D\bibinitperiod}}}%
+        {{hash=0f98a042896ac6b5baa1d09b872cb7fe}{%
+           family={Iyer},
+           familyi={I\bibinitperiod},
+           given={Naresh},
+           giveni={N\bibinitperiod}}}%
+        {{hash=9b14bb62d6013f576630e2dbaa8fa226}{%
+           family={Durling},
+           familyi={D\bibinitperiod},
+           given={Michael},
+           giveni={M\bibinitperiod}}}%
+        {{hash=8f07eaf460fb86cec514c0eba9c062d6}{%
+           family={Visnevski},
+           familyi={V\bibinitperiod},
+           given={Nikita},
+           giveni={N\bibinitperiod}}}%
+        {{hash=a3b82c22b7c29ef0664d64fb13ff8747}{%
+           family={Meng},
+           familyi={M\bibinitperiod},
+           given={Baoluo},
+           giveni={B\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {United States. Department of Transportation. Federal Aviation Administration}%
+      }
+      \strng{namehash}{cf814a0eb99e576fa296b0b4295dcf82}
+      \strng{fullhash}{005703c6c885b93de78d0a6539664e9a}
+      \strng{bibnamehash}{cf814a0eb99e576fa296b0b4295dcf82}
+      \strng{authorbibnamehash}{cf814a0eb99e576fa296b0b4295dcf82}
+      \strng{authornamehash}{cf814a0eb99e576fa296b0b4295dcf82}
+      \strng{authorfullhash}{005703c6c885b93de78d0a6539664e9a}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Assurance of Machine Learning-Based Aerospace Systems: Towards an Overarching Properties-Driven Approach}
+      \field{type}{techreport}
+      \field{year}{2023}
+    \endentry
     \entry{bijlaard1955buckling}{article}{}
       \name{author}{1}{}{%
         {{hash=3cbf1a25c755f9e3fb27ddf227d6ef88}{%
@@ -215,8 +462,8 @@
       \strng{authorbibnamehash}{3cbf1a25c755f9e3fb27ddf227d6ef88}
       \strng{authornamehash}{3cbf1a25c755f9e3fb27ddf227d6ef88}
       \strng{authorfullhash}{3cbf1a25c755f9e3fb27ddf227d6ef88}
-      \field{sortinit}{6}
-      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Journal of the Aeronautical Sciences}
@@ -252,8 +499,8 @@
       \strng{authorbibnamehash}{dd196855e0693645251fa5bc57a16c00}
       \strng{authornamehash}{dd196855e0693645251fa5bc57a16c00}
       \strng{authorfullhash}{dd196855e0693645251fa5bc57a16c00}
-      \field{sortinit}{7}
-      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{The problem of computing a convex hull is not only central to practical applications, but is also a vehicle for the solution of a number of apparently unrelated questions arising in computational geometry. The computation of the convex hull of a finite set of points, particularly in the plane, has been studied extensively and has applications, for example, in pattern recognition [Akl--CToussaint (1978); Duda--CHart (1973)], image processing [Rosenfeld (1969)] and stock cutting and allocation [Freeman (1974);Sklansky (1972); Freeman--CShapira (1975)].}
@@ -325,8 +572,8 @@
       \strng{editorbibnamehash}{83be554d58af5be1788b5c3616f0e92a}
       \strng{editornamehash}{83be554d58af5be1788b5c3616f0e92a}
       \strng{editorfullhash}{83be554d58af5be1788b5c3616f0e92a}
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{Whether neural networks can learn abstract reasoning or whether they merely rely on superficial statistics is a topic of recent debate. Here, we propose a dataset and challenge designed to probe abstract reasoning, inspired by a well-known human IQ test. To succeed at this challenge, models must cope with various generalisation â€™regimesâ€™ in which the training data and test questions differ in clearly-defined ways. We show that popular models such as ResNets perform poorly, even when the training and test sets differ only minimally, and we present a novel architecture, with structure designed to encourage reasoning, that does significantly better. When we vary the way in which the test questions and training data differ, we find that our model is notably proficient at certain forms of generalisation, but notably weak at others. We further show that the modelâ€™s ability to generalise improves markedly if it is trained to predict symbolic explanations for its answers. Altogether, we introduce and explore ways to both measure and induce stronger abstract reasoning in neural networks. Our freely-available dataset should motivate further progress in this direction.}
@@ -367,8 +614,8 @@
       \strng{authorbibnamehash}{aa36293cebba3c7ebb1c52eab68079f6}
       \strng{authornamehash}{aa36293cebba3c7ebb1c52eab68079f6}
       \strng{authorfullhash}{aa36293cebba3c7ebb1c52eab68079f6}
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{eprinttype}{arXiv}
@@ -415,8 +662,8 @@
       \strng{authorbibnamehash}{1d188bd9b332df78ac288045fda49718}
       \strng{authornamehash}{1d188bd9b332df78ac288045fda49718}
       \strng{authorfullhash}{54fab41fa6c4d75b5d5fa86517341ad0}
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{eprinttype}{arXiv}
@@ -461,8 +708,8 @@
       \strng{authorbibnamehash}{77a476f8aeee6fc4b732c98911d88004}
       \strng{authornamehash}{77a476f8aeee6fc4b732c98911d88004}
       \strng{authorfullhash}{77a476f8aeee6fc4b732c98911d88004}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{booktitle}{2014 IEEE Symposium on Computational Intelligence and Data Mining (CIDM)}
@@ -768,8 +1015,8 @@
       \strng{authorbibnamehash}{5a6b19c047426c4c2d4a50b395bf450b}
       \strng{authornamehash}{5a6b19c047426c4c2d4a50b395bf450b}
       \strng{authorfullhash}{5a6b19c047426c4c2d4a50b395bf450b}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{Applied multivariate data analysis: regression and experimental design}
@@ -802,8 +1049,8 @@
       \strng{authorbibnamehash}{0c8f1e1a737c1fbb8c806e2c43949097}
       \strng{authornamehash}{0c8f1e1a737c1fbb8c806e2c43949097}
       \strng{authorfullhash}{0c8f1e1a737c1fbb8c806e2c43949097}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Publications of the Astronomical Society of the Pacific}
@@ -841,8 +1088,8 @@
       \strng{authorbibnamehash}{c171fd66faf63f473f8ee883e46e2668}
       \strng{authornamehash}{c171fd66faf63f473f8ee883e46e2668}
       \strng{authorfullhash}{c171fd66faf63f473f8ee883e46e2668}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Machine Learning: Science and Technology}
@@ -890,8 +1137,8 @@
       \strng{authorbibnamehash}{62777d6015aa80c4cc7ae187b166f5ee}
       \strng{authornamehash}{62777d6015aa80c4cc7ae187b166f5ee}
       \strng{authorfullhash}{b8d7d42963d795238572427da7863faa}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Journal of Computational Physics}
@@ -933,8 +1180,8 @@
       \strng{authorbibnamehash}{1748d65390729f38ced060f146edbcbb}
       \strng{authornamehash}{1748d65390729f38ced060f146edbcbb}
       \strng{authorfullhash}{4ae741faef9ddb97dcbd652cbe14a968}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{IEEE/ACM Transactions on Audio, Speech, and Language Processing}
@@ -1113,8 +1360,8 @@
       \strng{authorbibnamehash}{5e8b3c364784d3f8acec9469c96be92c}
       \strng{authornamehash}{5e8b3c364784d3f8acec9469c96be92c}
       \strng{authorfullhash}{5e8b3c364784d3f8acec9469c96be92c}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Korean journal of anesthesiology}
@@ -1437,8 +1684,8 @@
       \strng{authorbibnamehash}{258eaa64bb7c65774ba6b4486f00f719}
       \strng{authornamehash}{258eaa64bb7c65774ba6b4486f00f719}
       \strng{authorfullhash}{258eaa64bb7c65774ba6b4486f00f719}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{booktitle}{CNES International Symposium on Space Dynamics}
@@ -1616,7 +1863,6 @@
       \strng{authorbibnamehash}{36f88b66e2a1d70933657395bca8d775}
       \strng{authornamehash}{36f88b66e2a1d70933657395bca8d775}
       \strng{authorfullhash}{36f88b66e2a1d70933657395bca8d775}
-      \field{extraname}{1}
       \field{sortinit}{5}
       \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
@@ -1665,1414 +1911,6 @@
       \verb 10.2514/1.G005152
       \endverb
       \keyw{eccentric}
-    \endentry
-    \entry{lopes2007two}{article}{}
-      \name{author}{3}{}{%
-        {{hash=c8f670125f11cc406693c44f1a45fb5a}{%
-           family={Lopes},
-           familyi={L\bibinitperiod},
-           given={Raul\bibnamedelima HC},
-           giveni={R\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
-        {{hash=b20d1a298a6ffb25acd642c0531e2afe}{%
-           family={Reid},
-           familyi={R\bibinitperiod},
-           given={ID},
-           giveni={I\bibinitperiod}}}%
-        {{hash=62cf9798f6ef7910ac2b30c2d29408c0}{%
-           family={Hobson},
-           familyi={H\bibinitperiod},
-           given={Peter\bibnamedelima R},
-           giveni={P\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
-      }
-      \list{publisher}{1}{%
-        {Proceedings of Science}%
-      }
-      \strng{namehash}{494dcc467956f14392ca4efe5e3f3e9f}
-      \strng{fullhash}{494dcc467956f14392ca4efe5e3f3e9f}
-      \strng{bibnamehash}{494dcc467956f14392ca4efe5e3f3e9f}
-      \strng{authorbibnamehash}{494dcc467956f14392ca4efe5e3f3e9f}
-      \strng{authornamehash}{494dcc467956f14392ca4efe5e3f3e9f}
-      \strng{authorfullhash}{494dcc467956f14392ca4efe5e3f3e9f}
-      \field{sortinit}{7}
-      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{title}{The two-dimensional Kolmogorov-Smirnov test}
-      \field{year}{2007}
-      \true{nocite}
-    \endentry
-    \entry{schoups2010formal}{article}{}
-      \name{author}{2}{}{%
-        {{hash=46c166a06baaddcfd7089e9044207a8a}{%
-           family={Schoups},
-           familyi={S\bibinitperiod},
-           given={Gerrit},
-           giveni={G\bibinitperiod}}}%
-        {{hash=420a42f0ecdb7e097171e011e30f55b5}{%
-           family={Vrugt},
-           familyi={V\bibinitperiod},
-           given={Jasper\bibnamedelima A},
-           giveni={J\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
-      }
-      \list{publisher}{1}{%
-        {Wiley Online Library}%
-      }
-      \strng{namehash}{a81e53563497eadd429cbea760b8fa62}
-      \strng{fullhash}{a81e53563497eadd429cbea760b8fa62}
-      \strng{bibnamehash}{a81e53563497eadd429cbea760b8fa62}
-      \strng{authorbibnamehash}{a81e53563497eadd429cbea760b8fa62}
-      \strng{authornamehash}{a81e53563497eadd429cbea760b8fa62}
-      \strng{authorfullhash}{a81e53563497eadd429cbea760b8fa62}
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Water Resources Research}
-      \field{number}{10}
-      \field{title}{A formal likelihood function for parameter and predictive inference of hydrologic models with correlated, heteroscedastic, and non-Gaussian errors}
-      \field{volume}{46}
-      \field{year}{2010}
-      \true{nocite}
-    \endentry
-    \entry{Tapley}{book}{}
-      \name{author}{3}{}{%
-        {{hash=d2322cd60717b84a9b357c3478d16037}{%
-           family={Tapley},
-           familyi={T\bibinitperiod},
-           given={Byron\bibnamedelima D.},
-           giveni={B\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
-        {{hash=66f153b6859c96a5715fb868fb51715d}{%
-           family={Schutz},
-           familyi={S\bibinitperiod},
-           given={Bob\bibnamedelima E.},
-           giveni={B\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
-        {{hash=99d9e4d7ca7ae4170062a8d41d006bdb}{%
-           family={Born},
-           familyi={B\bibinitperiod},
-           given={George\bibnamedelima H.},
-           giveni={G\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
-      }
-      \list{location}{1}{%
-        {Amsterdam, Netherlands}%
-      }
-      \list{publisher}{1}{%
-        {Elsevier}%
-      }
-      \strng{namehash}{415a0bba2e2e7f3ff2d6d29311617685}
-      \strng{fullhash}{415a0bba2e2e7f3ff2d6d29311617685}
-      \strng{bibnamehash}{415a0bba2e2e7f3ff2d6d29311617685}
-      \strng{authorbibnamehash}{415a0bba2e2e7f3ff2d6d29311617685}
-      \strng{authornamehash}{415a0bba2e2e7f3ff2d6d29311617685}
-      \strng{authorfullhash}{415a0bba2e2e7f3ff2d6d29311617685}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{edition}{1}
-      \field{title}{{Statistical Orbit Determination}}
-      \field{year}{2004}
-      \true{nocite}
-      \keyw{general}
-    \endentry
-    \entry{SCFormationFlying}{book}{}
-      \name{author}{2}{}{%
-        {{hash=d2989068c98f22a0e452565ffdc24582}{%
-           family={T.\bibnamedelimi Alfriend},
-           familyi={T\bibinitperiod\bibinitdelim A\bibinitperiod},
-           given={Kyle},
-           giveni={K\bibinitperiod}}}%
-        {{hash=8f6fac0c0f9e1b88fcdb4d07cfafde47}{%
-           family={Srinivas},
-           familyi={S\bibinitperiod}}}%
-      }
-      \list{location}{1}{%
-        {Oxford, United Kingdom}%
-      }
-      \list{publisher}{1}{%
-        {Elsevier}%
-      }
-      \strng{namehash}{9586fc2f84f6bb67f3a559b1a9a8d898}
-      \strng{fullhash}{9586fc2f84f6bb67f3a559b1a9a8d898}
-      \strng{bibnamehash}{9586fc2f84f6bb67f3a559b1a9a8d898}
-      \strng{authorbibnamehash}{9586fc2f84f6bb67f3a559b1a9a8d898}
-      \strng{authornamehash}{9586fc2f84f6bb67f3a559b1a9a8d898}
-      \strng{authorfullhash}{9586fc2f84f6bb67f3a559b1a9a8d898}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{edition}{1}
-      \field{title}{Spacecraft Formation Flying}
-      \field{year}{2010}
-      \true{nocite}
-      \keyw{general}
-    \endentry
-    \entry{Battin}{book}{}
-      \name{author}{1}{}{%
-        {{hash=e8fb45d024eae4bc9b2bf3a208797691}{%
-           family={H.\bibnamedelimi Battin},
-           familyi={H\bibinitperiod\bibinitdelim B\bibinitperiod},
-           given={Richard},
-           giveni={R\bibinitperiod}}}%
-      }
-      \list{location}{1}{%
-        {Reston, Virginia}%
-      }
-      \list{publisher}{2}{%
-        {American Institute of Aeronautics}%
-        {Astronautics}%
-      }
-      \strng{namehash}{e8fb45d024eae4bc9b2bf3a208797691}
-      \strng{fullhash}{e8fb45d024eae4bc9b2bf3a208797691}
-      \strng{bibnamehash}{e8fb45d024eae4bc9b2bf3a208797691}
-      \strng{authorbibnamehash}{e8fb45d024eae4bc9b2bf3a208797691}
-      \strng{authornamehash}{e8fb45d024eae4bc9b2bf3a208797691}
-      \strng{authorfullhash}{e8fb45d024eae4bc9b2bf3a208797691}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{edition}{1}
-      \field{title}{{An Introduction to the Mathematics and Methods of Astrodynamics, Revised Edition}}
-      \field{year}{1999}
-      \true{nocite}
-      \keyw{general}
-    \endentry
-    \entry{Brouwer}{book}{}
-      \name{author}{2}{}{%
-        {{hash=0a6bbc521dde2c5fbba62c2b627ffcf6}{%
-           family={Brouwer},
-           familyi={B\bibinitperiod},
-           given={Dirk},
-           giveni={D\bibinitperiod}}}%
-        {{hash=5e3e63289db071177f35daf6593ada69}{%
-           family={M-Clemence},
-           familyi={M\bibinithyphendelim C\bibinitperiod},
-           given={Gerald},
-           giveni={G\bibinitperiod}}}%
-      }
-      \list{location}{1}{%
-        {Brackley Square House, London}%
-      }
-      \list{publisher}{1}{%
-        {Academic Press}%
-      }
-      \strng{namehash}{99c26c827c520050e600d7c2c0ee26eb}
-      \strng{fullhash}{99c26c827c520050e600d7c2c0ee26eb}
-      \strng{bibnamehash}{99c26c827c520050e600d7c2c0ee26eb}
-      \strng{authorbibnamehash}{99c26c827c520050e600d7c2c0ee26eb}
-      \strng{authornamehash}{99c26c827c520050e600d7c2c0ee26eb}
-      \strng{authorfullhash}{99c26c827c520050e600d7c2c0ee26eb}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{title}{{Methods of Celestial Mechanics}}
-      \field{year}{1961}
-      \true{nocite}
-      \keyw{general}
-    \endentry
-    \entry{Schaub_Junkins}{book}{}
-      \name{author}{2}{}{%
-        {{hash=5d9753c98d823c83966f248dbe18f6fd}{%
-           family={Schaub},
-           familyi={S\bibinitperiod},
-           given={Hanspeter},
-           giveni={H\bibinitperiod}}}%
-        {{hash=fc213a94bb17c691b35d3ec947794815}{%
-           family={Junkins},
-           familyi={J\bibinitperiod},
-           given={John\bibnamedelima L.},
-           giveni={J\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
-      }
-      \list{location}{1}{%
-        {Reston, VA}%
-      }
-      \list{publisher}{1}{%
-        {{AIAA} Education Series}%
-      }
-      \strng{namehash}{1d7a171a58363aa8bf04eece48bbe6dd}
-      \strng{fullhash}{1d7a171a58363aa8bf04eece48bbe6dd}
-      \strng{bibnamehash}{1d7a171a58363aa8bf04eece48bbe6dd}
-      \strng{authorbibnamehash}{1d7a171a58363aa8bf04eece48bbe6dd}
-      \strng{authornamehash}{1d7a171a58363aa8bf04eece48bbe6dd}
-      \strng{authorfullhash}{1d7a171a58363aa8bf04eece48bbe6dd}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{month}{10}
-      \field{title}{Analytical Mechanics of Space Systems}
-      \field{year}{2003}
-      \true{nocite}
-      \verb{doi}
-      \verb 10.2514/4.861550
-      \endverb
-      \keyw{general}
-    \endentry
-    \entry{Fehse}{book}{}
-      \name{author}{1}{}{%
-        {{hash=5ecb95438e87e12b20e8c9e9c27d0db7}{%
-           family={Fehse},
-           familyi={F\bibinitperiod},
-           given={Wigbert},
-           giveni={W\bibinitperiod}}}%
-      }
-      \list{location}{1}{%
-        {Cambridge}%
-      }
-      \list{publisher}{1}{%
-        {Cambridge University Press}%
-      }
-      \strng{namehash}{5ecb95438e87e12b20e8c9e9c27d0db7}
-      \strng{fullhash}{5ecb95438e87e12b20e8c9e9c27d0db7}
-      \strng{bibnamehash}{5ecb95438e87e12b20e8c9e9c27d0db7}
-      \strng{authorbibnamehash}{5ecb95438e87e12b20e8c9e9c27d0db7}
-      \strng{authornamehash}{5ecb95438e87e12b20e8c9e9c27d0db7}
-      \strng{authorfullhash}{5ecb95438e87e12b20e8c9e9c27d0db7}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{series}{Cambridge Aerospace Series}
-      \field{title}{Automated Rendezvous and Docking of Spacecraft}
-      \field{year}{2003}
-      \true{nocite}
-      \verb{doi}
-      \verb 10.1017/CBO9780511543388
-      \endverb
-      \keyw{general}
-    \endentry
-    \entry{Time_handbook}{book}{}
-      \name{author}{1}{}{%
-        {{hash=7aae3c76356e6c2d8205ca8f584a1b93}{%
-           family={Dennis\bibnamedelimb D.\bibnamedelimi McCarthy},
-           familyi={D\bibinitperiod\bibinitdelim D\bibinitperiod\bibinitdelim M\bibinitperiod},
-           given={P.\bibnamedelimi Kenneth\bibnamedelima Seidelmann},
-           giveni={P\bibinitperiod\bibinitdelim K\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
-      }
-      \list{publisher}{1}{%
-        {Wiley-VCH}%
-      }
-      \strng{namehash}{7aae3c76356e6c2d8205ca8f584a1b93}
-      \strng{fullhash}{7aae3c76356e6c2d8205ca8f584a1b93}
-      \strng{bibnamehash}{7aae3c76356e6c2d8205ca8f584a1b93}
-      \strng{authorbibnamehash}{7aae3c76356e6c2d8205ca8f584a1b93}
-      \strng{authornamehash}{7aae3c76356e6c2d8205ca8f584a1b93}
-      \strng{authorfullhash}{7aae3c76356e6c2d8205ca8f584a1b93}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{isbn}{3527407804; 9783527407804}
-      \field{title}{Time: From Earth Rotation to Atomic Physics}
-      \field{year}{2009}
-      \true{nocite}
-      \keyw{general}
-    \endentry
-    \entry{Wakker}{book}{}
-      \name{author}{1}{}{%
-        {{hash=9f67f7e163f525368297b347baa02ce6}{%
-           family={Wakker},
-           familyi={W\bibinitperiod},
-           given={Karel},
-           giveni={K\bibinitperiod}}}%
-      }
-      \strng{namehash}{9f67f7e163f525368297b347baa02ce6}
-      \strng{fullhash}{9f67f7e163f525368297b347baa02ce6}
-      \strng{bibnamehash}{9f67f7e163f525368297b347baa02ce6}
-      \strng{authorbibnamehash}{9f67f7e163f525368297b347baa02ce6}
-      \strng{authornamehash}{9f67f7e163f525368297b347baa02ce6}
-      \strng{authorfullhash}{9f67f7e163f525368297b347baa02ce6}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{isbn}{978-94-6186-419-2}
-      \field{month}{01}
-      \field{title}{Fundamentals of Astrodynamics}
-      \field{year}{2015}
-      \true{nocite}
-    \endentry
-    \entry{Nayfeh}{book}{}
-      \name{author}{1}{}{%
-        {{hash=aded628cfb77b62db19cb3243f425b8b}{%
-           family={H.\bibnamedelimi Nayfeh},
-           familyi={H\bibinitperiod\bibinitdelim N\bibinitperiod},
-           given={Ali},
-           giveni={A\bibinitperiod}}}%
-      }
-      \list{location}{1}{%
-        {Weinheim, Germany}%
-      }
-      \list{publisher}{1}{%
-        {Wiley-VCH}%
-      }
-      \strng{namehash}{aded628cfb77b62db19cb3243f425b8b}
-      \strng{fullhash}{aded628cfb77b62db19cb3243f425b8b}
-      \strng{bibnamehash}{aded628cfb77b62db19cb3243f425b8b}
-      \strng{authorbibnamehash}{aded628cfb77b62db19cb3243f425b8b}
-      \strng{authornamehash}{aded628cfb77b62db19cb3243f425b8b}
-      \strng{authorfullhash}{aded628cfb77b62db19cb3243f425b8b}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{title}{{Perturbation Methods}}
-      \field{year}{2004}
-      \true{nocite}
-      \keyw{perturbations}
-    \endentry
-    \entry{Kaula}{book}{}
-      \name{author}{1}{}{%
-        {{hash=a5d8ee096fc8780081f9d4403188d626}{%
-           family={Kaula},
-           familyi={K\bibinitperiod},
-           given={William\bibnamedelima M.},
-           giveni={W\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
-      }
-      \list{location}{1}{%
-        {Mineola, New York}%
-      }
-      \list{publisher}{1}{%
-        {Dover Publications}%
-      }
-      \strng{namehash}{a5d8ee096fc8780081f9d4403188d626}
-      \strng{fullhash}{a5d8ee096fc8780081f9d4403188d626}
-      \strng{bibnamehash}{a5d8ee096fc8780081f9d4403188d626}
-      \strng{authorbibnamehash}{a5d8ee096fc8780081f9d4403188d626}
-      \strng{authornamehash}{a5d8ee096fc8780081f9d4403188d626}
-      \strng{authorfullhash}{a5d8ee096fc8780081f9d4403188d626}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{title}{{Theory of Satellite Geodesy}}
-      \field{year}{2013}
-      \true{nocite}
-      \keyw{perturbations}
-    \endentry
-    \entry{Tisserand}{book}{}
-      \name{author}{1}{}{%
-        {{hash=fe825ec9d3bdbaa3aaac4903b15ce75c}{%
-           family={Tisserand},
-           familyi={T\bibinitperiod},
-           given={F.},
-           giveni={F\bibinitperiod}}}%
-      }
-      \list{location}{1}{%
-        {Paris}%
-      }
-      \strng{namehash}{fe825ec9d3bdbaa3aaac4903b15ce75c}
-      \strng{fullhash}{fe825ec9d3bdbaa3aaac4903b15ce75c}
-      \strng{bibnamehash}{fe825ec9d3bdbaa3aaac4903b15ce75c}
-      \strng{authorbibnamehash}{fe825ec9d3bdbaa3aaac4903b15ce75c}
-      \strng{authornamehash}{fe825ec9d3bdbaa3aaac4903b15ce75c}
-      \strng{authorfullhash}{fe825ec9d3bdbaa3aaac4903b15ce75c}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{title}{{Traité de Mécanique Céleste}}
-      \field{volume}{1}
-      \field{year}{1889}
-      \true{nocite}
-      \keyw{perturbations}
-    \endentry
-    \entry{Sullivan}{article}{}
-      \name{author}{3}{}{%
-        {{hash=724b995e12d13b7426262e44d00af760}{%
-           family={Sullivan},
-           familyi={S\bibinitperiod},
-           given={Joshua},
-           giveni={J\bibinitperiod}}}%
-        {{hash=47106cf1237c0a90b9300080bd6e962e}{%
-           family={Grimberg},
-           familyi={G\bibinitperiod},
-           given={Sebastian},
-           giveni={S\bibinitperiod}}}%
-        {{hash=ea13c363649ca2667cc3e443056d36c5}{%
-           family={D'Amico},
-           familyi={D\bibinitperiod},
-           given={Simone},
-           giveni={S\bibinitperiod}}}%
-      }
-      \list{publisher}{2}{%
-        {American Institute of Aeronautics}%
-        {Astronautics}%
-      }
-      \strng{namehash}{0aef3d40e01252a4fc361ae338296c02}
-      \strng{fullhash}{0aef3d40e01252a4fc361ae338296c02}
-      \strng{bibnamehash}{0aef3d40e01252a4fc361ae338296c02}
-      \strng{authorbibnamehash}{0aef3d40e01252a4fc361ae338296c02}
-      \strng{authornamehash}{0aef3d40e01252a4fc361ae338296c02}
-      \strng{authorfullhash}{0aef3d40e01252a4fc361ae338296c02}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{{Journal of Guidance, Control \& Dynamics}}
-      \field{number}{8}
-      \field{title}{Comprehensive Survey and Assessment of Spacecraft Relative Motion Dynamics Models}
-      \field{volume}{40}
-      \field{year}{2017}
-      \true{nocite}
-      \field{pages}{1837\bibrangedash 1859}
-      \range{pages}{23}
-      \verb{doi}
-      \verb 10.2514/1.G002309
-      \endverb
-      \keyw{general}
-    \endentry
-    \entry{Schaub_Alfriend}{article}{}
-      \name{author}{2}{}{%
-        {{hash=5d9753c98d823c83966f248dbe18f6fd}{%
-           family={Schaub},
-           familyi={S\bibinitperiod},
-           given={Hanspeter},
-           giveni={H\bibinitperiod}}}%
-        {{hash=3d71831655d74b518c7254ef27af5671}{%
-           family={Alfriedn},
-           familyi={A\bibinitperiod},
-           given={Kyle\bibnamedelima T.},
-           giveni={K\bibinitperiod\bibinitdelim T\bibinitperiod}}}%
-      }
-      \list{publisher}{2}{%
-        {American Institute of Aeronautics}%
-        {Astronautics}%
-      }
-      \strng{namehash}{e23d7330a9965df903edb002671404f9}
-      \strng{fullhash}{e23d7330a9965df903edb002671404f9}
-      \strng{bibnamehash}{e23d7330a9965df903edb002671404f9}
-      \strng{authorbibnamehash}{e23d7330a9965df903edb002671404f9}
-      \strng{authornamehash}{e23d7330a9965df903edb002671404f9}
-      \strng{authorfullhash}{e23d7330a9965df903edb002671404f9}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{{Journal of Guidance, Control \& Dynamics}}
-      \field{number}{2}
-      \field{title}{Hybrid Cartesian and Orbit Element Feedback Law for Formation Flying Spacecraft}
-      \field{volume}{25}
-      \field{year}{2002}
-      \true{nocite}
-      \field{pages}{387\bibrangedash 393}
-      \range{pages}{7}
-      \verb{doi}
-      \verb 10.2514/2.4893
-      \endverb
-      \keyw{general}
-    \endentry
-    \entry{Capitaine}{article}{}
-      \name{author}{1}{}{%
-        {{hash=45fe7bb07bbd30a3d42415b140a16574}{%
-           family={Capitaine},
-           familyi={C\bibinitperiod},
-           given={N.},
-           giveni={N\bibinitperiod}}}%
-      }
-      \list{location}{1}{%
-        {Paris, France}%
-      }
-      \list{publisher}{1}{%
-        {Kluwer Academic Publisher}%
-      }
-      \strng{namehash}{45fe7bb07bbd30a3d42415b140a16574}
-      \strng{fullhash}{45fe7bb07bbd30a3d42415b140a16574}
-      \strng{bibnamehash}{45fe7bb07bbd30a3d42415b140a16574}
-      \strng{authorbibnamehash}{45fe7bb07bbd30a3d42415b140a16574}
-      \strng{authornamehash}{45fe7bb07bbd30a3d42415b140a16574}
-      \strng{authorfullhash}{45fe7bb07bbd30a3d42415b140a16574}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{{Celestial Mechanics and Dynamical Astronomy}}
-      \field{title}{The Celestial Pole Coordinates}
-      \field{volume}{48}
-      \field{year}{1990}
-      \true{nocite}
-      \field{pages}{127\bibrangedash 143}
-      \range{pages}{17}
-      \keyw{general}
-    \endentry
-    \entry{IERS_conventions}{report}{}
-      \name{author}{1}{}{%
-        {{hash=44b11b044d204e0404ccad8f7a324667}{%
-           family={McCarthy},
-           familyi={M\bibinitperiod},
-           given={Dennis\bibnamedelima D.},
-           giveni={D\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
-      }
-      \list{institution}{1}{%
-        {Central Bureau of IERS - Observatoire de Paris}%
-      }
-      \list{location}{1}{%
-        {Paris, France}%
-      }
-      \strng{namehash}{44b11b044d204e0404ccad8f7a324667}
-      \strng{fullhash}{44b11b044d204e0404ccad8f7a324667}
-      \strng{bibnamehash}{44b11b044d204e0404ccad8f7a324667}
-      \strng{authorbibnamehash}{44b11b044d204e0404ccad8f7a324667}
-      \strng{authornamehash}{44b11b044d204e0404ccad8f7a324667}
-      \strng{authorfullhash}{44b11b044d204e0404ccad8f7a324667}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{number}{21}
-      \field{title}{IERS Conventions (1992)}
-      \field{year}{1996}
-      \true{nocite}
-      \keyw{general}
-    \endentry
-    \entry{LVLH}{report}{}
-      \name{author}{1}{}{%
-        {{hash=2f9ea127a38aa7b9bb961325b1251dd3}{%
-           family={Williams},
-           familyi={W\bibinitperiod},
-           given={Jacob},
-           giveni={J\bibinitperiod}}}%
-      }
-      \strng{namehash}{2f9ea127a38aa7b9bb961325b1251dd3}
-      \strng{fullhash}{2f9ea127a38aa7b9bb961325b1251dd3}
-      \strng{bibnamehash}{2f9ea127a38aa7b9bb961325b1251dd3}
-      \strng{authorbibnamehash}{2f9ea127a38aa7b9bb961325b1251dd3}
-      \strng{authornamehash}{2f9ea127a38aa7b9bb961325b1251dd3}
-      \strng{authorfullhash}{2f9ea127a38aa7b9bb961325b1251dd3}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{note}{\url{https://degenerateconic.com/uploads/2015/03/lvlh.pdf}}
-      \field{title}{LVLH Transformations}
-      \field{year}{2014}
-      \true{nocite}
-      \keyw{general}
-    \endentry
-    \entry{Terrasar}{report}{}
-      \name{author}{1}{}{%
-        {{hash=593d5a57309b860955c3e776f8866639}{%
-           family={Fiedler},
-           familyi={F\bibinitperiod},
-           given={Hauke},
-           giveni={H\bibinitperiod}}}%
-      }
-      \list{institution}{1}{%
-        {Deutsches Zentrum für Luft- und Raumfahrt (DLR)}%
-      }
-      \list{location}{1}{%
-        {Oberpfaffenhofen, Germany}%
-      }
-      \strng{namehash}{593d5a57309b860955c3e776f8866639}
-      \strng{fullhash}{593d5a57309b860955c3e776f8866639}
-      \strng{bibnamehash}{593d5a57309b860955c3e776f8866639}
-      \strng{authorbibnamehash}{593d5a57309b860955c3e776f8866639}
-      \strng{authornamehash}{593d5a57309b860955c3e776f8866639}
-      \strng{authorfullhash}{593d5a57309b860955c3e776f8866639}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{month}{11}
-      \field{note}{\url{https://elib.dlr.de/22345/}}
-      \field{title}{Analysis of TerraSAR-L Cartwheel Constellations}
-      \field{year}{2003}
-      \true{nocite}
-      \keyw{general}
-    \endentry
-    \entry{Hill}{article}{}
-      \name{author}{1}{}{%
-        {{hash=6e114c910e5898d17f0977859d8ab5f7}{%
-           family={Hill},
-           familyi={H\bibinitperiod},
-           given={G.\bibnamedelimi W.},
-           giveni={G\bibinitperiod\bibinitdelim W\bibinitperiod}}}%
-      }
-      \list{publisher}{1}{%
-        {Johns Hopkins University Press}%
-      }
-      \strng{namehash}{6e114c910e5898d17f0977859d8ab5f7}
-      \strng{fullhash}{6e114c910e5898d17f0977859d8ab5f7}
-      \strng{bibnamehash}{6e114c910e5898d17f0977859d8ab5f7}
-      \strng{authorbibnamehash}{6e114c910e5898d17f0977859d8ab5f7}
-      \strng{authornamehash}{6e114c910e5898d17f0977859d8ab5f7}
-      \strng{authorfullhash}{6e114c910e5898d17f0977859d8ab5f7}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{American Journal of Mathematics}
-      \field{number}{2}
-      \field{title}{Researches in the Lunar Theory}
-      \field{volume}{1}
-      \field{year}{1878}
-      \true{nocite}
-      \field{pages}{129\bibrangedash 147}
-      \range{pages}{19}
-      \verb{doi}
-      \verb 10.2307/2369304
-      \endverb
-      \keyw{general}
-    \endentry
-    \entry{CW}{article}{}
-      \name{author}{2}{}{%
-        {{hash=ab18038c7b484ed46b56ed3ecd584b69}{%
-           family={Clohessy},
-           familyi={C\bibinitperiod},
-           given={W.\bibnamedelimi H.},
-           giveni={W\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
-        {{hash=fb122c9c8515f7b4a0d9d7156c787d15}{%
-           family={Wiltshire},
-           familyi={W\bibinitperiod},
-           given={R.\bibnamedelimi S.},
-           giveni={R\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
-      }
-      \strng{namehash}{5c6fa172cc7a1ba23637337caf329441}
-      \strng{fullhash}{5c6fa172cc7a1ba23637337caf329441}
-      \strng{bibnamehash}{5c6fa172cc7a1ba23637337caf329441}
-      \strng{authorbibnamehash}{5c6fa172cc7a1ba23637337caf329441}
-      \strng{authornamehash}{5c6fa172cc7a1ba23637337caf329441}
-      \strng{authorfullhash}{5c6fa172cc7a1ba23637337caf329441}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Journal of the Aerospace Sciences}
-      \field{number}{9}
-      \field{title}{Terminal Guidance System for Satellite Rendezvous}
-      \field{volume}{27}
-      \field{year}{1960}
-      \true{nocite}
-      \field{pages}{653\bibrangedash 658}
-      \range{pages}{6}
-      \verb{doi}
-      \verb 10.2514/8.8704
-      \endverb
-      \keyw{general}
-    \endentry
-    \entry{Broucke}{article}{}
-      \name{author}{1}{}{%
-        {{hash=4008167c97bc7dde725c7244dd27db0d}{%
-           family={Broucke},
-           familyi={B\bibinitperiod},
-           given={R.A.},
-           giveni={R\bibinitperiod}}}%
-      }
-      \strng{namehash}{4008167c97bc7dde725c7244dd27db0d}
-      \strng{fullhash}{4008167c97bc7dde725c7244dd27db0d}
-      \strng{bibnamehash}{4008167c97bc7dde725c7244dd27db0d}
-      \strng{authorbibnamehash}{4008167c97bc7dde725c7244dd27db0d}
-      \strng{authornamehash}{4008167c97bc7dde725c7244dd27db0d}
-      \strng{authorfullhash}{4008167c97bc7dde725c7244dd27db0d}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Astronomy and Astrophysics}
-      \field{month}{6}
-      \field{title}{On the Matrizant of the Two-Body Problem}
-      \field{volume}{6}
-      \field{year}{1970}
-      \true{nocite}
-      \field{pages}{173}
-      \range{pages}{1}
-      \keyw{eccentric}
-    \endentry
-    \entry{Tschauner_Hempel}{article}{}
-      \name{author}{2}{}{%
-        {{hash=d83db3300d0eb58f7a4ba6f856008511}{%
-           family={Tschauner},
-           familyi={T\bibinitperiod},
-           given={J.},
-           giveni={J\bibinitperiod}}}%
-        {{hash=6d1959e827497cc3aaa69b39ff22f7c7}{%
-           family={Hempel},
-           familyi={H\bibinitperiod},
-           given={P.},
-           giveni={P\bibinitperiod}}}%
-      }
-      \strng{namehash}{9963bf91b0036a70fc09e6341b78fa64}
-      \strng{fullhash}{9963bf91b0036a70fc09e6341b78fa64}
-      \strng{bibnamehash}{9963bf91b0036a70fc09e6341b78fa64}
-      \strng{authorbibnamehash}{9963bf91b0036a70fc09e6341b78fa64}
-      \strng{authornamehash}{9963bf91b0036a70fc09e6341b78fa64}
-      \strng{authorfullhash}{9963bf91b0036a70fc09e6341b78fa64}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Astronautica Acta}
-      \field{title}{Optimale Beschleunigungsprogramme fÃ¼r das Rendezvous-Manöver}
-      \field{volume}{10}
-      \field{year}{1964}
-      \true{nocite}
-      \field{pages}{296\bibrangedash 307}
-      \range{pages}{12}
-      \keyw{eccentric}
-    \endentry
-    \entry{Carter}{article}{}
-      \name{author}{1}{}{%
-        {{hash=613679091e8ca1cb3632ce9fbbd24789}{%
-           family={Carter},
-           familyi={C\bibinitperiod},
-           given={Thomas},
-           giveni={T\bibinitperiod}}}%
-      }
-      \strng{namehash}{613679091e8ca1cb3632ce9fbbd24789}
-      \strng{fullhash}{613679091e8ca1cb3632ce9fbbd24789}
-      \strng{bibnamehash}{613679091e8ca1cb3632ce9fbbd24789}
-      \strng{authorbibnamehash}{613679091e8ca1cb3632ce9fbbd24789}
-      \strng{authornamehash}{613679091e8ca1cb3632ce9fbbd24789}
-      \strng{authorfullhash}{613679091e8ca1cb3632ce9fbbd24789}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Journal of Guidance Control and Dynamics}
-      \field{month}{01}
-      \field{title}{State Transition Matrices for Terminal Rendezvous Studies: Brief Survey and New Example}
-      \field{volume}{21}
-      \field{year}{1998}
-      \true{nocite}
-      \field{pages}{148\bibrangedash 155}
-      \range{pages}{8}
-      \verb{doi}
-      \verb 10.2514/2.4211
-      \endverb
-      \keyw{eccentric}
-    \endentry
-    \entry{Montenbruck_DAmico}{article}{}
-      \name{author}{3}{}{%
-        {{hash=80a8be6ff5184fbb0119b6701e40cfb1}{%
-           family={Montenbruck},
-           familyi={M\bibinitperiod},
-           given={Oliver},
-           giveni={O\bibinitperiod}}}%
-        {{hash=0930289d440ac1f1f7d144119f96ccf7}{%
-           family={Kirschner},
-           familyi={K\bibinitperiod},
-           given={Michael},
-           giveni={M\bibinitperiod}}}%
-        {{hash=ea13c363649ca2667cc3e443056d36c5}{%
-           family={D'Amico},
-           familyi={D\bibinitperiod},
-           given={Simone},
-           giveni={S\bibinitperiod}}}%
-      }
-      \strng{namehash}{326a1dd1cf23b55ae8b56ddc8609dcb6}
-      \strng{fullhash}{326a1dd1cf23b55ae8b56ddc8609dcb6}
-      \strng{bibnamehash}{326a1dd1cf23b55ae8b56ddc8609dcb6}
-      \strng{authorbibnamehash}{326a1dd1cf23b55ae8b56ddc8609dcb6}
-      \strng{authornamehash}{326a1dd1cf23b55ae8b56ddc8609dcb6}
-      \strng{authorfullhash}{326a1dd1cf23b55ae8b56ddc8609dcb6}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Aerospace Science and Technology}
-      \field{title}{E/I-vector separation for safe switching of the GRACE formation}
-      \field{volume}{10}
-      \field{year}{2006}
-      \true{nocite}
-      \field{pages}{628\bibrangedash 635}
-      \range{pages}{8}
-      \verb{doi}
-      \verb 10.1016/j.ast.2006.04.001
-      \endverb
-      \keyw{general}
-    \endentry
-    \entry{Gaias_LOS}{article}{}
-      \name{author}{3}{}{%
-        {{hash=9199fed0b1916afb2ca54db4ae4c11b5}{%
-           family={Gaias},
-           familyi={G\bibinitperiod},
-           given={G.},
-           giveni={G\bibinitperiod}}}%
-        {{hash=3148106f1917c40aad3f8bd94a4d37c1}{%
-           family={Ardaens},
-           familyi={A\bibinitperiod},
-           given={J.-S.},
-           giveni={J\bibinithyphendelim S\bibinitperiod}}}%
-        {{hash=e7b861115e068f6a67190843f0627e59}{%
-           family={Colombo},
-           familyi={C\bibinitperiod},
-           given={C.},
-           giveni={C\bibinitperiod}}}%
-      }
-      \strng{namehash}{9797c6c3c80e811360b2cab209116610}
-      \strng{fullhash}{9797c6c3c80e811360b2cab209116610}
-      \strng{bibnamehash}{9797c6c3c80e811360b2cab209116610}
-      \strng{authorbibnamehash}{9797c6c3c80e811360b2cab209116610}
-      \strng{authornamehash}{9797c6c3c80e811360b2cab209116610}
-      \strng{authorfullhash}{9797c6c3c80e811360b2cab209116610}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Advances in Space Research}
-      \field{note}{Satellite Constellations and Formation Flying}
-      \field{number}{11}
-      \field{title}{Precise line-of-sight modelling for angles-only relative navigation}
-      \field{volume}{67}
-      \field{year}{2021}
-      \true{nocite}
-      \field{pages}{3515\bibrangedash 3526}
-      \range{pages}{12}
-      \verb{doi}
-      \verb 10.1016/j.asr.2020.05.048
-      \endverb
-      \keyw{perturbations}
-    \endentry
-    \entry{Gaias_Framework}{article}{}
-      \name{author}{3}{}{%
-        {{hash=8b796085773bae90281bbfc5770adba1}{%
-           family={Gaias},
-           familyi={G\bibinitperiod},
-           given={Gabriella},
-           giveni={G\bibinitperiod}}}%
-        {{hash=7ca8913d671009db827cb65835e80adf}{%
-           family={Colombo},
-           familyi={C\bibinitperiod},
-           given={Camilla},
-           giveni={C\bibinitperiod}}}%
-        {{hash=315408691d84f31991f8675d8cfaae51}{%
-           family={Lara},
-           familyi={L\bibinitperiod},
-           given={Martin},
-           giveni={M\bibinitperiod}}}%
-      }
-      \strng{namehash}{36f88b66e2a1d70933657395bca8d775}
-      \strng{fullhash}{36f88b66e2a1d70933657395bca8d775}
-      \strng{bibnamehash}{36f88b66e2a1d70933657395bca8d775}
-      \strng{authorbibnamehash}{36f88b66e2a1d70933657395bca8d775}
-      \strng{authornamehash}{36f88b66e2a1d70933657395bca8d775}
-      \strng{authorfullhash}{36f88b66e2a1d70933657395bca8d775}
-      \field{extraname}{2}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Journal of Guidance, Control, and Dynamics}
-      \field{number}{5}
-      \field{title}{Analytical Framework for Precise Relative Motion in Low Earth Orbits}
-      \field{volume}{43}
-      \field{year}{2020}
-      \true{nocite}
-      \field{pages}{915\bibrangedash 927}
-      \range{pages}{13}
-      \verb{doi}
-      \verb 10.2514/1.G004716
-      \endverb
-      \keyw{perturbations}
-    \endentry
-    \entry{Brouwer_paper}{article}{}
-      \name{author}{1}{}{%
-        {{hash=0a6bbc521dde2c5fbba62c2b627ffcf6}{%
-           family={Brouwer},
-           familyi={B\bibinitperiod},
-           given={Dirk},
-           giveni={D\bibinitperiod}}}%
-      }
-      \strng{namehash}{0a6bbc521dde2c5fbba62c2b627ffcf6}
-      \strng{fullhash}{0a6bbc521dde2c5fbba62c2b627ffcf6}
-      \strng{bibnamehash}{0a6bbc521dde2c5fbba62c2b627ffcf6}
-      \strng{authorbibnamehash}{0a6bbc521dde2c5fbba62c2b627ffcf6}
-      \strng{authornamehash}{0a6bbc521dde2c5fbba62c2b627ffcf6}
-      \strng{authorfullhash}{0a6bbc521dde2c5fbba62c2b627ffcf6}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Astronomical Journal}
-      \field{month}{11}
-      \field{number}{5}
-      \field{title}{Solution of the problem of artificial satellite theory without drag}
-      \field{volume}{64}
-      \field{year}{1959}
-      \true{nocite}
-      \field{pages}{378}
-      \range{pages}{1}
-      \verb{doi}
-      \verb 10.1086/107958
-      \endverb
-      \keyw{perturbations}
-    \endentry
-    \entry{Lyddane}{article}{}
-      \name{author}{1}{}{%
-        {{hash=178bf8558061a59c8080dcb73e950720}{%
-           family={{Lyddane}},
-           familyi={L\bibinitperiod},
-           given={R.\bibnamedelimi H.},
-           giveni={R\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
-      }
-      \strng{namehash}{178bf8558061a59c8080dcb73e950720}
-      \strng{fullhash}{178bf8558061a59c8080dcb73e950720}
-      \strng{bibnamehash}{178bf8558061a59c8080dcb73e950720}
-      \strng{authorbibnamehash}{178bf8558061a59c8080dcb73e950720}
-      \strng{authornamehash}{178bf8558061a59c8080dcb73e950720}
-      \strng{authorfullhash}{178bf8558061a59c8080dcb73e950720}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Astronomical Journal}
-      \field{month}{10}
-      \field{title}{{Small eccentricities or inclinations in the Brouwer theory of the artificial satellite}}
-      \field{volume}{68}
-      \field{year}{1963}
-      \true{nocite}
-      \field{pages}{555}
-      \range{pages}{1}
-      \verb{doi}
-      \verb 10.1086/109179
-      \endverb
-      \keyw{perturbations}
-    \endentry
-    \entry{Deprit}{article}{}
-      \name{author}{1}{}{%
-        {{hash=35a361a71ca45d501e1f001b9d959b22}{%
-           family={{Deprit}},
-           familyi={D\bibinitperiod},
-           given={André},
-           giveni={A\bibinitperiod}}}%
-      }
-      \strng{namehash}{35a361a71ca45d501e1f001b9d959b22}
-      \strng{fullhash}{35a361a71ca45d501e1f001b9d959b22}
-      \strng{bibnamehash}{35a361a71ca45d501e1f001b9d959b22}
-      \strng{authorbibnamehash}{35a361a71ca45d501e1f001b9d959b22}
-      \strng{authornamehash}{35a361a71ca45d501e1f001b9d959b22}
-      \strng{authorfullhash}{35a361a71ca45d501e1f001b9d959b22}
-      \field{extraname}{1}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Celestial Mechanics}
-      \field{month}{3}
-      \field{number}{1}
-      \field{title}{{Canonical transformations depending on a small parameter}}
-      \field{volume}{1}
-      \field{year}{1969}
-      \true{nocite}
-      \field{pages}{12\bibrangedash 30}
-      \range{pages}{19}
-      \verb{doi}
-      \verb 10.1007/BF01230629
-      \endverb
-    \endentry
-    \entry{Deprit_2}{article}{}
-      \name{author}{1}{}{%
-        {{hash=dc5303060c2ccb5f93410de582fc5eed}{%
-           family={{Deprit}},
-           familyi={D\bibinitperiod},
-           given={A.},
-           giveni={A\bibinitperiod}}}%
-      }
-      \strng{namehash}{dc5303060c2ccb5f93410de582fc5eed}
-      \strng{fullhash}{dc5303060c2ccb5f93410de582fc5eed}
-      \strng{bibnamehash}{dc5303060c2ccb5f93410de582fc5eed}
-      \strng{authorbibnamehash}{dc5303060c2ccb5f93410de582fc5eed}
-      \strng{authornamehash}{dc5303060c2ccb5f93410de582fc5eed}
-      \strng{authorfullhash}{dc5303060c2ccb5f93410de582fc5eed}
-      \field{extraname}{2}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Celestial Mechanics}
-      \field{month}{1}
-      \field{number}{1}
-      \field{title}{{Delaunay Normalisations}}
-      \field{volume}{26}
-      \field{year}{1982}
-      \true{nocite}
-      \field{pages}{9\bibrangedash 21}
-      \range{pages}{13}
-      \verb{doi}
-      \verb 10.1007/BF01233178
-      \endverb
-      \keyw{Eccentric Orbits,Kepler Laws,Normalizing,Orbit Perturbation,Perturbation Theory,Power Series,Artificial Satellites,Lie Groups,Paradoxes,Satellite Perturbation,Three Body Problem,Astronomy}
-    \endentry
-    \entry{Hori}{article}{}
-      \name{author}{1}{}{%
-        {{hash=db002c27a377557f68cdbe60ff9e79a7}{%
-           family={{Hori}},
-           familyi={H\bibinitperiod},
-           given={G.},
-           giveni={G\bibinitperiod}}}%
-      }
-      \strng{namehash}{db002c27a377557f68cdbe60ff9e79a7}
-      \strng{fullhash}{db002c27a377557f68cdbe60ff9e79a7}
-      \strng{bibnamehash}{db002c27a377557f68cdbe60ff9e79a7}
-      \strng{authorbibnamehash}{db002c27a377557f68cdbe60ff9e79a7}
-      \strng{authornamehash}{db002c27a377557f68cdbe60ff9e79a7}
-      \strng{authorfullhash}{db002c27a377557f68cdbe60ff9e79a7}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Publications of the Astronomical Society of Japan}
-      \field{month}{1}
-      \field{title}{{Theory of General Perturbation with Unspecified Canonical Variable}}
-      \field{volume}{18}
-      \field{year}{1966}
-      \true{nocite}
-      \field{pages}{287\bibrangedash 296}
-      \range{pages}{10}
-    \endentry
-    \entry{Chihabi}{inproceedings}{}
-      \name{author}{2}{}{%
-        {{hash=98e4f59e5d4da63239a0441eb015af1b}{%
-           family={Chihabi},
-           familyi={C\bibinitperiod},
-           given={Yazan},
-           giveni={Y\bibinitperiod}}}%
-        {{hash=f3de3711a02757d9fcb4614193d64955}{%
-           family={Ulrich},
-           familyi={U\bibinitperiod},
-           given={Steve},
-           giveni={S\bibinitperiod}}}%
-      }
-      \strng{namehash}{0e9028c6ad0d2ddb7cf1a456871db776}
-      \strng{fullhash}{0e9028c6ad0d2ddb7cf1a456871db776}
-      \strng{bibnamehash}{0e9028c6ad0d2ddb7cf1a456871db776}
-      \strng{authorbibnamehash}{0e9028c6ad0d2ddb7cf1a456871db776}
-      \strng{authornamehash}{0e9028c6ad0d2ddb7cf1a456871db776}
-      \strng{authorfullhash}{0e9028c6ad0d2ddb7cf1a456871db776}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{month}{01}
-      \field{title}{Spacecraft Formation Guidance Law using a State Transition Matrix With Gravitational, Drag and Third-Body Perturbations}
-      \field{year}{2020}
-      \true{nocite}
-      \verb{doi}
-      \verb 10.2514/6.2020-1460
-      \endverb
-    \endentry
-    \entry{GAM}{article}{}
-      \name{author}{3}{}{%
-        {{hash=8b796085773bae90281bbfc5770adba1}{%
-           family={Gaias},
-           familyi={G\bibinitperiod},
-           given={Gabriella},
-           giveni={G\bibinitperiod}}}%
-        {{hash=c27ae8e4ac7affeca9ed98622f85db03}{%
-           family={Ardaens},
-           familyi={A\bibinitperiod},
-           given={J.S.},
-           giveni={J\bibinitperiod}}}%
-        {{hash=7b2860cad0944fd99cdbd545c723679c}{%
-           family={Montenbruck},
-           familyi={M\bibinitperiod},
-           given={O.},
-           giveni={O\bibinitperiod}}}%
-      }
-      \strng{namehash}{e666988e089692430e594190ee711138}
-      \strng{fullhash}{e666988e089692430e594190ee711138}
-      \strng{bibnamehash}{e666988e089692430e594190ee711138}
-      \strng{authorbibnamehash}{e666988e089692430e594190ee711138}
-      \strng{authornamehash}{e666988e089692430e594190ee711138}
-      \strng{authorfullhash}{e666988e089692430e594190ee711138}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Celestial Mechanics and Dynamical Astronomy}
-      \field{title}{Model of J2 Perturbed Satellite Relative Motion with Time-Varying Differential Drag}
-      \field{year}{2015}
-      \true{nocite}
-      \keyw{perturbations}
-    \endentry
-    \entry{Koenig}{inproceedings}{}
-      \name{author}{3}{}{%
-        {{hash=398a32b3c2f2e5795ccdf65c60b4d278}{%
-           family={Koenig},
-           familyi={K\bibinitperiod},
-           given={Adam},
-           giveni={A\bibinitperiod}}}%
-        {{hash=b4124c22bf4e7b11103cb30b076e7a44}{%
-           family={Guffanti},
-           familyi={G\bibinitperiod},
-           given={Tommaso},
-           giveni={T\bibinitperiod}}}%
-        {{hash=ea13c363649ca2667cc3e443056d36c5}{%
-           family={D'Amico},
-           familyi={D\bibinitperiod},
-           given={Simone},
-           giveni={S\bibinitperiod}}}%
-      }
-      \strng{namehash}{84c96604dee3b5f214fbb33f647f7946}
-      \strng{fullhash}{84c96604dee3b5f214fbb33f647f7946}
-      \strng{bibnamehash}{84c96604dee3b5f214fbb33f647f7946}
-      \strng{authorbibnamehash}{84c96604dee3b5f214fbb33f647f7946}
-      \strng{authornamehash}{84c96604dee3b5f214fbb33f647f7946}
-      \strng{authorfullhash}{84c96604dee3b5f214fbb33f647f7946}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{month}{09}
-      \field{title}{New State Transition Matrices for Relative Motion of Spacecraft Formations in Perturbed Orbits}
-      \field{year}{2016}
-      \true{nocite}
-      \verb{doi}
-      \verb 10.2514/6.2016-5635
-      \endverb
-      \keyw{perturbations}
-    \endentry
-    \entry{Biria_Russell}{inproceedings}{}
-      \name{author}{2}{}{%
-        {{hash=3f91c232222fd19c283368cd55dc35c4}{%
-           family={Biria},
-           familyi={B\bibinitperiod},
-           given={Ashley},
-           giveni={A\bibinitperiod}}}%
-        {{hash=1550352598fdb9298d0b727fb942e611}{%
-           family={Russell},
-           familyi={R\bibinitperiod},
-           given={Ryan},
-           giveni={R\bibinitperiod}}}%
-      }
-      \strng{namehash}{90bd2f57eb88627b99271a93985e7b14}
-      \strng{fullhash}{90bd2f57eb88627b99271a93985e7b14}
-      \strng{bibnamehash}{90bd2f57eb88627b99271a93985e7b14}
-      \strng{authorbibnamehash}{90bd2f57eb88627b99271a93985e7b14}
-      \strng{authornamehash}{90bd2f57eb88627b99271a93985e7b14}
-      \strng{authorfullhash}{90bd2f57eb88627b99271a93985e7b14}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{month}{02}
-      \field{title}{A Satellite Relative Motion Model Including J2 and J3 via Vinti's Intermediary}
-      \field{year}{2016}
-      \true{nocite}
-      \keyw{perturbations}
-    \endentry
-    \entry{Yan_Alfriend}{inproceedings}{}
-      \name{author}{2}{}{%
-        {{hash=4be98aa3f42188b70e4a5d51e1e9ec19}{%
-           family={Alfriend},
-           familyi={A\bibinitperiod},
-           given={K.T.},
-           giveni={K\bibinitperiod}}}%
-        {{hash=2b9d05be40eef94c345e6989c30daf40}{%
-           family={Yan},
-           familyi={Y\bibinitperiod},
-           given={H.},
-           giveni={H\bibinitperiod}}}%
-      }
-      \list{location}{1}{%
-        {Toulouse, France}%
-      }
-      \strng{namehash}{d98120d706d2d01a9782fee9f834de36}
-      \strng{fullhash}{d98120d706d2d01a9782fee9f834de36}
-      \strng{bibnamehash}{d98120d706d2d01a9782fee9f834de36}
-      \strng{authorbibnamehash}{d98120d706d2d01a9782fee9f834de36}
-      \strng{authornamehash}{d98120d706d2d01a9782fee9f834de36}
-      \strng{authorfullhash}{d98120d706d2d01a9782fee9f834de36}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Proceedings of the International Formation Flying Conference: Missions and Technologies}
-      \field{month}{02}
-      \field{title}{An Orbital Elements Based Approach to the Nonlinear Formation Flying Problem}
-      \field{year}{2016}
-      \true{nocite}
-      \keyw{perturbations}
-    \endentry
-    \entry{cdf2rdf}{online}{}
-      \name{author}{1}{}{%
-        {{hash=8f631b769d4710fba49eafd295c9d96d}{%
-           family={Mathworks},
-           familyi={M\bibinitperiod}}}%
-      }
-      \strng{namehash}{8f631b769d4710fba49eafd295c9d96d}
-      \strng{fullhash}{8f631b769d4710fba49eafd295c9d96d}
-      \strng{bibnamehash}{8f631b769d4710fba49eafd295c9d96d}
-      \strng{authorbibnamehash}{8f631b769d4710fba49eafd295c9d96d}
-      \strng{authornamehash}{8f631b769d4710fba49eafd295c9d96d}
-      \strng{authorfullhash}{8f631b769d4710fba49eafd295c9d96d}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{title}{Convert complex diagonal form into real diagonal form}
-      \field{year}{2022}
-      \field{dateera}{ce}
-      \true{nocite}
-      \verb{urlraw}
-      \verb https://www.mathworks.com/help/matlab/ref/cdf2rdf.html
-      \endverb
-      \verb{url}
-      \verb https://www.mathworks.com/help/matlab/ref/cdf2rdf.html
-      \endverb
-      \keyw{others}
-    \endentry
-    \entry{DinVu}{online}{}
-      \name{author}{1}{}{%
-        {{hash=61a203ca97ce3ccb9dfe0102c817bd95}{%
-           family={Delgado},
-           familyi={D\bibinitperiod},
-           given={Manuel\bibnamedelima Ruiz},
-           giveni={M\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
-      }
-      \list{publisher}{1}{%
-        {Universidad PolitÃ©cnica de Madrid}%
-      }
-      \strng{namehash}{61a203ca97ce3ccb9dfe0102c817bd95}
-      \strng{fullhash}{61a203ca97ce3ccb9dfe0102c817bd95}
-      \strng{bibnamehash}{61a203ca97ce3ccb9dfe0102c817bd95}
-      \strng{authorbibnamehash}{61a203ca97ce3ccb9dfe0102c817bd95}
-      \strng{authornamehash}{61a203ca97ce3ccb9dfe0102c817bd95}
-      \strng{authorfullhash}{61a203ca97ce3ccb9dfe0102c817bd95}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{month}{4}
-      \field{title}{Lecture notes: Basics of Orbital Mechanics I}
-      \field{year}{2008}
-      \true{nocite}
-      \keyw{notes}
-    \endentry
-    \entry{subtightplot}{misc}{}
-      \name{author}{1}{}{%
-        {{hash=70cc65d3064b366149435080373e0ddb}{%
-           family={Nievinski},
-           familyi={N\bibinitperiod},
-           given={Felipe\bibnamedelima G.},
-           giveni={F\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
-      }
-      \list{publisher}{1}{%
-        {MATLAB Central File Exchange}%
-      }
-      \strng{namehash}{70cc65d3064b366149435080373e0ddb}
-      \strng{fullhash}{70cc65d3064b366149435080373e0ddb}
-      \strng{bibnamehash}{70cc65d3064b366149435080373e0ddb}
-      \strng{authorbibnamehash}{70cc65d3064b366149435080373e0ddb}
-      \strng{authornamehash}{70cc65d3064b366149435080373e0ddb}
-      \strng{authorfullhash}{70cc65d3064b366149435080373e0ddb}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{note}{\url{https://www.mathworks.com/matlabcentral/fileexchange/39664-subtightplot}}
-      \field{title}{{subtightplot}}
-      \field{year}{2013}
-      \true{nocite}
-      \keyw{MATLAB}
-    \endentry
-    \entry{linspecer}{misc}{}
-      \name{author}{1}{}{%
-        {{hash=2612de45c34b5823877a4a2a009f2576}{%
-           family={Lansey},
-           familyi={L\bibinitperiod},
-           given={Jonathan\bibnamedelima C.},
-           giveni={J\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
-      }
-      \list{publisher}{1}{%
-        {MATLAB Central File Exchange}%
-      }
-      \strng{namehash}{2612de45c34b5823877a4a2a009f2576}
-      \strng{fullhash}{2612de45c34b5823877a4a2a009f2576}
-      \strng{bibnamehash}{2612de45c34b5823877a4a2a009f2576}
-      \strng{authorbibnamehash}{2612de45c34b5823877a4a2a009f2576}
-      \strng{authornamehash}{2612de45c34b5823877a4a2a009f2576}
-      \strng{authorfullhash}{2612de45c34b5823877a4a2a009f2576}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{note}{\url{https://www.mathworks.com/matlabcentral/fileexchange/42673-beautiful-and-distinguishable-line-colors-colormap}}
-      \field{title}{{linspecer}}
-      \field{year}{2015}
-      \true{nocite}
-      \keyw{MATLAB}
-    \endentry
-    \entry{WindowAPI}{misc}{}
-      \name{author}{1}{}{%
-        {{hash=e68564f23e0e939acea76dc3d2bc01bf}{%
-           family={Jan},
-           familyi={J\bibinitperiod}}}%
-      }
-      \list{publisher}{1}{%
-        {MATLAB Central File Exchange}%
-      }
-      \strng{namehash}{e68564f23e0e939acea76dc3d2bc01bf}
-      \strng{fullhash}{e68564f23e0e939acea76dc3d2bc01bf}
-      \strng{bibnamehash}{e68564f23e0e939acea76dc3d2bc01bf}
-      \strng{authorbibnamehash}{e68564f23e0e939acea76dc3d2bc01bf}
-      \strng{authornamehash}{e68564f23e0e939acea76dc3d2bc01bf}
-      \strng{authorfullhash}{e68564f23e0e939acea76dc3d2bc01bf}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{note}{\url{https://www.mathworks.com/matlabcentral/fileexchange/31437-windowapi}}
-      \field{title}{{WindowAPI}}
-      \field{year}{2013}
-      \true{nocite}
-      \keyw{MATLAB}
-    \endentry
-    \entry{arrow3}{misc}{}
-      \name{author}{1}{}{%
-        {{hash=8219e6a78841f04aefdca7b9e1e3bef8}{%
-           family={Davis},
-           familyi={D\bibinitperiod},
-           given={Tom},
-           giveni={T\bibinitperiod}}}%
-      }
-      \list{publisher}{1}{%
-        {MATLAB Central File Exchange}%
-      }
-      \strng{namehash}{8219e6a78841f04aefdca7b9e1e3bef8}
-      \strng{fullhash}{8219e6a78841f04aefdca7b9e1e3bef8}
-      \strng{bibnamehash}{8219e6a78841f04aefdca7b9e1e3bef8}
-      \strng{authorbibnamehash}{8219e6a78841f04aefdca7b9e1e3bef8}
-      \strng{authornamehash}{8219e6a78841f04aefdca7b9e1e3bef8}
-      \strng{authorfullhash}{8219e6a78841f04aefdca7b9e1e3bef8}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{note}{\url{https://www.mathworks.com/matlabcentral/fileexchange/14056-arrow3}}
-      \field{title}{{Arrow3}}
-      \field{year}{2022}
-      \true{nocite}
-      \keyw{MATLAB}
-    \endentry
-    \entry{latexTable}{misc}{}
-      \name{author}{1}{}{%
-        {{hash=655cc8a485d63f5dda9971fcd304fb09}{%
-           family={Duenisch},
-           familyi={D\bibinitperiod},
-           given={Eli},
-           giveni={E\bibinitperiod}}}%
-      }
-      \list{publisher}{1}{%
-        {MATLAB Central File Exchange}%
-      }
-      \strng{namehash}{655cc8a485d63f5dda9971fcd304fb09}
-      \strng{fullhash}{655cc8a485d63f5dda9971fcd304fb09}
-      \strng{bibnamehash}{655cc8a485d63f5dda9971fcd304fb09}
-      \strng{authorbibnamehash}{655cc8a485d63f5dda9971fcd304fb09}
-      \strng{authornamehash}{655cc8a485d63f5dda9971fcd304fb09}
-      \strng{authorfullhash}{655cc8a485d63f5dda9971fcd304fb09}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{note}{\url{https://www.mathworks.com/matlabcentral/fileexchange/44274-latextable}}
-      \field{title}{{latexTable}}
-      \field{year}{2016}
-      \true{nocite}
-      \keyw{MATLAB}
     \endentry
   \enddatalist
 \endrefsection
