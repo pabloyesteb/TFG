@@ -19,35 +19,6 @@
 
 \refsection{0}
   \datalist[entry]{none/global//global/global}
-    \entry{Marsland2015Machine}{book}{}
-      \name{author}{1}{}{%
-        {{hash=f16d5e4c04b4b4bc85402a8d3e3d2725}{%
-           family={Marsland},
-           familyi={M\bibinitperiod},
-           given={Stephen},
-           giveni={S\bibinitperiod}}}%
-      }
-      \list{location}{1}{%
-        {Boca Raton, USA}%
-      }
-      \list{publisher}{1}{%
-        {Chapman \& Hall/CRC}%
-      }
-      \strng{namehash}{f16d5e4c04b4b4bc85402a8d3e3d2725}
-      \strng{fullhash}{f16d5e4c04b4b4bc85402a8d3e3d2725}
-      \strng{bibnamehash}{f16d5e4c04b4b4bc85402a8d3e3d2725}
-      \strng{authorbibnamehash}{f16d5e4c04b4b4bc85402a8d3e3d2725}
-      \strng{authornamehash}{f16d5e4c04b4b4bc85402a8d3e3d2725}
-      \strng{authorfullhash}{f16d5e4c04b4b4bc85402a8d3e3d2725}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{edition}{2}
-      \field{title}{{Machine Learning: An Algorithmic Perspective}}
-      \field{year}{2015}
-      \keyw{general}
-    \endentry
     \entry{xu2023machine}{article}{}
       \name{author}{7}{}{%
         {{hash=bb7f398dd3bbc927839cf1b066831cc3}{%
@@ -448,6 +419,58 @@
       \field{type}{techreport}
       \field{year}{2023}
     \endentry
+    \entry{le2023improving}{article}{}
+      \name{author}{6}{}{%
+        {{hash=f46403c01ea6dfbe4e1add93a2c6c6c5}{%
+           family={Le\bibnamedelima Clainche},
+           familyi={L\bibinitperiod\bibinitdelim C\bibinitperiod},
+           given={Soledad},
+           giveni={S\bibinitperiod}}}%
+        {{hash=dcbb0178ecce203ffaab88c8e94df684}{%
+           family={Ferrer},
+           familyi={F\bibinitperiod},
+           given={Esteban},
+           giveni={E\bibinitperiod}}}%
+        {{hash=c5fdaae9b5217720613b2d75032d75b8}{%
+           family={Gibson},
+           familyi={G\bibinitperiod},
+           given={Sam},
+           giveni={S\bibinitperiod}}}%
+        {{hash=fa8fad2aaede9b4d880bfb2a4c50b856}{%
+           family={Cross},
+           familyi={C\bibinitperiod},
+           given={Elisabeth},
+           giveni={E\bibinitperiod}}}%
+        {{hash=3b9f17af25f5aa22c579af224a2009d1}{%
+           family={Parente},
+           familyi={P\bibinitperiod},
+           given={Alessandro},
+           giveni={A\bibinitperiod}}}%
+        {{hash=127780749e189f5f4d204959b9a0d714}{%
+           family={Vinuesa},
+           familyi={V\bibinitperiod},
+           given={Ricardo},
+           giveni={R\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Elsevier}%
+      }
+      \strng{namehash}{24bdb6925bcfd2db8685ffa2775f28b3}
+      \strng{fullhash}{2217bcae7ad620aad08f708de62215f6}
+      \strng{bibnamehash}{24bdb6925bcfd2db8685ffa2775f28b3}
+      \strng{authorbibnamehash}{24bdb6925bcfd2db8685ffa2775f28b3}
+      \strng{authornamehash}{24bdb6925bcfd2db8685ffa2775f28b3}
+      \strng{authorfullhash}{2217bcae7ad620aad08f708de62215f6}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Aerospace Science and Technology}
+      \field{title}{Improving aircraft performance using machine learning: a review}
+      \field{year}{2023}
+      \field{pages}{108354}
+      \range{pages}{1}
+    \endentry
     \entry{hong2018data}{inproceedings}{}
       \name{author}{2}{}{%
         {{hash=0ae5a690167d085a66fa1902db0731a7}{%
@@ -470,8 +493,8 @@
       \strng{authorbibnamehash}{c9fa452f9b974ab4311d7d3ca9a767c3}
       \strng{authornamehash}{c9fa452f9b974ab4311d7d3ca9a767c3}
       \strng{authorfullhash}{c9fa452f9b974ab4311d7d3ca9a767c3}
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{booktitle}{2018 IEEE/AIAA 37th Digital Avionics Systems Conference (DASC)}
@@ -517,8 +540,8 @@
       \strng{authorbibnamehash}{bc80d8bb966bfd4849200419b7c3b6c5}
       \strng{authornamehash}{bc80d8bb966bfd4849200419b7c3b6c5}
       \strng{authorfullhash}{045a28ad78ade2a6190044eb6a8a409e}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Structural Health Monitoring}
@@ -529,31 +552,34 @@
       \field{pages}{2531\bibrangedash 2546}
       \range{pages}{16}
     \endentry
-    \entry{bijlaard1955buckling}{article}{}
+    \entry{Marsland2015Machine}{book}{}
       \name{author}{1}{}{%
-        {{hash=3cbf1a25c755f9e3fb27ddf227d6ef88}{%
-           family={Bijlaard},
-           familyi={B\bibinitperiod},
-           given={PP},
-           giveni={P\bibinitperiod}}}%
+        {{hash=f16d5e4c04b4b4bc85402a8d3e3d2725}{%
+           family={Marsland},
+           familyi={M\bibinitperiod},
+           given={Stephen},
+           giveni={S\bibinitperiod}}}%
       }
-      \strng{namehash}{3cbf1a25c755f9e3fb27ddf227d6ef88}
-      \strng{fullhash}{3cbf1a25c755f9e3fb27ddf227d6ef88}
-      \strng{bibnamehash}{3cbf1a25c755f9e3fb27ddf227d6ef88}
-      \strng{authorbibnamehash}{3cbf1a25c755f9e3fb27ddf227d6ef88}
-      \strng{authornamehash}{3cbf1a25c755f9e3fb27ddf227d6ef88}
-      \strng{authorfullhash}{3cbf1a25c755f9e3fb27ddf227d6ef88}
+      \list{location}{1}{%
+        {Boca Raton, USA}%
+      }
+      \list{publisher}{1}{%
+        {Chapman \& Hall/CRC}%
+      }
+      \strng{namehash}{f16d5e4c04b4b4bc85402a8d3e3d2725}
+      \strng{fullhash}{f16d5e4c04b4b4bc85402a8d3e3d2725}
+      \strng{bibnamehash}{f16d5e4c04b4b4bc85402a8d3e3d2725}
+      \strng{authorbibnamehash}{f16d5e4c04b4b4bc85402a8d3e3d2725}
+      \strng{authornamehash}{f16d5e4c04b4b4bc85402a8d3e3d2725}
+      \strng{authorfullhash}{f16d5e4c04b4b4bc85402a8d3e3d2725}
       \field{sortinit}{1}
       \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{journaltitle}{Journal of the Aeronautical Sciences}
-      \field{number}{7}
-      \field{title}{On the Buckling of Stringer Panels Including Forced Crippling}
-      \field{volume}{22}
-      \field{year}{1955}
-      \field{pages}{491\bibrangedash 501}
-      \range{pages}{11}
+      \field{edition}{2}
+      \field{title}{{Machine Learning: An Algorithmic Perspective}}
+      \field{year}{2015}
+      \keyw{general}
     \endentry
     \entry{Preparata1985}{inbook}{}
       \name{author}{2}{}{%
@@ -826,8 +852,8 @@
       \strng{authorbibnamehash}{c36c137baff5582f7ec435e402ea9122}
       \strng{authornamehash}{c36c137baff5582f7ec435e402ea9122}
       \strng{authorfullhash}{c36c137baff5582f7ec435e402ea9122}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{ACM Transactions on Knowledge Discovery from Data (TKDD)}
@@ -852,8 +878,8 @@
       \strng{authorbibnamehash}{5362760bf096207c79967925fec57b50}
       \strng{authornamehash}{5362760bf096207c79967925fec57b50}
       \strng{authorfullhash}{5362760bf096207c79967925fec57b50}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{IEEE Transactions on Fuzzy Systems}
@@ -891,8 +917,8 @@
       \strng{authorbibnamehash}{a1572522e3a245b5a757eab800bf7807}
       \strng{authornamehash}{a1572522e3a245b5a757eab800bf7807}
       \strng{authorfullhash}{a1572522e3a245b5a757eab800bf7807}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{arXiv preprint arXiv:2110.09485}
@@ -921,8 +947,8 @@
       \strng{authorbibnamehash}{262416cda6fd391b4ad023c5b7e86363}
       \strng{authornamehash}{262416cda6fd391b4ad023c5b7e86363}
       \strng{authorfullhash}{262416cda6fd391b4ad023c5b7e86363}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Probability theory and related fields}
@@ -954,6 +980,32 @@
       \field{title}{Interpolation, extrapolation, and local generalization in common neural networks}
       \field{year}{2022}
     \endentry
+    \entry{bijlaard1955buckling}{article}{}
+      \name{author}{1}{}{%
+        {{hash=3cbf1a25c755f9e3fb27ddf227d6ef88}{%
+           family={Bijlaard},
+           familyi={B\bibinitperiod},
+           given={PP},
+           giveni={P\bibinitperiod}}}%
+      }
+      \strng{namehash}{3cbf1a25c755f9e3fb27ddf227d6ef88}
+      \strng{fullhash}{3cbf1a25c755f9e3fb27ddf227d6ef88}
+      \strng{bibnamehash}{3cbf1a25c755f9e3fb27ddf227d6ef88}
+      \strng{authorbibnamehash}{3cbf1a25c755f9e3fb27ddf227d6ef88}
+      \strng{authornamehash}{3cbf1a25c755f9e3fb27ddf227d6ef88}
+      \strng{authorfullhash}{3cbf1a25c755f9e3fb27ddf227d6ef88}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of the Aeronautical Sciences}
+      \field{number}{7}
+      \field{title}{On the Buckling of Stringer Panels Including Forced Crippling}
+      \field{volume}{22}
+      \field{year}{1955}
+      \field{pages}{491\bibrangedash 501}
+      \range{pages}{11}
+    \endentry
     \entry{hotelling1933analysis}{article}{}
       \name{author}{1}{}{%
         {{hash=628a6bd9bb208bfcbeb8394b69088107}{%
@@ -971,8 +1023,8 @@
       \strng{authorbibnamehash}{628a6bd9bb208bfcbeb8394b69088107}
       \strng{authornamehash}{628a6bd9bb208bfcbeb8394b69088107}
       \strng{authorfullhash}{628a6bd9bb208bfcbeb8394b69088107}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Journal of educational psychology}
@@ -1005,8 +1057,8 @@
       \strng{authorbibnamehash}{8d723a09b743d9adca83a28ab576cdcc}
       \strng{authornamehash}{8d723a09b743d9adca83a28ab576cdcc}
       \strng{authorfullhash}{8d723a09b743d9adca83a28ab576cdcc}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Statistics in medicine}
@@ -1042,8 +1094,8 @@
       \strng{authorbibnamehash}{11a9eab1d1ac73c2827b435661dc70e1}
       \strng{authornamehash}{11a9eab1d1ac73c2827b435661dc70e1}
       \strng{authorfullhash}{11a9eab1d1ac73c2827b435661dc70e1}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{edition}{1}
@@ -1096,8 +1148,8 @@
       \strng{authorbibnamehash}{5a6b19c047426c4c2d4a50b395bf450b}
       \strng{authornamehash}{5a6b19c047426c4c2d4a50b395bf450b}
       \strng{authorfullhash}{5a6b19c047426c4c2d4a50b395bf450b}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{Applied multivariate data analysis: regression and experimental design}
@@ -1130,8 +1182,8 @@
       \strng{authorbibnamehash}{0c8f1e1a737c1fbb8c806e2c43949097}
       \strng{authornamehash}{0c8f1e1a737c1fbb8c806e2c43949097}
       \strng{authorfullhash}{0c8f1e1a737c1fbb8c806e2c43949097}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Publications of the Astronomical Society of the Pacific}
@@ -1169,8 +1221,8 @@
       \strng{authorbibnamehash}{c171fd66faf63f473f8ee883e46e2668}
       \strng{authornamehash}{c171fd66faf63f473f8ee883e46e2668}
       \strng{authorfullhash}{c171fd66faf63f473f8ee883e46e2668}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Machine Learning: Science and Technology}
@@ -1218,8 +1270,8 @@
       \strng{authorbibnamehash}{62777d6015aa80c4cc7ae187b166f5ee}
       \strng{authornamehash}{62777d6015aa80c4cc7ae187b166f5ee}
       \strng{authorfullhash}{b8d7d42963d795238572427da7863faa}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Journal of Computational Physics}
@@ -1261,8 +1313,8 @@
       \strng{authorbibnamehash}{1748d65390729f38ced060f146edbcbb}
       \strng{authornamehash}{1748d65390729f38ced060f146edbcbb}
       \strng{authorfullhash}{4ae741faef9ddb97dcbd652cbe14a968}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{IEEE/ACM Transactions on Audio, Speech, and Language Processing}
@@ -1295,8 +1347,8 @@
       \strng{authorbibnamehash}{138cc2fdedace672a538594b02e44b63}
       \strng{authornamehash}{138cc2fdedace672a538594b02e44b63}
       \strng{authorfullhash}{138cc2fdedace672a538594b02e44b63}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Biometrika}
@@ -1324,8 +1376,8 @@
       \strng{authorbibnamehash}{8c723a6746d052a9a51f090f576a5139}
       \strng{authornamehash}{8c723a6746d052a9a51f090f576a5139}
       \strng{authorfullhash}{8c723a6746d052a9a51f090f576a5139}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Technometrics}
@@ -1353,8 +1405,8 @@
       \strng{authorbibnamehash}{5470455fc7dceb3ccf6db38cb22a113d}
       \strng{authornamehash}{5470455fc7dceb3ccf6db38cb22a113d}
       \strng{authorfullhash}{5470455fc7dceb3ccf6db38cb22a113d}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{booktitle}{Breakthroughs in statistics: Methodology and distribution}
@@ -1380,8 +1432,8 @@
       \strng{authorbibnamehash}{97c17720b08538db4ed8190a1c7bee58}
       \strng{authornamehash}{97c17720b08538db4ed8190a1c7bee58}
       \strng{authorfullhash}{97c17720b08538db4ed8190a1c7bee58}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Journal of the American Statistical Association}
@@ -1441,8 +1493,8 @@
       \strng{authorbibnamehash}{5e8b3c364784d3f8acec9469c96be92c}
       \strng{authornamehash}{5e8b3c364784d3f8acec9469c96be92c}
       \strng{authorfullhash}{5e8b3c364784d3f8acec9469c96be92c}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Korean journal of anesthesiology}
@@ -1475,8 +1527,8 @@
       \strng{authorbibnamehash}{fb6cd20eff464f6bb9fc0a575052fe92}
       \strng{authornamehash}{fb6cd20eff464f6bb9fc0a575052fe92}
       \strng{authorfullhash}{fb6cd20eff464f6bb9fc0a575052fe92}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{Essential medical statistics}
@@ -1499,8 +1551,8 @@
       \strng{authorbibnamehash}{1448f45fb82f2d572588460366c85097}
       \strng{authornamehash}{1448f45fb82f2d572588460366c85097}
       \strng{authorfullhash}{1448f45fb82f2d572588460366c85097}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Discrete Mathematics}

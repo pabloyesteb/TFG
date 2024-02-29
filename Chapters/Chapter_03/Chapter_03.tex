@@ -1,69 +1,8 @@
 \chapter{The validation pipeline}
 %
 \label{chap:Chap_1}
-%
-%\indent This thesis is developed over a particular method of describing 
-%
-\section{Introduction2}
-\subsection{Case of study}
-\indent For illustration of the proposed validation loop, a case of study has been used alongside the theoretical rationale of the loop to generate explanatory figures and tables, demonstrating the loop's effectiveness in real operations.\\
-%
-\indent The case of study is an application of neural networks (NN) in aircraft stress engineering. For typical aircraft fuselage panel design, the dominant form of stiffened post buckling failure under shear loading is forced crippling\cite{bijlaard1955buckling}. This occurs when the shear buckles in the panel skin force the attached stiffener flanges to deform out-of-plane. There are other failure modes related to buckling, tension, and compression.\\
-%
-\indent The aim of the NN model is to predict Reserve Factors ($RF$) that quantify failure likelihood for regions of the aircraft subject to different loads happening in flight maneuvers (vid. \autoref{fig:diagrama_cajas}). The possible failure modes are Forced Crippling, Column Buckling, In Plane, Net Tension, Pure Compression, and Shear Panel Failure.\\
-%
-\indent Input data consists of 26 features (loads applied to a specific region of the aircraft and different maneuver specs). Output data consists of 6 reserve factors that quantify the stress failure likelihood ($RF_1$, $RF_2$, $RF_3$, $RF_4$, $RF_5$, and $RF_6$), where $RF_i\in [0,5]$,where $0$ means extreme risk and $5$ means risk extremely low (in a logarithmic scale).\\
-%
-\indent This study prioritizes assessing the efficacy of the developed validation tool, not optimizing the neural network model itself. Therefore, the specific architecture and additional features of the NN are intentionally treated as a black box. Our focus remains solely on its inputs --the 26 aforementioned features-- and its outputs --the 6 reserve factors representing 6 distinct failure modes--. This simplification allows us to isolate and evaluate the performance of the validation tool without introducing confounding variables related to the specific neural network design.\\
-%
-\begin{figure}
-	\centering
-	\begin{tikzpicture}
-		% Caja 1
-		\node[draw, minimum width=2cm, minimum height=3cm, font=\scriptsize] (box1) at (0,0) {
-			\begin{tabular}{c}
-				\textbf{INPUT $X$}\\
-				Loads + Geometry +\\
-				other specs\\
-				(quantitative + qualitative)
-			\end{tabular}
-		};
-		\node[below=0.1cm of box1] {$\mathbf{X}=(x_1,x_2,...,x_n)$};
-		
-		% Caja 2
-		\node[draw, minimum width=2cm, minimum height=3cm, right=0.5cm of box1, font=\scriptsize] (box2) {
-			\begin{tabular}{c}
-				\textbf{SURROGATE MODEL}\\
-				Stress learning model\\
-				trained by splitting cases into\\
-				train/test set and minimize loss\\
-				function (Deep Neural Network)
-			\end{tabular}
-		};
-		\node[below=0.1cm of box2] {$\cal{F}:\mathbf{X} \rightarrow \mathbf{Y}$};
-		
-		% Caja 3
-		\node[draw, minimum width=2cm, minimum height=3cm, right=0.5cm of box2, font=\scriptsize] (box3) {
-			\begin{tabular}{c}
-				\textbf{PREDICTION (OUTPUT) Y}\\
-				A set of Reserve Factors ($RF$)\\
-				which characterize the likelihood\\
-				of different failure modes.
-			\end{tabular}
-		};
-		\node[below=0.1cm of box3] {$\mathbf{Y}=(y_1,y_2,...,y_m)$};
-		
-		% Flechas
-		\draw[->, >=Stealth] (box1.east) -- (box2.west);
-		\draw[->, >=Stealth] (box2.east) -- (box3.west);
-	\end{tikzpicture}
-	\caption{Surrogate model pipeline}
-	\label{fig:diagrama_cajas}
-\end{figure}
 
-
-
-\subsection{Overview}
+\section{Overview}
 (Sin acentos) Recorrido sumario por las distintas partes del analisis estadistico (plantillas) centrandose en su funcion en vez de su funcionamiento tecnico. Explicacion de la arquitectura general de la validacion.\\
 %
 \begin{figure}[!htb]
@@ -74,7 +13,7 @@
 \end{figure}
 %
 \clearpage
-\section{Train-test split}
+\section{Train-test split}\label{sec:ttsplit}
 \subsection{Preliminaries}
 \begin{figure}[!b]
 	\centering
@@ -90,11 +29,11 @@
 %
 \indent In the model validation loop, the first question that should be asked, even before training the model, is whether the dataset split is appropriate for training (vid \autoref{fig:esquemattsplit}).\\
 %
-\indent For our case of applicability (MSP18, explicar en otra seccion), we suppose we have a dataset which has been split into a training set
+\indent For the case of MS-S18, we suppose we have a dataset which has been split into a training set
 $${\cal S}_{\text{train}}=\{({\bf X^{tr}},{\bf Y^{tr}})_i\}_{i=1}^{N_{training}}$$
 and a test set
 $${\cal S}_{\text{test}}=\{({\bf X^{te}},{\bf Y^{te}})_i\}_{i=1}^{N_{test}},$$
-where ${\bf X}=(X_1,X_2,\dots,X_m)$ is the vector of input variables (also called feature vector), $m$ is the dimensionality of the input parameter space, and ${\bf Y}=(Y_1,Y_2,\dots,Y_q)$ is the vector of output variables, with dimensionality $q$. Individual variables $X_k$ can be numerical or categorical. For instance, for stress problems such as MSP-S18, we have a combination of numerical  (\eg external loads) and categorical (eg discrete geometrical variables such as ''Frame'' or ''Stringer'', and purely categorical such as ''dp''). Individual variables $Y_k$ describe the prediction and these are typically numerical (for stress problems such as MSP-S18, $q=6$ and these are so-called reserve factors, quantifying the failure likelihood of different failure modes).\\
+where ${\bf X}=(X_1,X_2,\dots,X_m)$ is the vector of input variables (also called feature vector), $m$ is the dimensionality of the input parameter space, and ${\bf Y}=(Y_1,Y_2,\dots,Y_q)$ is the vector of output variables, with dimensionality $q$. Individual variables $X_k$ can be numerical or categorical. For instance, for stress problems such as MS-S18, we have a combination of numerical  (\eg external loads) and categorical (eg discrete geometrical variables such as ''Frame'' or ''Stringer'', and purely categorical such as ''dp''). Individual variables $Y_k$ describe the prediction and these are typically numerical (for stress problems such as MS-S18, $q=6$ and these are so-called reserve factors, quantifying the failure likelihood of different failure modes).\\
 %
 \indent The aim of this section is to propose a set of tests to evaluate to which extent splitting fulfils the necessary conditions for the subsequent surrogate model ${\bf {Y}}={F}({\bf X})$ to be appropriately trained on ${\cal S}_{\text{train}}$ and tested on ${\cal S}_{\text{test}}$. This basically means the latter be in the applicability region of a model trained on the former, in order for the training-validation loop of the model to be coherent.\\
 %
@@ -247,7 +186,7 @@ The step of the PCA projection is motivated by the curse of dimensionality, whic
 	\includegraphics[scale=\tabscale]{/home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/reqs_table.png}
 \end{table}
 %
-\indent Having analised the isolation level of test points, it is necessary to check wheter p-hacking is taking place. That is, whether test points are unrealistically close to train points, thus making the model evaluation flawed. This is measured using the Mann-Whitney U test\cite{rosner1999use}. In this test, the initial hypothesis H0 is that both distributions are the same. H1 is that the distribution underlying test-training distances is stochastically less than distribution underlying training-training distances, which would involve risk of p-hacking. H0 is rejected only with a 95\% confidence. For instance, for the dataset of MSP-18, the resulting p-value is $p=0.9793$, thus the null hypothesis is not rejected and the dataset can be assumed to be free of p-hacking.\\
+\indent Having analised the isolation level of test points, it is necessary to check wheter p-hacking is taking place. That is, whether test points are unrealistically close to train points, thus making the model evaluation flawed. This is measured using the Mann-Whitney U test\cite{rosner1999use}. In this test, the initial hypothesis H0 is that both distributions are the same. H1 is that the distribution underlying test-training distances is stochastically less than distribution underlying training-training distances, which would involve risk of p-hacking. H0 is rejected only with a 95\% confidence. For instance, for the dataset of MS-18, the resulting p-value is $p=0.9793$, thus the null hypothesis is not rejected and the dataset can be assumed to be free of p-hacking.\\
 %
 \subsubsection{Non-geometrical analysis}
 \indent To help (the engineer in charge) make a decission about the dataset split, another approach is developed, complementary to the geometrical analysis carried out so far. This approach consists of focusing on the statistical distributions of the train and the test datasets. A proper train-test split is characterised by similar statistical distributions of both sets (test and training)\cite{bonnasse2022interpolation}. When this cannot be achieved, a softer requirement is that each of the feature variables $X_i$ need to have reasonably similar marginal distributions in the training and the test set.\\
@@ -318,7 +257,7 @@ The step of the PCA projection is motivated by the curse of dimensionality, whic
 \end{figure}
 \indent On the other hand, the distributions of both input and output variables in the training set are checked to be reasonably similar to that of the test set. The main outputs are the p-values shown at \autoref{tab:pvalin} and \autoref{tab:pvalout}.\\
 %
-\indent Of course, any given dataset may meet some of the requirements, but not all (as is the case with the MSP-18 dataset). The engineer in charge should evaluate the ensemble output and decide whether it is necessary to redo the split completely or partially, depending on data availability.\\
+\indent Of course, any given dataset may meet some of the requirements, but not all (as is the case with the MS-18 dataset). The engineer in charge should evaluate the ensemble output and decide whether it is necessary to redo the split completely or partially, depending on data availability.\\
 %
 \clearpage
 \section{Global error quantification}
@@ -584,7 +523,7 @@ The test output is shown in \autoref{tab:zscore}, where for each categorical var
 %
 \paragraph{\GMVred{C.} \myul[GMVred]{Quantification of error bias in single categories test no. 2: based on error variance outlier}\\}
 This analysis is to be done only if results from the one-way ANOVA test show bias is found in at least one categorical variable.\\
-\indent The procedure is similar as before, but here we investigate whether for certain categories the dispersion (not the mean) of the samples in a given category is substantially different than for the rest of categories. For instance, experience in MSP-S18 suggests that the main source of error bias in categorical variables comes from the fact that different categories have different variance. This is quantified by doing a z-score analysis on category variances: if the categorical variable under analysis has $s$ categories, then we have a vector of variances $(v_1,v_2,...,v_s)$, where $v_i$ is the variance of the error for all samples in category $i$. We then z-score this vector to build 
+\indent The procedure is similar as before, but here we investigate whether for certain categories the dispersion (not the mean) of the samples in a given category is substantially different than for the rest of categories. For instance, experience in MS-S18 suggests that the main source of error bias in categorical variables comes from the fact that different categories have different variance. This is quantified by doing a z-score analysis on category variances: if the categorical variable under analysis has $s$ categories, then we have a vector of variances $(v_1,v_2,...,v_s)$, where $v_i$ is the variance of the error for all samples in category $i$. We then z-score this vector to build 
 
 $$\bigg(\frac{v_1-\langle v \rangle}{\sigma(v)},\frac{v_2-\langle v \rangle}{\sigma(v)},...,\frac{v_s-\langle v \rangle}{\sigma(v)}\bigg),$$
 
@@ -619,7 +558,7 @@ This test is only applicable to categorical variables for which specific categor
 In the previous section we considered the specific effect (bias) of individual input variables on the error. However, it can be the case that such bias is enhanced when groups of input variables are considered together. 
 The method of choice to analyze whether two independent (input) categorical variables have an effect on the error means is the 2-way ANOVA test\cite{fujikoshi1993two}.
 In general the method is not very informative except when the combination of input variables is itself interpretable. This usually requires the external feedback of the engineer. For instance, the engineer can know a priori that certain combination of input variables play a synergistic role, go together, etc.
-For instance, in MSP-S18, the categorical variables \textbf{Frame} and \textbf{Stringer} are geometric locations and thus, together, provide a location of the specific region of the plane that the configuration analyses. One can thus perform a 2-way ANOVA to analyze the presence of bias accordingly. If such bias exists, then bias quantification tests described in \autoref{subsec:biasinput1d} can be applied.\\
+For instance, in MS-S18, the categorical variables \textbf{Frame} and \textbf{Stringer} are geometric locations and thus, together, provide a location of the specific region of the plane that the configuration analyses. One can thus perform a 2-way ANOVA to analyze the presence of bias accordingly. If such bias exists, then bias quantification tests described in \autoref{subsec:biasinput1d} can be applied.\\
 %
 \paragraph{\GMVred{A.} \myul[GMVred]{Bias detection (2D)}\\}
 For the pair of (previously chosen) categorical variables, the test performs 2-way ANOVA as described above and outputs the $p$-value. If this $p$-value is smaller than 0.05, we conclude that there exists bias at 95\% confidence.\\
@@ -882,7 +821,7 @@ The (bootstrapped) error coverage is estimated in the test set. This is done by 
 \FloatBarrier
 \subsection{Local uncertainty model based on $P(E|\mathbf{Y})$}
 \paragraph{\GMVred{A.} \myul[GMVred]{Output variable binning}\\}
-In order to be able to computationally afford this analysis, the output space $\mathbf{Y}$ must be binned.\\
+In order to be able to computationally afford this analysis, the output space $\mathbf{Y}$ must be binned. Detail of the binning is given in \autoref{tab:loumtab1}.\\
 \indent In the first place, a scatter plot of the error of each point in the calibration set is plotted for illustration as a function of the true output $y_t$ in \autoref{fig:scatter1}.\\
 \indent The calibration set is then partitioned into a total of equispaced $n_{bins}$ bins according to the range of the true output $y_t$.\\
 \indent For illustration, a total of $n_{bins}$ violin plots (one per bin, concatenated in a single plot where the ''x axis'' is the bin number) is plotted in \autoref{fig:violins1}, where each violin plot describes the error density of the points in the respective bin.\\

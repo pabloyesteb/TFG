@@ -4,54 +4,52 @@
 \contentsline {chapter}{\nonumberline Nomenclature}{ix}{chapter*.5}%
 \contentsline {chapter}{Introduction.}{xix}{chapter*.8}%
 \contentsline {chapter}{\numberline {1}General concepts on supervised learning for industrial applications}{1}{chapter.1}%
-\contentsline {subsection}{\numberline {1.0.1}Mathematical description of ANNs}{1}{subsection.1.0.1}%
-\contentsline {subsection}{\numberline {1.0.2}Overfitting. Bias-variance tradeoff}{4}{subsection.1.0.2}%
-\contentsline {subsection}{\numberline {1.0.3}Applicability}{5}{subsection.1.0.3}%
-\contentsline {paragraph}{\leavevmode {\color {GMVred}A.} \myul [GMVred]{Supervised applicability classifyers}\\}{5}{subsection.1.0.3}%
-\contentsline {paragraph}{\leavevmode {\color {GMVred}B.} \myul [GMVred]{Unsupervised applicability classifyers}\\}{6}{subsection.1.0.3}%
-\contentsline {chapter}{\numberline {2}The industrial problem}{9}{chapter.2}%
-\contentsline {chapter}{\numberline {3}The validation pipeline}{11}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Introduction2}{11}{section.3.1}%
-\contentsline {subsection}{\numberline {3.1.1}Case of study}{11}{subsection.3.1.1}%
-\contentsline {subsection}{\numberline {3.1.2}Overview}{12}{subsection.3.1.2}%
-\contentsline {section}{\numberline {3.2}Train-test split}{13}{section.3.2}%
-\contentsline {subsection}{\numberline {3.2.1}Preliminaries}{13}{subsection.3.2.1}%
-\contentsline {subsection}{\numberline {3.2.2}Validation loop for the train-test split}{14}{subsection.3.2.2}%
-\contentsline {subsubsection}{\numberline {3.2.2.1}Geometrical analysis}{14}{subsubsection.3.2.2.1}%
-\contentsline {subsubsection}{\numberline {3.2.2.2}Non-geometrical analysis}{19}{subsubsection.3.2.2.2}%
-\contentsline {subsubsection}{\numberline {3.2.2.3}Train-test split. Conclusions}{21}{subsubsection.3.2.2.3}%
+\contentsline {section}{\numberline {1.1}Mathematical description of ANNs}{1}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Overfitting. Bias-variance trade-off}{4}{section.1.2}%
+\contentsline {section}{\numberline {1.3}Applicability}{6}{section.1.3}%
+\contentsline {paragraph}{\leavevmode {\color {GMVred}A.} \myul [GMVred]{Supervised applicability classifyers}\\}{6}{section.1.3}%
+\contentsline {paragraph}{\leavevmode {\color {GMVred}B.} \myul [GMVred]{Unsupervised applicability classifyers}\\}{7}{section.1.3}%
+\contentsline {chapter}{\numberline {2}The industrial problem}{11}{chapter.2}%
+\contentsline {chapter}{\numberline {3}The validation pipeline}{13}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Overview}{13}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Train-test split}{14}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Preliminaries}{14}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}Validation loop for the train-test split}{15}{subsection.3.2.2}%
+\contentsline {subsubsection}{\numberline {3.2.2.1}Geometrical analysis}{15}{subsubsection.3.2.2.1}%
+\contentsline {subsubsection}{\numberline {3.2.2.2}Non-geometrical analysis}{20}{subsubsection.3.2.2.2}%
+\contentsline {subsubsection}{\numberline {3.2.2.3}Train-test split. Conclusions}{22}{subsubsection.3.2.2.3}%
 \contentsline {section}{\numberline {3.3}Global error quantification}{26}{section.3.3}%
 \contentsline {section}{\numberline {3.4}Distributed error quantification.}{28}{section.3.4}%
-\contentsline {paragraph}{\leavevmode {\color {GMVred}A.} \myul [GMVred]{Non gaussian error distribution}\\}{28}{figure.caption.39}%
-\contentsline {paragraph}{\leavevmode {\color {GMVred}B.} \myul [GMVred]{Outlier detection}\\}{29}{figure.caption.39}%
-\contentsline {paragraph}{\leavevmode {\color {GMVred}C.} \myul [GMVred]{Uncertainty measuring}\\}{29}{figure.caption.39}%
+\contentsline {paragraph}{\leavevmode {\color {GMVred}A.} \myul [GMVred]{Non gaussian error distribution}\\}{28}{figure.caption.40}%
+\contentsline {paragraph}{\leavevmode {\color {GMVred}B.} \myul [GMVred]{Outlier detection}\\}{29}{figure.caption.40}%
+\contentsline {paragraph}{\leavevmode {\color {GMVred}C.} \myul [GMVred]{Uncertainty measuring}\\}{29}{figure.caption.40}%
 \contentsline {section}{\numberline {3.5}Distributed error quantification: conditioning the error distribution on the input space}{40}{section.3.5}%
 \contentsline {subsection}{\numberline {3.5.1}Visualization of error as a function of categorical (discrete) input variables}{41}{subsection.3.5.1}%
 \contentsline {subsection}{\numberline {3.5.2}Bias detection and quantification (1D)}{43}{subsection.3.5.2}%
 \contentsline {paragraph}{\leavevmode {\color {GMVred}A.} \myul [GMVred]{Detection of error bias in single categories (ANOVA)}\\}{43}{subsection.3.5.2}%
-\contentsline {paragraph}{\leavevmode {\color {GMVred}B.} \myul [GMVred]{Quantification of error bias in single categories test no. 1: based on error mean outlier}\\}{44}{table.caption.53}%
-\contentsline {paragraph}{\leavevmode {\color {GMVred}C.} \myul [GMVred]{Quantification of error bias in single categories test no. 2: based on error variance outlier}\\}{45}{table.caption.54}%
-\contentsline {paragraph}{\leavevmode {\color {GMVred}D.} \myul [GMVred]{Quantification of error bias in single categories test no. 3: based on identification of linear trend}\\}{46}{table.caption.54}%
+\contentsline {paragraph}{\leavevmode {\color {GMVred}B.} \myul [GMVred]{Quantification of error bias in single categories test no. 1: based on error mean outlier}\\}{44}{table.caption.54}%
+\contentsline {paragraph}{\leavevmode {\color {GMVred}C.} \myul [GMVred]{Quantification of error bias in single categories test no. 2: based on error variance outlier}\\}{45}{table.caption.55}%
+\contentsline {paragraph}{\leavevmode {\color {GMVred}D.} \myul [GMVred]{Quantification of error bias in single categories test no. 3: based on identification of linear trend}\\}{46}{table.caption.55}%
 \contentsline {subsection}{\numberline {3.5.3}Bias detection and quantification (2D)}{47}{subsection.3.5.3}%
 \contentsline {paragraph}{\leavevmode {\color {GMVred}A.} \myul [GMVred]{Bias detection (2D)}\\}{47}{subsection.3.5.3}%
 \contentsline {paragraph}{\leavevmode {\color {GMVred}B.} \myul [GMVred]{Bias quantification (2D)}\\}{48}{subsection.3.5.3}%
 \contentsline {subsection}{\numberline {3.5.4}Visualization of error as a function of numerical (continuous) input variables}{49}{subsection.3.5.4}%
 \contentsline {subsection}{\numberline {3.5.5}Bias detection and quantification}{49}{subsection.3.5.5}%
 \contentsline {paragraph}{\leavevmode {\color {GMVred}A.} \myul [GMVred]{Detection of linear trends for individual numerical variables}\\}{50}{subsection.3.5.5}%
-\contentsline {paragraph}{\leavevmode {\color {GMVred}B.} \myul [GMVred]{Discretizing continuous variables}\\}{50}{table.caption.58}%
+\contentsline {paragraph}{\leavevmode {\color {GMVred}B.} \myul [GMVred]{Discretizing continuous variables}\\}{50}{table.caption.59}%
 \contentsline {section}{\numberline {3.6}Distributed error quantification: conditioning the error distribution on the output space}{54}{section.3.6}%
 \contentsline {section}{\numberline {3.7}Uncertainty model}{62}{section.3.7}%
 \contentsline {subsection}{\numberline {3.7.1}Global uncertainty model based on $P(E)$}{63}{subsection.3.7.1}%
 \contentsline {paragraph}{\leavevmode {\color {GMVred}A.} \myul [GMVred]{Global Uncertainty Model (GUM) computation}\\}{63}{subsection.3.7.1}%
-\contentsline {paragraph}{\leavevmode {\color {GMVred}B.} \myul [GMVred]{Global Uncertainty Model (GUM) evaluation}\\}{63}{table.caption.69}%
+\contentsline {paragraph}{\leavevmode {\color {GMVred}B.} \myul [GMVred]{Global Uncertainty Model (GUM) evaluation}\\}{63}{table.caption.70}%
 \contentsline {subsection}{\numberline {3.7.2}Local uncertainty model based on $P(E|\mathbf {Y})$}{65}{subsection.3.7.2}%
 \contentsline {paragraph}{\leavevmode {\color {GMVred}A.} \myul [GMVred]{Output variable binning}\\}{65}{subsection.3.7.2}%
-\contentsline {paragraph}{\leavevmode {\color {GMVred}B.} \myul [GMVred]{Local Output Uncertainty Model (LOUM) computation}\\}{65}{figure.caption.74}%
-\contentsline {paragraph}{\leavevmode {\color {GMVred}C.} \myul [GMVred]{Local Output Uncertainty Model (LOUM) evaluation}\\}{66}{table.caption.75}%
+\contentsline {paragraph}{\leavevmode {\color {GMVred}B.} \myul [GMVred]{Local Output Uncertainty Model (LOUM) computation}\\}{65}{figure.caption.75}%
+\contentsline {paragraph}{\leavevmode {\color {GMVred}C.} \myul [GMVred]{Local Output Uncertainty Model (LOUM) evaluation}\\}{66}{table.caption.76}%
 \contentsline {subsection}{\numberline {3.7.3}Local uncertainty model based on $P(E|\mathbf {X})$}{68}{subsection.3.7.3}%
 \contentsline {paragraph}{\leavevmode {\color {GMVred}A.} \myul [GMVred]{Input variable binnarization}\\}{68}{subsection.3.7.3}%
-\contentsline {paragraph}{\leavevmode {\color {GMVred}B.} \myul [GMVred]{Local Input Uncertainty Model (LIUM) computation}\\}{69}{figure.caption.79}%
-\contentsline {paragraph}{\leavevmode {\color {GMVred}C.} \myul [GMVred]{Local Input Uncertainty Model (LIUM) evaluation}\\}{71}{table.caption.81}%
-\contentsline {subsection}{\numberline {3.7.4}Full uncertainty model (FUM)}{73}{subsection.3.7.4}%
+\contentsline {paragraph}{\leavevmode {\color {GMVred}B.} \myul [GMVred]{Local Input Uncertainty Model (LIUM) computation}\\}{69}{figure.caption.80}%
+\contentsline {paragraph}{\leavevmode {\color {GMVred}C.} \myul [GMVred]{Local Input Uncertainty Model (LIUM) evaluation}\\}{71}{table.caption.82}%
+\contentsline {subsection}{\numberline {3.7.4}Full uncertainty model (FUM)}{72}{subsection.3.7.4}%
 \contentsline {chapter}{\numberline {4}Conclusions and research outlook.}{75}{chapter.4}%
 \contentsline {paragraph}{\indent Research outlook and future work. \\}{75}{chapter.4}%

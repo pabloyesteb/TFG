@@ -1,19 +1,19 @@
 [0] Config.pm:307> INFO - This is Biber 2.17
 [0] Config.pm:310> INFO - Logfile is 'Thesis.blg'
-[57] biber:340> INFO - === mié feb 28, 2024, 12:22:55
-[68] Biber.pm:418> INFO - Reading 'Thesis.bcf'
-[123] Biber.pm:972> INFO - Found 43 citekeys in bib section 0
-[133] Biber.pm:4383> INFO - Processing section 0
-[187] Biber.pm:4574> INFO - Looking for bibtex file 'Afterword/Bibliography/refs.bib' for section 0
-[190] bibtex.pm:1713> INFO - LaTeX decoding ...
-[228] bibtex.pm:1518> INFO - Found BibTeX data source 'Afterword/Bibliography/refs.bib'
-[436] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[436] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[436] Biber.pm:4203> INFO - Sorting list 'none/global//global/global' of type 'entry' with template 'none' and locale 'en-US'
-[436] Biber.pm:4209> INFO - No sort tailoring available for locale 'en-US'
-[456] bbl.pm:654> INFO - Writing 'Thesis.bbl' with encoding 'latin1'
-[475] bbl.pm:757> INFO - Output to Thesis.bbl
-[475] Biber.pm:130> WARN - legacy month field '10--15 Jul' in entry 'pmlr-v80-barrett18a' is not an integer - this will probably not sort properly.
-[476] Biber.pm:130> WARN - BibTeX subsystem: /tmp/biber_tmp_b091/8fe4c9854184545302f21ebf0d47516c_10982.utf8, line 3, warning: 32 characters of junk seen at toplevel
-[476] Biber.pm:130> WARN - I didn't find a database entry for 'Chao' (section 0)
-[476] Biber.pm:132> INFO - WARNINGS: 3
+[57] biber:340> INFO - === jue feb 29, 2024, 20:38:26
+[69] Biber.pm:418> INFO - Reading 'Thesis.bcf'
+[124] Biber.pm:972> INFO - Found 44 citekeys in bib section 0
+[134] Biber.pm:4383> INFO - Processing section 0
+[142] Biber.pm:4574> INFO - Looking for bibtex file 'Afterword/Bibliography/refs.bib' for section 0
+[144] bibtex.pm:1713> INFO - LaTeX decoding ...
+[181] bibtex.pm:1518> INFO - Found BibTeX data source 'Afterword/Bibliography/refs.bib'
+[399] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[400] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[400] Biber.pm:4203> INFO - Sorting list 'none/global//global/global' of type 'entry' with template 'none' and locale 'en-US'
+[400] Biber.pm:4209> INFO - No sort tailoring available for locale 'en-US'
+[421] bbl.pm:654> INFO - Writing 'Thesis.bbl' with encoding 'latin1'
+[442] bbl.pm:757> INFO - Output to Thesis.bbl
+[442] Biber.pm:130> WARN - legacy month field '10--15 Jul' in entry 'pmlr-v80-barrett18a' is not an integer - this will probably not sort properly.
+[442] Biber.pm:130> WARN - BibTeX subsystem: /tmp/biber_tmp_ZNRe/8fe4c9854184545302f21ebf0d47516c_19301.utf8, line 3, warning: 32 characters of junk seen at toplevel
+[442] Biber.pm:130> WARN - I didn't find a database entry for 'Chao' (section 0)
+[442] Biber.pm:132> INFO - WARNINGS: 3
