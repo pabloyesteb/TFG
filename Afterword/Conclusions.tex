@@ -1,23 +1,18 @@
-\chapter{Conclusions and research outlook.}
-%
-\indent The increasingly higher relevance of relative motion is beyond question. Satellite constellations, rendez-vous operations and formation flying missions are becoming an everyday occurrence, and their growing success rates are no coincidence. Incrementally better models (\ie truer-to-life, accounting for more effects) have an essential role in this. \\
-%
-\indent In order to gain a comprehensible insight on this topic, this thesis has followed the same bottom-up structure, starting from the very simple Hill/Clohessy-Wiltshire equations up to the modelling of perturbations. The use of linear, closed-form models (through STMs) is an advantageous approach: firstly, computational cost drops, but even more importantly, deeper knowledge about the dynamics of the system is achieved. This allows for, among other things, the design of relative orbits with certain characteristics (\eg safe orbits).\\
-%
-\indent Any state-of-the-art model requires an analysis of the relevant perturbations to be carried out. For the case of Earth artificial satellites, this usually leaves the non-spherical gravity as the most important of them. Kaula's theory allows for the analysis of the effect of any spherical harmonic, which naturally leads for better accuracy models. Although it features certain singular cases (resonances and circular or equatorial orbits), these can be solved. Many applications can be branched from this theory, such as mean-to-osculating transformations, linearized relative motion models, resonance analysis \ldots \\
-%
-\indent In conclusion, the modelling of perturbations is key for the construction of accurate linearised relative motion models as well as relative orbit design; both of which play a paramount role in the constantly growing discipline of distributed space systems.
-%
-\paragraph{\indent Research outlook and future work. \\}
-%
-\indent The very wide horizon in which this topic is framed leads for countless possible research areas. \\
-%
-\indent The evaluation of a robust implementation of Kaula's theory is the first on the list. This would be followed by an analysis of the resonant and secular terms, such as done by Chao \cite{Chao}. The development of mean-to-osculating transformations through this theory is also considered, which could derive into the development of linear relative motion models based on it.\\
-%
-\indent In a somewhat more general sense, the survey, analysis and implementation of perturbed relative motion models (STMs) is to be tackled. A performance analysis of these models against a High-Fidelity and unperturbed models would be insightful, surely. \\
-%
-\indent Orbit safety might also be an interesting topic to follow up on. A review of the existent models for non-circular, perturbed reference orbits would be insightful, and would continue on the here developed models for simpler cases (\ie circular perturbed and elliptic unperturbed).\\
-%
-\indent Further down the road, other types of perturbations might be analyzed, through the averaging methods here presented. Third bodies or drag are the most relevant ones, although second-order NSG effects are also to be considered. \\
-%
-\indent Finally, real world scenarios may be analyzed, and eventually, a self-contained tool for this purpose could be regarded. Hopefully, this sort of roadmap looks as compelling as it does to the author.
+\chapter{Conclusions and research outlook}
+
+This work presents a validation pipeline tailored to address the challenges inherent in certifying neural network models across various industrial domains. While the focus has been emphasized on its applications within the aerospace industry, it's crucial to underscore the pipeline's inherent versatility and adaptability to a wide range of industrial problems and solution methodologies.
+
+\textbf{Versatility Across Industries}: Although the validation pipeline showcased in this work has been exemplified within the aerospace sector, its principles and methodologies are applicable to diverse industrial contexts. The structured approach to addressing regression problems with neural networks offers a universal framework that can be adapted to different domains.
+
+\textbf{Practical Utility}: Through the practical application of the validation pipeline using an industrial surrogate model, this work demonstrates its efficacy in addressing real-world challenges. By illustrating its application to structural calculation and failure mode prediction in aeronautical structures, the pipeline's potential to enhance safety and efficiency becomes apparent, regardless of the specific industry context.
+
+\textbf{Flexibility and Scalability}: Chapter \ref{chap:3} elucidates the comprehensive nature of the validation pipeline, emphasizing its flexibility and scalability to accommodate diverse problem domains and evolving technological landscapes. By providing a detailed examination of each component's role, the pipeline offers a customizable framework that can be tailored to meet the specific needs and challenges of different industries.
+
+\textbf{Future Directions}: The potential applications of the validation pipeline presented here are vast and promising, extending beyond the confines of the aerospace industry. Future developments could explore leveraging the capabilities of physics-informed neural networks or PINNs\cite{raissi2019deep}. Furthermore, there is an opportunity to explore direct prediction of aerodynamic loads, showcasing the versatility of the pipeline in tackling complex multidimensional problems across various industrial sectors.
+
+While this work primarily focuses on supervised learning paradigms, the scope can be expanded to encompass other learning methodologies. For instance, avenues for exploration include the application of reinforcement learning\cite{kaelbling1996reinforcement} techniques to refine and optimize decision-making processes within the validation pipeline. Additionally, the incorporation of collective learning approaches holds promise for leveraging distributed intelligence and collaborative problem-solving across diverse datasets and domains.
+
+In essence, the future development and application of the validation pipeline are poised to unlock new frontiers in industrial innovation and efficiency. By embracing emerging technologies and methodologies, such as PINNs and reinforcement learning, and fostering collaboration across disciplines, researchers and industry practitioners can continue to push the boundaries of what is possible in the realm of neural network validation and application.
+
+
+In conclusion, this article advocates for the widespread adoption of rigorous validation methodologies and the responsible utilization of neural networks across industrial domains. By embracing the principles of the proposed validation pipeline and fostering collaboration among industry stakeholders, organizations can ensure the reliability, safety, and transformative potential of neural network-driven systems in an ever-evolving industrial landscape.

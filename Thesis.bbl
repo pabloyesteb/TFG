@@ -1148,8 +1148,8 @@
       \strng{authorbibnamehash}{5a6b19c047426c4c2d4a50b395bf450b}
       \strng{authornamehash}{5a6b19c047426c4c2d4a50b395bf450b}
       \strng{authorfullhash}{5a6b19c047426c4c2d4a50b395bf450b}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{Applied multivariate data analysis: regression and experimental design}
@@ -1493,8 +1493,8 @@
       \strng{authorbibnamehash}{5e8b3c364784d3f8acec9469c96be92c}
       \strng{authornamehash}{5e8b3c364784d3f8acec9469c96be92c}
       \strng{authorfullhash}{5e8b3c364784d3f8acec9469c96be92c}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Korean journal of anesthesiology}
@@ -1563,8 +1563,85 @@
       \field{pages}{315\bibrangedash 334}
       \range{pages}{20}
     \endentry
+    \entry{raissi2019deep}{article}{}
+      \name{author}{4}{}{%
+        {{hash=95a17c39168b9e6b8812f207b4e036c1}{%
+           family={Raissi},
+           familyi={R\bibinitperiod},
+           given={Maziar},
+           giveni={M\bibinitperiod}}}%
+        {{hash=f2f011a111420ede43380cf94b46016d}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Zhicheng},
+           giveni={Z\bibinitperiod}}}%
+        {{hash=7520be210a73cc56c9464a93a5f03b6b}{%
+           family={Triantafyllou},
+           familyi={T\bibinitperiod},
+           given={Michael\bibnamedelima S},
+           giveni={M\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+        {{hash=bfaf154b1f300f885a75adce4c6b773e}{%
+           family={Karniadakis},
+           familyi={K\bibinitperiod},
+           given={George\bibnamedelima Em},
+           giveni={G\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Cambridge University Press}%
+      }
+      \strng{namehash}{d313186ef90b9962b2cc1c7bc257c3f7}
+      \strng{fullhash}{604e96943316e4ae2515fe58cf49f3e0}
+      \strng{bibnamehash}{d313186ef90b9962b2cc1c7bc257c3f7}
+      \strng{authorbibnamehash}{d313186ef90b9962b2cc1c7bc257c3f7}
+      \strng{authornamehash}{d313186ef90b9962b2cc1c7bc257c3f7}
+      \strng{authorfullhash}{604e96943316e4ae2515fe58cf49f3e0}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Fluid Mechanics}
+      \field{title}{Deep learning of vortex-induced vibrations}
+      \field{volume}{861}
+      \field{year}{2019}
+      \field{pages}{119\bibrangedash 137}
+      \range{pages}{19}
+    \endentry
+    \entry{kaelbling1996reinforcement}{article}{}
+      \name{author}{3}{}{%
+        {{hash=72fdc7bf3120e1cff12e3ecf7e892b9a}{%
+           family={Kaelbling},
+           familyi={K\bibinitperiod},
+           given={Leslie\bibnamedelima Pack},
+           giveni={L\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+        {{hash=211e529e9f10ad1bfacff2284da10ea7}{%
+           family={Littman},
+           familyi={L\bibinitperiod},
+           given={Michael\bibnamedelima L},
+           giveni={M\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+        {{hash=e7235f20cee7d299f1ca6ba250cc615e}{%
+           family={Moore},
+           familyi={M\bibinitperiod},
+           given={Andrew\bibnamedelima W},
+           giveni={A\bibinitperiod\bibinitdelim W\bibinitperiod}}}%
+      }
+      \strng{namehash}{1f7c44e9457ba86dd71b2dd3eaa61346}
+      \strng{fullhash}{1f7c44e9457ba86dd71b2dd3eaa61346}
+      \strng{bibnamehash}{1f7c44e9457ba86dd71b2dd3eaa61346}
+      \strng{authorbibnamehash}{1f7c44e9457ba86dd71b2dd3eaa61346}
+      \strng{authornamehash}{1f7c44e9457ba86dd71b2dd3eaa61346}
+      \strng{authorfullhash}{1f7c44e9457ba86dd71b2dd3eaa61346}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of artificial intelligence research}
+      \field{title}{Reinforcement learning: A survey}
+      \field{volume}{4}
+      \field{year}{1996}
+      \field{pages}{237\bibrangedash 285}
+      \range{pages}{49}
+    \endentry
   \enddatalist
-  \missing{Chao}
 \endrefsection
 \endinput
 

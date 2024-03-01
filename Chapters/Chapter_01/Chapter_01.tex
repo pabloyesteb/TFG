@@ -1,40 +1,41 @@
-\chapter{General concepts on supervised learning for industrial applications}\label{chap:3}
+\chapter{General concepts on supervised learning for industrial applications}\label{chap:1}
 In the dynamic landscape of industrial applications, the integration of supervised learning techniques has emerged as a pivotal force in addressing complex challenges, particularly within the aerospace industry. This chapter delves into the foundational concepts of industrial-oriented supervised learning, focusing on its profound implications for solving regression problems inherent in various aerospace endeavors. From optimizing fuel consumption\cite{hong2018data} to enhancing structural integrity\cite{pfingstl2023warped}, numerous industrial dilemmas can be effectively framed as regression tasks, where supervised learning algorithms offer unparalleled potential for both solvability and computational efficiency. Within the realm of industry-oriented supervised learning, understanding the mathematical background of these methodologies lays the groundwork for harnessing their transformative impact on real-world industrial challenges, particularly within aerospace domains.\\
 %
 \section{Mathematical description of ANNs}
 \indent Mathematically, the problems we refer to in this chapter consist of finding the explicit shape of a function
-\begin{equation}\label{eq:F}
-	\mathcal{F}_{t}:S_{\mathbf{X}}\rightarrow S_{\mathbf{Y}_{t}}
-\end{equation}
-with $S_{\mathbf{X}}\subset\mathbb{R}^n$ and $S_{\mathbf{Y}}\subset\mathbb{R}^m$; \ie the function $\mathcal{F}_t$ takes as input a vector $\mathbf{X}=\{x_1,x_2,\ldots,x_n\}$, and outputs a vector $\mathbf{Y}_t=\{y_{t1},y_{t2},\ldots,y_{tm}\}$. The input vector could represent, for instance, a collection of loads applied to some part of the fuselage structure of an aeroplane, whereas the output vector may represent the probability of failure of that structure under the loads contained in $\mathbf{X}$. The problem at hand would therefore be finding the function $\mathcal{F}_t$ which maps load configurations to failure probabilities. By categorizing the task of finding such function $\mathcal{F}$ as a ''regression problem'', we mean usually $n>>m$. Note that finding the explicit shape of $\mathcal{F}_t$ might be a difficult task when $\mathcal{F}_t$ is a strongly non-linear function, especially if $n>>1$.\\
+\begin{align}\label{eq:F}
+	& \mathcal{F}_{t}:S_X\rightarrow S_{Y_{t}} \\
+	& \mathcal{F}_t(\mathbf{x})=\mathbf{y}_t
+\end{align}
+with $S_X\subset\mathbb{R}^n$ and $S_Y\subset\mathbb{R}^m$; \ie the function $\mathcal{F}_t$ takes as input a vector $\mathbf{x}=\{x_1,x_2,\ldots,x_n\}$, and outputs a vector $\mathbf{y}_t=\{y_{t1},y_{t2},\ldots,y_{tm}\}$. The input vector could represent, for instance, a collection of loads applied to some part of the fuselage structure of an aeroplane, whereas the output vector may represent the probability of failure of that structure under the loads contained in $\mathbf{x}$. The problem at hand would therefore be finding the function $\mathcal{F}_t$ which maps load configurations to failure probabilities. By categorizing the task of finding such function $\mathcal{F}$ as a ''regression problem'', we mean usually $n>>m$. Note that finding the explicit shape of $\mathcal{F}_t$ might be a difficult task when $\mathcal{F}_t$ is a strongly non-linear function, especially if $n>>1$.\\
 %
-\indent Although regression problems can be tackled by several means, in this work we will focus on artificial neural networks or ANNs\cite{Marsland2015Machine}\footnote{When using an ANN to solve a regression problem, we shall refer to it (the ANN) as a surrogate model as well}. From this approach, the starting point is a parametrized function $\mathcal{F}$ with which we shall approximate $\mathcal{F}_t$ (which is taken as the ground true --unknown-- function that conveys the physics of the regression problem\footnote{Indeed, $\mathcal{F}_t$ is just a conceptual instrument we use to associate pairs of input-output values $(\mathbf{X}_i,\mathbf{Y}_i)$.}), so that we have:
+\indent Although regression problems can be tackled by several means, in this work we will focus on artificial neural networks or ANNs\cite{Marsland2015Machine}\footnote{When using an ANN to solve a regression problem, we shall refer to it (the ANN) as a surrogate model as well}. From this approach, the starting point is a parametrized function $\mathcal{F}$ with which we shall approximate $\mathcal{F}_t$ (which is taken as the ground true --unknown-- function that conveys the physics of the regression problem\footnote{Indeed, $\mathcal{F}_t$ is just a conceptual instrument we use to associate pairs of input-output values $(\mathbf{x}_i,\mathbf{y}_i)$.}), so that we have:
 
 \begin{align}
-	& {\mathcal{F}} : S_{\mathbf{X}} \rightarrow S_{\mathbf{{Y}}} \\
-	& {\mathcal{F}}(\mathbf{X}; W) = \mathbf{{Y}} \label{eq:Fhat}
+	& {\mathcal{F}} : S_X \rightarrow S_Y \\
+	& {\mathcal{F}}(\mathbf{x}; W) = \mathbf{{y}} \label{eq:Fhat}
 \end{align}
 
-Where $W$ is the set of parameters defining the explicit shape of $\mathcal{{F}}$. In this equation, the absence of subscript ''t'' accounts for the difference between our parametrized function and the real function we are trying to find, the one from \cref{eq:F}. N.B. the domain set $\mathbf{X}$ is the same for both $\mathcal{F}_t$ and $\mathcal{F}$, which is not the case for the codomain.\\
+Where $W$ is the set of parameters defining the explicit shape of $\mathcal{{F}}$. In this equation, the absence of subscript ''t'' accounts for the difference between our parametrized function and the real function we are trying to find, the one from \cref{eq:F}. N.B. the domain set $S_X$ is the same for both $\mathcal{F}_t$ and $\mathcal{F}$, which is not the case for the codomain.\\
 %
-\indent When speaking about regression problems, the input vector $\mathbf{X}$ is usually called the ''feature vector'', while the output vector $\mathbf{Y}_t$ is usually called --in a descriptive way-- the ''prediction vector''. Similarly, $n$ is called the ''feature'' or the ''input'' dimension, and $m$ is called the ''output'' or the ''prediction'' dimension.\\
+\indent When speaking about regression problems, the input vector $\mathbf{x}$ is usually called the ''feature vector'', while the output vector $\mathbf{y}_t$ is usually called --in a descriptive way-- the ''prediction vector''. Similarly, $n$ is called the ''feature'' or the ''input'' dimension, and $m$ is called the ''output'' or the ''prediction'' dimension.\\
 %
-\indent We shall denote $\mathcal{{F}}$'s dependency on $W$ with a subscript: $\mathcal{{F}}_W$. Mathematically, the explicit shape of $\mathcal{{F}}_W$ can adopt a wide variety of expressions. Perhaps the most common architecture is the so-called Multi Layer Perceptron (MLP)\cite{Marsland2015Machine}, which basically consists of a series of iterative affine transformations, the first of which is applied to the elements of $\mathbf{X}$ (defined by the parameters $W$) and non-linear functions (the rectified linear unit function or ReLU, the sigmoid function and the hyperbolic tangent being the most widely used) applied to each iteration's result.\\
+\indent We shall denote $\mathcal{{F}}$'s dependency on $W$ with a subscript: $\mathcal{{F}}_W$. Mathematically, the explicit shape of $\mathcal{{F}}_W$ can adopt a wide variety of expressions. Perhaps the most common architecture is the so-called Multi Layer Perceptron (MLP)\cite{Marsland2015Machine}, which basically consists of a series of iterative affine transformations, the first of which is applied to the elements of $\mathbf{x}$ (defined by the parameters $W$) and non-linear functions (the rectified linear unit function or ReLU, the sigmoid function and the hyperbolic tangent being the most widely used) applied to each iteration's result.\\
 %
 \indent The approach now is to define a distance $\mathcal{L}=\|\mathcal{F}_t-\mathcal{{F}}\|$ and treat the regression problem as the task of minimizing $\mathcal{L}$:
 \begin{equation}\label{eq:Fargmin}
 	\mathcal{{F}}^*=argmin(\mathcal{L})
 \end{equation}\\
 %
-\indent From a practical point of view, the information available for defining $\mathcal{L}$ consists of a (large\footnote{By large, we mean $\left|\mathcal{S}^\text{Full}\right|>>n$ (cfr. \cref{eq:full}).}) set of duplets $(\mathbf{X},\mathbf{Y}_t)$\footnote{N.B. the lack of hat here, meaning data has been sampled from the domain and codomain of $\mathcal{F}$, $S_\mathbf{X}$ and $S_\mathbf{Y}$, respectively.} representing empirical samples from the feature and the prediction space coming from experimental data, simulations, or any other source. Such set is called $\mathcal{S}^\text{Full}$:
+\indent From a practical point of view, the information available for defining $\mathcal{L}$ consists of a (large\footnote{By large, we mean $\left|S^\text{Full}\right|>>n$ (cfr. \cref{eq:full}).}) set of duplets $(\mathbf{x},\mathbf{y}_t)$\footnote{N.B. the lack of hat here, meaning data has been sampled from the domain and codomain of $\mathcal{F}$, $S_X$ and $S_Y$, respectively.} representing empirical samples from the feature and the prediction space coming from experimental data, simulations, or any other source. Such set is called $S^\text{Full}$:
 \begin{equation}\label{eq:full}
-	\mathcal{S}^\text{Full}=\{\mathbf{X}_i,\mathbf{Y}_{ti}\}_{i=1}^{N_{\text{Full}}}
+	S^\text{Full}=\{\mathbf{x}_i,\mathbf{y}_{ti}\}_{i=1}^{N_{\text{Full}}}
 \end{equation}
 The procedure is to split Full into a training and a test set, so that
 \begin{align}
-	& \mathcal{S}^\text{Train} \cup \mathcal{S}^\text{Test} = \mathcal{S}^\text{Full} \\
-	& \mathcal{S}^\text{Train} \cap \mathcal{S}^\text{Test} = \emptyset \\
-	& |\mathcal{S}^\text{Train}| > |\mathcal{S}^\text{Test}|
+	& S^\text{Train} \cup S^\text{Test} = S^\text{Full} \\
+	& S^\text{Train} \cap S^\text{Test} = \emptyset \\
+	& |S^\text{Train}| > |S^\text{Test}|
 \end{align}\\
 %
 $\mathcal{L}$ (which is called the ''loss function'') can now be defined as
@@ -44,7 +45,7 @@ $\mathcal{L}$ (which is called the ''loss function'') can now be defined as
 \end{align}
 where
 \begin{equation}\label{eq:error}
-	E(W) = \|\mathcal{S}^\text{Train}_{\mathbf{Y}_t} - \mathcal{S}^\text{Train}_\mathbf{{Y}}\|
+	E(W) = \|S^\text{Train}_{Y_t} - S^\text{Train}_Y\|
 \end{equation}
 and
 \begin{equation}\label{eq:regularization}
@@ -56,11 +57,11 @@ for any defined norm $\|\cdot\|$. In \cref{eq:loss}, $\lambda$ is just an arbitr
 \begin{itemize}
 	\item The Mean Square Error (MSE):
 	\begin{equation}\label{eq:mse}
-		E(W) = \frac{1}{N_{\text{Train}}} \sum_{i=1}^{N_{\text{Train}}} (\mathbf{Y}_{ti} - \mathbf{\hat{Y}}_i)^2
+		E(W) = \frac{1}{N_{\text{Train}}} \sum_{i=1}^{N_{\text{Train}}} (\mathbf{y}_{ti} - \mathbf{\hat{y}}_i)^2
 	\end{equation}
 	\item The Mean Absolute Error (MAE):
 	\begin{equation}\label{eq:mae}
-		E(W) = \frac{1}{N_{\text{Train}}} \sum_{i=1}^{N_{\text{Train}}} \left|\mathbf{Y}_i - \mathbf{\hat{Y}}_{ti}\right|
+		E(W) = \frac{1}{N_{\text{Train}}} \sum_{i=1}^{N_{\text{Train}}} \left|\mathbf{y}_i - \mathbf{\hat{y}}_{ti}\right|
 	\end{equation}
 \end{itemize}
 
@@ -81,9 +82,9 @@ Where, again, $\eta$ is an arbitrarily defined scaling factor which receives the
 \indent A plethora of different algorithms have been tried for ANN training, but the majority of them shares the basic concept with gradient descent. Amongst common techniques, descending learning rates and stochastic gradient descent are perhaps the most widely used. Descending learning rate just means $\lambda$ decreases as successive loops of \cref{eq:train} are completed. Stochastic gradient descent (Cfr. \cite{Marsland2015Machine} for further details) applies the loss function, \cref{eq:loss} is applied to a batch randomly sampled from $S^\text{Train}$ instead of the whole set.
 %
 \section{Overfitting. Bias-variance trade-off}
-\indent An important phenomenon to care about during training of ANNs is \textbf{overfitting}\footnote{For more extense treaty on this topic, cfr. \cite{Marsland2015Machine}}. When aiming to solve any regression problem with ANNs, one must decide on the architecture (by architecture we mean the explicit definition of $\mathcal{{F}}_W$). One example of possible network architectures are the aforementioned Multi Layer Perceptrons. An important characteristic of the network is the size of the set $W$. Popular wisdom in machine learning says the more complex, non-linear the function $\mathcal{F}_t$ is, the larger the parameter set $W$ needs to be in order to properly capture all the features in $\mathcal{F}_t$. One can build an analogy between a regression problem with ANNs and a polynomial interpolation problem. If $\mathcal{F}_t$ is supposed to be a polynomial\footnote{Usually there are absolutely no guarantees that $\mathcal{\hat{F}}_W$ is a polynomial. Here we are just assuming it for illustration purposes.}, then the objective of minimizing the loss function as defined in \cref{eq:mse} is equivalent to the polynomial interpolation problem of fitting the points $\{(\mathbf{X}_i,\mathbf{Y}_{ti})\}_{i=1}^{N_{\text{Train}}}$ in $\mathcal{S}^\text{Train}$. In this case $W$ would just represent the set of coefficients $\{c_0,c_1,\ldots,c_{N_W}\}$ that defines the polynomial $\mathcal{{F}}_W$. The minimum degree of the polynomial that solves this interpolation problem is clearly $N_{\text{Train}}\equiv\left|\mathcal{S}^{\text{Train}}\right|$. Now, if we set $N_W<N_{\text{Train}}$, obviously we would not be able to fit all points in the train set and the minimum of the loss function as defined in \cref{eq:loss} would be presumably high. When this occurs, it is said that the model $\mathcal{{F}}_W$ has high bias. Due to the lack of sufficient trainable parameters in $W$, the model is not capable of learning all the intricacies and patterns in the training set. Our model is just not complex enough for the regression task we aimed to solve.\\
+\indent An important phenomenon to care about during training of ANNs is \textbf{overfitting}\footnote{For more extense treaty on this topic, cfr. \cite{Marsland2015Machine}}. When aiming to solve any regression problem with ANNs, one must decide on the architecture (by architecture we mean the explicit definition of $\mathcal{{F}}_W$). One example of possible network architectures are the aforementioned Multi Layer Perceptrons. An important characteristic of the network is the size of the set $W$. Popular wisdom in machine learning says the more complex, non-linear the function $\mathcal{F}_t$ is, the larger the parameter set $W$ needs to be in order to properly capture all the features in $\mathcal{F}_t$. One can build an analogy between a regression problem with ANNs and a polynomial interpolation problem. If $\mathcal{F}_t$ is supposed to be a polynomial\footnote{Usually there are absolutely no guarantees that $\mathcal{\hat{F}}_W$ is a polynomial. Here we are just assuming it for illustration purposes.}, then the objective of minimizing the loss function as defined in \cref{eq:mse} is equivalent to the polynomial interpolation problem of fitting the points $\{(\mathbf{x}_i,\mathbf{y}_{ti})\}_{i=1}^{N_{\text{Train}}}$ in $S^\text{Train}$. In this case $W$ would just represent the set of coefficients $\{c_0,c_1,\ldots,c_{N_W}\}$ that defines the polynomial $\mathcal{{F}}_W$. The minimum degree of the polynomial that solves this interpolation problem is clearly $N_{\text{Train}}\equiv\left|S^{\text{Train}}\right|$. Now, if we set $N_W<N_{\text{Train}}$, obviously we would not be able to fit all points in the train set and the minimum of the loss function as defined in \cref{eq:loss} would be presumably high. When this occurs, it is said that the model $\mathcal{{F}}_W$ has high bias. Due to the lack of sufficient trainable parameters in $W$, the model is not capable of learning all the intricacies and patterns in the training set. Our model is just not complex enough for the regression task we aimed to solve.\\
 %
-\indent On the other hand, setting $N_W>>N_{\text{Train}}$ can lead to the so-called overfitting. In industrial applied regression problems, data in $\mathcal{S}^\text{Full}$ comes from experiments or numerical simulations, as has been mentioned before. This kind of data irremediably involves some noise. The noise might be coming from sensors, numerical instabilities in the simulations, signal noise, etc. Now take for instance the target function $\mathcal{F}_t$ is a polynomial of degree $N_1<<N_{\text{Train}}$. This means our training set is redundant as we have sampled $N_\text{Train}$ points from a polynomial of degree $N_1$. If data was noise free, our interpolation problem would be determined by just $N_1$ points in the test set and coefficients $\{c_{N_1+1},c_{N_1+2},\ldots,c_{N_W}\}$ would be identically zero. But presence of noise deviates points in $\mathcal{S}^\text{Train}$ from the actual polynomial $\mathcal{F}_t$, and thus makes the interpolation problem non redundant, \ie the coefficients $\{c_{N_1+1},c_{N_1+2},\ldots,c_{N_W}\}$ would be different from zero and our surrogate model $\mathcal{{F}}_W$ will have a higher degree than the actual $\mathcal{F}_t$. Fitting the noise in $\mathcal{S}^\text{Train}$ is what is called overfitting. Clearly this is undesirable from all points of view, namely:
+\indent On the other hand, setting $N_W>>N_{\text{Train}}$ can lead to the so-called overfitting. In industrial applied regression problems, data in $S^\text{Full}$ comes from experiments or numerical simulations, as has been mentioned before. This kind of data irremediably involves some noise. The noise might be coming from sensors, numerical instabilities in the simulations, signal noise, etc. Now take for instance the target function $\mathcal{F}_t$ is a polynomial of degree $N_1<<N_{\text{Train}}$. This means our training set is redundant as we have sampled $N_\text{Train}$ points from a polynomial of degree $N_1$. If data was noise free, our interpolation problem would be determined by just $N_1$ points in the test set and coefficients $\{c_{N_1+1},c_{N_1+2},\ldots,c_{N_W}\}$ would be identically zero. But presence of noise deviates points in $S^\text{Train}$ from the actual polynomial $\mathcal{F}_t$, and thus makes the interpolation problem non redundant, \ie the coefficients $\{c_{N_1+1},c_{N_1+2},\ldots,c_{N_W}\}$ would be different from zero and our surrogate model $\mathcal{{F}}_W$ will have a higher degree than the actual $\mathcal{F}_t$. Fitting the noise in $S^\text{Train}$ is what is called overfitting. Clearly this is undesirable from all points of view, namely:
 \begin{itemize}
 	\item Computational resources are invested in fitting irrelevant noise.
 	\item By fitting the noise in the training set, the model loses generalization capability, \ie although the loss $\mathcal{L}$ in the training set might be very low due to the model correctly fitting every point in that set, performance in the test set drops due to the noise patterns the model has learnt in the training set not being present at the test set. This will cause a mismatch between the training and the test loss (low and high, respectively). When this occurs, we refer to it as the model having high variance.
@@ -98,10 +99,10 @@ It is clear from all the above that during the training phase it is paramount to
 \section{Applicability}
 Another important concept which will be later used in \autoref{chap:3} is the applicability region of a surrogate model.\\
 \indent The applicability region can be intuitively defined as the set of the input and output values for which the model's prediction can be trusted. Applicability region is a refined idea of the \textit{Operational Design Domain} of a model.\\
-\indent For a model $F$ to be applicable to a certain new point $x$:
+\indent For a model $\mathcal{F}$ to be applicable to a certain new point $x$:
 \begin{itemize}
-	\item $x$ needs to be inside the \textit{input} applicability region of $\mathcal{F}$.
-	\item The prediction $Y=\mathcal{F}(x)$ needs to be inside the \textit{output} applicability region of $\mathcal{F}$.\\
+	\item $\mathbf{x}$ needs to be inside the \textit{input} applicability region of $\mathcal{F}$.
+	\item The prediction $\mathbf{y}=\mathcal{F}(\mathbf{x})$ needs to be inside the \textit{output} applicability region of $\mathcal{F}$.\\
 \end{itemize}
 %
 \indent Knowing whether a new point is either inside or outside applicability is a binary decision problem which can be addressed \textit{a priori} (filtering) or be learned \textit{a posteriori} (model boosting). In other words, the binary classification can be addressed from an unsupervised (geometric) learning approach, or a supervised learning approach:
@@ -121,15 +122,13 @@ On the other hand, geometrical applicability classifiers are based on the premis
 \indent There are plenty of definitions for the interpolating region of a given dataset. Some authors define it as the smallest hypercube enclosing the data\cite{ebert2014interpolation} (vid. \cref{fig:hipercuboex}) although this may seriously challenge interpolation due to isolated points falling into the interpolation region under this definition. Many authors (see v. gr. \cite{loh2007extrapolation,4505337}) define the interpolation region as the \textit{convex hull} of the training data, \ie:
 
 \begin{definition}\cite{balestriero2021learning}\label{def:interpolacion}
-	Standard interpolation occurs for a sample $\mathbf{x}$ whenever this sample belongs to the convex hull of a set of samples $\mathbf{X}\triangleq \left\{\mathbf{x}_1,...,\mathbf{x}_N\right\}$.
+	Standard interpolation occurs for a sample $\mathbf{x}$ whenever this sample belongs to the convex hull of a set of samples $S^\text{Train}_X=\left\{\mathbf{x}_1,x_2,\ldots,\mathbf{x}_N\right\}$.
 \end{definition}
 
-In the above definition, $\mathbf{X}$ is the training set which has been used for training the model.\\
-%
-\indent Recently, \cite{balestriero2021learning} have pointed out that, due to the so-called curse of dimensionality, extrapolation outside the training convex hull always ends up taking place if the input dimension is sufficiently large. The curse of dimensionality\cite[pp. 17-18]{Marsland2015Machine} can be illustrated by the fact that the unitary $n$-sphere's volume asymptotically diminishes to $0$ as $n$ increases. In the end, the effect is that, as the number of dimensions increase, more data is needed in order for the model to work in interpolating regime, as is showed by the following theorem:\\
+\indent Recently, the authors from \cite{balestriero2021learning} have pointed out that, due to the so-called curse of dimensionality, extrapolation outside the training convex hull always ends up taking place if the input dimension is sufficiently large. The curse of dimensionality\cite[pp. 17-18]{Marsland2015Machine} can be illustrated by the fact that the unitary $n$-sphere's volume asymptotically diminishes to $0$ as $n$ increases. In the end, the effect is that, as the number of dimensions increase, more data is needed in order for the model to work in interpolating regime, as is showed by \autoref{dparadoxa}.\\
 
 \begin{theorem}\cite{barany1988shape}\label{dparadoxa}
-	Given a $d$-dimensional dataset $\mathbf X \triangleq \left\{\mathbf{x}_1,...,\mathbf{x}_N\right\}$ with i.i.d. samples uniformly drawn from a hyperball, the probability that a new sample $\mathbf{x}$ is in interpolation regime (recall \cref{def:interpolacion}) has the following asymptotic behaviour:\\
+	Given a $d$-dimensional dataset $S_X=\left\{\mathbf{x}_1,...,\mathbf{x}_N\right\}$ with i.i.d. samples uniformly drawn from a hyperball, the probability that a new sample $\mathbf{x}$ is in interpolation regime (recall \cref{def:interpolacion}) has the following asymptotic behaviour:\\
 	
 	\begin{equation}
 		\lim_{d \to \infty}p(\mathbf{x}\in Hull(\mathbf{X}))=

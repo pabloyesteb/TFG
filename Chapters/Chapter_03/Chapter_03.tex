@@ -1,14 +1,43 @@
-\chapter{The validation pipeline}
+\chapter{The validation pipeline}\label{chap:3}
 %
 \label{chap:Chap_1}
 
 \section{Overview}
-(Sin acentos) Recorrido sumario por las distintas partes del analisis estadistico (plantillas) centrandose en su funcion en vez de su funcionamiento tecnico. Explicacion de la arquitectura general de la validacion.\\
+\indent In \autoref{fig:pipeline} the proposed validation pipeline is depicted in the form of a directed graph. Each block of the diagram represents a different station in the pipeline, which consists of a comprehensive statistical validation part, whose ultimate product is the ''uncertainty model'' labelled block, plus a section dedicated to ''model and data boosting'', which receives the outputs of the statistical validation and the uncertainty model, and interacts with model data and training blocks in an effort to leverage information collected for the statistical validation to enhance model performance.\\
 %
+\indent This work is exclusively focused on the statistical validation of the model. This comprises the vertical streamline starting in the block ''Data'' and finishing in ''$P(E)$'', ''$P(E|X)$'' and ''$P(E|Y)$'' blocks, with the ''Uncertainty model'' block as the final outcome of the whole validation, which in turn is a tool that uses all the information of previous blocks to predict \textit{where} and \textit{how much} the model can be trusted. The process from ''Data'' to ''Uncertainty'' can be described in terms of the following blocks present in the graph:
+\begin{enumerate}
+	\item\label{item:data}\textbf{Data: size, features, dimensionality reduction.}
+	The first milestone in the validation pipeline is related to data acquisition and manipulation prior to dataset splitting into train and test sets, \ie its focus is the set
+	$$
+	S^\text{Full}=\{\mathbf{x}_i,\mathbf{y}_{ti}\}_{i=1}^{N_{\text{Full}}}
+	$$
+	For industrial regression models such as the MS-S18, data may contain noise to some uncertainty levels, as discussed in \autoref{chap:1}. This changes the perspective from data duplets of the shape
+	$$
+	(\mathbf{x},\mathbf{y})_j=((0.25,-0.95,\ldots,-0.02);(0.1,0.4,\ldots,0.7))
+	$$ to random variables $\mathbf{x}$ and $\mathbf{y}$ whose cumulative probability functions define confidence intervals in which finding $x$ and $y$ has a 95\% probability, \ie elements of $S^\text{Full}$ have now the shape
+	$$
+	(\mathbf{x},\mathbf{y})_j=(([0.21,0.29],[-0.98,-0.93],\ldots,[-0.05,0.01]);([0.0,0.3],[0.3,0.5],\ldots,[0.67,0.73]))
+	$$
+	
+	Now, for training an ANN, it data needs to be uncertainty free. The approach is to take $p$ samples from the random variables $(\mathbf{x},\mathbf{y})_j$ inside their confidence intervals. It is possible now to combine the sampled tuples to obtain $p^2$ new tuples. This is indeed one method of data augmentation\footnote{For a more detailed description of data augmentation concept, cfr. \cite{taylor2018improving}}.
+	
+	The next thing to think about is the number of features in the input data, $n$ (cfr. \autoref{chap:1}). Ideally, input data should contain as many features as needed to faithfully convey all the information about the physics of the regression problem at hand (so the more features, the more information the input vector $\mathbf{x}$ conveys). But it is also important for training purposes that the training set uniformly --to some extent-- samples the hypercube defined by the input variable ranges, otherwise extremely isolated points would produce bad performance in uncovered regions (recall applicability region from \autoref{chap:1}). As $n$ increases, the required size of $S^\text{Train}$ to uniformly sample the training set hypercube increases exponentially (to see this, think about how the hypervolume of an n--hypercube increases as $n$ does so). This effectively imposes a limit to the input dimensionality $n$. Data augmentation might help when it is required to enlarge $n$ but augmenting the training set size with traditional methods (experimental data, numerical simulations, etc.) is too expensive.
+	
+	Finally, input data can adopt the form of continuous numerical variables (like a distance, a temperature, etc.) or categorical variables (for instance, boolean variables or any other variable which can only take certain values, such as integer ones). 
+	
+	\item\label{item:tt_split}\textbf{Train-test split}
+	\item\label{item:defineettrain}\textbf{Define and train the ML model}
+	\item\label{item:errquant}\textbf{Global error quantification}
+	\item\label{item:errdist}\textbf{Distributed error quantification: $P(E)$}
+	\item\label{item:errinput}\textbf{Error distribution conditioned on the input space: $P(E|X)$}
+	\item\label{item:errout}\textbf{Error distribution conditioned on the output space: $P(E|Y)$}
+\end{enumerate}
+
 \begin{figure}[!htb]
 	\centering
 	\includegraphics[width=0.8\textwidth]{/home/pablo/Documentos/TFGP/Thesis/Figures/pipeline.png}
-	\caption{Validation pipeline}
+	\caption{Validation pipeline overview.}
 	\label{fig:pipeline}
 \end{figure}
 %
@@ -21,19 +50,19 @@
 	\caption{Location of the train-test split assessment in the overall validation pipeline}
 	\label{fig:esquemattsplit}
 \end{figure}
-\indent In supervised learning applications, the dataset is typically divided into the training and the testing sets. Keeping different sets for each task is fundamental in order to prevent model bias. Typical figures for the train-test split ratio are 80\%-20\%. When the model being trained is very large, a third dataset (the validation set) may be needed for comparing different hyperparameter configurations, in which case the split is typically done at 60\%-20\%-20\% for the train, test, and vaidation sets, resectively\cite[pp. 20-21]{Marsland2015Machine}.\\
+\indent In supervised learning applications, the dataset is typically divided into the training and the test sets. Keeping different sets for each task is fundamental in order to prevent model bias. Typical figures for the train-test split ratio are 80\%-20\%. When the model being trained is very large, a third dataset (the validation set) may be needed for comparing different hyperparameter configurations, in which case the split is typically done at 60\%-20\%-20\% for the train, test, and vaidation sets, resectively\cite[pp. 20-21]{Marsland2015Machine}.\\
 %
-\indent Training and evaluating the NN on the same dataset would result in the phenomenon called overfitting\cite[pp. 19-20]{Marsland2015Machine}, which basically consists of the NN fitting the noise in the training data and thus losing generalization capabilities.\\
+\indent Training and evaluating the NN on the same dataset would result in the phenomenon called overfitting\cite[pp. 19-20]{Marsland2015Machine}, which basically consists of the NN fitting the noise in the training data and thus losing generalization capabilities (cfr. \autoref{chap:1}).\\
 %
 \indent With the dataset split into the train, evaluation, and test sets, the standard training and validation loop is as follows: the model is trained to ''fit'' the data in the training set. After a certain amount of training, its performance is measured in the evaluation set. The test set is used to compare the performance of different hyperparameter configurations. Note that the NN is always evaluated with data not previously ''seen'' during training, and as such cannot develop any bias for the training set (although bias for the validation or test sets may exist).\\
 %
 \indent In the model validation loop, the first question that should be asked, even before training the model, is whether the dataset split is appropriate for training (vid \autoref{fig:esquemattsplit}).\\
 %
 \indent For the case of MS-S18, we suppose we have a dataset which has been split into a training set
-$${\cal S}_{\text{train}}=\{({\bf X^{tr}},{\bf Y^{tr}})_i\}_{i=1}^{N_{training}}$$
+$${\cal S}_{\text{train}}=\{({\bf x^{tr}},{\bf y^{tr}})_i\}_{i=1}^{N_{training}}$$
 and a test set
-$${\cal S}_{\text{test}}=\{({\bf X^{te}},{\bf Y^{te}})_i\}_{i=1}^{N_{test}},$$
-where ${\bf X}=(X_1,X_2,\dots,X_m)$ is the vector of input variables (also called feature vector), $m$ is the dimensionality of the input parameter space, and ${\bf Y}=(Y_1,Y_2,\dots,Y_q)$ is the vector of output variables, with dimensionality $q$. Individual variables $X_k$ can be numerical or categorical. For instance, for stress problems such as MS-S18, we have a combination of numerical  (\eg external loads) and categorical (eg discrete geometrical variables such as ''Frame'' or ''Stringer'', and purely categorical such as ''dp''). Individual variables $Y_k$ describe the prediction and these are typically numerical (for stress problems such as MS-S18, $q=6$ and these are so-called reserve factors, quantifying the failure likelihood of different failure modes).\\
+$${\cal S}_{\text{test}}=\{({\bf x^{te}},{\bf y^{te}})_i\}_{i=1}^{N_{test}},$$
+where ${\bf x}=(x_1,x_2,\dots,x_m)$ is the vector of input variables (also called feature vector), $m$ is the dimensionality of the input parameter space, and ${\bf y}=(y_1,y_2,\dots,y_q)$ is the vector of output variables, with dimensionality $q$. Individual variables $x_k$ can be numerical or categorical. For instance, for stress problems such as MS-S18, we have a combination of numerical  (\eg external loads) and categorical (eg discrete geometrical variables such as ''Frame'' or ''Stringer'', and purely categorical such as ''dp''). Individual variables $y_k$ describe the prediction and these are typically numerical (for stress problems such as MS-S18, $q=6$ and these are so-called reserve factors, quantifying the failure likelihood of different failure modes).\\
 %
 \indent The aim of this section is to propose a set of tests to evaluate to which extent splitting fulfils the necessary conditions for the subsequent surrogate model ${\bf {Y}}={F}({\bf X})$ to be appropriately trained on ${\cal S}_{\text{train}}$ and tested on ${\cal S}_{\text{test}}$. This basically means the latter be in the applicability region of a model trained on the former, in order for the training-validation loop of the model to be coherent.\\
 %
@@ -440,7 +469,7 @@ This section corresponds to box labelled ''P(E\textbar{}X)'' in \autoref{fig:bia
 	\caption{Box diagram showing the relative position of \autoref{sec:biasinput} in the complete validation pipeline.}
 	\label{fig:biasinputbox} 
 \end{figure}
-\indent In the first case, training of the model can be reinforced by several means (longer training, hyperparameter tuning, transfer learning, etc.) In the second case, resampling data in deficient regions, or artificial data enhancing techniques such as data augmentation\cite{taylor2018improving} are recommended.\\
+\indent In the first case, training of the model can be reinforced by several means (longer training, hyperparameter tuning, transfer learning, etc.) In the second case, resampling data in deficient regions, or artificial data enhancing techniques such as data augmentation\autoref{sec:overview} are recommended.\\
 %
 \indent The task of recomposing $P(e|X)$ needs to be addressed in a computationally efficient way, given the input space dimensionality $m$ [recall the input features vector is ${\bf X}=(X_1,X_2,\dots,X_m)$] can be very large. For the case of MS-S18, for instance, the input space's dimensionality is $m=31$ (28 numerical inputs plus 3 categorical). With industrial sized datasets (typically reaching up to millions of data points), recomposing $P(e|X)$ becomes unaffordable. The easiest way of overcoming this issue is by binning the input space according to a certain criteria. If we denote the binned input space by $X^B=\{X^B_1,X^B_2,X^B_3\ldots X^B_r\}$ where $X^B_j$ represents a certain bin, and there are a total of $r$ bins, then we can substitute the task of recomposing $P(e|X)$ by that of recomposing $P(e|X^B)$. Although simple, this idea allows for an effective computational cost reduction.\\
 %
