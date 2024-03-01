@@ -32,7 +32,7 @@
 {\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode \leavevmode {\color {GMVred}A.} \myul [GMVred]{Output variable binning}\\}{\reset@font\mtcPfont 70}{subsection.3.8.2}}
 {\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode \leavevmode {\color {GMVred}B.} \myul [GMVred]{Local Output Uncertainty Model (LOUM) computation}\\}{\reset@font\mtcPfont 70}{figure.caption.76}}
 {\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode \leavevmode {\color {GMVred}C.} \myul [GMVred]{Local Output Uncertainty Model (LOUM) evaluation}\\}{\reset@font\mtcPfont 71}{table.caption.77}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.8.3}Local uncertainty model based on $P(E|\mathbf {X})$}{\reset@font\mtcSSfont 73}{subsection.3.8.3}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.8.3}Local uncertainty model based on $P(E|X}{\reset@font\mtcSSfont 73}{subsection.3.8.3}}
 {\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode \leavevmode {\color {GMVred}A.} \myul [GMVred]{Input variable binnarization}\\}{\reset@font\mtcPfont 73}{subsection.3.8.3}}
 {\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode \leavevmode {\color {GMVred}B.} \myul [GMVred]{Local Input Uncertainty Model (LIUM) computation}\\}{\reset@font\mtcPfont 74}{figure.caption.81}}
 {\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode \leavevmode {\color {GMVred}C.} \myul [GMVred]{Local Input Uncertainty Model (LIUM) evaluation}\\}{\reset@font\mtcPfont 76}{table.caption.83}}

@@ -45,7 +45,7 @@
 \contentsline {paragraph}{\leavevmode {\color {GMVred}A.} \myul [GMVred]{Output variable binning}\\}{70}{subsection.3.8.2}%
 \contentsline {paragraph}{\leavevmode {\color {GMVred}B.} \myul [GMVred]{Local Output Uncertainty Model (LOUM) computation}\\}{70}{figure.caption.76}%
 \contentsline {paragraph}{\leavevmode {\color {GMVred}C.} \myul [GMVred]{Local Output Uncertainty Model (LOUM) evaluation}\\}{71}{table.caption.77}%
-\contentsline {subsection}{\numberline {3.8.3}Local uncertainty model based on $P(E|\mathbf {X})$}{73}{subsection.3.8.3}%
+\contentsline {subsection}{\numberline {3.8.3}Local uncertainty model based on $P(E|X)$}{73}{subsection.3.8.3}%
 \contentsline {paragraph}{\leavevmode {\color {GMVred}A.} \myul [GMVred]{Input variable binnarization}\\}{73}{subsection.3.8.3}%
 \contentsline {paragraph}{\leavevmode {\color {GMVred}B.} \myul [GMVred]{Local Input Uncertainty Model (LIUM) computation}\\}{74}{figure.caption.81}%
 \contentsline {paragraph}{\leavevmode {\color {GMVred}C.} \myul [GMVred]{Local Input Uncertainty Model (LIUM) evaluation}\\}{76}{table.caption.83}%
