@@ -36,18 +36,18 @@
 \contentsline {subsection}{\numberline {3.6.5}Bias detection and quantification}{56}{subsection.3.6.5}%
 \contentsline {paragraph}{\leavevmode {\color {GMVred}A.} \myul [GMVred]{Detection of linear trends for individual numerical variables}\\}{57}{subsection.3.6.5}%
 \contentsline {paragraph}{\leavevmode {\color {GMVred}B.} \myul [GMVred]{Discretizing continuous variables}\\}{57}{table.caption.60}%
-\contentsline {section}{\numberline {3.7}Distributed error quantification: conditioning the error distribution on the output space}{61}{section.3.7}%
-\contentsline {section}{\numberline {3.8}Uncertainty model}{69}{section.3.8}%
-\contentsline {subsection}{\numberline {3.8.1}Global uncertainty model based on $P(E)$}{70}{subsection.3.8.1}%
-\contentsline {paragraph}{\leavevmode {\color {GMVred}A.} \myul [GMVred]{Global Uncertainty Model (GUM) computation}\\}{70}{subsection.3.8.1}%
-\contentsline {paragraph}{\leavevmode {\color {GMVred}B.} \myul [GMVred]{Global Uncertainty Model (GUM) evaluation}\\}{70}{table.caption.71}%
-\contentsline {subsection}{\numberline {3.8.2}Local uncertainty model based on $P(E|\mathbf {Y})$}{72}{subsection.3.8.2}%
-\contentsline {paragraph}{\leavevmode {\color {GMVred}A.} \myul [GMVred]{Output variable binning}\\}{72}{subsection.3.8.2}%
-\contentsline {paragraph}{\leavevmode {\color {GMVred}B.} \myul [GMVred]{Local Output Uncertainty Model (LOUM) computation}\\}{72}{figure.caption.76}%
-\contentsline {paragraph}{\leavevmode {\color {GMVred}C.} \myul [GMVred]{Local Output Uncertainty Model (LOUM) evaluation}\\}{73}{table.caption.77}%
-\contentsline {subsection}{\numberline {3.8.3}Local uncertainty model based on $P(E|\mathbf {X})$}{75}{subsection.3.8.3}%
-\contentsline {paragraph}{\leavevmode {\color {GMVred}A.} \myul [GMVred]{Input variable binnarization}\\}{75}{subsection.3.8.3}%
-\contentsline {paragraph}{\leavevmode {\color {GMVred}B.} \myul [GMVred]{Local Input Uncertainty Model (LIUM) computation}\\}{76}{figure.caption.81}%
-\contentsline {paragraph}{\leavevmode {\color {GMVred}C.} \myul [GMVred]{Local Input Uncertainty Model (LIUM) evaluation}\\}{78}{table.caption.83}%
-\contentsline {subsection}{\numberline {3.8.4}Full uncertainty model (FUM)}{79}{subsection.3.8.4}%
-\contentsline {chapter}{\numberline {4}Conclusions and research outlook}{83}{chapter.4}%
+\contentsline {section}{\numberline {3.7}Distributed error quantification: conditioning the error distribution on the output space}{60}{section.3.7}%
+\contentsline {section}{\numberline {3.8}Uncertainty model}{67}{section.3.8}%
+\contentsline {subsection}{\numberline {3.8.1}Global uncertainty model based on $P(E)$}{68}{subsection.3.8.1}%
+\contentsline {paragraph}{\leavevmode {\color {GMVred}A.} \myul [GMVred]{Global Uncertainty Model (GUM) computation}\\}{68}{subsection.3.8.1}%
+\contentsline {paragraph}{\leavevmode {\color {GMVred}B.} \myul [GMVred]{Global Uncertainty Model (GUM) evaluation}\\}{68}{table.caption.71}%
+\contentsline {subsection}{\numberline {3.8.2}Local uncertainty model based on $P(E|Y)$}{70}{subsection.3.8.2}%
+\contentsline {paragraph}{\leavevmode {\color {GMVred}A.} \myul [GMVred]{Output variable binning}\\}{70}{subsection.3.8.2}%
+\contentsline {paragraph}{\leavevmode {\color {GMVred}B.} \myul [GMVred]{Local Output Uncertainty Model (LOUM) computation}\\}{70}{figure.caption.76}%
+\contentsline {paragraph}{\leavevmode {\color {GMVred}C.} \myul [GMVred]{Local Output Uncertainty Model (LOUM) evaluation}\\}{71}{table.caption.77}%
+\contentsline {subsection}{\numberline {3.8.3}Local uncertainty model based on $P(E|\mathbf {X})$}{73}{subsection.3.8.3}%
+\contentsline {paragraph}{\leavevmode {\color {GMVred}A.} \myul [GMVred]{Input variable binnarization}\\}{73}{subsection.3.8.3}%
+\contentsline {paragraph}{\leavevmode {\color {GMVred}B.} \myul [GMVred]{Local Input Uncertainty Model (LIUM) computation}\\}{74}{figure.caption.81}%
+\contentsline {paragraph}{\leavevmode {\color {GMVred}C.} \myul [GMVred]{Local Input Uncertainty Model (LIUM) evaluation}\\}{76}{table.caption.83}%
+\contentsline {subsection}{\numberline {3.8.4}Full uncertainty model (FUM)}{77}{subsection.3.8.4}%
+\contentsline {chapter}{\numberline {4}Conclusions and research outlook}{81}{chapter.4}%

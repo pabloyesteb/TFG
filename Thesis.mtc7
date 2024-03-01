@@ -23,17 +23,17 @@
 {\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.6.5}Bias detection and quantification}{\reset@font\mtcSSfont 56}{subsection.3.6.5}}
 {\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode \leavevmode {\color {GMVred}A.} \myul [GMVred]{Detection of linear trends for individual numerical variables}\\}{\reset@font\mtcPfont 57}{subsection.3.6.5}}
 {\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode \leavevmode {\color {GMVred}B.} \myul [GMVred]{Discretizing continuous variables}\\}{\reset@font\mtcPfont 57}{table.caption.60}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {3.7}Distributed error quantification: conditioning the error distribution on the output space}{\reset@font\mtcSfont 61}{section.3.7}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {3.8}Uncertainty model}{\reset@font\mtcSfont 69}{section.3.8}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.8.1}Global uncertainty model based on $P(E)$}{\reset@font\mtcSSfont 70}{subsection.3.8.1}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode \leavevmode {\color {GMVred}A.} \myul [GMVred]{Global Uncertainty Model (GUM) computation}\\}{\reset@font\mtcPfont 70}{subsection.3.8.1}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode \leavevmode {\color {GMVred}B.} \myul [GMVred]{Global Uncertainty Model (GUM) evaluation}\\}{\reset@font\mtcPfont 70}{table.caption.71}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.8.2}Local uncertainty model based on $P(E|\mathbf {Y})$}{\reset@font\mtcSSfont 72}{subsection.3.8.2}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode \leavevmode {\color {GMVred}A.} \myul [GMVred]{Output variable binning}\\}{\reset@font\mtcPfont 72}{subsection.3.8.2}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode \leavevmode {\color {GMVred}B.} \myul [GMVred]{Local Output Uncertainty Model (LOUM) computation}\\}{\reset@font\mtcPfont 72}{figure.caption.76}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode \leavevmode {\color {GMVred}C.} \myul [GMVred]{Local Output Uncertainty Model (LOUM) evaluation}\\}{\reset@font\mtcPfont 73}{table.caption.77}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.8.3}Local uncertainty model based on $P(E|\mathbf {X})$}{\reset@font\mtcSSfont 75}{subsection.3.8.3}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode \leavevmode {\color {GMVred}A.} \myul [GMVred]{Input variable binnarization}\\}{\reset@font\mtcPfont 75}{subsection.3.8.3}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode \leavevmode {\color {GMVred}B.} \myul [GMVred]{Local Input Uncertainty Model (LIUM) computation}\\}{\reset@font\mtcPfont 76}{figure.caption.81}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode \leavevmode {\color {GMVred}C.} \myul [GMVred]{Local Input Uncertainty Model (LIUM) evaluation}\\}{\reset@font\mtcPfont 78}{table.caption.83}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.8.4}Full uncertainty model (FUM)}{\reset@font\mtcSSfont 79}{subsection.3.8.4}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {3.7}Distributed error quantification: conditioning the error distribution on the output space}{\reset@font\mtcSfont 60}{section.3.7}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {3.8}Uncertainty model}{\reset@font\mtcSfont 67}{section.3.8}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.8.1}Global uncertainty model based on $P(E)$}{\reset@font\mtcSSfont 68}{subsection.3.8.1}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode \leavevmode {\color {GMVred}A.} \myul [GMVred]{Global Uncertainty Model (GUM) computation}\\}{\reset@font\mtcPfont 68}{subsection.3.8.1}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode \leavevmode {\color {GMVred}B.} \myul [GMVred]{Global Uncertainty Model (GUM) evaluation}\\}{\reset@font\mtcPfont 68}{table.caption.71}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.8.2}Local uncertainty model based on $P(E|Y)$}{\reset@font\mtcSSfont 70}{subsection.3.8.2}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode \leavevmode {\color {GMVred}A.} \myul [GMVred]{Output variable binning}\\}{\reset@font\mtcPfont 70}{subsection.3.8.2}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode \leavevmode {\color {GMVred}B.} \myul [GMVred]{Local Output Uncertainty Model (LOUM) computation}\\}{\reset@font\mtcPfont 70}{figure.caption.76}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode \leavevmode {\color {GMVred}C.} \myul [GMVred]{Local Output Uncertainty Model (LOUM) evaluation}\\}{\reset@font\mtcPfont 71}{table.caption.77}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.8.3}Local uncertainty model based on $P(E|\mathbf {X})$}{\reset@font\mtcSSfont 73}{subsection.3.8.3}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode \leavevmode {\color {GMVred}A.} \myul [GMVred]{Input variable binnarization}\\}{\reset@font\mtcPfont 73}{subsection.3.8.3}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode \leavevmode {\color {GMVred}B.} \myul [GMVred]{Local Input Uncertainty Model (LIUM) computation}\\}{\reset@font\mtcPfont 74}{figure.caption.81}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode \leavevmode {\color {GMVred}C.} \myul [GMVred]{Local Input Uncertainty Model (LIUM) evaluation}\\}{\reset@font\mtcPfont 76}{table.caption.83}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.8.4}Full uncertainty model (FUM)}{\reset@font\mtcSSfont 77}{subsection.3.8.4}}

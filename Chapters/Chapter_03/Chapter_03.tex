@@ -313,24 +313,24 @@ The step of the PCA projection is motivated by the curse of dimensionality, whic
 \end{figure}
 \indent On the other hand, the distributions of both input and output variables in the training set are checked to be reasonably similar to that of the test set. The main outputs are the p-values shown at \autoref{tab:pvalin} and \autoref{tab:pvalout}.\\
 %
-\indent Of course, any given dataset may meet some of the requirements, but not all (as is the case with the MS-18 dataset). The engineer in charge should evaluate the ensemble output and decide whether it is necessary to redo the split completely or partially, depending on data availability.\\
+\indent Of course, any given dataset may meet some of the requirements, but not all (as is the case with the MS-S18 dataset). The engineer in charge should evaluate the ensemble output and decide whether it is necessary to redo the split completely or partially, depending on data availability.\\
 %
 \clearpage
 \section{Global error quantification}\label{sec:globalerr}
 \noindent This section corresponds to box labelled ''Error quantification'' in \autoref{fig:pipeline}.\\
 %
-\indent After running the model, the simplest analysis of its performance consists of measuring the aggregated error of predictions against ground true values over the whole test set. Different metrics and criteria can be adopted for this task. Common error measures are the Mean Absolute Error or MAE (cfr. \cref{eq:mae}) and the Root Mean Square Error or RMSE (which is just the root square of \cref{eq:mse}). These metrics account for the distance between points representing ground true values ($\mathbf{Y}$) and model's predictions ($\mathbf{\tilde{Y}}$), taken as the $L1$ norm (MAE) or the square of the $L2$ norm (RMSE) of the distances. In many industrial applications of machine learning, difference between ground true and predicted values can be more or less important depending on whether that difference is due to \textit{overestimating} or \textit{underestimating}. Take, for instance, the case of MS-S18 model, whose predictions are a measure of the probability of failure of aeronautical structural components. Clearly, underestimating the risk is much more dangerous than overestimating it. For cases such as this one, a useful measure of the error is the \textbf{residue}. The residual error of a given point $i$ is measured as
+\indent After running the model, the simplest analysis of its performance consists of measuring the aggregated error of predictions against ground true values over the whole test set. Different metrics and criteria can be adopted for this task. Common error measures are the Mean Absolute Error or MAE (cfr. \cref{eq:mae}) and the Root Mean Square Error or RMSE (which is just the root square of \cref{eq:mse}). These metrics account for the distance between points representing ground true values ($\mathbf{y}_t$) and model's predictions ($\mathbf{Y}$), taken as the $L1$ norm (MAE) or the square of the $L2$ norm (RMSE) of the distances. In many industrial applications of machine learning, difference between ground true and predicted values can be more or less important depending on whether that difference is due to \textit{overestimating} or \textit{underestimating}. Take, for instance, the case of MS-S18 model, whose predictions are a measure of the probability of failure of aeronautical structural components. Clearly, underestimating the risk is much more dangerous than overestimating it. For cases such as this one, a useful measure of the error is the \textbf{residue}. The residual error of a given point $i$ is measured as
 \begin{equation}\label{eq:residue}
-	\mathbf{e}(i)=\mathbf{Y}(i)-\mathbf{\tilde{Y}}(i)
+	\mathbf{e}(i)=\mathbf{y}_t(i)-\mathbf{{y}}(i)
 \end{equation}
-The drawback of the residual error is that, when using it as an aggregated indicator for the whole test set, residues can cancel out. A null MAE or RMSE account for a perfectly fitted model (ground true values and predictions are equal). That is not the case for the residual error. In the following sections, unless specifically specified, the metric of choice for measuring the error is the residue (\autoref{eq:residue}), although different error metrics are also supported from an implementation point of view, one of the most common alternatives being the absolute value of the residue, $|\mathbf{e}|(i)=|\mathbf{Y}(i)-\mathbf{\tilde{Y}}(i)|$.\\
+The drawback of the residual error is that, when using it as an aggregated indicator for the whole test set, residues can cancel out. A null MAE or RMSE account for a perfectly fitted model (ground true values and predictions are equal). That is not the case for the residual error. In the following sections, unless specifically specified, the metric of choice for measuring the error is the residue (\autoref{eq:residue}), although different error metrics are also supported from an implementation point of view, one of the most common alternatives being the absolute value of the residue, $|\mathbf{e}|(i)=|\mathbf{y}_t(i)-\mathbf{{y}}(i)|$.\\
 %
-\indent An interesting scalar metric for the global performance of the model is the coefficient of determination $R^2$ \cite{zhang2017coefficient} of the scatter distribution of $\mathbf{Y}$ vs $\mathbf{\tilde{Y}}$. $R^2$ is a measure of the goodness of fit of predicted to ground true values. Illustration of this is provided in \autoref{fig:truevspredscatter}. The most important conclusion of \autoref{fig:truevspredscatter} is that the error shows to be heteroscedastic. This means that the variance of the error is not constant along some variable range (in this case, that variable is the output variable named ''RF Net Tension''). In \autoref{fig:truevspredscatter} we can clearly see that dispersion grows with the output value. Cfr.\cite[p. 374]{jobson2012applied}. This is shown by the fact that dispersion is higher for higher Reserve Factors (interestingly, this is the desired behaviour, as lower Reserve Factors implicate higher failure risk, and thus precision is more important in the region of low Reserve Factors). This property makes it necessary to study the error distribution, as well as the error distribution conditioned on input and output space ($P(e)$, $P(e|\mathbf{X})$ and $P(e|\mathbf{Y})$, resp.) as is discussed in the following sections.\\
+\indent An interesting scalar metric for the global performance of the model is the coefficient of determination $R^2$ \cite{zhang2017coefficient} of the scatter distribution of $\mathbf{y}_t$ vs $\mathbf{{y}}$. $R^2$ is a measure of the goodness of fit of predicted to ground true values. Illustration of this is provided in \autoref{fig:truevspredscatter}. The most important conclusion of \autoref{fig:truevspredscatter} is that the error shows to be heteroscedastic. This means that the variance of the error is not constant along some variable range (in this case, that variable is the output variable named ''RF Net Tension''). In \autoref{fig:truevspredscatter} we can clearly see that dispersion grows with the output value. Cfr.\cite[p. 374]{jobson2012applied}. This is shown by the fact that dispersion is higher for higher Reserve Factors (interestingly, this is the desired behaviour, as lower Reserve Factors implicate higher failure risk, and thus precision is more important in the region of low Reserve Factors). This property makes it necessary to study the error distribution, as well as the error distribution conditioned on input and output space ($P(e)$, $P(e|{X})$ and $P(e|{Y})$, resp.) as is discussed in the following sections.\\
 %
 \begin{figure}
 	\centering
 	\includegraphics[width=0.8\textwidth]{/home/pablo/Documentos/TFGP/Thesis/Figures/global_stats/yvsyscatter.png}
-	\caption{Scatter plot of ground true ($x$ axis) against predicted values ($y$ axis) of output variable ''RF Net Tension'', with the correspondent $R^2$ coefficient. In this case, $R^2=1,000$ indicates a perfect fit of predicted to ground true values. Mismatches due to underestimating failure risk are labelled in red, while those due to overestimating failure risk are labelled in blue. Similar graphs can be computed for every pair $\left\{y_j,\hat{y}_j\right\}$ of features in the output variables $\mathbf{Y}=\left\{y_1,y_2,\ldots,y_m\right\}$. Plots for the rest of the six output variables of MS-S18 show analogous results.}
+	\caption{Scatter plot of ground true ($x$ axis) against predicted values ($y$ axis) of output variable ''RF Net Tension'', with the correspondent $R^2$ coefficient. In this case, $R^2=1,000$ indicates a perfect fit of predicted to ground true values. Mismatches due to underestimating failure risk are labelled in red, while those due to overestimating failure risk are labelled in blue. Similar graphs can be computed for every pair $\left\{y_j,\hat{y}_j\right\}$ of features in the output variables $\mathbf{y}_t=\left\{y_{t1},y_{t2},\ldots,y_{tm}\right\}$. Plots for the rest of the six output variables of MS-S18 show analogous results.}
 	\label{fig:truevspredscatter}
 \end{figure}
 %
@@ -365,7 +365,7 @@ The marginalised distribution of $P(e)$ is the first step in the journey towards
 \indent If the model accurately predicts results along the whole output variables range (or equivalently it is not heteroscedastic), we would expect both the true and the predicted results to come from the same (unknown) distribution (this statement is taken as the null hypothesis $H0$). We can test this with a (2 sample) goodness-of-fit test like the Kolmogorov-Smirnov. Once again, the null hypothesis is rejected only at a 95\% confidence level (\ie if the p-value derived from the K-S test is lower than $0.05$). The corresponding p-values of the K-S test for the six output variables of MS-18 are depicted in \autoref{tab:yvsyKS}.\\
 \begin{table}
 	\centering
-	\caption{Resulting $p$-values from the 2-sample K-S test of goodness of fit between ground true ($\mathbf{Y}$) and predicted ($\mathbf{\hat{Y}}$) distributions. The null hypothesis $H0$ that both distributions conform is rejected if the $p$-value is smaller than $0.05$.}
+	\caption{Resulting $p$-values from the 2-sample K-S test of goodness of fit between ground true ($\mathbf{y}_t$) and predicted ($\mathbf{{y}}$) distributions. The null hypothesis $H0$ that both distributions conform is rejected if the $p$-value is smaller than $0.05$.}
 	\includegraphics[scale=\tabscale]{/home/pablo/Documentos/TFGP/Thesis/Figures/global_stats/yvsyks.png}
 	\label{tab:yvsyKS}
 \end{table}
@@ -498,7 +498,7 @@ This section corresponds to box labelled ''P(E\textbar{}X)'' in \autoref{fig:bia
 \end{figure}
 \indent In the first case, training of the model can be reinforced by several means (longer training, hyperparameter tuning, transfer learning, etc.) In the second case, resampling data in deficient regions, or artificial data enhancing techniques such as data augmentation\autoref{sec:overview} are recommended.\\
 %
-\indent The task of recomposing $P(e|X)$ needs to be addressed in a computationally efficient way, given the input space dimensionality $m$ [recall the input features vector is ${\bf X}=(X_1,X_2,\dots,X_m)$] can be very large. For the case of MS-S18, for instance, the input space's dimensionality is $m=31$ (28 numerical inputs plus 3 categorical). With industrial sized datasets (typically reaching up to millions of data points), recomposing $P(e|X)$ becomes unaffordable. The easiest way of overcoming this issue is by binning the input space according to a certain criteria. If we denote the binned input space by $X^B=\{X^B_1,X^B_2,X^B_3\ldots X^B_r\}$ where $X^B_j$ represents a certain bin, and there are a total of $r$ bins, then we can substitute the task of recomposing $P(e|X)$ by that of recomposing $P(e|X^B)$. Although simple, this idea allows for an effective computational cost reduction.\\
+\indent The task of recomposing $P(e|X)$ needs to be addressed in a computationally efficient way, given the input space dimensionality $m$ [recall the input features vector is ${\bf x}=(x_1,x_2,\dots,x_m)$] can be very large. For the case of MS-S18, for instance, the input space's dimensionality is $m=31$ (28 numerical inputs plus 3 categorical). With industrial sized datasets (typically reaching up to millions of data points), recomposing $P(e|X)$ becomes unaffordable. The easiest way of overcoming this issue is by binning the input space according to a certain criteria. If we denote the binned input space by $x^B=\{x^B_1,x^B_2,x^B_3\ldots x^B_r\}$ where $x^B_j$ represents a certain bin, and there are a total of $r$ bins, then we can substitute the task of recomposing $P(e|X)$ by that of recomposing $P(e|X^B)$. Although simple, this idea allows for an effective computational cost reduction.\\
 %
 \subsection{Visualization of error as a function of categorical (discrete) input variables}
 The immediate criteria for binning the input space is using categorical variables. These variables do in essence bin the input space as they can only take certain (or rather discrete) values. As previously mentioned, for MS-S18 there are three categorical variables enclosing geometrical information: ''Frame'', ''Stringer'', and ''dp''. \autoref{fig:boxwhisker} plots, for each categorical input variable, a box plot of the error as a function of the category.\\
@@ -707,8 +707,8 @@ For each input variable:
 \end{table}
 
 \clearpage
-\mbox{}
-\clearpage
+%\mbox{}
+%\clearpage
 \section{Distributed error quantification: conditioning the error distribution on the output space}\label{sec:biasoutput}
 This section corresponds to box labelled ''$P(E|Y)$'' in \autoref{fig:boutpipeline}.\\
 \autoref{fig:truevspredscatter} shows an important fact about the error distribution: dispersion is not homogeneous in the full range of the output variables --in the case of MS-S18, all the six Reserve Factors belong in the range $(1,5)$--, \ie error is heteroscedastic. This means that the residue is dependent on the prediction of the model, which has important implications in our validation approach. First, some statistical tests rely on the assumption of homoscedasticity. Second and most important, heteroscedasticity is a first indicator which tells us the need to carry out the analysis of the error distribution conditioned on the output space, $P(e|Y)$. Characterising the error in different regions of the output space is the final building block for our complete uncertainty model (vid. \autoref{sec:uncertainty}).
@@ -721,7 +721,7 @@ This section corresponds to box labelled ''$P(E|Y)$'' in \autoref{fig:boutpipeli
 \end{figure}
 
 %
-\indent The first step in the reconstruction of $P(e|Y)$ is to try to fit the error distribution to some well known theoretical distribution. But instead of just repeating what was done in \autoref{sec:disterr}, now we add an extra variable to the equation: the prediction of the model $\hat{y}$. Instead of trying to fit the whole error distribution, we filter the test set by establishing $\hat{y}<\hat{y}_0$ and try to fit the filtered test set to one of the well known distributions discussed in \autoref{sec:disterr} (Normal, Laplace, Cauchy, JohnsonSU). In \autoref{fig:localfits} four of the six output variables --for convenience-- of MS-S18 are put under a 1-variable K-S test to assess the goodness of fit of the error to the mentioned distributions. For this figure, the absolute value of the residue has been used instead of the plain residue. We can observe that, while all four theoretical distributions start fitting $P(e)$ when $\hat{y}_0<1.5$, soon the p-value drops down indicating a mismatch between the empirical error and Cauchy, Laplace, and Normal distributions. Only the JohnsonSU remains a good fit, but finally diverges as well when $\hat{y}_0\approx3$. The conclusion is that only the JohnsonSU distribution is found to be a good match for $P(e|Y)$, but only when filtering the test set up to moderate values of $\hat{y}_0$. This suggests presence of extreme phenomena in the error distribution, which in fact is in accordance with the heteroscedastic behaviour observed in \autoref{fig:truevspredscatter}, showing dispersion increases with the output $\hat{y}$.\\
+\indent The first step in the reconstruction of $P(e|Y)$ is to try to fit the error distribution to some well known theoretical distribution. But instead of just repeating what was done in \autoref{sec:disterr}, now we add an extra variable to the equation: the prediction of the model ${y}$ (representing the k-th Reserve Factor from the output vector $\mathbf{y}$). Instead of trying to fit the whole error distribution, we filter the test set by establishing ${y}<{y}_0$ and try to fit the filtered test set to one of the well known distributions discussed in \autoref{sec:disterr} (Normal, Laplace, Cauchy, JohnsonSU). In \autoref{fig:localfits} four of the six output variables --for convenience-- of MS-S18 are put under a 1-variable K-S test to assess the goodness of fit of the error to the mentioned distributions. For this figure, the absolute value of the residue has been used instead of the plain residue. We can observe that, while all four theoretical distributions start fitting $P(e)$ when ${y}_0<1.5$, soon the p-value drops down indicating a mismatch between the empirical error and Cauchy, Laplace, and Normal distributions. Only the JohnsonSU remains a good fit, but finally diverges as well when ${y}_0\approx3$. The conclusion is that only the JohnsonSU distribution is found to be a good match for $P(e|Y)$, but only when filtering the test set up to moderate values of ${y}_0$. This suggests presence of extreme phenomena in the error distribution, which in fact is in accordance with the heteroscedastic behaviour observed in \autoref{fig:truevspredscatter}, showing dispersion increases with the output ${y}$.\\
 %
 \begin{figure}[!htb]
 	\centering
@@ -767,12 +767,12 @@ This section corresponds to box labelled ''$P(E|Y)$'' in \autoref{fig:boutpipeli
 \end{figure}
 
 \clearpage
-\mbox{}
-\clearpage
+%\mbox{}
+%\clearpage
 \section{Uncertainty model}\label{sec:uncertainty}
 This section corresponds to box labelled ''Uncertainty model'' in \autoref{fig:pipeline}. It is envisioned with the following question in mind:
 \begin{quotation}
-	Given a new configuration with input parameters ${\bf X}=(X_1,X_2,\dots,X_m)$ and prediction ${\bf Y}=(Y_1,Y_2,\dots,Y_q)$, where ${\bf Y}=F({\bf X})$, what is the expected uncertainty (error) associated to the prediction $\bf Y$?
+	Given a new configuration with input parameters ${\bf x}=(x_1,x_2,\dots,x_m)$ and prediction ${\bf y}=(y_1,y_2,\dots,y_q)$, where ${\bf y}=\mathcal{F}({\bf x})$, what is the expected uncertainty (error) associated to the prediction $\bf y$?
 \end{quotation}
 %
 To the aim of answering this question, the main tasks are:
@@ -781,13 +781,13 @@ To the aim of answering this question, the main tasks are:
 	\item To \textbf{validate} such model.\\
 \end{itemize}
 %
-\indent The expected uncertainty translates into (for instance) $q=6$ confidence intervals $(CI_{1},CI_{2},\dots,CI_{6})$, such that the $k$-th predicted reserve factor $Y_k$ has a confidence interval $CI_k=[Y_k^{min},Y_k^{max}]$. Other types of uncertainty quantifications are possible (standard deviation, credible interval, etc).\\
+\indent The expected uncertainty translates into (for instance) $q=6$ confidence intervals $(CI_{1},CI_{2},\dots,CI_{6})$, such that the $k$-th predicted reserve factor $y_k$ has a confidence interval $CI_k=[y_k^{min},y_k^{max}]$. Other types of uncertainty quantifications are possible (standard deviation, credible interval, etc).\\
 %
 \indent Importantly, there are various sources of uncertainty that need to be combined:
 \begin{enumerate}
 	\item \textbf{Global error distribution} (cfr. \autoref{sec:disterr}). This is, the distribution of error in the test set, $P(E)$.\label{num:disterr}
-	\item \textbf{Local-output error distribution} (cfr. \autoref{sec:biasoutput}). This is, the distribution of the error in the test set, conditioned to a specific region of the prediction, $P(E|{\bf Y})$.\label{num:biasoutput}
-	\item \textbf{Local-input error distribution} (cfr. \autoref{sec:biasinput}). This is, the distribution of the error in the test set, conditioned to a specific region of the input space (error bias characterization), $P(E|{\bf X})$.\label{num:biasinput}\\
+	\item \textbf{Local-output error distribution} (cfr. \autoref{sec:biasoutput}). This is, the distribution of the error in the test set, conditioned to a specific region of the prediction, $P(E|{Y})$.\label{num:biasoutput}
+	\item \textbf{Local-input error distribution} (cfr. \autoref{sec:biasinput}). This is, the distribution of the error in the test set, conditioned to a specific region of the input space (error bias characterization), $P(E|{X})$.\label{num:biasinput}\\
 \end{enumerate}
 %
 \indent Our uncertainty model will combine contributing factors (\ref{num:disterr}), (\ref{num:biasoutput}) and (\ref{num:biasinput}) into an effective uncertainty.\\
@@ -875,7 +875,7 @@ The (bootstrapped) error coverage is estimated in the test set. This is done by 
 \end{figure}
 
 \FloatBarrier
-\subsection{Local uncertainty model based on $P(E|\mathbf{Y})$}
+\subsection{Local uncertainty model based on $P(E|Y)$}
 \paragraph{\GMVred{A.} \myul[GMVred]{Output variable binning}\\}
 In order to be able to computationally afford this analysis, the output space $\mathbf{Y}$ must be binned. Detail of the binning is given in \autoref{tab:loumtab1}.\\
 \indent In the first place, a scatter plot of the error of each point in the calibration set is plotted for illustration as a function of the true output $y_t$ in \autoref{fig:scatter1}.\\
@@ -929,7 +929,7 @@ The bootstrapped error coverage in the test set associated to the LOUM vector is
 
 \subsection{Local uncertainty model based on $P(E|\mathbf{X})$}
 \paragraph{\GMVred{A.} \myul[GMVred]{Input variable binnarization}\\}
-In order to be able to computationally afford LIUM calculation, it is needed to bin the input space in the first place.\\
+In order to be able to computationally afford LIUM calculation, it is needed to bin the input space in the first place. Details of the resulting bins can be consulted in \autoref{tab:lium1}\\
 \indent For illustration, a scatter plot of the error of each point in the calibration set as a function of $x_i$ is displayed in \autoref{fig:scatter2} (just two input numerical and two categorical variables have been selected for convenience).\\
 \indent For each continuous input variable $x_i$ the calibration set is partitioned into a total of equispaced $n_{bins}$ bins according to the range of input variable $x_i$.\\
 \indent For illustration, in \autoref{fig:subviolins1} $n_{\text{bins}}$ number of violin plots (one per bin, concatenated in a single plot where the ''x axis'' is the bin number) are plotted, where each violin plot describes the error density of the points in the respective bin.\\
@@ -1031,9 +1031,8 @@ For each input variable:
 \end{figure}
 
 \subsection{Full uncertainty model (FUM)}
-The FUM is a conservative uncertainty model that consistently takes, for a given point of the test set $({\bf X},y)$, the largest uncertainty
-
-$$\text{FUM}(({\bf X}, y)) = \max\{\text{GUM}, \text{LOUM}(y), \text{LIUM}(x_1), \text{LIUM}(x_2), ..., \text{LIUM}(x_n)\}$$
+The FUM is a conservative uncertainty model that consistently takes, for a given point of the test set and its associated k-th reserve factor $y$, $({\bf x},y)$, the largest uncertainty:
+$$\text{FUM}(({\bf x}, y)) = \max\{\text{GUM}, \text{LOUM}(y), \text{LIUM}(x_1), \text{LIUM}(x_2), ..., \text{LIUM}(x_n)\}$$
 
 Accordingly (vid. \autoref{fig:fumexplain}), 
 
