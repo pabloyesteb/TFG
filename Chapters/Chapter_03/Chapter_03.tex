@@ -6,33 +6,6 @@
 \indent In \autoref{fig:pipeline} the proposed validation pipeline is depicted in the form of a directed graph. Each block of the diagram represents a different station in the pipeline, which consists of a comprehensive statistical validation part, whose ultimate product is the ''uncertainty model'' labelled block, plus a section dedicated to ''model and data boosting'', which receives the outputs of the statistical validation and the uncertainty model, and interacts with model data and training blocks in an effort to leverage information collected for the statistical validation to enhance model performance.\\
 %
 \indent This work is exclusively focused on the statistical validation of the model. This comprises the vertical streamline starting in the block ''Data'' and finishing in ''$P(E)$'', ''$P(E|X)$'' and ''$P(E|Y)$'' blocks, with the ''Uncertainty model'' block as the final outcome of the whole validation, which in turn is a tool that uses all the information of previous blocks to predict \textit{where} and \textit{how much} the model can be trusted. The process from ''Data'' to ''Uncertainty'' can be described in terms of the following blocks present in the graph:
-\begin{enumerate}
-	\item\label{item:data}\textbf{Data: size, features, dimensionality reduction.}
-	The first milestone in the validation pipeline is related to data acquisition and manipulation prior to dataset splitting into train and test sets, \ie its focus is the set
-	$$
-	S^\text{Full}=\{\mathbf{x}_i,\mathbf{y}_{ti}\}_{i=1}^{N_{\text{Full}}}
-	$$
-	For industrial regression models such as the MS-S18, data may contain noise to some uncertainty levels, as discussed in \autoref{chap:1}. This changes the perspective from data duplets of the shape
-	$$
-	(\mathbf{x},\mathbf{y})_j=((0.25,-0.95,\ldots,-0.02);(0.1,0.4,\ldots,0.7))
-	$$ to random variables $\mathbf{x}$ and $\mathbf{y}$ whose cumulative probability functions define confidence intervals in which finding $x$ and $y$ has a 95\% probability, \ie elements of $S^\text{Full}$ have now the shape
-	$$
-	(\mathbf{x},\mathbf{y})_j=(([0.21,0.29],[-0.98,-0.93],\ldots,[-0.05,0.01]);([0.0,0.3],[0.3,0.5],\ldots,[0.67,0.73]))
-	$$
-	
-	Now, for training an ANN, it data needs to be uncertainty free. The approach is to take $p$ samples from the random variables $(\mathbf{x},\mathbf{y})_j$ inside their confidence intervals. It is possible now to combine the sampled tuples to obtain $p^2$ new tuples. This is indeed one method of data augmentation\footnote{For a more detailed description of data augmentation concept, cfr. \cite{taylor2018improving}}.
-	
-	The next thing to think about is the number of features in the input data, $n$ (cfr. \autoref{chap:1}). Ideally, input data should contain as many features as needed to faithfully convey all the information about the physics of the regression problem at hand (so the more features, the more information the input vector $\mathbf{x}$ conveys). But it is also important for training purposes that the training set uniformly --to some extent-- samples the hypercube defined by the input variable ranges, otherwise extremely isolated points would produce bad performance in uncovered regions (recall applicability region from \autoref{chap:1}). As $n$ increases, the required size of $S^\text{Train}$ to uniformly sample the training set hypercube increases exponentially (to see this, think about how the hypervolume of an n--hypercube increases as $n$ does so). This effectively imposes a limit to the input dimensionality $n$. Data augmentation might help when it is required to enlarge $n$ but augmenting the training set size with traditional methods (experimental data, numerical simulations, etc.) is too expensive.
-	
-	Finally, input data can adopt the form of continuous numerical variables (like a distance, a temperature, etc.) or categorical variables (for instance, boolean variables or any other variable which can only take certain values, such as integer ones). 
-	
-	\item\label{item:tt_split}\textbf{Train-test split}
-	\item\label{item:defineettrain}\textbf{Define and train the ML model}
-	\item\label{item:errquant}\textbf{Global error quantification}
-	\item\label{item:errdist}\textbf{Distributed error quantification: $P(E)$}
-	\item\label{item:errinput}\textbf{Error distribution conditioned on the input space: $P(E|X)$}
-	\item\label{item:errout}\textbf{Error distribution conditioned on the output space: $P(E|Y)$}
-\end{enumerate}
 
 \begin{figure}[!htb]
 	\centering
@@ -40,34 +13,88 @@
 	\caption{Validation pipeline overview.}
 	\label{fig:pipeline}
 \end{figure}
+
+\begin{enumerate}
+	\item\label{item:data}\textbf{Data: size, features, dimensionality reduction.}
+	The first milestone in the validation pipeline is related to data acquisition and manipulation prior to dataset splitting into train and test sets, \ie its focus is the set
+	$$
+	S^\text{Full}=\{\mathbf{x}_i,\mathbf{y}_{ti}\}_{i=1}^{N_{\text{Full}}}
+	$$
+	Focusing on the set size and input dimensionality requirements, as well as encoding algorithms for categorical variables and leveraging dimensionality reduction of data. All of this is developed in detail in \autoref{sec:data}.
+	
+	\item\label{item:tt_split}\textbf{Train-test split}
+	\indent In supervised learning applications, the dataset is typically divided into the training and the test sets. Keeping different sets for each task is fundamental in order to prevent high variance (cfr. \autoref{sec:overfitting}). In the model validation loop, the first question that should be asked, even before training the model, is whether the dataset split is appropriate for training (vid \autoref{fig:esquemattsplit}).
+	
+	Section \ref{sec:ttsplit} delves deeper in the tests and mechanisms proposed for assessing train-test split adequateness and fixing possible issues.
+	
+	\item\label{item:defineettrain}\textbf{Define and train the ML model}
+	This station deals with the surrogate model architecture and size in terms of trainable parameters, as well as model training. There exist a plethora of different ANN architectures in the literature, ranging from the Multi-Layer Perceptron (\autoref{sec:ANNs}) to more exotic setups such as Convolutional Neural Networks or CNNs\cite{li2021survey}, widely used for image recognition tasks, or Recurrent Neural Networks or RNNs\cite{medsker2001recurrent}, used for temporal dependent problems.
+	
+	As has been widely discussed in \autoref{chap:1}, the model size in terms of the trainable parameter set size plays an important role in the bias-variance trade-off problem. Carefully tuning this hyperparameter is key in achieving low error.
+	
+	AS with the model size, the training length plays a similar role. When training with the algorithm from \cref{eq:train}, a complete tour of the training dataset is called an ''epoch''. If the model is trained for too long (a very large number of epochs) overfitting may start appearing. This can be easily detected by plotting the training and the test loss against the number of epochs. When the two start diverging, training should be stopped as test loss is increasing due to overfitting. Mechanisms such as early-stopping\cite{prechelt2002early} or dropout (cfr. \autoref{sec:overfitting}) can help preventing over-training.
+	
+	\item\label{item:errquant}\textbf{Global error quantification}
+	After having defined and train the surrogate model, it is the turn of assessing its performance. In other words, error measuring. The first step in this direction are global-error figures based in point-wise error metrics. Further discussion is provided in \autoref{sec:globalerr}.
+	\item\label{item:errdist}\textbf{Distributed error quantification: $P(E)$.}
+	When the error distribution is non-Gaussian (which is very common) this block becomes mandatory as global error metrics don't provide enough information. Moreover, this block deals with error outlier detection and is the first building block of the uncertainty model. More details are provided in\autoref{sec:disterr}.
+	\item\label{item:errinput}\textbf{Error distribution conditioned on the input space: $P(E|X)$.}
+	The second milestone in the uncertainty model building journey is reconstructing the local error distribution conditioned on input data. Furthermore, another incentive for taking this effort is that dataset boosting needs information of the error as a function of the input variables, in order to optimise data collection in \autoref{sec:data}. More discussion on this topic can be read in \autoref{sec:biasinput}.
+	
+	\item\label{item:errout}\textbf{Error distribution conditioned on the output space: $P(E|Y)$.}
+	A basic scatter plot of predicted against true values in \autoref{sec:globalerr} usually tells us that the error is not independent from predicted values at all. This is also the final building block of the uncertainty model. More details are given in \autoref{sec:biasoutput}.
+	\item\label{item:uncertainty}\textbf{Uncertainty model}
+	This block represents the ultimate achievement in the statistical validation part. Making use of the knowledge gathered in previous sections, tan extremely powerful tool is developed: an uncertainty model which tells us in probabilistic terms \textit{when} and \textit{how much} the model's predictions can be trusted. The true power of this concept resides in its applicability not only to the test set, but to new, unseen predictions of the model. This tool operates by predicting the model's error over new predictions based on the distributed error information gained in previous sections.
+	
+	\item\label{item:XAI}\textbf{XAI}
+	The issue of explainability of machine learning (ML) models is gaining increasing attention among industry stakeholders, particularly those involved in the integration of artificial neural networks (ANNs). This concern is particularly pronounced in sectors such as aerospace\cite{force2021concepts,roadmap2021easa}, where trustworthiness and reliability are crucial throughout the manufacturing chain. ANNs, with their complex architectures and training algorithms, often yield results that are challenging to interpret, adding to the urgency of addressing explainability concerns.
+	
+	\item\label{item:boosting}\textbf{Model and data boosting}
+	This block acts as a hub which receives interpretable information from the blocks dedicated to the statistical analysis, and outputs feedback to those blocks directly involved with dataset and model building (and training, in the last case). Model and data boosting block so does close the validation loop, connecting the \textit{analysis} blocks which output information about an existing model or dataset, with the \textit{construction} blocks which make that dataset and model exist.
+	This configuration is intended to leverage the statistical analysis to not only address certification tasks, but also improve the model performance overall.\\
+\end{enumerate}
 %
+In the upcoming sections, the primary emphasis will be on the statistical validation of the model, rendering the \ordinalnum{9} and \ordinalnum{10} blocks beyond the scope of this study. However, while the initial block pertaining to data is not strictly within the realm of statistical validation, a succinct overview is provided in \autoref{sec:data}. This overview serves to furnish insightful context for the subsequent chapters.
+
+\clearpage
+\section{Data: size, features, dimensionality reduction}\label{sec:data}
+For industrial regression models such as the MS-S18, data may contain noise to some uncertainty levels, as discussed in \autoref{chap:1}. This changes the perspective from data duplets of the shape
+$$
+(\mathbf{x},\mathbf{y})_j=((0.25,-0.95,\ldots,-0.02);(0.1,0.4,\ldots,0.7))
+$$ to random variables $\mathbf{x}$ and $\mathbf{y}$ whose cumulative probability functions define confidence intervals in which finding $x$ and $y$ has a 95\% probability, \ie elements of $S^\text{Full}$ have now the shape
+$$
+(\mathbf{x},\mathbf{y})_j=(([0.21,0.29],[-0.98,-0.93],\ldots,[-0.05,0.01]);([0.0,0.3],[0.3,0.5],\ldots,[0.67,0.73]))
+$$
+
+Now, for training an ANN, it data needs to be uncertainty free. The approach is to take $p$ samples from the random variables $(\mathbf{x},\mathbf{y})_j$ inside their confidence intervals. It is possible now to combine the sampled tuples to obtain $p^2$ new tuples. This is indeed one method of data augmentation\footnote{For a more detailed description of the concept of data augmentation, cfr. \cite{taylor2018improving}}.
+
+One primary characteristic of $S^\text{Full}$ is the number of features in the input data, $n$ (cfr. \autoref{chap:1}). Ideally, input data should contain as many features as needed to faithfully convey all the information about the physics of the regression problem at hand (so the more features, the more information the input vector $\mathbf{x}$ conveys). But it is also important for training purposes that the training set uniformly --to some extent-- samples the hypercube defined by the input variable ranges, otherwise extremely isolated points would produce bad performance in uncovered regions (recall applicability region from \autoref{chap:1}). As $n$ increases, the required size of $S^\text{Train}$ to uniformly sample the training set hypercube increases exponentially (to see this, think about how the hypervolume of an n--hypercube increases as $n$ does so). This effectively imposes a limit to the input dimensionality $n$. Data augmentation might help when it is required to enlarge $n$ but augmenting the training set size with traditional methods (experimental data, numerical simulations, etc.) is too expensive.
+
+Data encoding can also play an important role at this station. Input data can be either numerical or categorical, as described in \autoref{chap:2}. Due to  the way ANNs' are parametrized (cfr. \autoref{sec:ANNs}), it is required that all input variables be numerical. This can be achieved by one-hot encoding categorical variables\footnote{The basic idea behind "one-hot encoding" is to represent each unique category of a categorical variable as a binary vector, where each element of the vector corresponds to a category and is set to 1 if the observation belongs to that category, and 0 otherwise. Therefore, for a categorical variable with n distinct categories, one-hot encoding will generate a vector of length n with a single value of 1 and the rest of the values as 0.} although other encoding algorithms may be optimal in computational terms. As an illustration, for the model MS-S18 there exists a logical way of encoding frames and stringers taking advantage of the circular symmetry involving the stringer configuration around frames. This makes it possible to uniquely identify each stringer with a single value corresponding to the stringer's $\theta$ coordinate in the reference system displayed in \autoref{fig:semimono}. Similarly, each frame can be encoded with a single value corresponding to the frame's $z$ coordinate in the same reference system. Encoding algorithms such as the one here described can be really useful for dimensionality reduction and data interpretability, but unluckily there is no way to systematically find such an algorithm for a given dataset, and this work must be completely carried out by humans.
+
+For last, input dimensionality may be significantly reduced with a principal component analysis or PCA\cite{hotelling1933analysis}. This analysis finds an orthonormal axis system whose axis are oriented in the directions which data variance is maximum. In many cases, data variance can be described up to a high percentage of its total value projecting it on a truncated PCA axis system. This happens when data is correlated in a way that effectively reduces ''degrees of freedom''. When this happens, $n$ can be reduced (in some cases by large amounts) without losing critical information of the input data. 
 \clearpage
 \section{Train-test split}\label{sec:ttsplit}
-\subsection{Preliminaries}
+The aim of this section is to propose a consistent method to evaluate to which extent the dataset split fulfils the necessary conditions for the subsequent surrogate model $\mathcal{F}$ to be appropriately trained on ${S}^{\text{train}}$ and tested on ${S}^{\text{test}}$ (vid. \autoref{fig:esquemattsplit}). As has been previously discussed, this basically means ${S}^{\text{test}}$ be in the applicability region of ${S}^{\text{train}}$, in order for the training-validation loop of the model to be coherent.\\
+%
+\indent Typical figures for the train-test split ratio are 80\%-20\%. When the model being trained is very large, a third dataset (the validation set) may be needed for comparing different hyperparameter configurations, in which case the split is typically done at 60\%-20\%-20\% for the train, test, and vaidation sets, respectively\cite[pp. 20-21]{Marsland2015Machine}.\\
+%
+\indent With the dataset split into the train, evaluation, and test sets, the standard training and validation loop is as follows: the model is trained to ''fit'' the data in the training set. After a certain amount of training, its performance is measured in the evaluation set. The test set is used to compare the performance of different hyperparameter configurations. Note that the NN is always evaluated with data not previously ''seen'' during training, and as such cannot develop any bias for the training set (although bias for the validation or test sets may exist).\\
+%
+\indent For the case of MS-S18, we suppose we have a dataset which has been split into a training set
+$${S}^{\text{train}}=\{({\bf x^{tr}},{\bf y^{tr}})_i\}_{i=1}^{N_{training}}$$
+and a test set
+$${S}^{\text{test}}=\{({\bf x^{te}},{\bf y^{te}})_i\}_{i=1}^{N_{test}},$$
+%
+
 \begin{figure}[!b]
 	\centering
 	\includegraphics[width=0.8\textwidth]{/home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/tt_split_overview.png}
 	\caption{Location of the train-test split assessment in the overall validation pipeline}
 	\label{fig:esquemattsplit}
 \end{figure}
-\indent In supervised learning applications, the dataset is typically divided into the training and the test sets. Keeping different sets for each task is fundamental in order to prevent model bias. Typical figures for the train-test split ratio are 80\%-20\%. When the model being trained is very large, a third dataset (the validation set) may be needed for comparing different hyperparameter configurations, in which case the split is typically done at 60\%-20\%-20\% for the train, test, and vaidation sets, resectively\cite[pp. 20-21]{Marsland2015Machine}.\\
 %
-\indent Training and evaluating the NN on the same dataset would result in the phenomenon called overfitting\cite[pp. 19-20]{Marsland2015Machine}, which basically consists of the NN fitting the noise in the training data and thus losing generalization capabilities (cfr. \autoref{chap:1}).\\
-%
-\indent With the dataset split into the train, evaluation, and test sets, the standard training and validation loop is as follows: the model is trained to ''fit'' the data in the training set. After a certain amount of training, its performance is measured in the evaluation set. The test set is used to compare the performance of different hyperparameter configurations. Note that the NN is always evaluated with data not previously ''seen'' during training, and as such cannot develop any bias for the training set (although bias for the validation or test sets may exist).\\
-%
-\indent In the model validation loop, the first question that should be asked, even before training the model, is whether the dataset split is appropriate for training (vid \autoref{fig:esquemattsplit}).\\
-%
-\indent For the case of MS-S18, we suppose we have a dataset which has been split into a training set
-$${\cal S}_{\text{train}}=\{({\bf x^{tr}},{\bf y^{tr}})_i\}_{i=1}^{N_{training}}$$
-and a test set
-$${\cal S}_{\text{test}}=\{({\bf x^{te}},{\bf y^{te}})_i\}_{i=1}^{N_{test}},$$
-where ${\bf x}=(x_1,x_2,\dots,x_m)$ is the vector of input variables (also called feature vector), $m$ is the dimensionality of the input parameter space, and ${\bf y}=(y_1,y_2,\dots,y_q)$ is the vector of output variables, with dimensionality $q$. Individual variables $x_k$ can be numerical or categorical. For instance, for stress problems such as MS-S18, we have a combination of numerical  (\eg external loads) and categorical (eg discrete geometrical variables such as ''Frame'' or ''Stringer'', and purely categorical such as ''dp''). Individual variables $y_k$ describe the prediction and these are typically numerical (for stress problems such as MS-S18, $q=6$ and these are so-called reserve factors, quantifying the failure likelihood of different failure modes).\\
-%
-\indent The aim of this section is to propose a set of tests to evaluate to which extent splitting fulfils the necessary conditions for the subsequent surrogate model ${\bf {Y}}={F}({\bf X})$ to be appropriately trained on ${\cal S}_{\text{train}}$ and tested on ${\cal S}_{\text{test}}$. This basically means the latter be in the applicability region of a model trained on the former, in order for the training-validation loop of the model to be coherent.\\
-%
-\subsection{Validation loop for the train-test split}
-\subsubsection{Geometrical analysis}
+\subsection{Geometrical analysis}
 \indent To address the applicability classification problem, points in the test set extremely far away from the training set (effectively outside applicability) need to be detected. If found, that would mean the train-test split is incorrect.\\
 %
 \indent There is a wide range of criteria for classifying a point inside or outside applicability. The proposed validation loop makes such analysis following a hierarchical flow. For each point in the test set a decision is made based on where that test set point lies with respect to the training set.\\
@@ -76,7 +103,7 @@ where ${\bf x}=(x_1,x_2,\dots,x_m)$ is the vector of input variables (also calle
 %
 \indent Then, inside the voxel the ranges of each feature $X_i$ of the training subset are computed, and then the maximum ranges are checked and defined. Their cartesian product defines the voxel's hypercuboid volume associated to the numerical features. It is checked whether the test point is inside or outside the hypercube. In practice, this amounts to checking if each numerical feature $X_i$ of the test point lies inside the range spanned by the training subset. If all numerical features fall inside these ranges, the test set falls inside the training subset hypercuboid, otherwise, it falls outside. The points lying outside such hypercuboid are outside applicability and are flagged. The ''hypercube requirement'' is that such percentage of points outside applicability is zero, or very close to it.\\
 %
-\indent If the test point under analysis is found to be outside the hypercuboid, the analysis finishes and the loop moves to the next point. Otherwise, the second step is to check whether this point not only lies inside hypercuboid, but further, whether it also lies inside the convex hull spanned by the training subset in a PCA99\footnote{A truncated PCA\cite{hotelling1933analysis} projection in which the selected components explain at least 99\% of the whole variance of the data.} projection. This hull has a smaller volume than the hypercuboid. If the test point under analysis is found to be outside the convex hull in the PCA99 projection, the analysis finishes and the loop moves to the next point.\\
+\indent If the test point under analysis is found to be outside the hypercuboid, the analysis finishes and the loop moves to the next point. Otherwise, the second step is to check whether this point not only lies inside hypercuboid, but further, whether it also lies inside the convex hull spanned by the training subset in a PCA99\footnote{A truncated PCA projection in which the selected components explain at least 99\% of the whole variance of the data.} projection. This hull has a smaller volume than the hypercuboid. If the test point under analysis is found to be outside the convex hull in the PCA99 projection, the analysis finishes and the loop moves to the next point.\\
 % 
 \indent Otherwise, then the third step is to check whether this point (not only lies inside hypercuboid and $\text{CH}_\text{PCA99}$, but also) lies inside the convex hull spanned by the training subset in ambient space. The volume of this hull is typically smaller than the one of the PCA99 projection by virtue of the curse of dimensionality, and if the test point lies inside this hull, interpolating properties of the surrogate model will suggest that the model is not require to generalize outside the region where it cannot generalize.\\
 %
@@ -289,16 +316,16 @@ The step of the PCA projection is motivated by the curse of dimensionality, whic
 \indent Of course, any given dataset may meet some of the requirements, but not all (as is the case with the MS-18 dataset). The engineer in charge should evaluate the ensemble output and decide whether it is necessary to redo the split completely or partially, depending on data availability.\\
 %
 \clearpage
-\section{Global error quantification}
+\section{Global error quantification}\label{sec:globalerr}
 \noindent This section corresponds to box labelled ''Error quantification'' in \autoref{fig:pipeline}.\\
 %
-\indent After running the model, the simplest analysis of its performance consists of measuring the aggregated error of predictions against ground true values over the whole test set. Different metrics and criteria can be adopted for this task. Common error measures are the Mean Absolute Error (MAE) and the Root Mean Square Error (RMSE). These metrics account for the distance between points representing ground true values ($\mathbf{Y}$) and model's predictions ($\mathbf{\tilde{Y}}$), taken as the $L1$ norm (MAE) or the square of the $L2$ norm (RMSE) of the distances. In many industrial applications of machine learning, difference between ground true and predicted values can be more or less important depending on whether that difference is due to \textit{overestimating} or \textit{underestimating}. Take, for instance, the case of MS-S18 model, whose predictions are a measure of the probability of failure of aeronautical structural components. Clearly, underestimating the risk is much more dangerous than overestimating it. For cases such as this one, a useful measure of the error is the \textbf{residue}. The residual error of a given point $i$ is measured as
+\indent After running the model, the simplest analysis of its performance consists of measuring the aggregated error of predictions against ground true values over the whole test set. Different metrics and criteria can be adopted for this task. Common error measures are the Mean Absolute Error or MAE (cfr. \cref{eq:mae}) and the Root Mean Square Error or RMSE (which is just the root square of \cref{eq:mse}). These metrics account for the distance between points representing ground true values ($\mathbf{Y}$) and model's predictions ($\mathbf{\tilde{Y}}$), taken as the $L1$ norm (MAE) or the square of the $L2$ norm (RMSE) of the distances. In many industrial applications of machine learning, difference between ground true and predicted values can be more or less important depending on whether that difference is due to \textit{overestimating} or \textit{underestimating}. Take, for instance, the case of MS-S18 model, whose predictions are a measure of the probability of failure of aeronautical structural components. Clearly, underestimating the risk is much more dangerous than overestimating it. For cases such as this one, a useful measure of the error is the \textbf{residue}. The residual error of a given point $i$ is measured as
 \begin{equation}\label{eq:residue}
 	\mathbf{e}(i)=\mathbf{Y}(i)-\mathbf{\tilde{Y}}(i)
 \end{equation}
 The drawback of the residual error is that, when using it as an aggregated indicator for the whole test set, residues can cancel out. A null MAE or RMSE account for a perfectly fitted model (ground true values and predictions are equal). That is not the case for the residual error. In the following sections, unless specifically specified, the metric of choice for measuring the error is the residue (\autoref{eq:residue}), although different error metrics are also supported from an implementation point of view, one of the most common alternatives being the absolute value of the residue, $|\mathbf{e}|(i)=|\mathbf{Y}(i)-\mathbf{\tilde{Y}}(i)|$.\\
 %
-\indent An interesting scalar metric for the global performance of the model is the coefficient of determination $R^2$ \cite{zhang2017coefficient} of the scatter distribution of $\mathbf{Y}$ vs $\mathbf{\tilde{Y}}$. $R^2$ is a measure of the goodness of fit of predicted to ground true values. Illustration of this is provided in \autoref{fig:truevspredscatter}. The most important conclusion of \autoref{fig:truevspredscatter} is that the error shows to be heteroscedastic{\protect\footnote{This means the variance of the error is not constant along some variable range (in this case, that variable is the output variable named ''RF Net Tension''). In \autoref{fig:truevspredscatter} we can clearly see that dispersion grows with the output value. Cfr.\cite[p. 374]{jobson2012applied}.}}, as demonstrates the fact that dispersion is higher for higher Reserve Factors (interestingly, this is the desired behaviour, as lower Reserve Factors implicate higher failure risk, and thus precision is more important in the region of low Reserve Factors). This property makes it necessary to study the error distribution, as well as the error distribution conditioned on input and output space ($P(e)$, $P(e|\mathbf{X})$ and $P(e|\mathbf{Y})$, resp.) as is discussed in the following sections.\\
+\indent An interesting scalar metric for the global performance of the model is the coefficient of determination $R^2$ \cite{zhang2017coefficient} of the scatter distribution of $\mathbf{Y}$ vs $\mathbf{\tilde{Y}}$. $R^2$ is a measure of the goodness of fit of predicted to ground true values. Illustration of this is provided in \autoref{fig:truevspredscatter}. The most important conclusion of \autoref{fig:truevspredscatter} is that the error shows to be heteroscedastic. This means that the variance of the error is not constant along some variable range (in this case, that variable is the output variable named ''RF Net Tension''). In \autoref{fig:truevspredscatter} we can clearly see that dispersion grows with the output value. Cfr.\cite[p. 374]{jobson2012applied}. This is shown by the fact that dispersion is higher for higher Reserve Factors (interestingly, this is the desired behaviour, as lower Reserve Factors implicate higher failure risk, and thus precision is more important in the region of low Reserve Factors). This property makes it necessary to study the error distribution, as well as the error distribution conditioned on input and output space ($P(e)$, $P(e|\mathbf{X})$ and $P(e|\mathbf{Y})$, resp.) as is discussed in the following sections.\\
 %
 \begin{figure}
 	\centering
@@ -317,7 +344,7 @@ The drawback of the residual error is that, when using it as an aggregated indic
 	\label{fig:globalerrpipeline}
 \end{figure}
 %
-\indent Beyond global error statistics, the PDF of the residue, $P(e)$, is of great importance for validation purposes. The main goal of this section is finding the analytic expression of $P(e)$ and computing important statistics of it, and, when the first is not possible, computing the important statistics from the empirical distribution of the residue (sampled from test set points) with the method of bootstrapping\footnote{Vid. following paragraphs}. There are three main reasons for studying $P(e)$:\\
+\indent Beyond global error statistics, the probability density function or PDF of the residue, $P(e)$, is of great importance for validation purposes. The main goal of this section is finding the analytic expression of $P(e)$ and computing important statistics of it, and, when the first is not possible, computing the important statistics from the empirical distribution of the residue (sampled from test set points) with the method of bootstrapping\footnote{Vid. following paragraphs}. There are three main reasons for studying $P(e)$:\\
 \paragraph{\GMVred{A.} \myul[GMVred]{Non gaussian error distribution}\\}
 It is common in industry-applied problems to find situations in which the error between ground-true values and predictions coming from a regression model (let it be a surrogate ANN, some parametric regressor, etc.) which is supposed to fit any function describing a complex system follows absolutely non-Gaussian distributions (see \eg \cite{chen2003non,pernot2020impact,smyl2021learning,chai2019using}). Amongst the reasons for this, the most frequent are, on the one hand, non-homogeneous data sampling in the training set (leading to uncovered regions and isolated points) which can cause poor model performance due to non-interpolation-regime operation, and on the other hand, the inherent difficulty encountered at predicting outputs for specific input configurations due to strongly non-linear physics or governing equations (mathematically this manifests in the form of high gradients). When the error is non-Gaussian, concentration statistics such as MAE or RMSE stop being informative. In such case, a comprehensive analysis on $P(e)$ is more adequate.\\
 %
@@ -335,7 +362,7 @@ The marginalised distribution of $P(e)$ is the first step in the journey towards
 	\label{fig:yvsydoublehist}
 \end{figure}
 %
-\indent If the model accurately predicts results along the whole output variables range (or equivalently it is not heteroscedastic), we would expect both the true and the predicted results to come from the same (unknown) distribution (this hypothesis is taken as $H0$). We can test this with a (2 sample) goodness-of-fit test like the Kolmogorov-Smirnov. Once again, the null hypothesis is rejected only at a 95\% confidence level (\ie if the p-value derived from the K-S test is lower than $0.05$). The corresponding p-values of the K-S test for the six output variables of MS-18 are depicted in \autoref{tab:yvsyKS}.\\
+\indent If the model accurately predicts results along the whole output variables range (or equivalently it is not heteroscedastic), we would expect both the true and the predicted results to come from the same (unknown) distribution (this statement is taken as the null hypothesis $H0$). We can test this with a (2 sample) goodness-of-fit test like the Kolmogorov-Smirnov. Once again, the null hypothesis is rejected only at a 95\% confidence level (\ie if the p-value derived from the K-S test is lower than $0.05$). The corresponding p-values of the K-S test for the six output variables of MS-18 are depicted in \autoref{tab:yvsyKS}.\\
 \begin{table}
 	\centering
 	\caption{Resulting $p$-values from the 2-sample K-S test of goodness of fit between ground true ($\mathbf{Y}$) and predicted ($\mathbf{\hat{Y}}$) distributions. The null hypothesis $H0$ that both distributions conform is rejected if the $p$-value is smaller than $0.05$.}
@@ -382,7 +409,7 @@ The marginalised distribution of $P(e)$ is the first step in the journey towards
 	
 \end{itemize}
 %
-\indent P-values from the K-S test are given in \autoref{tab:KSerror}. As we can see, the normal distribution does not fit any of the output variables' error. While Laplace and Cauchy distributions' p-values from the K-S test are above the $0.05$ threshold in five of the six output variables, they are well below the obtained p-values for the JohnsonSU\cite{jones2009sinh} distribution (vid. \autoref{fig:errorpvalues}). In fact, when augmenting the dataset size from the illustrative-sized employed here (10,000 items) to a more realistic $800,000$ items, neither of Laplace and Cauchy distributions pass the test (their p-values drop to near-zero orders of magnitude). This happens due to the K-S sensibility to the size of data, which makes the test more strict when the datasets are large (as would be expected). We conclude that the Laplace and Cauchy distributions just pass the K-S anecdotally for the unrealistically small dataset size which has been used for illustrative purposes, and we also conclude that the only theoretical distribution (of the list which has been checked) that fits the MS-18's error distribution is the JohnsonSU.\\
+\indent P-values from the K-S test are given in \autoref{tab:KSerror}. As we can see, the normal distribution does not fit any of the output variables' error. While Laplace and Cauchy distributions' p-values from the K-S test are above the $0.05$ threshold in five of the six output variables, they are well below the obtained p-values for the JohnsonSU\cite{jones2009sinh} distribution (vid. \autoref{fig:errorpvalues}). In fact, when augmenting the dataset size from the illustrative-sized employed here (10,000 items) to a more realistic $800,000$ items, neither of Laplace nor Cauchy distributions passes the test (their p-values drop to near-zero orders of magnitude). This happens due to the K-S sensibility to the size of data, which makes the test more strict when the datasets are large (as would be expected). We conclude that the Laplace and Cauchy distributions just pass the K-S anecdotally for the unrealistically small dataset size which has been used for illustrative purposes, and we also conclude that the only theoretical distribution (of the list which has been checked) that fits the MS-18's error distribution is the JohnsonSU.\\
 %
 \indent Provided that there exists a simple transformation of the JohnsonSU distribution's random variable (vid. \autoref{fig:ztransform}) that converges to a normal distribution, one can, with the information obtained from the K-S test (that is, assuming the error data comes from a JohnsonSU distribution) apply standard outlier detection methods to a transformed variable $z\sim {\cal{N}}(0,1)$, like the z-score (every point located outside $\mu\pm 3\sigma$ is considered to be an outlier) and the generalised Extreme Studentized Deviate\cite{rosner1983percentage} (gESD), thus fulfilling the aims described at the beginning of this section concerning outlier detection (vid. \autoref{tab:outliers}).\\
 \begin{table}[!htb]

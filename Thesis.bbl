@@ -67,8 +67,8 @@
       \strng{authorbibnamehash}{a6060b7ff70ca02317f29320b883a40b}
       \strng{authornamehash}{a6060b7ff70ca02317f29320b883a40b}
       \strng{authorfullhash}{0bf19cec1e7490cd87230c0f614a164d}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Journal of Guidance, Control, and Dynamics}
@@ -101,8 +101,8 @@
       \strng{authorbibnamehash}{9ccc0613432cd8a8f445c8e1d6a69a0e}
       \strng{authornamehash}{9ccc0613432cd8a8f445c8e1d6a69a0e}
       \strng{authorfullhash}{9ccc0613432cd8a8f445c8e1d6a69a0e}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{booktitle}{PHM Society European Conference}
@@ -137,8 +137,8 @@
       \strng{authorbibnamehash}{1a815860e2eff794664dd71cc4cec852}
       \strng{authornamehash}{1a815860e2eff794664dd71cc4cec852}
       \strng{authorfullhash}{1a815860e2eff794664dd71cc4cec852}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{booktitle}{Proceedings of the 10th International Symposium on NDT in Aerospace, Dresden, Germany}
@@ -164,8 +164,8 @@
       \strng{authorbibnamehash}{345934dc2ddaf2b4e448ec794706c7dc}
       \strng{authornamehash}{345934dc2ddaf2b4e448ec794706c7dc}
       \strng{authorfullhash}{345934dc2ddaf2b4e448ec794706c7dc}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{Machine learning for predictive maintenance in aviation}
@@ -194,8 +194,8 @@
       \strng{authorbibnamehash}{ac335e7a293493eebaa44881d435224a}
       \strng{authornamehash}{ac335e7a293493eebaa44881d435224a}
       \strng{authorfullhash}{ac335e7a293493eebaa44881d435224a}
-      \field{sortinit}{6}
-      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{booktitle}{Concepts of Design Assurance for Neural Networks (CoDANN)}
@@ -216,8 +216,8 @@
       \strng{authorbibnamehash}{f0186db0645e980f5a9a1a1d34fa8a65}
       \strng{authornamehash}{f0186db0645e980f5a9a1a1d34fa8a65}
       \strng{authorfullhash}{f0186db0645e980f5a9a1a1d34fa8a65}
-      \field{sortinit}{6}
-      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{EASA Concept Paper: First usable guidance for Level 1 machine learning applications}
@@ -250,8 +250,8 @@
       \strng{authorbibnamehash}{fde4848cd5cb6475dc45f6934bdc84f2}
       \strng{authornamehash}{fde4848cd5cb6475dc45f6934bdc84f2}
       \strng{authorfullhash}{fde4848cd5cb6475dc45f6934bdc84f2}
-      \field{sortinit}{7}
-      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{booktitle}{2022 IEEE/AIAA 41st Digital Avionics Systems Conference (DASC)}
@@ -287,8 +287,8 @@
       \strng{authorbibnamehash}{586c80d1854d2304bff375f7c02ce702}
       \strng{authornamehash}{586c80d1854d2304bff375f7c02ce702}
       \strng{authorfullhash}{586c80d1854d2304bff375f7c02ce702}
-      \field{sortinit}{7}
-      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{booktitle}{2023 IEEE/AIAA 42nd Digital Avionics Systems Conference (DASC)}
@@ -324,8 +324,8 @@
       \strng{authorbibnamehash}{dcbe36c65dc83e2fe981a7a6c4dea9e5}
       \strng{authornamehash}{dcbe36c65dc83e2fe981a7a6c4dea9e5}
       \strng{authorfullhash}{dcbe36c65dc83e2fe981a7a6c4dea9e5}
-      \field{sortinit}{7}
-      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{booktitle}{2021 IEEE/AIAA 40th Digital Avionics Systems Conference (DASC)}
@@ -356,8 +356,8 @@
       \strng{authorbibnamehash}{61a7f281bba432004642b928cc03aefa}
       \strng{authornamehash}{61a7f281bba432004642b928cc03aefa}
       \strng{authorfullhash}{61a7f281bba432004642b928cc03aefa}
-      \field{sortinit}{7}
-      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Frontiers in Astronomy and Space Sciences}
@@ -411,8 +411,8 @@
       \strng{authorbibnamehash}{cf814a0eb99e576fa296b0b4295dcf82}
       \strng{authornamehash}{cf814a0eb99e576fa296b0b4295dcf82}
       \strng{authorfullhash}{005703c6c885b93de78d0a6539664e9a}
-      \field{sortinit}{7}
-      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{Assurance of Machine Learning-Based Aerospace Systems: Towards an Overarching Properties-Driven Approach}
@@ -461,8 +461,8 @@
       \strng{authorbibnamehash}{24bdb6925bcfd2db8685ffa2775f28b3}
       \strng{authornamehash}{24bdb6925bcfd2db8685ffa2775f28b3}
       \strng{authorfullhash}{2217bcae7ad620aad08f708de62215f6}
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Aerospace Science and Technology}
@@ -815,8 +815,8 @@
       \strng{authorbibnamehash}{77a476f8aeee6fc4b732c98911d88004}
       \strng{authornamehash}{77a476f8aeee6fc4b732c98911d88004}
       \strng{authorfullhash}{77a476f8aeee6fc4b732c98911d88004}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{booktitle}{2014 IEEE Symposium on Computational Intelligence and Data Mining (CIDM)}
@@ -980,6 +980,27 @@
       \field{title}{Interpolation, extrapolation, and local generalization in common neural networks}
       \field{year}{2022}
     \endentry
+    \entry{Tosaka_Airframe_4_Types}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=a0b013c8c1fd50f5bd4c8f8a4b3a1a3a}{%
+           family={Tosaka},
+           familyi={T\bibinitperiod}}}%
+      }
+      \strng{namehash}{a0b013c8c1fd50f5bd4c8f8a4b3a1a3a}
+      \strng{fullhash}{a0b013c8c1fd50f5bd4c8f8a4b3a1a3a}
+      \strng{bibnamehash}{a0b013c8c1fd50f5bd4c8f8a4b3a1a3a}
+      \strng{authorbibnamehash}{a0b013c8c1fd50f5bd4c8f8a4b3a1a3a}
+      \strng{authornamehash}{a0b013c8c1fd50f5bd4c8f8a4b3a1a3a}
+      \strng{authorfullhash}{a0b013c8c1fd50f5bd4c8f8a4b3a1a3a}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://commons.wikimedia.org/wiki/File:Airframe_(4_types).PNG}}
+      \field{note}{Accessed 22-08-2022}
+      \field{title}{Airframe. 4 Types.}
+      \field{year}{2009}
+    \endentry
     \entry{bijlaard1955buckling}{article}{}
       \name{author}{1}{}{%
         {{hash=3cbf1a25c755f9e3fb27ddf227d6ef88}{%
@@ -994,8 +1015,8 @@
       \strng{authorbibnamehash}{3cbf1a25c755f9e3fb27ddf227d6ef88}
       \strng{authornamehash}{3cbf1a25c755f9e3fb27ddf227d6ef88}
       \strng{authorfullhash}{3cbf1a25c755f9e3fb27ddf227d6ef88}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Journal of the Aeronautical Sciences}
@@ -1005,6 +1026,141 @@
       \field{year}{1955}
       \field{pages}{491\bibrangedash 501}
       \range{pages}{11}
+    \endentry
+    \entry{li2021survey}{article}{}
+      \name{author}{5}{}{%
+        {{hash=693dfc50c48b04de716d7c709c7caa80}{%
+           family={Li},
+           familyi={L\bibinitperiod},
+           given={Zewen},
+           giveni={Z\bibinitperiod}}}%
+        {{hash=9419610d270972bdd30e81d791d61b96}{%
+           family={Liu},
+           familyi={L\bibinitperiod},
+           given={Fan},
+           giveni={F\bibinitperiod}}}%
+        {{hash=ee5c593d1df705b04d415b2b51c3c461}{%
+           family={Yang},
+           familyi={Y\bibinitperiod},
+           given={Wenjie},
+           giveni={W\bibinitperiod}}}%
+        {{hash=db5dbc87671e893ede1502d00ee0a37a}{%
+           family={Peng},
+           familyi={P\bibinitperiod},
+           given={Shouheng},
+           giveni={S\bibinitperiod}}}%
+        {{hash=21b6969d672728cb4ea4381d1d8706b5}{%
+           family={Zhou},
+           familyi={Z\bibinitperiod},
+           given={Jun},
+           giveni={J\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{0c23b4d48d24f65851e2fc11593256cc}
+      \strng{fullhash}{41b3108995a1e1f78624a8a97d60ac03}
+      \strng{bibnamehash}{0c23b4d48d24f65851e2fc11593256cc}
+      \strng{authorbibnamehash}{0c23b4d48d24f65851e2fc11593256cc}
+      \strng{authornamehash}{0c23b4d48d24f65851e2fc11593256cc}
+      \strng{authorfullhash}{41b3108995a1e1f78624a8a97d60ac03}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE transactions on neural networks and learning systems}
+      \field{title}{A survey of convolutional neural networks: analysis, applications, and prospects}
+      \field{year}{2021}
+    \endentry
+    \entry{medsker2001recurrent}{article}{}
+      \name{author}{2}{}{%
+        {{hash=1968092e2c0ab8bf5f4846ab4fe184b5}{%
+           family={Medsker},
+           familyi={M\bibinitperiod},
+           given={Larry\bibnamedelima R},
+           giveni={L\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+        {{hash=c73c4a88b0645968504b91976af5d495}{%
+           family={Jain},
+           familyi={J\bibinitperiod},
+           given={LC},
+           giveni={L\bibinitperiod}}}%
+      }
+      \strng{namehash}{39b99a1f3b42a6e6897364c3965b66d8}
+      \strng{fullhash}{39b99a1f3b42a6e6897364c3965b66d8}
+      \strng{bibnamehash}{39b99a1f3b42a6e6897364c3965b66d8}
+      \strng{authorbibnamehash}{39b99a1f3b42a6e6897364c3965b66d8}
+      \strng{authornamehash}{39b99a1f3b42a6e6897364c3965b66d8}
+      \strng{authorfullhash}{39b99a1f3b42a6e6897364c3965b66d8}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Design and Applications}
+      \field{number}{64-67}
+      \field{title}{Recurrent neural networks}
+      \field{volume}{5}
+      \field{year}{2001}
+      \field{pages}{2}
+      \range{pages}{1}
+    \endentry
+    \entry{prechelt2002early}{incollection}{}
+      \name{author}{1}{}{%
+        {{hash=c33e375f7c45363931f7e4ffe01192cc}{%
+           family={Prechelt},
+           familyi={P\bibinitperiod},
+           given={Lutz},
+           giveni={L\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{c33e375f7c45363931f7e4ffe01192cc}
+      \strng{fullhash}{c33e375f7c45363931f7e4ffe01192cc}
+      \strng{bibnamehash}{c33e375f7c45363931f7e4ffe01192cc}
+      \strng{authorbibnamehash}{c33e375f7c45363931f7e4ffe01192cc}
+      \strng{authornamehash}{c33e375f7c45363931f7e4ffe01192cc}
+      \strng{authorfullhash}{c33e375f7c45363931f7e4ffe01192cc}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Neural Networks: Tricks of the trade}
+      \field{title}{Early stopping-but when}
+      \field{year}{2002}
+      \field{pages}{55\bibrangedash 69}
+      \range{pages}{15}
+    \endentry
+    \entry{taylor2018improving}{inproceedings}{}
+      \name{author}{2}{}{%
+        {{hash=d4b02d07e3f367eede1cf2675de2193a}{%
+           family={Taylor},
+           familyi={T\bibinitperiod},
+           given={Luke},
+           giveni={L\bibinitperiod}}}%
+        {{hash=2613d476038cbac3efc37eb4c3f67156}{%
+           family={Nitschke},
+           familyi={N\bibinitperiod},
+           given={Geoff},
+           giveni={G\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{4aa5334e0df79eba939131f75dec8fae}
+      \strng{fullhash}{4aa5334e0df79eba939131f75dec8fae}
+      \strng{bibnamehash}{4aa5334e0df79eba939131f75dec8fae}
+      \strng{authorbibnamehash}{4aa5334e0df79eba939131f75dec8fae}
+      \strng{authornamehash}{4aa5334e0df79eba939131f75dec8fae}
+      \strng{authorfullhash}{4aa5334e0df79eba939131f75dec8fae}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{2018 IEEE symposium series on computational intelligence (SSCI)}
+      \field{title}{Improving deep learning with generic data augmentation}
+      \field{year}{2018}
+      \field{pages}{1542\bibrangedash 1547}
+      \range{pages}{6}
     \endentry
     \entry{hotelling1933analysis}{article}{}
       \name{author}{1}{}{%
@@ -1057,8 +1213,8 @@
       \strng{authorbibnamehash}{8d723a09b743d9adca83a28ab576cdcc}
       \strng{authornamehash}{8d723a09b743d9adca83a28ab576cdcc}
       \strng{authorfullhash}{8d723a09b743d9adca83a28ab576cdcc}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Statistics in medicine}
@@ -1094,8 +1250,8 @@
       \strng{authorbibnamehash}{11a9eab1d1ac73c2827b435661dc70e1}
       \strng{authornamehash}{11a9eab1d1ac73c2827b435661dc70e1}
       \strng{authorfullhash}{11a9eab1d1ac73c2827b435661dc70e1}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{edition}{1}
@@ -1119,8 +1275,8 @@
       \strng{authorbibnamehash}{2694646d02ab4ee907c5d4458cf33c71}
       \strng{authornamehash}{2694646d02ab4ee907c5d4458cf33c71}
       \strng{authorfullhash}{2694646d02ab4ee907c5d4458cf33c71}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{The American Statistician}
@@ -1148,8 +1304,8 @@
       \strng{authorbibnamehash}{5a6b19c047426c4c2d4a50b395bf450b}
       \strng{authornamehash}{5a6b19c047426c4c2d4a50b395bf450b}
       \strng{authorfullhash}{5a6b19c047426c4c2d4a50b395bf450b}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{Applied multivariate data analysis: regression and experimental design}
@@ -1405,8 +1561,8 @@
       \strng{authorbibnamehash}{5470455fc7dceb3ccf6db38cb22a113d}
       \strng{authornamehash}{5470455fc7dceb3ccf6db38cb22a113d}
       \strng{authorfullhash}{5470455fc7dceb3ccf6db38cb22a113d}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{booktitle}{Breakthroughs in statistics: Methodology and distribution}
@@ -1432,8 +1588,8 @@
       \strng{authorbibnamehash}{97c17720b08538db4ed8190a1c7bee58}
       \strng{authornamehash}{97c17720b08538db4ed8190a1c7bee58}
       \strng{authorfullhash}{97c17720b08538db4ed8190a1c7bee58}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Journal of the American Statistical Association}
@@ -1443,38 +1599,6 @@
       \field{year}{1927}
       \field{pages}{209\bibrangedash 212}
       \range{pages}{4}
-    \endentry
-    \entry{taylor2018improving}{inproceedings}{}
-      \name{author}{2}{}{%
-        {{hash=d4b02d07e3f367eede1cf2675de2193a}{%
-           family={Taylor},
-           familyi={T\bibinitperiod},
-           given={Luke},
-           giveni={L\bibinitperiod}}}%
-        {{hash=2613d476038cbac3efc37eb4c3f67156}{%
-           family={Nitschke},
-           familyi={N\bibinitperiod},
-           given={Geoff},
-           giveni={G\bibinitperiod}}}%
-      }
-      \list{organization}{1}{%
-        {IEEE}%
-      }
-      \strng{namehash}{4aa5334e0df79eba939131f75dec8fae}
-      \strng{fullhash}{4aa5334e0df79eba939131f75dec8fae}
-      \strng{bibnamehash}{4aa5334e0df79eba939131f75dec8fae}
-      \strng{authorbibnamehash}{4aa5334e0df79eba939131f75dec8fae}
-      \strng{authornamehash}{4aa5334e0df79eba939131f75dec8fae}
-      \strng{authorfullhash}{4aa5334e0df79eba939131f75dec8fae}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{booktitle}{2018 IEEE symposium series on computational intelligence (SSCI)}
-      \field{title}{Improving deep learning with generic data augmentation}
-      \field{year}{2018}
-      \field{pages}{1542\bibrangedash 1547}
-      \range{pages}{6}
     \endentry
     \entry{kim2017understanding}{article}{}
       \name{author}{1}{}{%
@@ -1493,8 +1617,8 @@
       \strng{authorbibnamehash}{5e8b3c364784d3f8acec9469c96be92c}
       \strng{authornamehash}{5e8b3c364784d3f8acec9469c96be92c}
       \strng{authorfullhash}{5e8b3c364784d3f8acec9469c96be92c}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Korean journal of anesthesiology}
