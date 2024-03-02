@@ -3,9 +3,9 @@
 \label{chap:Chap_1}
 
 \section{Overview}
-\indent In \autoref{fig:pipeline} the proposed validation pipeline is depicted in the form of a directed graph. Each block of the diagram represents a different station in the pipeline, which consists of a comprehensive statistical validation part, whose ultimate product is the ''uncertainty model'' labelled block, plus a section dedicated to ''model and data boosting'', which receives the outputs of the statistical validation and the uncertainty model, and interacts with model data and training blocks in an effort to leverage information collected for the statistical validation to enhance model performance.\\
+\indent In \autoref{fig:pipeline} the proposed validation pipeline is depicted in the form of a directed graph. Each block of the diagram represents a different station in the pipeline, which consists of a comprehensive statistical validation part, whose ultimate product is the ''uncertainty model'' labelled block, plus the ''XAI'' block and a section dedicated to ''model and data boosting'', which receives the outputs of the statistical validation and the uncertainty model, and interacts with ''Data'' and ''Model definition and training'' blocks in an effort to leverage information collected for the statistical validation to enhance model performance.\\
 %
-\indent This work is exclusively focused on the statistical validation of the model. This comprises the vertical streamline starting in the block ''Data'' and finishing in ''$P(E)$'', ''$P(E|X)$'' and ''$P(E|Y)$'' blocks, with the ''Uncertainty model'' block as the final outcome of the whole validation, which in turn is a tool that uses all the information of previous blocks to predict \textit{where} and \textit{how much} the model can be trusted. The process from ''Data'' to ''Uncertainty'' can be described in terms of the following blocks present in the graph:
+\indent This work is exclusively focused on the statistical validation of the model. This comprises the vertical streamline starting in the block ''Data'' and finishing in ''$P(E)$'', ''$P(E|X)$'' and ''$P(E|Y)$'' blocks, with the ''Uncertainty model'' block as the final outcome of the whole validation, which in turn is a tool that uses all the information of previous blocks to predict \textit{when} and \textit{how much} the model can be trusted. The whole validation loop can be described in terms of the following blocks:
 
 \begin{figure}[!htb]
 	\centering
@@ -117,7 +117,7 @@ The step of the PCA projection is motivated by the curse of dimensionality, whic
 \begin{algorithm}
 	\caption{Train-test split geometrical analysis}
 	\label{algo:tt-split}
-	\KwData{${\cal S}_{\text{train}},{\cal S}_{\text{test}}$, voxel\_size\_req}
+	\KwData{${S}^{\text{train}},{S}^{\text{test}}$, voxel\_size\_req}
 	\KwResult{inside\_hypercube, inside\_PCA99, inside\_ambient, avg\_train\_dist, min\_test\_dist}
 	
 	Initialize empty lists: $\text{test\_voxels, train\_voxels}\leftarrow[]$\;
@@ -126,20 +126,20 @@ The step of the PCA projection is motivated by the curse of dimensionality, whic
 	
 	Initialize arrays for distances: $\text{avg\_train\_dist}, \text{min\_test\_dist} \leftarrow [\text{NaN}, \ldots, \text{NaN}]_{1 \times \text{len}({\cal S}_{\text{test}})}$\;
 	
-	\ForEach{$\mathbf{X}=(\mathbf{X_{\text{numerical}},X_{\text{categorical}}})$ in ${\cal S}_{\text{test}}$}{
-		Compute test\_voxel by imposing $\mathbf{X_{\text{categorical}}}$\;
+	\ForEach{$\mathbf{x}=(\mathbf{x_{\text{numerical}},x_{\text{categorical}}})$ in ${S}^{\text{test}}$}{
+		Compute test\_voxel by imposing $\mathbf{x_{\text{categorical}}}$\;
 		Append test\_voxel to $\text{test\_voxels}$\;
 	}
 	
-	\ForEach{$\mathbf{X}=(\mathbf{X_{\text{numerical}},X_{\text{categorical}}})$ in ${\cal S}_{\text{train}}$}{
-		Compute train\_voxel by imposing $\mathbf{X_{\text{categorical}}}$\;
+	\ForEach{$\mathbf{x}=(\mathbf{_{\text{numerical}},x{\text{categorical}}})$ in ${S}^{\text{train}}$}{
+		Compute train\_voxel by imposing $\mathbf{x_{\text{categorical}}}$\;
 		Append train\_voxel to $\text{train\_voxels}$\;
 	}
 	
 	$i\leftarrow 0$\;
 	
 	\ForEach{test\_voxel in $\text{test\_voxels}$}{
-		Get train\_voxel by imposing $\mathbf{X_{\text{categorical}}}$\;
+		Get train\_voxel by imposing $\mathbf{x_{\text{categorical}}}$\;
 		Compute main nearest neighbour distance inside train\_voxel: $\overline{d}_{\text{train}}(\text{train\_voxel},\text{train\_voxel})$\;
 		$\text{avg\_train\_dist}[i]\leftarrow \overline{d}_{\text{train}}$\;
 		\If{$\text{size(train\_voxel)} \geq \text{voxel\_size\_req}$}{			
@@ -147,19 +147,19 @@ The step of the PCA projection is motivated by the curse of dimensionality, whic
 				Compute minimum nearest neighbour distance: $d_{\text{test}}(\mathbf{X},\text{train\_voxel})$\;
 				$\text{min\_test\_dist}[i]\leftarrow d_{\text{test}}$\;
 				
-				\uIf{$\mathbf{X}$ not in hypercube}{
+				\uIf{$\mathbf{x}$ not in hypercube}{
 					\textbf{break}\;
 				}
 				\Else{
 					$\text{inside\_hypercube}[i]\leftarrow \text{True}$\;
 					
-					\uIf{$\mathbf{X}$ not in CH\_PCA99}{
+					\uIf{$\mathbf{x}$ not in CH\_PCA99}{
 						\textbf{break}\;
 					}
 					\Else{
 						$\text{inside\_PCA99}[i]\leftarrow \text{True}$\;
 						
-						\uIf{$\mathbf{X}$ in ambient\_hull}{
+						\uIf{$\mathbf{x}$ in ambient\_hull}{
 							$\text{inside\_ambient}[i]\leftarrow \text{True}$\;
 						}
 					}
@@ -319,7 +319,7 @@ The step of the PCA projection is motivated by the curse of dimensionality, whic
 \section{Global error quantification}\label{sec:globalerr}
 \noindent This section corresponds to box labelled ''Error quantification'' in \autoref{fig:pipeline}.\\
 %
-\indent After running the model, the simplest analysis of its performance consists of measuring the aggregated error of predictions against ground true values over the whole test set. Different metrics and criteria can be adopted for this task. Common error measures are the Mean Absolute Error or MAE (cfr. \cref{eq:mae}) and the Root Mean Square Error or RMSE (which is just the root square of \cref{eq:mse}). These metrics account for the distance between points representing ground true values ($\mathbf{y}_t$) and model's predictions ($\mathbf{Y}$), taken as the $L1$ norm (MAE) or the square of the $L2$ norm (RMSE) of the distances. In many industrial applications of machine learning, difference between ground true and predicted values can be more or less important depending on whether that difference is due to \textit{overestimating} or \textit{underestimating}. Take, for instance, the case of MS-S18 model, whose predictions are a measure of the probability of failure of aeronautical structural components. Clearly, underestimating the risk is much more dangerous than overestimating it. For cases such as this one, a useful measure of the error is the \textbf{residue}. The residual error of a given point $i$ is measured as
+\indent After running the model, the simplest analysis of its performance consists of measuring the aggregated error of predictions against ground true values over the whole test set. Different metrics and criteria can be adopted for this task. Common error measures are the Mean Absolute Error or MAE (cfr. \cref{eq:mae}) and the Root Mean Square Error or RMSE (which is just the root square of \cref{eq:mse}). These metrics account for the distance between points representing ground true values ($\mathbf{y}_t$) and model's predictions ($\mathbf{y}$), taken as the $L1$ norm (MAE) or the square of the $L2$ norm (RMSE) of the distances. In many industrial applications of machine learning, difference between ground true and predicted values can be more or less important depending on whether that difference is due to \textit{overestimating} or \textit{underestimating}. Take, for instance, the case of MS-S18 model, whose predictions are a measure of the probability of failure of aeronautical structural components. Clearly, underestimating the risk is much more dangerous than overestimating it. For cases such as this one, a useful measure of the error is the \textbf{residue}. The residual error of a given point $i$ is measured as
 \begin{equation}\label{eq:residue}
 	\mathbf{e}(i)=\mathbf{y}_t(i)-\mathbf{{y}}(i)
 \end{equation}
@@ -501,7 +501,7 @@ This section corresponds to box labelled ''P(E\textbar{}X)'' in \autoref{fig:bia
 \indent The task of recomposing $P(e|X)$ needs to be addressed in a computationally efficient way, given the input space dimensionality $m$ [recall the input features vector is ${\bf x}=(x_1,x_2,\dots,x_m)$] can be very large. For the case of MS-S18, for instance, the input space's dimensionality is $m=31$ (28 numerical inputs plus 3 categorical). With industrial sized datasets (typically reaching up to millions of data points), recomposing $P(e|X)$ becomes unaffordable. The easiest way of overcoming this issue is by binning the input space according to a certain criteria. If we denote the binned input space by $x^B=\{x^B_1,x^B_2,x^B_3\ldots x^B_r\}$ where $x^B_j$ represents a certain bin, and there are a total of $r$ bins, then we can substitute the task of recomposing $P(e|X)$ by that of recomposing $P(e|X^B)$. Although simple, this idea allows for an effective computational cost reduction.\\
 %
 \subsection{Visualization of error as a function of categorical (discrete) input variables}
-The immediate criteria for binning the input space is using categorical variables. These variables do in essence bin the input space as they can only take certain (or rather discrete) values. As previously mentioned, for MS-S18 there are three categorical variables enclosing geometrical information: ''Frame'', ''Stringer'', and ''dp''. \autoref{fig:boxwhisker} plots, for each categorical input variable, a box plot of the error as a function of the category.\\
+The immediate criteria for binning the input space is using categorical variables. These variables do in essence bin the input space as they can only take certain (or rather discrete) values. As mentioned in \autoref{chap:2}, for MS-S18 there are three categorical variables enclosing geometrical information: ''Frame'', ''Stringer'', and ''dp''. \autoref{fig:boxwhisker} plots, for each categorical input variable, a box plot of the error as a function of the category.\\
 \indent The box plot layout reports the median, Inter-quantile Range and whiskers. Outliers showing anomalous dispersion of the residue could indicate geometrical configurations (\eg the one defined by frames no. 69-70 and stringer no. 26) where training has been inefficient. The engineer in charge could inspect this zone and conclude, for instance, that the physics at play in that region involve exploding gradients which induce strong non-linearities.\\
 \begin{figure}
 	\centering

@@ -8,3 +8,13 @@
 \nomenclatureentry{AK-S@[{K-S}]\begingroup Kolmogorov-Smirnov [fitness test]\nomeqref {0}|nompageref}{ix}
 \nomenclatureentry{AANOVA@[{ANOVA}]\begingroup Analysis of Variance\nomeqref {0}|nompageref}{ix}
 \nomenclatureentry{AgESD@[{gESD}]\begingroup generalised Extreme Studentized Distribution [test]\nomeqref {0}|nompageref}{ix}
+\nomenclatureentry{M$\mathcal{F}$@[{$\mathcal{F}$}]\begingroup Surrogate model\nomeqref {0}|nompageref}{ix}
+\nomenclatureentry{M$\mathbf{x}$@[{$\mathbf{x}$}]\begingroup Input vector, feature vector\nomeqref {0}|nompageref}{ix}
+\nomenclatureentry{M$\mathbf{y}$@[{$\mathbf{y}$}]\begingroup Output vector, prediction vector\nomeqref {0}|nompageref}{ix}
+\nomenclatureentry{M$\mathbf{y}_t$@[{$\mathbf{y}_t$}]\begingroup Ground true vector\nomeqref {0}|nompageref}{ix}
+\nomenclatureentry{M$S^\text{Full}$@[{$S^\text{Full}$}]\begingroup Full dataset\nomeqref {0}|nompageref}{ix}
+\nomenclatureentry{M$S^\text{Train}$@[{$S^\text{Train}$}]\begingroup Training dataset\nomeqref {0}|nompageref}{ix}
+\nomenclatureentry{M$S^\text{Test}$@[{$S^\text{Test}$}]\begingroup Test dataset\nomeqref {0}|nompageref}{ix}
+\nomenclatureentry{M$S^*_X$@[{$S^*_X$}]\begingroup Set of input vectors in dataset $^*$\nomeqref {0}|nompageref}{ix}
+\nomenclatureentry{M$S^*_Y$@[{$S^*_Y$}]\begingroup Set of output vectors in dataset $^*$\nomeqref {0}|nompageref}{ix}
+\nomenclatureentry{M$e$@[{$e$}]\begingroup Residue\nomeqref {0}|nompageref}{ix}
