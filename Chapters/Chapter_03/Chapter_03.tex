@@ -143,7 +143,7 @@ The step of the PCA projection is motivated by the curse of dimensionality, whic
 		Compute main nearest neighbour distance inside train\_voxel: $\overline{d}_{\text{train}}(\text{train\_voxel},\text{train\_voxel})$\;
 		$\text{avg\_train\_dist}[i]\leftarrow \overline{d}_{\text{train}}$\;
 		\If{$\text{size(train\_voxel)} \geq \text{voxel\_size\_req}$}{			
-			\ForEach{$\mathbf{X}$ in test\_voxel}{
+			\ForEach{$\mathbf{x}$ in test\_voxel}{
 				Compute minimum nearest neighbour distance: $d_{\text{test}}(\mathbf{X},\text{train\_voxel})$\;
 				$\text{min\_test\_dist}[i]\leftarrow d_{\text{test}}$\;
 				
@@ -247,10 +247,10 @@ The step of the PCA projection is motivated by the curse of dimensionality, whic
 \subsubsection{Non-geometrical analysis}
 \indent To help (the engineer in charge) make a decission about the dataset split, another approach is developed, complementary to the geometrical analysis carried out so far. This approach consists of focusing on the statistical distributions of the train and the test datasets. A proper train-test split is characterised by similar statistical distributions of both sets (test and training)\cite{bonnasse2022interpolation}. When this cannot be achieved, a softer requirement is that each of the feature variables $X_i$ need to have reasonably similar marginal distributions in the training and the test set.\\
 %
-\indent The following analysis checks whether, for each individual input feature, the distribution of the training and test set is reasonably similar. This is also checked for the output variables (the ground true ones, thus this is independent from the surrogate model). Finally, the splitting can be done locally, \ie region by region, by binning each numerical variable. The implementation of this analysis tackles each input variable $X_i$ independently and for each input variable, it compares the training and the test set such that:
+\indent The following analysis checks whether, for each individual input feature, the distribution of the training and test set is reasonably similar. This is also checked for the output variables (the ground true ones, thus this is independent from the surrogate model). Finally, the splitting can be done locally, \ie region by region, by binning each numerical variable. The implementation of this analysis tackles each input variable $x_i$ independently and for each input variable, it compares the training and the test set such that:
 \begin{itemize}
-	\item If the variable $X_i$ is `categorical`: both (train and test) categorical frequency distributions are plotted (\autoref{fig:inputscatdhist}), a 2-sample $\chi^2$ test\cite[p. 431]{velez1994calculo} is performed, and the p-value of such test is introduced in \autoref{tab:pvalin}.
-	\item If the variable $X_i$ is numerical: both (train and test) numerical frequency distributions are plotted (\autoref{fig:inputsdhist}), a 2-sample Kolmogorov-Smirnov test\cite[p. 454]{velez1994calculo} is carried out, and the p-value of such test is introduced in the same table.\\
+	\item If the variable $x_i$ is `categorical`: both (train and test) categorical frequency distributions are plotted (\autoref{fig:inputscatdhist}), a 2-sample $\chi^2$ test\cite[p. 431]{velez1994calculo} is performed, and the p-value of such test is introduced in \autoref{tab:pvalin}.
+	\item If the variable $x_i$ is numerical: both (train and test) numerical frequency distributions are plotted (\autoref{fig:inputsdhist}), a 2-sample Kolmogorov-Smirnov test\cite[p. 454]{velez1994calculo} is carried out, and the p-value of such test is introduced in the same table.\\
 \end{itemize}
 %
 \indent The null hypothesis for both tests is that both train and test distributions are the same. H0 is only rejected with a 95\% confidence.\\

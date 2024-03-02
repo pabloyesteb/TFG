@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.1.20)  2 MAR 2024 01:06
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.1.20)  2 MAR 2024 11:52
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2257,32 +2257,12 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 [8]
 \openout2 = `Foreword/Symbols.aux'.
 
- (./Foreword/Symbols.tex) (./Thesis.nls
-LaTeX Font Info:    Font shape `U/lasy/b/n' in size <8> not available
-(Font)              Font shape `U/lasy/m/n' tried instead on input line 43.
-LaTeX Font Info:    Font shape `U/lasy/b/n' in size <6> not available
-(Font)              Font shape `U/lasy/m/n' tried instead on input line 43.
-LaTeX Font Info:    Font shape `U/lasy/b/n' in size <5> not available
-(Font)              Font shape `U/lasy/m/n' tried instead on input line 43.
-
-
-LaTeX Font Warning: Font shape `U/wasy/b/n' in size <8> not available
-(Font)              Font shape `U/wasy/m/n' tried instead on input line 43.
-
-
-LaTeX Font Warning: Font shape `U/wasy/b/n' in size <6> not available
-(Font)              Font shape `U/wasy/m/n' tried instead on input line 43.
-
-
-LaTeX Font Warning: Font shape `U/wasy/b/n' in size <5> not available
-(Font)              Font shape `U/wasy/m/n' tried instead on input line 43.
-
-[9
+ (./Foreword/Symbols.tex) (./Thesis.nls) [9
 
 
 
 
-])
+]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -2291,9 +2271,9 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[10] (./Thesis.lof [11
+[10
 
-]
+] (./Thesis.lof [11]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
@@ -2373,7 +2353,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 
 ]
-<Figures/ml_applications.png, id=517, 1227.58624pt x 376.40625pt>
+<Figures/ml_applications.png, id=515, 1227.58624pt x 376.40625pt>
 File: Figures/ml_applications.png Graphic file (type png)
 <use Figures/ml_applications.png>
 Package pdftex.def Info: Figures/ml_applications.png  used on input line 6.
@@ -2522,12 +2502,12 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [8]
-<Figures/hipercubo.png, id=675, 286.9119pt x 299.9205pt>
+<Figures/hipercubo.png, id=674, 286.9119pt x 299.9205pt>
 File: Figures/hipercubo.png Graphic file (type png)
 <use Figures/hipercubo.png>
 Package pdftex.def Info: Figures/hipercubo.png  used on input line 161.
 (pdftex.def)             Requested size: 182.09485pt x 190.35129pt.
-<Figures/policon.png, id=676, 286.1892pt x 299.1978pt>
+<Figures/policon.png, id=675, 286.1892pt x 299.1978pt>
 File: Figures/policon.png Graphic file (type png)
 <use Figures/policon.png>
 Package pdftex.def Info: Figures/policon.png  used on input line 167.
@@ -2562,7 +2542,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 ]
 Chapter 2.
-<Figures/semimonocoque.png, id=691, 916.42375pt x 529.98pt>
+<Figures/semimonocoque.png, id=690, 916.42375pt x 529.98pt>
 File: Figures/semimonocoque.png Graphic file (type png)
 <use Figures/semimonocoque.png>
 Package pdftex.def Info: Figures/semimonocoque.png  used on input line 15.
@@ -2605,7 +2585,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 ]
 Chapter 3.
-</home/pablo/Documentos/TFGP/Thesis/Figures/pipeline.png, id=715, 843.15pt x 63
+</home/pablo/Documentos/TFGP/Thesis/Figures/pipeline.png, id=714, 843.15pt x 63
 2.3625pt>
 File: /home/pablo/Documentos/TFGP/Thesis/Figures/pipeline.png Graphic file (typ
 e png)
@@ -2666,7 +2646,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [20]
 </home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/tt_split_overview.png, id=
-789, 843.15pt x 632.3625pt>
+788, 843.15pt x 632.3625pt>
 File: /home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/tt_split_overview.png
  Graphic file (type png)
 <use /home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/tt_split_overview.png>
@@ -2680,7 +2660,7 @@ File: /home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/geo.png Graphic file
 Package pdftex.def Info: /home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/ge
 o.png  used on input line 205.
 (pdftex.def)             Requested size: 455.24408pt x 281.17464pt.
-</home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/refTableVox.png, id=799, 3
+</home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/refTableVox.png, id=798, 3
 65.365pt x 691.58376pt>
 File: /home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/refTableVox.png Graph
 ic file (type png)
@@ -2750,7 +2730,7 @@ Overfull \hbox (89.16176pt too wide) in paragraph at lines 225--226
  []
 
 </home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/outside_hypercube_c.png, i
-d=867, 960.58875pt x 1004.75375pt>
+d=866, 960.58875pt x 1004.75375pt>
 File: /home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/outside_hypercube_c.p
 ng Graphic file (type png)
 <use /home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/outside_hypercube_c.pn
@@ -2758,7 +2738,7 @@ g>
 Package pdftex.def Info: /home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/ou
 tside_hypercube_c.png  used on input line 235.
 (pdftex.def)             Requested size: 388.30344pt x 406.15648pt.
-</home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/reqs_table.png, id=868, 80
+</home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/reqs_table.png, id=867, 80
 8.01875pt x 242.9075pt>
 File: /home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/reqs_table.png Graphi
 c file (type png)
@@ -2801,7 +2781,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 253--254
 
  []
 
-</home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/pvalues_input.png, id=889,
+</home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/pvalues_input.png, id=888,
  239.89626pt x 1150.2975pt>
 File: /home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/pvalues_input.png Gra
 phic file (type png)
@@ -2809,7 +2789,7 @@ phic file (type png)
 Package pdftex.def Info: /home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/pv
 alues_input.png  used on input line 262.
 (pdftex.def)             Requested size: 96.97441pt x 464.99034pt.
-</home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/inputs_dhist.png, id=890, 
+</home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/inputs_dhist.png, id=889, 
 848.16875pt x 645.41125pt>
 File: /home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/inputs_dhist.png Grap
 hic file (type png)
@@ -2818,7 +2798,7 @@ Package pdftex.def Info: /home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/in
 puts_dhist.png  used on input line 267.
 (pdftex.def)             Requested size: 455.24408pt x 346.41924pt.
 </home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/inputs_cat_dhist.png, id=8
-91, 1294.8375pt x 330.23375pt>
+90, 1294.8375pt x 330.23375pt>
 File: /home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/inputs_cat_dhist.png 
 Graphic file (type png)
 <use /home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/inputs_cat_dhist.png>
@@ -2826,7 +2806,7 @@ Package pdftex.def Info: /home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/in
 puts_cat_dhist.png  used on input line 276.
 (pdftex.def)             Requested size: 364.19664pt x 92.88304pt.
 </home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/inputs_str_dhist.png, id=8
-92, 1294.8375pt x 443.6575pt>
+91, 1294.8375pt x 443.6575pt>
 File: /home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/inputs_str_dhist.png 
 Graphic file (type png)
 <use /home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/inputs_str_dhist.png>
@@ -2834,7 +2814,7 @@ Package pdftex.def Info: /home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/in
 puts_str_dhist.png  used on input line 283.
 (pdftex.def)             Requested size: 364.19664pt x 124.78513pt.
 </home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/pvalues_outputs.png, id=89
-5, 365.365pt x 386.44376pt>
+4, 365.365pt x 386.44376pt>
 File: /home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/pvalues_outputs.png G
 raphic file (type png)
 <use /home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/pvalues_outputs.png>
@@ -2842,7 +2822,7 @@ Package pdftex.def Info: /home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/pv
 alues_outputs.png  used on input line 295.
 (pdftex.def)             Requested size: 147.69325pt x 156.21402pt.
 </home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/outputs_num_dhist.png, id=
-896, 1294.8375pt x 654.445pt>
+895, 1294.8375pt x 654.445pt>
 File: /home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/outputs_num_dhist.png
  Graphic file (type png)
 <use /home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/outputs_num_dhist.png>
@@ -2851,7 +2831,7 @@ Package pdftex.def Info: /home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/ou
 tputs_num_dhist.png  used on input line 300.
 (pdftex.def)             Requested size: 455.24408pt x 230.08774pt.
 </home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/colorequirements.png, id=8
-98, 541.02126pt x 412.54124pt>
+97, 541.02126pt x 412.54124pt>
 File: /home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/colorequirements.png 
 Graphic file (type png)
 <use /home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/colorequirements.png>
@@ -2911,8 +2891,8 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [32 </home/pablo/Documentos/TFGP/Thesis/Figures/tt-split/colorequirements.png>]
-</home/pablo/Documentos/TFGP/Thesis/Figures/global_stats/yvsyscatter.png, id=94
-0, 495.8525pt x 404.51125pt>
+</home/pablo/Documentos/TFGP/Thesis/Figures/global_stats/yvsyscatter.png, id=93
+9, 495.8525pt x 404.51125pt>
 File: /home/pablo/Documentos/TFGP/Thesis/Figures/global_stats/yvsyscatter.png G
 raphic file (type png)
 <use /home/pablo/Documentos/TFGP/Thesis/Figures/global_stats/yvsyscatter.png>
@@ -2943,7 +2923,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [34 </home/pablo/Documentos/TFGP/Thesis/Figures/global_stats/yvsyscatter.png>]
-</home/pablo/Documentos/TFGP/Thesis/Figures/boxpdeE.png, id=956, 843.15pt x 632
+</home/pablo/Documentos/TFGP/Thesis/Figures/boxpdeE.png, id=955, 843.15pt x 632
 .3625pt>
 File: /home/pablo/Documentos/TFGP/Thesis/Figures/boxpdeE.png Graphic file (type
  png)
@@ -2973,7 +2953,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
  </home/pablo/Documentos/TFGP/Thesis/Figures/boxpdeE.png>]
 </home/pablo/Documentos/TFGP/Thesis/Figures/global_stats/yvsydoublehist.png, id
-=968, 1737.49126pt x 1023.825pt>
+=967, 1737.49126pt x 1023.825pt>
 File: /home/pablo/Documentos/TFGP/Thesis/Figures/global_stats/yvsydoublehist.pn
 g Graphic file (type png)
 <use /home/pablo/Documentos/TFGP/Thesis/Figures/global_stats/yvsydoublehist.png
@@ -2981,7 +2961,7 @@ g Graphic file (type png)
 Package pdftex.def Info: /home/pablo/Documentos/TFGP/Thesis/Figures/global_stat
 s/yvsydoublehist.png  used on input line 360.
 (pdftex.def)             Requested size: 455.24408pt x 268.25037pt.
-</home/pablo/Documentos/TFGP/Thesis/Figures/global_stats/yvsyks.png, id=970, 36
+</home/pablo/Documentos/TFGP/Thesis/Figures/global_stats/yvsyks.png, id=969, 36
 4.36125pt x 374.39874pt>
 File: /home/pablo/Documentos/TFGP/Thesis/Figures/global_stats/yvsyks.png Graphi
 c file (type png)
@@ -2989,7 +2969,7 @@ c file (type png)
 Package pdftex.def Info: /home/pablo/Documentos/TFGP/Thesis/Figures/global_stat
 s/yvsyks.png  used on input line 369.
 (pdftex.def)             Requested size: 147.2875pt x 151.34502pt.
-</home/pablo/Documentos/TFGP/Thesis/Figures/global_stats/pdferror.png, id=977, 
+</home/pablo/Documentos/TFGP/Thesis/Figures/global_stats/pdferror.png, id=976, 
 1067.99pt x 623.32875pt>
 File: /home/pablo/Documentos/TFGP/Thesis/Figures/global_stats/pdferror.png Grap
 hic file (type png)
@@ -2998,7 +2978,7 @@ Package pdftex.def Info: /home/pablo/Documentos/TFGP/Thesis/Figures/global_stat
 s/pdferror.png  used on input line 378.
 (pdftex.def)             Requested size: 455.24408pt x 265.7054pt.
 </home/pablo/Documentos/TFGP/Thesis/Figures/global_stats/cumulativeerror.png, i
-d=978, 1737.49126pt x 1023.825pt>
+d=977, 1737.49126pt x 1023.825pt>
 File: /home/pablo/Documentos/TFGP/Thesis/Figures/global_stats/cumulativeerror.p
 ng Graphic file (type png)
 <use /home/pablo/Documentos/TFGP/Thesis/Figures/global_stats/cumulativeerror.pn
@@ -3026,8 +3006,8 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [37 </home/pablo/Documentos/TFGP/Thesis/Figures/global_stats/yvsydoublehist.png
 >]
-</home/pablo/Documentos/TFGP/Thesis/Figures/global_stats/errorKS.png, id=1000, 
-680.5425pt x 376.40625pt>
+</home/pablo/Documentos/TFGP/Thesis/Figures/global_stats/errorKS.png, id=999, 6
+80.5425pt x 376.40625pt>
 File: /home/pablo/Documentos/TFGP/Thesis/Figures/global_stats/errorKS.png Graph
 ic file (type png)
 <use /home/pablo/Documentos/TFGP/Thesis/Figures/global_stats/errorKS.png>
@@ -3035,7 +3015,7 @@ Package pdftex.def Info: /home/pablo/Documentos/TFGP/Thesis/Figures/global_stat
 s/errorKS.png  used on input line 418.
 (pdftex.def)             Requested size: 275.09898pt x 152.15651pt.
 </home/pablo/Documentos/TFGP/Thesis/Figures/global_stats/errorpvalues.png, id=1
-001, 1737.49126pt x 1017.8025pt>
+000, 1737.49126pt x 1017.8025pt>
 File: /home/pablo/Documentos/TFGP/Thesis/Figures/global_stats/errorpvalues.png 
 Graphic file (type png)
 <use /home/pablo/Documentos/TFGP/Thesis/Figures/global_stats/errorpvalues.png>
@@ -3043,14 +3023,14 @@ Package pdftex.def Info: /home/pablo/Documentos/TFGP/Thesis/Figures/global_stat
 s/errorpvalues.png  used on input line 423.
 (pdftex.def)             Requested size: 455.24408pt x 266.67242pt.
 </home/pablo/Documentos/TFGP/Thesis/Figures/global_stats/ztransform.png, id=100
-2, 1067.99pt x 540.0175pt>
+1, 1067.99pt x 540.0175pt>
 File: /home/pablo/Documentos/TFGP/Thesis/Figures/global_stats/ztransform.png Gr
 aphic file (type png)
 <use /home/pablo/Documentos/TFGP/Thesis/Figures/global_stats/ztransform.png>
 Package pdftex.def Info: /home/pablo/Documentos/TFGP/Thesis/Figures/global_stat
 s/ztransform.png  used on input line 429.
 (pdftex.def)             Requested size: 455.24408pt x 230.19243pt.
-</home/pablo/Documentos/TFGP/Thesis/Figures/global_stats/outliers.png, id=1005,
+</home/pablo/Documentos/TFGP/Thesis/Figures/global_stats/outliers.png, id=1004,
  1067.99pt x 734.745pt>
 File: /home/pablo/Documentos/TFGP/Thesis/Figures/global_stats/outliers.png Grap
 hic file (type png)
@@ -3111,7 +3091,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 445--446
  []
 
 </home/pablo/Documentos/TFGP/Thesis/Figures/global_stats/errorstats.png, id=104
-9, 1541.76pt x 567.11874pt>
+8, 1541.76pt x 567.11874pt>
 File: /home/pablo/Documentos/TFGP/Thesis/Figures/global_stats/errorstats.png Gr
 aphic file (type png)
 <use /home/pablo/Documentos/TFGP/Thesis/Figures/global_stats/errorstats.png>
@@ -3119,7 +3099,7 @@ Package pdftex.def Info: /home/pablo/Documentos/TFGP/Thesis/Figures/global_stat
 s/errorstats.png  used on input line 472.
 (pdftex.def)             Requested size: 623.23312pt x 229.24915pt.
 </home/pablo/Documentos/TFGP/Thesis/Figures/global_stats/basic_uncertainty.png,
- id=1050, 1406.25375pt x 569.12625pt>
+ id=1049, 1406.25375pt x 569.12625pt>
 File: /home/pablo/Documentos/TFGP/Thesis/Figures/global_stats/basic_uncertainty
 .png Graphic file (type png)
 <use /home/pablo/Documentos/TFGP/Thesis/Figures/global_stats/basic_uncertainty.
@@ -3176,7 +3156,7 @@ File: omscmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 488.
-</home/pablo/Documentos/TFGP/Thesis/Figures/biasinput/boxdiagram.png, id=1089, 
+</home/pablo/Documentos/TFGP/Thesis/Figures/biasinput/boxdiagram.png, id=1088, 
 843.15pt x 632.3625pt>
 File: /home/pablo/Documentos/TFGP/Thesis/Figures/biasinput/boxdiagram.png Graph
 ic file (type png)
@@ -3205,7 +3185,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 [47
 
  </home/pablo/Documentos/TFGP/Thesis/Figures/biasinput/boxdiagram.png>]
-</home/pablo/Documentos/TFGP/Thesis/Figures/biasinput/boxwhisker1.png, id=1099,
+</home/pablo/Documentos/TFGP/Thesis/Figures/biasinput/boxwhisker1.png, id=1098,
  724.7075pt x 753.81625pt>
 File: /home/pablo/Documentos/TFGP/Thesis/Figures/biasinput/boxwhisker1.png Grap
 hic file (type png)
@@ -3213,7 +3193,7 @@ hic file (type png)
 Package pdftex.def Info: /home/pablo/Documentos/TFGP/Thesis/Figures/biasinput/b
 oxwhisker1.png  used on input line 510.
 (pdftex.def)             Requested size: 364.19664pt x 378.8281pt.
-</home/pablo/Documentos/TFGP/Thesis/Figures/biasinput/boxwhisker2.png, id=1100,
+</home/pablo/Documentos/TFGP/Thesis/Figures/biasinput/boxwhisker2.png, id=1099,
  1456.44125pt x 734.745pt>
 File: /home/pablo/Documentos/TFGP/Thesis/Figures/biasinput/boxwhisker2.png Grap
 hic file (type png)
@@ -3253,7 +3233,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 538--539
 
  []
 
-</home/pablo/Documentos/TFGP/Thesis/Figures/biasinput/1wayanova.png, id=1125, 1
+</home/pablo/Documentos/TFGP/Thesis/Figures/biasinput/1wayanova.png, id=1124, 1
 067.99pt x 256.96pt>
 File: /home/pablo/Documentos/TFGP/Thesis/Figures/biasinput/1wayanova.png Graphi
 c file (type png)
@@ -3282,7 +3262,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-13.2842pt}.
 
 [51 </home/pablo/Documentos/TFGP/Thesis/Figures/biasinput/1wayanova.png>]
-</home/pablo/Documentos/TFGP/Thesis/Figures/biasinput/zscore1.png, id=1140, 345
+</home/pablo/Documentos/TFGP/Thesis/Figures/biasinput/zscore1.png, id=1139, 345
 .29pt x 325.215pt>
 File: /home/pablo/Documentos/TFGP/Thesis/Figures/biasinput/zscore1.png Graphic 
 file (type png)
@@ -3290,7 +3270,7 @@ file (type png)
 Package pdftex.def Info: /home/pablo/Documentos/TFGP/Thesis/Figures/biasinput/z
 score1.png  used on input line 571.
 (pdftex.def)             Requested size: 139.57823pt x 131.46323pt.
-</home/pablo/Documentos/TFGP/Thesis/Figures/biasinput/zscore2.png, id=1141, 340
+</home/pablo/Documentos/TFGP/Thesis/Figures/biasinput/zscore2.png, id=1140, 340
 .27126pt x 278.03876pt>
 File: /home/pablo/Documentos/TFGP/Thesis/Figures/biasinput/zscore2.png Graphic 
 file (type png)
@@ -3298,7 +3278,7 @@ file (type png)
 Package pdftex.def Info: /home/pablo/Documentos/TFGP/Thesis/Figures/biasinput/z
 score2.png  used on input line 571.
 (pdftex.def)             Requested size: 137.54948pt x 112.39294pt.
-</home/pablo/Documentos/TFGP/Thesis/Figures/biasinput/zscore3.png, id=1142, 577
+</home/pablo/Documentos/TFGP/Thesis/Figures/biasinput/zscore3.png, id=1141, 577
 .15625pt x 279.0425pt>
 File: /home/pablo/Documentos/TFGP/Thesis/Figures/biasinput/zscore3.png Graphic 
 file (type png)
@@ -3306,7 +3286,7 @@ file (type png)
 Package pdftex.def Info: /home/pablo/Documentos/TFGP/Thesis/Figures/biasinput/z
 score3.png  used on input line 574.
 (pdftex.def)             Requested size: 233.30666pt x 112.79869pt.
-</home/pablo/Documentos/TFGP/Thesis/Figures/biasinput/zscore4.png, id=1143, 216
+</home/pablo/Documentos/TFGP/Thesis/Figures/biasinput/zscore4.png, id=1142, 216
 .81pt x 349.305pt>
 File: /home/pablo/Documentos/TFGP/Thesis/Figures/biasinput/zscore4.png Graphic 
 file (type png)
@@ -3327,7 +3307,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 ablo/Documentos/TFGP/Thesis/Figures/biasinput/zscore2.png> </home/pablo/Documen
 tos/TFGP/Thesis/Figures/biasinput/zscore3.png> </home/pablo/Documentos/TFGP/The
 sis/Figures/biasinput/zscore4.png>]
-</home/pablo/Documentos/TFGP/Thesis/Figures/biasinput/linearcat.png, id=1153, 1
+</home/pablo/Documentos/TFGP/Thesis/Figures/biasinput/linearcat.png, id=1152, 1
 436.36626pt x 327.2225pt>
 File: /home/pablo/Documentos/TFGP/Thesis/Figures/biasinput/linearcat.png Graphi
 c file (type png)
@@ -3376,7 +3356,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 623--625
 
  []
 
-</home/pablo/Documentos/TFGP/Thesis/Figures/biasinput/2dbiascat.png, id=1168, 7
+</home/pablo/Documentos/TFGP/Thesis/Figures/biasinput/2dbiascat.png, id=1167, 7
 11.65875pt x 194.7275pt>
 File: /home/pablo/Documentos/TFGP/Thesis/Figures/biasinput/2dbiascat.png Graphi
 c file (type png)
@@ -3384,7 +3364,7 @@ c file (type png)
 Package pdftex.def Info: /home/pablo/Documentos/TFGP/Thesis/Figures/biasinput/2
 dbiascat.png  used on input line 634.
 (pdftex.def)             Requested size: 287.67726pt x 78.71562pt.
-</home/pablo/Documentos/TFGP/Thesis/Figures/biasinput/scatter1.png, id=1171, 55
+</home/pablo/Documentos/TFGP/Thesis/Figures/biasinput/scatter1.png, id=1170, 55
 7.08125pt x 396.48125pt>
 File: /home/pablo/Documentos/TFGP/Thesis/Figures/biasinput/scatter1.png Graphic
  file (type png)
@@ -3392,7 +3372,7 @@ File: /home/pablo/Documentos/TFGP/Thesis/Figures/biasinput/scatter1.png Graphic
 Package pdftex.def Info: /home/pablo/Documentos/TFGP/Thesis/Figures/biasinput/s
 catter1.png  used on input line 645.
 (pdftex.def)             Requested size: 231.26198pt x 164.5911pt.
-</home/pablo/Documentos/TFGP/Thesis/Figures/biasinput/scatter2.png, id=1172, 52
+</home/pablo/Documentos/TFGP/Thesis/Figures/biasinput/scatter2.png, id=1171, 52
 5.965pt x 394.47375pt>
 File: /home/pablo/Documentos/TFGP/Thesis/Figures/biasinput/scatter2.png Graphic
  file (type png)
@@ -3419,7 +3399,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [56 </home/pablo/Documentos/TFGP/Thesis/Figures/biasinput/scatter1.png> </home/
 pablo/Documentos/TFGP/Thesis/Figures/biasinput/scatter2.png>]
-</home/pablo/Documentos/TFGP/Thesis/Figures/biasinput/lineartrend.png, id=1187,
+</home/pablo/Documentos/TFGP/Thesis/Figures/biasinput/lineartrend.png, id=1186,
  822.07124pt x 287.0725pt>
 File: /home/pablo/Documentos/TFGP/Thesis/Figures/biasinput/lineartrend.png Grap
 hic file (type png)
@@ -3427,7 +3407,7 @@ hic file (type png)
 Package pdftex.def Info: /home/pablo/Documentos/TFGP/Thesis/Figures/biasinput/l
 ineartrend.png  used on input line 672.
 (pdftex.def)             Requested size: 332.30984pt x 116.0447pt.
-</home/pablo/Documentos/TFGP/Thesis/Figures/biasinput/anovanum.png, id=1192, 11
+</home/pablo/Documentos/TFGP/Thesis/Figures/biasinput/anovanum.png, id=1191, 11
 44.275pt x 1032.85875pt>
 File: /home/pablo/Documentos/TFGP/Thesis/Figures/biasinput/anovanum.png Graphic
  file (type png)
@@ -3440,7 +3420,7 @@ Overfull \hbox (7.31175pt too wide) in paragraph at lines 690--692
  [][] 
  []
 
-</home/pablo/Documentos/TFGP/Thesis/Figures/biasinput/anovabins.png, id=1193, 5
+</home/pablo/Documentos/TFGP/Thesis/Figures/biasinput/anovabins.png, id=1192, 5
 90.205pt x 278.03876pt>
 File: /home/pablo/Documentos/TFGP/Thesis/Figures/biasinput/anovabins.png Graphi
 c file (type png)
@@ -3448,7 +3428,7 @@ c file (type png)
 Package pdftex.def Info: /home/pablo/Documentos/TFGP/Thesis/Figures/biasinput/a
 novabins.png  used on input line 697.
 (pdftex.def)             Requested size: 238.58142pt x 112.39294pt.
-</home/pablo/Documentos/TFGP/Thesis/Figures/biasinput/zscorenum1.png, id=1194, 
+</home/pablo/Documentos/TFGP/Thesis/Figures/biasinput/zscorenum1.png, id=1193, 
 776.9025pt x 180.675pt>
 File: /home/pablo/Documentos/TFGP/Thesis/Figures/biasinput/zscorenum1.png Graph
 ic file (type png)
@@ -3456,7 +3436,7 @@ ic file (type png)
 Package pdftex.def Info: /home/pablo/Documentos/TFGP/Thesis/Figures/biasinput/z
 scorenum1.png  used on input line 704.
 (pdftex.def)             Requested size: 314.05106pt x 73.03513pt.
-</home/pablo/Documentos/TFGP/Thesis/Figures/biasinput/zscorenum2.png, id=1195, 
+</home/pablo/Documentos/TFGP/Thesis/Figures/biasinput/zscorenum2.png, id=1194, 
 557.08125pt x 178.6675pt>
 File: /home/pablo/Documentos/TFGP/Thesis/Figures/biasinput/zscorenum2.png Graph
 ic file (type png)
@@ -3493,7 +3473,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 [59 </home/pablo/Documentos/TFGP/Thesis/Figures/biasinput/anovabins.png> </home
 /pablo/Documentos/TFGP/Thesis/Figures/biasinput/zscorenum1.png> </home/pablo/Do
 cumentos/TFGP/Thesis/Figures/biasinput/zscorenum2.png>]
-</home/pablo/Documentos/TFGP/Thesis/Figures/biasoutput/pipeline.png, id=1217, 8
+</home/pablo/Documentos/TFGP/Thesis/Figures/biasoutput/pipeline.png, id=1216, 8
 43.15pt x 632.3625pt>
 File: /home/pablo/Documentos/TFGP/Thesis/Figures/biasoutput/pipeline.png Graphi
 c file (type png)
@@ -3501,7 +3481,7 @@ c file (type png)
 Package pdftex.def Info: /home/pablo/Documentos/TFGP/Thesis/Figures/biasoutput/
 pipeline.png  used on input line 718.
 (pdftex.def)             Requested size: 364.19664pt x 273.14566pt.
-</home/pablo/Documentos/TFGP/Thesis/Figures/biasoutput/localfits.png, id=1224, 
+</home/pablo/Documentos/TFGP/Thesis/Figures/biasoutput/localfits.png, id=1223, 
 1027.84pt x 790.955pt>
 File: /home/pablo/Documentos/TFGP/Thesis/Figures/biasoutput/localfits.png Graph
 ic file (type png)
@@ -3509,7 +3489,7 @@ ic file (type png)
 Package pdftex.def Info: /home/pablo/Documentos/TFGP/Thesis/Figures/biasoutput/
 localfits.png  used on input line 728.
 (pdftex.def)             Requested size: 455.24408pt x 350.32646pt.
-</home/pablo/Documentos/TFGP/Thesis/Figures/biasoutput/ybins.png, id=1227, 1145
+</home/pablo/Documentos/TFGP/Thesis/Figures/biasoutput/ybins.png, id=1226, 1145
 .27875pt x 530.98375pt>
 File: /home/pablo/Documentos/TFGP/Thesis/Figures/biasoutput/ybins.png Graphic f
 ile (type png)
@@ -3522,7 +3502,7 @@ Overfull \hbox (7.7175pt too wide) in paragraph at lines 738--740
  [][] 
  []
 
-</home/pablo/Documentos/TFGP/Thesis/Figures/biasoutput/pvalsKS.png, id=1232, 76
+</home/pablo/Documentos/TFGP/Thesis/Figures/biasoutput/pvalsKS.png, id=1231, 76
 6.865pt x 557.08125pt>
 File: /home/pablo/Documentos/TFGP/Thesis/Figures/biasoutput/pvalsKS.png Graphic
  file (type png)
@@ -3530,7 +3510,7 @@ File: /home/pablo/Documentos/TFGP/Thesis/Figures/biasoutput/pvalsKS.png Graphic
 Package pdftex.def Info: /home/pablo/Documentos/TFGP/Thesis/Figures/biasoutput/
 pvalsKS.png  used on input line 746.
 (pdftex.def)             Requested size: 455.24408pt x 330.71518pt.
-</home/pablo/Documentos/TFGP/Thesis/Figures/biasoutput/violines.png, id=1233, 7
+</home/pablo/Documentos/TFGP/Thesis/Figures/biasoutput/violines.png, id=1232, 7
 88.9475pt x 555.07375pt>
 File: /home/pablo/Documentos/TFGP/Thesis/Figures/biasoutput/violines.png Graphi
 c file (type png)
@@ -3566,7 +3546,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-13.2842pt}.
 
 [61]
-</home/pablo/Documentos/TFGP/Thesis/Figures/biasoutput/pvalsbins.png, id=1246, 
+</home/pablo/Documentos/TFGP/Thesis/Figures/biasoutput/pvalsbins.png, id=1245, 
 790.955pt x 600.2425pt>
 File: /home/pablo/Documentos/TFGP/Thesis/Figures/biasoutput/pvalsbins.png Graph
 ic file (type png)
@@ -3665,25 +3645,25 @@ Underfull \hbox (badness 10000) in paragraph at lines 797--799
 
  []
 
-<Figures/uncertainty/gumtab1.png, id=1292, 273.02pt x 143.53625pt>
+<Figures/uncertainty/gumtab1.png, id=1291, 273.02pt x 143.53625pt>
 File: Figures/uncertainty/gumtab1.png Graphic file (type png)
 <use Figures/uncertainty/gumtab1.png>
 Package pdftex.def Info: Figures/uncertainty/gumtab1.png  used on input line 82
 7.
 (pdftex.def)             Requested size: 110.3642pt x 58.02234pt.
-<Figures/uncertainty/gumtab2.png, id=1293, 273.02pt x 142.5325pt>
+<Figures/uncertainty/gumtab2.png, id=1292, 273.02pt x 142.5325pt>
 File: Figures/uncertainty/gumtab2.png Graphic file (type png)
 <use Figures/uncertainty/gumtab2.png>
 Package pdftex.def Info: Figures/uncertainty/gumtab2.png  used on input line 83
 2.
 (pdftex.def)             Requested size: 110.3642pt x 57.6166pt.
-<Figures/uncertainty/coveragetab1.png, id=1297, 1005.7575pt x 258.9675pt>
+<Figures/uncertainty/coveragetab1.png, id=1296, 1005.7575pt x 258.9675pt>
 File: Figures/uncertainty/coveragetab1.png Graphic file (type png)
 <use Figures/uncertainty/coveragetab1.png>
 Package pdftex.def Info: Figures/uncertainty/coveragetab1.png  used on input li
 ne 867.
 (pdftex.def)             Requested size: 406.56223pt x 104.68367pt.
-<Figures/uncertainty/coverage1.png, id=1298, 983.675pt x 365.365pt>
+<Figures/uncertainty/coverage1.png, id=1297, 983.675pt x 365.365pt>
 File: Figures/uncertainty/coverage1.png Graphic file (type png)
 <use Figures/uncertainty/coverage1.png>
 Package pdftex.def Info: Figures/uncertainty/coverage1.png  used on input line 
@@ -3716,19 +3696,19 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 878.
 
-<Figures/uncertainty/scatter1.png, id=1341, 692.5875pt x 255.95625pt>
+<Figures/uncertainty/scatter1.png, id=1340, 692.5875pt x 255.95625pt>
 File: Figures/uncertainty/scatter1.png Graphic file (type png)
 <use Figures/uncertainty/scatter1.png>
 Package pdftex.def Info: Figures/uncertainty/scatter1.png  used on input line 8
 87.
 (pdftex.def)             Requested size: 455.24408pt x 168.24425pt.
-<Figures/uncertainty/violines1.png, id=1342, 688.5725pt x 252.945pt>
+<Figures/uncertainty/violines1.png, id=1341, 688.5725pt x 252.945pt>
 File: Figures/uncertainty/violines1.png Graphic file (type png)
 <use Figures/uncertainty/violines1.png>
 Package pdftex.def Info: Figures/uncertainty/violines1.png  used on input line 
 893.
 (pdftex.def)             Requested size: 455.24408pt x 167.23369pt.
-</home/pablo/Documentos/TFGP/Thesis/Figures/uncertainty/loumtab1.png, id=1345, 
+</home/pablo/Documentos/TFGP/Thesis/Figures/uncertainty/loumtab1.png, id=1344, 
 1324.95pt x 232.87pt>
 File: /home/pablo/Documentos/TFGP/Thesis/Figures/uncertainty/loumtab1.png Graph
 ic file (type png)
@@ -3767,13 +3747,13 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [72 </home/pablo/Documentos/TFGP/Thesis/Figures/uncertainty/loumtab1.png>]
-<Figures/uncertainty/loumtab2.png, id=1365, 479.7925pt x 180.675pt>
+<Figures/uncertainty/loumtab2.png, id=1364, 479.7925pt x 180.675pt>
 File: Figures/uncertainty/loumtab2.png Graphic file (type png)
 <use Figures/uncertainty/loumtab2.png>
 Package pdftex.def Info: Figures/uncertainty/loumtab2.png  used on input line 9
 20.
 (pdftex.def)             Requested size: 193.94884pt x 73.03513pt.
-<Figures/uncertainty/loumcoverage.png, id=1366, 718.685pt x 268.00125pt>
+<Figures/uncertainty/loumcoverage.png, id=1365, 718.685pt x 268.00125pt>
 File: Figures/uncertainty/loumcoverage.png Graphic file (type png)
 <use Figures/uncertainty/loumcoverage.png>
 Package pdftex.def Info: Figures/uncertainty/loumcoverage.png  used on input li
@@ -3788,7 +3768,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 930.
 
-<Figures/uncertainty/scatter2.png, id=1372, 730.73pt x 270.00874pt>
+<Figures/uncertainty/scatter2.png, id=1371, 730.73pt x 270.00874pt>
 File: Figures/uncertainty/scatter2.png Graphic file (type png)
 <use Figures/uncertainty/scatter2.png>
 Package pdftex.def Info: Figures/uncertainty/scatter2.png  used on input line 9
@@ -3804,19 +3784,19 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [73 <./Figures/uncertainty/loumcoverage.png> <./Figures/uncertainty/loumtab2.pn
 g>]
-<Figures/uncertainty/violines2.png, id=1380, 727.71875pt x 260.975pt>
+<Figures/uncertainty/violines2.png, id=1379, 727.71875pt x 260.975pt>
 File: Figures/uncertainty/violines2.png Graphic file (type png)
 <use Figures/uncertainty/violines2.png>
 Package pdftex.def Info: Figures/uncertainty/violines2.png  used on input line 
 949.
 (pdftex.def)             Requested size: 455.24408pt x 163.26428pt.
-<Figures/uncertainty/violines3.png, id=1381, 1079.03125pt x 1130.2225pt>
+<Figures/uncertainty/violines3.png, id=1380, 1079.03125pt x 1130.2225pt>
 File: Figures/uncertainty/violines3.png Graphic file (type png)
 <use Figures/uncertainty/violines3.png>
 Package pdftex.def Info: Figures/uncertainty/violines3.png  used on input line 
 956.
 (pdftex.def)             Requested size: 182.09485pt x 190.72113pt.
-<Figures/uncertainty/violines4.png, id=1382, 1079.03125pt x 1103.12125pt>
+<Figures/uncertainty/violines4.png, id=1381, 1079.03125pt x 1103.12125pt>
 File: Figures/uncertainty/violines4.png Graphic file (type png)
 <use Figures/uncertainty/violines4.png>
 Package pdftex.def Info: Figures/uncertainty/violines4.png  used on input line 
@@ -3855,13 +3835,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 988--989
 
  []
 
-<Figures/uncertainty/liumtab1.png, id=1400, 1109.14375pt x 230.8625pt>
+<Figures/uncertainty/liumtab1.png, id=1399, 1109.14375pt x 230.8625pt>
 File: Figures/uncertainty/liumtab1.png Graphic file (type png)
 <use Figures/uncertainty/liumtab1.png>
 Package pdftex.def Info: Figures/uncertainty/liumtab1.png  used on input line 9
 93.
 (pdftex.def)             Requested size: 448.35455pt x 93.32266pt.
-<Figures/uncertainty/liumtab2.png, id=1401, 478.78876pt x 182.6825pt>
+<Figures/uncertainty/liumtab2.png, id=1400, 478.78876pt x 182.6825pt>
 File: Figures/uncertainty/liumtab2.png Graphic file (type png)
 <use Figures/uncertainty/liumtab2.png>
 Package pdftex.def Info: Figures/uncertainty/liumtab2.png  used on input line 9
@@ -3885,13 +3865,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 1010--1013
 
  []
 
-<Figures/uncertainty/liumcoverage.png, id=1410, 983.675pt x 403.5075pt>
+<Figures/uncertainty/liumcoverage.png, id=1409, 983.675pt x 403.5075pt>
 File: Figures/uncertainty/liumcoverage.png Graphic file (type png)
 <use Figures/uncertainty/liumcoverage.png>
 Package pdftex.def Info: Figures/uncertainty/liumcoverage.png  used on input li
 ne 1018.
 (pdftex.def)             Requested size: 455.24408pt x 186.74243pt.
-<Figures/uncertainty/liumcoveragecat.png, id=1411, 1479.5275pt x 348.30125pt>
+<Figures/uncertainty/liumcoveragecat.png, id=1410, 1479.5275pt x 348.30125pt>
 File: Figures/uncertainty/liumcoveragecat.png Graphic file (type png)
 <use Figures/uncertainty/liumcoveragecat.png>
 Package pdftex.def Info: Figures/uncertainty/liumcoveragecat.png  used on input
@@ -3902,7 +3882,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 1046--1047
 
  []
 
-<Figures/uncertainty/FUMexplanation.png, id=1413, 843.15pt x 632.3625pt>
+<Figures/uncertainty/FUMexplanation.png, id=1412, 843.15pt x 632.3625pt>
 File: Figures/uncertainty/FUMexplanation.png Graphic file (type png)
 <use Figures/uncertainty/FUMexplanation.png>
 Package pdftex.def Info: Figures/uncertainty/FUMexplanation.png  used on input 
@@ -4045,11 +4025,11 @@ Package logreq Info: Writing requests to 'Thesis.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 64920 strings out of 478287
- 1480282 string characters out of 5849289
- 2370031 words of memory out of 5000000
- 81383 multiletter control sequences out of 15000+600000
- 487753 words of font info for 100 fonts, out of 8000000 for 9000
+ 64902 strings out of 478287
+ 1480090 string characters out of 5849289
+ 2370032 words of memory out of 5000000
+ 81371 multiletter control sequences out of 15000+600000
+ 485918 words of font info for 94 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  117i,30n,136p,2362b,3136s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
@@ -4060,29 +4040,28 @@ f-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/share/texlive/texmf-dist/
 fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/share/texlive/texmf-dist/font
 s/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texlive/texmf-dist/fonts/typ
 e1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
-lic/amsfonts/cmextra/cmex8.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
-c/amsfonts/cmextra/cmex9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
-amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
-ts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
-cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.p
-fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></us
-r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib8.pfb></usr
-/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/
-texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-d
-ist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/font
-s/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/
-public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
-/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
-ts/cm/cmsy9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
-mti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.p
-fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></u
-sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb></usr/shar
-e/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on Thesis.pdf (109 pages, 5070083 bytes).
+lic/amsfonts/cmextra/cmex9.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
+onts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8
+.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></
+usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/sha
+re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texl
+ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/f
+onts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/typ
+e1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmsy9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti1
+0.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb><
+/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/s
+hare/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb></usr/share/te
+xlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on Thesis.pdf (109 pages, 5051412 bytes).
 PDF statistics:
- 1756 PDF objects out of 2073 (max. 8388607)
- 1414 compressed objects within 15 object streams
+ 1751 PDF objects out of 2073 (max. 8388607)
+ 1411 compressed objects within 15 object streams
  381 named destinations out of 1000 (max. 500000)
  605 words of extra memory for PDF output out of 10000 (max. 10000000)
 
